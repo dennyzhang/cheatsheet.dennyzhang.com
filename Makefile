@@ -1,5 +1,8 @@
 all:git_push
 
+git_pull:
+	git submodule update
+
 git_push:
 	bash automate.sh git_push
 
