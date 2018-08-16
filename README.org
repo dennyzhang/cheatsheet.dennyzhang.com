@@ -16,12 +16,10 @@ File me [[https://github.com/DennyZhang/challenges-leetcode-interesting/issues][
 
 See more challenges from Denny: [[https://github.com/topics/denny-challenges][#denny-challenges]]
 
-** Use git submodules
-#+BEGIN_SRC sh
-# git submodule init
-
-git submodule update
-#+END_SRC
+** Common Actions
+- git push all local cheatsheet updates: =make git-push=
+- Pull changes for all remote cheatsheet git repos: =make git-pull=
+- Refresh all cheatsheet blog posts: =make refresh-wordpress=
 
 ** More Resources
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

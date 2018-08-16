@@ -12,16 +12,11 @@ function my_test() {
 
 function refresh_wordpress() {
     echo "Use emacs to update README.ord"
-    for d in "problems" "series" "review"; do
-    # for d in "series" "review"; do
-        cd "$d"
-        for f in $(ls -1t */README.org); do
-            echo "Update $f"
-            dirname=$(basename $(dirname $f))
-            cd $dirname
-            /Applications/Emacs.app/Contents/MacOS/Emacs-x86_64-10_10 --batch -l ../../emacs-update.el
-            cd ..
-        done
+    for f in $(ls -1t */README.org); do
+        echo "Update $f"
+        dirname=$(basename $(dirname $f))
+        cd $dirname
+        /Applications/Emacs.app/Contents/MacOS/Emacs-x86_64-10_10 --batch -l ../emacs-update.el
         cd ..
     done
 }
@@ -32,7 +27,7 @@ function git_push() {
             cd "$d"
             echo "In ${d}, git commit and push"
             git commit -am "update doc"
-            git push origin 
+            git push origin
             cd ..
         fi
     done

@@ -1,16 +1,16 @@
-all:git_push
+all:git-push
 
-git_pull:
+git-pull:
 	git submodule update
 
-git_push:
+git-push:
 	bash automate.sh git_push
 
-refresh_link:
+refresh-wordpress:
+	bash automate.sh refresh_wordpress
+
+refresh-link:
 	bash automate.sh refresh_link
 
 my_test:
 	bash automate.sh my_test
-
-refresh_wordpress:
-	bash automate.sh refresh_wordpress
