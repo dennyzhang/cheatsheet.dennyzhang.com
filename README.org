@@ -15,7 +15,8 @@ File me [[https://github.com/DennyZhang/challenges-leetcode-interesting/issues][
 See more challenges from Denny: [[https://github.com/topics/denny-challenges][#denny-challenges]]
 
 - **My blog about coder interview**: https://cheatsheet.dennyzhang.com/
-- TODO: use git submodules
+** Use git submodules
+git submodule update
 
 ** More Resources
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
