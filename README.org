@@ -42,9 +42,53 @@ See more challenges from Denny: [[https://github.com/topics/denny-challenges][#d
 #+PRIORITIES: A D C
 #+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+EXPORT_EXCLUDE_TAGS: exclude noexport blog
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
+* Contact CheatSheets                                                  :blog:
+:PROPERTIES:
+:type:     life
+:END:
+
+Hi there
+
+I'm [[https://www.linkedin.com/in/dennyzhang001][Denny Zhang]]. A coder at work.
+
+[[https://cheatsheet.dennyzhang.com/contact][https://cdn.dennyzhang.com/images/brain/denny_intro.jpg]]
+
+See all blogs I'm actively maintaining:
+
+| Blog                          | Link                              |
+|-------------------------------+-----------------------------------|
+| DevOps blog                   | https://www.dennyzhang.com        |
+| Code tests for interviews     | https://code.dennyzhang.com       |
+| Learn system design           | https://architect.dennyzhang.com  |
+| Cheatsheet for best practices | https://cheatsheet.dennyzhang.com |
+
+[[color:#c7254e][Why I start this blog?]] [[https://cheatsheet.dennyzhang.com]]
+
+I'm bad at memorizing things. Forget to do something on time? Poorly prepared?
+
+These usually result in uncomfortable experience!
+
+Why not collect the best practices? Then present them as cheatsheets for different scenarios. Should be a good idea, right?
+
+Each cheatsheet will come as a dedicated blog post. [[color:#c7254e][And everything is also available in GitHub]]: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][cheatsheet.dennyzhang.com]]
+
+Hope you find the website useful?
+
+If not, please talk to me.
+
+Let's make it better. More people could benefit from our effort.
+
+Cheers!
+
+#+BEGIN_HTML
+<br/><br/>
+<a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+<a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
+#+END_HTML
 * HALF [[https://github.com/dennyzhang/cheatsheet-emacs-A4/blob/master/code :noexport:
 https://github.com/dennyzhang/cheatsheet-jenkins-groovy-A4/blob/master/
