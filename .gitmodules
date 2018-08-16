@@ -1,0 +1,51 @@
+[submodule "cheatsheet-emacs-A4"]
+	path = cheatsheet-emacs-A4
+	url = git@github.com:dennyzhang/cheatsheet-emacs-A4.git
+[submodule "cheatsheet-bosh-A4"]
+	path = cheatsheet-bosh-A4
+	url = git@github.com:dennyzhang/cheatsheet-bosh-A4.git
+[submodule "cheatsheet-cloudfoundry-tile-A4"]
+	path = cheatsheet-cloudfoundry-tile-A4
+	url = git@github.com:dennyzhang/cheatsheet-cloudfoundry-tile-A4.git
+[submodule "cheatsheet-docker-A4"]
+	path = cheatsheet-docker-A4
+	url = git@github.com:dennyzhang/cheatsheet-docker-A4.git
+[submodule "cheatsheet-git-A4"]
+	path = cheatsheet-git-A4
+	url = git@github.com:dennyzhang/cheatsheet-git-A4.git
+[submodule "cheatsheet-golang-A4"]
+	path = cheatsheet-golang-A4
+	url = git@github.com:dennyzhang/cheatsheet-golang-A4.git
+[submodule "cheatsheet-jenkins-groovy-A4"]
+	path = cheatsheet-jenkins-groovy-A4
+	url = git@github.com:dennyzhang/cheatsheet-jenkins-groovy-A4.git
+[submodule "cheatsheet-jq-A4"]
+	path = cheatsheet-jq-A4
+	url = git@github.com:dennyzhang/cheatsheet-jq-A4.git
+[submodule "cheatsheet-knative-A4"]
+	path = cheatsheet-knative-A4
+	url = git@github.com:dennyzhang/cheatsheet-knative-A4.git
+[submodule "cheatsheet-kubernetes-A4"]
+	path = cheatsheet-kubernetes-A4
+	url = git@github.com:dennyzhang/cheatsheet-kubernetes-A4.git
+[submodule "cheatsheet-living-in-ca"]
+	path = cheatsheet-living-in-ca
+	url = git@github.com:dennyzhang/cheatsheet-living-in-ca.git
+[submodule "cheatsheet-pks-A4"]
+	path = cheatsheet-pks-A4
+	url = git@github.com:dennyzhang/cheatsheet-pks-A4.git
+[submodule "cheatsheet-python-A4"]
+	path = cheatsheet-python-A4
+	url = git@github.com:dennyzhang/cheatsheet-python-A4.git
+[submodule "cheatsheet-ruby-A4"]
+	path = cheatsheet-ruby-A4
+	url = git@github.com:dennyzhang/cheatsheet-ruby-A4.git
+[submodule "cheatsheet-tmux-A4"]
+	path = cheatsheet-tmux-A4
+	url = git@github.com:dennyzhang/cheatsheet-tmux-A4.git
+[submodule "cheatsheet-uaac-A4"]
+	path = cheatsheet-uaac-A4
+	url = git@github.com:dennyzhang/cheatsheet-uaac-A4.git
+[submodule "cheatsheet-vim-A4"]
+	path = cheatsheet-vim-A4
+	url = git@github.com:dennyzhang/cheatsheet-vim-A4.git
