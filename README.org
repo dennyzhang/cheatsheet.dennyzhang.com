@@ -3,18 +3,19 @@
 <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
 <a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
 <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
-<a href="https://github.com/DennyZhang/cheatsheet-vim-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 
 <br/><br/>
 
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
+Blog: https://cheatsheet.dennyzhang.com/
+
 File me [[https://github.com/DennyZhang/challenges-leetcode-interesting/issues][Issues]] or star [[https://github.com/DennyZhang/challenges-leetcode-interesting][this repo]].
 
 See more challenges from Denny: [[https://github.com/topics/denny-challenges][#denny-challenges]]
 
-- **My blog about coder interview**: https://cheatsheet.dennyzhang.com/
 ** Use git submodules
 git submodule update
 
