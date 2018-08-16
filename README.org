@@ -17,7 +17,11 @@ File me [[https://github.com/DennyZhang/challenges-leetcode-interesting/issues][
 See more challenges from Denny: [[https://github.com/topics/denny-challenges][#denny-challenges]]
 
 ** Use git submodules
+#+BEGIN_SRC sh
+# git submodule init
+
 git submodule update
+#+END_SRC
 
 ** More Resources
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
