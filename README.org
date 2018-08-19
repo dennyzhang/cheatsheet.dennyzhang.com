@@ -14,7 +14,7 @@ Blog: https://cheatsheet.dennyzhang.com/
 
 File me [[https://github.com/DennyZhang/challenges-leetcode-interesting/issues][Issues]] or star [[https://github.com/DennyZhang/challenges-leetcode-interesting][this repo]].
 
-See more challenges from Denny: [[https://github.com/topics/denny-challenges][#denny-challenges]]
+See more cheatsheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 ** Common Actions
 - git push all local cheatsheet updates: =make git-push=
@@ -42,11 +42,11 @@ See more challenges from Denny: [[https://github.com/topics/denny-challenges][#d
 #+PRIORITIES: A D C
 #+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+EXPORT_EXCLUDE_TAGS: exclude noexport blog
+#+EXPORT_EXCLUDE_TAGS: exclude noexport BLOG
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
-* Contact CheatSheets                                                  :blog:
+* Contact CheatSheets                                                  :BLOG:
 :PROPERTIES:
 :type:     life
 :END:
@@ -57,16 +57,15 @@ I'm [[https://www.linkedin.com/in/dennyzhang001][Denny Zhang]]. A coder at work.
 
 [[https://cheatsheet.dennyzhang.com/contact][https://cdn.dennyzhang.com/images/brain/denny_intro.jpg]]
 
-See all blogs I'm actively maintaining:
+#+BEGIN_HTML
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+#+END_HTML
 
-| Blog                          | Link                              |
-|-------------------------------+-----------------------------------|
-| DevOps blog                   | https://www.dennyzhang.com        |
-| Code tests for interviews     | https://code.dennyzhang.com       |
-| Learn system design           | https://architect.dennyzhang.com  |
-| Cheatsheet for best practices | https://cheatsheet.dennyzhang.com |
-
-[[color:#c7254e][Why I start this blog?]] [[https://cheatsheet.dennyzhang.com]]
+[[color:#c7254e][Why I maintain this blog?]] [[https://cheatsheet.dennyzhang.com]]
 
 I'm bad at memorizing things. Forget to do something on time? Poorly prepared?
 
@@ -84,11 +83,156 @@ Let's make it better. More people could benefit from our effort.
 
 Cheers!
 
+- See more cheatsheets:
+
 #+BEGIN_HTML
-<br/><br/>
-<a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
-<a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
-<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
+[get_tags]
 #+END_HTML
+
+---------------------------------------------------------------------
+- See all blogs I'm actively maintaining:
+
+| Blog                          | Link                              |
+|-------------------------------+-----------------------------------|
+| DevOps blog                   | https://www.dennyzhang.com        |
+| Code tests for interviews     | https://code.dennyzhang.com       |
+| Learn system design           | https://architect.dennyzhang.com  |
+| Cheatsheet for best practices | https://cheatsheet.dennyzhang.com |
+* CheatSheet 101: Take Flights For Travel                      :BLOG:Travel:
+:PROPERTIES:
+:type:     Travel
+:END:
+---------------------------------------------------------------------
+CheatSheet for being prepared to take flights.
+---------------------------------------------------------------------
+CheatSheet In A4:
+
+Print it, and add your personal items.
+
+TODO
+
+---------------------------------------------------------------------
+Amazon Shopping:
+
+(Please leave me comments, if you have better suggestions).
+#+BEGIN_HTML
+<div>
+<iframe style="width: 120px; height: 240px;" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ac&amp;ref=qf_sp_asin_til&amp;ad_type=product_link&amp;tracking_id=dennyzhang-20&amp;marketplace=amazon&amp;region=US&amp;placement=0988262509&amp;asins=0988262509&amp;linkId=71878608a6bfd8fe98ca2cc56a10031a&amp;show_border=false&amp;link_opens_in_new_window=false&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff" width="300" height="150" frameborder="0" marginwidth="0" marginheight="0" scrolling="no">
+</iframe>
+#+END_HTML
+
+#+BEGIN_HTML
+<iframe style="width: 120px; height: 240px;" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ac&amp;ref=tf_til&amp;ad_type=product_link&amp;tracking_id=dennyzhang-20&amp;marketplace=amazon&amp;region=US&amp;placement=1942788002&amp;asins=1942788002&amp;linkId=0334e7e74eb6e585093729ad44f59e04&amp;show_border=false&amp;link_opens_in_new_window=false&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff" width="300" height="150" frameborder="0" marginwidth="0" marginheight="0" scrolling="no">
+</iframe>
+#+END_HTML
+---------------------------------------------------------------------
+Detail Explanation
+
+Mandatory:
+1. ID: driver license, passport, etc.
+- Toothpaste: most hotels don't provide it now.
+- Cash: When travel to another city, credit cards may not work in some scenarios.
+- Chargers: cellphones, laptop, etc.
+
+Optional - before plane
+1. Check-in earlier
+
+Optional - Sleep well on the plane
+1. Blanket: It could cold on the plane.
+- Glass protection: Sleep well on the flights.
+- Earphone: the background noise of plane could be unplesant to you.
+- Sleeper: be more comfortable on the plane
+- Pillow: Sleep well on the flights.
+
+Optional - Others
+1. Sleeper: You may not like what hotels provide.
+- Sport shoes: you may have lots of walking.
+- Tower: You may not like what hotels provide.
+
+Optional - Travel Kit
+- Eyecontact
+- Women/Girls special: lisp
+---------------------------------------------------------------------
+
+If you find the cheatsheet useful, don't forget to save it or share it.
+
+More Reading:
+- [[http://brain.dennyzhang.com/stock-decision-ii/][Puzzle: Best Time to Buy and Sell Stock II]]
+* CheatSheet 102: Long Road Family Trip                         :BLOG:Travel:
+:PROPERTIES:
+:type:     Travel
+:END:
+---------------------------------------------------------------------
+Be better prepared for long road family trip
+---------------------------------------------------------------------
+CheatSheet In A4:
+
+Print it, and add your personal items.
+
+TODO
+
+---------------------------------------------------------------------
+Amazon Shopping:
+
+(Please leave me comments, if you have better suggestions).
+#+BEGIN_HTML
+<div>
+<iframe style="width: 120px; height: 240px;" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ac&amp;ref=qf_sp_asin_til&amp;ad_type=product_link&amp;tracking_id=dennyzhang-20&amp;marketplace=amazon&amp;region=US&amp;placement=0988262509&amp;asins=0988262509&amp;linkId=71878608a6bfd8fe98ca2cc56a10031a&amp;show_border=false&amp;link_opens_in_new_window=false&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff" width="300" height="150" frameborder="0" marginwidth="0" marginheight="0" scrolling="no">
+</iframe>
+#+END_HTML
+
+#+BEGIN_HTML
+<iframe style="width: 120px; height: 240px;" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ac&amp;ref=tf_til&amp;ad_type=product_link&amp;tracking_id=dennyzhang-20&amp;marketplace=amazon&amp;region=US&amp;placement=1942788002&amp;asins=1942788002&amp;linkId=0334e7e74eb6e585093729ad44f59e04&amp;show_border=false&amp;link_opens_in_new_window=false&amp;price_color=333333&amp;title_color=0066c0&amp;bg_color=ffffff" width="300" height="150" frameborder="0" marginwidth="0" marginheight="0" scrolling="no">
+</iframe>
+#+END_HTML
+---------------------------------------------------------------------
+Detail Explanation
+
+Mandatory:
+1. ID: driver license, passport, etc.
+- Toothpaste: most hotels don't provide it now.
+- Cash: When travel to another city, credit cards may not work in some scenarios.
+- Chargers: cellphones, laptop, etc.
+
+Optional - Others
+1. Sleeper: You may not like what hotels provide.
+- Tower: You may not like what hotels provide.
+- Navigator: your google maps may not work
+- Sport shoes: you may have lots of walking.
+- Short and long trousers
+- umbrella
+- cooler
+- pets easer: hua lu shui
+
+Optional - Travel Kit
+- Eyecontact
+- Women/Girls special: lisp
+---------------------------------------------------------------------
+
+If you find the cheatsheet useful, don't forget to save it or share it.
+
+More Reading:
+- [[http://brain.dennyzhang.com/stock-decision-ii/][Puzzle: Best Time to Buy and Sell Stock II]]
+
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* GitHub Repo Sharing: cheatsheet.dennyzhang.com                   :BLOG:Life:
+:PROPERTIES:
+:type:     Life, Ads, Popular
+:END:
+---------------------------------------------------------------------
+Trying to collect interesting leetcode.com puzzles. And solve them in Python. Here is the code in [[url-external:https://github.com/DennyZhang/leetcode_interesting_python][GitHub]].
+
+[[image-blog:GitHub Repo Sharing: leetcode_python][https://cdn.dennyzhang.com/images/brain/github_interesting_leetcode.png]]
+
+---------------------------------------------------------------------
+In this website, a large portion of problems come from [[url-external:https://leetcode.com][leetcode.com]].
+
+Personally I'm trying to solve all of them in Python. Here is my solution in [[url-external:https://github.com/DennyZhang/leetcode_interesting_python][GitHub]].
+
+Check it out and discuss with me. [[color:#c7254e][Remember: We Two Is Just One Click Away!]]
+[[github:DennyZhang][Github]]
+More Reading:
+- [[http://brain.dennyzhang.com/category/life/][Category: Life]]
+
 * HALF [[https://github.com/dennyzhang/cheatsheet-emacs-A4/blob/master/code :noexport:
 https://github.com/dennyzhang/cheatsheet-jenkins-groovy-A4/blob/master/

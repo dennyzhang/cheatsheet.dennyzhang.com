@@ -1,0 +1,68 @@
+* CheatSheet: Take Flights For Travel                                                   :Life:
+:PROPERTIES:
+:type:     travel
+:END:
+
+Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel-flight, Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet-tmux-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+#+END_HTML
+
+#+BEGIN_HTML
+<div style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+#+END_HTML
+
+Checklist before travel by flights
+** Mandatory
+| Item       | Summary                                                     |
+|------------+-------------------------------------------------------------|
+| ID         | driver license, passport, etc.                              |
+| Toothpaste | most hotels don't provide it now.                           |
+| Cash       | Tips for hotels; Or scenarios which won't take credit cards |
+| Chargers   | cellphones, laptop, etc.                                    |
+| Slippers   | be more comfortable on the plane or hotel                   |
+
+** Optional
+
+| Item                | Summary                               |
+|---------------------+---------------------------------------|
+| Check-in earlier    | Choose seats                          |
+| Blanket             | It could cold on the plane            |
+| Earphone            | noisy background on plane             |
+| Pillow              | Sleep well on the flights             |
+| Glass protection    | Sleep well on the flights             |
+| Sport shoes         | In case of lots of walking.           |
+| Tower               | In case don't like the ones on hotels |
+| Travel Kit          |                                       |
+| Eyecontact          |                                       |
+| Women/Girls special |                                       |
+** More Resources
+ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<div style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+TITLE:  CheatSheet: Take Flights For Travel
+#+DESCRIPTION:
+#+KEYWORDS:
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:

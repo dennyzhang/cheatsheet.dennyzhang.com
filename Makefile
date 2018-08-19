@@ -1,4 +1,4 @@
-all:git-push
+all:git-pull
 
 git-pull:
 	git submodule update
