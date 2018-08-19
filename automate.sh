@@ -31,11 +31,13 @@ function git_push() {
             cd ..
         fi
     done
+    git commit -am "update doc"
+    git push origin
+
 }
 
 function refresh_link() {
     echo "refresh link"
-    cd problems
     for f in $(ls -1t */README.org); do
         dirname=$(basename $(dirname $f))
         if ! grep "Blog link: https:\/\/code.dennyzhang.com.*$dirname" $f 1>/dev/null 2>&1; then
