@@ -33,7 +33,6 @@ function git_push() {
     done
     git commit -am "update doc"
     git push origin
-
 }
 
 function refresh_link() {
