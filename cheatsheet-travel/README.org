@@ -7,9 +7,6 @@ Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel-flight, Category: 
 
 #+BEGIN_HTML
 <a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-travel"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
-#+END_HTML
-
-#+BEGIN_HTML
 <div style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
