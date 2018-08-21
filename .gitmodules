@@ -52,3 +52,6 @@
 [submodule "cheatsheet-shell-A4"]
 	path = cheatsheet-shell-A4
 	url = git@github.com:dennyzhang/cheatsheet-shell-A4.git
+[submodule "cheatsheet-find-A4"]
+	path = cheatsheet-find-A4
+	url = git@github.com:dennyzhang/cheatsheet-find-A4.git
