@@ -6,7 +6,7 @@
 Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel-flight, Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
 
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/cheatsheet-tmux-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-travel"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 #+END_HTML
 
 #+BEGIN_HTML
@@ -27,15 +27,18 @@ Checklist before travel by flights
 | Chargers   | cellphones, laptop, etc.                                    |
 | Slippers   | be more comfortable on the plane or hotel                   |
 
-** Optional
-
-| Item                | Summary                               |
-|---------------------+---------------------------------------|
-| Check-in earlier    | Choose seats                          |
+** International Flights
+| Item             | Summary                   |
+|------------------+---------------------------|
+| Check-in earlier | Choose seats              |
+| Earphone         | noisy background on plane |
 | Blanket             | It could cold on the plane            |
-| Earphone            | noisy background on plane             |
 | Pillow              | Sleep well on the flights             |
 | Glass protection    | Sleep well on the flights             |
+
+** Optional
+| Item                | Summary                               |
+|---------------------+---------------------------------------|
 | Sport shoes         | In case of lots of walking.           |
 | Tower               | In case don't like the ones on hotels |
 | Travel Kit          |                                       |

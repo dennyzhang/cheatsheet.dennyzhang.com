@@ -1,12 +1,14 @@
 * CheatSheet
 #+BEGIN_HTML
-<a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
-<a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
-<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+
 <a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 
 <br/><br/>
-
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
@@ -326,7 +328,6 @@ http://macappstore.org/cheatsheet/
 https://gist.github.com/kpearson/9661ea5de9f460fb5e8b
 https://github.com/SebastianBoldt/Homebrew-Cheatsheet
 
-
 * TODO Blog: "apt-get update" stuck                                :noexport:
 Ign http://mirrors.linode.com trusty/universe Translation-en_US
 100% [Connecting to security.ubuntu.com (2001:67c:1560:8001::11)]
@@ -345,3 +346,4 @@ root      7190  7185  0 12:17 ?        00:00:03 chef-solo worker: ppid=7185;star
 root      7347  7190  0 12:17 ?        00:00:00 apt-get update
 root      7430  7383  0 12:26 pts/2    00:00:00 grep --color=auto 7190
 #+END_EXAMPLE
+* TODO support emoji usage                                         :noexport:

@@ -35,6 +35,18 @@ function git_push() {
     git push origin
 }
 
+function git_pull() {
+    for d in $(ls -1); do
+        if [ -d "$d" ]; then
+            cd "$d"
+            echo "In ${d}, git commit and push"
+            git pull origin
+            cd ..
+        fi
+    done
+    git pull origin
+}
+
 function refresh_link() {
     echo "refresh link"
     for f in $(ls -1t */README.org); do
