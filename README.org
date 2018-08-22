@@ -118,7 +118,7 @@ Personally I'm trying to solve all of them in Python. Here is my solution in [[u
 Check it out and discuss with me. [[color:#c7254e][Remember: We Two Is Just One Click Away!]]
 [[github:DennyZhang][Github]]
 More Reading:
-- [[http://brain.dennyzhang.com/category/life/][Category: Life]]
+- [[https://code.dennyzhang.com/category/life/][Category: Life]]
 
 * HALF [[https://github.com/dennyzhang/cheatsheet-emacs-A4/blob/master/code :noexport:
 https://github.com/dennyzhang/cheatsheet-jenkins-groovy-A4/blob/master/
