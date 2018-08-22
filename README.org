@@ -13,7 +13,7 @@
 
 Blog: https://cheatsheet.dennyzhang.com/
 
-File me [[https://github.com/DennyZhang/challenges-leetcode-interesting/issues][Issues]] or star [[https://github.com/DennyZhang/challenges-leetcode-interesting][this repo]].
+File me [[https://github.com/DennyZhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet.dennyzhang.com][this repo]]
 
 See more cheatsheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
@@ -347,4 +347,4 @@ root      7430  7383  0 12:26 pts/2    00:00:00 grep --color=auto 7190
 #+END_EXAMPLE
 * TODO support emoji usage                                         :noexport:
 * TODO generate A4 pdf                                             :noexport:
-* TODO Check other github repo, and improve mine accordingly       :noexport:
+* TODO [#A] Check other github repo, and improve mine accordingly  :noexport:
