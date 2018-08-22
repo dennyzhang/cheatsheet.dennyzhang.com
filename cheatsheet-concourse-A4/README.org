@@ -1,0 +1,122 @@
+* Concourse CheatSheet                                                     :Tools:
+:PROPERTIES:
+:type:     cloudfoundry
+:END:
+
+Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-concourse, Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/cheatsheet-concourse-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
+
+See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+** Basic usage
+
+** Concourse fly
+| Name                    | Summary                                    |
+|-------------------------+--------------------------------------------|
+| fly login               | =fly -t <target> login -c <concourse_url>= |
+| Update pipeline         | =setpipeline.sh <pipeline_name>=           |
+| Get pipeline definition | =fly -t <target> hijack -u <job_url>=      |
+
+** Modules
+| Name           | Summary                      |
+|----------------+------------------------------|
+| Git repo       | =git-resource= [[https://github.com/concourse/git-resource][link]]          |
+| Google Bucket  | =gcs-resource= [[https://github.com/frodenas/gcs-resource][link]]          |
+| Docker image   | =docker-image-resource= [[https://github.com/concourse/docker-image-resource][link]] |
+
+** fly Online Usage
+#+BEGIN_EXAMPLE
+bash-3.2$ fly --help
+error: Usage:
+  fly [OPTIONS] <command>
+
+Application Options:
+  -t, --target=              Concourse target name
+  -v, --version              Print the version of Fly and exit
+      --verbose              Print API requests and responses
+      --print-table-headers  Print table headers even for redirected output
+
+Help Options:
+  -h, --help                 Show this help message
+
+Available commands:
+  abort-build        Abort a build (aliases: ab)
+  builds             List builds data (aliases: bs)
+  check-resource     Check a resource (aliases: cr)
+  checklist          Print a Checkfile of the given pipeline (aliases: cl)
+  containers         Print the active containers (aliases: cs)
+  destroy-pipeline   Destroy a pipeline (aliases: dp)
+  destroy-team       Destroy a team and delete all of its data (aliases: dt)
+  execute            Execute a one-off build using local bits (aliases: e)
+  expose-pipeline    Make a pipeline publicly viewable (aliases: ep)
+  format-pipeline    Format a pipeline config (aliases: fp)
+  get-pipeline       Get a pipeline's current configuration (aliases: gp)
+  help               Print this help message
+  hide-pipeline      Hide a pipeline from the public (aliases: hp)
+  hijack             Execute a command in a container (aliases: intercept, i)
+  jobs               List the jobs in the pipelines (aliases: js)
+  login              Authenticate with the target (aliases: l)
+  logout             Release authentication with the target (aliases: o)
+  order-pipelines    Orders pipelines (aliases: op)
+  pause-job          Pause a job (aliases: pj)
+  pause-pipeline     Pause a pipeline (aliases: pp)
+  pause-resource     Pause a resource (aliases: pr)
+  pipelines          List the configured pipelines (aliases: ps)
+  prune-worker       Prune a stalled, landing, landed, or retiring worker (aliases: pw)
+  rename-pipeline    Rename a pipeline (aliases: rp)
+  rename-team        Rename a team (aliases: rt)
+  set-pipeline       Create or update a pipeline's configuration (aliases: sp)
+  set-team           Create or modify a team to have the given credentials (aliases: st)
+  status             Login status
+  sync               Download and replace the current fly from the target (aliases: s)
+  targets            List saved targets (aliases: ts)
+  teams              List the configured teams (aliases: t)
+  trigger-job        Start a job in a pipeline (aliases: tj)
+  unpause-job        Unpause a job (aliases: uj)
+  unpause-pipeline   Un-pause a pipeline (aliases: up)
+  unpause-resource   Unpause a resource (aliases: ur)
+  validate-pipeline  Validate a pipeline config (aliases: vp)
+  volumes            List the active volumes (aliases: vs)
+  watch              Stream a build's output (aliases: w)
+  workers            List the registered workers (aliases: ws)
+#+END_EXAMPLE
+
+** More Resources
+
+http://www.mikeball.info/blog/concourse-git-resource/
+
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+
+<a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+<a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
