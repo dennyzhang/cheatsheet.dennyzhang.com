@@ -6,7 +6,7 @@
 Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-concourse, Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/cheatsheet-concourse-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
@@ -30,11 +30,11 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Get pipeline definition | =fly -t <target> hijack -u <job_url>=      |
 
 ** Modules
-| Name           | Summary                      |
-|----------------+------------------------------|
-| Git repo       | =git-resource= [[https://github.com/concourse/git-resource][link]]          |
-| Google Bucket  | =gcs-resource= [[https://github.com/frodenas/gcs-resource][link]]          |
-| Docker image   | =docker-image-resource= [[https://github.com/concourse/docker-image-resource][link]] |
+| Name          | Summary                                      |
+|---------------+----------------------------------------------|
+| Git repo      | =git-resource= example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]] [[https://github.com/concourse/git-resource][link]] |
+| Google Bucket | =gcs-resource= [[https://github.com/frodenas/gcs-resource][link]]                          |
+| Docker image  | =docker-image-resource= [[https://github.com/concourse/docker-image-resource][link]]                 |
 
 ** fly Online Usage
 #+BEGIN_EXAMPLE
