@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -e
 function my_test() {
    for f in $(find . -name README.org); do
         dirname=$(basename $(dirname $f))
