@@ -73,7 +73,5 @@ function refresh_link() {
     done
 }
 
-cd .
-
 action=${1?}
 eval "$action"
