@@ -23,7 +23,7 @@ function refresh_wordpress() {
 
 function git_push() {
     for d in $(ls -1); do
-        if [ -d "$d" ]; then
+        if [ -d "$d" ] && [ -d "$d/.git" ] ; then
             cd "$d"
             echo "In ${d}, git commit and push"
             git commit -am "update doc"
@@ -37,7 +37,7 @@ function git_push() {
 
 function git_pull() {
     for d in $(ls -1); do
-        if [ -d "$d" ]; then
+        if [ -d "$d" ] && [ -d "$d/.git" ] ; then
             cd "$d"
             echo "In ${d}, git commit and push"
             git pull origin
