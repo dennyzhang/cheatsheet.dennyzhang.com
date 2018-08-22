@@ -29,12 +29,21 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Update pipeline         | =setpipeline.sh <pipeline_name>=           |
 | Get pipeline definition | =fly -t <target> hijack -u <job_url>=      |
 
+Links:
+https://concourse-ci.org/fly.html
+
 ** Modules
 | Name          | Summary                                      |
 |---------------+----------------------------------------------|
-| Git repo      | =git-resource= example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]] [[https://github.com/concourse/git-resource][link]] |
-| Google Bucket | =gcs-resource= [[https://github.com/frodenas/gcs-resource][link]]                          |
-| Docker image  | =docker-image-resource= [[https://github.com/concourse/docker-image-resource][link]]                 |
+| Git repo      | =git-resource= example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]] 
+| Google Bucket | =gcs-resource=
+| Docker image  | =docker-image-resource=                      |
+
+Links:
+
+https://github.com/concourse/docker-image-resource
+https://github.com/frodenas/gcs-resource
+https://github.com/concourse/git-resource
 
 ** fly Online Usage
 #+BEGIN_EXAMPLE
@@ -120,3 +129,4 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
+* TODO collect more concourse example                              :noexport:

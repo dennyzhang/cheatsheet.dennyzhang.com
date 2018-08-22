@@ -323,6 +323,7 @@ tcpdump: listening on any, link-type LINUX_SLL (Linux cooked), capture size 6553
 12:39:46.846869 IP (tos 0x0, ttl 64, id 17861, offset 0, flags [DF], proto ICMP (1), length 84)
 #+end_example
 
+* TODO cheatsheet link css is not visible enough: https://cheatsheet.dennyzhang.com/cheatsheet-concourse :noexport:
 * TODO opensource improvement: apt cheatsheet                      :noexport:
 http://sai628.com/2017-02-27-homebrew-cheatsheet.html
 https://www.anintegratedworld.com/neat-little-brew-cheat-sheet/
