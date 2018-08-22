@@ -22,6 +22,7 @@ function refresh_wordpress() {
 }
 
 function git_push() {
+    set -x
     for d in $(ls -1); do
         if [ -d "$d" ] && [ -d "$d/.git" ] ; then
             cd "$d"
