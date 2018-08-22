@@ -347,3 +347,4 @@ root      7430  7383  0 12:26 pts/2    00:00:00 grep --color=auto 7190
 #+END_EXAMPLE
 * TODO support emoji usage                                         :noexport:
 * TODO generate A4 pdf                                             :noexport:
+* TODO Check other github repo, and improve mine accordingly       :noexport:
