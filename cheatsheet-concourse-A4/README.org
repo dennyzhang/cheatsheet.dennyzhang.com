@@ -20,8 +20,14 @@ Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-concourse, Category: [[ht
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
-** Basic usage
+** Concepts
+| Name     | Summary |
+|----------+---------|
+| Behavior |         |
 
+Links:
+
+https://concourse-ci.org/concepts.html
 ** Concourse fly
 | Name                    | Summary                                    |
 |-------------------------+--------------------------------------------|
@@ -30,6 +36,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Get pipeline definition | =fly -t <target> hijack -u <job_url>=      |
 
 Links:
+
 https://concourse-ci.org/fly.html
 
 ** Modules
@@ -42,7 +49,9 @@ https://concourse-ci.org/fly.html
 Links:
 
 https://github.com/concourse/docker-image-resource
+
 https://github.com/frodenas/gcs-resource
+
 https://github.com/concourse/git-resource
 
 ** fly Online Usage

@@ -123,8 +123,8 @@ More Reading:
 * HALF [[https://github.com/dennyzhang/cheatsheet-emacs-A4/blob/master/code :noexport:
 https://github.com/dennyzhang/cheatsheet-jenkins-groovy-A4/blob/master/
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO move https://cheatsheet.dennyzhang.com/cheatsheet-concourse to github repo :noexport:
-* TODO update cheatsheet images
+* HALF move https://cheatsheet.dennyzhang.com/cheatsheet-concourse to github repo :noexport:
+* HALF move https://cheatsheet.dennyzhang.com/cheatsheet-pack to github repo :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] cheatsheet.dennyzhang.com                              :noexport:
 ** TODO align icon horizontally in blog: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
@@ -196,6 +196,7 @@ https://www.mediaatelier.com/CheatSheet/
 ** Discussion
 *** TODO make the font bigger
 * TODO update emacs and uaac icon: https://cheatsheet.dennyzhang.com/category/languages :noexport:
+* TODO update cheatsheet images
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Blog: Tcpdump                                          :noexport:
 | Item                                                                        | Comment                                                                         |
@@ -354,3 +355,5 @@ root      7430  7383  0 12:26 pts/2    00:00:00 grep --color=auto 7190
 * TODO generate A4 pdf                                             :noexport:
 * TODO [#A] Check other github repo, and improve mine accordingly  :noexport:
 * TODO emacs wordpress block width: https://cheatsheet.dennyzhang.com/cheatsheet-concourse :noexport:
+It's different from this:
+https://cheatsheet.dennyzhang.com/cheatsheet-find

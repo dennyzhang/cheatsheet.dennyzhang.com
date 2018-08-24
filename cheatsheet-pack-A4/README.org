@@ -1,0 +1,81 @@
+* Pack CheatSheet                                                     :Tools:
+:PROPERTIES:
+:type:     tar
+:END:
+
+Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-pack, Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-pack-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
+
+A Cheat Sheet to deal with all popular archive format. Such as *.tar, *.zip, *.gz, *.bz2, *.7z, etc.
+
+See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+** Decompress
+| Name         | Summary                                      |
+|--------------+----------------------------------------------|
+| Unpack *.tar | =tar -xvf ./file.tar=                        |
+| Unpack *.rar | =unrar e ./file.rar=                         |
+| Unpack *.zip | =unzip ./file.zip=                           |
+| Unpack *.gz  | =gunzip ./file.gz; gzip -d file.gz=          |
+| Unpack *.bz2 | =tar -jxvf file.tar.bz2 -C /tmp/extract_here/= |
+| Unpack *.7z  | =7z e ./file.7z= install p7zip first |
+| Unpack *.xz  | =tar -xf ./file.tar.xz=                      |
+| Unpack *.jar | =jar -xvf ./file.jar=                        |
+| Unpack *.war | =jar -xvf ./file.war=                        |
+** Compress Common Format
+| Name          | Command                                        |
+|---------------+------------------------------------------------|
+| Pack to *.tar | =tar -cvf ./file.tar <dir_to_compress>=        |
+| Pack to *.gz  | =tar -zcvf ./newfile.tar.gz <dir_to_compress>= |
+| Pack to *.bz2 | =tar -cvf ./file.tar.bz2 <dir_to_compress>=    |
+| Pack to *.zip | =zip -r ./file.zip <dir_to_compress>=          |
+** Advanced Compress
+| Name              | Command                                                |
+|-------------------+--------------------------------------------------------|
+| Pack with exclude | =tar --exclude "*.git*" -cvf file.tar <dir_to_compress>= |
+** Misc
+| Name                                     | Command                              |
+|------------------------------------------+--------------------------------------|
+| Remove a single file from tarball        | =tar --delete -f file.tar file1.txt= |
+| Add file to tarball. -r indicates append | =tar -rf file.tar file1.txt=         |
+
+** More Resources
+
+http://www.simplehelp.net/2008/12/15/how-to-create-and-extract-zip-tar-targz-and-tarbz2-files-in-linux
+
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+
+<a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+<a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
+* TODO gzip commands                                               :noexport:
