@@ -195,7 +195,7 @@ https://www.mediaatelier.com/CheatSheet/
 ** Discussion
 *** TODO make the font bigger
 * TODO update emacs and uaac icon: https://cheatsheet.dennyzhang.com/category/languages :noexport:
-* TODO update cheatsheet images
+* TODO update cheatsheet images                                    :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Blog: Tcpdump                                          :noexport:
 | Item                                                                        | Comment                                                                         |
