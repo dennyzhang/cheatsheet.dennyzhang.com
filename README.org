@@ -34,7 +34,6 @@ See more cheatsheets from Denny: [[https://github.com/topics/denny-cheatsheets][
  #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone hidestars
-#+TITLE:  Denny CheatSheets
 #+DESCRIPTION: 
 #+KEYWORDS: 
 #+AUTHOR: Denny Zhang
@@ -325,14 +324,6 @@ tcpdump: listening on any, link-type LINUX_SLL (Linux cooked), capture size 6553
 #+end_example
 
 * TODO cheatsheet link css is not visible enough: https://cheatsheet.dennyzhang.com/cheatsheet-concourse :noexport:
-* TODO opensource improvement: apt cheatsheet                      :noexport:
-http://sai628.com/2017-02-27-homebrew-cheatsheet.html
-https://www.anintegratedworld.com/neat-little-brew-cheat-sheet/
-https://joshbuchea.com/homebrew-cheatsheet/
-http://macappstore.org/cheatsheet/
-https://gist.github.com/kpearson/9661ea5de9f460fb5e8b
-https://github.com/SebastianBoldt/Homebrew-Cheatsheet
-
 * TODO Blog: "apt-get update" stuck                                :noexport:
 Ign http://mirrors.linode.com trusty/universe Translation-en_US
 100% [Connecting to security.ubuntu.com (2001:67c:1560:8001::11)]
@@ -351,9 +342,18 @@ root      7190  7185  0 12:17 ?        00:00:03 chef-solo worker: ppid=7185;star
 root      7347  7190  0 12:17 ?        00:00:00 apt-get update
 root      7430  7383  0 12:26 pts/2    00:00:00 grep --color=auto 7190
 #+END_EXAMPLE
-* TODO support emoji usage                                         :noexport:
-* TODO generate A4 pdf                                             :noexport:
+* TODO generate A4 pdf: https://github.com/PrateekKumarSingh/CheatSheets :noexport:
 * TODO [#A] Check other github repo, and improve mine accordingly  :noexport:
 * TODO emacs wordpress block width: https://cheatsheet.dennyzhang.com/cheatsheet-concourse :noexport:
 It's different from this:
 https://cheatsheet.dennyzhang.com/cheatsheet-find
+* TODO improve jq cheatsheet                                       :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO support emoji usage                                         :noexport:
+* TODO opensource improvement: apt cheatsheet                      :noexport:
+http://sai628.com/2017-02-27-homebrew-cheatsheet.html
+https://www.anintegratedworld.com/neat-little-brew-cheat-sheet/
+https://joshbuchea.com/homebrew-cheatsheet/
+http://macappstore.org/cheatsheet/
+https://gist.github.com/kpearson/9661ea5de9f460fb5e8b
+https://github.com/SebastianBoldt/Homebrew-Cheatsheet

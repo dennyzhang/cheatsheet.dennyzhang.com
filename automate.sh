@@ -22,6 +22,8 @@ function refresh_wordpress() {
 }
 
 function git_push() {
+    git commit -am "update doc"
+    git push origin
     for d in $(ls -1); do
         if [ -d "$d" ] && [ -f "$d/.git" ] ; then
             cd "$d"
@@ -31,8 +33,6 @@ function git_push() {
             cd ..
         fi
     done
-    git commit -am "update doc"
-    git push origin
 }
 
 function git_pull() {

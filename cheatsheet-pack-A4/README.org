@@ -50,7 +50,6 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 |------------------------------------------+--------------------------------------|
 | Remove a single file from tarball        | =tar --delete -f file.tar file1.txt= |
 | Add file to tarball. -r indicates append | =tar -rf file.tar file1.txt=         |
-
 ** More Resources
 
 http://www.simplehelp.net/2008/12/15/how-to-create-and-extract-zip-tar-targz-and-tarbz2-files-in-linux
@@ -78,4 +77,8 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
-* TODO gzip commands                                               :noexport:
+* TODO pack & unpack problems
+** TODO gzip commands                                              :noexport:
+** TODO How to Convert TAR to TGZ
+ https://smallbusiness.chron.com/convert-tar-tgz-46204.html
+

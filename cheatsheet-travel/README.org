@@ -53,7 +53,6 @@ Checklist before travel by flights
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
-#+TITLE:  CheatSheet: Take Flights For Travel
 #+DESCRIPTION:
 #+KEYWORDS:
 #+AUTHOR: Denny Zhang
