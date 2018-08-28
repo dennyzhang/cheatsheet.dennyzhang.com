@@ -26,6 +26,7 @@ function git_pull() {
         if [ -d "$d" ] && [ -f "$d/.git" ] ; then
             cd "$d"
             echo "In ${d}, git commit and push"
+            git checkout master
             git pull origin master
             cd ..
         fi
