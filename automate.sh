@@ -11,8 +11,9 @@ function my_test() {
 }
 
 function refresh_wordpress() {
+    local max_days=${MAX_DAYS:-"7"}
     echo "Use emacs to update README.ord"
-    for f in $(ls -1t */README.org); do
+    for f in $(find * -name 'README.org' -mtime -${max_days} | grep -v '^README.org$'); do
         echo "Update $f"
         dirname=$(basename $(dirname $f))
         cd $dirname
@@ -26,7 +27,6 @@ function git_pull() {
         if [ -d "$d" ] && [ -f "$d/.git" ] ; then
             cd "$d"
             echo "In ${d}, git commit and push"
-            git checkout master
             git pull origin master
             cd ..
         fi
@@ -35,8 +35,6 @@ function git_pull() {
 }
 
 function git_push() {
-    git commit -am "update doc"
-    git push origin
     for d in $(ls -1); do
         if [ -d "$d" ] && [ -f "$d/.git" ] ; then
             cd "$d"
@@ -46,6 +44,8 @@ function git_push() {
             cd ..
         fi
     done
+    git commit -am "update doc"
+    git push origin
 }
 
 function refresh_link() {

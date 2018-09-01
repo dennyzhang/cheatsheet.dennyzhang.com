@@ -100,6 +100,8 @@ Cheers!
 | Cheatsheet for best practices | https://cheatsheet.dennyzhang.com |
 | Examine skills in a hard way  | https://quiz.dennyzhang.com       |
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Role Models & Similar Websites                              :noexport:
+http://cheatsheetworld.com/
 * GitHub Repo Sharing: cheatsheet.dennyzhang.com                   :BLOG:Life:
 :PROPERTIES:
 :type:     Life, Ads, Popular
@@ -357,3 +359,7 @@ https://joshbuchea.com/homebrew-cheatsheet/
 http://macappstore.org/cheatsheet/
 https://gist.github.com/kpearson/9661ea5de9f460fb5e8b
 https://github.com/SebastianBoldt/Homebrew-Cheatsheet
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
+* TODO ssl certificate warning: https://cheatsheet.dennyzhang.com/cheatsheet-emacs :noexport:
+* TODO image issue: https://cheatsheet.dennyzhang.com/category/life

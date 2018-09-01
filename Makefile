@@ -9,6 +9,9 @@ git-push:
 refresh-wordpress:
 	bash automate.sh refresh_wordpress
 
+refresh-wordpress-all:
+	MAX_DAYS=730 bash automate.sh refresh_wordpress
+
 refresh-link:
 	bash automate.sh refresh_link
 
