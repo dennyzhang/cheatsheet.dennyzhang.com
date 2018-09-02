@@ -363,3 +363,31 @@ https://github.com/SebastianBoldt/Homebrew-Cheatsheet
 * TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
 * TODO ssl certificate warning: https://cheatsheet.dennyzhang.com/cheatsheet-emacs :noexport:
 * TODO image issue: https://cheatsheet.dennyzhang.com/category/life
+* HALF Implement Common Data Structures But Missing In Golang :noexport:Language:
+:PROPERTIES:
+:type: golang, language
+:END:
+---------------------------------------------------------------------
+Golang is hot. But if you're from 
+
+Here are things I [[color:#c7254e][like and dislike]].
+
+Check it out. And share your experience or feedback with me.
+
+[[image-blog:My Common Python Coding Mistakes][https://raw.githubusercontent.com/DennyZhang/images/master/blog/python_logo.jpg]]
+---------------------------------------------------------------------
+Related Resources In GitHub from Denny:
+
+[[url-external:https://github.com/dennyzhang/cheatsheet-golang-A4][cheatsheet-golang-A4]]
+[[url-external:https://github.com/dennyzhang/cheatsheet-python-A4][cheatsheet-python-A4]]
+[[github:DennyZhang][Github]]
+** BFS vs DFS
+https://code.dennyzhang.com/keys-and-rooms
+** TrieTree
+** Set
+** Reverse A list
+** github repo
+---------------------------------------------------------------------
+Related Reading:
+
+[display-posts tag="language" posts_per_page="100" orderby="title"]
