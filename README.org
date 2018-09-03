@@ -396,7 +396,8 @@ Related Reading:
 * TODO [#A] Generate cheatsheet PDF A4                             :noexport:
 ** DONE Change backup filename: README.pdf
    CLOSED: [2018-09-03 Mon 16:33]
-** TODO Add latex html support: mute the html block
+** HALF Add latex html support: mute the html block
+** TODO Update link script
 ** TODO [#A] Line too long: line wrap, without truncation
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** TODO Generate version for the pdf
