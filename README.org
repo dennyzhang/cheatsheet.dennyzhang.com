@@ -391,3 +391,37 @@ https://code.dennyzhang.com/keys-and-rooms
 Related Reading:
 
 [display-posts tag="language" posts_per_page="100" orderby="title"]
+* TODO role model: https://github.com/liorvh/Cheatsheets-1         :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Generate cheatsheet PDF A4                             :noexport:
+** DONE Change backup filename: README.pdf
+   CLOSED: [2018-09-03 Mon 16:33]
+** TODO Add latex html support: mute the html block
+** TODO [#A] Line too long: line wrap, without truncation
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO Generate version for the pdf
+** TODO Add author info
+** Add link color
+** Add url domain icon to the pdf
+** [#A] latex template
+https://www.overleaf.com/gallery/tagged/cheat-sheet#.W42wnJNKjMU
+https://wch.github.io/latexsheet/
+https://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
+** Add site url, version, logo
+** error message
+/bin/bash: pdflatex: command not found
+#+BEGIN_EXAMPLE
+Debugger entered--Lisp error: (error "File \"/Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4/README.pdf\" wasn’t produced.  See \"*Org PDF LaTeX Output*\" for details")
+  signal(error ("File \"/Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4/README.pdf\" wasn’t produced.  See \"*Org PDF LaTeX Output*\" for details"))
+  error("File \"/Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4/README.pdf\" wasn't produced.  See \"*Org PDF LaTeX Output*\" for details")
+  org-compile-file("README.tex" ("%L -interaction nonstopmode -output-directory %o %f" "%L -interaction nonstopmode -output-directory %o %f" "%L -interaction nonstopmode -output-directory %o %f") "pdf" "See \"*Org PDF LaTeX Output*\" for details" #<buffer *Org PDF LaTeX Output*> ((66 . "bibtex") (76 . "pdflatex")))
+  org-latex-compile("README.tex")
+  #f(compiled-function (file) #<bytecode 0x4149e2f9>)("README.tex")
+  org-export-to-file(latex "README.tex" nil nil nil nil nil #f(compiled-function (file) #<bytecode 0x4149e2f9>))
+  org-latex-export-to-pdf(nil nil nil nil)
+  org-export-dispatch(nil)
+  funcall-interactively(org-export-dispatch nil)
+  call-interactively(org-export-dispatch nil nil)
+  command-execute(org-export-dispatch)
+#+END_EXAMPLE
+

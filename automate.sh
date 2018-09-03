@@ -12,12 +12,24 @@ function my_test() {
 
 function refresh_wordpress() {
     local max_days=${MAX_DAYS:-"7"}
-    echo "Use emacs to update README.ord"
+    echo "Use emacs to update wordpress posts"
     for f in $(find * -name 'README.org' -mtime -${max_days} | grep -v '^README.org$'); do
         echo "Update $f"
         dirname=$(basename $(dirname $f))
         cd $dirname
         /Applications/Emacs.app/Contents/MacOS/Emacs-x86_64-10_10 --batch -l ../emacs-update.el
+        cd ..
+    done
+}
+
+function refresh_cheatsheet() {
+    local max_days=${MAX_DAYS:-"7"}
+    echo "Use emacs to update cheatsheet pdf"
+    for f in $(find * -name 'README.org' -mtime -${max_days} | grep -v '^README.org$'); do
+        echo "Update $f"
+        dirname=$(basename $(dirname $f))
+        cd $dirname
+        /Applications/Emacs.app/Contents/MacOS/Emacs-x86_64-10_10 --batch -l ../emacs-update-cheatsheet.el
         cd ..
     done
 }
