@@ -397,7 +397,7 @@ Related Reading:
 ** DONE Change backup filename: README.pdf
    CLOSED: [2018-09-03 Mon 16:33]
 ** HALF Add latex html support: mute the html block
-** TODO Update link script
+** TODO Update link script: pdf, and export_file_name
 ** TODO [#A] Line too long: line wrap, without truncation
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** TODO Generate version for the pdf

@@ -1,9 +1,8 @@
 * Pack CheatSheet                                                     :Tools:
 :PROPERTIES:
 :type:     tar
+:export_file_name: cheatsheet-pack-A4.pdf
 :END:
-
-Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-pack, Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 
 #+BEGIN_HTML
 <a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-pack-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
@@ -16,6 +15,10 @@ Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-pack, Category: [[https:/
 <br/><br/>
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet-pack-A4/blob/master/cheatsheet-pack-A4.pdf][cheatsheet-pack-A4.pdf]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-pack
+- Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
 

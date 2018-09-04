@@ -1,9 +1,8 @@
 * CheatSheet: Take Flights For Travel                                                   :Life:
 :PROPERTIES:
 :type:     travel
+:export_file_name: cheatsheet-travel.pdf
 :END:
-
-Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel-flight, Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
 
 #+BEGIN_HTML
 <a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-travel"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
@@ -13,6 +12,10 @@ Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel-flight, Category: 
 <div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
 </div>
 #+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet-travel/blob/master/cheatsheet-travel.pdf][cheatsheet-travel.pdf]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel-flight
+- Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
 
 Checklist before travel by flights
 ** Mandatory

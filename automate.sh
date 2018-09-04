@@ -64,25 +64,29 @@ function refresh_link() {
     echo "refresh link"
     for f in $(ls -1t */README.org); do
         dirname=$(basename $(dirname $f))
-        if ! grep "Blog link: https:\/\/code.dennyzhang.com.*$dirname" $f 1>/dev/null 2>&1; then
-            echo "Update blog url for $f"
-            sed -ie "s/Blog link: https:\/\/code.dennyzhang.com\/.*/Blog link: https:\/\/code.dennyzhang.com\/$dirname/g" $f
+        if ! grep ":export_file_name: $dirname.pdf" $f 1>/dev/null 2>&1; then
+            sed -ie "s/\:export_file_name\:.*/\:export_file_name\: $dirname.pdf/g" "$f"
+            rm -rf $dirname/README.orge            
+        fi
+
+        if ! grep "PDF Link: \\[\\[https:\\/\\/github.com/dennyzhang/.*$dirname.pdf" $f 1>/dev/null 2>&1; then
+            echo "Update pdf url for $f"
+            sed -ie "s/PDF Link: .*/PDF Link: \\[\\[https:\\/\\/github.com\\/dennyzhang\\/${dirname}\\/blob\\/master\\/${dirname}.pdf\\]\\[$dirname.pdf\\]\\]/g" "$f"
             rm -rf $dirname/README.orge
         fi
 
-        if ! grep "tree\/master.*$dirname" $f 1>/dev/null 2>&1; then
-            echo "Update GitHub url for $f"
-            sed -ie "s/tree\/master\/.*/tree\/master\/$dirname][challenges-leetcode-interesting]]/g" $f
-            rm -rf $dirname/README.orge
-        fi
-
-        if ! grep -i lintcode.com $f 1>/dev/null 2>&1; then
-            if ! grep "leetcode.com.*$dirname" $f 1>/dev/null 2>&1; then
-                echo "Update Leetcode url for $f"            
-                sed -ie "s/https:\/\/leetcode.com\/problems\/.*/https:\/\/leetcode.com\/problems\/$dirname\/description\/][leetcode.com]]/g" $f
-                rm -rf $dirname/README.orge
-            fi
-        fi
+##         if ! grep "Blog link: https:\/\/code.dennyzhang.com.*$dirname" $f 1>/dev/null 2>&1; then
+##             echo "Update blog url for $f"
+##             sed -ie "s/Blog link: https:\/\/code.dennyzhang.com\/.*/Blog link: https:\/\/code.dennyzhang.com\/$dirname/g" $f
+##             rm -rf $dirname/README.orge
+##         fi
+## 
+##         if ! grep "tree\/master.*$dirname" $f 1>/dev/null 2>&1; then
+##             echo "Update GitHub url for $f"
+##             sed -ie "s/tree\/master\/.*/tree\/master\/$dirname][challenges-leetcode-interesting]]/g" $f
+##             rm -rf $dirname/README.orge
+##         fi
+##
     done
 }
 
