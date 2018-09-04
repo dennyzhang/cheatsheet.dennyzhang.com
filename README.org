@@ -394,22 +394,21 @@ Related Reading:
 * TODO role model: https://github.com/liorvh/Cheatsheets-1         :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Generate cheatsheet PDF A4                             :noexport:
-** DONE Change backup filename: README.pdf
-   CLOSED: [2018-09-03 Mon 16:33]
-** HALF Add latex html support: mute the html block
-** TODO Update link script: pdf, and export_file_name
 ** TODO [#A] Line too long: line wrap, without truncation
+** Add site url, version, logo
+** TODO Change font size to smaller
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** TODO Generate version for the pdf
+** Make the page wider: https://github.com/dennyzhang/cheatsheet-bosh-A4/blob/master/cheatsheet-bosh-A4.pdf
 ** TODO Add author info
 ** Add link color
 ** Add url domain icon to the pdf
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** [#A] latex template
 https://www.overleaf.com/gallery/tagged/cheat-sheet#.W42wnJNKjMU
 https://wch.github.io/latexsheet/
 https://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
-** Add site url, version, logo
-** error message
+** DONE error message: need to install pdflatex
+   CLOSED: [2018-09-03 Mon 17:36]
 /bin/bash: pdflatex: command not found
 #+BEGIN_EXAMPLE
 Debugger entered--Lisp error: (error "File \"/Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4/README.pdf\" wasn’t produced.  See \"*Org PDF LaTeX Output*\" for details")
@@ -425,4 +424,12 @@ Debugger entered--Lisp error: (error "File \"/Users/zdenny/Dropbox/git_code/chea
   call-interactively(org-export-dispatch nil nil)
   command-execute(org-export-dispatch)
 #+END_EXAMPLE
+
+** DONE
+*** DONE Change backup filename: README.pdf
+    CLOSED: [2018-09-03 Mon 16:33]
+*** DONE Add latex html support: mute the html block
+    CLOSED: [2018-09-03 Mon 17:35]
+*** DONE Update link script: pdf, and export_file_name
+    CLOSED: [2018-09-03 Mon 17:35]
 
