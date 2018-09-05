@@ -349,9 +349,8 @@ root      7430  7383  0 12:26 pts/2    00:00:00 grep --color=auto 7190
 * TODO emacs wordpress block width: https://cheatsheet.dennyzhang.com/cheatsheet-concourse :noexport:
 It's different from this:
 https://cheatsheet.dennyzhang.com/cheatsheet-find
-* TODO improve jq cheatsheet                                       :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO support emoji usage                                         :noexport:
+* TODO improve jq cheatsheet                                       :noexport:
 * TODO opensource improvement: apt cheatsheet                      :noexport:
 http://sai628.com/2017-02-27-homebrew-cheatsheet.html
 https://www.anintegratedworld.com/neat-little-brew-cheat-sheet/
@@ -391,9 +390,12 @@ https://code.dennyzhang.com/keys-and-rooms
 Related Reading:
 
 [display-posts tag="language" posts_per_page="100" orderby="title"]
-* TODO why no tag is generated now: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
-* TODO role model: https://github.com/liorvh/Cheatsheets-1         :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO role model: https://github.com/liorvh/Cheatsheets-1         :noexport:
+* TODO Create symol link: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO support emoji usage                                         :noexport:
+* TODO why no tag is generated now: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
 * TODO [#A] Generate cheatsheet PDF A4                             :noexport:
 ** TODO [#A] Line too long: line wrap, without truncation
 ** Add site url, version, logo
