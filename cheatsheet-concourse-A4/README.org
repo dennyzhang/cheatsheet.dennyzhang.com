@@ -17,7 +17,7 @@
 #+END_HTML
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet-concourse-A4/blob/master/cheatsheet-concourse-A4.pdf][cheatsheet-concourse-A4.pdf]]
-- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-concourse
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4
 - Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
@@ -131,6 +131,17 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+STARTUP: overview customtime noalign logdone showall
 #+DESCRIPTION: 
 #+KEYWORDS: 
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-concourse-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-concourse-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)

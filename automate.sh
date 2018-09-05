@@ -1,5 +1,5 @@
 #!/bin/bash -e
-function my_test() {
+function my_test {
    for f in $(find . -name README.org); do
         dirname=$(basename $(dirname $f))
         echo "Update for $f"
@@ -10,7 +10,7 @@ function my_test() {
    done
 }
 
-function refresh_wordpress() {
+function refresh_wordpress {
     local max_days=${MAX_DAYS:-"7"}
     echo "Use emacs to update wordpress posts"
     for f in $(find * -name 'README.org' -mtime -${max_days} | grep -v '^README.org$'); do
@@ -22,7 +22,7 @@ function refresh_wordpress() {
     done
 }
 
-function refresh_cheatsheet() {
+function refresh_cheatsheet {
     local max_days=${MAX_DAYS:-"7"}
     echo "Use emacs to update cheatsheet pdf"
     for f in $(find * -name 'README.org' -mtime -${max_days} | grep -v '^README.org$'); do
@@ -34,7 +34,7 @@ function refresh_cheatsheet() {
     done
 }
 
-function git_pull() {
+function git_pull {
     for d in $(ls -1); do
         if [ -d "$d" ] && [ -f "$d/.git" ] ; then
             cd "$d"
@@ -46,7 +46,7 @@ function git_pull() {
     git pull origin
 }
 
-function git_push() {
+function git_push {
     for d in $(ls -1); do
         if [ -d "$d" ] && [ -f "$d/.git" ] ; then
             cd "$d"
@@ -60,10 +60,29 @@ function git_push() {
     git push origin
 }
 
-function refresh_link() {
+function refresh_link {
     echo "refresh link"
     for f in $(ls -1t */README.org); do
         dirname=$(basename $(dirname $f))
+         if ! grep "\- Blog URL: https:\/\/cheatsheet.dennyzhang.com\/$dirname" $f 1>/dev/null 2>&1; then
+             echo "Update blog url for $f"
+             sed -ie "s/- Blog URL: https:\/\/cheatsheet.dennyzhang.com\/.*/- Blog URL: https:\/\/cheatsheet.dennyzhang.com\/$dirname/g" $f
+             rm -rf $dirname/README.orge
+         fi
+
+         if ! grep "LATEX_HEADER: \\\\lfoot.*$dirname" $f 1>/dev/null 2>&1; then
+            echo "Update latex blog url for $f"
+            sed -ie "s/LATEX_HEADER: \\\\lfoot.*/LATEX_HEADER: \\\\lfoot{\\\\href{https:\\/\\/github.com\\/dennyzhang\\/$dirname}{GitHub: https:\\/\\/github.com\\/dennyzhang\\/$dirname}}/g" "$f"
+            sed -ie "s/LATEX_HEADER: \\\\lhead.*/LATEX_HEADER: \\\\lhead{\\\\href{https:\\/\\/cheatsheet.dennyzhang.com\\/$dirname}{Blog URL: https:\\/\\/cheatsheet.dennyzhang.com\\/$dirname}}/g" "$f"
+            rm -rf $dirname/README.orge
+        fi
+
+        if ! grep "PDF Link: \\[\\[https:\\/\\/github.com/dennyzhang/.*$dirname.pdf" $f 1>/dev/null 2>&1; then
+            echo "Update latex github url for $f"
+            sed -ie "s/PDF Link: .*/PDF Link: \\[\\[https:\\/\\/github.com\\/dennyzhang\\/${dirname}\\/blob\\/master\\/${dirname}.pdf\\]\\[$dirname.pdf\\]\\]/g" "$f"
+            rm -rf $dirname/README.orge
+        fi
+
         if ! grep ":export_file_name: $dirname.pdf" $f 1>/dev/null 2>&1; then
             sed -ie "s/\:export_file_name\:.*/\:export_file_name\: $dirname.pdf/g" "$f"
             rm -rf $dirname/README.orge            
@@ -75,11 +94,6 @@ function refresh_link() {
             rm -rf $dirname/README.orge
         fi
 
-##         if ! grep "Blog link: https:\/\/code.dennyzhang.com.*$dirname" $f 1>/dev/null 2>&1; then
-##             echo "Update blog url for $f"
-##             sed -ie "s/Blog link: https:\/\/code.dennyzhang.com\/.*/Blog link: https:\/\/code.dennyzhang.com\/$dirname/g" $f
-##             rm -rf $dirname/README.orge
-##         fi
 ## 
 ##         if ! grep "tree\/master.*$dirname" $f 1>/dev/null 2>&1; then
 ##             echo "Update GitHub url for $f"

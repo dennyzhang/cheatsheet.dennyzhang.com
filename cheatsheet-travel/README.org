@@ -14,7 +14,7 @@
 #+END_HTML
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet-travel/blob/master/cheatsheet-travel.pdf][cheatsheet-travel.pdf]]
-- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel-flight
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel
 - Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
 
 Checklist before travel by flights
@@ -58,6 +58,17 @@ Checklist before travel by flights
 #+STARTUP: overview customtime noalign logdone showall
 #+DESCRIPTION:
 #+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-travel}{GitHub: https://github.com/dennyzhang/cheatsheet-travel}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-travel}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)
