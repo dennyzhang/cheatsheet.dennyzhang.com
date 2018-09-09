@@ -391,7 +391,25 @@ Related Reading:
 
 [display-posts tag="language" posts_per_page="100" orderby="title"]
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO role model: https://github.com/liorvh/Cheatsheets-1         :noexport:
+* TODO [#A] Role model                                             :noexport:
+** [#A] https://github.com/rstacruz/cheatsheets
+** python: https://github.com/crazyguitar/pysheeet
+** python: https://github.com/trekhleb/learn-python
+** ai: https://github.com/kailashahirwar/cheatsheets-ai
+** golang: https://github.com/a8m/go-lang-cheat-sheet
+** mindmap: https://github.com/dformoso/machine-learning-mindmap
+** reactjs: https://github.com/vhpoet/react-native-styling-cheat-sheet
+** git: https://github.com/arslanbilal/git-cheat-sheet
+** angularjs: https://github.com/mgechev/angular-performance-checklist
+** https://github.com/LeCoupa/awesome-cheatsheets
+** javascript: https://github.com/mbeaudru/modern-js-cheatsheet
+** https://github.com/liorvh/Cheatsheets-1         :noexport:
+** good interactive way: https://cheat.sh/cd
+https://github.com/chubin/cheat.sh
+** emoji: https://www.webfx.com/tools/emoji-cheat-sheet/
+https://github.com/WebpageFX/emoji-cheat-sheet.com
+** aggregation: https://github.com/remigiusz-suwalski/programming-cheatsheets
+** TODO Role model: good latex/pdf: https://github.com/rstudio/cheatsheets
 * TODO Create symol link: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO support emoji usage                                         :noexport:
@@ -440,3 +458,15 @@ http://www.shoutmeloud.com/101-ways-to-get-quality-backlinks-to-your-blog.html
     CLOSED: [2018-09-03 Mon 17:35]
 *** DONE Update link script: pdf, and export_file_name
     CLOSED: [2018-09-03 Mon 17:35]
+* TODO org-mode cheatsheet                                         :noexport:
+* TODO enable people to better search; https://devhints.io/        :noexport:
+* TODO [#A] use two columns instead of one: https://devhints.io/bash
+* TODO how to show code snippets in a better way: https://github.com/DrkSephy/es6-cheatsheet :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Role model: enable people to use it as a command line https://github.com/chrisallenlane/cheat
+* TODO [#A] Role model: enable people to autocomplete https://github.com/chrisallenlane/cheat
+* TODO [#A] Role model: enable people to grow it as a community https://github.com/chrisallenlane/cheat
+* html format                                                      :noexport:
+** two tables horizontally
+https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4
+** table columns alignment

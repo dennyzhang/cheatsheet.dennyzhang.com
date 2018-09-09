@@ -44,17 +44,13 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Pack to *.gz  | =tar -zcvf ./newfile.tar.gz <dir_to_compress>= |
 | Pack to *.bz2 | =tar -cvf ./file.tar.bz2 <dir_to_compress>=    |
 | Pack to *.zip | =zip -r ./file.zip <dir_to_compress>=          |
-** Advanced Compress
-| Name              | Command                                                |
-|-------------------+--------------------------------------------------------|
-| Pack with exclude | =tar --exclude "*.git*" -cvf file.tar <dir_to_compress>= |
-** Misc
-| Name                                     | Command                              |
-|------------------------------------------+--------------------------------------|
-| Remove a single file from tarball        | =tar --delete -f file.tar file1.txt= |
-| Add file to tarball. -r indicates append | =tar -rf file.tar file1.txt=         |
+** Advanced Usage
+| Name                                     | Command                                                  |
+|------------------------------------------+----------------------------------------------------------|
+| Pack with exclude                        | =tar --exclude "*.git*" -cvf file.tar <dir_to_compress>= |
+| Remove a single file from tarball        | =tar --delete -f file.tar file1.txt=                     |
+| Add file to tarball. -r indicates append | =tar -rf file.tar file1.txt=                             |
 ** More Resources
-
 http://www.simplehelp.net/2008/12/15/how-to-create-and-extract-zip-tar-targz-and-tarbz2-files-in-linux
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -66,33 +62,44 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 <a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
 <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
 #+END_HTML
-* org-mode configuration                                           :noexport:
-#+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
-#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
-#+LaTeX_CLASS_OPTIONS: [8pt]
-#+LATEX_HEADER: \usepackage[english]{babel}
-#+LATEX_HEADER: \usepackage{lastpage}
-#+LATEX_HEADER: \usepackage{fancyhdr}
-#+LATEX_HEADER: \pagestyle{fancy}
-#+LATEX_HEADER: \fancyhf{}
-#+LATEX_HEADER: \rhead{Updated: \today}
-#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
-#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-pack-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-pack-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4}}
-#+AUTHOR: Denny Zhang
-#+EMAIL:  denny@dennyzhang.com
-#+TAGS: noexport(n)
-#+PRIORITIES: A D C
-#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+EXPORT_EXCLUDE_TAGS: exclude noexport
-#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
+** org-mode configuration                                          :noexport:
+ #+STARTUP: overview customtime noalign logdone showall
+ #+DESCRIPTION: 
+ #+KEYWORDS: 
+ #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+ #+LaTeX_CLASS_OPTIONS: [8pt]
+ #+LATEX_HEADER: \usepackage[english]{babel}
+ #+LATEX_HEADER: \usepackage{lastpage}
+ #+LATEX_HEADER: \usepackage{fancyhdr}
+ #+LATEX_HEADER: \pagestyle{fancy}
+ #+LATEX_HEADER: \fancyhf{}
+ #+LATEX_HEADER: \rhead{Updated: \today}
+ #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+ #+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-pack-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-pack-A4}}
+ #+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4}}
+ #+AUTHOR: Denny Zhang
+ #+EMAIL:  denny@dennyzhang.com
+ #+TAGS: noexport(n)
+ #+PRIORITIES: A D C
+ #+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+ #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+ #+EXPORT_EXCLUDE_TAGS: exclude noexport
+ #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+ #+LINK_UP:   
+ #+LINK_HOME: 
 * TODO pack & unpack problems
 ** TODO gzip commands                                              :noexport:
 ** TODO How to Convert TAR to TGZ
  https://smallbusiness.chron.com/convert-tar-tgz-46204.html
+* TODO bzip                                                        :noexport:
+# compress foo -> foo.bz2
+bzip2 -z foo
 
+# decompress foo.bz2 -> foo
+bzip2 -d foo.bz2
+
+# compress foo to stdout
+bzip2 -zc foo > foo.bz2
+
+# decompress foo.bz2 to stdout
+bzip2 -dc foo.bz2
