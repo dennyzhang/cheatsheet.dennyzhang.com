@@ -120,7 +120,53 @@ Cheers!
 * CANCELED                                                         :noexport:
 ** CANCELED Create symol link: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
    CLOSED: [2018-09-09 Sun 00:42]
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE
+** DONE cheatsheet: add category
+   CLOSED: [2018-08-14 Tue 00:31]
+** DONE cheatsheet: main page layout
+   CLOSED: [2018-08-14 Tue 00:31]
+
+** DONE cheatsheet: change forkme to the specific repo
+   CLOSED: [2018-08-14 Tue 23:11]
+** DONE github add blog link in two places
+   CLOSED: [2018-08-15 Wed 17:53]
+
+** DONE cheatsheet add uptimerobot monitoring
+   CLOSED: [2018-08-15 Wed 18:02]
+
+** DONE cheatsheet add github repo: https://github.com/DennyZhang/cheatsheet.dennyzhang.com
+   CLOSED: [2018-08-15 Wed 19:50]
+** DONE cheatsheet: add submodules
+   CLOSED: [2018-08-15 Wed 19:50]
+** CANCELED move adsense to the right, and also related cheatsheets: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
+   CLOSED: [2018-08-15 Wed 19:50]
+
+** CANCELED cheatsheet add blog post summary
+   CLOSED: [2018-08-15 Wed 19:51]
+
+** CANCELED make blog wider: https://cheatsheet.dennyzhang.com/cheatsheet-kubernets/
+   CLOSED: [2018-08-15 Wed 19:51]
+
+** DONE cheatsheet: Use emacs to update everything automatically
+   CLOSED: [2018-08-15 Wed 20:24]
+
+** DONE cheatsheet: linkedin icon: http://cheatsheet.dennyzhang.com/cheatsheet-groovy/
+   CLOSED: [2018-08-15 Wed 20:29]
+
+** DONE org-mode configuration: https://github.com/dennyzhang/cheatsheet-pks-A4
+   CLOSED: [2018-08-15 Wed 20:29]
+** DONE github repo add link back to my blog post
+   CLOSED: [2018-08-15 Wed 20:28]
+** DONE blog post: list everything by category
+   CLOSED: [2018-08-16 Thu 00:08]
+
+** CANCELED first adsense doesn't show up: https://cheatsheet.dennyzhang.com/contact
+   CLOSED: [2018-08-16 Thu 00:08]
+
+** CANCELED cheatsheet ssl issue: http://cheatsheet.dennyzhang.com/cheatsheet-groovy/
+   CLOSED: [2018-08-16 Thu 00:08]
+** CANCELED no summary or preview
+   CLOSED: [2018-08-16 Thu 00:09]
 * TODO [#A] cheatsheet.dennyzhang.com                              :noexport:
 ** TODO align icon horizontally in blog: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
 https://cheatsheet.dennyzhang.com/contact
@@ -141,53 +187,6 @@ https://www.mediaatelier.com/CheatSheet/
 ** HALF file link doesn't look nice: http://cheatsheet.dennyzhang.com/cheatsheet-golang/
 ** TODO How people can contribute?
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** DONE
-*** DONE cheatsheet: add category
-    CLOSED: [2018-08-14 Tue 00:31]
-*** DONE cheatsheet: main page layout
-    CLOSED: [2018-08-14 Tue 00:31]
-
-*** DONE cheatsheet: change forkme to the specific repo
-    CLOSED: [2018-08-14 Tue 23:11]
-*** DONE github add blog link in two places
-    CLOSED: [2018-08-15 Wed 17:53]
-
-*** DONE cheatsheet add uptimerobot monitoring
-    CLOSED: [2018-08-15 Wed 18:02]
-
-*** DONE cheatsheet add github repo: https://github.com/DennyZhang/cheatsheet.dennyzhang.com
-    CLOSED: [2018-08-15 Wed 19:50]
-*** DONE cheatsheet: add submodules
-    CLOSED: [2018-08-15 Wed 19:50]
-*** CANCELED move adsense to the right, and also related cheatsheets: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
-    CLOSED: [2018-08-15 Wed 19:50]
-
-*** CANCELED cheatsheet add blog post summary
-    CLOSED: [2018-08-15 Wed 19:51]
-
-*** CANCELED make blog wider: https://cheatsheet.dennyzhang.com/cheatsheet-kubernets/
-    CLOSED: [2018-08-15 Wed 19:51]
-
-*** DONE cheatsheet: Use emacs to update everything automatically
-    CLOSED: [2018-08-15 Wed 20:24]
-
-*** DONE cheatsheet: linkedin icon: http://cheatsheet.dennyzhang.com/cheatsheet-groovy/
-    CLOSED: [2018-08-15 Wed 20:29]
-
-*** DONE org-mode configuration: https://github.com/dennyzhang/cheatsheet-pks-A4
-    CLOSED: [2018-08-15 Wed 20:29]
-*** DONE github repo add link back to my blog post
-    CLOSED: [2018-08-15 Wed 20:28]
-*** DONE blog post: list everything by category
-    CLOSED: [2018-08-16 Thu 00:08]
-
-*** CANCELED first adsense doesn't show up: https://cheatsheet.dennyzhang.com/contact
-    CLOSED: [2018-08-16 Thu 00:08]
-
-*** CANCELED cheatsheet ssl issue: http://cheatsheet.dennyzhang.com/cheatsheet-groovy/
-    CLOSED: [2018-08-16 Thu 00:08]
-*** CANCELED no summary or preview
-    CLOSED: [2018-08-16 Thu 00:09]
 ** Discussion
 *** TODO make the font bigger
 * TODO [#A] Generate cheatsheet PDF A4                             :noexport:
@@ -260,18 +259,15 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 ** TODO [#A] Role model: enable people to autocomplete https://github.com/chrisallenlane/cheat
 ** TODO [#A] Role model: enable people to grow it as a community https://github.com/chrisallenlane/cheat
 * TODO [#A] Layout suggestions                                     :noexport:
-** TODO [#A] use two columns instead of one: https://devhints.io/bash
-** two tables horizontally
-https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4
-** table columns alignment
-** TODO support emoji usage                                        :noexport:
-** TODO ssl certificate warning: https://cheatsheet.dennyzhang.com/cheatsheet-emacs :noexport:
-** TODO emacs wordpress block width: https://cheatsheet.dennyzhang.com/cheatsheet-concourse :noexport:
+** TODO [#A] emacs wordpress block width: https://cheatsheet.dennyzhang.com/cheatsheet-concourse :noexport:
  It's different from this:
  https://cheatsheet.dennyzhang.com/cheatsheet-find
-* TODO [#A] Functional                                             :noexport:
-** TODO enable people to better search; https://devhints.io/       :noexport:
-** TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO [#A] org-mode two talbes horizontally: https://devhints.io/bash :noexport:
+ https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4
+** TODO support emoji usage                                        :noexport:
+** TODO ssl certificate warning: https://cheatsheet.dennyzhang.com/cheatsheet-emacs :noexport:
+** Add most popular cheatsheet to github readme
 * TODO [#A] Improve Content                                        :noexport:
 ** TODO improve jq cheatsheet                                      :noexport:
 ** TODO opensource improvement: apt cheatsheet                     :noexport:
@@ -452,3 +448,9 @@ https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4
      192.168.1.74 > 192.168.1.189: ICMP echo reply, id 15926, seq 42, length 64
  12:39:46.846869 IP (tos 0x0, ttl 64, id 17861, offset 0, flags [DF], proto ICMP (1), length 84)
  #+end_example
+* TODO [#A] Make it more useful                                    :noexport:
+** TODO enable people to better search; https://devhints.io/       :noexport:
+** TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Change infrequent cheatsheet github to blog post            :noexport:
+* TODO Add guideline for how people to contribute                  :noexport:
