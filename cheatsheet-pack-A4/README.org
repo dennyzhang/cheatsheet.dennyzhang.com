@@ -26,22 +26,24 @@ A Cheat Sheet to deal with all popular archive format. Such as *.tar, *.zip, *.g
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** Decompress
-| Name         | Summary                                      |
-|--------------+----------------------------------------------|
-| Unpack *.tar | =tar -xvf ./file.tar=                        |
-| Unpack *.rar | =unrar e ./file.rar=                         |
-| Unpack *.zip | =unzip ./file.zip=                           |
-| Unpack *.gz  | =gunzip ./file.gz; gzip -d file.gz=          |
+| Name         | Summary                                        |
+|--------------+------------------------------------------------|
+| Unpack *.tar | =tar -xvf ./file.tar=                          |
+| Unpack *.rar | =unrar e ./file.rar=                           |
+| Unpack *.zip | =unzip ./file.zip=                             |
+| Unpack *.gz  | =gunzip ./file.gz; gzip -d file.gz=            |
 | Unpack *.bz2 | =tar -jxvf file.tar.bz2 -C /tmp/extract_here/= |
-| Unpack *.7z  | =7z e ./file.7z= install p7zip first |
-| Unpack *.xz  | =tar -xf ./file.tar.xz=                      |
-| Unpack *.jar | =jar -xvf ./file.jar=                        |
-| Unpack *.war | =jar -xvf ./file.war=                        |
+| Unpack *.7z  | =7z e ./file.7z= install p7zip first           |
+| Unpack *.xz  | =tar -xf ./file.tar.xz=                        |
+| Unpack *.jar | =jar -xvf ./file.jar=                          |
+| Unpack *.war | =jar -xvf ./file.war=                          |
+| Unpack *.tgz | =tar -xf ./file.tgz=                           |
 ** Compress Common Format
 | Name          | Command                                        |
 |---------------+------------------------------------------------|
 | Pack to *.tar | =tar -cvf ./file.tar <dir_to_compress>=        |
 | Pack to *.gz  | =tar -zcvf ./newfile.tar.gz <dir_to_compress>= |
+| Pack to *.tgz | =tar -cvzf backup.tgz *=                       |
 | Pack to *.bz2 | =tar -cvf ./file.tar.bz2 <dir_to_compress>=    |
 | Pack to *.zip | =zip -r ./file.zip <dir_to_compress>=          |
 ** Advanced Usage

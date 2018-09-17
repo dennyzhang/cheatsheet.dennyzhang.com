@@ -4,9 +4,6 @@
 [submodule "cheatsheet-bosh-A4"]
 	path = cheatsheet-bosh-A4
 	url = git@github.com:dennyzhang/cheatsheet-bosh-A4.git
-[submodule "cheatsheet-cloudfoundry-tile-A4"]
-	path = cheatsheet-cloudfoundry-tile-A4
-	url = git@github.com:dennyzhang/cheatsheet-cloudfoundry-tile-A4.git
 [submodule "cheatsheet-docker-A4"]
 	path = cheatsheet-docker-A4
 	url = git@github.com:dennyzhang/cheatsheet-docker-A4.git
@@ -61,3 +58,6 @@
 [submodule "cheatsheet-ssh-A4"]
 	path = cheatsheet-ssh-A4
 	url = git@github.com:dennyzhang/cheatsheet-ssh-A4.git
+[submodule "kubernetes-yaml-templates"]
+	path = kubernetes-yaml-templates
+	url = git@github.com:dennyzhang/kubernetes-yaml-templates.git

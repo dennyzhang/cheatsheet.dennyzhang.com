@@ -24,24 +24,22 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** Concepts
-| Name     | Summary |
-|----------+---------|
-| Behavior |         |
+| Name     | Summary                |
+|----------+------------------------|
+| Targets  | alias of endpoint urls |
+| Behavior |                        |
 
 Links:
 
 https://concourse-ci.org/concepts.html
 ** Concourse fly
-| Name                    | Summary                                               |
-|-------------------------+-------------------------------------------------------|
-| fly login               | =fly -t $target login -c $concourse_url=              |
-| Update pipeline         | =setpipeline.sh <pipeline_name>=                      |
-| Login to container      | =fly -t <target> hijack -u <job_url>=                 |
-| Get pipeline definition | =fly -t $target get-pipeline -p $job-name > job.yaml= |
-
-Links:
-
-https://concourse-ci.org/fly.html
+| Name                              | Summary                                                                     |
+|-----------------------------------+-----------------------------------------------------------------------------|
+| fly login                         | =fly -t <target> login -c $concourse_url -t <team>=                         |
+| Update pipeline                   | =setpipeline.sh <pipeline_name>=                                            |
+| Login to container                | =fly -t <target> hijack -u <job_url>=                                       |
+| Get pipeline definition           | =fly -t $target get-pipeline -p $job-name > job.yaml= [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][link: fly-getpipeline]] |
+| List all authenticated end points | =fly targets= [[https://concourse-ci.org/fly.html#fly-targets][link: fly targets]]                                             |
 
 ** Modules
 | Name          | Summary                                      |
@@ -51,6 +49,8 @@ https://concourse-ci.org/fly.html
 | Docker image  | =docker-image-resource=                      |
 
 Links:
+
+https://concoursetutorial.com/
 
 https://github.com/concourse/docker-image-resource
 

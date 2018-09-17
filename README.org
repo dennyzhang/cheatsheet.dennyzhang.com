@@ -452,5 +452,9 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 ** TODO enable people to better search; https://devhints.io/       :noexport:
 ** TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#B] Fail the pdf generating job when some lines are truncated :noexport:
+* TODO Build internal links                                        :noexport:
 * TODO Change infrequent cheatsheet github to blog post            :noexport:
 * TODO Add guideline for how people to contribute                  :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO split drive test into a dedicated one: https://cheatsheet.dennyzhang.com/cheatsheet-living-in-ca :noexport:
