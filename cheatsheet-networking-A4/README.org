@@ -25,30 +25,42 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 ** Basic Concepts
-| Name                                       | Command                                                        |
-|--------------------------------------------+----------------------------------------------------------------|
-| BGP(Border Gateway Protocol) eBGP/iBGP     | Among autonomous systems (AS) on the *Internet*.               |
-| NAT(Network address translation) SNAT/DNAT | Allow you to hide the IP addresses.                            |
-| East/West traffic                          | Traffic within a data center                                   |
-| North/South traffic                        | Traffic coming into and out of the network into Internet space |
-| Overlay networks                           |                                                                |
-| L2 networking                              | L2 bridge                                                      |
-| L3 networking                              | Two different networks communicate with each other             |
-| L7 networking                              |                                                                |
-| LAG                                        |                                                                |
-| Transport Network                          |                                                                |
-| BFD                                        | BFD can be used for BGP peers but also for static routes       |
-| NFV                                        |                                                                |
+| Name                             | Command                                                                             |
+|----------------------------------+-------------------------------------------------------------------------------------|
+| [[https://en.wikipedia.org/wiki/Software-defined_networking][SDN(Software-defined networking)]] |                                                                                     |
+| NAT(Network address translation) | Allow you to hide the IP addresses.                                                 |
+| SNAT                             |                                                                                     |
+| DNAT                             |                                                                                     |
+| [[https://en.wikipedia.org/wiki/Virtual_LAN][VLAN (Virtual LAN)]]               | Group hosts together even if they are not directly connected to same network switch |
+| East/West traffic                | Traffic within a data center                                                        |
+| North/South traffic              | Traffic coming into and out of the network into Internet space                      |
+
+** More Concepts
+| Name                                    | Command                                                                             |
+|-----------------------------------------+-------------------------------------------------------------------------------------|
+| BGP(Border Gateway Protocol) eBGP/iBGP  | Among autonomous systems (AS) on the *Internet*.                                    |
+| Overlay networks                        |                                                                                     |
+| L2 networking                           | L2 bridge                                                                           |
+| L3 networking                           |                                                                                     |
+| L7 networking                           |                                                                                     |
+| [[https://en.wikipedia.org/wiki/Link_aggregation][LAG(Link aggregation)]]                   |                                                                                     |
+| Transport Network                       |                                                                                     |
+| BFD(Bidirectional Forwarding Detection) | BFD can be used for BGP peers but also for static routes                            |
+| NFV(Network function virtualization)    |                                                                                     |
+| DFW(Distributed Firewall)               |                                                                                     |
+| VIF                                     |                                                                                     |
 
 ** Switch - L2 layer
-| Name               | Command                              |
-|--------------------+--------------------------------------|
-| Logical Switch     | Spin up isolated logical L2 networks |
-| OVS (Open vSwitch) |                                      |
-| VLAN               |                                      |
-| VXLAN              |                                      |
-| VNI                |                                      |
-| TEP table          |                                      |
+| Name                           | Command                                                                             |
+|--------------------------------+-------------------------------------------------------------------------------------|
+| [[https://en.wikipedia.org/wiki/Virtual_LAN][VLAN (Virtual LAN)]]             | Group hosts together even if they are not directly connected to same network switch |
+| [[https://en.wikipedia.org/wiki/Virtual_Extensible_LAN][VXLAN (Virtual Extensible LAN)]] |                                                                                     |
+| Logical Switch                 | Spin up isolated logical L2 networks                                                |
+| OVS (Open vSwitch)             |                                                                                     |
+| VNI(Virtual Network Instance)  |                                                                                     |
+| TEP table                      |                                                                                     |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/open-vswitch.png]]
 
 ** Router - L3 layer
 | Name                           | Command                                                                      |
@@ -67,13 +79,15 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 
 ** VMWare NSX-T
 *** NSX-T Concepts
-| Name                       | Command                                                                             |
-|----------------------------+-------------------------------------------------------------------------------------|
-| NSX Edge Node              | Provides routing services and connectivity to networks external to NSX-T deployment |
-| NCP                        | NSX-T container plugin CNI. [[https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.ncp_kubernetes.doc/GUID-52A92986-0FDF-43A5-A7BB-C037889F7559.html][link: Overview of NSX-T Container Plug-in]]               |
-| N-VDS                      | NSX Virtual Distributed Switch                                                      |
-| LCP(Local Control Panel)   |                                                                                     |
-| CCP(Central Control Panel) |                                                                                     |
+| Name                              | Command                                                                             |
+|-----------------------------------+-------------------------------------------------------------------------------------|
+| NSX Edge Node                     | Provides routing services and connectivity to networks external to NSX-T deployment |
+| NCP                               | NSX-T container plugin CNI. [[https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.ncp_kubernetes.doc/GUID-52A92986-0FDF-43A5-A7BB-C037889F7559.html][link: Overview of NSX-T Container Plug-in]]               |
+| N-VDS                             | NSX Virtual Distributed Switch                                                      |
+| LCP(Local Control Panel)          |                                                                                     |
+| CCP(Central Control Panel)        |                                                                                     |
+| ASGs(Application Security Groups) |                                                                                     |
+| Link                              | [[https://www.vmware.com/products.html][VMware Products]], [[https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.ncp_kubernetes.doc/GUID-FB641321-319D-41DC-9D16-37D6BA0BC0DE.html][NSX-T Container Plug-in for Kubernetes]]                             |
 
 *** NSX-T Components
 | Name                       | Command                                                  |
@@ -83,7 +97,12 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | NSX Manager node           | hosts API services.                                      |
 | NSX Controller nodes       | host the central control plane cluster daemons.          |
 | Transport nodes            | host local control plane daemons and forwarding engines. |
-| NSX-T Distributed Firewall |                                                          |
+
+*** Commands
+| Name          | Command                                                  |
+|---------------+----------------------------------------------------------|
+| nsxcli in PKS | =/var/vcap/jobs/ncp/bin/nsxcli -c get ncp-master status= |
+| ncp log       | =/var/vcap/sys/log/ncp/=                                 |
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -148,3 +167,4 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
  #+END_EXAMPLE
 ** TODO Get TEP table for a VNI. Command: get logical-switch <vni or vni-uuid> vtep :noexport:
 ** TODO [#A] Don't use overlay to biuld your firewall
+** TODO proactive SR

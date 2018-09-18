@@ -39,7 +39,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Thin  Provisioning                  |                                                      |
 | DRS(Distributed Resource Scheduler) | https://www.vmware.com/products/vsphere/drs-dpm.html |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-virtualization-A4/schedule-drs.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-virtualization-A4/vsphere-schedule-drs.png]]
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
