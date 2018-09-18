@@ -100,8 +100,8 @@ curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 9377c2
 #+BEGIN_SRC sh
 #!/bin/bash
 
-DIGITALOCEAN_TOKEN=9377c207f667271e2d12af2d67ff2f11e5b045a9677a756a0e150bb3562c6773
-SLACK_TOKEN=xoxb-120509365763-lx2ceQl2ZbverP5v94AkvwlB
+DIGITALOCEAN_TOKEN=XXX
+SLACK_TOKEN=XXX
 #SLACK_CHANNEL=slack_nagios_test
 SLACK_CHANNEL=fd-metric
 MAX_DROPLETS_COUNT=500
@@ -127,7 +127,7 @@ https://api.slack.com/methods/chat.postMessage
 
 https://api.slack.com/bot-users
 
-curl -X POST -d "username=AutoScaling&token=xoxb-120509365763-lx2ceQl2ZbverP5v94AkvwlB&channel=#fd-alerts&text=hello, world" https://slack.com/api/chat.postMessage
+curl -X POST -d "username=AutoScaling&token=xoxb-XXX&channel=#fd-alerts&text=hello, world" https://slack.com/api/chat.postMessage
 
 https://api.slack.com/methods/files.upload
 
@@ -199,7 +199,7 @@ https://api.slack.com/methods/files.upload
 curl -F file=@dramacat.gif -F channels=C024BE91L,#general -F token=xxxx-xxxxxxxxx-xxxx https://slack.com/api/files.upload
 ** DONE Slack text animation: https://github.com/mroth/slacknimate
    CLOSED: [2017-09-13 Wed 08:30]
-slack_token="xoxp-239480382723-mytoken"
+slack_token="xoxp-XXX"
 slacknimate --api-token "$slack_token" --channel "#junk" --loop< examples/moon.txt
 *** Good morning
 cd /Users/mac/Dropbox/private_data/project/devops_consultant/consultant_code/old_github_repos/slacknimate

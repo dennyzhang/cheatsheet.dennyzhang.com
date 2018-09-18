@@ -288,7 +288,7 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 
  Check it out. And share your experience or feedback with me.
 
- [[image-blog:My Common Python Coding Mistakes][https://raw.githubusercontent.com/DennyZhang/images/master/blog/python_logo.jpg]]
+ [[image-blog:My Common Python Coding Mistakes][https://raw.githubusercontent.com/dennyzhang/images/master/blog/python_logo.jpg]]
  ---------------------------------------------------------------------
  Related Resources In GitHub from Denny:
 

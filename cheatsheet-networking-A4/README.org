@@ -1,6 +1,6 @@
-* CheatSheet: Network in Kubernetes/OpenStack                         :Tools:
+* CheatSheet: Networking In Cloud Infrastructure                      :Tools:
 :PROPERTIES:
-:type:     networking
+:type:     cloud
 :export_file_name: cheatsheet-networking-A4.pdf
 :END:
 
@@ -35,38 +35,43 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | L2 networking                              | L2 bridge                                                                        |
 | L3 networking                              | Two different networks communicate with each other                               |
 | L7 networking                              |                                                                                  |
-| OVS (Open vSwitch)                         |                                                                                  |
-| VXLAN                                      |                                                                                  |
-| VLAN                                       |                                                                                  |
 | LAG                                        |                                                                                  |
-| Edge Node                                  | Appliances with pools of capacity for handling services that are not distributed |
-| Logical Switch                             |                                                                                  |
-| LR(Logical Router)                         |                                                                                  |
 | Transport Network                          |                                                                                  |
-| Static Routing/Dynamic Routing             |                                                                                  |
 | BFD                                        | BFD can be used for BGP peers but also for static routes                         |
-| VNI                                        |                                                                                  |
-| TEP table                                  |                                                                                  |
 
-** Two-tier routing
-| Name             | Command                                                                   |
-|------------------+---------------------------------------------------------------------------|
-| Two-tier routing | T0-router(physical routing infra), T1-router(per tenant first hop router) |
-| Uplink           | Used to connect to physical infrastructure                                |
-| Router Link      | Used to interconnect Tier0 and Tier1 Logical routers                      |
-| Downlink         | Used to connect logical switches                                          |
+** Switch
+| Name               | Command                              |
+|--------------------+--------------------------------------|
+| Logical Switch     | Spin up isolated logical L2 networks |
+| OVS (Open vSwitch) |                                      |
+| VLAN               |                                      |
+| VXLAN              |                                      |
+| VNI                |                                      |
+| TEP table          |                                      |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/DennyZhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/two_routers.png]]
+** Router
+| Name                           | Command                                                                      |
+|--------------------------------+------------------------------------------------------------------------------|
+| LR(Logical Router)             | Create multiple routing domains with a single router. It composes: DR and SR |
+| Two-tier routing               | T0-router(physical routing infra), T1-router(per tenant first hop router)    |
+| Uplink                         | Used to connect to physical infrastructure                                   |
+| Router Link                    | Used to interconnect Tier0 and Tier1 Logical routers                         |
+| Downlink                       | Used to connect logical switches                                             |
+| LRP                            |                                                                              |
+| Static Routing/Dynamic Routing |                                                                              |
+| DR(Distributed Router)         |                                                                              |
+| SR(Service Router)             |                                                                              |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/two_routers.png]]
 
 ** VMWare NSX-T Concepts
-| Name                       | Command                        |
-|----------------------------+--------------------------------|
-| NCP                        | NSX-T container plugin CNI     |
-| N-VDS                      | NSX Virtual Distributed Switch |
-| LCP(Local Control Panel)   |                                |
-| CCP(Central Control Panel) |                                |
-| DR(Distributed Router)     |                                |
-| SR(Service Router)         |                                |
+| Name                       | Command                                                                             |
+|----------------------------+-------------------------------------------------------------------------------------|
+| NSX Edge Node              | Provides routing services and connectivity to networks external to NSX-T deployment |
+| NCP                        | NSX-T container plugin CNI                                                          |
+| N-VDS                      | NSX Virtual Distributed Switch                                                      |
+| LCP(Local Control Panel)   |                                                                                     |
+| CCP(Central Control Panel) |                                                                                     |
 
 ** NSX-T Components
 | Name                   | Command                                                  |
