@@ -1,4 +1,4 @@
-* CheatSheet: Networking In Cloud Infrastructure                      :Tools:
+* CheatSheet: Cloud Networking                                        :Tools:
 :PROPERTIES:
 :type:     cloud
 :export_file_name: cheatsheet-networking-A4.pdf
@@ -25,19 +25,20 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 ** Basic Concepts
-| Name                                       | Command                                                                          |
-|--------------------------------------------+----------------------------------------------------------------------------------|
-| BGP(Border Gateway Protocol) eBGP/iBGP     | Among autonomous systems (AS) on the *Internet*.                                 |
-| NAT(Network address translation) SNAT/DNAT | Allow you to hide the IP addresses.                                              |
-| East/West traffic                          |                                                                                  |
-| North/South traffic                        |                                                                                  |
-| Overlay networks                           |                                                                                  |
-| L2 networking                              | L2 bridge                                                                        |
-| L3 networking                              | Two different networks communicate with each other                               |
-| L7 networking                              |                                                                                  |
-| LAG                                        |                                                                                  |
-| Transport Network                          |                                                                                  |
-| BFD                                        | BFD can be used for BGP peers but also for static routes                         |
+| Name                                       | Command                                                        |
+|--------------------------------------------+----------------------------------------------------------------|
+| BGP(Border Gateway Protocol) eBGP/iBGP     | Among autonomous systems (AS) on the *Internet*.               |
+| NAT(Network address translation) SNAT/DNAT | Allow you to hide the IP addresses.                            |
+| East/West traffic                          | Traffic within a data center                                   |
+| North/South traffic                        | Traffic coming into and out of the network into Internet space |
+| Overlay networks                           |                                                                |
+| L2 networking                              | L2 bridge                                                      |
+| L3 networking                              | Two different networks communicate with each other             |
+| L7 networking                              |                                                                |
+| LAG                                        |                                                                |
+| Transport Network                          |                                                                |
+| BFD                                        | BFD can be used for BGP peers but also for static routes       |
+| NFV                                        |                                                                |
 
 ** Switch - L2 layer
 | Name               | Command                              |
@@ -57,30 +58,33 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Uplink                         | Used to connect to physical infrastructure                                   |
 | Router Link                    | Used to interconnect Tier0 and Tier1 Logical routers                         |
 | Downlink                       | Used to connect logical switches                                             |
-| LRP                            |                                                                              |
 | Static Routing/Dynamic Routing |                                                                              |
 | DR(Distributed Router)         |                                                                              |
 | SR(Service Router)             |                                                                              |
+| LRP                            |                                                                              |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/two_routers.png]]
 
-** VMWare NSX-T Concepts
+** VMWare NSX-T
+*** NSX-T Concepts
 | Name                       | Command                                                                             |
 |----------------------------+-------------------------------------------------------------------------------------|
 | NSX Edge Node              | Provides routing services and connectivity to networks external to NSX-T deployment |
-| NCP                        | NSX-T container plugin CNI                                                          |
+| NCP                        | NSX-T container plugin CNI. [[https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.ncp_kubernetes.doc/GUID-52A92986-0FDF-43A5-A7BB-C037889F7559.html][link: Overview of NSX-T Container Plug-in]]               |
 | N-VDS                      | NSX Virtual Distributed Switch                                                      |
 | LCP(Local Control Panel)   |                                                                                     |
 | CCP(Central Control Panel) |                                                                                     |
 
-** NSX-T Components
-| Name                   | Command                                                  |
-|------------------------+----------------------------------------------------------|
-| Plane agent            | Every node hosts a management plane agent.               |
-| NSX Controller Cluster |                                                          |
-| NSX Manager node       | hosts API services.                                      |
-| NSX Controller nodes   | host the central control plane cluster daemons.          |
-| Transport nodes        | host local control plane daemons and forwarding engines. |
+*** NSX-T Components
+| Name                       | Command                                                  |
+|----------------------------+----------------------------------------------------------|
+| Plane agent                | Every node hosts a management plane agent.               |
+| NSX Controller Cluster     |                                                          |
+| NSX Manager node           | hosts API services.                                      |
+| NSX Controller nodes       | host the central control plane cluster daemons.          |
+| Transport nodes            | host local control plane daemons and forwarding engines. |
+| NSX-T Distributed Firewall |                                                          |
+
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -89,56 +93,58 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
-* org-mode configuration                                           :noexport:
-#+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
-#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
-#+LaTeX_CLASS_OPTIONS: [8pt]
-#+LATEX_HEADER: \usepackage[english]{babel}
-#+LATEX_HEADER: \usepackage{lastpage}
-#+LATEX_HEADER: \usepackage{fancyhdr}
-#+LATEX_HEADER: \pagestyle{fancy}
-#+LATEX_HEADER: \fancyhf{}
-#+LATEX_HEADER: \rhead{Updated: \today}
-#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
-#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-networking-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-networking-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4}}
-#+AUTHOR: Denny Zhang
-#+EMAIL:  denny@dennyzhang.com
-#+TAGS: noexport(n)
-#+PRIORITIES: A D C
-#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+EXPORT_EXCLUDE_TAGS: exclude noexport
-#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
-* TODO VSS vs VDS vs N-VDS                                         :noexport:
-* TODO ncp for networksecurity                                     :noexport:
-#+BEGIN_EXAMPLE
-Denny Zhang [1:41 PM]
-XXX, any idea how vmware ncp supports k8s network policy behind the scene?
+** org-mode configuration                                          :noexport:
+ #+STARTUP: overview customtime noalign logdone showall
+ #+DESCRIPTION: 
+ #+KEYWORDS: 
+ #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+ #+LaTeX_CLASS_OPTIONS: [8pt]
+ #+LATEX_HEADER: \usepackage[english]{babel}
+ #+LATEX_HEADER: \usepackage{lastpage}
+ #+LATEX_HEADER: \usepackage{fancyhdr}
+ #+LATEX_HEADER: \pagestyle{fancy}
+ #+LATEX_HEADER: \fancyhf{}
+ #+LATEX_HEADER: \rhead{Updated: \today}
+ #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+ #+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-networking-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-networking-A4}}
+ #+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4}}
+ #+AUTHOR: Denny Zhang
+ #+EMAIL:  denny@dennyzhang.com
+ #+TAGS: noexport(n)
+ #+PRIORITIES: A D C
+ #+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+ #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+ #+EXPORT_EXCLUDE_TAGS: exclude noexport
+ #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+ #+LINK_UP:   
+ #+LINK_HOME: 
+* TODO Questions                                                   :noexport:
+** TODO VSS vs VDS vs N-VDS                                        :noexport:
+** TODO ncp for networksecurity                                    :noexport:
+ #+BEGIN_EXAMPLE
+ Denny Zhang [1:41 PM]
+ XXX, any idea how vmware ncp supports k8s network policy behind the scene?
 
-XXX YYY [1:41 PM]
-nsx has distributed firewalls..so ncp just ask nsx to create firewall
+ XXX YYY [1:41 PM]
+ nsx has distributed firewalls..so ncp just ask nsx to create firewall
 
-Denny Zhang [1:41 PM]
-And the firewall is out of the data VM. Right?
+ Denny Zhang [1:41 PM]
+ And the firewall is out of the data VM. Right?
 
-XXX YYY [1:42 PM]
-its in hypervisor
+ XXX YYY [1:42 PM]
+ its in hypervisor
 
-Denny Zhang [1:42 PM]
-I see. It controls the hypervisor networking.
+ Denny Zhang [1:42 PM]
+ I see. It controls the hypervisor networking.
 
-What kind of firewall it is? iptables?
+ What kind of firewall it is? iptables?
 
-XXX YYY [1:42 PM]
-and there is some rules configured in the worker vm too
-no i think its native implementation in hypervisor by nsx
+ XXX YYY [1:42 PM]
+ and there is some rules configured in the worker vm too
+ no i think its native implementation in hypervisor by nsx
 
-Denny Zhang [1:43 PM]
-cool
-#+END_EXAMPLE
-* TODO Get TEP table for a VNI. Command: get logical-switch <vni or vni-uuid> vtep :noexport:
+ Denny Zhang [1:43 PM]
+ cool
+ #+END_EXAMPLE
+** TODO Get TEP table for a VNI. Command: get logical-switch <vni or vni-uuid> vtep :noexport:
+** TODO [#A] Don't use overlay to biuld your firewall

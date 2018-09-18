@@ -1,4 +1,4 @@
-* CheatSheet: Virtualization In Cloud Infrastructure                  :Tools:
+* CheatSheet: Cloud Virtualization                                    :Tools:
 :PROPERTIES:
 :type:     cloud
 :export_file_name: cheatsheet-virtualization-A4.pdf
@@ -24,10 +24,22 @@ File me [[https://github.com/dennyzhang/cheatsheet-virtualization-A4/issues][Iss
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
+** Typical Hypervisors
+| Name         | Command |
+|--------------+---------|
+| vSphere      |         |
+| kvm/kvm2     |         |
+| Hyperv       |         |
+| virtualbox   |         |
+| vmwarefusion |         |
+
 ** Basic Concepts
-| Name               | Command |
-|--------------------+---------|
-| Thin  Provisioning |         |
+| Name                                | Command                                              |
+|-------------------------------------+------------------------------------------------------|
+| Thin  Provisioning                  |                                                      |
+| DRS(Distributed Resource Scheduler) | https://www.vmware.com/products/vsphere/drs-dpm.html |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-virtualization-A4/drs.png]]
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
