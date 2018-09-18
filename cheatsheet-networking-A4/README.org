@@ -39,7 +39,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Transport Network                          |                                                                                  |
 | BFD                                        | BFD can be used for BGP peers but also for static routes                         |
 
-** Switch
+** Switch - L2 layer
 | Name               | Command                              |
 |--------------------+--------------------------------------|
 | Logical Switch     | Spin up isolated logical L2 networks |
@@ -49,7 +49,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | VNI                |                                      |
 | TEP table          |                                      |
 
-** Router
+** Router - L3 layer
 | Name                           | Command                                                                      |
 |--------------------------------+------------------------------------------------------------------------------|
 | LR(Logical Router)             | Create multiple routing domains with a single router. It composes: DR and SR |
