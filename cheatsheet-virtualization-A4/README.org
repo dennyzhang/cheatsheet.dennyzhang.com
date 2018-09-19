@@ -24,6 +24,9 @@ File me [[https://github.com/dennyzhang/cheatsheet-virtualization-A4/issues][Iss
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
+- Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-docker-A4][Docker CheatSheet]]
+- Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][CheatSheet: Cloud Networking]]
+
 ** Typical Hypervisors
 | Name         | Command |
 |--------------+---------|
@@ -34,12 +37,31 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | vmwarefusion |         |
 
 ** Basic Concepts
-| Name                                | Command                                              |
-|-------------------------------------+------------------------------------------------------|
-| Thin  Provisioning                  |                                                      |
-| DRS(Distributed Resource Scheduler) | https://www.vmware.com/products/vsphere/drs-dpm.html |
+| Name                                | Command |
+|-------------------------------------+---------|
+| Thin  Provisioning                  |         |
+| [[https://www.vmware.com/products/vsphere/drs-dpm.html][DRS(Distributed Resource Scheduler)]] |         |
+| [[https://en.wikipedia.org/wiki/Non-uniform_memory_access][NUMA(Non-uniform memory access)]]     |         |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-virtualization-A4/vsphere-schedule-drs.png]]
+
+** VSphere Concepts
+| Name           | Summary                                                                                       |
+|----------------+-----------------------------------------------------------------------------------------------|
+| [[https://www.linkedin.com/pulse/difference-between-vsphere-esxi-vcenter-aderibigbe-b-eng-mba/][vSphere]]        | a software suite. ESXi, vSphere client and vCenter are components of vSphere                  |
+| ESXi           | virtualization server. All the virtual machines or Guest OS are installed on the ESXi server. |
+| vSphere client | allows administrators to connect to ESXi servers and access or manage virtual machines        |
+| vCenter        |                                                                                               |
+| vMotion        |                                                                                               |
+| VMDK           |                                                                                               |
+| ova            |                                                                                               |
+
+** Typical Container Runtime
+| Name    | Summary                                                                                  |
+|---------+------------------------------------------------------------------------------------------|
+| dockerd |                                                                                          |
+| [[https://github.com/rkt/rkt][rkt]]     | a pod-native container engine for Linux.                                                 |
+| [[https://github.com/kubernetes-sigs/cri-o][CRI-O]]   | Open Container Initiative-based implementation of Kubernetes Container Runtime Interface |
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
