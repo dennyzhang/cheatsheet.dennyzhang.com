@@ -26,18 +26,19 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 
 - Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][CheatSheet: Cloud Virtualization]]
 ** Basic Concepts
-| Name                             | Command                                                                          |
-|----------------------------------+----------------------------------------------------------------------------------|
-| [[https://en.wikipedia.org/wiki/Software-defined_networking][SDN(Software-defined networking)]] |                                                                                  |
-| NAT(Network address translation) | Allow you to hide the IP addresses.                                              |
-| DNAT                             | For ingress traffic, hide your server IP                                         |
-| SNAT                             | For egress traffic, hide your server IP                                          |
-| [[https://en.wikipedia.org/wiki/Virtual_LAN][VLAN (Virtual LAN)]]               | Group hosts together even if not directly connected to same network switch       |
-| East/West traffic                | Traffic within a data center                                                     |
-| North/South traffic              | Traffic coming into and out of the network into Internet space                   |
-| [[https://en.wikipedia.org/wiki/Border_Gateway_Protocol][BGP(Border Gateway Protocol)]]     | Among autonomous systems (AS) *on the Internet*. eBGP vs iBGP                    |
-| Overlay networks                 |                                                                                  |
-| vnet(a virtual network)          | allows instances to migrate among compute nodes without changing networking conf |
+| Name                             | Command                                                                                    |
+|----------------------------------+--------------------------------------------------------------------------------------------|
+| [[https://en.wikipedia.org/wiki/Software-defined_networking][SDN(Software-defined networking)]] |                                                                                            |
+| NAT(Network address translation) | Allow you to hide the IP addresses.                                                        |
+| DNAT                             | For ingress traffic, hide your server IP                                                   |
+| SNAT                             | For egress traffic, hide your server IP                                                    |
+| [[https://en.wikipedia.org/wiki/Virtual_LAN][VLAN (Virtual LAN)]]               | Group hosts together even if not directly connected to same network switch                 |
+| [[https://searchsdn.techtarget.com/definition/east-west-traffic][East/West traffic]]                | Traffic within a data center. Usually depict local area network (LAN) traffic horizontally |
+| [[https://networkengineering.stackexchange.com/questions/18873/what-is-the-meaning-origin-of-the-terms-north-south-and-east-west-traffic][North/South traffic]]              | Traffic coming into and out of the network into Internet space                             |
+| [[https://en.wikipedia.org/wiki/Border_Gateway_Protocol][BGP(Border Gateway Protocol)]]     | Among autonomous systems (AS) *on the Internet*. eBGP vs iBGP                              |
+| Overlay networks                 |                                                                                            |
+| vnet(a virtual network)          | allows instances to migrate among compute nodes without changing networking conf           |
+| Floating IP Pool                 |                                                                                            |
 
 ** More Concepts
 | Name                                      | Command                                                               |
@@ -53,6 +54,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | L2 networking                             | L2 bridge                                                             |
 | L3 networking                             |                                                                       |
 | L7 networking                             |                                                                       |
+| GRE(Generic Routing Encapsulation)        |                                                                       |
 
 ** Switch - L2 layer
 | Name                           | Command                                                                             |
@@ -111,9 +113,11 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | ncp log                 | =/var/vcap/sys/log/ncp/=                                       |
 | NSX-T networking in PKS | https://docs.pivotal.io/runtimes/pks/1-1/nsxt-prepare-env.html |
 
-** Common Considerations
-- NAT: traffic overhead is huge
-- iptable rules: won't scale when your envs grow
+** Questions
+*** VIP vs EIP
+*** NAT: traffic overhead is huge
+*** iptable rules: won't scale when your envs grow
+*** NAT vs no-NAT in PKS
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

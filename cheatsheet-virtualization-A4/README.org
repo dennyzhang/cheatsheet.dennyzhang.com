@@ -40,6 +40,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Name                                | Command |
 |-------------------------------------+---------|
 | Thin  Provisioning                  |         |
+| co-located                          |         |
 | [[https://www.vmware.com/products/vsphere/drs-dpm.html][DRS(Distributed Resource Scheduler)]] |         |
 | [[https://en.wikipedia.org/wiki/Non-uniform_memory_access][NUMA(Non-uniform memory access)]]     |         |
 
