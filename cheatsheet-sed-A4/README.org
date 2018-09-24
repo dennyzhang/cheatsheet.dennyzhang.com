@@ -31,24 +31,24 @@ Related post:
 ** GNUS sed - remove
 | Name                      | Command                                                             |
 |---------------------------+---------------------------------------------------------------------|
-| Replace string            | =sed -i 's/127.0.0.1/127.0.1.1/g' my_file=                          |
-| Use a different seperator | =sed -i 's#127.0.0.1#127.0.1.1#g' my_file=                          |
-| Use a different seperator | =sed -i 's#https://www.test.com/test#http://www.try.com#g' my_file= |
-| Remove matched lines      | =sed -i 's/.*KUBELET_NETWORK_ARGS.*//g' my_file=                    |
-| Remove whitespace         | =sed -i 's/ //g' my_file=                                           |
-| Remove empty lines        | =sed '/^$/d' my_file=                                               |
-| Delete 2nd to 4th lines   | =sed '2,4d' my_file=                                                |
+| Replace string            | =sed -i 's/127.0.0.1/127.0.1.1/g' my-file= [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sed-A4/my-file][link: my-file]]            |
+| Use a different seperator | =sed -i 's#127.0.0.1#127.0.1.1#g' my-file=                          |
+| Use a different seperator | =sed -i 's#https://www.test.com/test#http://www.try.com#g' my-file= |
+| Remove matched lines      | =sed -i 's/.*KUBELET_NETWORK_ARGS.*//g' my-file=                    |
+| Remove whitespace         | =sed -i 's/ //g' my-file=                                           |
+| Remove empty lines        | =sed '/^$/d' my-file=                                               |
+| Delete 2nd to 4th lines   | =sed '2,4d' my-file=                                                |
 
 ** GNUS sed - review
 | Name                        | Command                                |
 |-----------------------------+----------------------------------------|
 | Print lines from 2nd to 6th | =sed -n '2,6p' /etc/hosts=             |
-| Delete 2nd to 4th lines     | =sed -ie '2,4d' my_file=, =ls my_file= |
+| Delete 2nd to 4th lines     | =sed -ie '2,4d' my-file=, =ls my-file= |
 
 ** Freebsd sed on Mac
 | Name         | Command                                    |
 |--------------+--------------------------------------------|
-| In-place sed | =sed -i 's/127.0.0.1/127.0.1.1/g' my_file= |
+| In-place sed | =sed -i 's/127.0.0.1/127.0.1.1/g' my-file= |
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
