@@ -126,7 +126,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
-** org-mode configuration                                          :noexport:
+* org-mode configuration                                           :noexport:
  #+STARTUP: overview customtime noalign logdone showall
  #+DESCRIPTION: 
  #+KEYWORDS: 

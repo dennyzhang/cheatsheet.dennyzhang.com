@@ -28,6 +28,15 @@ Related post:
 - [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet: Linux Find]]
 - [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]]
 
+** Advanced sed
+| Name                         | Command                                                                    |
+|------------------------------+----------------------------------------------------------------------------|
+| Update with auto backup      | =sed -i.bak 's/localhost/myhost/g' my-file=, =ls my-file*=,  [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sed-A4/my-file][link: my-file]] |
+| Use variables in sed         | newip='127.0.1.1'; =sed -i "s/127.0.0.1/$newip/g" my-file= [[https://www.unix.com/shell-programming-and-scripting/14085-how-can-i-use-variable-sed.html][link: unix.com]]  |
+| Only replace the first match |                                                                            |
+| Identify multiple lines      |                                                                            |
+| Add content after nth line   |                                                                            |
+
 ** GNUS sed - remove
 | Name                      | Command                                                             |
 |---------------------------+---------------------------------------------------------------------|
@@ -36,19 +45,24 @@ Related post:
 | Use a different seperator | =sed -i 's#https://www.test.com/test#http://www.try.com#g' my-file= |
 | Remove matched lines      | =sed -i 's/.*KUBELET_NETWORK_ARGS.*//g' my-file=                    |
 | Remove whitespace         | =sed -i 's/ //g' my-file=                                           |
-| Remove empty lines        | =sed '/^$/d' my-file=                                               |
-| Delete 2nd to 4th lines   | =sed '2,4d' my-file=                                                |
+| Remove empty lines        | =sed -i '/^$/d' my-file=                                            |
+| Delete 2nd to 4th lines   | =sed -i '2,4d' my-file=                                             |
+
+** GNUS sed - insertion
+| Name                                   | Command                        |
+|----------------------------------------+--------------------------------|
+| Insert string to the begining of lines | =sed -i 's/^/head /g' my-file= |
+| Insert string to the end of lines      | =sed -i 's/$/ tail/g' my-file= |
 
 ** GNUS sed - review
 | Name                        | Command                                |
 |-----------------------------+----------------------------------------|
-| Print lines from 2nd to 6th | =sed -n '2,6p' /etc/hosts=             |
-| Delete 2nd to 4th lines     | =sed -ie '2,4d' my-file=, =ls my-file= |
+| Print lines from 2nd to 6th | =sed -n '2,6p' my-file=                |
 
 ** Freebsd sed on Mac
-| Name         | Command                                    |
-|--------------+--------------------------------------------|
-| In-place sed | =sed -i 's/127.0.0.1/127.0.1.1/g' my-file= |
+| Name         | Command                                                           |
+|--------------+-------------------------------------------------------------------|
+| In-place sed | =sed -i "" 's/127.0.0.1/127.0.1.1/g' my-file=, [[http://stackoverflow.com/questions/9744300/sed-command-not-working-in-mac][link:stackoverflow]] |
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -62,7 +76,7 @@ https://thornelabs.net/2016/02/01/sed-commands-cheat-sheet.html
 
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
-** org-mode configuration                                          :noexport:
+* org-mode configuration                                           :noexport:
  #+STARTUP: overview customtime noalign logdone showall
  #+DESCRIPTION: 
  #+KEYWORDS: 
@@ -88,19 +102,9 @@ https://thornelabs.net/2016/02/01/sed-commands-cheat-sheet.html
  #+LINK_UP:   
  #+LINK_HOME: 
 * [#A] sed                                                         :noexport:
-| Question                                                            | Solution                                                                                                         |
-|---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------|
-| 查看某个文件的第5到第8行                                            | sed -n 5,8p /etc/hosts                                                                                           |
-| 删除某个文件指定的几行                                              | sed -i 2,3d /etc/hosts                                                                                           |
-| 修改某个cfg文件的键值对                                             | sudo sed -i 's/GSSAPIAuthentication no/GSSAPIAuthentication yes/' /etc/ssh/sshd_config                           |
-| 查找/etc/hosts中, 以"# The"开头的内容, 并将该行及之后的内容打印出来 | export find_line=$(grep -n '# The' /etc/hosts ｜ awk -F: '{print $1}') ｜ sed -n "$find_line, 10000p" /etc/hosts |
-| 在行开头插入文本                                                    | sed -i 's/^/> /' 1.txt                                                                                           |
-| 在行尾插入文本                                                      | sed 's/$/end/' -i 1.txt                                                                                          |
-| 删除一个区域                                                        | sed -i '/BEGIN QUOTE/,/END QUOTE/d' 1.txt                                                                        |
-| sed中使用变量                                                       | item="ab"; command=`echo "ab cd" ｜ sed 's/'$item'//g'`; echo $command                                           |
 ** useful link
- http://www.grymoire.com/Unix/Sed.html\\
- Sed - An Introduction and Tutorial
+http://www.grymoire.com/Unix/Sed.html\\
+Sed - An Introduction and Tutorial
 http://www.grymoire.com/Unix/Sed.html#uh-39\\
 Sed - An Introduction and Tutorial
 http://www.cppblog.com/prayer/archive/2009/09/03/95269.html\\
@@ -140,9 +144,7 @@ echo "$out" | sed -e "s/FAILED/~FAILED~/p"
 
  sed -i "0,/discovery.zen.ping.unicast.hosts.*/s//discovery.zen.ping.unicast.hosts: new_node_list/" "mdm.yml"
 
- diff mdm.ymlbak mdm.yml
-** DONE sed delete by line number: sed -i 11d /root/.ssh/known_hosts
-   CLOSED: [2014-01-22 Wed 11:46]
+diff mdm.ymlbak mdm.yml
 ** DONE Understatnd sed command: sed -e '89 s/false/true/g' ${f} > ${f}.0
   CLOSED: [2014-08-29 Fri 16:13]
 https://github.com/TOTVS/devop/blob/master/jenkins_conf/fi-build-all.sh
@@ -151,76 +153,7 @@ http://unix.stackexchange.com/questions/70878/replacing-string-based-on-line-num
 awk 'FNR==34 { sub("AAA", "BBB") }'
 
 sed '34s/AAA/BBB/'
-** DONE mac sed in place change: sed -i "" 's/THESTRING/THEGRANDSTRING' /tmp/jestinkt.txt
-  CLOSED: [2014-12-05 Fri 10:03]
-http://stackoverflow.com/questions/9744300/sed-command-not-working-in-mac
-#+BEGIN_EXAMPLE
-The OSX version of sed is not the same as those found in most Linux systems.
-
-It extends the -i option to give you the opportunity save a file with a different extension, but requires input for that extension.
-
-If you just want to overwrite the file in place, you need to use sed -i "" ...sedCmd.... fileName to rename your file in-place.
-
-Per @JamesMcMahon 's comment, see here for the full doc for OSX/BSD sed.
-
-I hope this helps.
-#+END_EXAMPLE
-
-sed -i.bak  -e 's/File/Wenjian/g' test.sh
-  CLOSED: [2015-11-01 Sun 00:56]
-http://unix.stackexchange.com/questions/92895/how-to-achieve-portability-with-sed-i-in-place-editing
-http://blog.remibergsma.com/2012/09/18/sed-inline-editing-different-on-mac-osx/
-** DONE linux remove entries match certain pattern: sed -i.bak '/pattern to match/d' ./infile
-  CLOSED: [2016-12-21 Wed 19:04]
-http://stackoverflow.com/questions/5410757/delete-lines-in-a-text-file-that-containing-a-specific-string
-http://ccm.net/faq/1451-delete-lines-from-a-file-using-sed
-
-sed -i.bak '/pattern to match/d' ./infile
-** DONE sed replace string escape: change delimiter other than /
-  CLOSED: [2016-08-25 Thu 22:41]
-http://askubuntu.com/questions/76785/how-to-escape-file-path-in-sed
-
-sed 's|<passwordHash>.*</passwordHash>|<passwordHash>#jbcrypt:$2a$10$rWfJt3QmA.EVTHxf4N51XuPf/6RDusRUwxvvzpMx3gVfWtFcklRue</passwordHash>|g' test.txt
-
-#jbcrypt:$2a$10$Ic2p9aYNJnS2Vf9vUIWHfuMHG3O6dgCIAQ90.8GRxdwumi93LAg/W -->
-#jbcrypt:$2a$10$rWfJt3QmA.EVTHxf4N51XuPf/6RDusRUwxvvzpMx3gVfWtFcklRue
-
-a="#jbcrypt:$2a$10$rWfJt3QmA.EVTHxf4N51XuPf/6RDusRUwxvvzpMx3gVfWtFcklRue"
-echo "$a" | tr / \\\\/
-
-    <hudson.security.HudsonPrivateSecurityRealm_-Details>
-      <passwordHash>#jbcrypt:$2a$10$Ic2p9aYNJnS2Vf9vUIWHfuMHG3O6dgCIAQ90.8GRxdwumi93LAg/W</passwordHash>
-    </hudson.security.HudsonPrivateSecurityRealm_-Details>
-** DONE sed use variable: sed "s/mytext/$var/"
-  CLOSED: [2014-07-31 Thu 13:54]
-http://www.unix.com/shell-programming-and-scripting/14085-how-can-i-use-variable-sed.html
-
-For starters, you can switch to double quotes:
-
-sed "s/mytext/$var/"
-
-Sometimes that does not work. It would depend on the exact value of mytext. So another solution is to turn the single quoted string into two single quoted strings:
-
-sed 's/mytext/'$var'/'
-
-In this case, the 2nd single quoted string is '/'. Just using a backslash would work to that and it saves a character:
-
-sed 's/mytext/'$var\/
-
-There is actually no reason to quote a slash so this should also work with most shells:
-
-sed 's/mytext/'$var/
-
-And there may be no reason to quote anything at all, but again, the actual vakue of mytext determines this. So this may work:
-
-sed s/mytext/$var/
-
-Opps...you only wanted a solution, so I'll quit now..
-
 ** DONE sort by integer: n for numeric:  ps -e -o %cpu | sed '1d' | sort -nr
    CLOSED: [2017-10-18 Wed 08:36]
  https://stackoverflow.com/questions/16129403/sorting-by-integer-value
 
-** DONE bash remove empty lines: sed '/^$/d'
-  CLOSED: [2016-06-10 Fri 13:13]
-http://stackoverflow.com/questions/16414410/delete-empty-lines-using-sed
