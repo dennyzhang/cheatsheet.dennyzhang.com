@@ -69,6 +69,7 @@ http://sed.sourceforge.net/sed1line.txt
 
 https://thornelabs.net/2016/02/01/sed-commands-cheat-sheet.html
 
+http://www.grymoire.com/Unix/Sed.html
 #+BEGIN_EXPORT HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
@@ -101,8 +102,6 @@ https://thornelabs.net/2016/02/01/sed-commands-cheat-sheet.html
 #+LINK_HOME: 
 * [#A] sed                                                         :noexport:
 ** useful link
-http://www.grymoire.com/Unix/Sed.html\\
-Sed - An Introduction and Tutorial
 http://www.grymoire.com/Unix/Sed.html#uh-39\\
 Sed - An Introduction and Tutorial
 http://www.cppblog.com/prayer/archive/2009/09/03/95269.html\\
@@ -111,8 +110,6 @@ http://blog.chinaunix.net/u1/53616/showart_576565.html\\
 sed基础知识
 http://blog.chinaunix.net/u2/75321/showart_1164426.html\\
 unix的sed 用法介绍
-http://blog.chinaunix.net/u1/53616/showart_576565.html\\
-sed基础知识
 ** TODO sed has duplicate line
 out=$(cat << __textarea_eof
 <pre>
@@ -154,4 +151,6 @@ sed '34s/AAA/BBB/'
 ** DONE sort by integer: n for numeric:  ps -e -o %cpu | sed '1d' | sort -nr
    CLOSED: [2017-10-18 Wed 08:36]
  https://stackoverflow.com/questions/16129403/sorting-by-integer-value
-
+** TODO Only replace the first match	
+** TODO Identify multiple lines
+** TODO Add content after nth line
