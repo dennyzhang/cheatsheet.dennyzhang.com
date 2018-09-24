@@ -13,9 +13,8 @@
 </div>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet-travel/blob/master/cheatsheet-travel.pdf][cheatsheet-travel.pdf]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet-travel/blob/master/cheatsheet-travel.pdf][cheatsheet-travel.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel
-- Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
 
 Checklist before travel by flights
 ** Mandatory

@@ -16,9 +16,8 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet-concourse-A4/blob/master/cheatsheet-concourse-A4.pdf][cheatsheet-slack-A4.pdf]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet-concourse-A4/blob/master/cheatsheet-concourse-A4.pdf][cheatsheet-slack-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4
-- Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 
 ** Basic
 | Name                         | Summary                                  |
