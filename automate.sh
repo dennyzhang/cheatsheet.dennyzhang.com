@@ -64,22 +64,36 @@ function refresh_link {
     echo "refresh link"
     for f in $(ls -1t */README.org); do
         dirname=$(basename $(dirname $f))
-         if ! grep "\- Blog URL: https:\/\/cheatsheet.dennyzhang.com\/$dirname" $f 1>/dev/null 2>&1; then
+        if [ -f ${dirname}/.git ]; then
+            github_link="https:\\/\\/github.com/dennyzhang/.*$dirname"
+            pdf_link="https:\\/\\/github.com\\/dennyzhang\\/${dirname}\\/blob\\/master\\/${dirname}.pdf"
+        else
+            github_link="https:\\/\\/github.com/dennyzhang/cheatsheet.dennyzhang.com/$dirname"
+            pdf_link="https:\\/\\/github.com\\/dennyzhang\\/cheatsheet.dennyzhang.com\\/blob\\/master\\/${dirname}\\/${dirname}.pdf"
+        fi
+
+        if ! grep "\- Blog URL: https:\/\/cheatsheet.dennyzhang.com\/$dirname" $f 1>/dev/null 2>&1; then
              echo "Update blog url for $f"
              sed -ie "s/- Blog URL: https:\/\/cheatsheet.dennyzhang.com\/.*/- Blog URL: https:\/\/cheatsheet.dennyzhang.com\/$dirname/g" $f
              rm -rf $dirname/README.orge
-         fi
+        fi
 
-         if ! grep "LATEX_HEADER: \\\\lfoot.*$dirname" $f 1>/dev/null 2>&1; then
+        if ! grep "<a href=\"${github_link}\">" $f 1>/dev/null 2>&1; then
+             echo "Update github url for $f"
+             sed -ie "s#/<a href=\"https://github.com/dennyzhang/[^\"]+\">#<a href=\"$github_link\">\"#g" $f
+             rm -rf $dirname/README.orge
+        fi
+
+        if ! grep "LATEX_HEADER: \\\\lfoot.*$dirname" $f 1>/dev/null 2>&1; then
             echo "Update latex blog url for $f"
             sed -ie "s/LATEX_HEADER: \\\\lfoot.*/LATEX_HEADER: \\\\lfoot{\\\\href{https:\\/\\/github.com\\/dennyzhang\\/$dirname}{GitHub: https:\\/\\/github.com\\/dennyzhang\\/$dirname}}/g" "$f"
             sed -ie "s/LATEX_HEADER: \\\\lhead.*/LATEX_HEADER: \\\\lhead{\\\\href{https:\\/\\/cheatsheet.dennyzhang.com\\/$dirname}{Blog URL: https:\\/\\/cheatsheet.dennyzhang.com\\/$dirname}}/g" "$f"
             rm -rf $dirname/README.orge
         fi
 
-        if ! grep "PDF Link: \\[\\[https:\\/\\/github.com/dennyzhang/.*$dirname.pdf" $f 1>/dev/null 2>&1; then
-            echo "Update latex github url for $f"
-            sed -ie "s/PDF Link: .*/PDF Link: \\[\\[https:\\/\\/github.com\\/dennyzhang\\/${dirname}\\/blob\\/master\\/${dirname}.pdf\\]\\[$dirname.pdf\\]\\]/g" "$f"
+        if ! grep "PDF Link: \\[\\[${github_link}.pdf" $f 1>/dev/null 2>&1; then
+            echo "Update pdf url for $f"
+            sed -ie "s/PDF Link: .*/PDF Link: \\[\\[${pdf_link}\\]\\[${dirname}.pdf\\]\\]/g" "$f"
             rm -rf $dirname/README.orge
         fi
 
@@ -88,19 +102,8 @@ function refresh_link {
             rm -rf $dirname/README.orge            
         fi
 
-        if ! grep "PDF Link: \\[\\[https:\\/\\/github.com/dennyzhang/.*$dirname.pdf" $f 1>/dev/null 2>&1; then
-            echo "Update pdf url for $f"
-            sed -ie "s/PDF Link: .*/PDF Link: \\[\\[https:\\/\\/github.com\\/dennyzhang\\/${dirname}\\/blob\\/master\\/${dirname}.pdf\\]\\[$dirname.pdf\\]\\]/g" "$f"
-            rm -rf $dirname/README.orge
-        fi
-
-## 
-##         if ! grep "tree\/master.*$dirname" $f 1>/dev/null 2>&1; then
-##             echo "Update GitHub url for $f"
-##             sed -ie "s/tree\/master\/.*/tree\/master\/$dirname][challenges-leetcode-interesting]]/g" $f
-##             rm -rf $dirname/README.orge
-##         fi
-##
+        # TODO: change this
+        exit 0
     done
 }
 

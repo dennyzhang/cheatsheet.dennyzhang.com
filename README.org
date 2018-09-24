@@ -458,6 +458,9 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO Add guideline for how people to contribute                  :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO split drive test into a dedicated one: https://cheatsheet.dennyzhang.com/cheatsheet-living-in-ca :noexport:
-* TODO change the page into a github repo https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4 :noexport:
+* TODO convert page into github repos
+** https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4
+** https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
+* TODO add sample file link: https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
