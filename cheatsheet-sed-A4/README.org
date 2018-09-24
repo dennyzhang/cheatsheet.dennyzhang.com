@@ -24,9 +24,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-sed-A4/issues][Issues]] or st
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-Related post:
-- [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet: Linux Find]]
-- [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]]
+Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet: Linux Find]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]]
 
 ** Advanced sed
 | Name                         | Command                                                                    |

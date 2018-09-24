@@ -24,8 +24,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-virtualization-A4/issues][Iss
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-- Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-docker-A4][Docker CheatSheet]]
-- Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][CheatSheet: Cloud Networking]]
+- Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-docker-A4][Docker CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][CheatSheet: Cloud Networking]]
 
 ** Typical Hypervisors
 | Name         | Command |
