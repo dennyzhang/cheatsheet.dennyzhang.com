@@ -159,9 +159,9 @@ Morning @brandon.chen & @ozgur.v.amac, could we grant me the slack admin access?
 
 Whenever we post a bitbucket link, slack will generate a preview.
 
-But slack doesn’t bitbucket access, it will generate a dummy thumb which makes no sense to us.
+But slack doesn't bitbucket access, it will generate a dummy thumb which makes no sense to us.
 
-I’d like to either grant slack bitbucket access or turn off slack link previews
+I'd like to either grant slack bitbucket access or turn off slack link previews
 https://get.slack.help/hc/en-us/articles/204399343-Share-links-in-Slack
 #+END_EXAMPLE
 ** DONE slack curl send message
@@ -183,7 +183,7 @@ curl -X POST \
 ** DONE Send weekly reminder by slack.
    CLOSED: [2017-07-08 Sat 16:16]
 https://get.slack.help/hc/en-us/articles/208423427-Setting-reminders
-remind #internal-jenkins-ci “It’s time to run test” at 6PM every Monday.
+remind #internal-jenkins-ci "It's time to run test" at 6PM every Monday.
 
 /remind me every weekday at 2pm to take a coffee break
 

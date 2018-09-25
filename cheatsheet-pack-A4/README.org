@@ -1,4 +1,4 @@
-* Pack CheatSheet                                                     :Tools:
+* Pack CheatSheet                                                     :Linux:
 :PROPERTIES:
 :type:     tar
 :export_file_name: cheatsheet-pack-A4.pdf
