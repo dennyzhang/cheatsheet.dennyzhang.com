@@ -463,4 +463,4 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 ** https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
-* TODO add sample file link: https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
+* TODO add sample file link: https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4 :noexport:
