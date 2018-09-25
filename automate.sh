@@ -51,8 +51,10 @@ function git_push {
         if [ -d "$d" ] && [ -f "$d/.git" ] ; then
             cd "$d"
             echo "In ${d}, git commit and push"
-            git commit --amend --no-edit
-            git push origin master --force
+            git commit -am "update doc"
+            git push origin master
+            # git commit --amend --no-edit
+            # git push origin master --force
             cd ..
         fi
     done
@@ -63,6 +65,7 @@ function git_push {
 function refresh_link {
     echo "refresh link"
     for f in $(ls -1t */README.org); do
+        set -x
         dirname=$(basename $(dirname $f))
         if [ -f ${dirname}/.git ]; then
             github_link="https:\\/\\/github.com/dennyzhang/.*$dirname"
