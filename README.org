@@ -120,7 +120,7 @@ Cheers!
 * CANCELED                                                         :noexport:
 ** CANCELED Create symol link: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
    CLOSED: [2018-09-09 Sun 00:42]
-* DONE
+* DONE                                                             :noexport:
 ** DONE cheatsheet: add category
    CLOSED: [2018-08-14 Tue 00:31]
 ** DONE cheatsheet: main page layout
