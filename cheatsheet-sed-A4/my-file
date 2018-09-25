@@ -7,3 +7,9 @@
 127.0.0.1	localhost
 255.255.255.255	broadcasthost
 ::1             localhost
+
+KUBELET_NETWORK_ARGS some option
+
+empty lines
+
+End

@@ -26,13 +26,13 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet: Linux Find]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]]
 
 ** Advanced sed
-| Name                         | Command                                                                    |
-|------------------------------+----------------------------------------------------------------------------|
-| Update with auto backup      | =sed -i.bak 's/localhost/myhost/g' my-file=, =ls my-file*=,  [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sed-A4/my-file][link: my-file]] |
-| Use variables in sed         | newip='127.0.1.1'; =sed -i "s/127.0.0.1/$newip/g" my-file= [[https://www.unix.com/shell-programming-and-scripting/14085-how-can-i-use-variable-sed.html][link: unix.com]]  |
-| Only replace the first match |                                                                            |
-| Identify multiple lines      |                                                                            |
-| Add content after nth line   |                                                                            |
+| Name                         | Command                                                                      |
+|------------------------------+------------------------------------------------------------------------------|
+| Update with auto backup      | =sed -i.bak 's/localhost/myhost/g' my-file=, =ls my-file*=,  [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sed-A4/my-file][link: my-file]]   |
+| Use variables in sed         | newip='127.0.1.1'; =sed -i "s/127.0.0.1/$newip/g" my-file= [[https://www.unix.com/shell-programming-and-scripting/14085-how-can-i-use-variable-sed.html][link: unix.com]]    |
+| Only replace the first match | =sed -i '0,/localhost/{s/localhost/newstring/}' my-file= [[https://stackoverflow.com/questions/148451/how-to-use-sed-to-replace-only-the-first-occurrence-in-a-file][link: stackoverflow]] |
+| Replace multiple lines       | =sed -i ':a;N;$!ba;s/Host.*localhost//g' my-file= [[https://askubuntu.com/questions/533221/how-do-i-replace-multiple-lines-with-single-word-in-fileinplace-replace][link: stackexchange]]        |
+| Add content after nth line   | =sed -n -i 'p;3a "new string"' my-file=, =cat -n my-file= [[https://www.unix.com/unix-for-beginners-questions-and-answers/264345-insert-line-text-nth-line-file.html][link: unix.com]]     |
 
 ** GNUS sed - remove
 | Name                      | Command                                                             |
@@ -69,7 +69,7 @@ http://sed.sourceforge.net/sed1line.txt
 https://thornelabs.net/2016/02/01/sed-commands-cheat-sheet.html
 
 http://www.grymoire.com/Unix/Sed.html
-#+BEGIN_EXPORT HTML
+#+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
@@ -100,6 +100,12 @@ http://www.grymoire.com/Unix/Sed.html
 #+LINK_UP:   
 #+LINK_HOME: 
 * [#A] sed                                                         :noexport:
+cp my-file.bak my-file
+
+sed -i 's/$/ tail/g' my-file
+
+diff my-file.bak my-file
+
 ** useful link
 http://www.grymoire.com/Unix/Sed.html#uh-39\\
 Sed - An Introduction and Tutorial
@@ -150,6 +156,7 @@ sed '34s/AAA/BBB/'
 ** DONE sort by integer: n for numeric:  ps -e -o %cpu | sed '1d' | sort -nr
    CLOSED: [2017-10-18 Wed 08:36]
  https://stackoverflow.com/questions/16129403/sorting-by-integer-value
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** TODO Only replace the first match	
 ** TODO Identify multiple lines
 ** TODO Add content after nth line
