@@ -13,7 +13,7 @@ function my_test {
 function refresh_wordpress {
     local max_days=${MAX_DAYS:-"7"}
     echo "Use emacs to update wordpress posts"
-    for f in $(find . -name 'README.org' -mtime -${max_days} | grep -v '^README.org$'); do
+    for f in $(find . -name 'README.org' -mtime -${max_days} | grep -v '^./README.org$'); do
         echo "Update $f"
         dirname=$(basename $(dirname $f))
         cd $dirname
@@ -25,7 +25,7 @@ function refresh_wordpress {
 function refresh_cheatsheet {
     local max_days=${MAX_DAYS:-"7"}
     echo "Use emacs to update cheatsheet pdf"
-    for f in $(find . -name 'README.org' -mtime -${max_days} | grep -v '^README.org$'); do
+    for f in $(find . -name 'README.org' -mtime -${max_days} | grep -v '^./README.org$'); do
         echo "Update $f"
         dirname=$(basename $(dirname $f))
         cd $dirname
@@ -64,8 +64,10 @@ function git_push {
 
 function refresh_link {
     echo "refresh link"
+    git status
     for f in $(ls -1t */README.org); do
         dirname=$(basename $(dirname $f))
+        echo "Update $dirname"
         if ! grep "\- Blog URL: https:\/\/cheatsheet.dennyzhang.com\/$dirname" $f 1>/dev/null 2>&1; then
             echo "Update blog url for $f"
             sed -i "" "s#- Blog URL: https://cheatsheet.dennyzhang.com/.*#- Blog URL: https://cheatsheet.dennyzhang.com/$dirname#g" $f
@@ -90,12 +92,13 @@ function refresh_link {
 
         # TODO update the changed file
         # echo "Update pdf url for $f"
-        sed -i "" "s#^- PDF Link: .*#- PDF Link: [[${pdf_link}][${dirname}.pdf]]#g" "$f"
+        sed -i "" "s#^- PDF Link: [^,]*,#- PDF Link: [[${pdf_link}][${dirname}.pdf]],#g" "$f"
 
         # echo "Update latex blog url for $f"
         sed -i "" "s#LATEX_HEADER: \\\lfoot{\\\href{https://github.com/dennyzhang.*#LATEX_HEADER: \\\lfoot{\\\href{$github_link}{GitHub: $github_link}}#g" "$f"
         sed -i "" "s#LATEX_HEADER: \\\lhead{\\\href{https://cheatsheet.dennyzhang.com.*#LATEX_HEADER: \\\lhead{\\\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/${dirname}}}#g" "$f"
     done
+    git status
 }
 
 action=${1?}

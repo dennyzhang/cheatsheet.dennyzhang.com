@@ -13,7 +13,7 @@
 </div>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet-travel/blob/master/cheatsheet-travel.pdf][cheatsheet-travel.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-travel/cheatsheet-travel.pdf][cheatsheet-travel.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel
 
 Checklist before travel by flights
@@ -66,8 +66,8 @@ Checklist before travel by flights
 #+LATEX_HEADER: \fancyhf{}
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
-#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-travel}{GitHub: https://github.com/dennyzhang/cheatsheet-travel}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-travel}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-travel}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-travel}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)
