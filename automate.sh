@@ -65,48 +65,36 @@ function git_push {
 function refresh_link {
     echo "refresh link"
     for f in $(ls -1t */README.org); do
-        set -x
         dirname=$(basename $(dirname $f))
-        if [ -f ${dirname}/.git ]; then
-            github_link="https:\\/\\/github.com/dennyzhang/.*$dirname"
-            pdf_link="https:\\/\\/github.com\\/dennyzhang\\/${dirname}\\/blob\\/master\\/${dirname}.pdf"
-        else
-            github_link="https:\\/\\/github.com/dennyzhang/cheatsheet.dennyzhang.com/$dirname"
-            pdf_link="https:\\/\\/github.com\\/dennyzhang\\/cheatsheet.dennyzhang.com\\/blob\\/master\\/${dirname}\\/${dirname}.pdf"
-        fi
-
         if ! grep "\- Blog URL: https:\/\/cheatsheet.dennyzhang.com\/$dirname" $f 1>/dev/null 2>&1; then
-             echo "Update blog url for $f"
-             sed -ie "s/- Blog URL: https:\/\/cheatsheet.dennyzhang.com\/.*/- Blog URL: https:\/\/cheatsheet.dennyzhang.com\/$dirname/g" $f
-             rm -rf $dirname/README.orge
-        fi
-
-        if ! grep "<a href=\"${github_link}\">" $f 1>/dev/null 2>&1; then
-             echo "Update github url for $f"
-             sed -ie "s#/<a href=\"https://github.com/dennyzhang/[^\"]+\">#<a href=\"$github_link\">\"#g" $f
-             rm -rf $dirname/README.orge
-        fi
-
-        if ! grep "LATEX_HEADER: \\\\lfoot.*$dirname" $f 1>/dev/null 2>&1; then
-            echo "Update latex blog url for $f"
-            sed -ie "s/LATEX_HEADER: \\\\lfoot.*/LATEX_HEADER: \\\\lfoot{\\\\href{https:\\/\\/github.com\\/dennyzhang\\/$dirname}{GitHub: https:\\/\\/github.com\\/dennyzhang\\/$dirname}}/g" "$f"
-            sed -ie "s/LATEX_HEADER: \\\\lhead.*/LATEX_HEADER: \\\\lhead{\\\\href{https:\\/\\/cheatsheet.dennyzhang.com\\/$dirname}{Blog URL: https:\\/\\/cheatsheet.dennyzhang.com\\/$dirname}}/g" "$f"
-            rm -rf $dirname/README.orge
-        fi
-
-        if ! grep "PDF Link: \\[\\[${github_link}.pdf" $f 1>/dev/null 2>&1; then
-            echo "Update pdf url for $f"
-            sed -ie "s/PDF Link: .*/PDF Link: \\[\\[${pdf_link}\\]\\[${dirname}.pdf\\]\\]/g" "$f"
-            rm -rf $dirname/README.orge
+            echo "Update blog url for $f"
+            sed -i "" "s#- Blog URL: https://cheatsheet.dennyzhang.com/.*#- Blog URL: https://cheatsheet.dennyzhang.com/$dirname#g" $f
         fi
 
         if ! grep ":export_file_name: $dirname.pdf" $f 1>/dev/null 2>&1; then
-            sed -ie "s/\:export_file_name\:.*/\:export_file_name\: $dirname.pdf/g" "$f"
-            rm -rf $dirname/README.orge            
+            sed -i "" "s/\:export_file_name\:.*/\:export_file_name\: $dirname.pdf/g" "$f"
         fi
 
-        # TODO: change this
-        exit 0
+        if [ -f ${dirname}/.git ]; then
+            github_link="https://github.com/dennyzhang/.*$dirname"
+            pdf_link="https://github.com/dennyzhang/${dirname}/blob/master/${dirname}.pdf"
+        else
+            github_link="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/$dirname"
+            pdf_link="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/${dirname}/${dirname}.pdf"
+        fi
+
+        if ! grep "<a href=\"${github_link}\">" $f 1>/dev/null 2>&1; then
+            echo "Update github url for $f"
+            sed -i "" "s#<a href=\"https://github.com/dennyzhang/[^\"]*\">#<a href=\"$github_link\">\"#g" $f
+        fi
+
+        # TODO update the changed file
+        # echo "Update pdf url for $f"
+        sed -i "" "s#^- PDF Link: .*#- PDF Link: [[${pdf_link}][${dirname}.pdf]]#g" "$f"
+
+        # echo "Update latex blog url for $f"
+        sed -i "" "s#LATEX_HEADER: \\\lfoot{\\\href{https://github.com/dennyzhang.*#LATEX_HEADER: \\\lfoot{\\\href{$github_link}{GitHub: $github_link}}#g" "$f"
+        sed -i "" "s#LATEX_HEADER: \\\lhead{\\\href{https://cheatsheet.dennyzhang.com.*#LATEX_HEADER: \\\lhead{\\\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/${dirname}}}#g" "$f"
     done
 }
 
