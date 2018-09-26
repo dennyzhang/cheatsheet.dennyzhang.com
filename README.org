@@ -167,6 +167,10 @@ Cheers!
    CLOSED: [2018-08-16 Thu 00:08]
 ** CANCELED no summary or preview
    CLOSED: [2018-08-16 Thu 00:09]
+* TODO convert page into github repos                              :noexport:
+** https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
+** https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] cheatsheet.dennyzhang.com                              :noexport:
 ** TODO align icon horizontally in blog: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
 https://cheatsheet.dennyzhang.com/contact
@@ -189,7 +193,7 @@ https://www.mediaatelier.com/CheatSheet/
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** Discussion
 *** TODO make the font bigger
-* TODO [#A] Generate cheatsheet PDF A4                             :noexport:
+* HALF [#A] Generate cheatsheet PDF A4                             :noexport:
 ** TODO [#A] Line too long: line wrap, without truncation
 ** Add site url, version, logo
 ** TODO Change font size to smaller
@@ -198,33 +202,16 @@ https://www.mediaatelier.com/CheatSheet/
 ** TODO Add author info
 ** Add link color
 ** Add url domain icon to the pdf
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** [#A] latex template
-https://www.overleaf.com/gallery/tagged/cheat-sheet#.W42wnJNKjMU
-https://wch.github.io/latexsheet/
-https://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
-** DONE error message: need to install pdflatex
-   CLOSED: [2018-09-03 Mon 17:36]
-/bin/bash: pdflatex: command not found
-#+BEGIN_EXAMPLE
-Debugger entered--Lisp error: (error "File \"/Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4/README.pdf\" wasn’t produced.  See \"*Org PDF LaTeX Output*\" for details")
-  signal(error ("File \"/Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4/README.pdf\" wasn’t produced.  See \"*Org PDF LaTeX Output*\" for details"))
-  error("File \"/Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4/README.pdf\" wasn't produced.  See \"*Org PDF LaTeX Output*\" for details")
-  org-compile-file("README.tex" ("%L -interaction nonstopmode -output-directory %o %f" "%L -interaction nonstopmode -output-directory %o %f" "%L -interaction nonstopmode -output-directory %o %f") "pdf" "See \"*Org PDF LaTeX Output*\" for details" #<buffer *Org PDF LaTeX Output*> ((66 . "bibtex") (76 . "pdflatex")))
-  org-latex-compile("README.tex")
-  #f(compiled-function (file) #<bytecode 0x4149e2f9>)("README.tex")
-  org-export-to-file(latex "README.tex" nil nil nil nil nil #f(compiled-function (file) #<bytecode 0x4149e2f9>))
-  org-latex-export-to-pdf(nil nil nil nil)
-  org-export-dispatch(nil)
-  funcall-interactively(org-export-dispatch nil)
-  call-interactively(org-export-dispatch nil nil)
-  command-execute(org-export-dispatch)
-#+END_EXAMPLE
 ** TODO Convert your blog posts to pdf
 https://www.overleaf.com/articles/html-cheat-sheet-new/ykrnwnsgyvtk#.W1YiYtgzry0
 
 Convert your blog posts to pdf and submit it to document sharing sites, here is a list of document sharing sites for you to get started.
 http://www.shoutmeloud.com/101-ways-to-get-quality-backlinks-to-your-blog.html
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** [#A] latex template
+https://www.overleaf.com/gallery/tagged/cheat-sheet#.W42wnJNKjMU
+https://wch.github.io/latexsheet/
+https://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
 
 ** DONE
 *** DONE Change backup filename: README.pdf
@@ -233,6 +220,23 @@ http://www.shoutmeloud.com/101-ways-to-get-quality-backlinks-to-your-blog.html
     CLOSED: [2018-09-03 Mon 17:35]
 *** DONE Update link script: pdf, and export_file_name
     CLOSED: [2018-09-03 Mon 17:35]
+*** DONE error message: need to install pdflatex
+    CLOSED: [2018-09-03 Mon 17:36]
+ /bin/bash: pdflatex: command not found
+ #+BEGIN_EXAMPLE
+ Debugger entered--Lisp error: (error "File \"/Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4/README.pdf\" wasn't produced.  See \"*Org PDF LaTeX Output*\" for details")
+   signal(error ("File \"/Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4/README.pdf\" wasn't produced.  See \"*Org PDF LaTeX Output*\" for details"))
+   error("File \"/Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4/README.pdf\" wasn't produced.  See \"*Org PDF LaTeX Output*\" for details")
+   org-compile-file("README.tex" ("%L -interaction nonstopmode -output-directory %o %f" "%L -interaction nonstopmode -output-directory %o %f" "%L -interaction nonstopmode -output-directory %o %f") "pdf" "See \"*Org PDF LaTeX Output*\" for details" #<buffer *Org PDF LaTeX Output*> ((66 . "bibtex") (76 . "pdflatex")))
+   org-latex-compile("README.tex")
+   #f(compiled-function (file) #<bytecode 0x4149e2f9>)("README.tex")
+   org-export-to-file(latex "README.tex" nil nil nil nil nil #f(compiled-function (file) #<bytecode 0x4149e2f9>))
+   org-latex-export-to-pdf(nil nil nil nil)
+   org-export-dispatch(nil)
+   funcall-interactively(org-export-dispatch nil)
+   call-interactively(org-export-dispatch nil nil)
+   command-execute(org-export-dispatch)
+ #+END_EXAMPLE
 ** TODO generate A4 pdf: https://github.com/PrateekKumarSingh/CheatSheets :noexport:
 * TODO [#A] Role model                                             :noexport:
 ** http://cheatsheetworld.com/
@@ -258,6 +262,7 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 ** TODO [#A] Role model: enable people to use it as a command line https://github.com/chrisallenlane/cheat
 ** TODO [#A] Role model: enable people to autocomplete https://github.com/chrisallenlane/cheat
 ** TODO [#A] Role model: enable people to grow it as a community https://github.com/chrisallenlane/cheat
+** TODO [#A] regexp: https://www.regular-expressions.info/quickstart.html :IMPORTANT:
 * TODO [#A] Layout suggestions                                     :noexport:
 ** TODO [#A] emacs wordpress block width: https://cheatsheet.dennyzhang.com/cheatsheet-concourse :noexport:
  It's different from this:
@@ -412,11 +417,11 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
     CLOSED: [2013-12-01 Sun 00:29]
  http://hi.baidu.com/xiao0/item/4df4851ce875644ee65e06c0
 
- 抓ICMP echo request（请求包）：
+ 抓ICMP echo request（请求包）:
                 tcpdump -i eth1 'icmp[0]=8'
-       抓ICMP echo reply （回应包）：
+       抓ICMP echo reply （回应包）:
                 tcpdump -i eth1 'icmp[0]=0'
-        tcpdump太好用了。
+        tcpdump太好用了.
 
  tcpdump -i any -n -v 'icmp'
  tcpdump -i any -n -v 'icmp[icmptype] = icmp-echoreply or icmp[icmptype] = icmp-echo'
@@ -458,9 +463,53 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO Add guideline for how people to contribute                  :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO split drive test into a dedicated one: https://cheatsheet.dennyzhang.com/cheatsheet-living-in-ca :noexport:
-* TODO convert page into github repos                              :noexport:
-** https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4
-** https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
-* TODO add sample file link: https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4 :noexport:
+* TODO improve minikube cheatsheet, and publish to linkedin        :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Merge challenges-golang-datastructure into golang cheatsheet :noexport:
+* TODO Merge challenges-python-datastructure into python cheatsheet :noexport:
+* TODO cheatsheet health for IT workers                            :noexport:
+ https://login.remedyint.com/app/mod_delivery.cfm?ElementPosition=66&cachekill=BCD0A10F-9DB9-02A1-9D4416666C0D7F3C
+
+ No discomfort should be felt while performing stretches. 
+
+ Keep your mouse close so you are not extending your arm to use it
+ Relax your fingers on the mouse buttons
+
+ Infrequent work-related discomfort
+ Rests elbows on armrests
+ Monitor moderately off center
+ Hands and wrists rest on hard surface
+ Severe shoulder abduction
+ Feet do not rest comfortably on floor or footrest
+ Wrists bent backward
+ Moderate forward head posture
+ Backrest too high
+ Takes breaks once every 3 hours
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO tcpdump: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO markdown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO [#A] apparmor: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO asciiart: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO yum & rpm & rpm2cpio & urpm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO wget: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO cp & rsync: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO sql & sqlite3 & mysql & psql & sqlmap & mysqldump: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+https://github.com/treehouse/cheatsheets
+* TODO crontab & at & shutdown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO [#A] apk/apt/apt-cache/apt-get/aptitude/dpkg/deb: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO du & dd && df & lsblk & lvm & mdadm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4 :noexport:
+* TODO chmod & chown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO convert: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO ifconfig & ip & iwconfig & route & ss & ntp & nmap & nc & ncat & netstat & dhclient: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO iptables: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO ps & kill: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO od: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO openssl: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO mount & udisksctl: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO systemctl & systemd: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cheatsheet: cron                                            :noexport:

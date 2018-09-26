@@ -35,15 +35,16 @@ Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet
 | Add content after nth line          | =sed -n -i 'p;3a "new string"' my-file=, =cat -n my-file= [[https://www.unix.com/unix-for-beginners-questions-and-answers/264345-insert-line-text-nth-line-file.html][link: unix.com]]     |
 | Insert a line of text before a line | =sed -i '/KUBELET_NETWORK_ARGS/i newline' my-file=                           |
 
-** GNUS sed - remove
+** GNUS sed - delete
 | Name                       | Command                                                             |
 |----------------------------+---------------------------------------------------------------------|
 | Replace string             | =sed -i 's/127.0.0.1/127.0.1.1/g' my-file= [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sed-A4/my-file][link: my-file]]            |
 | Use a different seperator  | =sed -i 's#127.0.0.1#127.0.1.1#g' my-file=                          |
 | Use a different seperator  | =sed -i 's#https://www.test.com/test#http://www.try.com#g' my-file= |
-| Remove matched lines       | =sed -i 's/.*KUBELET_NETWORK_ARGS.*//g' my-file=                    |
-| Remove whitespace          | =sed -i 's/ //g' my-file=                                           |
-| Remove empty lines         | =sed -i '/^$/d' my-file=                                            |
+| Delete pattern             | =sed '/KUBELET_NETWORK_ARGS.*/d' my-file=                           |
+| Delete matched lines       | =sed -i 's/.*KUBELET_NETWORK_ARGS.*//g' my-file=                    |
+| Delete whitespace          | =sed -i 's/ //g' my-file=                                           |
+| Delete empty lines         | =sed -i '/^$/d' my-file=                                            |
 | Delete 2nd to 4th lines    | =sed -i '2,4d' my-file=                                             |
 | Delete leading whitespace  | =sed -i 's/^[ \t]*//' my-file=                                      |
 | Delete trailing whitespace | =sed -i 's/[ \t]*$//' my-file=                                      |
@@ -162,3 +163,27 @@ sed '34s/AAA/BBB/'
    CLOSED: [2017-10-18 Wed 08:36]
  https://stackoverflow.com/questions/16129403/sorting-by-integer-value
 ** HALF [#A] https://thornelabs.net/2016/02/01/sed-commands-cheat-sheet.html
+** more content
+# To replace all occurrences of "day" with "night" and write to stdout:
+sed 's/day/night/g' file.txt
+
+# To replace all occurrences of "day" with "night" within file.txt:
+sed -i 's/day/night/g' file.txt
+
+# To replace all occurrences of "day" with "night" on stdin:
+echo 'It is daytime' | sed 's/day/night/g'
+
+# To remove leading spaces
+sed -i -r 's/^\s+//g' file.txt
+
+# To remove empty lines and print results to stdout:
+sed '/^$/d' file.txt
+
+# To replace newlines in multiple lines
+sed ':a;N;$!ba;s/\n//g'  file.txt
+
+# Insert a line before a matching pattern:
+sed '/Once upon a time/i\Chapter 1'
+
+# Add a line after a matching pattern:
+sed '/happily ever after/a\The end.'
