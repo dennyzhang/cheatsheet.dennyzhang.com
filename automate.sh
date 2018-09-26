@@ -78,7 +78,7 @@ function refresh_link {
         fi
 
         if [ -f ${dirname}/.git ]; then
-            github_link="https://github.com/dennyzhang/.*$dirname"
+            github_link="https://github.com/dennyzhang/$dirname"
             pdf_link="https://github.com/dennyzhang/${dirname}/blob/master/${dirname}.pdf"
         else
             github_link="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/$dirname"

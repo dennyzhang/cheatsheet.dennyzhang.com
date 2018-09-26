@@ -24,19 +24,26 @@ File me [[https://github.com/dennyzhang/cheatsheet-cron-A4/issues][Issues]] or s
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet: Linux Find]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]]
-** cron
-| Name                              | Comment                                                   |
-|-----------------------------------+-----------------------------------------------------------|
-| Create cron job runs every 5 mins | =*/5 * * * * /root/mycommand.sh=                          |
-| Runs every Friday at 9:10 AM      | =10 9 * * 5 /root/mycommand.sh=                           |
-| Runs every midnight               | =0 0 * * * /root/mycommand.sh=                            |
-| Redirect output to log file       | =0 0 * * * /root/mycommand.sh >>/var/log/mycron.log 2>&1= |
-** at
+** Cron job - create
+| Name                                 | Comment                                                   |
+|--------------------------------------+-----------------------------------------------------------|
+| Create cron job runs every 5 mins    | =*/5 * * * * /root/mycommand.sh=                          |
+| Runs every Friday at 9:10 AM         | =10 9 * * 5 /root/mycommand.sh=                           |
+| Runs every midnight                  | =0 0 * * * /root/mycommand.sh=                            |
+| Redirect output to log file          | =0 0 * * * /root/mycommand.sh >>/var/log/mycron.log 2>&1= |
+** Cron job - common
+| Name                                 | Comment                                 |
+|--------------------------------------+-----------------------------------------|
+| Find crontab daemon process          | =pgrep crond=                           |
+| List cron jobs created by automation | =ls -lth /etc/cron*=                    |
+| List cron jobs created by me         | =crontab -l=                            |
+| Changing default crontab editor      | =export EDITOR=vim= [[https://askubuntu.com/questions/55022/changing-default-crontab-editor][link: askubuntu.com]] |
+** At
 | Name                              | Comment       |
 |-----------------------------------+---------------|
 | List all currently-queued at jobs | =atq=         |
 | Remove a job                      | =atrm $jobid= |
-** shutdown
+** Shutdown
 | Name                      | Comment           |
 |---------------------------+-------------------|
 | Shutdown system now       | =shutdown -r now= |
@@ -93,3 +100,321 @@ now | midnight | noon | teatime (4pm)
 HH:MM
 now + N {minutes | hours | days | weeks}
 MM/DD/YY
+** [question] Fail to strace "crontab -l"
+ sudo cat /var/spool/cron/crontabs/denny
+
+chdir("/var/spool/cron")                = 0
+
+open("crontabs/denny", O_RDONLY)        = -1 EACCES (Permission denied)
+*** misc                                                           :noexport:
+#+begin_example
+denny@denny-Vostro-1014:~/backup/essential/Dropbox/private_data/emacs_stuff/org_data/org_share$  strace  crontab -l
+execve("/usr/bin/crontab", ["crontab", "-l"], [/* 51 vars */]) = 0
+brk(0)                                  = 0x10f6000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa8a947e000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=94420, ...}) = 0
+mmap(NULL, 94420, PROT_READ, MAP_PRIVATE, 4, 0) = 0x7fa8a9466000
+close(4)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\200\30\2\0\0\0\0\0"..., 832) = 832
+fstat(4, {st_mode=S_IFREG|0755, st_size=1802936, ...}) = 0
+mmap(NULL, 3917016, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fa8a8ea1000
+mprotect(0x7fa8a9054000, 2093056, PROT_NONE) = 0
+mmap(0x7fa8a9253000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x1b2000) = 0x7fa8a9253000
+mmap(0x7fa8a9259000, 17624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fa8a9259000
+close(4)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa8a9465000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa8a9464000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa8a9463000
+arch_prctl(ARCH_SET_FS, 0x7fa8a9464700) = 0
+mprotect(0x7fa8a9253000, 16384, PROT_READ) = 0
+mprotect(0x607000, 4096, PROT_READ)     = 0
+mprotect(0x7fa8a9480000, 4096, PROT_READ) = 0
+munmap(0x7fa8a9466000, 94420)           = 0
+getpid()                                = 7411
+brk(0)                                  = 0x10f6000
+brk(0x1117000)                          = 0x1117000
+open("/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=7220736, ...}) = 0
+mmap(NULL, 7220736, PROT_READ, MAP_PRIVATE, 4, 0) = 0x7fa8a87be000
+close(4)                                = 0
+getuid()                                = 1000
+socket(PF_FILE, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 4
+connect(4, {sa_family=AF_FILE, path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(4)                                = 0
+socket(PF_FILE, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 4
+connect(4, {sa_family=AF_FILE, path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(4)                                = 0
+open("/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=513, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa8a947d000
+read(4, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 513
+read(4, "", 4096)                       = 0
+close(4)                                = 0
+munmap(0x7fa8a947d000, 4096)            = 0
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=94420, ...}) = 0
+mmap(NULL, 94420, PROT_READ, MAP_PRIVATE, 4, 0) = 0x7fa8a9466000
+close(4)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libnss_compat.so.2", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`\22\0\0\0\0\0\0"..., 832) = 832
+fstat(4, {st_mode=S_IFREG|0644, st_size=35680, ...}) = 0
+mmap(NULL, 2131240, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fa8a85b5000
+mprotect(0x7fa8a85bd000, 2093056, PROT_NONE) = 0
+mmap(0x7fa8a87bc000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x7000) = 0x7fa8a87bc000
+close(4)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libnsl.so.1", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`@\0\0\0\0\0\0"..., 832) = 832
+fstat(4, {st_mode=S_IFREG|0644, st_size=97248, ...}) = 0
+mmap(NULL, 2202328, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fa8a839b000
+mprotect(0x7fa8a83b2000, 2093056, PROT_NONE) = 0
+mmap(0x7fa8a85b1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0x16000) = 0x7fa8a85b1000
+mmap(0x7fa8a85b3000, 6872, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fa8a85b3000
+close(4)                                = 0
+mprotect(0x7fa8a85b1000, 4096, PROT_READ) = 0
+mprotect(0x7fa8a87bc000, 4096, PROT_READ) = 0
+munmap(0x7fa8a9466000, 94420)           = 0
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=94420, ...}) = 0
+mmap(NULL, 94420, PROT_READ, MAP_PRIVATE, 4, 0) = 0x7fa8a9466000
+close(4)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libnss_nis.so.2", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260 \0\0\0\0\0\0"..., 832) = 832
+fstat(4, {st_mode=S_IFREG|0644, st_size=47680, ...}) = 0
+mmap(NULL, 2143552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fa8a818f000
+mprotect(0x7fa8a8199000, 2097152, PROT_NONE) = 0
+mmap(0x7fa8a8399000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0xa000) = 0x7fa8a8399000
+close(4)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libnss_files.so.2", O_RDONLY|O_CLOEXEC) = 4
+read(4, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@!\0\0\0\0\0\0"..., 832) = 832
+fstat(4, {st_mode=S_IFREG|0644, st_size=52120, ...}) = 0
+mmap(NULL, 2148472, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fa8a7f82000
+mprotect(0x7fa8a7f8e000, 2093056, PROT_NONE) = 0
+mmap(0x7fa8a818d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 0xb000) = 0x7fa8a818d000
+close(4)                                = 0
+mprotect(0x7fa8a818d000, 4096, PROT_READ) = 0
+mprotect(0x7fa8a8399000, 4096, PROT_READ) = 0
+munmap(0x7fa8a9466000, 94420)           = 0
+open("/etc/passwd", O_RDONLY|O_CLOEXEC) = 4
+lseek(4, 0, SEEK_CUR)                   = 0
+fstat(4, {st_mode=S_IFREG|0644, st_size=2105, ...}) = 0
+mmap(NULL, 2105, PROT_READ, MAP_SHARED, 4, 0) = 0x7fa8a947d000
+lseek(4, 2105, SEEK_SET)                = 2105
+munmap(0x7fa8a947d000, 2105)            = 0
+close(4)                                = 0
+stat("/var/spool/cron", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+chdir("/var/spool/cron")                = 0
+stat("crontabs", {st_mode=S_IFDIR|S_ISVTX|0730, st_size=4096, ...}) = 0
+open("/etc/cron.allow", O_RDONLY)       = -1 ENOENT (No such file or directory)
+open("/etc/cron.deny", O_RDONLY)        = -1 ENOENT (No such file or directory)
+open("/etc/localtime", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=405, ...}) = 0
+fstat(4, {st_mode=S_IFREG|0644, st_size=405, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa8a947d000
+read(4, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0\3\0\0\0\0"..., 4096) = 405
+lseek(4, -240, SEEK_CUR)                = 165
+read(4, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0\3\0\0\0\0"..., 4096) = 240
+close(4)                                = 0
+munmap(0x7fa8a947d000, 4096)            = 0
+socket(PF_FILE, SOCK_DGRAM|SOCK_CLOEXEC, 0) = 4
+connect(4, {sa_family=AF_FILE, path="/dev/log"}, 110) = 0
+sendto(4, "<78>Sep 19 23:28:52 crontab[7411"..., 55, MSG_NOSIGNAL, NULL, 0) = 55
+close(4)                                = 0
+open("crontabs/denny", O_RDONLY)        = -1 EACCES (Permission denied)
+open("/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 4
+fstat(4, {st_mode=S_IFREG|0644, st_size=2570, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa8a947d000
+read(4, "# Locale name alias data base.\n#"..., 4096) = 2570
+read(4, "", 4096)                       = 0
+close(4)                                = 0
+munmap(0x7fa8a947d000, 4096)            = 0
+open("/usr/share/locale/en_US.UTF-8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/share/locale/en_US.utf8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/share/locale/en_US/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/share/locale/en.UTF-8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/share/locale/en.utf8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/share/locale/en/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/share/locale-langpack/en_US.UTF-8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/share/locale-langpack/en_US.utf8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/share/locale-langpack/en_US/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/share/locale-langpack/en.UTF-8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/share/locale-langpack/en.utf8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+open("/usr/share/locale-langpack/en/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+write(2, "crontabs/denny/: fopen: Permissi"..., 42crontabs/denny/: fopen: Permission denied
+) = 42
+exit_group(1)                           = ?
+denny@denny-Vostro-1014:~/backup/essential/Dropbox/private_data/emacs_stuff/org_data/org_share$ sudo strace  crontab -l
+execve("/usr/bin/crontab", ["crontab", "-l"], [/* 18 vars */]) = 0
+brk(0)                                  = 0x1fec000
+fcntl(0, F_GETFD)                       = 0
+fcntl(1, F_GETFD)                       = 0
+fcntl(2, F_GETFD)                       = 0
+access("/etc/suid-debug", F_OK)         = -1 ENOENT (No such file or directory)
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6fb563b000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=94420, ...}) = 0
+mmap(NULL, 94420, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f6fb5623000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\200\30\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1802936, ...}) = 0
+mmap(NULL, 3917016, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6fb505e000
+mprotect(0x7f6fb5211000, 2093056, PROT_NONE) = 0
+mmap(0x7f6fb5410000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b2000) = 0x7f6fb5410000
+mmap(0x7f6fb5416000, 17624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6fb5416000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6fb5622000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6fb5621000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6fb5620000
+arch_prctl(ARCH_SET_FS, 0x7f6fb5621700) = 0
+mprotect(0x7f6fb5410000, 16384, PROT_READ) = 0
+mprotect(0x607000, 4096, PROT_READ)     = 0
+mprotect(0x7f6fb563d000, 4096, PROT_READ) = 0
+munmap(0x7f6fb5623000, 94420)           = 0
+getpid()                                = 7438
+brk(0)                                  = 0x1fec000
+brk(0x200d000)                          = 0x200d000
+open("/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=7220736, ...}) = 0
+mmap(NULL, 7220736, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f6fb497b000
+close(3)                                = 0
+getuid()                                = 0
+socket(PF_FILE, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_FILE, path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+socket(PF_FILE, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+connect(3, {sa_family=AF_FILE, path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(3)                                = 0
+open("/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=513, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6fb563a000
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 513
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+munmap(0x7f6fb563a000, 4096)            = 0
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=94420, ...}) = 0
+mmap(NULL, 94420, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f6fb5623000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libnss_compat.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`\22\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=35680, ...}) = 0
+mmap(NULL, 2131240, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6fb4772000
+mprotect(0x7f6fb477a000, 2093056, PROT_NONE) = 0
+mmap(0x7f6fb4979000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7000) = 0x7f6fb4979000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libnsl.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`@\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=97248, ...}) = 0
+mmap(NULL, 2202328, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6fb4558000
+mprotect(0x7f6fb456f000, 2093056, PROT_NONE) = 0
+mmap(0x7f6fb476e000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x7f6fb476e000
+mmap(0x7f6fb4770000, 6872, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6fb4770000
+close(3)                                = 0
+mprotect(0x7f6fb476e000, 4096, PROT_READ) = 0
+mprotect(0x7f6fb4979000, 4096, PROT_READ) = 0
+munmap(0x7f6fb5623000, 94420)           = 0
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=94420, ...}) = 0
+mmap(NULL, 94420, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f6fb5623000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libnss_nis.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260 \0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=47680, ...}) = 0
+mmap(NULL, 2143552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6fb434c000
+mprotect(0x7f6fb4356000, 2097152, PROT_NONE) = 0
+mmap(0x7f6fb4556000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa000) = 0x7f6fb4556000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libnss_files.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@!\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=52120, ...}) = 0
+mmap(NULL, 2148472, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6fb413f000
+mprotect(0x7f6fb414b000, 2093056, PROT_NONE) = 0
+mmap(0x7f6fb434a000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb000) = 0x7f6fb434a000
+close(3)                                = 0
+mprotect(0x7f6fb434a000, 4096, PROT_READ) = 0
+mprotect(0x7f6fb4556000, 4096, PROT_READ) = 0
+munmap(0x7f6fb5623000, 94420)           = 0
+open("/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+lseek(3, 0, SEEK_CUR)                   = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=2105, ...}) = 0
+mmap(NULL, 2105, PROT_READ, MAP_SHARED, 3, 0) = 0x7f6fb563a000
+lseek(3, 2105, SEEK_SET)                = 2105
+munmap(0x7f6fb563a000, 2105)            = 0
+close(3)                                = 0
+stat("/var/spool/cron", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+chdir("/var/spool/cron")                = 0
+stat("crontabs", {st_mode=S_IFDIR|S_ISVTX|0730, st_size=4096, ...}) = 0
+open("/etc/localtime", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=405, ...}) = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=405, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6fb563a000
+read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0\3\0\0\0\0"..., 4096) = 405
+lseek(3, -240, SEEK_CUR)                = 165
+read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0\0\0\3\0\0\0\0"..., 4096) = 240
+close(3)                                = 0
+munmap(0x7f6fb563a000, 4096)            = 0
+socket(PF_FILE, SOCK_DGRAM|SOCK_CLOEXEC, 0) = 3
+connect(3, {sa_family=AF_FILE, path="/dev/log"}, 110) = 0
+sendto(3, "<78>Sep 19 23:30:33 crontab[7438"..., 53, MSG_NOSIGNAL, NULL, 0) = 53
+close(3)                                = 0
+open("crontabs/root", O_RDONLY)         = -1 ENOENT (No such file or directory)
+write(2, "no crontab for root\n", 20no crontab for root
+)   = 20
+exit_group(1)                           = ?
+denny@denny-Vostro-1014:~/backup/essential/Dropbox/private_data/emacs_stuff/org_data/org_share$
+#+end_example
+
+** TODO [#A] linux create cron job without editing
+crontab -l
+*** TODO How do I list all cron jobs for all users?
+http://stackoverflow.com/questions/134906/how-do-i-list-all-cron-jobs-for-all-users
+*** TODO Can't see crontab job defined in /etc/cron.hourly, weekly, monthly
+- ls -lth /var/spool/cron/crontabs/
+#+BEGIN_EXAMPLE
+root@carol-repo:/var/log# ls -lth /var/spool/cron/crontabs/
+total 0
+#+END_EXAMPLE
+
+- crontab -l
+#+BEGIN_EXAMPLE
+root@carol-repo:/var/log# crontab -l
+no crontab for root
+#+END_EXAMPLE
+
+- /var/log/syslog
+#+BEGIN_EXAMPLE
+root@carol-repo:/var/log# grep cron /var/log/syslog
+Mar 24 07:17:01 carol-repo CRON[29487]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 08:17:02 carol-repo CRON[30179]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 09:17:01 carol-repo CRON[30858]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 10:17:01 carol-repo CRON[31538]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 11:17:01 carol-repo CRON[32220]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 12:17:01 carol-repo CRON[423]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 13:17:01 carol-repo CRON[1115]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 14:17:01 carol-repo CRON[1815]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 15:17:01 carol-repo CRON[2492]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 16:17:01 carol-repo CRON[3168]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 17:17:01 carol-repo CRON[5617]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 18:17:01 carol-repo CRON[7081]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 19:17:01 carol-repo CRON[7893]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 20:17:01 carol-repo CRON[14498]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 24 20:52:37 carol-repo crontab[21913]: (root) LIST (root)
+#+END_EXAMPLE
+
+** TODO When crontab job has failed, get slack notification
