@@ -24,42 +24,23 @@ File me [[https://github.com/dennyzhang/cheatsheet-cron-A4/issues][Issues]] or s
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet: Linux Find]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]]
-
 ** cron
-#+BEGIN_EXAMPLE
-- - - - -
-| | | | |
-| | | | +- day of week (0 - 7) (where sunday is 0 and 7)
-| | | +--- month (1 - 12)
-| | +----- day (1 - 31)
-| +------- hour (0 - 23)
-+--------- minute (0 - 59)
-
-# example entries
-# every 15 min
-*/15 * * * * /root/mycommand.sh
-
-# every Friday at 9:10 AM
-10 9 * * 5 /root/mycommand.sh
-
-# every midnight
-0 0 * * * /root/mycommand.sh
-#+END_EXAMPLE
-
-| Name | Comment |
-|------+---------|
-|      |         |
+| Name                              | Comment                                                   |
+|-----------------------------------+-----------------------------------------------------------|
+| Create cron job runs every 5 mins | =*/5 * * * * /root/mycommand.sh=                          |
+| Runs every Friday at 9:10 AM      | =10 9 * * 5 /root/mycommand.sh=                           |
+| Runs every midnight               | =0 0 * * * /root/mycommand.sh=                            |
+| Redirect output to log file       | =0 0 * * * /root/mycommand.sh >>/var/log/mycron.log 2>&1= |
 ** at
-| Name                              | Comment |
-|-----------------------------------+---------|
-| View all currently-queued at jobs | =atq=   |
-
+| Name                              | Comment       |
+|-----------------------------------+---------------|
+| List all currently-queued at jobs | =atq=         |
+| Remove a job                      | =atrm $jobid= |
 ** shutdown
 | Name                      | Comment           |
 |---------------------------+-------------------|
 | Shutdown system now       | =shutdown -r now= |
 | Shutdown system in 5 mins | =shutdown -r +5=  |
-
 ** More Resources
 License: Code is licencron under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -70,8 +51,8 @@ License: Code is licencron under [[https://www.dennyzhang.com/wp-content/mit_lic
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
+#+DESCRIPTION:
+#+KEYWORDS:
 #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
 #+LaTeX_CLASS_OPTIONS: [8pt]
 #+LATEX_HEADER: \usepackage[english]{babel}
@@ -91,8 +72,8 @@ License: Code is licencron under [[https://www.dennyzhang.com/wp-content/mit_lic
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+EXPORT_EXCLUDE_TAGS: exclude noexport
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
+#+LINK_UP:
+#+LINK_HOME:
 * more content                                                     :noexport:
 ** cron
 # set a shell
@@ -112,9 +93,3 @@ now | midnight | noon | teatime (4pm)
 HH:MM
 now + N {minutes | hours | days | weeks}
 MM/DD/YY
-
-# To list pending jobs
-atq
-
-# To remove a job (use id from atq)
-atrm {id}
