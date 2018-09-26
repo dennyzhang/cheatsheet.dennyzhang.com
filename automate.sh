@@ -87,7 +87,7 @@ function refresh_link {
 
         if ! grep "<a href=\"${github_link}\">" $f 1>/dev/null 2>&1; then
             echo "Update github url for $f"
-            sed -i "" "s#<a href=\"https://github.com/dennyzhang/[^\"]*\">#<a href=\"$github_link\">\"#g" $f
+            sed -i "" "s#<a href=\"https://github.com/dennyzhang/[^\"]*\">#<a href=\"$github_link\">#g" $f
         fi
 
         # TODO update the changed file
@@ -97,6 +97,7 @@ function refresh_link {
         # echo "Update latex blog url for $f"
         sed -i "" "s#LATEX_HEADER: \\\lfoot{\\\href{https://github.com/dennyzhang.*#LATEX_HEADER: \\\lfoot{\\\href{$github_link}{GitHub: $github_link}}#g" "$f"
         sed -i "" "s#LATEX_HEADER: \\\lhead{\\\href{https://cheatsheet.dennyzhang.com.*#LATEX_HEADER: \\\lhead{\\\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/${dirname}}}#g" "$f"
+
     done
     git status
 }

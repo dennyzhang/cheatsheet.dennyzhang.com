@@ -328,131 +328,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
  root      7347  7190  0 12:17 ?        00:00:00 apt-get update
  root      7430  7383  0 12:26 pts/2    00:00:00 grep --color=auto 7190
 #+END_EXAMPLE
-** TODO [#A] Blog: Tcpdump                                         :noexport:
- | Item                                                                        | Comment                                                                         |
- |-----------------------------------------------------------------------------+---------------------------------------------------------------------------------|
- | tcpdump -D                                                                  | 得到当前机器的所有的网卡, 例如eth0, lo, any等                                   |
- | tcpdump -i lo 'port 9107' -vvv -XX                                          | -XX 将数据报文以hex和ascii方式打印出来                                          |
- | tcpdump -i lo 'port 9107' -vvv -XX -s 0                                     | 默认至多打印96个package,　通过-s 0可以打印出所有的package                       |
- | tcpdump -i lo 'port 9107' -vvv -XX -s 0 -f                                  | -f打印主机ip,　而非主机名                                                       |
- | tcpdump -nn -i any 'host 192.168.75.236 ' -vvv -XX -s 0 -f                  | 不转义port number, host address                                                 |
- | Package的flag                                                               | S(SYN),F(FIN),P(PUSH),R(RST),W(ECNCWR) or E(ECN-Echo), or a single`.'(no flags) |
- | tcpdump -vvv -XX -s 0 -f -c 100 -nn -i eth0 'not port 22 and not port 3128' |                                                                                 |
- | tcpdump -i any -n -v 'icmp'                                                 |                                                                                 |
-*** TCP flags                                                      :noexport:
- http://en.wikipedia.org/wiki/Transmission_Control_Protocol\\
-#+begin_example
-     * Flags (9 bits) (aka Control bits) – contains 9 1-bit flags
-         * NS (1 bit) – ECN-nonce concealment protection (added to header by RFC 3540).
-         * CWR (1 bit) – Congestion Window Reduced (CWR) flag is set by the sending host to indicate that it received a TCP segment with the ECE flag set and had responded in congestion control mechanism (added to header by RFC 3168).
-         * ECE (1 bit) – ECN-Echo indicates
-
-             * If the SYN flag is set (1), that the TCP peer is ECN capable.
-             * If the SYN flag is clear (0), that a packet with Congestion Experienced flag in IP header set is received during normal transmission (added to header by RFC 3168).
-
-         * URG (1 bit) – indicates that the Urgent pointer field is significant
-         * ACK (1 bit) – indicates that the Acknowledgment field is significant. All packets after the initial SYN packet sent by the client should have this flag set.
-         * PSH (1 bit) – Push function. Asks to push the buffered data to the receiving application.
-         * RST (1 bit) – Reset the connection
-         * SYN (1 bit) – Synchronize sequence numbers. Only the first packet sent from each end should have this flag set. Some other flags change meaning based on this flag, and some are only valid for when it is set, and others when it is clear.
-         * FIN (1 bit) – No more data from sender
-#+end_example
-*** TCP connection state                                           :noexport:
- http://en.wikipedia.org/wiki/Transmission_Control_Protocol\\
-#+begin_example
-    1. LISTENING : In case of a server, waiting for a connection request from any remote client.
-    2. SYN-SENT : waiting for the remote peer to send back a TCP segment with the SYN and ACK flags set. (usually set by TCP clients)
-    3. SYN-RECEIVED : waiting for the remote peer to send back an acknowledgment after having sent back a connection acknowledgment to the remote peer. (usually set by TCP servers)
-    4. ESTABLISHED : The port is ready to receive/send data from/to the remote peer.
-    5. FIN-WAIT-1 :
-    6. CLOSE-WAIT : Indicated that the server is waiting for the application process on its end to signal that it is ready to close.
-    7. FIN-WAIT-2 : Indicates that the client is waiting for the server's fin segment (which indicates the server's application process is ready to close and the server is ready to initiate its side of the connection termination)
-    8. CLOSE-WAIT : The server receives notice from the local application that it is done. The server sends its fin to the client.
-    9. LAST-ACK : Indicates that the server is in the process of sending its own fin segment (which indicates the server's application process is ready to close and the server is ready to initiate it's side of the connection termination )
-   10. TIME-WAIT : Represents waiting for enough time to pass to be sure the remote peer received the acknowledgment of its connection termination request. According to RFC 793 a connection can stay in TIME-WAIT for a maximum of four minutes known as a MSL (maximum segment lifetime).
-   11. CLOSED : Connection is closed
-#+end_example
-*** TCP的报文监听时,　发现前三个是TCP建立链接的报文(SYN, SYN, .); 后三个是TCP断开链接的报文(FIN, FIN, .) :noexport:
-*** [#A] [问题] 如何使用tcpdump来监听某个pid的所甩数据通讯        :IMPORTANT:
-*** [#A] 问题: 为什么总有一个报文的cksum显示为incorrect            :noexport:
-#+begin_example
- 15:29:58.225329 00:00:00:00:00:00 (oui Ethernet) > 00:00:00:00:00:00 (oui Ethernet), ethertype IPv4 (0x0800), length 74: (tos 0x0, ttl  64, id 17585, offset 0, flags [DF], proto: TCP (6), length: 60) 192.168.51.128.39751 > 192.168.51.128.9107: S, cksum 0x5ef3 (correct), 1870406958:1870406958(0) win 32768 <mss 16396,sackOK,timestamp 508715423 508712090,nop,wscale 7>
-         0x0000:  0000 0000 0000 0000 0000 0000 0800 4500  ..............E.
-         0x0010:  003c 44b1 4000 4006 0dba c0a8 3380 c0a8  .<D.@.@.....3...
-         0x0020:  3380 9b47 2393 6f7c 252e 0000 0000 a002  3..G#.o|%.......
-         0x0030:  8000 5ef3 0000 0204 400c 0402 080a 1e52  ..^.....@......R
-         0x0040:  619f 1e52 549a 0103 0307                 a..RT.....
- 15:29:58.225447 00:00:00:00:00:00 (oui Ethernet) > 00:00:00:00:00:00 (oui Ethernet), ethertype IPv4 (0x0800), length 74: (tos 0x0, ttl  64, id 0, offset 0, flags [DF], proto: TCP (6), length: 60) 192.168.51.128.9107 > 192.168.51.128.39751: S, cksum 0x02aa (correct), 2884825920:2884825920(0) ack 1870406959 win 12288 <mss 16396,sackOK,timestamp 508715423 508715423,nop,wscale 7>
-         0x0000:  0000 0000 0000 0000 0000 0000 0800 4500  ..............E.
-         0x0010:  003c 0000 4000 4006 526b c0a8 3380 c0a8  .<..@.@.Rk..3...
-         0x0020:  3380 2393 9b47 abf2 f340 6f7c 252f a012  3.#..G...@o|%/..
-         0x0030:  3000 02aa 0000 0204 400c 0402 080a 1e52  0.......@......R
-         0x0040:  619f 1e52 619f 0103 0307                 a..Ra.....
- 15:29:58.225515 00:00:00:00:00:00 (oui Ethernet) > 00:00:00:00:00:00 (oui Ethernet), ethertype IPv4 (0x0800), length 66: (tos 0x0, ttl  64, id 17586, offset 0, flags [DF], proto: TCP (6), length: 52) 192.168.51.128.39751 > 192.168.51.128.9107: ., cksum 0x9ace (correct), 1:1(0) ack 1 win 256 <nop,nop,timestamp 508715423 508715423>
-         0x0000:  0000 0000 0000 0000 0000 0000 0800 4500  ..............E.
-         0x0010:  0034 44b2 4000 4006 0dc1 c0a8 3380 c0a8  .4D.@.@.....3...
-         0x0020:  3380 9b47 2393 6f7c 252f abf2 f341 8010  3..G#.o|%/...A..
-         0x0030:  0100 9ace 0000 0101 080a 1e52 619f 1e52  ...........Ra..R
-         0x0040:  619f                                     a.
- 15:29:58.253032 00:00:00:00:00:00 (oui Ethernet) > 00:00:00:00:00:00 (oui Ethernet), ethertype IPv4 (0x0800), length 89: (tos 0x0, ttl  64, id 17587, offset 0, flags [DF], proto: TCP (6), length: 75) 192.168.51.128.39751 > 192.168.51.128.9107: P, cksum 0xe88e (incorrect (-> 0xf680), 1:24(23) ack 1 win 256 <nop,nop,timestamp 508715451 508715423>
-         0x0000:  0000 0000 0000 0000 0000 0000 0800 4500  ..............E.
-         0x0010:  004b 44b3 4000 4006 0da9 c0a8 3380 c0a8  .KD.@.@.....3...
-         0x0020:  3380 9b47 2393 6f7c 252f abf2 f341 8018  3..G#.o|%/...A..
-         0x0030:  0100 e88e 0000 0101 080a 1e52 61bb 1e52  ...........Ra..R
-         0x0040:  619f 8001 0001 0000 000a 6765 7456 6572  a.........getVer
-         0x0050:  7369 6f6e 0000 0000 00                   sion.....
- 15:29:58.253056 00:00:00:00:00:00 (oui Ethernet) > 00:00:00:00:00:00 (oui Ethernet), ethertype IPv4 (0x0800), length 66: (tos 0x0, ttl  64, id 37598, offset 0, flags [DF], proto: TCP (6), length: 52) 192.168.51.128.9107 > 192.168.51.128.39751: ., cksum 0x9b1f (correct), 1:1(0) ack 24 win 96 <nop,nop,timestamp 508715451 508715451>
-         0x0000:  0000 0000 0000 0000 0000 0000 0800 4500  ..............E.
-         0x0010:  0034 92de 4000 4006 bf94 c0a8 3380 c0a8  .4..@.@.....3...
-         0x0020:  3380 2393 9b47 abf2 f341 6f7c 2546 8010  3.#..G...Ao|%F..
-         0x0030:  0060 9b1f 0000 0101 080a 1e52 61bb 1e52  .`.........Ra..R
-         0x0040:  61bb                                     a.
-#+end_example
-*** [#A] [question] 数据报文中,　前面若干字节的意义
-*** [#A] [question] 数据报文中, ACK的序号是如何准确对应的
-*** [question] DF的flags包是什么意思
-*** useful link
-    http://www.ha97.com/4550.html\\
-*** DONE tcpdump for icmp
-    CLOSED: [2013-12-01 Sun 00:29]
- http://hi.baidu.com/xiao0/item/4df4851ce875644ee65e06c0
-
- 抓ICMP echo request（请求包）:
-                tcpdump -i eth1 'icmp[0]=8'
-       抓ICMP echo reply （回应包）:
-                tcpdump -i eth1 'icmp[0]=0'
-        tcpdump太好用了.
-
- tcpdump -i any -n -v 'icmp'
- tcpdump -i any -n -v 'icmp[icmptype] = icmp-echoreply or icmp[icmptype] = icmp-echo'
-#+begin_example
- [root@localhost ~(keystone_admin)]# tcpdump -i any -n -v 'icmp[icmptype] = icmp-echoreply or icmp[icmptype] = icmp-echo'
- < -v 'icmp[icmptype] = icmp-echoreply or icmp[icmptype] = icmp-echo'
- tcpdump: listening on any, link-type LINUX_SLL (Linux cooked), capture size 65535 bytes
- 12:39:44.808859 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
-     192.168.1.189 > 192.168.1.74: ICMP echo request, id 15926, seq 40, length 64
- 12:39:44.808979 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
-     192.168.1.189 > 192.168.1.74: ICMP echo request, id 15926, seq 40, length 64
- 12:39:44.849453 IP (tos 0x0, ttl 64, id 19154, offset 0, flags [DF], proto ICMP (1), length 84)
-     192.168.1.74 > 192.168.1.189: ICMP echo reply, id 15926, seq 40, length 64
- 12:39:44.849453 IP (tos 0x0, ttl 64, id 19154, offset 0, flags [DF], proto ICMP (1), length 84)
-     192.168.1.74 > 192.168.1.189: ICMP echo reply, id 15926, seq 40, length 64
- 12:39:45.810927 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
-     192.168.1.189 > 192.168.1.74: ICMP echo request, id 15926, seq 41, length 64
- 12:39:45.810987 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
-     192.168.1.189 > 192.168.1.74: ICMP echo request, id 15926, seq 41, length 64
- 12:39:45.819917 IP (tos 0x0, ttl 64, id 22904, offset 0, flags [DF], proto ICMP (1), length 84)
-     192.168.1.74 > 192.168.1.189: ICMP echo reply, id 15926, seq 41, length 64
- 12:39:45.819917 IP (tos 0x0, ttl 64, id 22904, offset 0, flags [DF], proto ICMP (1), length 84)
-     192.168.1.74 > 192.168.1.189: ICMP echo reply, id 15926, seq 41, length 64
- 12:39:46.812663 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
-     192.168.1.189 > 192.168.1.74: ICMP echo request, id 15926, seq 42, length 64
- 12:39:46.812712 IP (tos 0x0, ttl 64, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
-     192.168.1.189 > 192.168.1.74: ICMP echo request, id 15926, seq 42, length 64
- 12:39:46.846869 IP (tos 0x0, ttl 64, id 17861, offset 0, flags [DF], proto ICMP (1), length 84)
-     192.168.1.74 > 192.168.1.189: ICMP echo reply, id 15926, seq 42, length 64
- 12:39:46.846869 IP (tos 0x0, ttl 64, id 17861, offset 0, flags [DF], proto ICMP (1), length 84)
-#+end_example
 * TODO [#A] Make it more useful                                    :noexport:
 ** TODO enable people to better search; https://devhints.io/       :noexport:
 ** TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
@@ -487,20 +362,15 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
  Moderate forward head posture
  Backrest too high
  Takes breaks once every 3 hours
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO tcpdump: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO markdown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO [#A] apparmor: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO asciiart: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO yum & rpm & rpm2cpio & urpm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO wget: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* TODO cp & rsync: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO sql & sqlite3 & mysql & psql & sqlmap & mysqldump: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 https://github.com/treehouse/cheatsheets
-* TODO crontab & at & shutdown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO [#A] apk/apt/apt-cache/apt-get/aptitude/dpkg/deb: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO du & dd && df & lsblk & lvm & mdadm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4 :noexport:
 * TODO chmod & chown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO convert: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -512,4 +382,8 @@ https://github.com/treehouse/cheatsheets
 * TODO mount & udisksctl: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO systemctl & systemd: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO cheatsheet: cron                                            :noexport:
+* TODO Improve cheatsheet                                          :noexport:
+** HALF https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4
+** HALF https://cheatsheet.dennyzhang.com/cheatsheet-cp-a4
+** HALF https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4
+** HALF https://cheatsheet.dennyzhang.com/cheatsheet-cron-A4
