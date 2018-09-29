@@ -21,7 +21,7 @@ See more cheatsheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 - git push all local cheatsheet updates: =make git-push=
 - Pull changes for all remote cheatsheet git repos: =make git-pull=
 - Refresh all cheatsheet blog posts: =make refresh-wordpress=
-
+- Refresh all cheatsheet pdf files: =make refresh-cheatsheet=
 ** More Resources
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
@@ -337,8 +337,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO Change infrequent cheatsheet github to blog post            :noexport:
 * TODO Add guideline for how people to contribute                  :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO split drive test into a dedicated one: https://cheatsheet.dennyzhang.com/cheatsheet-living-in-ca :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
 * TODO improve minikube cheatsheet, and publish to linkedin        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -375,15 +373,17 @@ https://github.com/treehouse/cheatsheets
 * TODO convert: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO ifconfig & ip & iwconfig & route & ss & ntp & nmap & nc & ncat & netstat & dhclient: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* TODO iptables: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO ps & kill: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO od: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO openssl: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO mount & udisksctl: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO systemctl & systemd: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Improve cheatsheet                                          :noexport:
-** HALF https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4
-** HALF https://cheatsheet.dennyzhang.com/cheatsheet-cp-a4
-** HALF https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4
-** HALF https://cheatsheet.dennyzhang.com/cheatsheet-cron-A4
+* TODO iptables: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+https://github.com/trimstray/iptables-essentials
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-cp-a4  :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-cron-A4 :noexport:
+* TODO split drive test into a dedicated one: https://cheatsheet.dennyzhang.com/cheatsheet-living-in-ca :noexport:

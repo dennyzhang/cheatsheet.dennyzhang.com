@@ -25,34 +25,35 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 
 - Check kubernetes cheatsheet: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4
 ** Minikube basic
-| Name                            | Command                                         |
-|---------------------------------+-------------------------------------------------|
-| List all supported k8s versions | =minikube get-k8s-versions=                     |
-| minikube docker-env             | =eval $(minikube docker-env)=                   |
-| Get minikube version            | =minikube version=, [[https://github.com/kubernetes/minikube/releases][link: all minikube releases]] |
-| SSH to minikube vm              | =minikube ssh=                                  |
-| Recreate minikube               | =minikube delete=, =minikube start=             |
-| Get minikube log                | =minikube logs=                                 |
-| Get dashboard                   | =minikube dashboard=                            |
-| Get ip                          | =minikube ip=                                   |
-| List addons                     | =minikube addons list=                          |
-| Get service info                | =minikube service <srv-name>=                   |
-| Get cluster info                | =kubectl cluster-info=                          |
+| Name                                         | Command                                                      |
+|----------------------------------------------+--------------------------------------------------------------|
+| minikube lifecycle [[https://github.com/kubernetes/minikube][link: minikube]]            | =minikube delete=, =minikube start=, =minikube status=       |
+| mac install minikube                         | =brew cask install minikube=, =brew cask reinstall minikube= |
+| Start minikube with different machine flavor | =minikube start --memory 5120 --cpus=4=                      |
+| Start minikube with a specific k8s version   | =minikube start --kubernetes-version v1.10.0=                |
+| SSH to minikube vm                           | =minikube ssh=                                               |
+| Your local docker to use minikube dockerd    | =eval $(minikube docker-env)=, no need to run =docker push=  |
+| Minikube check latest version                | =minikube update-check=                                      |
 
-** Start minikube
-| Name                                            | Command                                       |
-|-------------------------------------------------+-----------------------------------------------|
-| Start minikube env with a bigger machine flavor | =minikube start --memory 5120 --cpus=4=       |
-| Start minikube with a specific k8s version      | =minikube start --kubernetes-version v1.10.0= |
+** Check status
+| Name                 | Command                                         |
+|----------------------+-------------------------------------------------|
+| Get minikube version | =minikube version=, [[https://github.com/kubernetes/minikube/releases][link: all minikube releases]] |
+| Get cluster info     | =kubectl cluster-info=                          |
+| Get service info     | =minikube service <srv-name>=                   |
+| Get dashboard        | =minikube dashboard=                            |
+| Get ip               | =minikube ip=                                   |
+| Get minikube log     | =minikube logs=                                 |
+| List addons          | =minikube addons list=                          |
 
-** Minikube folders
-| Name                                                | Command                                          |
-|-----------------------------------------------------+--------------------------------------------------|
-| Folder of k8s.io/minikube-hostpath provisioner      | =/tmp/hostpath-provisioner=, =/tmp/hostpath_pv=  |
-| Mount host OS's folder to minikube VM               | =minikube mount /host-mount-path:/vm-mount-path= |
-| Critical minikube folder                            | =/var/lib/localkube=, =/var/lib/docker=, =/data= |
-| Check minikube config in your host OS desktop       | =~/.minikube/machines/minikube/config.json=      |
-
+** Minikube Folders
+| Name                                           | Command                                                               |
+|------------------------------------------------+-----------------------------------------------------------------------|
+| Folder of k8s.io/minikube-hostpath provisioner | =/tmp/hostpath-provisioner=, =/tmp/hostpath_pv=                       |
+| Mount host OS's folder to minikube VM          | =minikube mount /host-mount-path:/vm-mount-path=                      |
+| Critical minikube folder                       | =/var/lib/localkube=, =/var/lib/docker=, =/data=                      |
+| Check minikube config in your host OS desktop  | =~/.minikube/machines/minikube/config.json=, =~/.minikube=, =~/.kube= |
+  
 ** More Resources
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

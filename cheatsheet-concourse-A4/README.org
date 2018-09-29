@@ -32,10 +32,11 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 ** Concourse fly
 | Name                              | Summary                                                                     |
 |-----------------------------------+-----------------------------------------------------------------------------|
-| fly login                         | =fly -t <target> login -c $concourse_url -t <team>=                         |
-| Update pipeline                   | =setpipeline.sh <pipeline_name>=                                            |
-| Login to container                | =fly -t <target> hijack -u <job_url>=                                       |
+| fly login                         | =fly -t $target login -c $concourse_url -t $team=                           |
 | Get pipeline definition           | =fly -t $target get-pipeline -p $job-name > job.yaml= [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][link: fly-getpipeline]] |
+| Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name --config pipeline.yml=       |
+| Login to container                | =fly -t $target hijack -u $job_url=                                         |
+| Destroy pipeline                  | =fly -t example destroy-pipeline --pipeline my-pipeline=                    |
 | List all authenticated end points | =fly targets= [[https://concourse-ci.org/fly.html#fly-targets][link: fly targets]]                                             |
 
 ** Modules
