@@ -334,15 +334,13 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#B] Fail the pdf generating job when some lines are truncated :noexport:
 * TODO Build internal links                                        :noexport:
-* TODO Change infrequent cheatsheet github to blog post            :noexport:
 * TODO Add guideline for how people to contribute                  :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
-* TODO improve minikube cheatsheet, and publish to linkedin        :noexport:
+* TODO [#A] PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Merge challenges-golang-datastructure into golang cheatsheet :noexport:
 * TODO Merge challenges-python-datastructure into python cheatsheet :noexport:
-* TODO cheatsheet health for IT workers                            :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] cheatsheet health for IT workers                       :noexport:
  https://login.remedyint.com/app/mod_delivery.cfm?ElementPosition=66&cachekill=BCD0A10F-9DB9-02A1-9D4416666C0D7F3C
 
  No discomfort should be felt while performing stretches. 
@@ -379,6 +377,7 @@ https://github.com/treehouse/cheatsheets
 * TODO mount & udisksctl: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO systemctl & systemd: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Cheatsheet makefile
 * TODO iptables: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 https://github.com/trimstray/iptables-essentials
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -387,3 +386,4 @@ https://github.com/trimstray/iptables-essentials
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4 :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-cron-A4 :noexport:
 * TODO split drive test into a dedicated one: https://cheatsheet.dennyzhang.com/cheatsheet-living-in-ca :noexport:
+* TODO [#A] github org-ruby fails to generate TOC: https://github.com/dennyzhang/challenges-k8s-istio :noexport:

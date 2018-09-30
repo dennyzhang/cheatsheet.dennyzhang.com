@@ -25,15 +25,15 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 
 - Check kubernetes cheatsheet: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4
 ** Minikube basic
-| Name                                         | Command                                                      |
-|----------------------------------------------+--------------------------------------------------------------|
-| minikube lifecycle [[https://github.com/kubernetes/minikube][link: minikube]]            | =minikube delete=, =minikube start=, =minikube status=       |
-| mac install minikube                         | =brew cask install minikube=, =brew cask reinstall minikube= |
-| Start minikube with different machine flavor | =minikube start --memory 5120 --cpus=4=                      |
-| Start minikube with a specific k8s version   | =minikube start --kubernetes-version v1.10.0=                |
-| SSH to minikube vm                           | =minikube ssh=                                               |
-| Your local docker to use minikube dockerd    | =eval $(minikube docker-env)=, no need to run =docker push=  |
-| Minikube check latest version                | =minikube update-check=                                      |
+| Name                                         | Command                                                       |
+|----------------------------------------------+---------------------------------------------------------------|
+| minikube lifecycle [[https://github.com/kubernetes/minikube][link: minikube]]            | =minikube delete=, =minikube start=, =minikube status=        |
+| mac install minikube                         | =brew cask install minikube=, =brew cask reinstall minikube=  |
+| Start minikube with different machine flavor | =minikube start --memory 5120 --cpus=4=                       |
+| Start minikube with a specific k8s version   | =minikube start --kubernetes-version v1.11.0=                 |
+| SSH to minikube vm                           | =minikube ssh=                                                |
+| Your local docker to use minikube dockerd    | =eval $(minikube docker-env)=, Then no need for =docker push= |
+| Minikube check latest version                | =minikube update-check=                                       |
 
 ** Check status
 | Name                 | Command                                         |
@@ -53,6 +53,11 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Mount host OS's folder to minikube VM          | =minikube mount /host-mount-path:/vm-mount-path=                      |
 | Critical minikube folder                       | =/var/lib/localkube=, =/var/lib/docker=, =/data=                      |
 | Check minikube config in your host OS desktop  | =~/.minikube/machines/minikube/config.json=, =~/.minikube=, =~/.kube= |
+  
+** Minikube Advanced
+| Name                                      | Command                                               |
+|-------------------------------------------+-------------------------------------------------------|
+| Install addon after creating minikube env | =minikube addons enable heapster=, =kubectl top node= | 
   
 ** More Resources
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

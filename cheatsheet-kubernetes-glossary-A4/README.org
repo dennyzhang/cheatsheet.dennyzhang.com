@@ -1,0 +1,81 @@
+* Cheatsheet: Kubernetes Concepts & Glossary                     :Kubernetes:
+:PROPERTIES:
+:type:     kubernetes
+:export_file_name: cheatsheet-kubernetes-glossary-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-kubernetes-glossary-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-kubernetes-glossary-A4/cheatsheet-kubernetes-glossary-A4.pdf][cheatsheet-kubernetes-glossary-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/kubernetes/][kubernetes]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-glossary-A4
+
+File me [[https://github.com/dennyzhang/cheatsheet-kubernetes-glossary-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-kubernetes-glossary-A4][this repo]].
+
+See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+- Check kubernetes cheatsheet: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4
+** Glossary - Uncommon & Useful
+| Name                     | Command                                                                                  |
+|--------------------------+------------------------------------------------------------------------------------------|
+| Reference Link           | [[https://kubernetes.io/docs/reference/glossary/?all=true][link: Standardized Glossary]]                                                              |
+| Cloud Controller Manager | The preferred way to integrate Kubernetes with any cloud. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-kube-controller-manager][link: Cloud Controller Manager]] |
+| kube-controller-manager  | Component on the master that runs controllers. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-kube-controller-manager][link: kube-controller-manager]]             |
+| PodPreset                | An API object that injects information into pods at creation time. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-podpreset][link: PodPreset]]       |
+| Flexvolume               | Flexvolume is an interface for creating out-of-tree volume plugins. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-flexvolume][link: Flexvolume]]     |
+
+** Related Concepts
+| Name                                   | Command                                           |
+|----------------------------------------+---------------------------------------------------|
+| Network Policy & Pod Security Policy   | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-network-policy][link: Network Policy]]                              |
+| Pod Security Policy & Security Context | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-pod-security-policy][link: Pod Security Policy]], [[https://kubernetes.io/docs/reference/glossary/?all=true#term-security-context][link: Security Context]] |
+| Resource Quotas & Limit Range          | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-resource-quota][link: Resource Quotas]],                            |
+| Community Upstream & Downstream        | Downstream: a private code fork. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-downstream][link: Downstream]] |
+| Label & Selector                       |                                                   |
+| Replicaset & Replica                   |                                                   |
+| Replicaset & Deployment                |                                                   |
+
+** More Resources
+ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+https://github.com/kubernetes/kubernetes-glossary/tree/master/docs
+
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-kubernetes-glossary-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-kubernetes-glossary-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-glossary-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
