@@ -54,8 +54,8 @@ Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet
 |----------------------------------------+--------------------------------------------------------------------------|
 | Insert string to the begining of lines | =sed -i 's/^/head /g' my-file=                                           |
 | Insert string to the end of lines      | =sed -i 's/$/ tail/g' my-file=                                           |
-| Add a new line to 3th line             | =sed -i "3i mynew string" my-file=                                                                       |
 | Add content after nth line             | =sed -n -i 'p;3a "new string"' my-file=, =cat -n my-file= [[https://www.unix.com/unix-for-beginners-questions-and-answers/264345-insert-line-text-nth-line-file.html][link: unix.com]] |
+| Add a new line to 3th line             | =sed -i "3i mynew string" my-file=                                                                       |
 | Insert a line of text before a line    | =sed -i '/KUBELET_NETWORK_ARGS/i newline' my-file=                       |
 
 ** GNUS sed - review

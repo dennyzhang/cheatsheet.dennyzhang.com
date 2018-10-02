@@ -332,10 +332,13 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 ** TODO enable people to better search; https://devhints.io/       :noexport:
 ** TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF [#A] Create a PR kubernetes community for https://kubernetes.io/docs/reference/kubectl/cheatsheet/ :noexport:
+https://github.com/kubernetes/website/compare/master...dennyzhang:master
+https://github.com/dennyzhang/website/blob/6a88f51ce3f0c1339d2e0f272680beb3d3601b7b/content/en/docs/reference/kubectl/cheatsheet.md
+
 * TODO [#B] Fail the pdf generating job when some lines are truncated :noexport:
 * TODO Build internal links                                        :noexport:
 * TODO Add guideline for how people to contribute                  :noexport:
-* TODO [#A] PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Merge challenges-golang-datastructure into golang cheatsheet :noexport:
 * TODO Merge challenges-python-datastructure into python cheatsheet :noexport:
@@ -377,7 +380,7 @@ https://github.com/treehouse/cheatsheets
 * TODO mount & udisksctl: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO systemctl & systemd: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Cheatsheet makefile
+* TODO Cheatsheet makefile                                         :noexport:
 * TODO iptables: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 https://github.com/trimstray/iptables-essentials
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -387,3 +390,4 @@ https://github.com/trimstray/iptables-essentials
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-cron-A4 :noexport:
 * TODO split drive test into a dedicated one: https://cheatsheet.dennyzhang.com/cheatsheet-living-in-ca :noexport:
 * TODO [#A] github org-ruby fails to generate TOC: https://github.com/dennyzhang/challenges-k8s-istio :noexport:
+* TODO [#A] PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
