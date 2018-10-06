@@ -25,15 +25,16 @@ See more CheatSheets from Denny: [[https://gith<2018-10-01 10:46 UTC +8>ub.com/t
 
 - Check kubernetes cheatsheet: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4
 ** Minikube basic
-| Name                                         | Command                                                       |
-|----------------------------------------------+---------------------------------------------------------------|
-| minikube lifecycle [[https://github.com/kubernetes/minikube][link: minikube]]            | =minikube delete=, =minikube start=, =minikube status=        |
-| mac install minikube                         | =brew cask install minikube=, =brew cask reinstall minikube=  |
-| Start minikube with different machine flavor | =minikube start --memory 5120 --cpus=4=                       |
-| Start minikube with a specific k8s version   | =minikube start --kubernetes-version v1.11.0=                 |
-| SSH to minikube vm                           | =minikube ssh=                                                |
-| Your local docker to use minikube dockerd    | =eval $(minikube docker-env)=, Then no need for =docker push= |
-| Minikube check latest version                | =minikube update-check=                                       |
+| Name                                         | Command                                                                           |
+|----------------------------------------------+-----------------------------------------------------------------------------------|
+| minikube lifecycle [[https://github.com/kubernetes/minikube][link: minikube]]            | =minikube delete=, =minikube start=, =minikube status=                            |
+| mac install minikube                         | =brew cask install minikube=, =brew cask reinstall minikube=                      |
+| Start minikube with different machine flavor | =minikube start --memory 5120 --cpus=4=                                           |
+| Start minikube with a specific k8s version   | =minikube start --kubernetes-version v1.11.0=                                     |
+| Start minikube with more customizations      | minikube start --kubernetes-version v1.11.0 --feature-gates=AdvancedAuditing=true |
+| SSH to minikube vm                           | =minikube ssh=                                                                    |
+| Your local docker to use minikube dockerd    | =eval $(minikube docker-env)=, Then no need for =docker push=                     |
+| Minikube check latest version                | =minikube update-check=                                                           |
 
 ** Check status
 | Name                 | Command                                         |

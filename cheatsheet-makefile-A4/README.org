@@ -1,0 +1,123 @@
+* CheatSheet: Makefile                                                :Linux:
+:PROPERTIES:
+:type:     makefile
+:export_file_name: cheatsheet-makefile-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-makefile-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-makefile-A4/cheatsheet-makefile-A4.pdf][cheatsheet-makefile-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/linux/][linux]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-makefile-A4
+
+File me [[https://github.com/dennyzhang/cheatsheet-makefile-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-makefile-A4][this repo]].
+
+See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet: Linux Find]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]]
+
+** Makefile
+| Name                    | Command                                                        |
+|-------------------------+----------------------------------------------------------------|
+| Debug makefile          | make -n                                                        |
+| Makefile use variables  | =make MODULE=audit build -f Makefile-debug= See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-debug][Makefile-debug]] |
+| Makefile use if clause  | See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-if][Makefile-if]]                                                |
+| Makefile use for clause | See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-for][Makefile-for]]                                               |
+** More Resources
+License: Code is licenmakefile under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-makefile-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-makefile-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-makefile-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
+* TODO makefile problems                                           :noexport:
+** validate makefile syntax
+** TODO Makefile: .PHONY: all deploy destroy status test
+ https://gitlab.eng.vmware.com/PKS/wavefront-proxy-release/merge_requests/37/diffs#note_311387
+ Kaiting Chen @kaitingc  commented about an hour ago 
+ Owner
+
+ Not a big deal but to avoid unexpected behavior do:
+
+ .PHONY: all deploy destroy status test
+ To avoid confusing behavior when one of those files exist.
+** DONE Makefile make: Nothing to be done for `all'.
+  CLOSED: [2015-08-13 Thu 20:54]
+Makefile need to depends on a file
+http://carl830.pixnet.net/blog/post/67637243-c-改了程式-make卻顯示up-to-date
+#+BEGIN_EXAMPLE
+jenkins@3aa89f131a3a:~/code/noalert/dev/iam$ make
+make: Nothing to be done for `all'.
+jenkins@3aa89f131a3a:~/code/noalert/dev/iam$ cat Makefile
+all:build
+
+build:
+        bash -xe ./gradle_build.sh ${MODULE}
+#+END_EXAMPLE
+
+** TODO [#A] Makefile中, 使用cpp文件依赖于.h文件                  :IMPORTANT:
+** Makefile
+| Item | Example                       | Summary                                       |
+|------+-------------------------------+-----------------------------------------------|
+| $<   | $(CC) -c $(CFLAGS) $< -o $@   | "$<"表示所有的依赖目标集(例如"foo.c bar.c") |
+| $@   | $(CC) -c $(CFLAGS) $< -o $@   | "$@"表示目标集(例如"foo.o bar.o")           |
+|------+-------------------------------+-----------------------------------------------|
+| %    | "%.h"表示所有以".h"结尾的文件 | "%"的意思是匹配零或若干字符                   |
+*** DONE Makefile只有mtime与atime相同时, 才会重新编译相应的文件. 编译后, atime会被更新, 而mtime不会 :IMPORTANT:
+    CLOSED: [2011-11-22 Tue 14:54]
+*** TODO ${MODS:%=%.beam}是什么意思
+*** sample
+make
+**** hello.c++
+#include <iostream>
+using namespace std;
+
+int vac = 3;
+int main(){
+ int vac = 10;
+ ::vac++;
+ cout<<::vac<<endl;
+ cout<<vac<<endl;
+}
+**** makefile
+hello:
+	g++ hello.c++
+*** useful link
+ http://www.chinaunix.net/jh/23/408225.html\\
+ [精华] 跟我一起写 Makefile - ChinaUnix.net
+

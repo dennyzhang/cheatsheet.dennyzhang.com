@@ -30,11 +30,13 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | bbl (bosh-bootloader) | [[https://github.com/cloudfoundry/bosh-bootloader][GitHub: bosh-bootloader]]         |
 | Links                 | [[https://concourse-ci.org/concepts.html][concepts]], [[https://concoursetutorial.com/][concoursetutorial.com]] |
 
+https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-sample.png
+
 ** Concourse fly
 | Name                              | Summary                                                                     |
 |-----------------------------------+-----------------------------------------------------------------------------|
 | List all authenticated end points | =fly targets= [[https://concourse-ci.org/fly.html#fly-targets][link: fly targets]]                                             |
-| fly login                         | =fly -t $target login -c $concourse_url -t $team=                           |
+| fly login                         | =fly -t $target login -c $concourse_url -n $team_name=                      |
 | Get pipeline definition           | =fly -t $target get-pipeline -p $job-name > job.yaml= [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][link: fly-getpipeline]] |
 | Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name --config pipeline.yml=       |
 | Login to container                | =fly -t $target hijack -u $job_url=                                         |
@@ -53,8 +55,6 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | docker-image-resource | https://github.com/concourse/docker-image-resource |
 | gcs-resource          | https://github.com/frodenas/gcs-resource           |
 | git-resource          | https://github.com/concourse/git-resource          | 
-  
-[[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-sample.png][Concourse example]]
 
 ** fly Online Usage
 #+BEGIN_EXAMPLE

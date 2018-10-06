@@ -33,14 +33,15 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | PodPreset                | An API object that injects information into pods at creation time. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-podpreset][link: PodPreset]]       |
 | Flexvolume               | Flexvolume is an interface for creating out-of-tree volume plugins. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-flexvolume][link: Flexvolume]]     |
 
-** Related Concepts
+** Kubernetes Related Concepts
 | Name                                   | Command                                           |
 |----------------------------------------+---------------------------------------------------|
+| Resource Quotas & Limit Range          | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-resource-quota][link: Resource Quotas]]                             |
+| Label & Selector                       |                                                   |
+| Resource & Subresource                 |                                                   |
+| Community Upstream & Downstream        | Downstream: a private code fork. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-downstream][link: Downstream]] |
 | Network Policy & Pod Security Policy   | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-network-policy][link: Network Policy]]                              |
 | Pod Security Policy & Security Context | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-pod-security-policy][link: Pod Security Policy]], [[https://kubernetes.io/docs/reference/glossary/?all=true#term-security-context][link: Security Context]] |
-| Resource Quotas & Limit Range          | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-resource-quota][link: Resource Quotas]],                            |
-| Community Upstream & Downstream        | Downstream: a private code fork. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-downstream][link: Downstream]] |
-| Label & Selector                       |                                                   |
 | Replicaset & Replica                   |                                                   |
 | Replicaset & Deployment                |                                                   |
 
