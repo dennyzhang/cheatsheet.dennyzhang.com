@@ -1,3 +1,5 @@
+# https://cheatsheet.dennyzhang.com/cheatsheet-makefile-A4
+
 all:enforcetab unitcheck shelltest logcheck pythoncheck
 ifeq ($(uname),"Darwin")
   logcheck1=find . -name '*.log*' -type f -print0 | xargs -0 grep -inH -e 'error' | wc -l | grep 0

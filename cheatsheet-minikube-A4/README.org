@@ -28,6 +28,7 @@ See more CheatSheets from Denny: [[https://gith<2018-10-01 10:46 UTC +8>ub.com/t
 | Name                                         | Command                                                                           |
 |----------------------------------------------+-----------------------------------------------------------------------------------|
 | minikube lifecycle [[https://github.com/kubernetes/minikube][link: minikube]]            | =minikube delete=, =minikube start=, =minikube status=                            |
+| Get minikube version                                | =minikube version=, [[https://github.com/kubernetes/minikube/releases][link: all minikube releases]]  |
 | mac install minikube                         | =brew cask install minikube=, =brew cask reinstall minikube=                      |
 | Start minikube with different machine flavor | =minikube start --memory 5120 --cpus=4=                                           |
 | Start minikube with a specific k8s version   | =minikube start --kubernetes-version v1.11.0=                                     |
@@ -48,12 +49,14 @@ See more CheatSheets from Denny: [[https://gith<2018-10-01 10:46 UTC +8>ub.com/t
 | List addons          | =minikube addons list=                          |
 
 ** Minikube Folders
-| Name                                           | Command                                                               |
-|------------------------------------------------+-----------------------------------------------------------------------|
-| Folder of k8s.io/minikube-hostpath provisioner | =/tmp/hostpath-provisioner=, =/tmp/hostpath_pv=                       |
-| Mount host OS's folder to minikube VM          | =minikube mount /host-mount-path:/vm-mount-path=                      |
-| Critical minikube folder                       | =/var/lib/localkube=, =/var/lib/docker=, =/data=                      |
-| Check minikube config in your host OS desktop  | =~/.minikube/machines/minikube/config.json=, =~/.minikube=, =~/.kube= |
+| Name                                           | Command                                          |
+|------------------------------------------------+--------------------------------------------------|
+| Mount host OS's folder to minikube VM          | =minikube mount /host-mount-path:/vm-mount-path= |
+| Folder of k8s.io/minikube-hostpath provisioner | =/tmp/hostpath-provisioner=, =/tmp/hostpath_pv=  |
+| Mount host OS's folder to minikube VM          | =minikube mount /host-mount-path:/vm-mount-path= |
+| Critical minikube folder                       | =/var/lib/localkube=, =/var/lib/docker=, =/data= |
+| Check minikube config in your host OS desktop  | =~/.minikube/machines/minikube/config.json=      |
+| Minikube conf in local env                     | =~/.minikube=, =~/.kube=                         |
   
 ** Minikube Advanced
 | Name                                      | Command                                               |
@@ -95,3 +98,31 @@ https://github.com/kubernetes/minikube/tree/master/docs
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
+* [#A] minikube                                                    :noexport:
+https://github.com/kubernetes/minikube
+https://github.com/dennyzhang/cheatsheet-kubernetes-A4
+** DONE minikube volume local drive
+   CLOSED: [2018-07-15 Sun 22:46]
+ https://stackoverflow.com/questions/42456159/minikube-volumes
+#+BEGIN_EXAMPLE
+ /data
+ /var/lib/localkube
+ /var/lib/docker
+#+END_EXAMPLE
+
+ls -lth /var/lib/kubelet/pods/f2f8f500-88ba-11e8-89ad-080027cbaea4/volumes/kubernetes.io~empty-dir/varlog/1.log
+
+** try metric server in minikube
+https://docs.giantswarm.io/guides/kubernetes-heapster/
+
+http://192.168.99.102:30000/metrics
+** TODO minikube crash                                             :noexport:
+ pivotal@otis minikube (minikube-integration-test *+) 2 $ make deploy
+ bash -e ./test_in_minikube.sh deploy
+ E0717 11:51:25.500541   19507 status.go:85] Error cluster status: Error: Unrecognized output from ClusterStatus:
+ Start minikube
+ Starting local Kubernetes v1.10.0 cluster...
+ Starting VM...
+ Getting VM IP address...
+ Moving files into cluster...
+

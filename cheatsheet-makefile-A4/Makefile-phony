@@ -1,0 +1,6 @@
+# https://cheatsheet.dennyzhang.com/cheatsheet-makefile-A4
+
+# Phony target will always be rebuilt, instead of depending on some file changes.
+.PHONY: clean
+clean:
+	rm *.o temp

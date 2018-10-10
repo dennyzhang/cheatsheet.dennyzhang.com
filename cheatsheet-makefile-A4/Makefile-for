@@ -1,3 +1,4 @@
+# https://cheatsheet.dennyzhang.com/cheatsheet-makefile-A4
 all:
 	@for f in `find . -iname "*.py"`; do\
 		pylint $$f;\

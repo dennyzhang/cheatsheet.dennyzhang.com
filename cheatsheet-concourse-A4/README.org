@@ -22,40 +22,73 @@
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
-** Concepts
-| Name                  | Summary                         |
-|-----------------------+---------------------------------|
-| [[https://concourse-ci.org/fly.html#fly-targets][Targets]]               | alias of endpoint urls          |
-| Behavior              |                                 |
-| bbl (bosh-bootloader) | [[https://github.com/cloudfoundry/bosh-bootloader][GitHub: bosh-bootloader]]         |
-| Links                 | [[https://concourse-ci.org/concepts.html][concepts]], [[https://concoursetutorial.com/][concoursetutorial.com]] |
+
+Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]
+
+** Concourse Advanced
+| Name                                         | Summary                                                                                      |
+|----------------------------------------------+----------------------------------------------------------------------------------------------|
+| github-release resource cannot find old tag  | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][link]]                        |
+| fly set-pipeline run into "error: forbidden" | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][link: github]] |
+| List team details for all targets            | =fly -t $target teams -d=, =~/.flyrc=                                                        |
+
+** Concourse Containers
+| Name                            | Summary                                    |
+|---------------------------------+--------------------------------------------|
+| Login to container              | =fly -t $target hijack -u $job_url=        |
+| Run command without sudden exit | =nohup SOMECOMMAND &=; =tail -f nohup.out= |
+** Concourse Concepts
+| Name                  | Summary                                                                   |
+|-----------------------+---------------------------------------------------------------------------|
+| Links                 | [[https://concourse-ci.org/concepts.html][link: Concourse Concepts]], [[https://concoursetutorial.com/][link: concoursetutorial.com]]                     |
+| Pipelines             |                                                                           |
+| Jobs                  |                                                                           |
+| Tasks                 |                                                                           |
+| [[https://concourse-ci.org/fly.html#fly-targets][Targets]]               | Alias of Concourse endpoints                                              |
+| fly                   | Pipelines are configured entirely via the fly. There is no GUI. [[https://concourse-ci.org/fly.html][link: fly]] |
+| Behaviors             |                                                                           |
+| Input resource        |                                                                           |
+| Output resource       |                                                                           |
+| Teams                 |                                                                           |
+| bbl (bosh-bootloader) | [[https://github.com/cloudfoundry/bosh-bootloader][GitHub: bosh-bootloader]]                                                   |
 
 https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-sample.png
-
-** Concourse fly
+** Concourse Authentication & Authorization
+| Name                               | Summary                                                                          |
+|------------------------------------+----------------------------------------------------------------------------------|
+| Fly login to the default main team | =fly -t $target login -n main -c $concourse_url=                                 |
+| Fly login to a different team      | =fly -t $target login -n $team_name -c $concourse_url=                           |
+| List all teams                     | =fly -t $target teams=,  =fly -t $target teams -d=                               |
+| Fly logout all targets             | =fly logout --all=                                                               |
+| Create a team                      | =fly -t $target set-team -n $team_name --allow-all-users=                        |
+| Destroy a team                     | =fly -t $target destroy-team --team-name $team_name=                             |
+| Grant Github team access           | =fly -t $target set-team -n $team_name --github-org $my_org=                     |
+| Login to a team                    | =fly -t $target set-team -n $team_name=                                          |
+| Fly conf file                      | =~/.flyrc=                                                                       |
+| Reference                          | After login to the *main* team, you can update other teams. [[https://concourse-ci.org/teams.html][Link: Concourse Team]] |
+** Concourse Pipeline
 | Name                              | Summary                                                                     |
 |-----------------------------------+-----------------------------------------------------------------------------|
 | List all authenticated end points | =fly targets= [[https://concourse-ci.org/fly.html#fly-targets][link: fly targets]]                                             |
 | fly login                         | =fly -t $target login -c $concourse_url -n $team_name=                      |
 | Get pipeline definition           | =fly -t $target get-pipeline -p $job-name > job.yaml= [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][link: fly-getpipeline]] |
 | Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name --config pipeline.yml=       |
-| Login to container                | =fly -t $target hijack -u $job_url=                                         |
-| Destroy pipeline                  | =fly -t $target destroy-pipeline --pipeline my-pipeline=                    |
-
-** Modules
-| Name          | Summary                                 |
-|---------------+-----------------------------------------|
-| Git repo      | =git-resource= example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]] |
-| Google Bucket | =gcs-resource=                          |
-| Docker image  | =docker-image-resource=                 |
+| Destroy pipeline                  | =fly -t $target destroy-pipeline -p $pipeline_name=                         |
+| Format pipeline                   | =fly format-pipeline -c pipeline.yml=                                       |
+| Validate pipeline                 | =fly validate-pipeline -c pipeline.yml=                                     |
+** Concourse GUI/UI
+| Name                               | Summary                             |
+|------------------------------------+-------------------------------------|
+| URL for pipelines for a given team | Search by team, then generate a url |
+| Get fly version                    | =fly --version=                     |
 
 ** Concourse Resources
-| Name                  | Summary                                            |
-|-----------------------+----------------------------------------------------|
-| docker-image-resource | https://github.com/concourse/docker-image-resource |
-| gcs-resource          | https://github.com/frodenas/gcs-resource           |
-| git-resource          | https://github.com/concourse/git-resource          | 
-
+| Name                        | Summary                                                             |
+|-----------------------------+---------------------------------------------------------------------|
+| Docker image: docker-image-resource | https://github.com/concourse/docker-image-resource                  |
+| Google bucket: gcs-resource | https://github.com/frodenas/gcs-resource                            |
+| git-resource             | https://github.com/concourse/git-resource, example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]] |
+| github-release              |                                                                     |
 ** fly Online Usage
 #+BEGIN_EXAMPLE
 bash-3.2$ fly --help
@@ -112,9 +145,7 @@ Available commands:
   watch              Stream a build's output (aliases: w)
   workers            List the registered workers (aliases: ws)
 #+END_EXAMPLE
-
 ** More Resources
-
 http://www.mikeball.info/blog/concourse-git-resource/
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -128,8 +159,8 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
+#+DESCRIPTION:
+#+KEYWORDS:
 #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
 #+LaTeX_CLASS_OPTIONS: [8pt]
 #+LATEX_HEADER: \usepackage[english]{babel}
@@ -149,9 +180,17 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+EXPORT_EXCLUDE_TAGS: exclude noexport
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
+#+LINK_UP:
+#+LINK_HOME:
 * TODO collect more concourse example                              :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO what's input and output?                                    :noexport:
 * TODO where are the variables?                                    :noexport:
+* TODO git-resource vs github-release                              :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO fail to fly pipeline                                        :noexport:
+https://github.com/concourse/concourse/issues/2582
+#+BEGIN_EXAMPLE
+   /Users/zdenny/Dropbox/private_data/work/vmware/code/pks-ci/ci  fly --target pks set-pipeline --pipeline wavefront-proxy-release  --config <(erb /Users/zdenny/Dropbox/private_data/work/vmware/code/pks-ci/ci/wavefront-proxy-release.yml) --load-vars-from <(ansible-vault view --vault-password-file vaultpass /Users/zdenny/Dropbox/private_data/work/vmware/code/pks-ci/ci/secrets/common-secrets.yml) --load-vars-from <(ansible-vault view --vault-password-file vaultpass /Users/zdenny/Dropbox/private_data/work/vmware/code/pks-ci/ci/secrets/wavefront-proxy-release-secrets.yml) -n oratos-vmware
+error: forbidden
+#+END_EXAMPLE

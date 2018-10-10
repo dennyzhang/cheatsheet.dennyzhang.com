@@ -26,14 +26,21 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet: Linux Find]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]]
 
 ** Makefile
-| Name                    | Command                                                        |
-|-------------------------+----------------------------------------------------------------|
-| Debug makefile          | make -n                                                        |
-| Makefile use variables  | =make MODULE=audit build -f Makefile-debug= See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-debug][Makefile-debug]] |
-| Makefile use if clause  | See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-if][Makefile-if]]                                                |
-| Makefile use for clause | See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-for][Makefile-for]]                                               |
+| Name                                | Command                                                        |
+|-------------------------------------+----------------------------------------------------------------|
+| Makefile indentation                | It should always be tab, instead of whitespaces                |
+| Debug makefile                      | make -n                                                        |
+| Makefile use variables              | =make MODULE=audit build -f Makefile-debug= See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-debug][Makefile-debug]] |
+| Phony target will always be rebuilt | See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-phony][Makefile-phony]]                                             |
+| Makefile use if clause              | See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-if][Makefile-if]]                                                |
+| Makefile use for clause             | See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-for][Makefile-for]]                                               |
+| Reference                           | [[https://www.gnu.org/software/make/manual/html_node/Quick-Reference.html][link: Makefile Quick Reference]]                                 |
 ** More Resources
 License: Code is licenmakefile under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+https://devhints.io/makefile
+
+http://www.csheeet.com/en/latest/notes/c_make.html
 
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
@@ -66,6 +73,8 @@ License: Code is licenmakefile under [[https://www.dennyzhang.com/wp-content/mit
 #+LINK_UP:   
 #+LINK_HOME: 
 * TODO makefile problems                                           :noexport:
+** makefile phony
+https://qinyeli.github.io/cheatsheets/makefile-cheatsheet/
 ** validate makefile syntax
 ** TODO Makefile: .PHONY: all deploy destroy status test
  https://gitlab.eng.vmware.com/PKS/wavefront-proxy-release/merge_requests/37/diffs#note_311387
@@ -117,7 +126,9 @@ int main(){
 **** makefile
 hello:
 	g++ hello.c++
-*** useful link
- http://www.chinaunix.net/jh/23/408225.html\\
- [精华] 跟我一起写 Makefile - ChinaUnix.net
+** useful link
+http://www.csheeet.com/en/latest/notes/c_make.html
 
+http://www.chinaunix.net/jh/23/408225.html
+
+https://www.cheatography.com/bavo-van-achte/cheat-sheets/gnumake/
