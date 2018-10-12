@@ -1,6 +1,6 @@
 * CheatSheet: Cloud Networking                                        :Tools:
 :PROPERTIES:
-:type:     cloud
+:type:     cloud, vmware
 :export_file_name: cheatsheet-networking-A4.pdf
 :END:
 

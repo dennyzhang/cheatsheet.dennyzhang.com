@@ -389,9 +389,9 @@ https://www.commandlinefu.com/commands/view/3/display-the-top-ten-running-proces
 * TODO shred: /Users/zdenny/cheat/cheat/cheatsheets/shred          :noexport:
 * TODO ncdu: /Users/zdenny/cheat/cheat/cheatsheets/                :noexport:
 * TODO nkf: /Users/zdenny/cheat/cheat/cheatsheets/                 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-procfs-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-wget-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-apt-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO split drive test into a dedicated one: https://cheatsheet.dennyzhang.com/cheatsheet-living-in-ca :noexport:
+* TODO cheatsheet link highlight: https://cheatsheet.dennyzhang.com/cheatsheet-gcp-a4 :noexport:

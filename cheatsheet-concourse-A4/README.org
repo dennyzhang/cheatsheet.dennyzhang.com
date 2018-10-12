@@ -1,6 +1,6 @@
 * Concourse CheatSheet                                                     :Tools:
 :PROPERTIES:
-:type:     cloudfoundry
+:type:     pivotal, pks, vmware
 :export_file_name: cheatsheet-concourse-A4.pdf
 :END:
 
@@ -19,7 +19,7 @@
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concourse-A4/cheatsheet-concourse-A4.pdf][cheatsheet-concourse-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4
 
-File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
@@ -83,12 +83,12 @@ https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/ch
 | Get fly version                    | =fly --version=                     |
 
 ** Concourse Resources
-| Name                        | Summary                                                             |
-|-----------------------------+---------------------------------------------------------------------|
+| Name                                | Summary                                                             |
+|-------------------------------------+---------------------------------------------------------------------|
 | Docker image: docker-image-resource | https://github.com/concourse/docker-image-resource                  |
-| Google bucket: gcs-resource | https://github.com/frodenas/gcs-resource                            |
-| git-resource             | https://github.com/concourse/git-resource, example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]] |
-| github-release              |                                                                     |
+| Google bucket: gcs-resource         | https://github.com/frodenas/gcs-resource                            |
+| git-resource                        | https://github.com/concourse/git-resource, example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]] |
+| github-release                      | https://github.com/concourse/github-release-resource                |
 ** fly Online Usage
 #+BEGIN_EXAMPLE
 bash-3.2$ fly --help
@@ -185,12 +185,6 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 * TODO collect more concourse example                              :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO what's input and output?                                    :noexport:
-* TODO where are the variables?                                    :noexport:
+* TODO where the variables are?                                    :noexport:
 * TODO git-resource vs github-release                              :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO fail to fly pipeline                                        :noexport:
-https://github.com/concourse/concourse/issues/2582
-#+BEGIN_EXAMPLE
-   /Users/zdenny/Dropbox/private_data/work/vmware/code/pks-ci/ci  fly --target pks set-pipeline --pipeline wavefront-proxy-release  --config <(erb /Users/zdenny/Dropbox/private_data/work/vmware/code/pks-ci/ci/wavefront-proxy-release.yml) --load-vars-from <(ansible-vault view --vault-password-file vaultpass /Users/zdenny/Dropbox/private_data/work/vmware/code/pks-ci/ci/secrets/common-secrets.yml) --load-vars-from <(ansible-vault view --vault-password-file vaultpass /Users/zdenny/Dropbox/private_data/work/vmware/code/pks-ci/ci/secrets/wavefront-proxy-release-secrets.yml) -n oratos-vmware
-error: forbidden
-#+END_EXAMPLE
+* HALF Why delete kubo hasn't been triggered                       :noexport:
