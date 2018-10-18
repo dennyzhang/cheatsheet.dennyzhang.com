@@ -1,4 +1,4 @@
-* Concourse CheatSheet                                                     :Tools:
+* CheatSheet: Concourse                                              :VMware:
 :PROPERTIES:
 :type:     pivotal, pks, vmware
 :export_file_name: cheatsheet-concourse-A4.pdf
@@ -24,14 +24,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]
-
 ** Concourse Advanced
 | Name                                         | Summary                                                                                      |
 |----------------------------------------------+----------------------------------------------------------------------------------------------|
 | github-release resource cannot find old tag  | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][link]]                        |
 | fly set-pipeline run into "error: forbidden" | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][link: github]] |
 | List team details for all targets            | =fly -t $target teams -d=, =~/.flyrc=                                                        |
-
+| Concourse examples                           | [[https://github.com/pivotal-cf/pcf-pipelines/tree/v0.23.0][github: pcf-pipelines]]                                                                        |
 ** Concourse Containers
 | Name                            | Summary                                    |
 |---------------------------------+--------------------------------------------|
@@ -188,3 +187,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 * TODO where the variables are?                                    :noexport:
 * TODO git-resource vs github-release                              :noexport:
 * HALF Why delete kubo hasn't been triggered                       :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO a problematic pipeline can make the dashboard unavailable   :noexport:
+* TODO fail to hijack to concourse container                       :noexport:
+* TODO [#A] Fly my kubo test to raas                               :noexport:

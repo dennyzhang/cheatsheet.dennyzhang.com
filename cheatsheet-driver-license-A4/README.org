@@ -1,0 +1,237 @@
+* Cheatsheet: Driver License Written Test                              :Life:
+:PROPERTIES:
+:type:     life
+:export_file_name: cheatsheet-driver-license-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-driver-license-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-driver-license-A4/cheatsheet-driver-license-A4.pdf][cheatsheet-driver-license-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4
+
+File me [[https://github.com/dennyzhang/cheatsheet-uaac-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-uaac-A4][this repo]].
+
+See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+** Free Driver License Written Tests
+| Name                                                 | Comment                           |
+|------------------------------------------------------+-----------------------------------|
+| Sample Class C Written Tests from DMV                | [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc2written?lang=en][Test1]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc3written?lang=en][Test2]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en][Test3]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en][Test4]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc6written?lang=en][Test5]] |
+| FREE DMV Practice Test for California Permit 2018    | [[https://driving-tests.org/california/dmv-practice-test/][link: driving-tests.org]]           |
+| California DMV Marathon Practice Test(150 Questions) | [[https://driving-tests.org/california/california-marathon-practice-test/][link: driving-tests.org]]           |
+| California Driver Handbook                           | [[https://www.dmv.ca.gov/web/eng_pdf/dl600.pdf][link: dmv pdf]]                     |
+
+** Limits & Fining
+| Name                     | Summary                                                                                      |
+|--------------------------+----------------------------------------------------------------------------------------------|
+| The fine of litering     | $1,000, in addition, you may be required to pick up what littered                            |
+| Change lanes on freeway  | You should signal for at least 5 seconds                                                     |
+| Tailgating               | To avoid tailgating, leave 3 second of space between you and the vehicle in front of you     |
+| Enter school zones       | Within 500-1000 feet of a school, the speed limit is 25 mph while children are outside       |
+| Make changes             | To avoid last-minute moves, look down the road 10-15 seconds                                 |
+| park near fire hydrant   | You can't part within 15 feet of a fire hydrant                                              |
+| Park near railroad track | You must not park within 7.5 feet of a railroad track                                        |
+| drive close to cicyclist | You must ensure there is more than 3 feet width for cyclist                                  |
+| Turn a corner            | You should signal for at least 100 feet.                                                     |
+| Follow emergency vehcile | You must not follow within 400 feet of any emergency vehcile with a siren or flashing lights |
+| Use center lane          | While driving in a center left-turn lane, you may only drive for 200 feet.                   |
+
+** Parking at colored curbs
+| Name       | Summary                                                                                 |
+|------------+-----------------------------------------------------------------------------------------|
+| White curb | Stop only long enough to pick up or drop off passengers or mail.                        |
+| Green      | Park for a limited time. Look for a posted sign next to the green zone for time limits. |
+| Yellow     | Stop no longer than the time posted to load or unload passengers or freight.            |
+| Red        | No stopping, standing, or parking. (Buses may stop at a red zone marked for buses.)     |
+| Blue       | Parking for disabled people only                                                        |
+
+** Terminology
+| Name                             | Summary                                                                                            |
+|----------------------------------+----------------------------------------------------------------------------------------------------|
+| Skid                             | automobiles slip relative to the road [[https://en.wikipedia.org/wiki/Skid_(automobile)][link: wikipedia]]                                              |
+| California "Basic Speed Law"     | You must never driver faster than what is safe in current conditions                               |
+| Turnout area                     | You may pull to the side in these areas and allow cars behind you to pass. [[https://driversed.com/driving-information/driving-techniques/turnout-areas.aspx][link]]                    |
+| a flashing yellow traffic signal | No need to stop, but slow down and alerted before entering intersection                            |
+| a flashing red traffic signal    | Treat like a STOP sign. stop, yield and only proceed when it's safe                                |
+| a nighttime reflector            | It shows where the road lies                                                                       |
+| hand-over-hand steering          | used when turning at low speeds, parking or recovering from a skid                                 |
+| one-hand steering                | You can use when you're backing up without much turning                                            |
+| three-point turn                 | standard method of turning vehicles around to face the opposite direction in a limited space. [[https://en.wikipedia.org/wiki/Three-point_turn][link]] |
+| DUI probation                    |                                                                                                    |
+| NEV                              | neighborhood electric vehicles                                                                     |
+| LSV                              | Low speed vehicles                                                                                 |
+| HOV lane(High-Occupancy Vehicle) | Designed for buses, motorcycles, certain low-emission vehicles and 2+ passengers                   |
+
+** Misc
+| Name                       | Summary                                                         |
+|----------------------------+-----------------------------------------------------------------|
+| Traffic lights not working | You need to come to a complete stop first                       |
+| Use horn                   | You may tap horn to try to make eye contact with another driver |
+
+hand-over-hand-steering:
+[[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/hand-over-hand-steering.jpg]]
+
+one-hand-steering:
+[[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/one-hand-steering.jpg]]
+
+three-point-turn:
+[[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/three-point-turn.png]]
+
+cone-zone:
+[[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/cone-zone.png]]
+
+signal-hands:
+[[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/signal-hands.png]]
+
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+https://www.dmv.ca.gov/portal/dmv/dmv/dl
+
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl05
+
+https://www.dmv.ca.gov/portal/wcm/connect/a34dbefd-c615-4c07-a271-b135850de9d1/Residency_DocsList.pdf?MOD=AJPERES
+
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl07
+
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+
+<a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+<a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-driver-license-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-driver-license-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* Move from another state to CA: update your vehicle information   :noexport:
+https://www.dmv.ca.gov/portal/dmv/dmv/vr/
+
+https://www.dmv.ca.gov/portal/dmv/detail/online/vrir/vr_sb1500anu
+
+** Register Your Vehicle in California
+*A nonresident vehicle* is a vehicle last registered in another state or country.
+
+| Form                                                       | Summary                 |
+|------------------------------------------------------------+-------------------------|
+| reg343 form: [[https://www.dmv.ca.gov/portal/dmv/detail/forms/reg/reg343][Application for Title or Registration REG 343]] |                         |
+| reg31 form: [[https://www.dmv.ca.gov/portal/dmv/detail/forms/reg/reg31][Verification of Vehicle (REG 31) form]]          | Need to be filed by DMV |
+
+https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/register_vehicle.png]]
+
+#+BEGIN_EXAMPLE
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/howto/htvr09#feesdue
+
+https://www.dmv.org/ca-california/car-registration.php
+
+https://www.dmv.org/ca-california/new-to-california.php
+#+END_EXAMPLE
+
+** Get a new license plate
+https://www.dmv.ca.gov/portal/dmv/detail/vr/vr_info
+
+[[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/substitute-plates.png]]
+
+** Report a change of address to DMV within 10 days of the change
+https://www.dmv.ca.gov/portal/dmv/detail/vr/vr_info
+
+* Replacing a Lost Title in Texas                                  :noexport:
+https://www.txdmv.gov/motorists/buying-or-selling-a-vehicle/get-a-copy-of-your-title
+#+BEGIN_EXAMPLE
+Here are the steps to applying for a certified copy of title by mail:
+
+Complete Form VTR-34, Application for a Certified Copy of Title.
+VTR-34 Application for a Certified Copy of Title
+
+Enclose a copy of the owner's valid photo ID and $2 mail-in fee by check, cashier's check or money order payable to the Texas Department of Motor Vehicles. An agent of the owner or lienholder must also provide a letter of signature authority on original letterhead, a business card or a copy of the agent's employee ID.
+
+Mail the application to:
+TxDMV
+1601 Southwest Parkway, Suite A
+Wichita Falls, TX 76302
+#+END_EXAMPLE
+
+* Interesting Questions                                            :noexport:
+#+BEGIN_EXAMPLE
+3. You have been involved in a minor traffic collision with a parked vehicle and you can't find the owner. You must:
+
+Leave a note on the vehicle.
+Report the accident without delay to the city police or, in unincorporated areas, to the CHP.
+Both of the above.
+
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc3written?lang=en
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+2. You must notify the DMV within 5 days if you:
+
+Sell or transfer your vehicle.
+Fail a smog test for your vehicle.
+Get a new prescription for lenses or contacts.
+
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+6. It is illegal to park your vehicle:
+
+In an unmarked crosswalk.
+Within three feet of a private driveway.
+In a bicycle lane.
+
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+3. You are driving on a freeway posted for 65 mph. Most of the other vehicles are driving 70 mph or faster. You may legally drive:
+
+70 mph or faster to keep up with the speed of traffic.
+Between 65 mph and 70 mph.
+No faster than 65 mph.
+
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+5. Which of these vehicles must always stop before crossing railroad tracks?
+
+Tank trucks marked with hazardous materials placards.
+Motor homes or pickup trucks towing a boat trailer.
+Any vehicle with 3 or more axles or weighing more than 4,000 pounds.
+
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en
+#+END_EXAMPLE
+As Of: 9/10/2018

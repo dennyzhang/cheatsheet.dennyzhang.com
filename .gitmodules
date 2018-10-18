@@ -61,3 +61,6 @@
 [submodule "kubernetes-yaml-templates"]
 	path = kubernetes-yaml-templates
 	url = git@github.com:dennyzhang/kubernetes-yaml-templates.git
+[submodule "cheatsheet-mac-A4"]
+	path = cheatsheet-mac-A4
+	url = git@github.com:dennyzhang/cheatsheet-mac-A4.git

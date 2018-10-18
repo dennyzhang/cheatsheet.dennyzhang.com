@@ -1,4 +1,4 @@
-* CheatSheet: Cloud Networking                                        :Tools:
+* CheatSheet: SDN & VMware NSX-T                                     :VMware:
 :PROPERTIES:
 :type:     cloud, vmware
 :export_file_name: cheatsheet-networking-A4.pdf
@@ -24,66 +24,69 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 - Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][CheatSheet: Cloud Virtualization]]
-** Basic Concepts
-| Name                             | Command                                                                                    |
-|----------------------------------+--------------------------------------------------------------------------------------------|
-| [[https://en.wikipedia.org/wiki/Software-defined_networking][SDN(Software-defined networking)]] |                                                                                            |
-| NAT(Network address translation) | Allow you to hide the IP addresses.                                                        |
-| DNAT                             | For ingress traffic, hide your server IP                                                   |
-| SNAT                             | For egress traffic, hide your server IP                                                    |
-| [[https://en.wikipedia.org/wiki/Virtual_LAN][VLAN (Virtual LAN)]]               | Group hosts together even if not directly connected to same network switch                 |
-| [[https://searchsdn.techtarget.com/definition/east-west-traffic][East/West traffic]]                | Traffic within a data center. Usually depict local area network (LAN) traffic horizontally |
-| [[https://networkengineering.stackexchange.com/questions/18873/what-is-the-meaning-origin-of-the-terms-north-south-and-east-west-traffic][North/South traffic]]              | Traffic coming into and out of the network into Internet space                             |
-| [[https://en.wikipedia.org/wiki/Border_Gateway_Protocol][BGP(Border Gateway Protocol)]]     | Among autonomous systems (AS) *on the Internet*. eBGP vs iBGP                              |
-| Overlay networks                 |                                                                                            |
-| vnet(a virtual network)          | allows instances to migrate among compute nodes without changing networking conf           |
-| Floating IP Pool                 |                                                                                            |
+** SDN
+*** SDN Basic Concepts
+ | Name                             | Command                                                                                    |
+ |----------------------------------+--------------------------------------------------------------------------------------------|
+ | [[https://en.wikipedia.org/wiki/Software-defined_networking][SDN(Software-defined networking)]] |                                                                                            |
+ | NAT(Network address translation) | Allow you to hide the IP addresses.                                                        |
+ | DNAT                             | For ingress traffic, hide your server IP                                                   |
+ | SNAT                             | For egress traffic, hide your server IP                                                    |
+ | [[https://en.wikipedia.org/wiki/Virtual_LAN][VLAN (Virtual LAN)]]               | Group hosts together even if not directly connected to same network switch                 |
+ | [[https://searchsdn.techtarget.com/definition/east-west-traffic][East/West traffic]]                | Traffic within a data center. Usually depict local area network (LAN) traffic horizontally |
+ | [[https://networkengineering.stackexchange.com/questions/18873/what-is-the-meaning-origin-of-the-terms-north-south-and-east-west-traffic][North/South traffic]]              | Traffic coming into and out of the network into Internet space                             |
+ | [[https://en.wikipedia.org/wiki/Border_Gateway_Protocol][BGP(Border Gateway Protocol)]]     | Among autonomous systems (AS) *on the Internet*. eBGP vs iBGP                              |
+ | Overlay networks                 |                                                                                            |
+ | vnet(a virtual network)          | allows instances to migrate among compute nodes without changing networking conf           |
+ | Floating IP Pool                 |                                                                                            |
 
-** More Concepts
-| Name                                      | Command                                                               |
-|-------------------------------------------+-----------------------------------------------------------------------|
-| [[https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm][VNIC (Virtualized Network Interface Card)]] | A virtual NIC based on a physical one, then added to a network bridge |
-| [[https://en.wikipedia.org/wiki/Virtual_network_interface][VIF (Virtual Network Interface)]]           |                                                                       |
-| [[http://www.definethecloud.net/vxlan-deep-dive/][VTEP (VXLAN Tunnel Endpoint)]]              |                                                                       |
-| [[https://en.wikipedia.org/wiki/Link_aggregation][LAG(Link aggregation)]]                     |                                                                       |
-| Transport Network                         |                                                                       |
-| BFD(Bidirectional Forwarding Detection)   | BFD can be used for BGP peers but also for static routes              |
-| DFW(Distributed Firewall)                 |                                                                       |
-| [[https://en.wikipedia.org/wiki/Network_function_virtualization][NFV(Network function virtualization)]]      |                                                                       |
-| L2 networking                             | L2 bridge                                                             |
-| L3 networking                             |                                                                       |
-| L7 networking                             |                                                                       |
-| GRE(Generic Routing Encapsulation)        |                                                                       |
+*** SDN More Concepts
+ | Name                                      | Command                                                               |
+ |-------------------------------------------+-----------------------------------------------------------------------|
+ | [[https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm][VNIC (Virtualized Network Interface Card)]] | A virtual NIC based on a physical one, then added to a network bridge |
+ | [[https://en.wikipedia.org/wiki/Virtual_network_interface][VIF (Virtual Network Interface)]]           |                                                                       |
+ | [[http://www.definethecloud.net/vxlan-deep-dive/][VTEP (VXLAN Tunnel Endpoint)]]              |                                                                       |
+ | [[https://en.wikipedia.org/wiki/Link_aggregation][LAG(Link aggregation)]]                     |                                                                       |
+ | Transport Network                         |                                                                       |
+ | BFD(Bidirectional Forwarding Detection)   | BFD can be used for BGP peers but also for static routes              |
+ | DFW(Distributed Firewall)                 |                                                                       |
+ | [[https://en.wikipedia.org/wiki/Network_function_virtualization][NFV(Network function virtualization)]]      |                                                                       |
+ | L2 networking                             | L2 bridge                                                             |
+ | L3 networking                             |                                                                       |
+ | L7 networking                             |                                                                       |
+ | GRE(Generic Routing Encapsulation)        |                                                                       |
 
-** Switch - L2 layer
-| Name                           | Command                                                                             |
-|--------------------------------+-------------------------------------------------------------------------------------|
-| [[https://en.wikipedia.org/wiki/Virtual_LAN][VLAN (Virtual LAN)]]             | Group hosts together even if they are not directly connected to same network switch |
-| [[https://en.wikipedia.org/wiki/Virtual_Extensible_LAN][VXLAN (Virtual Extensible LAN)]] |                                                                                     |
-| Geneve                         |                                                                                     |
-| Logical Switch                 | Spin up isolated logical L2 networks                                                |
-| OVS (Open vSwitch)             |                                                                                     |
-| VNI(Virtual Network Instance)  |                                                                                     |
-| TEP table                      |                                                                                     |
+*** Switch - L2 layer
+ | Name                           | Command                                                                             |
+ |--------------------------------+-------------------------------------------------------------------------------------|
+ | [[https://en.wikipedia.org/wiki/Virtual_LAN][VLAN (Virtual LAN)]]             | Group hosts together even if they are not directly connected to same network switch |
+ | [[https://en.wikipedia.org/wiki/Virtual_Extensible_LAN][VXLAN (Virtual Extensible LAN)]] |                                                                                     |
+ | Geneve                         |                                                                                     |
+ | Logical Switch                 | Spin up isolated logical L2 networks                                                |
+ | OVS (Open vSwitch)             |                                                                                     |
+ | VNI(Virtual Network Instance)  |                                                                                     |
+ | TEP table                      |                                                                                     |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/open-vswitch.png]]
+ [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/open-vswitch.png]]
 
-** Router - L3 layer
-| Name                           | Command                                                                      |
-|--------------------------------+------------------------------------------------------------------------------|
-| LR(Logical Router)             | Create multiple routing domains with a single router. It composes: DR and SR |
-| Two-tier routing               | T0-router(physical routing infra), T1-router(per tenant first hop router)    |
-| Uplink                         | Used to connect to physical infrastructure                                   |
-| Router Link                    | Used to interconnect Tier0 and Tier1 Logical routers                         |
-| Downlink                       | Used to connect logical switches                                             |
-| Static Routing/Dynamic Routing |                                                                              |
-| DR(Distributed Router)         |                                                                              |
-| SR(Service Router)             |                                                                              |
-| LRP                            |                                                                              |
+*** Router - L3 layer
+ | Name                           | Command                                                                      |
+ |--------------------------------+------------------------------------------------------------------------------|
+ | LR(Logical Router)             | Create multiple routing domains with a single router. It composes: DR and SR |
+ | Two-tier routing               | T0-router(physical routing infra), T1-router(per tenant first hop router)    |
+ | Uplink                         | Used to connect to physical infrastructure                                   |
+ | Router Link                    | Used to interconnect Tier0 and Tier1 Logical routers                         |
+ | Downlink                       | Used to connect logical switches                                             |
+ | Static Routing/Dynamic Routing |                                                                              |
+ | DR(Distributed Router)         |                                                                              |
+ | SR(Service Router)             |                                                                              |
+ | LRP                            |                                                                              |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/two_routers.png]]
+ [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/two_routers.png]]
 
 ** VMWare NSX-T
+[[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/nsxt-topology-nat.png]]
+
 *** NSX-T Components
 | Name             | Command                                                                             |
 |------------------+-------------------------------------------------------------------------------------|
@@ -103,8 +106,6 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Transport nodes                   | host local control plane daemons and forwarding engines.              |
 | Plane agent                       | Every node hosts a management plane agent.                            |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/nsxt-topology-nat.png]]
-
 *** NSX-T Commands
 | Name                    | Command                                                        |
 |-------------------------+----------------------------------------------------------------|
@@ -112,11 +113,6 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | ncp log                 | =/var/vcap/sys/log/ncp/=                                       |
 | NSX-T networking in PKS | https://docs.pivotal.io/runtimes/pks/1-1/nsxt-prepare-env.html |
 
-** Questions
-*** VIP vs EIP
-*** NAT: traffic overhead is huge
-*** iptable rules: won't scale when your envs grow
-*** NAT vs no-NAT in PKS
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -183,4 +179,18 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 ** TODO Question about PKS NSX-T
 - T0: provides routing for NAT
 ** TODO proactive SR
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** VIP vs EIP
+** NAT: traffic overhead is huge
+** iptable rules: won't scale when your envs grow
+** NAT vs no-NAT in PKS
+
 * [#A] Explain NSX-T in a simple way                               :noexport:
+* DONE vmware: NSX-V NSX-T                                         :noexport:
+  CLOSED: [2018-08-23 Thu 23:11]
+https://www.vembu.com/blog/vmware-nsx-v-vs-nsx-t-comparison/
+
+The NSX-V platform is the original NSX platform that has been around for a few years now.
+
+NSX-V (NSX for "vSphere") is designed for vSphere deployments only and is architected so that a single NSX-V manager platform is tied to a single VMware vCenter Server instance. 
+NSX-T (NSX "Transformers") is designed to address many of the use cases that NSX-V was not designed for, such as the multi-hypervisors. 

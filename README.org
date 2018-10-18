@@ -343,15 +343,10 @@ https://github.com/dennyzhang/website/blob/6a88f51ce3f0c1339d2e0f272680beb3d3601
 * TODO [#A] org-mode seperator use a different one                 :noexport:
 * TODO Automatically generate picture from text                    :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Merge challenges-golang-datastructure into golang cheatsheet :noexport:
-* TODO Merge challenges-python-datastructure into python cheatsheet :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO markdown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO [#A] apparmor: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO asciiart: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO yum & rpm & rpm2cpio & urpm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* TODO sql & sqlite3 & mysql & psql & sqlmap & mysqldump: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-https://github.com/treehouse/cheatsheets
 * TODO du & dd && df & lsblk & lvm & mdadm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO chmod & chown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO convert: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
@@ -370,20 +365,14 @@ https://github.com/treehouse/cheatsheets
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] github org-ruby fails to generate TOC: https://github.com/dennyzhang/challenges-k8s-istio :noexport:
 * TODO [#A] PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
-* TODO [#A] health cheatsheet: /Users/mac/Dropbox/org_data/life/life.org :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO ps & kill: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO cheatsheet: linux check plain text file                     :noexport:
 * TODO cheatsheet: linux check process                             :noexport:
 ** HALF linux sort problem by ram usage
 top -b -o +%MEM |head -30
 
 https://www.commandlinefu.com/commands/view/3/display-the-top-ten-running-processes-sorted-by-memory-usage
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-health-A4 :noexport:
-* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-grep-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO asterisk: /Users/zdenny/cheat/cheat/cheatsheets/asterisk    :noexport:
 * TODO shred: /Users/zdenny/cheat/cheat/cheatsheets/shred          :noexport:
@@ -393,5 +382,13 @@ https://www.commandlinefu.com/commands/view/3/display-the-top-ten-running-proces
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-wget-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-apt-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO split drive test into a dedicated one: https://cheatsheet.dennyzhang.com/cheatsheet-living-in-ca :noexport:
 * TODO cheatsheet link highlight: https://cheatsheet.dennyzhang.com/cheatsheet-gcp-a4 :noexport:
+* TODO generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-a4 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-grep-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Merge challenges-golang-datastructure into golang cheatsheet :noexport:
+* TODO Merge challenges-python-datastructure into python cheatsheet :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-health-A4 :noexport:
+* TODO [#A] health cheatsheet: /Users/mac/Dropbox/org_data/life/life.org :noexport:

@@ -1,6 +1,6 @@
-* CheatSheet: Cloud Virtualization                                    :Tools:
+* CheatSheet: Virtualization & VMware VSphere                        :VMware:
 :PROPERTIES:
-:type:     cloud
+:type:     cloud, vmware
 :export_file_name: cheatsheet-virtualization-A4.pdf
 :END:
 
@@ -24,7 +24,6 @@ File me [[https://github.com/dennyzhang/cheatsheet-virtualization-A4/issues][Iss
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 - Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-docker-A4][Docker CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][CheatSheet: Cloud Networking]]
-
 ** Typical Hypervisors
 | Name         | Command |
 |--------------+---------|
@@ -34,6 +33,8 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | virtualbox   |         |
 | vmwarefusion |         |
 
+[[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-virtualization-A4/vsphere-schedule-drs.png]]
+
 ** Basic Concepts
 | Name                                | Command |
 |-------------------------------------+---------|
@@ -41,8 +42,6 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | co-located                          |         |
 | [[https://www.vmware.com/products/vsphere/drs-dpm.html][DRS(Distributed Resource Scheduler)]] |         |
 | [[https://en.wikipedia.org/wiki/Non-uniform_memory_access][NUMA(Non-uniform memory access)]]     |         |
-
-[[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-virtualization-A4/vsphere-schedule-drs.png]]
 
 ** VSphere Concepts
 | Name           | Summary                                                                                       |

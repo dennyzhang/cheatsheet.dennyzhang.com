@@ -21,16 +21,14 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-minikube-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-minikube-A4][this repo]].
 
-See more CheatSheets from Denny: [[https://gith        ("ea9592c730504707e5aa17b425da0a7a" "1360" "Docker CheatSheet" "cheatsheet-docker-A4"
-         "Docker CheatSheet" "docker CheatSheet")
-<2018-10-01 10:46 UTC +8>ub.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 - Check kubernetes cheatsheet: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4
 ** Minikube basic
 | Name                                         | Command                                                                           |
 |----------------------------------------------+-----------------------------------------------------------------------------------|
 | minikube lifecycle [[https://github.com/kubernetes/minikube][link: minikube]]            | =minikube delete=, =minikube start=, =minikube status=                            |
-| Get minikube version                                | =minikube version=, [[https://github.com/kubernetes/minikube/releases][link: all minikube releases]]  |
+| Get minikube version                         | =minikube version=, [[https://github.com/kubernetes/minikube/releases][link: all minikube releases]]                                   |
 | mac install minikube                         | =brew cask install minikube=, =brew cask reinstall minikube=                      |
 | Start minikube with different machine flavor | =minikube start --memory 5120 --cpus=4=                                           |
 | Start minikube with a specific k8s version   | =minikube start --kubernetes-version v1.11.0=                                     |
