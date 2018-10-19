@@ -61,6 +61,13 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | [[https://github.com/rkt/rkt][rkt]]     | a pod-native container engine for Linux.                                                 |
 | [[https://github.com/kubernetes-sigs/cri-o][CRI-O]]   | Open Container Initiative-based implementation of Kubernetes Container Runtime Interface |
 
+** Storage
+| Name     | Command                                                                                                                         |
+|----------+---------------------------------------------------------------------------------------------------------------------------------|
+| vmdk     | a file format describes containers for virtual hard disk drives to be used in VMware Workstation or VirtualBox. [[https://en.wikipedia.org/wiki/VMDK][wikipedia: VMDK]] |
+| hatchway | Persistent Storage for Cloud Native Applications. [[https://vmware.github.io/hatchway/][github: hatchway]]                                                              |
+| vSAN     |                                                                                                                                 |
+
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -129,3 +136,12 @@ vagrant destroy
 
 # Restart vm with new provision script
 vagran reload --provision
+* misc                                                             :noexport:
+Hyper-Converged Infra
+
+Network Insight
+
+VMware cloud on AWS
+
+vSphere
+vRealize

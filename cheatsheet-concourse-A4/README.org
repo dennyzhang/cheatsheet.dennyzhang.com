@@ -191,3 +191,77 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 * TODO a problematic pipeline can make the dashboard unavailable   :noexport:
 * TODO fail to hijack to concourse container                       :noexport:
 * TODO [#A] Fly my kubo test to raas                               :noexport:
+* TODO scenario: How I login to releng container, and run bosh command? :noexport:
+https://pks-releng.ci.cf-app.com/teams/main/pipelines/vsphere-nsx-om22-upgrade-minor-oratos.vrli-ci/jobs/upgrade-test/builds/1
+
+export container_id=$(ls /tmp/build)
+cd pks-releng-ci/tasks/test-upgrade-tile
+pwd
+SCRIPT_ROOT=/tmp/build/79f5611b/pks-releng-ci/tasks/test-upgrade-tile
+pushd /tmp/build/79f5611b/pks-releng-ci/tasks/test-upgrade-tile
+source ../../lib/sshuttle-helpers.sh
+source ../../lib/kubectl-helpers.sh
+source ../../lib/pks-setup.sh
+export ENV_LOCK_FILE=/tmp/build/79f5611b/environment-lock/metadata
+popd
+
+pks login --skip-ssl-verification --username alana --password password --api pks.pks-api.cf-app.com
+
+
+export SCRIPT_ROOT="/tmp/build/$container_id/git-pks-ci/ci/scripts"
+source "${SCRIPT_ROOT}/lib/bosh-helpers.sh"
+source "${SCRIPT_ROOT}/lib/credhub-helpers.sh"
+source "${SCRIPT_ROOT}/lib/nsx-helpers.sh"
+source "${SCRIPT_ROOT}/lib/opsman-helpers.sh"
+
+init_env
+
+bosh -n deployments
+
+#+BEGIN_EXAMPLE
+   /Users/zdenny  ~/Downloads/fly-3.14 -t releng hijack -u https://pks-releng.ci.cf-app.com/teams/main/pipelines/vsphere-nsx-om22-upgrade-minor-oratos.vrli-ci/jobs/upgrade-test/builds/1                  ✘ 1
+1: build #1, step: download-kubectl, type: task
+2: build #1, step: download-kubectl, type: task
+3: build #1, step: download-pks-cli, type: task
+4: build #1, step: download-pks-cli, type: task
+5: build #1, step: environment-lock, type: get
+6: build #1, step: failure-logs, type: get
+7: build #1, step: failure-logs, type: put
+8: build #1, step: gather-logs, type: task
+9: build #1, step: get-product-version-from-tile, type: task
+10: build #1, step: notify, type: get
+11: build #1, step: notify, type: put
+12: build #1, step: pipeline-metadata, type: get
+13: build #1, step: upgrade-test, type: task
+choose a container: 13
+bash-4.4# bosh vms
+Expected non-empty Director URL
+
+Exit code 1
+bash-4.4# export container_id=$(ls /tmp/build)
+bash-4.4# export ENV_LOCK_FILE=/tmp/build/$container_id/pks-lock/metadata
+bash-4.4#
+bash-4.4# export SCRIPT_ROOT="/tmp/build/$container_id/git-pks-ci/ci/scripts"
+bash-4.4# source "${SCRIPT_ROOT}/lib/bosh-helpers.sh"
+bash: /tmp/build/79f5611b/git-pks-ci/ci/scripts/lib/bosh-helpers.sh: No such file or directory
+bash-4.4# source "${SCRIPT_ROOT}/lib/credhub-helpers.sh"
+bash: /tmp/build/79f5611b/git-pks-ci/ci/scripts/lib/credhub-helpers.sh: No such file or directory
+bash-4.4# source "${SCRIPT_ROOT}/lib/nsx-helpers.sh"
+bash: /tmp/build/79f5611b/git-pks-ci/ci/scripts/lib/nsx-helpers.sh: No such file or directory
+bash-4.4# source "${SCRIPT_ROOT}/lib/opsman-helpers.sh"
+bash: /tmp/build/79f5611b/git-pks-ci/ci/scripts/lib/opsman-helpers.sh: No such file or directory
+bash-4.4#
+bash-4.4# init_env
+bash: init_env: command not found
+bash-4.4#
+bash-4.4# bosh -n deployments
+Expected non-empty Director URL
+
+Exit code 1
+bash-4.4# which bosh
+/usr/local/bin/bosh
+bash-4.4# bosh -n deployments
+Expected non-empty Director URL
+
+Exit code 1
+#+END_EXAMPLE

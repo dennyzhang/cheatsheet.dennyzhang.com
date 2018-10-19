@@ -167,9 +167,14 @@ Cheers!
    CLOSED: [2018-08-16 Thu 00:08]
 ** CANCELED no summary or preview
    CLOSED: [2018-08-16 Thu 00:09]
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] blog post: avoid open a new link                      :IMPORTANT:
+* [#A] Submit PR to related communities                            :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO convert page into github repos                              :noexport:
 ** https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
 ** https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4
+* PR: Send PR to concouse: https://concourse-ci.org/exposing.html  :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] cheatsheet.dennyzhang.com                              :noexport:
 ** TODO align icon horizontally in blog: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
@@ -333,10 +338,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 ** TODO enable people to better search; https://devhints.io/       :noexport:
 ** TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* HALF [#A] Create a PR kubernetes community for https://kubernetes.io/docs/reference/kubectl/cheatsheet/ :noexport:
-https://github.com/kubernetes/website/compare/master...dennyzhang:master
-https://github.com/dennyzhang/website/blob/6a88f51ce3f0c1339d2e0f272680beb3d3601b7b/content/en/docs/reference/kubectl/cheatsheet.md
-
 * TODO [#B] Fail the pdf generating job when some lines are truncated :noexport:
 * TODO [#A] Build internal links                                   :noexport:
 * TODO Add guideline for how people to contribute                  :noexport:
@@ -388,7 +389,10 @@ https://www.commandlinefu.com/commands/view/3/display-the-top-ten-running-proces
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-grep-A4 :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO change github repo to directory: https://github.com/dennyzhang/cheatsheet-living-in-ca
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Merge challenges-golang-datastructure into golang cheatsheet :noexport:
 * TODO Merge challenges-python-datastructure into python cheatsheet :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-health-A4 :noexport:
 * TODO [#A] health cheatsheet: /Users/mac/Dropbox/org_data/life/life.org :noexport:
