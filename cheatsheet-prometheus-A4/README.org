@@ -24,15 +24,16 @@ File me [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/issues][Issues]
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-** Common targets in kubernetes world
-| Name               | Command                                                                      |
-|--------------------+------------------------------------------------------------------------------|
-| apiserver          | https://$api_server:443/metrics                                              |
-| cadvisor           | http://$node_ip:10255/metrics/cadvisor, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/cadvisor-sample.txt][Sample Metrics: cadvisor-sample.txt]]  |
-| node-exporter      | http://$node_ip:9100/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/node-exporter-sample.txt][Sample Metrics: node-exporter-sample.txt]]       |
-| kubelet            | http://$kubelet-ip:10255/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kubelet-sample.txt][Sample Metrics: kubelet-sample.txt]]         |
-| kube-dns           | http://$kube-dns-addon-ip:10054/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-dns-sample.txt][Sample Metrics: kube-dns-sample.txt]] |
-| kube-state-metrics | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-sample.txt][Sample Metrics: kube-state-metrics-sample.txt]]                                |
+** Kubernetes Common Metrics & Samples
+| Name                           | Command                                                                                             |
+|--------------------------------+-----------------------------------------------------------------------------------------------------|
+| apiserver                      | https://$api_server:443/metrics                                                                     |
+| cadvisor                       | http://$node_ip:10255/metrics/cadvisor, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/cadvisor-sample.txt][Sample Metrics: cadvisor-sample.txt]]                         |
+| node-exporter                  | http://$node_ip:9100/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/node-exporter-sample.txt][Sample Metrics: node-exporter-sample.txt]]                              |
+| kubelet                        | http://$kubelet-ip:10255/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kubelet-sample.txt][Sample Metrics: kubelet-sample.txt]]                                |
+| kube-dns                       | http://$kube-dns-addon-ip:10054/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-dns-sample.txt][Sample Metrics: kube-dns-sample.txt]]                        |
+| kube-state-metrics http-metric | http://$kube-state-metric-svc:8080/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-http-sample.txt][Sample Metrics: kube-state-metrics-http-sample.txt]]      |
+| kube-state-metrics telemetry   | http://$kube-state-metric-svc:8081/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-telemetry-sample.txt][Sample Metrics: kube-state-metrics-telemetry-sample.txt]] |
 ** Prometheus Concepts
 | Name         | Command |
 |--------------+---------|
@@ -85,7 +86,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
-* DONE                                                             :noexport:
+* DONE Finished local notes                                        :noexport:
 ** DONE where is pod 110 limitation is set?                        :noexport:
    CLOSED: [2018-10-19 Fri 22:40]
  https://github.com/gardener/gardener/issues/117
