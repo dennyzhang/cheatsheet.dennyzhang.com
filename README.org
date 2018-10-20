@@ -1,5 +1,5 @@
 * CheatSheet
-#+BEGIN_HTML
+#+BEGIN_EXPORT HTML
 <a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -24,7 +24,7 @@ See more cheatsheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 - Refresh all cheatsheet pdf files: =make refresh-cheatsheet=
 ** More Resources
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
-#+BEGIN_HTML
+#+BEGIN_EXPORT HTML
  <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
  <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
@@ -75,7 +75,7 @@ I'm [[https://www.linkedin.com/in/dennyzhang001][Denny Zhang]]. A coder at work.
 
 [[https://cheatsheet.dennyzhang.com/contact][https://cdn.dennyzhang.com/images/brain/denny_intro.jpg]]
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT HTML
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
@@ -103,7 +103,7 @@ Cheers!
 
 - See more cheatsheets:
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT HTML
 [get_tags]
 #+END_HTML
 
@@ -168,13 +168,14 @@ Cheers!
 ** CANCELED no summary or preview
    CLOSED: [2018-08-16 Thu 00:09]
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] blog post: avoid open a new link                      :IMPORTANT:
+* TODO [#A] blog post: avoid open a new link             :noexport:IMPORTANT:
 * [#A] Submit PR to related communities                            :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO convert page into github repos                              :noexport:
 ** https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
 ** https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4
 * PR: Send PR to concouse: https://concourse-ci.org/exposing.html  :noexport:
+* TODO change directory to github repo: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-prometheus-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] cheatsheet.dennyzhang.com                              :noexport:
 ** TODO align icon horizontally in blog: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
@@ -387,9 +388,7 @@ https://www.commandlinefu.com/commands/view/3/display-the-top-ten-running-proces
 * TODO generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-a4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-grep-A4 :noexport:
-* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO change github repo to directory: https://github.com/dennyzhang/cheatsheet-living-in-ca
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Merge challenges-golang-datastructure into golang cheatsheet :noexport:
 * TODO Merge challenges-python-datastructure into python cheatsheet :noexport:
