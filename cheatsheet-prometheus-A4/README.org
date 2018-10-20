@@ -4,7 +4,7 @@
 :export_file_name: cheatsheet-prometheus-A4.pdf
 :END:
 
-#+BEGIN_EXPORT HTML
+#+BEGIN_HTML
 <a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-prometheus-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -23,27 +23,39 @@
 File me [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-prometheus-A4][this repo]].
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+** Common targets in kubernetes world
+| Name               | Command                                                                      |
+|--------------------+------------------------------------------------------------------------------|
+| apiserver          | https://$api_server:443/metrics                                              |
+| cadvisor           | http://$node_ip:10255/metrics/cadvisor, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/cadvisor-sample.txt][Sample Metrics: cadvisor-sample.txt]]  |
+| node-exporter      | http://$node_ip:9100/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/node-exporter-sample.txt][Sample Metrics: node-exporter-sample.txt]]       |
+| kubelet            | http://$kubelet-ip:10255/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kubelet-sample.txt][Sample Metrics: kubelet-sample.txt]]         |
+| kube-dns           | http://$kube-dns-addon-ip:10054/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-dns-sample.txt][Sample Metrics: kube-dns-sample.txt]] |
+| kube-state-metrics | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-sample.txt][Sample Metrics: kube-state-metrics-sample.txt]]                                |
 ** Prometheus Concepts
-| Name          | Command |
-|---------------+---------|
-| Targets       |         |
-| Rules         |         |
-| Alertmanagers |         |
+| Name         | Command |
+|--------------+---------|
+| Target       |         |
+| Rule         |         |
+| Job          |         |
+| Instance     |         |
+| Alertmanager |         |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/prometheus-workflow.png]]
-** Common targets in kubernetes world
-| Name               | Command                                 |
-|--------------------+-----------------------------------------|
-| apiserver          | https://$api_server:443/metrics         |
-| cadvisor           | http://$node_ip:10255/metrics/cadvisor  |
-| node-exporter      | http://$node_ip:9100/metrics            |
-| kubelet            | http://$kubelet-ip:10255/metrics        |
-| kube-dns           | http://$kube-dns-addon-ip:10054/metrics |
-| kube-state-metrics |                                         |
+** Prometheus Aggregration
+| Name    | Command |
+|---------+---------|
+| count   |         |
+| sum     |         |
+| min     |         |
+| max     |         |
+| counter |         |
+| avg     |         |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
-#+BEGIN_EXPORT HTML
+#+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
@@ -73,6 +85,16 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
+* DONE                                                             :noexport:
+** DONE where is pod 110 limitation is set?                        :noexport:
+   CLOSED: [2018-10-19 Fri 22:40]
+ https://github.com/gardener/gardener/issues/117
+
+ From kube-state-metrics
+
+ kube_node_status_allocatable_pods{node="gke-cluster-1-default-pool-36da1c6a-4356"} 110
+ kube_node_status_allocatable_pods{node="gke-cluster-1-default-pool-36da1c6a-6wx8"} 110
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Question: prometheus has not namespace user for multi-tenancy monitoring :noexport:
 * TODO Question: how reliable the data store of prometheus is?     :noexport:
 * TODO [#A] promethues best practice                               :noexport:
@@ -104,8 +126,6 @@ kubo@jumper:~/denny/prometheus$ helm install \
 Error: apiVersion "monitoring.coreos.com/v1alpha1" in kube-prometheus/charts/prometheus/templates/prometheus.yaml is not available
 kubo@jumper:~/denny/prometheus$
 #+END_EXAMPLE
-
-* TODO take a look: https://www.slideshare.net/BartomiejPotka/thanos-global-durable-prometheus-monitoring :noexport:
 * TODO https://www.weave.works/blog/kubernetes-horizontal-pod-autoscaler-and-prometheus :noexport:
 * TODO golang metric: https://github.com/prometheus/client_golang/blob/master/examples/simple/main.go :noexport:
 * TODO [#A] Blog: Use Prometheus To Monitor And Tuning Containers :noexport:IMPORTANT:
@@ -989,7 +1009,7 @@ https://dzone.com/articles/5-things-weve-learned-about-monitoring-containers
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO How to paste grafana rules to prometheus                    :noexport:
 - ALERTS{alertstate="firing",alertname!="DeadMansSwitch"}
-* TODO where is pod 110 limitation is set?                         :noexport:
+ 
 * TODO prometheus happens to run into error: lb issue in GKE?      :noexport:
 #+BEGIN_EXAMPLE
 bash-3.2$  curl -L -I http://35.208.3.28:9090/
@@ -998,3 +1018,4 @@ curl: (56) Recv failure: Connection reset by peer
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Make sure my prometheus can get metrics for different namespaces: only deployment grafana can't see wordpress namespace :noexport:
 * TODO k8s metrics: https://blog.freshtracks.io/search?q=A%20Deep%20Dive%20into%20Kubernetes%20Metrics :noexport:
+* TODO [#A] Question: How prometheus auto service discovery works? :noexport:

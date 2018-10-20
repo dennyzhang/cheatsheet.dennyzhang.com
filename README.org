@@ -64,7 +64,7 @@ Check it out and discuss with me. [[color:#c7254e][Remember: We Two Is Just One 
 [[github:DennyZhang][Github]]
 More Reading:
 - [[https://code.dennyzhang.com/category/life/][Category: Life]]
-* Contact CheatSheets                                                  :BLOG:
+* Contact CheatSheets                                         :noexport:BLOG:
 :PROPERTIES:
 :type:     life
 :END:

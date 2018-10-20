@@ -47,6 +47,14 @@ Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSh
 |-------+----------------------------------------------------------------------------|
 | [[https://github.com/pivotal-cf/om][om]]    | a command-line API client for Pivotal Operations Manager                   |
 | omcli | alias omcli='om -t https://10.40.206.8 -u "<username>" -p "<password>" -k' |
+** Tile & OpsManager Wishlist
+| Name                                         | Comment                                               |
+|----------------------------------------------+-------------------------------------------------------|
+| Tiles are big                                | It's usually GBs. Too big to distribute               |
+| In Opsmanager, can't cancel task             | Costly to make mistakes                               |
+| In Opsmanager, can't downgrade               | Inconvenient for development cycle                    |
+| In Opsmanager, =review changes= is confusing | The review feature should be more informative         |
+| Slow to apply changes                        | Usually it takes hours, while minutes in *kubernetes* |
 ** More Resources
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
