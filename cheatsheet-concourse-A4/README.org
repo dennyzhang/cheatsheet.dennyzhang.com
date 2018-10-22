@@ -18,17 +18,17 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concourse-A4/cheatsheet-concourse-A4.pdf][cheatsheet-concourse-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]
 ** Concourse Advanced
 | Name                                         | Summary                                                                                      |
 |----------------------------------------------+----------------------------------------------------------------------------------------------|
-| github-release resource cannot find old tag  | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][link]]                        |
-| fly set-pipeline run into "error: forbidden" | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][link: github]] |
+| github-release resource cannot find old tag  | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]                        |
+| fly set-pipeline run into "error: forbidden" | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][Link: GitHub]] |
 | List team details for all targets            | =fly -t $target teams -d=, =~/.flyrc=                                                        |
 | Concourse examples                           | [[https://github.com/pivotal-cf/pcf-pipelines/tree/v0.23.0][github: pcf-pipelines]]                                                                        |
 ** Concourse Containers
@@ -39,12 +39,12 @@ Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh Cheat
 ** Concourse Concepts
 | Name                  | Summary                                                                   |
 |-----------------------+---------------------------------------------------------------------------|
-| Links                 | [[https://concourse-ci.org/concepts.html][link: Concourse Concepts]], [[https://concoursetutorial.com/][link: concoursetutorial.com]]                     |
+| Links                 | [[https://concourse-ci.org/concepts.html][Link: Concourse Concepts]], [[https://concoursetutorial.com/][Link: concoursetutorial.com]]                     |
 | Pipelines             |                                                                           |
 | Jobs                  |                                                                           |
 | Tasks                 |                                                                           |
 | [[https://concourse-ci.org/fly.html#fly-targets][Targets]]               | Alias of Concourse endpoints                                              |
-| fly                   | Pipelines are configured entirely via the fly. There is no GUI. [[https://concourse-ci.org/fly.html][link: fly]] |
+| fly                   | Pipelines are configured entirely via the fly. There is no GUI. [[https://concourse-ci.org/fly.html][Link: fly]] |
 | Behaviors             |                                                                           |
 | Input resource        |                                                                           |
 | Output resource       |                                                                           |
@@ -68,9 +68,9 @@ https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/ch
 ** Concourse Pipeline
 | Name                              | Summary                                                                     |
 |-----------------------------------+-----------------------------------------------------------------------------|
-| List all authenticated end points | =fly targets= [[https://concourse-ci.org/fly.html#fly-targets][link: fly targets]]                                             |
+| List all authenticated end points | =fly targets= [[https://concourse-ci.org/fly.html#fly-targets][Link: fly targets]]                                             |
 | fly login                         | =fly -t $target login -c $concourse_url -n $team_name=                      |
-| Get pipeline definition           | =fly -t $target get-pipeline -p $job-name > job.yaml= [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][link: fly-getpipeline]] |
+| Get pipeline definition           | =fly -t $target get-pipeline -p $job-name > job.yaml= [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][Link: fly-getpipeline]] |
 | Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name --config pipeline.yml=       |
 | Destroy pipeline                  | =fly -t $target destroy-pipeline -p $pipeline_name=                         |
 | Format pipeline                   | =fly format-pipeline -c pipeline.yml=                                       |
@@ -146,6 +146,8 @@ Available commands:
 #+END_EXAMPLE
 ** More Resources
 http://www.mikeball.info/blog/concourse-git-resource/
+
+https://concoursetutorial.com/
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
@@ -265,3 +267,4 @@ Expected non-empty Director URL
 
 Exit code 1
 #+END_EXAMPLE
+* TODO For concourse pipelines, draw a diagram                     :noexport:

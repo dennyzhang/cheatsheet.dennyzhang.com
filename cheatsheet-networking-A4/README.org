@@ -18,43 +18,42 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-networking-A4/cheatsheet-networking-A4.pdf][cheatsheet-networking-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/kubernetes/][kubernetes]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][CheatSheet: Cloud Virtualization]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
-
-- Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][CheatSheet: Cloud Virtualization]]
 ** SDN
 *** SDN Basic Concepts
- | Name                             | Command                                                                                    |
- |----------------------------------+--------------------------------------------------------------------------------------------|
- | [[https://en.wikipedia.org/wiki/Software-defined_networking][SDN(Software-defined networking)]] |                                                                                            |
- | NAT(Network address translation) | Allow you to hide the IP addresses.                                                        |
- | DNAT                             | For ingress traffic, hide your server IP                                                   |
- | SNAT                             | For egress traffic, hide your server IP                                                    |
- | [[https://en.wikipedia.org/wiki/Virtual_LAN][VLAN (Virtual LAN)]]               | Group hosts together even if not directly connected to same network switch                 |
- | [[https://searchsdn.techtarget.com/definition/east-west-traffic][East/West traffic]]                | Traffic within a data center. Usually depict local area network (LAN) traffic horizontally |
- | [[https://networkengineering.stackexchange.com/questions/18873/what-is-the-meaning-origin-of-the-terms-north-south-and-east-west-traffic][North/South traffic]]              | Traffic coming into and out of the network into Internet space                             |
- | [[https://en.wikipedia.org/wiki/Border_Gateway_Protocol][BGP(Border Gateway Protocol)]]     | Among autonomous systems (AS) *on the Internet*. eBGP vs iBGP                              |
- | Overlay networks                 |                                                                                            |
- | vnet(a virtual network)          | allows instances to migrate among compute nodes without changing networking conf           |
- | Floating IP Pool                 |                                                                                            |
+| Name                             | Command                                                                                    |
+|----------------------------------+--------------------------------------------------------------------------------------------|
+| [[https://en.wikipedia.org/wiki/Software-defined_networking][SDN(Software-defined networking)]] |                                                                                            |
+| NAT(Network address translation) | Allow you to hide the IP addresses.                                                        |
+| DNAT                             | For ingress traffic, hide your server IP                                                   |
+| SNAT                             | For egress traffic, hide your server IP                                                    |
+| [[https://en.wikipedia.org/wiki/Virtual_LAN][VLAN (Virtual LAN)]]               | Group hosts together even if not directly connected to same network switch                 |
+| [[https://searchsdn.techtarget.com/definition/east-west-traffic][East/West traffic]]                | Traffic within a data center. Usually depict local area network (LAN) traffic horizontally |
+| [[https://networkengineering.stackexchange.com/questions/18873/what-is-the-meaning-origin-of-the-terms-north-south-and-east-west-traffic][North/South traffic]]              | Traffic coming into and out of the network into Internet space                             |
+| [[https://en.wikipedia.org/wiki/Border_Gateway_Protocol][BGP(Border Gateway Protocol)]]     | Among autonomous systems (AS) *on the Internet*. eBGP vs iBGP                              |
+| Overlay networks                 |                                                                                            |
+| vnet(a virtual network)          | allows instances to migrate among compute nodes without changing networking conf           |
+| Floating IP Pool                 |                                                                                            |
 
 *** SDN More Concepts
- | Name                                      | Command                                                               |
- |-------------------------------------------+-----------------------------------------------------------------------|
- | [[https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm][VNIC (Virtualized Network Interface Card)]] | A virtual NIC based on a physical one, then added to a network bridge |
- | [[https://en.wikipedia.org/wiki/Virtual_network_interface][VIF (Virtual Network Interface)]]           |                                                                       |
- | [[http://www.definethecloud.net/vxlan-deep-dive/][VTEP (VXLAN Tunnel Endpoint)]]              |                                                                       |
- | [[https://en.wikipedia.org/wiki/Link_aggregation][LAG(Link aggregation)]]                     |                                                                       |
- | Transport Network                         |                                                                       |
- | BFD(Bidirectional Forwarding Detection)   | BFD can be used for BGP peers but also for static routes              |
- | DFW(Distributed Firewall)                 |                                                                       |
- | [[https://en.wikipedia.org/wiki/Network_function_virtualization][NFV(Network function virtualization)]]      |                                                                       |
- | L2 networking                             | L2 bridge                                                             |
- | L3 networking                             |                                                                       |
- | L7 networking                             |                                                                       |
- | GRE(Generic Routing Encapsulation)        |                                                                       |
+| Name                                      | Command                                                               |
+|-------------------------------------------+-----------------------------------------------------------------------|
+| [[https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm][VNIC (Virtualized Network Interface Card)]] | A virtual NIC based on a physical one, then added to a network bridge |
+| [[https://en.wikipedia.org/wiki/Virtual_network_interface][VIF (Virtual Network Interface)]]           |                                                                       |
+| [[http://www.definethecloud.net/vxlan-deep-dive/][VTEP (VXLAN Tunnel Endpoint)]]              |                                                                       |
+| [[https://en.wikipedia.org/wiki/Link_aggregation][LAG(Link aggregation)]]                     |                                                                       |
+| Transport Network                         |                                                                       |
+| BFD(Bidirectional Forwarding Detection)   | BFD can be used for BGP peers but also for static routes              |
+| DFW(Distributed Firewall)                 |                                                                       |
+| [[https://en.wikipedia.org/wiki/Network_function_virtualization][NFV(Network function virtualization)]]      |                                                                       |
+| L2 networking                             | L2 bridge                                                             |
+| L3 networking                             |                                                                       |
+| L7 networking                             |                                                                       |
+| GRE(Generic Routing Encapsulation)        |                                                                       |
 
 *** Switch - L2 layer
  | Name                           | Command                                                                             |
@@ -97,7 +96,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 *** NSX-T Concepts
 | Name                              | Command                                                               |
 |-----------------------------------+-----------------------------------------------------------------------|
-| NCP                               | NSX-T container plugin CNI. [[https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.ncp_kubernetes.doc/GUID-52A92986-0FDF-43A5-A7BB-C037889F7559.html][link: Overview of NSX-T Container Plug-in]] |
+| NCP                               | NSX-T container plugin CNI. [[https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.ncp_kubernetes.doc/GUID-52A92986-0FDF-43A5-A7BB-C037889F7559.html][Link: Overview of NSX-T Container Plug-in]] |
 | N-VDS                             | NSX Virtual Distributed Switch                                        |
 | LCP(Local Control Panel)          |                                                                       |
 | CCP(Central Control Panel)        |                                                                       |

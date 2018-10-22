@@ -1,4 +1,4 @@
-* CheatSheet: Prometheus                                               :Tool:
+* CheatSheet: Prometheus                                              :Kubernetes:
 :PROPERTIES:
 :type:     cloud, kubernetes
 :export_file_name: cheatsheet-prometheus-A4.pdf
@@ -18,32 +18,51 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-prometheus-A4/cheatsheet-prometheus-A4.pdf][cheatsheet-prometheus-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/kubernetes/][kubernetes]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4
-- Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-yaml][Kubernetes Yaml Templates]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-yaml][Kubernetes Yaml Templates]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-prometheus-A4][this repo]].
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+** Prometheus Basic
+| Name                                | Command                                                                      |
+|-------------------------------------+------------------------------------------------------------------------------|
+| Config file                         | =/etc/prometheus/prometheus.yml=                                             |
+| Run Prometheus with docker          | =docker run -p 9090:9090 prom/prometheus=, =http://localhost:9090=           |
+| Query metric by api, instead of GUI | =curl http://localhost:9090/api/v1/query?query=container_memory_usage_bytes= |
+| List alerts                         | =curl http://localhost:9093/api/v1/alerts=                                   |
+** Kubernetes Metrics Targets & Samples
+| Name                           | Command                                    | Sample Metrics                          |
+|--------------------------------+--------------------------------------------+-----------------------------------------|
+| apiserver                      | https://$api_server:443/metrics            |                                         |
+| cadvisor                       | http://$node_ip:10255/metrics/cadvisor     | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/cadvisor-sample.txt][cadvisor-sample.txt]]                     |
+| node-exporter                  | http://$node_ip:9100/metrics               | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/node-exporter-sample.txt][node-exporter-sample.txt]]                |
+| kubelet                        | http://$kubelet_ip:10255/metrics           | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kubelet-sample.txt][kubelet-sample.txt]]                      |
+| kube-dns                       | http://$kube_dns_addon_ip:10054/metrics    | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-dns-sample.txt][kube-dns-sample.txt]]                     |
+| kube-state-metrics http-metric | http://$kube_state_metric_svc:8080/metrics | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-http-sample.txt][kube-state-metrics-http-sample.txt]]      |
+| kube-state-metrics telemetry   | http://$kube_state_metric_svc:8081/metrics | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-telemetry-sample.txt][kube-state-metrics-telemetry-sample.txt]] |
 
-** Kubernetes Common Metrics & Samples
-| Name                           | Command                                                                                             |
-|--------------------------------+-----------------------------------------------------------------------------------------------------|
-| apiserver                      | https://$api_server:443/metrics                                                                     |
-| cadvisor                       | http://$node_ip:10255/metrics/cadvisor, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/cadvisor-sample.txt][Sample Metrics: cadvisor-sample.txt]]                         |
-| node-exporter                  | http://$node_ip:9100/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/node-exporter-sample.txt][Sample Metrics: node-exporter-sample.txt]]                              |
-| kubelet                        | http://$kubelet-ip:10255/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kubelet-sample.txt][Sample Metrics: kubelet-sample.txt]]                                |
-| kube-dns                       | http://$kube-dns-addon-ip:10054/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-dns-sample.txt][Sample Metrics: kube-dns-sample.txt]]                        |
-| kube-state-metrics http-metric | http://$kube-state-metric-svc:8080/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-http-sample.txt][Sample Metrics: kube-state-metrics-http-sample.txt]]      |
-| kube-state-metrics telemetry   | http://$kube-state-metric-svc:8081/metrics, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-telemetry-sample.txt][Sample Metrics: kube-state-metrics-telemetry-sample.txt]] |
+[[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/prometheus-deployment.png]]
 ** Prometheus Concepts
 | Name         | Command |
 |--------------+---------|
-| Target       |         |
-| Rule         |         |
 | Job          |         |
 | Instance     |         |
+| Handler      |         |
+| Target       |         |
+| Rule         |         |
 | Alertmanager |         |
+| Exporter     |         |
+** Prometheus Components
+| Name        | Command                           |
+|-------------+-----------------------------------|
+| [[http://opentsdb.net/][OpenTSDB]]    | The Scalable Time Series Database |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/prometheus-workflow.png]]
+** Prometheus Query
+| Name                          | Command                                     |
+|-------------------------------+---------------------------------------------|
+| Reference                     | [[https://prometheus.io/docs/prometheus/latest/querying/basics/][Link: query]]                                 |
+| Find metric by name+job+group | somemetric{job="prometheus",group="canary"} |
 ** Prometheus Aggregration
 | Name    | Command |
 |---------+---------|
@@ -63,8 +82,8 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
+#+DESCRIPTION:
+#+KEYWORDS:
 #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
 #+LaTeX_CLASS_OPTIONS: [8pt]
 #+LATEX_HEADER: \usepackage[english]{babel}
@@ -84,8 +103,8 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+EXPORT_EXCLUDE_TAGS: exclude noexport
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
+#+LINK_UP:
+#+LINK_HOME:
 * DONE Finished local notes                                        :noexport:
 ** DONE where is pod 110 limitation is set?                        :noexport:
    CLOSED: [2018-10-19 Fri 22:40]
@@ -95,19 +114,18 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 
  kube_node_status_allocatable_pods{node="gke-cluster-1-default-pool-36da1c6a-4356"} 110
  kube_node_status_allocatable_pods{node="gke-cluster-1-default-pool-36da1c6a-6wx8"} 110
+** CANCELED prometheus happens to run into error: lb issue in GKE? :noexport:
+   CLOSED: [2018-10-20 Sat 00:01]
+ #+BEGIN_EXAMPLE
+ bash-3.2$  curl -L -I http://35.208.3.28:9090/
+ curl: (56) Recv failure: Connection reset by peer
+ #+END_EXAMPLE
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Question: prometheus has not namespace user for multi-tenancy monitoring :noexport:
 * TODO Question: how reliable the data store of prometheus is?     :noexport:
-* TODO [#A] promethues best practice                               :noexport:
-* TODO kube-state-metrics endpoint?                                :noexport:
-Endpoint	State	Labels	Last Scrape	Error
-http://prometheus-1-kube-state-metrics.wordpress.svc:8080/metrics
-UP	app_kubernetes_io_component="kube-state-metrics" app_kubernetes_io_name="prometheus-1" instance="prometheus-1-kube-state-metrics.wordpress.svc:8080" k8s_app="kube-state-metrics"	8.803s ago	
-http://prometheus-1-kube-state-metrics.wordpress.svc:8081/metrics
-* TODO promethues doesn't get kubernetes events                    :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] promethues best practice                               :noexport:
 * TODO setup prometheus in k8s: https://github.com/giantswarm/kubernetes-prometheus :noexport:
-* TODO k8s Prometheus: https://pagertree.com/2017/12/01/prometheus-tutorial/ :noexport:
 * TODO prometheus operator                                         :noexport:
 * TODO prometheus bosh release                                     :noexport:
 * TODO prometheus collect log                                      :noexport:
@@ -143,7 +161,6 @@ http://rancher.com/comparing-monitoring-options-for-docker-deployments/
 | Config file | /etc/prometheus/prometheus.yml               |
 | Targets     | http://localhost:9090/targets/               |
 | /prometheus |                                              |
-|-------------+----------------------------------------------|
 | Dashboard   | http://localhost:9090/                       |
 | metric list | http://localhost:9090/metric                 |
 |-------------+----------------------------------------------|
@@ -163,44 +180,6 @@ https://prometheus.io/docs/concepts/metric_types/
 - MySQLd Exporter - One of these per MySQL instance. Queries each environment's database instances.
 - Blackbox Exporter - Blackbox monitoring can be seen as "monitoring from outside". It simply cares whether the instance is up or down.
 - cAdvisor - Exposes resource usage data and performance characteristics of running containers.
-** Sample: /etc/prometheus/prometheus.yml
-#+BEGIN_EXAMPLE
-# my global config
-global:
-  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
-  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
-  # scrape_timeout is set to the global default (10s).
-
-  # Attach these labels to any time series or alerts when communicating with
-  # external systems (federation, remote storage, Alertmanager).
-  external_labels:
-      monitor: 'codelab-monitor'
-
-# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
-rule_files:
-  # - "first.rules"
-  # - "second.rules"
-
-# A scrape configuration containing exactly one endpoint to scrape:
-# Here it's Prometheus itself.
-scrape_configs:
-  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: 'prometheus'
-
-    # metrics_path defaults to '/metrics'
-    # scheme defaults to 'http'.
-
-    static_configs:
-      - targets: ['localhost:9090']
-#+END_EXAMPLE
-** DONE run Prometheus with docker
-   CLOSED: [2017-08-09 Wed 14:03]
-https://prometheus.io/docs/introduction/install/
-
-docker run -p 9090:9090 prom/prometheus
-ufw allow 9090/tcp
-
-http://injenkins.carol.ai:9090
 ** DONE cadvisor: Analyzes resource usage and performance characteristics of running containers.
    CLOSED: [2017-08-09 Wed 23:30]
 https://github.com/google/cadvisor
@@ -921,11 +900,6 @@ Sorry, your blog cannot share posts by email.
 https://hub.docker.com/r/prom/node-exporter/
 ** DONE Create alerts and enable slack notification
    CLOSED: [2017-08-09 Wed 13:33]
-** DONE query by api
-   CLOSED: [2017-08-09 Wed 22:01]
-https://prometheus.io/docs/querying/api/
-
-curl 'http://localhost:9090/api/v1/query?query=container_memory_usage_bytes'
 ** DONE prometheus: when check is good, send OK notification: send_resolved: true
    CLOSED: [2017-08-09 Wed 22:09]
 #+BEGIN_EXAMPLE
@@ -951,16 +925,6 @@ time="2017-08-10T03:04:06Z" level=info msg="Checkpointing in-memory metrics and 
 time="2017-08-10T03:04:06Z" level=info msg="Done checkpointing in-memory metrics and chunks in 203.678479ms." source="persistence.go:665"
 time="2017-08-10T03:04:17Z" level=info msg="Loading configuration file /etc/prometheus/prometheus.yml" source="main.go:252"
 #+END_EXAMPLE
-** DONE prometheus get all alerts by api: curl 'http://localhost:9093/api/v1/alerts'
-   CLOSED: [2017-08-09 Wed 22:11]
-https://github.com/prometheus/prometheus/issues/1570
-https://github.com/prometheus/alertmanager/issues/439
-#+BEGIN_EXAMPLE
-Denny-mac:org_data mac$ curl 'http://localhost:9093/api/v1/alerts'
-curl 'http://localhost:9093/api/v1/alerts'
-{"status":"success","data":[{"labels":{"alertname":"grafana_memory3","monitor":"docker-host-alpha","severity":"critical"},"annotations":{"description":"grafana high ram more than 30 seconds.","summary":"grafana high ram"},"startsAt":"2017-08-10T03:04:37.807Z","endsAt":"2017-08-10T03:26:22.825225292Z","generatorURL":"http://356d9c1589c4:9090/graph?g0.expr=sum%28container_memory_usage_bytes%7Bname%3D%22grafana%22%7D%29+%3E+30005792\u0026g0.tab=0","status":{"state":"active","silencedBy":[],"inhibitedBy":[]},"receivers":["slack"]},{"labels":{"alertname":"jenkins_down","monitor":"docker-host-alpha","name":"jenkins","severity":"critical"},"annotations":{"description":"Jenkins container is down for more than 30 seconds.","summary":"Jenkins down"},"startsAt":"2017-08-10T02:54:37.811Z","endsAt":"2017-08-10T03:26:22.829600102Z","generatorURL":"http://356d9c1589c4:9090/graph?g0.expr=absent%28container_memory_usage_bytes%7Bname%3D%22jenkins%22%7D%29\u0026g0.tab=0","status":{"state":"active","silencedBy":[],"inhibitedBy":[]},"receivers":["slack"]},{"labels":{"alertname":"grafana_memory","monitor":"docker-host-alpha","severity":"critical"},"annotations":{"description":"grafana high ram more than 30 seconds.","summary":"grafana high ram"},"startsAt":"2017-08-10T02:54:52.819Z","endsAt":"2017-08-10T03:26:22.829600102Z","generatorURL":"http://356d9c1589c4:9090/graph?g0.expr=sum%28container_memory_usage_bytes%7Bname%3D%22grafana%22%7D%29+%3E+30005792\u0026g0.tab=0","status":{"state":"active","silencedBy":[],"inhibitedBy":[]},"receivers":["slack"]}]}You have new mail in /var/mail/mac
-#+END_EXAMPLE
-** #  --8<-------------------------- separator ------------------------>8--
 ** TODO Blog: Enforce monitoring for docker env
 1. Use docker healthcheck
 - OK/ERROR/WARN
@@ -1008,15 +972,14 @@ http://rancher.com/comparing-monitoring-options-for-docker-deployments/
 
 https://dzone.com/articles/5-things-weve-learned-about-monitoring-containers
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Question: RBAC access for multiple namespace in kubernetes envs :noexport:
 * TODO How to paste grafana rules to prometheus                    :noexport:
 - ALERTS{alertstate="firing",alertname!="DeadMansSwitch"}
- 
-* TODO prometheus happens to run into error: lb issue in GKE?      :noexport:
-#+BEGIN_EXAMPLE
-bash-3.2$  curl -L -I http://35.208.3.28:9090/
-curl: (56) Recv failure: Connection reset by peer
-#+END_EXAMPLE
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Make sure my prometheus can get metrics for different namespaces: only deployment grafana can't see wordpress namespace :noexport:
 * TODO k8s metrics: https://blog.freshtracks.io/search?q=A%20Deep%20Dive%20into%20Kubernetes%20Metrics :noexport:
 * TODO [#A] Question: How prometheus auto service discovery works? :noexport:
+* TODO Question: prometheus list metrics for a given job           :noexport:
+http_requests_total{job="apiserver", handler="/api/comments"}
+* TODO [#A] Blog: What I have learned from prometheus designs      :noexport:
+** DONE promethues won't get kubernetes events                     :noexport:
+   CLOSED: [2018-10-20 Sat 00:01]

@@ -40,9 +40,6 @@
 [submodule "cheatsheet-tmux-A4"]
 	path = cheatsheet-tmux-A4
 	url = git@github.com:dennyzhang/cheatsheet-tmux-A4.git
-[submodule "cheatsheet-uaac-A4"]
-	path = cheatsheet-uaac-A4
-	url = git@github.com:dennyzhang/cheatsheet-uaac-A4.git
 [submodule "cheatsheet-vim-A4"]
 	path = cheatsheet-vim-A4
 	url = git@github.com:dennyzhang/cheatsheet-vim-A4.git

@@ -27,8 +27,8 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 ** Minikube basic
 | Name                                         | Command                                                                           |
 |----------------------------------------------+-----------------------------------------------------------------------------------|
-| minikube lifecycle [[https://github.com/kubernetes/minikube][link: minikube]]            | =minikube delete=, =minikube start=, =minikube status=                            |
-| Get minikube version                         | =minikube version=, [[https://github.com/kubernetes/minikube/releases][link: all minikube releases]]                                   |
+| minikube lifecycle                           | =minikube delete=, =minikube start=, =minikube status=, [[https://github.com/kubernetes/minikube][Link: minikube]]            |
+| Get minikube version                         | =minikube version=, [[https://github.com/kubernetes/minikube/releases][Link: all minikube releases]]                                   |
 | mac install minikube                         | =brew cask install minikube=, =brew cask reinstall minikube=                      |
 | Start minikube with different machine flavor | =minikube start --memory 5120 --cpus=4=                                           |
 | Start minikube with a specific k8s version   | =minikube start --kubernetes-version v1.11.0=                                     |
@@ -40,7 +40,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 ** Check status
 | Name                 | Command                                         |
 |----------------------+-------------------------------------------------|
-| Get minikube version | =minikube version=, [[https://github.com/kubernetes/minikube/releases][link: all minikube releases]] |
+| Get minikube version | =minikube version=, [[https://github.com/kubernetes/minikube/releases][Link: all minikube releases]] |
 | Get cluster info     | =kubectl cluster-info=                          |
 | Get service info     | =minikube service <srv-name>=                   |
 | Get dashboard        | =minikube dashboard=                            |

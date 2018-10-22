@@ -26,9 +26,9 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Name                                                 | Comment                           |
 |------------------------------------------------------+-----------------------------------|
 | Sample Class C Written Tests from DMV                | [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc2written?lang=en][Test1]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc3written?lang=en][Test2]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en][Test3]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en][Test4]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc6written?lang=en][Test5]] |
-| FREE DMV Practice Test for California Permit 2018    | [[https://driving-tests.org/california/dmv-practice-test/][link: driving-tests.org]]           |
-| California DMV Marathon Practice Test(150 Questions) | [[https://driving-tests.org/california/california-marathon-practice-test/][link: driving-tests.org]]           |
-| California Driver Handbook                           | [[https://www.dmv.ca.gov/web/eng_pdf/dl600.pdf][link: dmv pdf]]                     |
+| FREE DMV Practice Test for California Permit 2018    | [[https://driving-tests.org/california/dmv-practice-test/][Link: driving-tests.org]]           |
+| California DMV Marathon Practice Test(150 Questions) | [[https://driving-tests.org/california/california-marathon-practice-test/][Link: driving-tests.org]]           |
+| California Driver Handbook                           | [[https://www.dmv.ca.gov/web/eng_pdf/dl600.pdf][Link: dmv pdf]]                     |
 
 ** Limits & Fining
 | Name                     | Summary                                                                                      |
@@ -57,9 +57,9 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 ** Terminology
 | Name                             | Summary                                                                                            |
 |----------------------------------+----------------------------------------------------------------------------------------------------|
-| Skid                             | automobiles slip relative to the road [[https://en.wikipedia.org/wiki/Skid_(automobile)][link: wikipedia]]                                              |
+| Skid                             | automobiles slip relative to the road [[https://en.wikipedia.org/wiki/Skid_(automobile)][Link: wikipedia]]                                              |
 | California "Basic Speed Law"     | You must never driver faster than what is safe in current conditions                               |
-| Turnout area                     | You may pull to the side in these areas and allow cars behind you to pass. [[https://driversed.com/driving-information/driving-techniques/turnout-areas.aspx][link]]                    |
+| Turnout area                     | You may pull to the side in these areas and allow cars behind you to pass. [[https://driversed.com/driving-information/driving-techniques/turnout-areas.aspx][Link]]                    |
 | a flashing yellow traffic signal | No need to stop, but slow down and alerted before entering intersection                            |
 | a flashing red traffic signal    | Treat like a STOP sign. stop, yield and only proceed when it's safe                                |
 | a nighttime reflector            | It shows where the road lies                                                                       |

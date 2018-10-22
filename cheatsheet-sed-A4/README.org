@@ -18,27 +18,25 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sed-A4/cheatsheet-sed-A4.pdf][cheatsheet-sed-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/linux/][linux]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet: Linux Find]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-sed-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-sed-A4][this repo]].
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
-
-Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet: Linux Find]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]]
-
 ** Advanced sed
 | Name                                | Command                                                                      |
 |-------------------------------------+------------------------------------------------------------------------------|
-| Update with auto backup             | =sed -i.bak 's/localhost/myhost/g' my-file=, =ls my-file*=,  [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sed-A4/my-file][link: my-file]]   |
-| Use variables in sed                | newip='127.0.1.1'; =sed -i "s/127.0.0.1/$newip/g" my-file= [[https://www.unix.com/shell-programming-and-scripting/14085-how-can-i-use-variable-sed.html][link: unix.com]]    |
-| Only replace the first match        | =sed -i '0,/localhost/{s/localhost/newstring/}' my-file= [[https://stackoverflow.com/questions/148451/how-to-use-sed-to-replace-only-the-first-occurrence-in-a-file][link: stackoverflow]] |
-| Replace multiple lines              | =sed -i ':a;N;$!ba;s/Host.*localhost//g' my-file= [[https://askubuntu.com/questions/533221/how-do-i-replace-multiple-lines-with-single-word-in-fileinplace-replace][link: stackexchange]]        |
+| Update with auto backup             | =sed -i.bak 's/localhost/myhost/g' my-file=, =ls my-file*=,  [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sed-A4/my-file][Link: my-file]]   |
+| Use variables in sed                | newip='127.0.1.1'; =sed -i "s/127.0.0.1/$newip/g" my-file= [[https://www.unix.com/shell-programming-and-scripting/14085-how-can-i-use-variable-sed.html][Link: unix.com]]    |
+| Only replace the first match        | =sed -i '0,/localhost/{s/localhost/newstring/}' my-file= [[https://stackoverflow.com/questions/148451/how-to-use-sed-to-replace-only-the-first-occurrence-in-a-file][Link: stackoverflow]] |
+| Replace multiple lines              | =sed -i ':a;N;$!ba;s/Host.*localhost//g' my-file= [[https://askubuntu.com/questions/533221/how-do-i-replace-multiple-lines-with-single-word-in-fileinplace-replace][Link: stackexchange]]        |
 | Add a new line to 3th line          | =sed -i "3i mynew string" my-file=                                           |
 | Insert a line of text before a line | =sed -i '/KUBELET_NETWORK_ARGS/i newline' my-file=                           |
 
 ** GNUS sed - delete
 | Name                       | Command                                                             |
 |----------------------------+---------------------------------------------------------------------|
-| Replace string             | =sed -i 's/127.0.0.1/127.0.1.1/g' my-file= [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sed-A4/my-file][link: my-file]]            |
+| Replace string             | =sed -i 's/127.0.0.1/127.0.1.1/g' my-file= [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sed-A4/my-file][Link: my-file]]            |
 | Use a different seperator  | =sed -i 's#127.0.0.1#127.0.1.1#g' my-file=                          |
 | Use a different seperator  | =sed -i 's#https://www.test.com/test#http://www.try.com#g' my-file= |
 | Delete pattern             | =sed '/KUBELET_NETWORK_ARGS.*/d' my-file=                           |
@@ -54,8 +52,8 @@ Related post: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet
 |----------------------------------------+--------------------------------------------------------------------------|
 | Insert string to the begining of lines | =sed -i 's/^/head /g' my-file=                                           |
 | Insert string to the end of lines      | =sed -i 's/$/ tail/g' my-file=                                           |
-| Add content after nth line             | =sed -n -i 'p;3a "new string"' my-file=, =cat -n my-file= [[https://www.unix.com/unix-for-beginners-questions-and-answers/264345-insert-line-text-nth-line-file.html][link: unix.com]] |
-| Add a new line to 3th line             | =sed -i "3i mynew string" my-file=                                                                       |
+| Add content after nth line             | =sed -n -i 'p;3a "new string"' my-file=, =cat -n my-file= [[https://www.unix.com/unix-for-beginners-questions-and-answers/264345-insert-line-text-nth-line-file.html][Link: unix.com]] |
+| Add a new line to 3th line             | =sed -i "3i mynew string" my-file=                                       |
 | Insert a line of text before a line    | =sed -i '/KUBELET_NETWORK_ARGS/i newline' my-file=                       |
 
 ** GNUS sed - review

@@ -27,21 +27,21 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 ** Glossary - Uncommon & Useful
 | Name                     | Command                                                                                  |
 |--------------------------+------------------------------------------------------------------------------------------|
-| Reference Link           | [[https://kubernetes.io/docs/reference/glossary/?all=true][link: Standardized Glossary]]                                                              |
-| Cloud Controller Manager | The preferred way to integrate Kubernetes with any cloud. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-kube-controller-manager][link: Cloud Controller Manager]] |
-| kube-controller-manager  | Component on the master that runs controllers. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-kube-controller-manager][link: kube-controller-manager]]             |
-| PodPreset                | An API object that injects information into pods at creation time. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-podpreset][link: PodPreset]]       |
-| Flexvolume               | Flexvolume is an interface for creating out-of-tree volume plugins. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-flexvolume][link: Flexvolume]]     |
+| Reference Link           | [[https://kubernetes.io/docs/reference/glossary/?all=true][Link: Standardized Glossary]]                                                              |
+| Cloud Controller Manager | The preferred way to integrate Kubernetes with any cloud. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-kube-controller-manager][Link: Cloud Controller Manager]] |
+| kube-controller-manager  | Component on the master that runs controllers. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-kube-controller-manager][Link: kube-controller-manager]]             |
+| PodPreset                | An API object that injects information into pods at creation time. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-podpreset][Link: PodPreset]]       |
+| Flexvolume               | Flexvolume is an interface for creating out-of-tree volume plugins. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-flexvolume][Link: Flexvolume]]     |
 
 ** Kubernetes Related Concepts
 | Name                                   | Command                                           |
 |----------------------------------------+---------------------------------------------------|
-| Resource Quotas & Limit Range          | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-resource-quota][link: Resource Quotas]]                             |
+| Resource Quotas & Limit Range          | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-resource-quota][Link: Resource Quotas]]                             |
 | Label & Selector                       |                                                   |
 | Resource & Subresource                 |                                                   |
-| Community Upstream & Downstream        | Downstream: a private code fork. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-downstream][link: Downstream]] |
-| Network Policy & Pod Security Policy   | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-network-policy][link: Network Policy]]                              |
-| Pod Security Policy & Security Context | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-pod-security-policy][link: Pod Security Policy]], [[https://kubernetes.io/docs/reference/glossary/?all=true#term-security-context][link: Security Context]] |
+| Community Upstream & Downstream        | Downstream: a private code fork. [[https://kubernetes.io/docs/reference/glossary/?all=true#term-downstream][Link: Downstream]] |
+| Network Policy & Pod Security Policy   | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-network-policy][Link: Network Policy]]                              |
+| Pod Security Policy & Security Context | [[https://kubernetes.io/docs/reference/glossary/?all=true#term-pod-security-policy][Link: Pod Security Policy]], [[https://kubernetes.io/docs/reference/glossary/?all=true#term-security-context][Link: Security Context]] |
 | Replicaset & Replica                   |                                                   |
 | Replicaset & Deployment                |                                                   |
 
