@@ -61,6 +61,3 @@
 [submodule "cheatsheet-mac-A4"]
 	path = cheatsheet-mac-A4
 	url = git@github.com:dennyzhang/cheatsheet-mac-A4.git
-[submodule "cheatsheet-uaa-A4"]
-	path = cheatsheet-uaa-A4
-	url = git@github.com:dennyzhang/cheatsheet-uaa-A4.git
