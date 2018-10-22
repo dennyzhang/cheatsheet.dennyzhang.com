@@ -42,6 +42,17 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | kube-state-metrics telemetry   | http://$kube_state_metric_svc:8081/metrics | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-telemetry-sample.txt][kube-state-metrics-telemetry-sample.txt]] |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/prometheus-deployment.png]]
+** Prometheus Components
+| Name                      | Command                                                                    |
+|---------------------------+----------------------------------------------------------------------------|
+| Prometheus sever          | Scrapes and store time series data. It uses pull model, instead of push    |
+| Client libraries          | Instrument application code                                                |
+| push gateway              | Support short-lived jobs                                                   |
+| special-purpose exporters | Get metrics for all kinds of services, like HAProxy, StatsD, Graphite, etc |
+| alertmanager              | Handle alerts                                                              |
+| [[http://opentsdb.net/][OpenTSDB]]                  | The Scalable Time Series Database                                          |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/prometheus-architecture.png]]
 ** Prometheus Concepts
 | Name         | Command |
 |--------------+---------|
@@ -50,14 +61,6 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Handler      |         |
 | Target       |         |
 | Rule         |         |
-| Alertmanager |         |
-| Exporter     |         |
-** Prometheus Components
-| Name        | Command                           |
-|-------------+-----------------------------------|
-| [[http://opentsdb.net/][OpenTSDB]]    | The Scalable Time Series Database |
-
-[[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/prometheus-workflow.png]]
 ** Prometheus Query
 | Name                          | Command                                     |
 |-------------------------------+---------------------------------------------|
@@ -120,6 +123,8 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
  bash-3.2$  curl -L -I http://35.208.3.28:9090/
  curl: (56) Recv failure: Connection reset by peer
  #+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Send a PR to promethues website: https://github.com/prometheus/docs :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Question: prometheus has not namespace user for multi-tenancy monitoring :noexport:
 * TODO Question: how reliable the data store of prometheus is?     :noexport:
@@ -983,3 +988,5 @@ http_requests_total{job="apiserver", handler="/api/comments"}
 * TODO [#A] Blog: What I have learned from prometheus designs      :noexport:
 ** DONE promethues won't get kubernetes events                     :noexport:
    CLOSED: [2018-10-20 Sat 00:01]
+* TODO push gateway: Support short-lived jobs                      :noexport:
+https://prometheus.io/docs/introduction/overview/

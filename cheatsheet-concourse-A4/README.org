@@ -51,7 +51,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Teams                 |                                                                           |
 | bbl (bosh-bootloader) | [[https://github.com/cloudfoundry/bosh-bootloader][GitHub: bosh-bootloader]]                                                   |
 
-https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-sample.png
+[[https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-sample.png]]
 ** Concourse Authentication & Authorization
 | Name                               | Summary                                                                          |
 |------------------------------------+----------------------------------------------------------------------------------|

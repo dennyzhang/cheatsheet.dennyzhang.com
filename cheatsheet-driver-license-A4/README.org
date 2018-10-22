@@ -84,13 +84,13 @@ one-hand-steering:
 [[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/one-hand-steering.jpg]]
 
 three-point-turn:
-[[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/three-point-turn.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/three-point-turn.png]]
 
 cone-zone:
-[[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/cone-zone.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/cone-zone.png]]
 
 signal-hands:
-[[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/signal-hands.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/signal-hands.png]]
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -150,7 +150,7 @@ https://www.dmv.ca.gov/portal/dmv/detail/online/vrir/vr_sb1500anu
 | reg343 form: [[https://www.dmv.ca.gov/portal/dmv/detail/forms/reg/reg343][Application for Title or Registration REG 343]] |                         |
 | reg31 form: [[https://www.dmv.ca.gov/portal/dmv/detail/forms/reg/reg31][Verification of Vehicle (REG 31) form]]          | Need to be filed by DMV |
 
-https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/register_vehicle.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/register_vehicle.png]]
 
 #+BEGIN_EXAMPLE
 https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/howto/htvr09#feesdue
@@ -163,7 +163,7 @@ https://www.dmv.org/ca-california/new-to-california.php
 ** Get a new license plate
 https://www.dmv.ca.gov/portal/dmv/detail/vr/vr_info
 
-[[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/substitute-plates.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/substitute-plates.png]]
 
 ** Report a change of address to DMV within 10 days of the change
 https://www.dmv.ca.gov/portal/dmv/detail/vr/vr_info
