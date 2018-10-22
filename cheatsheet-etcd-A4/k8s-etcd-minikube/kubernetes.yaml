@@ -1,0 +1,94 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ns-test
+---
+################################################################################
+# Create volume for DB server
+# https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/getting_started_with_kubernetes/get_started_provisioning_storage_in_kubernetes
+# https://kubernetes.io/docs/getting-started-guides/minikube/#configuring-kubernetes
+# https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: mysql001
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/mysql001"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mysql001-1
+  namespace: ns-test
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+################################################################################
+---
+# https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml
+# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+apiVersion: apps/v1beta2 # for versions before 1.8.0 use apps/v1beta1
+kind: Deployment
+metadata:
+  name: dbserver-deployment
+  namespace: ns-test
+  labels:
+    app: dbserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dbserver
+  template:
+    metadata:
+      labels:
+        app: dbserver
+    spec:
+      containers:
+      - name: dbserver
+        image: mariadb
+        resources:
+          requests:
+            cpu: 400m
+            memory: 600Mi
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "my-secret-pw"
+        # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#claims-as-volumes
+        volumeMounts:
+        - mountPath: "/var/lib/mysql"
+          name: mysqlstorage
+      volumes:
+      - name: mysqlstorage
+        persistentVolumeClaim:
+          claimName: mysql001-1
+---
+# Use services to export my app
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-dbserver-service
+  namespace: ns-test
+  labels:
+    app: dbserver
+spec:
+  type: NodePort  
+  ports:
+  - port: 3306
+    targetPort: 3306
+  selector:
+    app: dbserver

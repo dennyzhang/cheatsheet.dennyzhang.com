@@ -31,7 +31,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Property Reference         | https://docs.pivotal.io/tiledev/2-2/property-reference.html                         |
 | Tile Generator             | https://docs.pivotal.io/tiledev/2-1/tile-generator.html                             |
 | Example                    | [[https://github.com/pivotal-cf-experimental/ops-manager-example/blob/master/example-product/metadata/example-product.yml.erb][example-product/metadata/example-product.yml.erb]]                                    |
-| Reference                  | [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tile-A4][Tile CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-uaac-A4][UAA CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                    |
+| Reference                  | [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tile-A4][Tile CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4][UAA CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                    |
 ** Ops manager
 | Name                                   | Command                                                                  |
 |----------------------------------------+--------------------------------------------------------------------------|
