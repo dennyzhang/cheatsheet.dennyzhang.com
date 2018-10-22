@@ -52,7 +52,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | alertmanager              | Handle alerts                                                              |
 | [[http://opentsdb.net/][OpenTSDB]]                  | The Scalable Time Series Database                                          |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/prometheus-architecture.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/prometheus-overview.png]]
 ** Prometheus Concepts
 | Name         | Command |
 |--------------+---------|
