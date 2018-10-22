@@ -93,6 +93,13 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | NSX Controller   | host the central control plane cluster daemons.                                     |
 | NSX-T Edge       | Provides routing services and connectivity to networks external to NSX-T deployment |
 
+*** NSX-T In PKS
+| NSX-T Component       | Summary                                                                                  |
+|-----------------------+------------------------------------------------------------------------------------------|
+| NSX Manager Appliance | 1 instance; 16 GB RAM per Instance; 4 vCPU per instance; 140GB Disk per Instance         |
+| NSX Controllers       | 3 instance; 16 GB RAM per Instance; 4 vCPU per instance; 120GB Disk per Instance         |
+| NSX-T Edge            | 1 up to 8 instance; 16 GB RAM per Instance; 8 vCPU per instance; 120GB Disk per Instance |
+
 *** NSX-T Concepts
 | Name                              | Command                                                               |
 |-----------------------------------+-----------------------------------------------------------------------|

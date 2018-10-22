@@ -5,7 +5,7 @@
 :END:
 
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/cheatsheet-uaa-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-uaa-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
@@ -16,7 +16,7 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet-uaa-A4/blob/master/cheatsheet-uaa-A4.pdf][cheatsheet-uaa-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-uaa-A4/cheatsheet-uaa-A4.pdf][cheatsheet-uaa-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4
 
 File me [[https://github.com/dennyzhang/cheatsheet-uaac-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-uaac-A4][this repo]].
@@ -38,6 +38,8 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Name          | Command                                                                                                              |
 |---------------+----------------------------------------------------------------------------------------------------------------------|
 | credhub login | =credhub login --client-name credhub-admin --client-secret "${admin_secret}" -s "${api_url}" --ca-cert "${ca_file}"= |
+https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-uaa-A4/credhub-service.png
+
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
@@ -61,7 +63,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+LATEX_HEADER: \fancyhf{}
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
-#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-uaa-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-uaa-A4}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-uaa-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-uaa-A4}}
 #+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
