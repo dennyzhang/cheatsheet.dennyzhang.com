@@ -23,17 +23,28 @@ File me [[https://github.com/dennyzhang/cheatsheet-uaac-A4/issues][Issues]] or s
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** uaac
-| Name              | Command                                                                        |
-|-------------------+--------------------------------------------------------------------------------|
-| Run command       | =uaac apt-install ruby ruby-dev build-essential rubygems; gem install uaac-cf= |
-|                   | =uaac target https://$domain_name:$port --skip-ssl-validation=                 |
-| Get token         | =uaac token client get admin -s sg-xxx=                                        |
-| Add user          | =uaac user add $username --emails $email -p $password=                         |
-| Add user to group | =uaac member add $user $group=                                                 |
-| Get user          | =uaac user get pks-admin=                                                      |
-| List users        | =uaac users=                                                                   |
-|                   | =uaac target=                                                                  |
-| Reference         | [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tile-A4][Tile CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-uaac-A4][UAA CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]               |
+| Name                          | Command                                                                                       |
+|-------------------------------+-----------------------------------------------------------------------------------------------|
+| Run command                   | =uaac apt-install ruby ruby-dev build-essential rubygems; gem install uaac-cf=                |
+| Set a new target              | =uaac target https://<uaa-dnsname>:8443 --skip-ssl-validation=                                |
+| List all context              | =uaac contexts=                                                                               |
+| Log in as a UAA admin         | =uaac token client get admin -s <uaa-management-admin-client>= [[https://docs.pivotal.io/runtimes/pks/1-2/manage-users.html#uaa-admin-login][Link: Log in as a UAA Admin]]:   |
+| List users                    | =uaac users=                                                                                  |
+| List all client registrations | =uaac clients=                                                                                |
+| Add user                      | =uaac user add alana --emails alana@example.com -p password= [[https://docs.pivotal.io/runtimes/pks/1-2/manage-users.html#uaa-user][Link: Grant PKS Access to a User]] |
+| Add user to group             | =uaac member add pks.clusters.admin alana= [[https://docs.pivotal.io/runtimes/pks/1-2/manage-users.html#uaa-user][Link: Grant PKS Access to a User]]                   |
+| Get specific user account     | =uaac user get alana=                                                                         |
+| Get user                      | =uaac user get pks-admin=                                                                     |
+| Reference                     | [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tile-A4][Tile CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-uaac-A4][UAA CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                              |
+** UAA Concept 
+| Name     | Command |
+|----------+---------|
+| target   |         |
+| context  |         |
+| client   |         |
+| token    |         |
+| password |         |
+| secret   |         |
 ** credhub
 | Name          | Command                                                                                                              |
 |---------------+----------------------------------------------------------------------------------------------------------------------|
@@ -41,6 +52,182 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Reference     | [[https://github.com/cloudfoundry-incubator/credhub][GitHub: credhub]], [[https://github.com/cloudfoundry-incubator/credhub-cli][GitHub: credhub-cli]], [[https://docs.cloudfoundry.org/credhub/][Link: credhub]]                                                                  |
 | credhub login | =credhub login --client-name credhub-admin --client-secret "${admin_secret}" -s "${api_url}" --ca-cert "${ca_file}"= |
 [[https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-uaa-A4/credhub-service.png]]
+** Online Help Usage
+#+BEGIN_EXAMPLE
+kubo@jumper:~$ uaac --help
+
+UAA Command Line Interface
+
+Miscellaneous
+  version                          Display version
+  help [topic|command...]          Display summary or details of command or topic
+  target [uaa_url]                 Display current or set new target
+                                   -f | --[no-]force, set even if target does not respond
+                                   --ca-cert [file], use the given CA certificate to validate the target's SSL certificate
+                                   --skip-ssl-validation, do not attempt to validate ssl certificate
+  targets                          Display all targets
+  context [name]                   Display or set current context
+  contexts                         Display all contexts
+
+System Information
+  info                             get information about current target
+  me                               get authenticated user information
+  prompts                          Show prompts for credentials required for implicit grant post
+  signing key                      get the UAA's token signing key(s)
+                                   -c | --client <name>
+                                   -s | --secret <secret>, client secret
+  stats                            Show UAA's current usage statistics
+                                   -c | --client <name>
+                                   -s | --secret <secret>, client secret
+  password strength [password]     calculate strength score of a password
+
+Tokens
+  token get [credentials...]       Gets a token by posting user credentials with an implicit grant request
+                                   -c | --client <name>
+                                   --scope <list>
+  token client get [id]            Gets a token with client credentials grant
+                                   -s | --secret <secret>, client secret
+                                   --scope <list>
+  token owner get [client] [user]  Gets a token with a resource owner password grant
+                                   -s | --secret <secret>, client secret
+                                   -p | --password <password>, user password
+                                   --scope <list>
+  token sso get [client]           Gets a token based on a one time passcode after successful SSO via browser
+                                   -s | --secret <secret>, client secret
+                                   --passcode <passcode>
+                                   --scope <list>
+  token refresh [refreshtoken]     Gets a new access token from a refresh token
+                                   -c | --client <name>
+                                   -s | --secret <secret>, client secret
+                                   --scope <list>
+  token authcode get               Gets a token using the authcode flow with browser
+                                   -c | --client <name>
+                                   -s | --secret <secret>, client secret
+                                   --scope <list>
+                                   --[no-]cf, save token in the ~/.cf_tokens file
+                                   --port <number>, pin internal server to specific port
+  token implicit get               Gets a token using the implicit flow with browser
+                                   -c | --client <name>
+                                   --scope <list>
+                                   --[no-]cf, save token in the ~/.cf_tokens file
+                                   --port <number>, pin internal server to specific port
+  token decode [token] [tokentype] Show token contents as parsed locally or by the UAA. Decodes locally unless --client and --secret are given. Validates locally if --key given or server's signing key has been retrieved
+                                   --key <key>, Token validation key
+                                   -c | --client <name>
+                                   -s | --secret <secret>, client secret
+  token delete [contexts...]       Delete current or specified context tokens and settings
+                                   --[no-]all, remove all contexts
+
+User Accounts
+  users [filter]                   List user accounts
+                                   -a | --attributes <names>, output for each user
+                                   --start <number>, start of output page
+                                   --count <number>, max number per page
+  user get [name]                  Get specific user account
+                                   --origin <identity provider origin, defaults to UAA>
+                                   -a | --attributes <names>, output for each user
+  user add [name]                  Add a user account
+                                   --given_name <name>
+                                   --family_name <name>
+                                   --emails <addresses>
+                                   --phones <phone_numbers>
+                                   --origin <identity provider origin, defaults to UAA>
+                                   -p | --password <password>, user password
+  user update [name]               Update a user account with specified options
+                                   --given_name <name>
+                                   --family_name <name>
+                                   --emails <addresses>
+                                   --phones <phone_numbers>
+                                   --origin <identity provider origin, defaults to UAA>
+                                   --del_attrs <attr_names>, list of attributes to delete
+  user delete [name]               Delete user account
+                                   --origin <identity provider origin, defaults to UAA>
+  user ids [username|id...]        Gets user names and ids for the given users
+  user unlock [name]               Unlocks the user account
+  user deactivate [name]           Deactivates user
+  user activate [name]             Activates user
+  password set [name]              Set password
+                                   -p | --password <password>, user password
+  password change                  Change password for authenticated user in current context
+                                   -o | --old_password <password>, current password
+                                   -p | --password <password>, user password
+
+Groups
+  groups [filter]                  List groups
+                                   -a | --attributes <names>, output for each user
+                                   --start <start>, show results starting at this index
+                                   --count <count>, number of results to show
+  group get [name]                 Get specific group information
+                                   -a | --attributes <names>, output for each user
+  group add [name]                 Adds a group
+  group delete [name]              Delete group
+  group mappings                   List all the mappings between uaa scopes and external groups
+                                   --start <start>, show results starting at this index
+                                   --count <count>, number of results to show
+  group map [external_group]       Map uaa groups to external groups
+                                   --id <id>, map uaa group using group id
+                                   --name <name>, map uaa scope using group name
+                                   --origin <origin>, map uaa scope to external group for this origin. Defaults to ldap.
+  group unmap [group_name] [external_group]
+                                   Unmaps an external group from a uaa group
+                                   --origin <origin>, map uaa scope to external group for this origin. Defaults to ldap.
+  member add [name] [users...]     add members to a group
+  member delete [name] [users...]  remove members from a group
+
+Client Application Registrations
+  clients [filter]                 List client registrations
+                                   -a | --attributes <names>, output for each user
+                                   --start <start>, show results starting at this index
+                                   --count <count>, number of results to show
+  client get [id]                  Get specific client registration
+                                   -a | --attributes <names>, output for each user
+  client add [id]                  Add client registration
+                                   --name <string>
+                                   --scope <list>
+                                   --authorized_grant_types <list>
+                                   --authorities <list>
+                                   --access_token_validity <seconds>
+                                   --refresh_token_validity <seconds>
+                                   --redirect_uri <list>
+                                   --autoapprove <list>
+                                   --signup_redirect_url <url>
+                                   --clone <other>, get default settings from other
+                                   -s | --secret <secret>, client secret
+                                   -i | --[no-]interactive, interactively verify all values
+  client update [id]               Update client registration
+                                   --name <string>
+                                   --scope <list>
+                                   --authorized_grant_types <list>
+                                   --authorities <list>
+                                   --access_token_validity <seconds>
+                                   --refresh_token_validity <seconds>
+                                   --redirect_uri <list>
+                                   --autoapprove <list>
+                                   --signup_redirect_url <url>
+                                   --del_attrs <attr_names>, list of attributes to delete
+                                   -i | --[no-]interactive, interactively verify all values
+  client delete [id]               Delete client registration
+  secret set [id]                  Set client secret
+                                   -s | --secret <secret>, client secret
+  secret change                    Change secret for authenticated client in current context
+                                   --old_secret <secret>, current secret
+                                   -s | --secret <secret>, client secret
+
+CURL
+  curl [path]                      CURL to a UAA endpoint
+                                   -X | --request <method>, request method type, defaults to GET
+                                   -d | --data <data>, data included in request body
+                                   -H | --header <header>, header to be included in the request
+                                   -k | --insecure, makes request without verifying SSL certificates
+
+Global options:
+  -h | --[no-]help                 display helpful information
+  -v | --[no-]version              show version
+  -d | --[no-]debug                display debug information
+  -t | --[no-]trace                display extra verbose debug information
+  --config [string|file]           file to get/save configuration information or yaml string
+  -z | --zone <subdomain>          subdomain of zone to manage
+#+END_EXAMPLE
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -80,3 +267,11 @@ https://docs.cloudfoundry.org/credhub/
 #+LINK_UP:
 #+LINK_HOME:
 * Question: what is credhub?                                       :noexport:
+* TODO Download Ops Manager Root Certificate                       :noexport:
+https://docs.pivotal.io/pivotalcf/2-3/security/pcf-infrastructure/api-cert-rotation.html#root-certs
+
+curl "https://OPS-MAN-FQDN/download_root_ca_cert \
+      -X GET \
+      -H "Authorization: Bearer YOUR-UAA-ACCESS-TOKEN"
+* TODO uaac change password                                        :noexport:
+https://stackoverflow.com/questions/37225899/password-change-using-the-uaa-rest-api

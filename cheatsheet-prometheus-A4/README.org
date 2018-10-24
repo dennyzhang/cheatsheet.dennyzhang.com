@@ -23,60 +23,84 @@
 File me [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-prometheus-A4][this repo]].
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
-** Prometheus Basic
-| Name                                | Command                                                                      |
-|-------------------------------------+------------------------------------------------------------------------------|
-| Config file                         | =/etc/prometheus/prometheus.yml=                                             |
-| Run Prometheus with docker          | =docker run -p 9090:9090 prom/prometheus=, =http://localhost:9090=           |
-| Query metric by api, instead of GUI | =curl http://localhost:9090/api/v1/query?query=container_memory_usage_bytes= |
-| List alerts                         | =curl http://localhost:9093/api/v1/alerts=                                   |
-** Kubernetes Metrics Targets & Samples
-| Name                           | Command                                    | Sample Metrics                          |
-|--------------------------------+--------------------------------------------+-----------------------------------------|
-| apiserver                      | https://$api_server:443/metrics            |                                         |
-| cadvisor                       | http://$node_ip:10255/metrics/cadvisor     | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/cadvisor-sample.txt][cadvisor-sample.txt]]                     |
-| node-exporter                  | http://$node_ip:9100/metrics               | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/node-exporter-sample.txt][node-exporter-sample.txt]]                |
-| kubelet                        | http://$kubelet_ip:10255/metrics           | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kubelet-sample.txt][kubelet-sample.txt]]                      |
-| kube-dns                       | http://$kube_dns_addon_ip:10054/metrics    | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-dns-sample.txt][kube-dns-sample.txt]]                     |
-| kube-state-metrics http-metric | http://$kube_state_metric_svc:8080/metrics | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-http-sample.txt][kube-state-metrics-http-sample.txt]]      |
-| kube-state-metrics telemetry   | http://$kube_state_metric_svc:8081/metrics | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-telemetry-sample.txt][kube-state-metrics-telemetry-sample.txt]] |
-
-[[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/prometheus-deployment.png]]
+** Prometheus Commands
+| Name                                             | Command                                                                                                      |
+|--------------------------------------------------+--------------------------------------------------------------------------------------------------------------|
+| Run Prometheus with docker                       | =docker run -p 9090:9090 prom/prometheus=, =http://localhost:9090/graph=, =http://localhost:9090/metrics=    |
+| Run cadvisor to get metrics for local containers | =docker run -v /var/run:/var/run -v /sys:/sys -p 8080:8080 google/cadvisor=, =http://localhost:8080/metrics= |
+| Prometheus Config file                           | =/etc/prometheus/prometheus.yml=                                                                             |
+| Query metric by api, instead of GUI              | =curl http://localhost:9090/api/v1/query?query=container_memory_usage_bytes=                                 |
+| List alerts                                      | =curl http://localhost:9093/api/v1/alerts=                                                                   |
+| Prometheus Online Demo                           | [[https://demo.cloudalchemy.org/][Live demo from CloudAlchemy]]                                                                                  |
 ** Prometheus Components
-| Name                      | Command                                                                    |
-|---------------------------+----------------------------------------------------------------------------|
-| Prometheus sever          | Scrapes and store time series data. It uses pull model, instead of push    |
-| Client libraries          | Instrument application code                                                |
-| push gateway              | Support short-lived jobs                                                   |
-| special-purpose exporters | Get metrics for all kinds of services, like HAProxy, StatsD, Graphite, etc |
-| alertmanager              | Handle alerts                                                              |
-| [[http://opentsdb.net/][OpenTSDB]]                  | The Scalable Time Series Database                                          |
+| Name                        | Command                                                                             |
+|-----------------------------+-------------------------------------------------------------------------------------|
+| [[https://github.com/prometheus/prometheus][Prometheus server]]           | Scrapes and store time series data. It uses pull model, instead of push             |
+| [[https://github.com/prometheus/pushgateway][Push gateway]]                | Support short-lived jobs. Persists the most recent push of metrics from batch jobs. |
+| [[https://github.com/prometheus/alertmanager][Alertmanager]]                | Handle alerts                                                                       |
+| Client libraries            | Instrument application code. [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/prometheus-python-example.py][Link: prometheus-python-example.py]]                     |
+| Special-purpose exporters   | Get metrics for all kinds of services, like HAProxy, StatsD, Graphite, etc          |
+| Exporter: [[https://github.com/prometheus/node_exporter][Node Exporter]]     | Monitor machine resources utilizations                                              |
+| Exporter: [[https://github.com/prometheus/blackbox_exporter][Blackbox Exporter]] | Blackbox prober exporter                                                            |
+| Exporter: [[https://github.com/prometheus/snmp_exporter][SNMP Exporter]]     | Monitor network devices                                                             |
+| Exporter: [[https://github.com/prometheus/jmx_exporter][JMX Exporter]]      | Monitor JAVA applications                                                           |
+| Exporter: [[https://github.com/prometheus/mysqld_exporter][Mysqld Exporter]]   | Monitor mysqld services                                                             |
+| Reference                   | [[https://prometheus.io/docs/instrumenting/exporters/][Link: Exporters And Integrations]], [[https://github.com/prometheus/prometheus/wiki/Default-port-allocations][Link: Default port allocations]]                    |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/prometheus-overview.png]]
 ** Prometheus Concepts
-| Name         | Command |
-|--------------+---------|
-| Job          |         |
-| Instance     |         |
-| Handler      |         |
-| Target       |         |
-| Rule         |         |
+| Name                        | Summary                                                                        |
+|-----------------------------+--------------------------------------------------------------------------------|
+| Sections in prometheus.yaml | =global=, =rule_files=, =scrape_configs=                                       |
+| [[https://prometheus.io/docs/introduction/glossary/#instance][Instance]]                    | A label that uniquely identifies a target in a job.                            |
+| [[https://prometheus.io/docs/introduction/glossary/#job][Job]]                         | A collection of targets with the same purpose.                                 |
+| [[https://prometheus.io/docs/introduction/glossary/#target][Target]]                      | A target is the definition of an object to scrape.                             |
+| [[https://prometheus.io/docs/introduction/glossary/#exporter][Exporter]]                    | Expose metrics from a non-Prometheus format into a format Prometheus supports. |
+| [[https://prometheus.io/docs/introduction/glossary/#collector][Collector]]                   | A part of an exporter that represents a set of metrics.                        |
+| Handler                     |                                                                                |
+| Rule                        |                                                                                |
+** Kubernetes Metrics Targets & Samples
+| Name                           | Command                                    | Sample Metrics                                |
+|--------------------------------+--------------------------------------------+-----------------------------------------------|
+| apiserver                      | https://$api_server:443/metrics            |                                               |
+| cadvisor                       | http://$node_ip:10255/metrics/cadvisor     | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/cadvisor-sample.txt][Link: cadvisor-sample.txt]]                     |
+| node-exporter                  | http://$node_ip:9100/metrics               | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/node-exporter-sample.txt][Link: node-exporter-sample.txt]]                |
+| kubelet                        | http://$kubelet_ip:10255/metrics           | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kubelet-sample.txt][Link: kubelet-sample.txt]]                      |
+| kube-dns                       | http://$kube_dns_addon_ip:10054/metrics    | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-dns-sample.txt][Link: kube-dns-sample.txt]]                     |
+| kube-state-metrics http-metric | http://$kube_state_metric_svc:8080/metrics | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-http-sample.txt][Link: kube-state-metrics-http-sample.txt]]      |
+| kube-state-metrics telemetry   | http://$kube_state_metric_svc:8081/metrics | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/kube-state-metrics-telemetry-sample.txt][Link: kube-state-metrics-telemetry-sample.txt]] |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/prometheus-deployment.png]]
 ** Prometheus Query
-| Name                          | Command                                     |
-|-------------------------------+---------------------------------------------|
-| Reference                     | [[https://prometheus.io/docs/prometheus/latest/querying/basics/][Link: query]]                                 |
-| Find metric by name+job+group | somemetric{job="prometheus",group="canary"} |
-** Prometheus Aggregration
-| Name    | Command |
-|---------+---------|
-| count   |         |
-| sum     |         |
-| min     |         |
-| max     |         |
-| counter |         |
-| avg     |         |
+| Name                                                           | Command                                                   |
+|----------------------------------------------------------------+-----------------------------------------------------------|
+| Reference                                                      | [[https://prometheus.io/docs/prometheus/latest/querying/basics/][Link: query]]                                               |
+| Find metric by name+job+group                                  | somemetric{job="prometheus",group="canary"}               |
+|                                                                | rate(apiserver_request_count{verb="GET", code="200"}[1m]) |
+| The avg network traffic received per second, over the last min | rate(node_network_receive_bytes_total[1m])                |
+| counter                                                        | It only goes up (and resets), counts something            |
+| gauge                                                          | It goes up and down, snapshot of state                    |
+| topk query                                                     | [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-prometheus-A4/query-topk.txt][Link: query-topk.txt]]                                      |
+| aggregate                                                      |                                                           |
+| join                                                           |                                                           |
+| cut                                                            |                                                           |
+| slice                                                          |                                                           |
+| count                                                          |                                                           |
+| predict                                                        |                                                           |
+| sum                                                            |                                                           |
+| min                                                            |                                                           |
+| max                                                            |                                                           |
+| avg                                                            |                                                           |
+** Prometheus Alerts
+| Name                                                 | Command |
+|------------------------------------------------------+---------|
+| How full will the disks be in 4 hours?               |         |
+| Which services are the top 5 users of CPU?           |         |
+| What's the 95th percentile latency in EU datacenter? |         |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+https://prometheus.io/
 
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
@@ -125,15 +149,29 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
  #+END_EXAMPLE
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Send a PR to promethues website: https://github.com/prometheus/docs :noexport:
+* TODO [#A] Blog: What I have learned from prometheus designs      :noexport:
+** Prometheus is good for lossless storage efficiency, 3.5 bytes per datapoint.
+** Performance is super good: a single prometheus can handle over 100K samples per second!
+** Don't monitor just at the edges.
+Services have internals; Monitor the internals
+** Prometheus is not accurate enough for billing, but good for monitoring. Not for logging solutions
+** Prometheus expects metrics to be available on targets on a path of /metrics.
+** The main Prometheus server runs standalone and has no external dependencies.
+** Each Prometheus server is standalone, not depending on network storage or other remote services.
+** Can alert based on any query.
+** DONE promethues won't get kubernetes events                     :noexport:
+   CLOSED: [2018-10-20 Sat 00:01]
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Question: Federation allows pulling key metrics from other Promethues servers :noexport:
 * TODO Question: prometheus has not namespace user for multi-tenancy monitoring :noexport:
 * TODO Question: how reliable the data store of prometheus is?     :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] promethues best practice                               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO setup prometheus in k8s: https://github.com/giantswarm/kubernetes-prometheus :noexport:
 * TODO prometheus operator                                         :noexport:
 * TODO prometheus bosh release                                     :noexport:
-* TODO prometheus collect log                                      :noexport:
+* TODO https://www.weave.works/blog/kubernetes-horizontal-pod-autoscaler-and-prometheus :noexport:
+* TODO golang metric: https://github.com/prometheus/client_golang/blob/master/examples/simple/main.go :noexport:
 * HALF k8s prometheus                                              :noexport:
 https://akomljen.com/get-kubernetes-cluster-metrics-with-prometheus-in-5-minutes/
 ** Error: apiVersion "monitoring.coreos.com/v1alpha1" in kube-prometheus/charts/prometheus/templates/prometheus.yaml is not available
@@ -150,8 +188,7 @@ kubo@jumper:~/denny/prometheus$ helm install \
 Error: apiVersion "monitoring.coreos.com/v1alpha1" in kube-prometheus/charts/prometheus/templates/prometheus.yaml is not available
 kubo@jumper:~/denny/prometheus$
 #+END_EXAMPLE
-* TODO https://www.weave.works/blog/kubernetes-horizontal-pod-autoscaler-and-prometheus :noexport:
-* TODO golang metric: https://github.com/prometheus/client_golang/blob/master/examples/simple/main.go :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Blog: Use Prometheus To Monitor And Tuning Containers :noexport:IMPORTANT:
 https://prometheus.io
 https://docs.docker.com/engine/admin/prometheus/
@@ -976,17 +1013,29 @@ https://www.youtube.com/watch?v=sxE1vDtkYps
 http://rancher.com/comparing-monitoring-options-for-docker-deployments/
 
 https://dzone.com/articles/5-things-weve-learned-about-monitoring-containers
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Question: RBAC access for multiple namespace in kubernetes envs :noexport:
-* TODO How to paste grafana rules to prometheus                    :noexport:
-- ALERTS{alertstate="firing",alertname!="DeadMansSwitch"}
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Make sure my prometheus can get metrics for different namespaces: only deployment grafana can't see wordpress namespace :noexport:
 * TODO k8s metrics: https://blog.freshtracks.io/search?q=A%20Deep%20Dive%20into%20Kubernetes%20Metrics :noexport:
+* TODO push gateway: Support short-lived jobs                      :noexport:
+https://prometheus.io/docs/introduction/overview/
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] How to paste grafana rules to prometheus               :noexport:
+- ALERTS{alertstate="firing",alertname!="DeadMansSwitch"}
 * TODO [#A] Question: How prometheus auto service discovery works? :noexport:
 * TODO Question: prometheus list metrics for a given job           :noexport:
 http_requests_total{job="apiserver", handler="/api/comments"}
-* TODO [#A] Blog: What I have learned from prometheus designs      :noexport:
-** DONE promethues won't get kubernetes events                     :noexport:
-   CLOSED: [2018-10-20 Sat 00:01]
-* TODO push gateway: Support short-lived jobs                      :noexport:
-https://prometheus.io/docs/introduction/overview/
+* TODO Question: Prometheus scaling problem: https://www.robustperception.io/scaling-and-federating-prometheus :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Questoin: Crash recovery process                            :noexport:
+https://prometheus.io/docs/prometheus/1.8/storage/#crash-recovery
+* TODO Question: how big the footprint of prometheus is?           :noexport:
+* TODO Question: golang for push gateway                           :noexport:
+* TODO Question: what is blackbox exporter                         :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Question: prometheus go client                              :noexport:
+https://github.com/prometheus/client_golang
+
+https://github.com/juliusv/prometheus_workshop/blob/master/example_golang/server.go
+* TODO prometheus alerts definition                                :noexport:
+* TODO prometheus expression browser                               :noexport:
