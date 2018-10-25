@@ -28,7 +28,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Run command                   | =uaac apt-install ruby ruby-dev build-essential rubygems; gem install uaac-cf=                |
 | Set a new target              | =uaac target https://<uaa-dnsname>:8443 --skip-ssl-validation=                                |
 | List all context              | =uaac contexts=                                                                               |
-| Log in as a UAA admin         | =uaac token client get admin -s <uaa-management-admin-client>= [[https://docs.pivotal.io/runtimes/pks/1-2/manage-users.html#uaa-admin-login][Link: Log in as a UAA Admin]]:   |
+| Log in as a UAA admin         | =uaac token client get admin -s <uaa-management-admin-client>= [[https://docs.pivotal.io/runtimes/pks/1-2/manage-users.html#uaa-admin-login][Link: Log in as a UAA Admin]]    |
 | List users                    | =uaac users=                                                                                  |
 | List all client registrations | =uaac clients=                                                                                |
 | Add user                      | =uaac user add alana --emails alana@example.com -p password= [[https://docs.pivotal.io/runtimes/pks/1-2/manage-users.html#uaa-user][Link: Grant PKS Access to a User]] |

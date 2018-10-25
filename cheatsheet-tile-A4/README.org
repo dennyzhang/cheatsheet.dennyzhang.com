@@ -4,7 +4,7 @@
 :export_file_name: cheatsheet-tile-A4.pdf
 :END:
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT HTML
 <a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-tile-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -47,7 +47,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | [[https://github.com/pivotal-cf/om][om]]                          | a command-line API client for Pivotal Operations Manager                                                                 |
 | List all available products | =om -k -t https://30.0.0.5 -u admin -p <password> curl -p /api/v0/available_products=                                    |
 | Upload tile from cli        | =om -k -t https://30.0.0.5 -u admin -p <password> upload-product -p </path/my.pivotal>=                                  |
-| Upload stemcell from cli    | =om -k -t https://30.0.0.5 -u admin -p <password> upload-stemcell </path/stemcell.tgz>=                                  |
+| Upload stemcell from cli    | =om -k -t https://30.0.0.5 -u admin -p <password> upload-stemcell -s </path/stemcell.tgz>=                               |
 | omcli                       | alias omcli='om -t https://30.0.0.5 -u "<username>" -p "<password>" -k'                                                  |
 | Use omcli to get attribute  | =omcli curl -s --path /api/v0/deployed/products/${product_guid}/credentials/.properties.pks_uaa_management_admin_client= |
 | Use omcli to list products  | =omcli curl -s -p '/api/v0/staged/products'=                                                                             |
@@ -62,7 +62,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 ** More Resources
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
-#+BEGIN_HTML
+#+BEGIN_EXPORT HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 

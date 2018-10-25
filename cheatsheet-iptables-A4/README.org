@@ -105,3 +105,69 @@ iptables -D INPUT 2
 
 # 2.b) OR INSERT a rule.
 iptables -I INPUT {LINE_NUMBER} -i eth1 -p tcp --dport 21 -s 123.123.123.123 -j ACCEPT -m comment --comment "This rule is here for this reason"
+* airgap rules                                                     :noexport:
+#+BEGIN_EXAMPLE
+#!/bin/bash
+
+# flush rules in INPUT chain
+sudo iptables -F INPUT
+# flush rules in OUTPUT chain
+sudo iptables -F OUTPUT
+# set default policy in INPUT chain to DROP
+sudo iptables -P INPUT DROP
+# set default policy in OUTPUT chain to DROP
+sudo iptables -P OUTPUT DROP
+
+# flush rules in FORWARD chain
+sudo iptables -F FORWARD
+sudo iptables -P FORWARD DROP
+
+# flush rules in table nat PREROUTING chain
+sudo iptables -t nat -F PREROUTING
+# flush rules in table nat POSTROUTING chain
+sudo iptables -t nat -F POSTROUTING
+
+# eth0 is for vm network which means public access here
+# eth1 is for priviate management network, eg: nsx-t manager, controller, vc etc
+# vlan0101 is for nsx-t virtual network
+vm_network_interface="eth0"
+manager_networker_interface="eth1"
+nsx_t_virtual_network_interface="vlan0101"
+
+# enables traffic from/to private network for local processes on eth0
+sudo iptables -A INPUT -i "$vm_network_interface" -s 10.0.0.0/8 -j ACCEPT
+sudo iptables -A INPUT -i "$vm_network_interface" -s 169.254.0.0/16 -j ACCEPT
+sudo iptables -A INPUT -i "$vm_network_interface" -s 172.16.0.0/12 -j ACCEPT
+sudo iptables -A INPUT -i "$vm_network_interface" -s 192.168.0.0/16 -j ACCEPT
+sudo iptables -A OUTPUT -o "$vm_network_interface" -d 10.0.0.0/8 -j ACCEPT
+sudo iptables -A OUTPUT -o "$vm_network_interface" -d 169.254.0.0/16 -j ACCEPT
+sudo iptables -A OUTPUT -o "$vm_network_interface" -d 172.16.0.0/12 -j ACCEPT
+sudo iptables -A OUTPUT -o "$vm_network_interface" -d 192.168.0.0/16 -j ACCEPT
+
+# enables traffic between nsx-t provisioned networks and local
+sudo iptables -A INPUT -i "$nsx_t_virtual_network_interface" -s 192.168.0.0/16 -j ACCEPT
+sudo iptables -A INPUT -i "$nsx_t_virtual_network_interface" -s 192.167.0.0/16 -j ACCEPT
+sudo iptables -A INPUT -i "$nsx_t_virtual_network_interface" -s 30.0.0.0/16 -j ACCEPT
+sudo iptables -A INPUT -i "$nsx_t_virtual_network_interface" -s 40.0.0.0/16 -j ACCEPT
+sudo iptables -A OUTPUT -o "$nsx_t_virtual_network_interface" -d 192.168.0.0/16 -j ACCEPT
+sudo iptables -A OUTPUT -o "$nsx_t_virtual_network_interface" -d 192.167.0.0/16 -j ACCEPT
+sudo iptables -A OUTPUT -o "$nsx_t_virtual_network_interface" -d 30.0.0.0/16 -j ACCEPT
+sudo iptables -A OUTPUT -o "$nsx_t_virtual_network_interface" -d 40.0.0.0/16 -j ACCEPT
+
+# enables traffic between private vm management network and local
+sudo iptables -A INPUT -i "$manager_networker_interface" -s 192.168.0.0/16 -j ACCEPT
+sudo iptables -A OUTPUT -o "$manager_networker_interface" -d 192.168.0.0/16 -j ACCEPT
+
+# enables traffic between nsx-t network to outside private network
+iptables -t nat -A POSTROUTING -o "$vm_network_interface" -j MASQUERADE
+sudo iptables -A FORWARD -i "$vm_network_interface" -o "$nsx_t_virtual_network_interface" -m state --state RELATED,ESTABLISHED -j ACCEPT
+sudo iptables -A FORWARD -i "$nsx_t_virtual_network_interface" -o "$vm_network_interface" -d 10.0.0.0/8 -j ACCEPT
+sudo iptables -A FORWARD -i "$nsx_t_virtual_network_interface" -o "$vm_network_interface" -d 169.254.0.0/16 -j ACCEPT
+sudo iptables -A FORWARD -i "$nsx_t_virtual_network_interface" -o "$vm_network_interface" -d 172.16.0.0/12 -j ACCEPT
+sudo iptables -A FORWARD -i "$nsx_t_virtual_network_interface" -o "$vm_network_interface" -d 192.168.0.0/16 -j ACCEPT
+
+# enables any traffic between nsx-t network and private vm management network
+iptables -t nat -A POSTROUTING -o "$manager_networker_interface" -j MASQUERADE
+sudo iptables -A FORWARD -i "$manager_networker_interface" -o "$nsx_t_virtual_network_interface" -j ACCEPT
+sudo iptables -A FORWARD -i "$nsx_t_virtual_network_interface" -o "$manager_networker_interface" -j ACCEPT
+#+END_EXAMPLE
