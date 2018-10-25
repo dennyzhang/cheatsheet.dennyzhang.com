@@ -28,7 +28,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 |------+--------------------------------------------------------------------------------|
 | [[https://www.okd.io/#v3][OKD]]  | The Origin Community Distribution of Kubernetes that powers Red Hat OpenShift. |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture_overview.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture-overview.png]]
 
 ** OC - admin operation
 | Name            | Command                                                                                            |
