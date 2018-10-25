@@ -4,7 +4,7 @@
 :export_file_name: cheatsheet-openshift-A4.pdf
 :END:
 
-#+BEGIN_EXPORT HTML
+#+BEGIN_HTML
 <a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-openshift-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -24,28 +24,49 @@ File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]]
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** OpenShift Glossary
-| Name | Command                                                                        |
-|------+--------------------------------------------------------------------------------|
-| [[https://www.okd.io/#v3][OKD]]  | The Origin Community Distribution of Kubernetes that powers Red Hat OpenShift. |
+| Name      | Command                                                                        |
+|-----------+--------------------------------------------------------------------------------|
+| [[https://www.okd.io/#v3][OKD]]       | The Origin Community Distribution of Kubernetes that powers Red Hat OpenShift. |
+| Reference | [[https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/cli_reference/cli-reference-basic-cli-operations][Link: OC CLI Operations]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                                        |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture-overview.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture_overview.png]]
+** OpenShift Additional Object Types & CRD
+| Name             | Command          |
+|------------------+------------------|
+| Project          | =oc get project= |
+| Build            | =oc get build=   |
+| BuildConfig      | =oc get bc=      |
+| DeploymentConfig | =oc get dc=      |
+| ImageStream      | =oc get is=      |
+| ImageStreamTag   | =oc get istag=   |
+| ImageStreamImage | =oc get isimage= |
 
-** OC - admin operation
-| Name            | Command                                                                                            |
-|-----------------+----------------------------------------------------------------------------------------------------|
-| Login to server | =oc login -u=<username> -p=<password> --server=<your-openshift-server> --insecure-skip-tls-verify= |
-| Check status    | =oc status=                                                                                        |
-| List route      | =oc get route=                                                                                     |
-** OC - projects & applications
+** OC - Admin
 | Name                  | Command                                                                                            |
 |-----------------------+----------------------------------------------------------------------------------------------------|
-| Create a project      | =oc new-project <projectname> --description=<description> --display-name=<display_name>=           |
-| Create an application | =oc new-app openshift/ruby-20-centos7~https://github.com/<your_github_username>/ruby-ex=           |
+| Login to server       | =oc login -u=<username> -p=<password> --server=<your-openshift-server> --insecure-skip-tls-verify= |
+| List route            | =oc get route=                                                                                     |
+| List all object types | =oc types=                                                                                         |
+** OC - Developer
+| Name                                   | Command                                                                                  |
+|----------------------------------------+------------------------------------------------------------------------------------------|
+| Create a project                       | =oc new-project <projectname> --description=<description> --display-name=<display_name>= |
+| Check status of current project        | =oc status= [[https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/cli_reference/cli-reference-basic-cli-operations][Link: OC CLI Operations]]                                                      |
+| Create an application                  | =oc new-app https://github.com/sclorg/cakephp-ex=                                        |
+| Create a new build                     | =oc new-build https://github.com/sclorg/cakephp-ex=                                      |
+| Manually start a build with given conf | =oc start-build <buildconfig_name>=                                                      |
+| Stop a build that is in progress       | =oc cancel-build <build_name>=                                                           |
+| Import an external image               | =oc import-image <image_stream>=                                                         |
+| Tag an image                           | =oc tag <current_image> <image_stream>=                                                  |
 ** More Resources
 https://www.okd.io/
 
+https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/
+
+https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/cli_reference/cli-reference-basic-cli-operations
+
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
-#+BEGIN_EXPORT HTML
+#+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
@@ -84,4 +105,7 @@ https://github.com/openshift/installer
 * cluster-logging-operator                                         :noexport:
 https://github.com/openshift/cluster-logging-operator
 * TODO [#A] Blog: Personal Review of OpenShift                     :noexport:
-* TODO get an design diagram                                       :noexport:
+* TODO Eavluate XKE                                                :noexport:
+** How fast to boostrap a new cluster
+** Experience of upgrading an existing cluster
+** Trouble shooting experience
