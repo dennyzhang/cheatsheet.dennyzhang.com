@@ -24,46 +24,193 @@ File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]]
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** OpenShift Glossary
-| Name      | Command                                                                        |
-|-----------+--------------------------------------------------------------------------------|
-| [[https://www.okd.io/#v3][OKD]]       | The Origin Community Distribution of Kubernetes that powers Red Hat OpenShift. |
-| Reference | [[https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/cli_reference/cli-reference-basic-cli-operations][Link: OC CLI Operations]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                                        |
+| Name                     | Command                                                                                    |
+|--------------------------+--------------------------------------------------------------------------------------------|
+| [[https://www.okd.io/#v3][OKD]]                      | The Origin Community Distribution of Kubernetes that powers Red Hat OpenShift.             |
+| [[https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/cli_reference/cli-reference-basic-cli-operations][oc command line]]          | Openshift command line: =oc <action> <object_type> <object_name_or_id>=                    |
+| Project                  | Namespace in Kubernetes. Resources are aggregated by projects. =oc get project=            |
+| Build                    | Builds create a new image from source code, other images, Dockerfiles, etc. =oc get build= |
+| Build Configuration      | How to build source code and a base image into a new image. =oc get bc=                    |
+| Route                    | Endpoint in Kubernetes. A route is an external DNS entry                                   |
+| Deployment Configuration | =oc get dc=                                                                                |
+| ImageStream              | =oc get is=                                                                                |
+| ImageStreamTag           | =oc get istag=                                                                             |
+| ImageStreamImage         | =oc get isimage=                                                                           |
+| Template                 | =oc get template=                                                                          |
+| Template Instance        | =oc get templateinstance=                                                                  |
+| Explain                  | Online manual =oc explain pod=                                                             |
+| Red Hat Registry         | By default, all images are pulled from registry.redhat.io.                                 |
+| Reference                | [[https://docs.okd.io/latest/minishift/index.html][Link: Minishift]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                                                            |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture_overview.png]]
-** OpenShift Additional Object Types & CRD
-| Name             | Command          |
-|------------------+------------------|
-| Project          | =oc get project= |
-| Build            | =oc get build=   |
-| BuildConfig      | =oc get bc=      |
-| DeploymentConfig | =oc get dc=      |
-| ImageStream      | =oc get is=      |
-| ImageStreamTag   | =oc get istag=   |
-| ImageStreamImage | =oc get isimage= |
-
+** Minishift
+| Name                        | Command                                                                          |
+|-----------------------------+----------------------------------------------------------------------------------|
+| [[https://docs.okd.io/latest/minishift/getting-started/installing.html][Install/upgrade minishift]]   | =brew cask install minishift=, =brew cask install --force minishift=             |
+| Try OpenShift in virtualbox | =minishift start --vm-driver=virtualbox=                                         |
+| Stop/delete minishift env   | =minishift stop=, =minishift delete=                                             |
+| ssh minishift               | =minishift ssh=                                                                  |
+| Check status                | =minishift status=, =oc config view=, =minishift oc-env=, =minishift docker-env= |
+| Control dashboard           | https://192.168.99.100:8443, system/admin                                        |
+** Minishift Footprint
+| Process                              | Command                                                                                         |
+|--------------------------------------+-------------------------------------------------------------------------------------------------|
+| etcd                                 | =openshift start etcd --config=/etc/origin/master/master-config.yaml=                           |
+| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] openshift-kube-apiserver   | =hypershift openshift-kube-apiserver --config=/etc/origin/master/master-config.yaml=            |
+| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] openshift-apiserver        | =hypershift openshift-apiserver --config=/etc/origin/master/master-config.yaml -v=0=            |
+| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] kubelet                    |                                                                                                 |
+| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] kubelet-scheduler          |                                                                                                 |
+| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] kubelet-controller-manager |                                                                                                 |
+| network proxy                        | =openshift start network --enable=proxy --config=/etc/origin/node/node-config.yaml ...=         |
+| network dns                          | =openshift start network --enable=dns --config=/etc/origin/node/node-config.yaml=               |
+| origin-web-console                   | =/usr/bin/origin-web-console --audit-log-path... --config=/.../webconsole-config.yaml=          |
+| openshift-webconsole-operator        | =hypershift experimental openshift-webconsole-operator --config=/.../operator-config.yaml -v=0= |
+| dockerregistry                       | =/usr/bin/dockerregistry /config.yml=                                                           |
+| openshift-router                     |                                                                                                 |
+| dockerd                              |                                                                                                 |
+| haproxy                              |                                                                                                 |
+** OC - Highlights
+| Name                                              | Command                                                       |
+|---------------------------------------------------+---------------------------------------------------------------|
+| Get api requests verbose output with kubectl call | =oc --loglevel 999 get pod/dummy-deployment-6d6759c786-5kwth= |
+| Start a pod and get a shell for debug             | =oc debug dc/jorge=                                           |
+| Impersonate for oc command                        | =oc --as=jorge get pods=, =oc --as-group=developers get pods= |
+| Explain concepts for me                           | =oc explain pod=, =oc explain replicaset=                     |
 ** OC - Admin
-| Name                  | Command                                                                                            |
-|-----------------------+----------------------------------------------------------------------------------------------------|
-| Login to server       | =oc login -u=<username> -p=<password> --server=<your-openshift-server> --insecure-skip-tls-verify= |
-| List route            | =oc get route=                                                                                     |
-| List all object types | =oc types=                                                                                         |
+| Name                                       | Command                              |
+|--------------------------------------------+--------------------------------------|
+| Login/logout                               | =oc login=, =oc logout=, =oc whoami= |
+| List route                                 | =oc get route=                       |
+| List all object types                      | =oc types=                           |
+| Start a local OpenShift all-in-one cluster | =oc cluster up=                      |
 ** OC - Developer
 | Name                                   | Command                                                                                  |
 |----------------------------------------+------------------------------------------------------------------------------------------|
 | Create a project                       | =oc new-project <projectname> --description=<description> --display-name=<display_name>= |
 | Check status of current project        | =oc status= [[https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/cli_reference/cli-reference-basic-cli-operations][Link: OC CLI Operations]]                                                      |
+| Get all resource                       | =oc get all=                                                                             |
+| Switch project                         | =oc project <projectname>=                                                               |
 | Create an application                  | =oc new-app https://github.com/sclorg/cakephp-ex=                                        |
 | Create a new build                     | =oc new-build https://github.com/sclorg/cakephp-ex=                                      |
 | Manually start a build with given conf | =oc start-build <buildconfig_name>=                                                      |
 | Stop a build that is in progress       | =oc cancel-build <build_name>=                                                           |
 | Import an external image               | =oc import-image <image_stream>=                                                         |
 | Tag an image                           | =oc tag <current_image> <image_stream>=                                                  |
+** OpenShift VS PKS
+| Name                                 | OpenShift                   | PKS                     |
+|--------------------------------------+-----------------------------+-------------------------|
+| VM lifecycle management              | Ansible                     | Bosh                    |
+| Deployment experience                | [[https://docs.okd.io/latest/minishift/getting-started/quickstart.html][Minishift]]                   |                         |
+| Developers                           | Projects/Build/Applications | N/A                     |
+| Storage                              | Gluster/Ceph                | VMware vSAN             |
+| Network                              |                             | NSX-T/Flannel           |
+| Multi-cloud/Virtualization           |                             | On-prem Vsphere/GCP/AWS |
+| Bare Metal                           | Yes                         | N/A                     |
+| HA: control plane                    |                             |                         |
+| Efficiency: control plane deployment |                             |                         |
+| Efficiency: Create k8s cluster       |                             |                         |
+| Efficiency: Create k8s workload      |                             |                         |
+** Openshift CLI Online Help
+#+BEGIN_EXAMPLE
+/User/zdenny > oc --help
+OpenShift Client
+
+This client helps you develop, build, deploy, and run your applications on any OpenShift or Kubernetes compatible
+platform. It also includes the administrative commands for managing a cluster under the 'adm' subcommand.
+
+Usage:
+  oc [flags]
+
+Basic Commands:
+  types           An introduction to concepts and types
+  login           Log in to a server
+  new-project     Request a new project
+  new-app         Create a new application
+  status          Show an overview of the current project
+  project         Switch to another project
+  projects        Display existing projects
+  explain         Documentation of resources
+  cluster         Start and stop OpenShift cluster
+
+Build and Deploy Commands:
+  rollout         Manage a Kubernetes deployment or OpenShift deployment config
+  rollback        Revert part of an application back to a previous deployment
+  new-build       Create a new build configuration
+  start-build     Start a new build
+  cancel-build    Cancel running, pending, or new builds
+  import-image    Imports images from a Docker registry
+  tag             Tag existing images into image streams
+
+Application Management Commands:
+  get             Display one or many resources
+  describe        Show details of a specific resource or group of resources
+  edit            Edit a resource on the server
+  set             Commands that help set specific features on objects
+  label           Update the labels on a resource
+  annotate        Update the annotations on a resource
+  expose          Expose a replicated application as a service or route
+  delete          Delete one or more resources
+  scale           Change the number of pods in a deployment
+  autoscale       Autoscale a deployment config, deployment, replication controller, or replica set
+  secrets         Manage secrets
+  serviceaccounts Manage service accounts in your project
+
+Troubleshooting and Debugging Commands:
+  logs            Print the logs for a resource
+  rsh             Start a shell session in a pod
+  rsync           Copy files between local filesystem and a pod
+  port-forward    Forward one or more local ports to a pod
+  debug           Launch a new instance of a pod for debugging
+  exec            Execute a command in a container
+  proxy           Run a proxy to the Kubernetes API server
+  attach          Attach to a running container
+  run             Run a particular image on the cluster
+  cp              Copy files and directories to and from containers.
+  wait            Experimental: Wait for one condition on one or many resources
+
+Advanced Commands:
+  adm             Tools for managing a cluster
+  create          Create a resource from a file or from stdin.
+  replace         Replace a resource by filename or stdin
+  apply           Apply a configuration to a resource by filename or stdin
+  patch           Update field(s) of a resource using strategic merge patch
+  process         Process a template into list of resources
+  export          Export resources so they can be used elsewhere
+  extract         Extract secrets or config maps to disk
+  idle            Idle scalable resources
+  observe         Observe changes to resources and react to them (experimental)
+  policy          Manage authorization policy
+  auth            Inspect authorization
+  convert         Convert config files between different API versions
+  import          Commands that import applications
+  image           Useful commands for managing images
+  registry        Commands for working with the registry
+  api-versions    Print the supported API versions on the server, in the form of "group/version"
+  api-resources   Print the supported API resources on the server
+
+Settings Commands:
+  logout          End the current server session
+  config          Change configuration files for the client
+  whoami          Return information about the current session
+  completion      Output shell completion code for the specified shell (bash or zsh)
+
+Other Commands:
+  ex              Experimental commands under active development
+  help            Help about any command
+  plugin          Runs a command-line plugin
+  version         Display client and server versions
+
+Use "oc <command> --help" for more information about a given command.
+Use "oc options" for a list of global command-line options (applies to all commands).
+#+END_EXAMPLE
 ** More Resources
 https://www.okd.io/
 
 https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/
 
 https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/cli_reference/cli-reference-basic-cli-operations
+
+https://docs.okd.io/latest/minishift/getting-started/quickstart.html
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
@@ -99,13 +246,202 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
-* install openshift                                                :noexport:
-https://docs.okd.io/latest/install/index.html#install-planning
-https://github.com/openshift/installer
-* cluster-logging-operator                                         :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cluster-logging-operator                                    :noexport:
 https://github.com/openshift/cluster-logging-operator
-* TODO [#A] Blog: Personal Review of OpenShift                     :noexport:
-* TODO Eavluate XKE                                                :noexport:
+* TODO Key factors to evaluate Kubernetes Service Solutions        :noexport:
+Runtime and orchestration
+Image management
+Operations management
+Security features
+User experience
+App life-cycle management
+Integrations and APIs
+Vision
+Road map
+Market approach
 ** How fast to boostrap a new cluster
 ** Experience of upgrading an existing cluster
 ** Trouble shooting experience
+* TODO How openshift implement logging feature?                    :noexport:
+* TODO How openshift support multi-cloud?                          :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO openshift network policy                                    :noexport:
+* TODO openshift pod security policy                               :noexport:
+   /Users/zdenny  oc apply -f /Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/kubernetes-yaml-templates/podsecurity/podsecurity-privileged.yaml -n dennytest                                                                                                ✘ 1
+Error from server (Forbidden): error when retrieving current configuration of:
+Resource: "policy/v1beta1, Resource=podsecuritypolicies", GroupVersionKind: "policy/v1beta1, Kind=PodSecurityPolicy"
+Name: "privileged", Namespace: ""
+Object: &{map["spec":map["seLinux":map["rule":"RunAsAny"] "supplementalGroups":map["rule":"RunAsAny"] "volumes":["*"] "allowedCapabilities":["*"] "fsGroup":map["rule":"RunAsAny"] "hostPID":%!q(bool=true) "hostPorts":[map["max":'\U00010000' "min":'\x01']] "privileged":%!q(bool=true) "runAsUser":map["rule":"RunAsAny"] "hostIPC":%!q(bool=true) "hostNetwork":%!q(bool=true)] "apiVersion":"policy/v1beta1" "kind":"PodSecurityPolicy" "metadata":map["name":"privileged" "namespace":"" "annotations":map["kubectl.kubernetes.io/last-applied-configuration":""]]]}
+from server for: "/Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/kubernetes-yaml-templates/podsecurity/podsecurity-privileged.yaml": podsecuritypolicies.policy "privileged" is forbidden: User "system" cannot get podsecuritypolicies.policy at the cluster scope: User "system" cannot get podsecuritypolicies.policy at the cluster scope
+
+* HALF install openshift                                           :noexport:
+https://blog.openshift.com/openshift-developers-set-full-cluster-30-minutes/
+https://www.okd.io/minishift/
+https://github.com/openshift/openshift-ansible
+https://docs.okd.io/latest/install/index.html#install-planning
+https://github.com/openshift/installer
+** vagrant start Fedora
+https://app.vagrantup.com/fedora/boxes/28-cloud-base
+
+#+BEGIN_EXAMPLE
+Vagrant.configure("2") do |config|
+  config.vm.box = "fedora/beta-29-cloud-base"
+  config.vm.box_version = "1.5.0"
+  config.vm.provider "virtualbox" do |v|
+        v.memory = 8192
+        v.cpus = 4
+  end
+end
+#+END_EXAMPLE
+
+vagrant ssh
+
+sudo dnf install -y git python3
+sudo pip3 install ansible==2.6.5
+
+sudo mv /usr/bin/ansible /tmp/
+sudo ln -s /usr/local/bin/ansible /usr/bin/ansible
+ansible --version  # 2.6.5
+
+sudo pip install pyyaml
+
+sudo dnf install -y pyOpenSSL python-cryptography python-lxml
+
+sudo mv /usr/bin/python /tmp
+sudo ln -s /usr/bin/python3.7 /usr/bin/python
+/usr/bin/python --version # 3.7.0
+
+git clone https://github.com/openshift/openshift-ansible
+cd openshift-ansible
+sudo ansible-playbook -i inventory/hosts.localhost playbooks/prerequisites.yml
+sudo ansible-playbook -i inventory/hosts.localhost playbooks/deploy_cluster.yml
+** try minishift
+#+BEGIN_EXAMPLE
+I1025 15:20:01.910856    2369 apply_list.go:68] Installing "sample-templates/mariadb"
+I1025 15:20:01.910924    2369 apply_list.go:68] Installing "sample-templates/dancer quickstart"
+I1025 15:20:14.451384    2369 interface.go:41] Finished installing "sample-templates/sample pipeline" "sample-templates/mysql" "sample-templates/postgresql" "sample-templates/cakephp quickstart" "sample-templates/nodejs quickstart" "sample-templates/rails quickstart" "sample-templates/jenkins pipeline ephemeral" "sample-templates/mongodb" "sample-templates/mariadb" "sample-templates/dancer quickstart" "sample-templates/django quickstart"
+I1025 15:20:54.609287    2369 interface.go:41] Finished installing "openshift-router" "sample-templates" "openshift-web-console-operator" "centos-imagestreams" "openshift-image-registry" "persistent-volumes"
+Login to server ...
+Creating initial project "myproject" ...
+Server Information ...
+OpenShift server started.
+
+The server is accessible via web console at:
+    https://192.168.99.100:8443
+
+You are logged in as:
+    User:     developer
+    Password: <any value>
+
+To login as administrator:
+    oc login -u system:admin
+
+
+-- Exporting of OpenShift images is occuring in background process with pid 39119.
+#+END_EXAMPLE
+* TODO openshift security model                                    :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF [#A] Blog: Play With OpenShift In VirtualBox                :noexport:
+** Concept of OpenShift
+Project
+Build
+Catalog
+** Install minishift
+https://github.com/minishift/minishift
+** Deploy an application to minishift
+** Deploy a pod with oc
+oc scale --replicas=2 replicationcontrollers apache-test-1
+oc scale --replicas=2 replicationcontrollers foo
+oc get pods
+
+#+BEGIN_EXAMPLE
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dummy-deployment
+  namespace: dennytest
+spec:
+  selector:
+    matchLabels:
+      app: dummy
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: dummy
+    spec:
+      containers:
+      - name: dummy
+        image: ubuntu
+        # image: busybox
+        args: [/bin/sh, -c,
+            'i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1; done']
+#+END_EXAMPLE
+
+oc get pods
+
+oc scale --replicas=3 deployment dummy-deployment
+
+#+BEGIN_EXAMPLE
+   /Users/zdenny  oc get pod                                                                                                                                                                                                                                         ✔ 0
+NAME                                READY     STATUS      RESTARTS   AGE
+apache-test-1-build                 0/1       Completed   0          12m
+apache-test-1-mxd6d                 1/1       Running     0          12m
+django-psql-persistent-1-build      0/1       Completed   0          38m
+django-psql-persistent-1-fmjr5      1/1       Running     0          37m
+dummy-deployment-6d6759c786-5kwth   1/1       Running     0          41s
+dummy-deployment-6d6759c786-l4dvs   1/1       Running     0          41s
+dummy-deployment-6d6759c786-t8rcc   1/1       Running     0          6s
+postgresql-1-hh4z9                  1/1       Running     0          38m
+#+END_EXAMPLE
+** DONE Openshift Cheatsheet
+   CLOSED: [2018-10-25 Thu 14:59]
+* TODO [#A] openshift Create a cluster                             :noexport:
+* TODO openshift jenkins pipeline                                  :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF How openshift implement log level?                          :noexport:
+https://blog.openshift.com/oc-command-newbies/
+
+oc --loglevel 7 get pod
+
+#+BEGIN_EXAMPLE
+   /Users/zdenny  oc get pod/dummy-deployment-6d6759c786-5kwth --loglevel 9                                                                                                                                                                                            ✔ 0
+I1025 17:24:53.802485   75530 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
+I1025 17:24:53.803850   75530 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
+I1025 17:24:53.809924   75530 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
+I1025 17:24:53.810300   75530 round_trippers.go:386] curl -k -v -XGET  -H "User-Agent: oc/v1.11.0+d4cacc0 (darwin/amd64) kubernetes/d4cacc0" -H "Authorization: Bearer c3JOk8h0sa6ANos7YtStPXCVdkqjWeJjxSpPiVo2Hbs" -H "Accept: application/json;as=Table;v=v1beta1;g=meta.k8s.io, application/json" 'https://192.168.99.100:8443/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth'
+I1025 17:24:53.824657   75530 round_trippers.go:405] GET https://192.168.99.100:8443/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth 200 OK in 14 milliseconds
+I1025 17:24:53.824699   75530 round_trippers.go:411] Response Headers:
+I1025 17:24:53.824705   75530 round_trippers.go:414]     Content-Length: 2744
+I1025 17:24:53.824709   75530 round_trippers.go:414]     Date: Thu, 25 Oct 2018 23:25:05 GMT
+I1025 17:24:53.824713   75530 round_trippers.go:414]     Cache-Control: no-store
+I1025 17:24:53.824717   75530 round_trippers.go:414]     Content-Type: application/json
+I1025 17:24:53.824757   75530 request.go:897] Response Body: {"kind":"Table","apiVersion":"meta.k8s.io/v1beta1","metadata":{"selfLink":"/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth","resourceVersion":"13026"},"columnDefinitions":[{"name":"Name","type":"string","format":"name","description":"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names","priority":0},{"name":"Ready","type":"string","format":"","description":"The aggregate readiness state of this pod for accepting traffic.","priority":0},{"name":"Status","type":"string","format":"","description":"The aggregate status of the containers in this pod.","priority":0},{"name":"Restarts","type":"integer","format":"","description":"The number of times the containers in this pod have been restarted.","priority":0},{"name":"Age","type":"string","format":"","description":"CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.\n\nPopulated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata","priority":0},{"name":"IP","type":"string","format":"","description":"IP address allocated to the pod. Routable at least within the cluster. Empty if not yet allocated.","priority":1},{"name":"Node","type":"string","format":"","description":"NodeName is a request to schedule this pod onto a specific node. If it is non-empty, the scheduler simply schedules this pod onto that node, assuming that it fits resource requirements.","priority":1}],"rows":[{"cells":["dummy-deployment-6d6759c786-5kwth","1/1","Running",1,"2h","172.17.0.4","localhost"],"object":{"kind":"PartialObjectMetadata","apiVersion":"meta.k8s.io/v1beta1","metadata":{"name":"dummy-deployment-6d6759c786-5kwth","generateName":"dummy-deployment-6d6759c786-","namespace":"dennytest","selfLink":"/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth","uid":"39647df1-d896-11e8-985d-08002742933b","resourceVersion":"13026","creationTimestamp":"2018-10-25T20:40:35Z","labels":{"app":"dummy","pod-template-hash":"2823157342"},"annotations":{"openshift.io/scc":"restricted"},"ownerReferences":[{"apiVersion":"extensions/v1beta1","kind":"ReplicaSet","name":"dummy-deployment-6d6759c786","uid":"3960e211-d896-11e8-985d-08002742933b","controller":true,"blockOwnerDeletion":true}]}}}]}
+I1025 17:24:53.825474   75530 get.go:443] no kind is registered for the type v1beta1.Table in scheme "k8s.io/kubernetes/pkg/api/legacyscheme/scheme.go:29"
+NAME                                READY     STATUS    RESTARTS   AGE
+dummy-deployment-6d6759c786-5kwth   1/1       Running   1          2h
+
+   /Users/zdenny  oc get pod/dummy-deployment-6d6759c786-5kwth --loglevel 8                                                                                                                                                                                            ✔ 0
+I1025 17:24:58.244101   75586 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
+I1025 17:24:58.245499   75586 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
+I1025 17:24:58.254310   75586 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
+I1025 17:24:58.254922   75586 round_trippers.go:383] GET https://192.168.99.100:8443/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth
+I1025 17:24:58.254936   75586 round_trippers.go:390] Request Headers:
+I1025 17:24:58.254941   75586 round_trippers.go:393]     Accept: application/json;as=Table;v=v1beta1;g=meta.k8s.io, application/json
+I1025 17:24:58.254946   75586 round_trippers.go:393]     User-Agent: oc/v1.11.0+d4cacc0 (darwin/amd64) kubernetes/d4cacc0
+I1025 17:24:58.254950   75586 round_trippers.go:393]     Authorization: Bearer c3JOk8h0sa6ANos7YtStPXCVdkqjWeJjxSpPiVo2Hbs
+I1025 17:24:58.262821   75586 round_trippers.go:408] Response Status: 200 OK in 7 milliseconds
+I1025 17:24:58.262847   75586 round_trippers.go:411] Response Headers:
+I1025 17:24:58.262855   75586 round_trippers.go:414]     Cache-Control: no-store
+I1025 17:24:58.262861   75586 round_trippers.go:414]     Content-Type: application/json
+I1025 17:24:58.262867   75586 round_trippers.go:414]     Content-Length: 2744
+I1025 17:24:58.262873   75586 round_trippers.go:414]     Date: Thu, 25 Oct 2018 23:25:09 GMT
+I1025 17:24:58.262939   75586 request.go:897] Response Body: {"kind":"Table","apiVersion":"meta.k8s.io/v1beta1","metadata":{"selfLink":"/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth","resourceVersion":"13026"},"columnDefinitions":[{"name":"Name","type":"string","format":"name","description":"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names","priority":0},{"name":"Ready","type":"string","format":"","description":"The aggregate readiness state of this pod for accepting traffic.","priority":0},{"name":"Status","type":"string","format":"","description":"The aggregate status of the containers in this pod.","priority":0},{"name":"Restarts","type":"integer","format":"","description":"The number of times the containers in this pod have been restarted.","prior [truncated 1720 chars]
+I1025 17:24:58.263517   75586 get.go:443] no kind is registered for the type v1beta1.Table in scheme "k8s.io/kubernetes/pkg/api/legacyscheme/scheme.go:29"
+NAME                                READY     STATUS    RESTARTS   AGE
+dummy-deployment-6d6759c786-5kwth   1/1       Running   1          2h
+#+END_EXAMPLE
+* TODO openshift list all CRD                                      :noexport:
+* TODO openshift multi-cloud                                       :noexport:
+* TODO how minishift implement catalog? I don't seem to see helm/tiler :noexport:
