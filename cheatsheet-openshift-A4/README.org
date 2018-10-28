@@ -23,11 +23,22 @@
 File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-openshift-A4][this repo]].
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+** OC - Highlights
+| Name                                              | Command                                                               |
+|---------------------------------------------------+-----------------------------------------------------------------------|
+| Get api requests verbose output with kubectl call | =oc --loglevel 999 get pod/dummy-deployment-6d6759c786-5kwth=         |
+| Start a pod and get a shell for debug             | =oc debug dc/jorge=                                                   |
+| Impersonate for oc command                        | =oc --as=jorge get pods=, =oc --as-group=developers get pods=         |
+| Use oc to do admin operations                     | =oc adm <sub-command>=                                                |
+| Try experimental commands of oc                   | =oc ex <sub-command>=                                                 |
+| Explain OpenShift/Kubernetes concepts to me       | =oc explain pod=, =oc explain replicaset=                             |
+| Enable oc shell autocompletion                    | =echo "source <(oc completion zsh)" >>~/.zshrc=, then reload terminal |
+| Reference                                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]]                              |
 ** OpenShift Glossary
 | Name                     | Command                                                                                    |
 |--------------------------+--------------------------------------------------------------------------------------------|
 | [[https://www.okd.io/#v3][OKD]]                      | The Origin Community Distribution of Kubernetes that powers Red Hat OpenShift.             |
-| [[https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/cli_reference/cli-reference-basic-cli-operations][oc command line]]          | Openshift command line: =oc <action> <object_type> <object_name_or_id>=                    |
+| [[https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/cli_reference/cli-reference-basic-cli-operations][oc command line]]          | OpenShift command line: =oc <action> <object_type> <object_name_or_id>=                    |
 | Project                  | Namespace in Kubernetes. Resources are aggregated by projects. =oc get project=            |
 | Build                    | Builds create a new image from source code, other images, Dockerfiles, etc. =oc get build= |
 | Build Configuration      | How to build source code and a base image into a new image. =oc get bc=                    |
@@ -40,54 +51,23 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Template Instance        | =oc get templateinstance=                                                                  |
 | Explain                  | Online manual =oc explain pod=                                                             |
 | Red Hat Registry         | By default, all images are pulled from registry.redhat.io.                                 |
-| Reference                | [[https://docs.okd.io/latest/minishift/index.html][Link: Minishift]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                                                            |
+| OpenShift online         | https://cloud.openshift.com                                                                |
+| Reference                | [[https://cheatsheet.dennyzhang.com/cheatsheet-minishift-A4][Minishift CheatSheet]] [[https://docs.okd.io/latest/minishift/index.html][Link: Minishift]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                                       |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture_overview.png]]
-** Minishift
-| Name                        | Command                                                                          |
-|-----------------------------+----------------------------------------------------------------------------------|
-| [[https://docs.okd.io/latest/minishift/getting-started/installing.html][Install/upgrade minishift]]   | =brew cask install minishift=, =brew cask install --force minishift=             |
-| Try OpenShift in virtualbox | =minishift start --vm-driver=virtualbox=                                         |
-| Stop/delete minishift env   | =minishift stop=, =minishift delete=                                             |
-| ssh minishift               | =minishift ssh=                                                                  |
-| Check status                | =minishift status=, =oc config view=, =minishift oc-env=, =minishift docker-env= |
-| Control dashboard           | https://192.168.99.100:8443, system/admin                                        |
-** Minishift Footprint
-| Process                              | Command                                                                                         |
-|--------------------------------------+-------------------------------------------------------------------------------------------------|
-| etcd                                 | =openshift start etcd --config=/etc/origin/master/master-config.yaml=                           |
-| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] openshift-kube-apiserver   | =hypershift openshift-kube-apiserver --config=/etc/origin/master/master-config.yaml=            |
-| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] openshift-apiserver        | =hypershift openshift-apiserver --config=/etc/origin/master/master-config.yaml -v=0=            |
-| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] kubelet                    |                                                                                                 |
-| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] kubelet-scheduler          |                                                                                                 |
-| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] kubelet-controller-manager |                                                                                                 |
-| network proxy                        | =openshift start network --enable=proxy --config=/etc/origin/node/node-config.yaml ...=         |
-| network dns                          | =openshift start network --enable=dns --config=/etc/origin/node/node-config.yaml=               |
-| origin-web-console                   | =/usr/bin/origin-web-console --audit-log-path... --config=/.../webconsole-config.yaml=          |
-| openshift-webconsole-operator        | =hypershift experimental openshift-webconsole-operator --config=/.../operator-config.yaml -v=0= |
-| dockerregistry                       | =/usr/bin/dockerregistry /config.yml=                                                           |
-| openshift-router                     |                                                                                                 |
-| dockerd                              |                                                                                                 |
-| haproxy                              |                                                                                                 |
-** OC - Highlights
-| Name                                              | Command                                                       |
-|---------------------------------------------------+---------------------------------------------------------------|
-| Get api requests verbose output with kubectl call | =oc --loglevel 999 get pod/dummy-deployment-6d6759c786-5kwth= |
-| Start a pod and get a shell for debug             | =oc debug dc/jorge=                                           |
-| Impersonate for oc command                        | =oc --as=jorge get pods=, =oc --as-group=developers get pods= |
-| Explain concepts for me                           | =oc explain pod=, =oc explain replicaset=                     |
 ** OC - Admin
 | Name                                       | Command                              |
 |--------------------------------------------+--------------------------------------|
 | Login/logout                               | =oc login=, =oc logout=, =oc whoami= |
 | List route                                 | =oc get route=                       |
-| List all object types                      | =oc types=                           |
+| List all object types                      | =oc types=, =oc api-resources=       |
 | Start a local OpenShift all-in-one cluster | =oc cluster up=                      |
 ** OC - Developer
 | Name                                   | Command                                                                                  |
 |----------------------------------------+------------------------------------------------------------------------------------------|
 | Create a project                       | =oc new-project <projectname> --description=<description> --display-name=<display_name>= |
 | Check status of current project        | =oc status= [[https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/cli_reference/cli-reference-basic-cli-operations][Link: OC CLI Operations]]                                                      |
+| Show oc cli profile                    | =oc config view= [[https://docs.openshift.com/enterprise/3.0/cli_reference/manage_cli_profiles.html][Link: Managing CLI Profiles]]                                             |
 | Get all resource                       | =oc get all=                                                                             |
 | Switch project                         | =oc project <projectname>=                                                               |
 | Create an application                  | =oc new-app https://github.com/sclorg/cakephp-ex=                                        |
@@ -96,7 +76,109 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Stop a build that is in progress       | =oc cancel-build <build_name>=                                                           |
 | Import an external image               | =oc import-image <image_stream>=                                                         |
 | Tag an image                           | =oc tag <current_image> <image_stream>=                                                  |
-** OpenShift VS PKS
+** All openshift resources: oc api-resources
+| NAME                                | SHORTNAMES   | APIGROUP                         | NAMESPACED  | KIND                               |
+|-------------------------------------+--------------+----------------------------------+-------------+------------------------------------|
+| bindings                            |              |                                  | true        | Binding                            |
+| componentstatuses                   | cs           |                                  | false       | ComponentStatus                    |
+| configmaps                          | cm           |                                  | true        | ConfigMap                          |
+| endpoints                           | ep           |                                  | true        | Endpoints                          |
+| events                              | ev           |                                  | true        | Event                              |
+| limitranges                         | limits       |                                  | true        | LimitRange                         |
+| namespaces                          | ns           |                                  | false       | Namespace                          |
+| nodes                               | no           |                                  | false       | Node                               |
+| persistentvolumeclaims              | pvc          |                                  | true        | PersistentVolumeClaim              |
+| persistentvolumes                   | pv           |                                  | false       | PersistentVolume                   |
+| pods                                | po           |                                  | true        | Pod                                |
+| podtemplates                        | true         |                                  | PodTemplate |                                    |
+| replicationcontrollers              | rc           |                                  | true        | ReplicationController              |
+| resourcequotas                      | quota        |                                  | true        | ResourceQuota                      |
+| secrets                             | true         |                                  | Secret      |                                    |
+| serviceaccounts                     | sa           |                                  | true        | ServiceAccount                     |
+| services                            | svc          |                                  | true        | Service                            |
+| mutatingwebhookconfigurations       |              | admissionregistration.k8s.io     | false       | MutatingWebhookConfiguration       |
+| validatingwebhookconfigurations     |              | admissionregistration.k8s.io     | false       | ValidatingWebhookConfiguration     |
+| customresourcedefinitions           | crd,crds     | apiextensions.k8s.io             | false       | CustomResourceDefinition           |
+| apiservices                         |              | apiregistration.k8s.io           | false       | APIService                         |
+| controllerrevisions                 |              | apps                             | true        | ControllerRevision                 |
+| daemonsets                          | ds           | apps                             | true        | DaemonSet                          |
+| deployments                         | deploy       | apps                             | true        | Deployment                         |
+| replicasets                         | rs           | apps                             | true        | ReplicaSet                         |
+| statefulsets                        | sts          | apps                             | true        | StatefulSet                        |
+| deploymentconfigs                   | dc           | apps.openshift.io                | true        | DeploymentConfig                   |
+| tokenreviews                        |              | authentication.k8s.io            | false       | TokenReview                        |
+| localsubjectaccessreviews           |              | authorization.k8s.io             | true        | LocalSubjectAccessReview           |
+| selfsubjectaccessreviews            |              | authorization.k8s.io             | false       | SelfSubjectAccessReview            |
+| selfsubjectrulesreviews             |              | authorization.k8s.io             | false       | SelfSubjectRulesReview             |
+| subjectaccessreviews                |              | authorization.k8s.io             | false       | SubjectAccessReview                |
+| clusterrolebindings                 |              | authorization.openshift.io       | false       | ClusterRoleBinding                 |
+| clusterroles                        |              | authorization.openshift.io       | false       | ClusterRole                        |
+| localresourceaccessreviews          |              | authorization.openshift.io       | true        | LocalResourceAccessReview          |
+| localsubjectaccessreviews           |              | authorization.openshift.io       | true        | LocalSubjectAccessReview           |
+| resourceaccessreviews               |              | authorization.openshift.io       | false       | ResourceAccessReview               |
+| rolebindingrestrictions             |              | authorization.openshift.io       | true        | RoleBindingRestriction             |
+| rolebindings                        |              | authorization.openshift.io       | true        | RoleBinding                        |
+| roles                               |              | authorization.openshift.io       | true        | Role                               |
+| selfsubjectrulesreviews             |              | authorization.openshift.io       | true        | SelfSubjectRulesReview             |
+| subjectaccessreviews                |              | authorization.openshift.io       | false       | SubjectAccessReview                |
+| subjectrulesreviews                 |              | authorization.openshift.io       | true        | SubjectRulesReview                 |
+| horizontalpodautoscalers            | hpa          | autoscaling                      | true        | HorizontalPodAutoscaler            |
+| cronjobs                            | cj           | batch                            | true        | CronJob                            |
+| jobs                                | batch        | true                             | Job         |                                    |
+| buildconfigs                        | bc           | build.openshift.io               | true        | BuildConfig                        |
+| builds                              |              | build.openshift.io               | true        | Build                              |
+| certificatesigningrequests          | csr          | certificates.k8s.io              | false       | CertificateSigningRequest          |
+| events                              | ev           | events.k8s.io                    | true        | Event                              |
+| daemonsets                          | ds           | extensions                       | true        | DaemonSet                          |
+| deployments                         | deploy       | extensions                       | true        | Deployment                         |
+| ingresses                           | ing          | extensions                       | true        | Ingress                            |
+| networkpolicies                     | netpol       | extensions                       | true        | NetworkPolicy                      |
+| podsecuritypolicies                 | psp          | extensions                       | false       | PodSecurityPolicy                  |
+| replicasets                         | rs           | extensions                       | true        | ReplicaSet                         |
+| images                              |              | image.openshift.io               | false       | Image                              |
+| imagesignatures                     |              | image.openshift.io               | false       | ImageSignature                     |
+| imagestreamimages                   | isimage      | image.openshift.io               | true        | ImageStreamImage                   |
+| imagestreamimports                  |              | image.openshift.io               | true        | ImageStreamImport                  |
+| imagestreammappings                 |              | image.openshift.io               | true        | ImageStreamMapping                 |
+| imagestreams                        | is           | image.openshift.io               | true        | ImageStream                        |
+| imagestreamtags                     | istag        | image.openshift.io               | true        | ImageStreamTag                     |
+| clusternetworks                     |              | network.openshift.io             | false       | ClusterNetwork                     |
+| egressnetworkpolicies               |              | network.openshift.io             | true        | EgressNetworkPolicy                |
+| hostsubnets                         |              | network.openshift.io             | false       | HostSubnet                         |
+| netnamespaces                       |              | network.openshift.io             | false       | NetNamespace                       |
+| networkpolicies                     | netpol       | networking.k8s.io                | true        | NetworkPolicy                      |
+| oauthaccesstokens                   |              | oauth.openshift.io               | false       | OAuthAccessToken                   |
+| oauthauthorizetokens                |              | oauth.openshift.io               | false       | OAuthAuthorizeToken                |
+| oauthclientauthorizations           |              | oauth.openshift.io               | false       | OAuthClientAuthorization           |
+| oauthclients                        |              | oauth.openshift.io               | false       | OAuthClient                        |
+| poddisruptionbudgets                | pdb          | policy                           | true        | PodDisruptionBudget                |
+| podsecuritypolicies                 | psp          | policy                           | false       | PodSecurityPolicy                  |
+| projectrequests                     |              | project.openshift.io             | false       | ProjectRequest                     |
+| projects                            |              | project.openshift.io             | false       | Project                            |
+| appliedclusterresourcequotas        |              | quota.openshift.io               | true        | AppliedClusterResourceQuota        |
+| clusterresourcequotas               | clusterquota | quota.openshift.io               | false       | ClusterResourceQuota               |
+| clusterrolebindings                 |              | rbac.authorization.k8s.io        | false       | ClusterRoleBinding                 |
+| clusterroles                        |              | rbac.authorization.k8s.io        | false       | ClusterRole                        |
+| rolebindings                        |              | rbac.authorization.k8s.io        | true        | RoleBinding                        |
+| roles                               |              | rbac.authorization.k8s.io        | true        | Role                               |
+| routes                              |              | route.openshift.io               | true        | Route                              |
+| podsecuritypolicyreviews            |              | security.openshift.io            | true        | PodSecurityPolicyReview            |
+| podsecuritypolicyselfsubjectreviews |              | security.openshift.io            | true        | PodSecurityPolicySelfSubjectReview |
+| podsecuritypolicysubjectreviews     |              | security.openshift.io            | true        | PodSecurityPolicySubjectReview     |
+| rangeallocations                    |              | security.openshift.io            | false       | RangeAllocation                    |
+| securitycontextconstraints          | scc          | security.openshift.io            | false       | SecurityContextConstraints         |
+| storageclasses                      | sc           | storage.k8s.io                   | false       | StorageClass                       |
+| volumeattachments                   |              | storage.k8s.io                   | false       | VolumeAttachment                   |
+| brokertemplateinstances             |              | template.openshift.io            | false       | BrokerTemplateInstance             |
+| processedtemplates                  |              | template.openshift.io            | true        | Template                           |
+| templateinstances                   |              | template.openshift.io            | true        | TemplateInstance                   |
+| templates                           |              | template.openshift.io            | true        | Template                           |
+| groups                              |              | user.openshift.io                | false       | Group                              |
+| identities                          |              | user.openshift.io                | false       | Identity                           |
+| useridentitymappings                |              | user.openshift.io                | false       | UserIdentityMapping                |
+| users                               |              | user.openshift.io                | false       | User                               |
+| openshiftwebconsoleconfigs          |              | webconsole.operator.openshift.io | false       | OpenShiftWebConsoleConfig          |
+** OpenShift VS PKS                                                :noexport:
 | Name                                 | OpenShift                   | PKS                     |
 |--------------------------------------+-----------------------------+-------------------------|
 | VM lifecycle management              | Ansible                     | Bosh                    |
@@ -110,7 +192,18 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Efficiency: control plane deployment |                             |                         |
 | Efficiency: Create k8s cluster       |                             |                         |
 | Efficiency: Create k8s workload      |                             |                         |
-** Openshift CLI Online Help
+** OpenShift Source Code
+| Name                         | Command                             |
+|------------------------------+-------------------------------------|
+| Openshift Ansible Deployment | [[https://github.com/openshift/openshift-ansible/tree/master/playbooks][GitHub: openshift-ansible/playbooks]] |
+** OpenShift Opportunty
+| Name                                             | Command |
+|--------------------------------------------------+---------|
+| Doesn't support multiple clusters                |         |
+| OC command line could be a strengh or a weakness |         |
+| Lack of SDN solution                             |         |
+| Time-consuming for administrators' operations    |         |
+** OpenShift CLI Help All
 #+BEGIN_EXAMPLE
 /User/zdenny > oc --help
 OpenShift Client
@@ -203,6 +296,62 @@ Other Commands:
 Use "oc <command> --help" for more information about a given command.
 Use "oc options" for a list of global command-line options (applies to all commands).
 #+END_EXAMPLE
+** OpenShift CLI Help Admin
+#+BEGIN_EXAMPLE
+/User/zdenny > oc adm
+Administrative Commands
+
+Commands for managing a cluster are exposed here. Many administrative actions involve interaction with the command-line
+client as well.
+
+Usage:
+  oc adm [flags]
+
+Component Installation:
+  router                             Install a router
+  ipfailover                         Install an IP failover group to a set of nodes
+  registry                           Install the integrated Docker registry
+
+Security and Policy:
+  new-project                        Create a new project
+  policy                             Manage policy
+  groups                             Manage groups
+  ca                                 Manage certificates and keys
+  certificate                        Modify certificate resources.
+
+Node Management:
+  create-node-config                 Create a configuration bundle for a node
+  manage-node                        Manage nodes - list pods, evacuate, or mark ready
+  cordon                             Mark node as unschedulable
+  uncordon                           Mark node as schedulable
+  drain                              Drain node in preparation for maintenance
+  taint                              Update the taints on one or more nodes
+  pod-network                        Manage pod network
+
+Maintenance:
+  diagnostics                        Diagnose common cluster problems
+  prune                              Remove older versions of resources from the server
+  build-chain                        Output the inputs and dependencies of your builds
+  migrate                            Migrate data in the cluster
+  top                                Show usage statistics of resources on the server
+  verify-image-signature             Verify the image identity contained in the image signature
+
+Configuration:
+  create-kubeconfig                  Create a basic .kubeconfig file from client certs
+  create-api-client-config           Create a config file for connecting to the server as a user
+  create-bootstrap-project-template  Create a bootstrap project template
+  create-bootstrap-policy-file       Create the default bootstrap policy
+  create-login-template              Create a login template
+  create-provider-selection-template Create a provider selection template
+  create-error-template              Create an error page template
+
+Other Commands:
+  completion                         Output shell completion code for the specified shell (bash or zsh)
+  config                             Change configuration files for the client
+
+Use "oc adm <command> --help" for more information about a given command.
+Use "oc adm options" for a list of global command-line options (applies to all commands).
+#+END_EXAMPLE
 ** More Resources
 https://www.okd.io/
 
@@ -275,6 +424,57 @@ Name: "privileged", Namespace: ""
 Object: &{map["spec":map["seLinux":map["rule":"RunAsAny"] "supplementalGroups":map["rule":"RunAsAny"] "volumes":["*"] "allowedCapabilities":["*"] "fsGroup":map["rule":"RunAsAny"] "hostPID":%!q(bool=true) "hostPorts":[map["max":'\U00010000' "min":'\x01']] "privileged":%!q(bool=true) "runAsUser":map["rule":"RunAsAny"] "hostIPC":%!q(bool=true) "hostNetwork":%!q(bool=true)] "apiVersion":"policy/v1beta1" "kind":"PodSecurityPolicy" "metadata":map["name":"privileged" "namespace":"" "annotations":map["kubectl.kubernetes.io/last-applied-configuration":""]]]}
 from server for: "/Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/kubernetes-yaml-templates/podsecurity/podsecurity-privileged.yaml": podsecuritypolicies.policy "privileged" is forbidden: User "system" cannot get podsecuritypolicies.policy at the cluster scope: User "system" cannot get podsecuritypolicies.policy at the cluster scope
 
+* TODO openshift security model                                    :noexport:
+* TODO [#A] openshift Create a cluster                             :noexport:
+* TODO openshift jenkins pipeline                                  :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF How openshift implement log level?                          :noexport:
+https://blog.openshift.com/oc-command-newbies/
+
+oc --loglevel 7 get pod
+
+#+BEGIN_EXAMPLE
+   /Users/zdenny  oc get pod/dummy-deployment-6d6759c786-5kwth --loglevel 9                                                                                                                                                                                            ✔ 0
+I1025 17:24:53.802485   75530 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
+I1025 17:24:53.803850   75530 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
+I1025 17:24:53.809924   75530 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
+I1025 17:24:53.810300   75530 round_trippers.go:386] curl -k -v -XGET  -H "User-Agent: oc/v1.11.0+d4cacc0 (darwin/amd64) kubernetes/d4cacc0" -H "Authorization: Bearer c3JOk8h0sa6ANos7YtStPXCVdkqjWeJjxSpPiVo2Hbs" -H "Accept: application/json;as=Table;v=v1beta1;g=meta.k8s.io, application/json" 'https://192.168.99.100:8443/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth'
+I1025 17:24:53.824657   75530 round_trippers.go:405] GET https://192.168.99.100:8443/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth 200 OK in 14 milliseconds
+I1025 17:24:53.824699   75530 round_trippers.go:411] Response Headers:
+I1025 17:24:53.824705   75530 round_trippers.go:414]     Content-Length: 2744
+I1025 17:24:53.824709   75530 round_trippers.go:414]     Date: Thu, 25 Oct 2018 23:25:05 GMT
+I1025 17:24:53.824713   75530 round_trippers.go:414]     Cache-Control: no-store
+I1025 17:24:53.824717   75530 round_trippers.go:414]     Content-Type: application/json
+I1025 17:24:53.824757   75530 request.go:897] Response Body: {"kind":"Table","apiVersion":"meta.k8s.io/v1beta1","metadata":{"selfLink":"/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth","resourceVersion":"13026"},"columnDefinitions":[{"name":"Name","type":"string","format":"name","description":"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names","priority":0},{"name":"Ready","type":"string","format":"","description":"The aggregate readiness state of this pod for accepting traffic.","priority":0},{"name":"Status","type":"string","format":"","description":"The aggregate status of the containers in this pod.","priority":0},{"name":"Restarts","type":"integer","format":"","description":"The number of times the containers in this pod have been restarted.","priority":0},{"name":"Age","type":"string","format":"","description":"CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.\n\nPopulated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata","priority":0},{"name":"IP","type":"string","format":"","description":"IP address allocated to the pod. Routable at least within the cluster. Empty if not yet allocated.","priority":1},{"name":"Node","type":"string","format":"","description":"NodeName is a request to schedule this pod onto a specific node. If it is non-empty, the scheduler simply schedules this pod onto that node, assuming that it fits resource requirements.","priority":1}],"rows":[{"cells":["dummy-deployment-6d6759c786-5kwth","1/1","Running",1,"2h","172.17.0.4","localhost"],"object":{"kind":"PartialObjectMetadata","apiVersion":"meta.k8s.io/v1beta1","metadata":{"name":"dummy-deployment-6d6759c786-5kwth","generateName":"dummy-deployment-6d6759c786-","namespace":"dennytest","selfLink":"/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth","uid":"39647df1-d896-11e8-985d-08002742933b","resourceVersion":"13026","creationTimestamp":"2018-10-25T20:40:35Z","labels":{"app":"dummy","pod-template-hash":"2823157342"},"annotations":{"openshift.io/scc":"restricted"},"ownerReferences":[{"apiVersion":"extensions/v1beta1","kind":"ReplicaSet","name":"dummy-deployment-6d6759c786","uid":"3960e211-d896-11e8-985d-08002742933b","controller":true,"blockOwnerDeletion":true}]}}}]}
+I1025 17:24:53.825474   75530 get.go:443] no kind is registered for the type v1beta1.Table in scheme "k8s.io/kubernetes/pkg/api/legacyscheme/scheme.go:29"
+NAME                                READY     STATUS    RESTARTS   AGE
+dummy-deployment-6d6759c786-5kwth   1/1       Running   1          2h
+
+   /Users/zdenny  oc get pod/dummy-deployment-6d6759c786-5kwth --loglevel 8                                                                                                                                                                                            ✔ 0
+I1025 17:24:58.244101   75586 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
+I1025 17:24:58.245499   75586 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
+I1025 17:24:58.254310   75586 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
+I1025 17:24:58.254922   75586 round_trippers.go:383] GET https://192.168.99.100:8443/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth
+I1025 17:24:58.254936   75586 round_trippers.go:390] Request Headers:
+I1025 17:24:58.254941   75586 round_trippers.go:393]     Accept: application/json;as=Table;v=v1beta1;g=meta.k8s.io, application/json
+I1025 17:24:58.254946   75586 round_trippers.go:393]     User-Agent: oc/v1.11.0+d4cacc0 (darwin/amd64) kubernetes/d4cacc0
+I1025 17:24:58.254950   75586 round_trippers.go:393]     Authorization: Bearer c3JOk8h0sa6ANos7YtStPXCVdkqjWeJjxSpPiVo2Hbs
+I1025 17:24:58.262821   75586 round_trippers.go:408] Response Status: 200 OK in 7 milliseconds
+I1025 17:24:58.262847   75586 round_trippers.go:411] Response Headers:
+I1025 17:24:58.262855   75586 round_trippers.go:414]     Cache-Control: no-store
+I1025 17:24:58.262861   75586 round_trippers.go:414]     Content-Type: application/json
+I1025 17:24:58.262867   75586 round_trippers.go:414]     Content-Length: 2744
+I1025 17:24:58.262873   75586 round_trippers.go:414]     Date: Thu, 25 Oct 2018 23:25:09 GMT
+I1025 17:24:58.262939   75586 request.go:897] Response Body: {"kind":"Table","apiVersion":"meta.k8s.io/v1beta1","metadata":{"selfLink":"/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth","resourceVersion":"13026"},"columnDefinitions":[{"name":"Name","type":"string","format":"name","description":"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names","priority":0},{"name":"Ready","type":"string","format":"","description":"The aggregate readiness state of this pod for accepting traffic.","priority":0},{"name":"Status","type":"string","format":"","description":"The aggregate status of the containers in this pod.","priority":0},{"name":"Restarts","type":"integer","format":"","description":"The number of times the containers in this pod have been restarted.","prior [truncated 1720 chars]
+I1025 17:24:58.263517   75586 get.go:443] no kind is registered for the type v1beta1.Table in scheme "k8s.io/kubernetes/pkg/api/legacyscheme/scheme.go:29"
+NAME                                READY     STATUS    RESTARTS   AGE
+dummy-deployment-6d6759c786-5kwth   1/1       Running   1          2h
+#+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO openshift list all CRD                                      :noexport:
+* TODO openshift multi-cloud                                       :noexport:
+* TODO how minishift implement catalog? I don't seem to see helm/tiler :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * HALF install openshift                                           :noexport:
 https://blog.openshift.com/openshift-developers-set-full-cluster-30-minutes/
 https://www.okd.io/minishift/
@@ -340,9 +540,64 @@ To login as administrator:
 
 -- Exporting of OpenShift images is occuring in background process with pid 39119.
 #+END_EXAMPLE
-* TODO openshift security model                                    :noexport:
+* TODO why openshift only show one CRD                             :noexport:
+#+BEGIN_EXAMPLE
+   /Users/zdenny  oc get crd --all-namespaces                                                                                                                       ✔ 0
+NAME                                                          CREATED AT
+openshiftwebconsoleconfigs.webconsole.operator.openshift.io   2018-10-25T19:20:13Z
+
+   /Users/zdenny  oc describe crd                                                                                                                                   ✔ 0
+Name:         openshiftwebconsoleconfigs.webconsole.operator.openshift.io
+Namespace:
+Labels:       <none>
+Annotations:  kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{},"name":"openshiftwebconsoleconfigs.webconso...
+API Version:  apiextensions.k8s.io/v1beta1
+Kind:         CustomResourceDefinition
+Metadata:
+  Creation Timestamp:  2018-10-25T19:20:13Z
+  Generation:          1
+  Resource Version:    700
+  Self Link:           /apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/openshiftwebconsoleconfigs.webconsole.operator.openshift.io
+  UID:                 ff55f129-d88a-11e8-985d-08002742933b
+Spec:
+  Group:  webconsole.operator.openshift.io
+  Names:
+    Kind:       OpenShiftWebConsoleConfig
+    List Kind:  OpenShiftWebConsoleConfigList
+    Plural:     openshiftwebconsoleconfigs
+    Singular:   openshiftwebconsoleconfig
+  Scope:        Cluster
+  Subresources:
+    Status:
+  Version:  v1alpha1
+Status:
+  Accepted Names:
+    Kind:       OpenShiftWebConsoleConfig
+    List Kind:  OpenShiftWebConsoleConfigList
+    Plural:     openshiftwebconsoleconfigs
+    Singular:   openshiftwebconsoleconfig
+  Conditions:
+    Last Transition Time:  2018-10-25T19:20:13Z
+    Message:               no conflicts found
+    Reason:                NoConflicts
+    Status:                True
+    Type:                  NamesAccepted
+    Last Transition Time:  2018-10-25T19:20:13Z
+    Message:               the initial names have been accepted
+    Reason:                InitialNamesAccepted
+    Status:                True
+    Type:                  Established
+Events:                    <none>
+#+END_EXAMPLE
+* TODO Blog: Try OpenShift As Cluster Admin                        :noexport:
+* TODO Blog: X things I have learned from OpenShift oc command line
+** Overview of oc: kubectl, adm, CRD resources, add-on
+** log level: show output
+** oc ex: preview version
+** oc version: get both server and client version
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * HALF [#A] Blog: Play With OpenShift In VirtualBox                :noexport:
+https://www.projectatomic.io/blog/2017/05/minishift-intro/
 ** Concept of OpenShift
 Project
 Build
@@ -395,53 +650,44 @@ dummy-deployment-6d6759c786-l4dvs   1/1       Running     0          41s
 dummy-deployment-6d6759c786-t8rcc   1/1       Running     0          6s
 postgresql-1-hh4z9                  1/1       Running     0          38m
 #+END_EXAMPLE
-** DONE Openshift Cheatsheet
+** DONE OpenShift Cheatsheet
    CLOSED: [2018-10-25 Thu 14:59]
-* TODO [#A] openshift Create a cluster                             :noexport:
-* TODO openshift jenkins pipeline                                  :noexport:
+* TODO Automation Broker + Ansible Galaxy                          :noexport:
+* TODO openshift login to admin console                            :noexport:
+* TODO openshift Container Native Virtualization (CNV)             :noexport:
+http://openshift.github.io/openshift-origin-design/web-console/conceptual-designs/cnv
+* TODO Open Virtual Network (OVN) is an Open vSwitch-based SDN for supplying network services to instances :noexport:
+https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/12/html/networking_guide/sec-ovn
+* TODO openshift: RedHat CoreOS with ignition provisioning         :noexport:
+* TODO openshift: deep dive into monitoring                        :noexport:
+Playbook Name
+File Location *
+Health Check
+openshift-checks/pre-install .yml
+Node Bootstrap
+openshift-node/bootstrap.yml
+etcd Install
+openshift-etcd/config.yml
+NFS Install
+openshift-nfs/config.yml
+Load Balancer Install
+openshift-loadbalancer/config .yml
+Master Install
+openshift-master/config.yml
+Master Additional Install
+openshift-master/additional_c onfig .yml
+Node Join
+openshift-node/join.yml
+GlusterFS Install
+openshift-glusterfs/config.yml
+Hosted Install
+openshift-hosted/config.yml
+Monitoring Install
+openshift-monitoring /config.yml
+Web Console Install
+openshift-web-consol e/config .yml
+Metrics Install
+openshift-metrics/config.yml
+Logging Install
+openshift-logging /config.yml
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* HALF How openshift implement log level?                          :noexport:
-https://blog.openshift.com/oc-command-newbies/
-
-oc --loglevel 7 get pod
-
-#+BEGIN_EXAMPLE
-   /Users/zdenny  oc get pod/dummy-deployment-6d6759c786-5kwth --loglevel 9                                                                                                                                                                                            ✔ 0
-I1025 17:24:53.802485   75530 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
-I1025 17:24:53.803850   75530 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
-I1025 17:24:53.809924   75530 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
-I1025 17:24:53.810300   75530 round_trippers.go:386] curl -k -v -XGET  -H "User-Agent: oc/v1.11.0+d4cacc0 (darwin/amd64) kubernetes/d4cacc0" -H "Authorization: Bearer c3JOk8h0sa6ANos7YtStPXCVdkqjWeJjxSpPiVo2Hbs" -H "Accept: application/json;as=Table;v=v1beta1;g=meta.k8s.io, application/json" 'https://192.168.99.100:8443/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth'
-I1025 17:24:53.824657   75530 round_trippers.go:405] GET https://192.168.99.100:8443/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth 200 OK in 14 milliseconds
-I1025 17:24:53.824699   75530 round_trippers.go:411] Response Headers:
-I1025 17:24:53.824705   75530 round_trippers.go:414]     Content-Length: 2744
-I1025 17:24:53.824709   75530 round_trippers.go:414]     Date: Thu, 25 Oct 2018 23:25:05 GMT
-I1025 17:24:53.824713   75530 round_trippers.go:414]     Cache-Control: no-store
-I1025 17:24:53.824717   75530 round_trippers.go:414]     Content-Type: application/json
-I1025 17:24:53.824757   75530 request.go:897] Response Body: {"kind":"Table","apiVersion":"meta.k8s.io/v1beta1","metadata":{"selfLink":"/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth","resourceVersion":"13026"},"columnDefinitions":[{"name":"Name","type":"string","format":"name","description":"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names","priority":0},{"name":"Ready","type":"string","format":"","description":"The aggregate readiness state of this pod for accepting traffic.","priority":0},{"name":"Status","type":"string","format":"","description":"The aggregate status of the containers in this pod.","priority":0},{"name":"Restarts","type":"integer","format":"","description":"The number of times the containers in this pod have been restarted.","priority":0},{"name":"Age","type":"string","format":"","description":"CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.\n\nPopulated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata","priority":0},{"name":"IP","type":"string","format":"","description":"IP address allocated to the pod. Routable at least within the cluster. Empty if not yet allocated.","priority":1},{"name":"Node","type":"string","format":"","description":"NodeName is a request to schedule this pod onto a specific node. If it is non-empty, the scheduler simply schedules this pod onto that node, assuming that it fits resource requirements.","priority":1}],"rows":[{"cells":["dummy-deployment-6d6759c786-5kwth","1/1","Running",1,"2h","172.17.0.4","localhost"],"object":{"kind":"PartialObjectMetadata","apiVersion":"meta.k8s.io/v1beta1","metadata":{"name":"dummy-deployment-6d6759c786-5kwth","generateName":"dummy-deployment-6d6759c786-","namespace":"dennytest","selfLink":"/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth","uid":"39647df1-d896-11e8-985d-08002742933b","resourceVersion":"13026","creationTimestamp":"2018-10-25T20:40:35Z","labels":{"app":"dummy","pod-template-hash":"2823157342"},"annotations":{"openshift.io/scc":"restricted"},"ownerReferences":[{"apiVersion":"extensions/v1beta1","kind":"ReplicaSet","name":"dummy-deployment-6d6759c786","uid":"3960e211-d896-11e8-985d-08002742933b","controller":true,"blockOwnerDeletion":true}]}}}]}
-I1025 17:24:53.825474   75530 get.go:443] no kind is registered for the type v1beta1.Table in scheme "k8s.io/kubernetes/pkg/api/legacyscheme/scheme.go:29"
-NAME                                READY     STATUS    RESTARTS   AGE
-dummy-deployment-6d6759c786-5kwth   1/1       Running   1          2h
-
-   /Users/zdenny  oc get pod/dummy-deployment-6d6759c786-5kwth --loglevel 8                                                                                                                                                                                            ✔ 0
-I1025 17:24:58.244101   75586 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
-I1025 17:24:58.245499   75586 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
-I1025 17:24:58.254310   75586 loader.go:359] Config loaded from file /Users/zdenny/.kube/config
-I1025 17:24:58.254922   75586 round_trippers.go:383] GET https://192.168.99.100:8443/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth
-I1025 17:24:58.254936   75586 round_trippers.go:390] Request Headers:
-I1025 17:24:58.254941   75586 round_trippers.go:393]     Accept: application/json;as=Table;v=v1beta1;g=meta.k8s.io, application/json
-I1025 17:24:58.254946   75586 round_trippers.go:393]     User-Agent: oc/v1.11.0+d4cacc0 (darwin/amd64) kubernetes/d4cacc0
-I1025 17:24:58.254950   75586 round_trippers.go:393]     Authorization: Bearer c3JOk8h0sa6ANos7YtStPXCVdkqjWeJjxSpPiVo2Hbs
-I1025 17:24:58.262821   75586 round_trippers.go:408] Response Status: 200 OK in 7 milliseconds
-I1025 17:24:58.262847   75586 round_trippers.go:411] Response Headers:
-I1025 17:24:58.262855   75586 round_trippers.go:414]     Cache-Control: no-store
-I1025 17:24:58.262861   75586 round_trippers.go:414]     Content-Type: application/json
-I1025 17:24:58.262867   75586 round_trippers.go:414]     Content-Length: 2744
-I1025 17:24:58.262873   75586 round_trippers.go:414]     Date: Thu, 25 Oct 2018 23:25:09 GMT
-I1025 17:24:58.262939   75586 request.go:897] Response Body: {"kind":"Table","apiVersion":"meta.k8s.io/v1beta1","metadata":{"selfLink":"/api/v1/namespaces/dennytest/pods/dummy-deployment-6d6759c786-5kwth","resourceVersion":"13026"},"columnDefinitions":[{"name":"Name","type":"string","format":"name","description":"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names","priority":0},{"name":"Ready","type":"string","format":"","description":"The aggregate readiness state of this pod for accepting traffic.","priority":0},{"name":"Status","type":"string","format":"","description":"The aggregate status of the containers in this pod.","priority":0},{"name":"Restarts","type":"integer","format":"","description":"The number of times the containers in this pod have been restarted.","prior [truncated 1720 chars]
-I1025 17:24:58.263517   75586 get.go:443] no kind is registered for the type v1beta1.Table in scheme "k8s.io/kubernetes/pkg/api/legacyscheme/scheme.go:29"
-NAME                                READY     STATUS    RESTARTS   AGE
-dummy-deployment-6d6759c786-5kwth   1/1       Running   1          2h
-#+END_EXAMPLE
-* TODO openshift list all CRD                                      :noexport:
-* TODO openshift multi-cloud                                       :noexport:
-* TODO how minishift implement catalog? I don't seem to see helm/tiler :noexport:

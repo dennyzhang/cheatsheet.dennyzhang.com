@@ -387,6 +387,15 @@ https://www.commandlinefu.com/commands/view/3/display-the-top-ten-running-proces
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-grep-A4 :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-rancher-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-dns-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-jenkins-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-couchbase-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-elasticsearch-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-chef-a4 :noexport:
+
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-health-A4 :noexport:
 * TODO [#A] health cheatsheet: /Users/mac/Dropbox/org_data/life/life.org :noexport:
