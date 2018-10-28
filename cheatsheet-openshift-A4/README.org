@@ -16,24 +16,13 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-openshift-A4/cheatsheet-openshift-A4.pdf][cheatsheet-openshift-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-rancher-A4/cheatsheet-rancher-A4.pdf][cheatsheet-rancher-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/kubernetes/][kubernetes]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]]
 
 File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-openshift-A4][this repo]].
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
-** OC - Highlights
-| Name                                              | Command                                                               |
-|---------------------------------------------------+-----------------------------------------------------------------------|
-| Get api requests verbose output with kubectl call | =oc --loglevel 999 get pod/dummy-deployment-6d6759c786-5kwth=         |
-| Start a pod and get a shell for debug             | =oc debug dc/jorge=                                                   |
-| Impersonate for oc command                        | =oc --as=jorge get pods=, =oc --as-group=developers get pods=         |
-| Use oc to do admin operations                     | =oc adm <sub-command>=                                                |
-| Try experimental commands of oc                   | =oc ex <sub-command>=                                                 |
-| Explain OpenShift/Kubernetes concepts to me       | =oc explain pod=, =oc explain replicaset=                             |
-| Enable oc shell autocompletion                    | =echo "source <(oc completion zsh)" >>~/.zshrc=, then reload terminal |
-| Reference                                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]]                              |
 ** OpenShift Glossary
 | Name                     | Command                                                                                    |
 |--------------------------+--------------------------------------------------------------------------------------------|
@@ -51,10 +40,23 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Template Instance        | =oc get templateinstance=                                                                  |
 | Explain                  | Online manual =oc explain pod=                                                             |
 | Red Hat Registry         | By default, all images are pulled from registry.redhat.io.                                 |
+| OpenShift SaaS Version   | https://openshift.io/                                                                      |
 | OpenShift online         | https://cloud.openshift.com                                                                |
-| Reference                | [[https://cheatsheet.dennyzhang.com/cheatsheet-minishift-A4][Minishift CheatSheet]] [[https://docs.okd.io/latest/minishift/index.html][Link: Minishift]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                                       |
+| Reference                | [[https://cheatsheet.dennyzhang.com/cheatsheet-minishift-A4][Minishift CheatSheet]] [[https://docs.okd.io/latest/minishift/index.html][Link: Minishift]]                                                       |
+| Reference                | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-rancher-A4][Rancher CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                                   |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture_overview.png]]
+** OC - Highlights
+| Name                                              | Command                                                               |
+|---------------------------------------------------+-----------------------------------------------------------------------|
+| Get api requests verbose output with kubectl call | =oc --loglevel 999 get pod/dummy-deployment-6d6759c786-5kwth=         |
+| Start a pod and get a shell for debug             | =oc debug dc/jorge=                                                   |
+| Impersonate for oc command                        | =oc --as=jorge get pods=, =oc --as-group=developers get pods=         |
+| Use oc to do admin operations                     | =oc adm <sub-command>=                                                |
+| Try experimental commands of oc                   | =oc ex <sub-command>=                                                 |
+| Explain OpenShift/Kubernetes concepts to me       | =oc explain pod=, =oc explain replicaset=                             |
+| Enable oc shell autocompletion                    | =echo "source <(oc completion zsh)" >>~/.zshrc=, then reload terminal |
+| Reference                                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]]                              |
 ** OC - Admin
 | Name                                       | Command                              |
 |--------------------------------------------+--------------------------------------|

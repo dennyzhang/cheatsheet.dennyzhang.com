@@ -873,8 +873,6 @@ https://wiki.jenkins.io/plugins/servlet/mobile?contentId=66846870#content/view/6
 https://plugins.jenkins.io/gearman-plugin
 
 Jenkins core does not support multiple masters.
-** TODO jenkinsbot token
-xoxp-239480382723-238904850256-277528043553-4049bf10fc5f4997e8eafc54998787ee
 ** TODO git jenkins depths issue
 Ken Godoy [1:38 PM]
 See my first screenshot
