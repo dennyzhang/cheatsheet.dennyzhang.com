@@ -27,6 +27,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Name                     | Command                                                         |
 |--------------------------+-----------------------------------------------------------------|
 | Setup rancher in vagrant | [[https://github.com/rancher/quickstart/tree/master/vagrant][GitHub: quickstart/vagrant]], https://172.22.101.101/ admin/admin |
+| Reference                | [[https://rancher.com/][Link: rancher.com]]                                               |
 ** Rancher Source Code
 | Name                       | Command                |
 |----------------------------+------------------------|
