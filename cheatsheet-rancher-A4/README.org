@@ -28,17 +28,29 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 |--------------------------+-----------------------------------------------------------------|
 | Setup rancher in vagrant | [[https://github.com/rancher/quickstart/tree/master/vagrant][GitHub: quickstart/vagrant]], https://172.22.101.101/ admin/admin |
 | Reference                | [[https://rancher.com/docs/rancher/v2.x/en/][Rancher v2.0 Documentation]], [[http://slack.rancher.io/][Rancher Slack]], [[https://forums.rancher.com/][Rancher Forum]]        |
-| Reference                | [[https://www.youtube.com/watch?v=HQ4nT8dnvJc][YouTube: Rancher Overview]]                                       |
+| Reference                | [[https://www.youtube.com/watch?v=HQ4nT8dnvJc][YouTube: Rancher Overview]], [[https://www.youtube.com/watch?v=JQ4yUD3EWv4][YouTube: Setup Rancher In A Hard Way]] |
 | Reference                | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-rancher-A4][Rancher CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]        |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-rancher-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-rancher-A4/rancher-architecture.png]]
+** Rancher Concepts
+| Name          | Command |
+|---------------+---------|
+| Node driver   |         |
+| Node template |         |
+** rancher Command Line
+| Name                | Command                                                     |
+|---------------------+-------------------------------------------------------------|
+| Reference           | [[https://rancher.com/docs/rancher/v2.x/en/cli/][Link: Rancher CLI]]                                           |
+| Login to cluster    | =rancher login https://<SERVER_URL> --token <BEARER_TOKEN>= |
+| Select project      | =rancher context switch=                                    |
+| Rancher ssh to vm   | =rancher ssh node-001=                                      |
+| Run kubectl command | =rancher kubectl get nodes=                                 |
+| Create a cluster    | =rke cluster up --cluster-file cluster.yaml=                |
 ** Rancher Source Code
 | Name                      | Command                                               |
 |---------------------------+-------------------------------------------------------|
 | Rancher API Layer         | [[https://github.com/rancher/norman][GitHub: rancher/norman]]                                |
 | Rancher Kubernetes Engine | [[https://github.com/rancher/rke][GitHub: rancher/rke]], [[https://github.com/rancher/kontainer-engine][GitHub: rancher/kontainer-engine]] |
-** rke Command Line
-| Name             | Command                                      |
-|------------------+----------------------------------------------|
-| Create a cluster | =rke cluster up --cluster-file cluster.yaml= |
 ** Rancher Footprint
 #+BEGIN_EXAMPLE
 > kubectl get all --all-namespaces
@@ -87,6 +99,39 @@ kube-system   job.batch/rke-kubedns-addon-deploy-job        1         1         
 kube-system   job.batch/rke-metrics-addon-deploy-job        1         1            6m
 kube-system   job.batch/rke-network-plugin-deploy-job       1         1            6m
 #+END_EXAMPLE
+** Rancher CLI Help
+#+BEGIN_EXAMPLE
+Denny > ./rancher --help
+Rancher CLI, managing containers one UTF-8 character at a time
+
+Usage: rancher [OPTIONS] COMMAND [arg...]
+
+Version: v2.0.5
+
+Options:
+  --debug        Debug logging
+  --help, -h     show help
+  --version, -v  print the version
+
+Commands:
+  apps, [app]              Operations with apps
+  catalog                  Operations with catalogs
+  clusters, [cluster]      Operations on clusters
+  context                  Operations for the context
+  inspect                  View details of resources
+  kubectl                  Run kubectl commands
+  login, [l]               Login to a Rancher server
+  namespaces, [namespace]  Operations on namespaces
+  nodes, [node]            Operations on nodes
+  projects, [project]      Operations on projects
+  ps                       Show workloads in a project
+  settings, [setting]      Show settings for the current server
+  ssh                      SSH into a node
+  up                       apply compose config
+  help, [h]                Shows a list of commands or help for one command
+
+Run 'rancher COMMAND --help' for more information on a command.
+#+END_EXAMPLE
 ** More Resources
 https://www.okd.io/
 
@@ -130,5 +175,11 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Rancher Quota & Cost Management                             :noexport:
 * TODO Multiple Rancher Servers possible (HA)                      :noexport:
+* TODO rancher: reconcile cluster state, after random reboot       :noexport:
+* TODO rancher: what node driver means: activate/deactivate        :noexport:
+* TODO rancher ssh and kubectl command timeout                     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+

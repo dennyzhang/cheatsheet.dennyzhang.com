@@ -598,6 +598,45 @@ Events:                    <none>
 ** oc ex: preview version
 ** oc version: get both server and client version
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Automation Broker + Ansible Galaxy                          :noexport:
+* TODO openshift login to admin console                            :noexport:
+* TODO openshift Container Native Virtualization (CNV)             :noexport:
+http://openshift.github.io/openshift-origin-design/web-console/conceptual-designs/cnv
+* TODO Open Virtual Network (OVN) is an Open vSwitch-based SDN for supplying network services to instances :noexport:
+https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/12/html/networking_guide/sec-ovn
+* TODO openshift: RedHat CoreOS with ignition provisioning         :noexport:
+* TODO openshift: deep dive into monitoring                        :noexport:
+Playbook Name
+File Location *
+Health Check
+openshift-checks/pre-install .yml
+Node Bootstrap
+openshift-node/bootstrap.yml
+etcd Install
+openshift-etcd/config.yml
+NFS Install
+openshift-nfs/config.yml
+Load Balancer Install
+openshift-loadbalancer/config .yml
+Master Install
+openshift-master/config.yml
+Master Additional Install
+openshift-master/additional_c onfig .yml
+Node Join
+openshift-node/join.yml
+GlusterFS Install
+openshift-glusterfs/config.yml
+Hosted Install
+openshift-hosted/config.yml
+Monitoring Install
+openshift-monitoring /config.yml
+Web Console Install
+openshift-web-consol e/config .yml
+Metrics Install
+openshift-metrics/config.yml
+Logging Install
+openshift-logging /config.yml
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * HALF [#A] Blog: Play With OpenShift In VirtualBox                :noexport:
 https://www.projectatomic.io/blog/2017/05/minishift-intro/
 ** Concept of OpenShift
@@ -654,42 +693,7 @@ postgresql-1-hh4z9                  1/1       Running     0          38m
 #+END_EXAMPLE
 ** DONE OpenShift Cheatsheet
    CLOSED: [2018-10-25 Thu 14:59]
-* TODO Automation Broker + Ansible Galaxy                          :noexport:
-* TODO openshift login to admin console                            :noexport:
-* TODO openshift Container Native Virtualization (CNV)             :noexport:
-http://openshift.github.io/openshift-origin-design/web-console/conceptual-designs/cnv
-* TODO Open Virtual Network (OVN) is an Open vSwitch-based SDN for supplying network services to instances :noexport:
-https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/12/html/networking_guide/sec-ovn
-* TODO openshift: RedHat CoreOS with ignition provisioning         :noexport:
-* TODO openshift: deep dive into monitoring                        :noexport:
-Playbook Name
-File Location *
-Health Check
-openshift-checks/pre-install .yml
-Node Bootstrap
-openshift-node/bootstrap.yml
-etcd Install
-openshift-etcd/config.yml
-NFS Install
-openshift-nfs/config.yml
-Load Balancer Install
-openshift-loadbalancer/config .yml
-Master Install
-openshift-master/config.yml
-Master Additional Install
-openshift-master/additional_c onfig .yml
-Node Join
-openshift-node/join.yml
-GlusterFS Install
-openshift-glusterfs/config.yml
-Hosted Install
-openshift-hosted/config.yml
-Monitoring Install
-openshift-monitoring /config.yml
-Web Console Install
-openshift-web-consol e/config .yml
-Metrics Install
-openshift-metrics/config.yml
-Logging Install
-openshift-logging /config.yml
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Blog: X New Concepts I Like In OpenShift                    :noexport:
+https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/index.html
+** Builds and image streams
+** Templates

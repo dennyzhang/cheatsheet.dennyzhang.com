@@ -24,16 +24,17 @@ File me [[https://github.com/DennyZhang/cheatsheet-minishift-A4/issues][Issues]]
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** Minishift Summary
-| Name                        | Command                                                                          |
-|-----------------------------+----------------------------------------------------------------------------------|
-| [[https://docs.okd.io/latest/minishift/getting-started/installing.html][Install/upgrade minishift]]   | =brew cask install minishift=, =brew cask install --force minishift=             |
-| Try OpenShift in virtualbox | =minishift start --vm-driver=virtualbox=                                         |
-| OpenShift web console       | https://192.168.99.100:8443, system/admin                                        |
-| Stop/delete minishift env   | =minishift stop=, =minishift delete=                                             |
-| ssh minishift               | =minishift ssh=                                                                  |
-| Check status                | =minishift status=, =oc config view=, =minishift oc-env=, =minishift docker-env= |
-| List addons                 | =minishift addons list=                                                          |
-| Apply addon                 | =minishift addons apply admin-user=                                              |
+| Name                             | Command                                                                          |
+|----------------------------------+----------------------------------------------------------------------------------|
+| [[https://docs.okd.io/latest/minishift/getting-started/installing.html][Install/upgrade minishift]]        | =brew cask install minishift=, =brew cask install --force minishift=             |
+| Try OpenShift in virtualbox      | =minishift start --vm-driver=virtualbox=                                         |
+| OpenShift web console            | https://192.168.99.100:8443, system/admin                                        |
+| Stop/delete minishift env        | =minishift stop=, =minishift delete=                                             |
+| ssh minishift                    | =minishift ssh=                                                                  |
+| Check status                     | =minishift status=, =oc config view=, =minishift oc-env=, =minishift docker-env= |
+| List addons                      | =minishift addons list=                                                          |
+| Apply addon                      | =minishift addons apply admin-user=                                              |
+| OC login and change kube context | =oc login -u system:admin=, =kubectl get nodes=                                  |
 ** Minishift Footprint
 | Process                              | Command                                                                                         |
 |--------------------------------------+-------------------------------------------------------------------------------------------------|
@@ -51,6 +52,50 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | openshift-router                     |                                                                                                 |
 | dockerd                              |                                                                                                 |
 | haproxy                              |                                                                                                 |
+** Minishift CLI Help
+#+BEGIN_EXAMPLE
+Denny > minishift --help
+Minishift is a command-line tool that provisions and manages single-node OpenShift clusters optimized for development workflows.
+
+Usage:
+  minishift [command]
+
+Available Commands:
+  addons      Manages Minishift add-ons.
+  completion  Outputs minishift shell completion for the given shell (bash or zsh)
+  config      Modifies Minishift configuration properties.
+  console     Opens or displays the OpenShift Web Console URL.
+  delete      Deletes the Minishift VM.
+  docker-env  Sets Docker environment variables.
+  help        Help about any command
+  hostfolder  Manages host folders for the Minishift VM.
+  image       Exports and imports container images.
+  ip          Gets the IP address of the running cluster.
+  logs        Gets the logs of the running OpenShift cluster.
+  oc-env      Sets the path of the 'oc' binary.
+  openshift   Interacts with your local OpenShift cluster.
+  profile     Manages Minishift profiles.
+  ssh         Log in to or run a command on a Minishift VM with SSH.
+  start       Starts a local OpenShift cluster.
+  status      Gets the status of the local OpenShift cluster.
+  stop        Stops the running local OpenShift cluster.
+  update      Updates Minishift to the latest version.
+  version     Gets the version of Minishift.
+
+Flags:
+      --alsologtostderr                  log to standard error as well as files
+  -h, --help                             help for minishift
+      --log_backtrace_at traceLocation   when logging hits line file:N, emit a stack trace (default :0)
+      --log_dir string                   If non-empty, write log files in this directory (default "")
+      --logtostderr                      log to standard error instead of files
+      --profile string                   Profile name (default "minishift")
+      --show-libmachine-logs             Show logs from libmachine.
+      --stderrthreshold severity         logs at or above this threshold go to stderr (default 2)
+  -v, --v Level                          log level for V logs. Level varies from 1 to 5 (default 1).
+      --vmodule moduleSpec               comma-separated list of pattern=N settings for file-filtered logging
+
+Use "minishift [command] --help" for more information about a command.
+#+END_EXAMPLE
 ** More Resources
 https://www.okd.io/
 
