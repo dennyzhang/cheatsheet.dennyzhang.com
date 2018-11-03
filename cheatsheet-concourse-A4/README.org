@@ -16,7 +16,7 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concourse-A4/cheatsheet-concourse-A4.pdf][cheatsheet-concourse-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concourse-A4/cheatsheet-concourse-A4.pdf][cheatsheet-concourse-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/vmware/][vmware]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
@@ -24,20 +24,27 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 ** Concourse Advanced
 | Name                                         | Summary                                                                                      |
 |----------------------------------------------+----------------------------------------------------------------------------------------------|
-| github-release resource cannot find old tag  | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]                        | 
+| github-release resource cannot find old tag  | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]                        |
 | fly set-pipeline run into "error: forbidden" | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][Link: GitHub]] |
 | List team details for all targets            | =fly -t $target teams -d=, =~/.flyrc=                                                        |
 | Hijack to container of a successful run      | You can't. By design when task has passed, the container will be deleted                     |
-| Concourse examples                           | [[https://github.com/pivotal-cf/pcf-pipelines/tree/v0.23.0][github: pcf-pipelines]]                                                                        |
-** Concourse Resources
-| Name                                        | Summary                   |
-|---------------------------------------------+---------------------------|
-| [[https://github.com/pivotalservices/concourse-curl-resource][concourse-curl-resource]]: http download link | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/url-download.yml][url-download.yml]] |
-| [[https://github.com/concourse/git-resource][git-resource]]                                | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]]  |
-| [[https://github.com/concourse/github-release-resource][github-release]]                              |                           |
-| [[https://github.com/concourse/docker-image-resource][docker-image-resource]]: docker image         |                           |
-| [[https://github.com/frodenas/gcs-resource][gcs-resource]]: google bucket                 |                           |
-** concourse Containers
+| Reference                                    | [[https://github.com/starkandwayne/concourse-tutorial][concourse-tutorial]], [[https://github.com/pivotalservices/concourse-pipeline-samples][concourse-pipeline-samples]]                                               |
+** Concourse Resources & Examples
+| Name                                        | Summary                                                |
+|---------------------------------------------+--------------------------------------------------------|
+| Hello world pipeline                        | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/helloworld.yml][helloworld.yml]]                                |
+| Pass output to input across jobs            | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/tasks-output-input.yml][tasks-output-input.yml]]                        |
+| Interprate variable template                | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/render-for-render.md][render-for-render.md]]                          |
+| [[https://github.com/concourse/git-resource][git-resource]]                                | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]]                               |
+| [[https://github.com/concourse/github-release-resource][github-release]]                              |                                                        |
+| [[https://github.com/concourse/docker-image-resource][docker-image-resource]]: docker image         |                                                        |
+| [[https://github.com/frodenas/gcs-resource][gcs-resource]]: google bucket                 |                                                        |
+| [[https://github.com/pivotalservices/concourse-curl-resource][concourse-curl-resource]]: http download link | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/url-download.yml][url-download.yml]]                              |
+| [[https://github.com/pivotalservices/file-downloader-resource][file-downloader-resource]]                    | enable downloading pivotal product files and stemcells |
+| PCF pipelines examples                      | [[https://github.com/pivotal-cf/pcf-pipelines/tree/v0.23.0][GitHub: pcf-pipelines]]                                  |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-sample.png]]
+** Concourse Containers
 | Name                            | Summary                                    |
 |---------------------------------+--------------------------------------------|
 | Login to container              | =fly -t $target hijack -u $job_url=        |
@@ -55,9 +62,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | Input resource        |                                                                           |
 | Output resource       |                                                                           |
 | Teams                 |                                                                           |
+| [[https://concourse-ci.org/tags-step-modifier.html][Step: tags]]            | Use tag to match workers                                                  |
 | bbl (bosh-bootloader) | [[https://github.com/cloudfoundry/bosh-bootloader][GitHub: bosh-bootloader]]                                                   |
+** Concourse Tasks
+| Name                                | Summary |
+|-------------------------------------+---------|
+| [[https://concoursetutorial.com/basics/task-outputs-to-inputs/][Passing Task Outputs to Task Inputs]] |         |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-sample.png]]
 ** Concourse Authentication & Authorization
 | Name                               | Summary                                                                          |
 |------------------------------------+----------------------------------------------------------------------------------|
@@ -267,3 +278,30 @@ Expected non-empty Director URL
 Exit code 1
 #+END_EXAMPLE
 * TODO For concourse pipelines, draw a diagram                     :noexport:
+* TODO concourse takes quite a long time for job to schedule a task. Thus container is not ready for hijack :noexport:
+#+BEGIN_EXAMPLE
+   /Users/zdenny/Dropbox/private_data/work/vmware/code/pks-vrops-release/ci  ~/Downloads/fly-v4.1.0 -t pks hijack -u https://ci.vcna.io/teams/oratos-vmware/pipelines/pks-vrops-install-tile/jobs/add-tile/builds/5                   vrops-tile-integration ✘ ✹ ✭  ✘ 1
+1: build #5, step: add-tile-to-opsman, type: task
+2: build #5, step: environment-lock, type: get
+3: build #5, step: p-pks-integrations, type: get
+choose a container: 1
+error: websocket: bad handshake
+#+END_EXAMPLE
+* TODO concourse: how to transfer a big file across jobs in the same pipeline? :noexport:
+*.pivotal
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO write code in concourse yaml file                           :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Blog: X Performance Tips To Speed Up Your Concourse Pipeline :noexport:
+** TODO [#A] Avoid pass big files across tasks: How often concourse check tile resource in gcp bucket? :noexport:
+** TODO Concourse speed up the docker image load                   :noexport:
+** TODO More parallel: Performs the given steps in parallel.
+https://concourse-ci.org/jobs.html
+* TODO [#A] Concourse significant delay across steps               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Pass the output to multiple pipelines                       :noexport:
+* TODO Concourse how to explictly and implictly dependency         :noexport:
+* TODO Concourse use multiple sections instead of one single file  :noexport:
+* TODO Concourse manage the layout                                 :noexport:
+Each row for one project
+https://ci.vcna.io/?search=team%3A%20oratos-vmware

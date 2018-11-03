@@ -1,0 +1,31 @@
+---
+resources:
+- name: untested-tile
+  type: file-url
+  source:
+    url: https://concourse-ci.org/images/concourse-pipeline.png
+    filename: concourse-pipeline.png
+
+resource_types:
+- name: file-url
+  type: docker-image
+  source:
+    repository: pivotalservices/concourse-curl-resource
+    tag: latest
+
+jobs:
+- name: job-pass-files
+  public: true
+  plan:
+  - get: untested-tile
+  - task: show-file
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: busybox}
+      inputs:
+      - name: untested-tile
+      run:
+        path: ls
+        args: ['-lth', 'untested-tile']

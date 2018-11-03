@@ -1,4 +1,11 @@
 # https://github.com/pivotalservices/concourse-curl-resource#example
+resource_types:
+- name: file-url
+  type: docker-image
+  source:
+    repository: pivotalservices/concourse-curl-resource
+    tag: latest
+
 resources:
 - name: my-file
   type: file-url

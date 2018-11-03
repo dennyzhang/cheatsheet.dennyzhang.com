@@ -16,39 +16,36 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-tile-A4/cheatsheet-tile-A4.pdf][cheatsheet-tile-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-tile-A4/cheatsheet-tile-A4.pdf][cheatsheet-tile-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/vmware/][vmware]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-tile-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-tile-A4][this repo]].
 ** Tile Reference
-| Name                       | Command                                                                             |
-|----------------------------+-------------------------------------------------------------------------------------|
-| Forms Reference            | https://docs.pivotal.io/tiledev/2-1/product-template-reference.html#form-properties |
-| Product Template Reference | https://docs.pivotal.io/tiledev/2-2/product-template-reference.html                 |
-| Property Reference         | https://docs.pivotal.io/tiledev/2-2/property-reference.html                         |
-| Tile Generator             | https://docs.pivotal.io/tiledev/2-1/tile-generator.html                             |
-| [[https://github.com/pivotal-cf/kiln][kiln]]                       | A command line tool to help you maintain tile metadata                              |
-| Example                    | [[https://github.com/pivotal-cf-experimental/ops-manager-example/blob/master/example-product/metadata/example-product.yml.erb][example-product/metadata/example-product.yml.erb]]                                    |
-| Reference                  | [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tile-A4][Tile CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4][UAA CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                    |
-** Ops manager
-| Name                                   | Command                                                                  |
-|----------------------------------------+--------------------------------------------------------------------------|
-| Release folder                         | =/var/tempest/releases=                                                  |
-| Restart Ops Manager                    | =service tempest-web stop/start=                                         |
-| Change file permision for your release | =chown tempest-web:tempest-web /var/tempest/releases/<your-release.tgz>= |
-| Tile entrance file                     | =/var/tempest/workspaces/default/metadata/*.yml=                         |
-| Tile jobs folder                       | =/var/vcap/jobs=                                                         |
+| Name           | Command                                                                         |
+|----------------+---------------------------------------------------------------------------------|
+| Example        | [[https://github.com/pivotal-cf-experimental/ops-manager-example/blob/master/example-product/metadata/example-product.yml.erb][example-product/metadata/example-product.yml.erb]]                                |
+| [[https://github.com/pivotal-cf/kiln][kiln]]           | A command line tool to help you maintain tile metadata                          |
+| Reference      | [[https://docs.pivotal.io/tiledev/2-1/product-template-reference.html#form-properties][Forms Reference]], [[https://docs.pivotal.io/tiledev/2-2/product-template-reference.html][Product Template Reference]], [[https://docs.pivotal.io/tiledev/2-2/property-reference.html][Property Reference]], [[https://docs.pivotal.io/tiledev/2-1/tile-generator.html][Tile Generator]] |
+| Reference      | [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tile-A4][Tile CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4][UAA CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                |
 ** om command line
 | Name                        | Command                                                                                                                  |
 |-----------------------------+--------------------------------------------------------------------------------------------------------------------------|
 | [[https://github.com/pivotal-cf/om][om]]                          | a command-line API client for Pivotal Operations Manager                                                                 |
-| List all available products | =om -k -t https://30.0.0.5 -u admin -p <password> curl -p /api/v0/available_products=                                    |
-| Upload tile from cli        | =om -k -t https://30.0.0.5 -u admin -p <password> upload-product -p </path/my.pivotal>=                                  |
-| Upload stemcell from cli    | =om -k -t https://30.0.0.5 -u admin -p <password> upload-stemcell -s </path/stemcell.tgz>=                               |
-| omcli                       | alias omcli='om -t https://30.0.0.5 -u "<username>" -p "<password>" -k'                                                  |
-| Use omcli to get attribute  | =omcli curl -s --path /api/v0/deployed/products/${product_guid}/credentials/.properties.pks_uaa_management_admin_client= |
-| Use omcli to list products  | =omcli curl -s -p '/api/v0/staged/products'=                                                                             |
+| omcli                       | alias omcli='om -t https://30.0.0.5 -u admin -p <password> -k'                                                           |
+| List all available products | =omcli available-products=, or =omcli curl -p /api/v0/available_products=                                                |
+| Upload tile from cli        | =omcli upload-product -p </path/my.pivotal>=                                                                             |
+| Upload stemcell from cli    | =omcli upload-stemcell -s </path/stemcell.tgz>=                                                                          |
+| List products               | =omcli curl -s -p /api/v0/staged/products=                                                                               |
+| Get attribute               | =omcli curl -s --path /api/v0/deployed/products/${product_guid}/credentials/.properties.pks_uaa_management_admin_client= |
+** Ops manager
+| Name                | Command                                                                  |
+|---------------------+--------------------------------------------------------------------------|
+| Release folder      | =/var/tempest/releases=                                                  |
+| Restart Ops Manager | =service tempest-web stop/start=                                         |
+| Grant file access   | =chown tempest-web:tempest-web /var/tempest/releases/<your-release.tgz>= |
+| Tile entrance file  | =/var/tempest/workspaces/default/metadata/*.yml=                         |
+| Tile jobs folder    | =/var/vcap/jobs=                                                         |
 ** Tile Challenges
 | Name                                         | Comment                                               |
 |----------------------------------------------+-------------------------------------------------------|
@@ -57,6 +54,69 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | In Opsmanager, can't downgrade               | Inconvenient for development cycle                    |
 | In Opsmanager, =review changes= is confusing | The review feature should be more informative         |
 | Slow to apply changes                        | Usually it takes hours, while minutes in *kubernetes* |
+** om cli Online Help
+#+BEGIN_EXAMPLE
+> om --help
+om helps you interact with an Ops Manager
+
+Usage: om [options] <command> [<args>]
+  --client-id, -c            string  Client ID for the Ops Manager VM (not required for unauthenticated commands, $OM_CLIENT_ID)
+  --client-secret, -s        string  Client Secret for the Ops Manager VM (not required for unauthenticated commands, $OM_CLIENT_SECRET)
+  --connect-timeout, -o      int     timeout in seconds to make TCP connections (default: 5)
+  --format, -f               string  Format to print as (options: table,json) (default: table)
+  --help, -h                 bool    prints this usage information (default: false)
+  --password, -p             string  admin password for the Ops Manager VM (not required for unauthenticated commands, $OM_PASSWORD)
+  --request-timeout, -r      int     timeout in seconds for HTTP requests to Ops Manager (default: 1800)
+  --skip-ssl-validation, -k  bool    skip ssl certificate validation during http requests (default: false)
+  --target, -t               string  location of the Ops Manager VM
+  --trace, -tr               bool    prints HTTP requests and response payloads
+  --username, -u             string  admin username for the Ops Manager VM (not required for unauthenticated commands, $OM_USERNAME)
+  --version, -v              bool    prints the om release version (default: false)
+
+Commands:
+  activate-certificate-authority  activates a certificate authority on the Ops Manager
+  apply-changes                   triggers an install on the Ops Manager targeted
+  available-products              list available products
+  certificate-authorities         lists certificates managed by Ops Manager
+  certificate-authority           prints requested certificate authority
+  config-template                 **EXPERIMENTAL** generates a config template for the product
+  configure-authentication        configures Ops Manager with an internal userstore and admin user account
+  configure-bosh                  **DEPRECATED** configures Ops Manager deployed bosh director
+  configure-director              configures the director
+  configure-product               configures a staged product
+  configure-saml-authentication   configures Ops Manager with SAML authentication
+  create-certificate-authority    creates a certificate authority on the Ops Manager
+  create-vm-extension             creates a VM extension
+  credential-references           list credential references for a deployed product
+  credentials                     fetch credentials for a deployed product
+  curl                            issues an authenticated API request
+  delete-certificate-authority    deletes a certificate authority on the Ops Manager
+  delete-installation             deletes all the products on the Ops Manager targeted
+  delete-product                  deletes a product from the Ops Manager
+  delete-unused-products          deletes unused products on the Ops Manager targeted
+  deployed-manifest               prints the deployed manifest for a product
+  deployed-products               lists deployed products
+  errands                         list errands for a product
+  export-installation             exports the installation of the target Ops Manager
+  generate-certificate            generates a new certificate signed by Ops Manager's root CA
+  generate-certificate-authority  generates a certificate authority on the Opsman
+  help                            prints this usage information
+  import-installation             imports a given installation to the Ops Manager targeted
+  installation-log                output installation logs
+  installations                   list recent installation events
+  pending-changes                 lists pending changes
+  regenerate-certificates         deletes all non-configurable certificates in Ops Manager so they will automatically be regenerated on the next apply-changes
+  revert-staged-changes           reverts staged changes on the Ops Manager targeted
+  set-errand-state                sets state for a product's errand
+  stage-product                   stages a given product in the Ops Manager targeted
+  staged-config                   **EXPERIMENTAL** generates a config from a staged product
+  staged-manifest                 prints the staged manifest for a product
+  staged-products                 lists staged products
+  unstage-product                 unstages a given product from the Ops Manager targeted
+  upload-product                  uploads a given product to the Ops Manager targeted
+  upload-stemcell                 uploads a given stemcell to the Ops Manager targeted
+  version                         prints the om release version
+#+END_EXAMPLE
 ** More Resources
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

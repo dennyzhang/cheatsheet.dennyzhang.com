@@ -1,0 +1,15 @@
+# https://github.com/starkandwayne/concourse-tutorial
+---
+jobs:
+- name: job-hello-world
+  public: true
+  plan:
+  - task: hello-world
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: busybox}
+      run:
+        path: echo
+        args: [hello world]
