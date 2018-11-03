@@ -1,0 +1,35 @@
+---
+resources: ((my-resource-section))
+jobs:
+- name: job-with-inputs
+  public: true
+  serial: true
+  plan:
+  - { get: pretty-ls, resource: resource-script-pretty-ls }
+  - { get: gist-abc, resource: resource-gist-a-b-c }
+  - { get: gist-xyz, resource: resource-gist-x-y-z }
+  - task: pretty-ls-abc-xyz
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: ubuntu}
+      inputs:
+      - name: pretty-ls
+      - name: gist-abc
+      - name: gist-xyz
+      run:
+        path: bash
+        args: ["pretty-ls/pretty_ls.sh", "."]
+  - task: pretty-ls-xyz
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: ubuntu}
+      inputs:
+      - name: pretty-ls
+      - name: gist-xyz
+      run:
+        path: bash
+        args: ["pretty-ls/pretty_ls.sh", "."]

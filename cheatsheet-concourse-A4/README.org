@@ -22,19 +22,20 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
 ** Concourse Advanced
-| Name                                         | Summary                                                                                      |
-|----------------------------------------------+----------------------------------------------------------------------------------------------|
-| github-release resource cannot find old tag  | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]                        |
-| fly set-pipeline run into "error: forbidden" | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][Link: GitHub]] |
-| List team details for all targets            | =fly -t $target teams -d=, =~/.flyrc=                                                        |
-| Hijack to container of a successful run      | You can't. By design when task has passed, the container will be deleted                     |
-| Reference                                    | [[https://github.com/starkandwayne/concourse-tutorial][concourse-tutorial]], [[https://github.com/pivotalservices/concourse-pipeline-samples][concourse-pipeline-samples]]                                               |
+| Name                                                 | Summary                                                                                      |
+|------------------------------------------------------+----------------------------------------------------------------------------------------------|
+| github-release resource cannot find old tag          | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]                        |
+| fly set-pipeline run into "error: forbidden"         | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][Link: GitHub]] |
+| List team details for all targets                    | =fly -t $target teams -d=, =~/.flyrc=                                                        |
+| Hijack to containers with a successful run           | You can't. By design when task has passed, the container will be deleted                     |
+| Split one pipeline yaml into small *reusable* pieces | Not supported. [[https://github.com/concourse/concourse/issues/1994][Link: GitHub]]. For now, we need to workaround it.                              |
+| Reference                                            | [[https://github.com/starkandwayne/concourse-tutorial][concourse-tutorial]], [[https://github.com/pivotalservices/concourse-pipeline-samples][concourse-pipeline-samples]]                                               |
 ** Concourse Resources & Examples
 | Name                                        | Summary                                                |
 |---------------------------------------------+--------------------------------------------------------|
 | Hello world pipeline                        | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/helloworld.yml][helloworld.yml]]                                |
 | Pass output to input across jobs            | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/tasks-output-input.yml][tasks-output-input.yml]]                        |
-| Interprate variable template                | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/render-for-render.md][render-for-render.md]]                          |
+| Trigger pipeline test every 5 minutes       | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/run-test-regularly.yml][run-test-regularly.yml]]                        |
 | [[https://github.com/concourse/git-resource][git-resource]]                                | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]]                               |
 | [[https://github.com/concourse/github-release-resource][github-release]]                              |                                                        |
 | [[https://github.com/concourse/docker-image-resource][docker-image-resource]]: docker image         |                                                        |
@@ -56,13 +57,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | Pipelines             |                                                                           |
 | Jobs                  |                                                                           |
 | Tasks                 |                                                                           |
-| [[https://concourse-ci.org/fly.html#fly-targets][Targets]]               | Alias of Concourse endpoints                                              |
 | fly                   | Pipelines are configured entirely via the fly. There is no GUI. [[https://concourse-ci.org/fly.html][Link: fly]] |
 | Behaviors             |                                                                           |
+| [[https://concourse-ci.org/tags-step-modifier.html][Step: tags]]            | Use tag to match workers                                                  |
 | Input resource        |                                                                           |
 | Output resource       |                                                                           |
+| [[https://concourse-ci.org/fly.html#fly-targets][Targets]]               | Alias of Concourse endpoints                                              |
 | Teams                 |                                                                           |
-| [[https://concourse-ci.org/tags-step-modifier.html][Step: tags]]            | Use tag to match workers                                                  |
 | bbl (bosh-bootloader) | [[https://github.com/cloudfoundry/bosh-bootloader][GitHub: bosh-bootloader]]                                                   |
 ** Concourse Tasks
 | Name                                | Summary |
@@ -83,15 +84,16 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | Fly conf file                      | =~/.flyrc=                                                                       |
 | Reference                          | After login to the *main* team, you can update other teams. [[https://concourse-ci.org/teams.html][Link: Concourse Team]] |
 ** Concourse Pipeline
-| Name                              | Summary                                                                                                |
-|-----------------------------------+--------------------------------------------------------------------------------------------------------|
-| List all authenticated end points | =fly targets= [[https://concourse-ci.org/fly.html#fly-targets][Link: fly targets]]                                                                        |
-| fly login                         | =fly -t $target login -c $concourse_url -n $team_name=                                                 |
-| Get pipeline definition           | =fly -t $target get-pipeline -p $job-name > job.yaml= [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][Link: fly-getpipeline]]                            |
-| Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name --config pipeline.yml --load-vars-from credentials.yml= |
-| Destroy pipeline                  | =fly -t $target destroy-pipeline -p $pipeline_name=                                                    |
-| Format pipeline                   | =fly format-pipeline -c pipeline.yml=                                                                  |
-| Validate pipeline                 | =fly validate-pipeline -c pipeline.yml=                                                                |
+| Name                              | Summary                                                                            |
+|-----------------------------------+------------------------------------------------------------------------------------|
+| List all authenticated end points | =fly targets= [[https://concourse-ci.org/fly.html#fly-targets][Link: fly targets]]                                                    |
+| fly login                         | =fly -t $target login -c $concourse_url -n $team_name=                             |
+| Get pipeline definition           | =fly -t $target get-pipeline -p $job-name > job.yaml= [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][Link: fly-getpipeline]]        |
+| Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name -c pipeline.yml -l credentials.yml= |
+| Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name -c pipeline.yml -v env1=var1=       |
+| Destroy pipeline                  | =fly -t $target destroy-pipeline -p $pipeline_name=                                |
+| Format pipeline                   | =fly format-pipeline -c pipeline.yml=                                              |
+| Validate pipeline                 | =fly validate-pipeline -c pipeline.yml=                                            |
 ** Concourse GUI/UI
 | Name                               | Summary                             |
 |------------------------------------+-------------------------------------|
@@ -153,6 +155,31 @@ Available commands:
   volumes            List the active volumes (aliases: vs)
   watch              Stream a build's output (aliases: w)
   workers            List the registered workers (aliases: ws)
+#+END_EXAMPLE
+** fly set-pipeline Online Usage
+#+BEGIN_EXAMPLE
+> fly  set-pipeline --help
+error: Usage:
+  fly [OPTIONS] set-pipeline [set-pipeline-OPTIONS]
+
+Application Options:
+  -t, --target=                     Concourse target name
+  -v, --version                     Print the version of Fly and exit
+      --verbose                     Print API requests and responses
+      --print-table-headers         Print table headers even for redirected output
+
+Help Options:
+  -h, --help                        Show this help message
+
+[set-pipeline command options]
+      -n, --non-interactive         Skips interactions, uses default values
+          --no-color                Disable color output
+          --check-creds             Validate credential variables against credential manager
+      -p, --pipeline=               Pipeline to configure
+      -c, --config=                 Pipeline configuration file
+      -v, --var=[NAME=STRING]       Specify a string value to set for a variable in the pipeline
+      -y, --yaml-var=[NAME=YAML]    Specify a YAML value to set for a variable in the pipeline
+      -l, --load-vars-from=         Variable flag that can be used for filling in template values in configuration from a YAML file
 #+END_EXAMPLE
 ** More Resources
 http://www.mikeball.info/blog/concourse-git-resource/
@@ -301,7 +328,13 @@ https://concourse-ci.org/jobs.html
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Pass the output to multiple pipelines                       :noexport:
 * TODO Concourse how to explictly and implictly dependency         :noexport:
-* TODO Concourse use multiple sections instead of one single file  :noexport:
 * TODO Concourse manage the layout                                 :noexport:
 Each row for one project
 https://ci.vcna.io/?search=team%3A%20oratos-vmware
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Concourse pipeline use multiple file instead of one yaml file :noexport:
+https://github.com/concourse/concourse/issues/1994
+* TODO Concourse: Interprate variable template: high order rendering :noexport:
+https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concourse-A4/render-for-render.md
+* TODO Concourse execute one step only                             :noexport:
+https://github.com/starkandwayne/concourse-tutorial/blob/master/tutorials/basic/task-scripts/task_show_uname.yml

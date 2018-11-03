@@ -1,0 +1,22 @@
+---
+resources:
+- name: my-timer
+  type: time
+  source:
+    interval: 5m
+
+jobs:
+- name: job-hello-world
+  public: true
+  plan:
+  - get: my-timer
+    trigger: true    
+  - task: hello-world
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: busybox}
+      run:
+        path: echo
+        args: [hello world]

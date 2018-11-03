@@ -1,0 +1,14 @@
+my-resource-section: |
+- name: resource-gist-a-b-c
+  type: git
+  source:
+    uri: https://gist.github.com/drnic/a5a8d36c126ddc476b85.git
+- name: resource-gist-x-y-z
+  type: git
+  source:
+    uri: https://gist.github.com/drnic/7d0a4761efb55a312ab2.git
+- name: resource-script-pretty-ls
+  type: git
+  source:
+    uri: https://gist.github.com/drnic/58cade960afb0b009010.git
+
