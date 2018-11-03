@@ -1,0 +1,7 @@
+# https://github.com/pivotalservices/concourse-curl-resource#example
+resources:
+- name: my-file
+  type: file-url
+  source:
+    url: http://www-us.apache.org/dist/lucene/java/5.5.4/lucene-5.5.4-src.tgz  
+    filename: lucene-5.5.4-src.tgz  

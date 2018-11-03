@@ -18,14 +18,15 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-slack-A4/cheatsheet-slack-A4.pdf][cheatsheet-slack-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-tmux-A4][CheatSheet Tmux/Tmate]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
+File me [[https://github.com/dennyzhang/cheatsheet-emacs-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-emacs-A4][this repo]].
 ** Basic
 | Name                         | Summary                                  |
 |------------------------------+------------------------------------------|
 | Slack keyboard shortcuts     | =Ctrl+/=, [[https://get.slack.help/hc/en-us/articles/201374536-Slack-keyboard-shortcuts][Official Slack Link: shortcuts]] |
 | Jump to channel or person    | =Ctrl+T=                                 |
 | Move to next unread messages | =Alt+Shift+Arrow=                        |
-
 ** Reminders
 | Name                         | Summary                                 |
 |------------------------------+-----------------------------------------|

@@ -18,11 +18,9 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-jenkins-A4/cheatsheet-jenkins-A4.pdf][cheatsheet-jenkins-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-jenkins-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-jenkins-groovy-A4][Groovy CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/DennyZhang/cheatsheet-jenkins-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-jenkins-A4][this repo]].
-
-See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** Jenkins Summary
 | Name                     | Command                                                         |
 |--------------------------+-----------------------------------------------------------------|

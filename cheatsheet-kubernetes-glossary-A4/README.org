@@ -18,12 +18,9 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-kubernetes-glossary-A4/cheatsheet-kubernetes-glossary-A4.pdf][cheatsheet-kubernetes-glossary-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/kubernetes/][kubernetes]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-glossary-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][Cheatsheet: Driver License]], [[https://cheatsheet.dennyzhang.com/cheatsheet-travel][Cheatsheet Travel]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-kubernetes-glossary-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-kubernetes-glossary-A4][this repo]].
-
-See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
-
-- Check kubernetes cheatsheet: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4
 ** Glossary - Uncommon & Useful
 | Name                     | Command                                                                                  |
 |--------------------------+------------------------------------------------------------------------------------------|

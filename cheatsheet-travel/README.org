@@ -15,6 +15,7 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-travel/cheatsheet-travel.pdf][cheatsheet-travel.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-travel
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][Cheatsheet: Driver License]], [[https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4][Cheatsheet: Visa]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 Checklist before travel by flights
 ** Mandatory

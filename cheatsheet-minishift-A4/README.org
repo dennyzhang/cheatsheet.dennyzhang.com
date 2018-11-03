@@ -18,11 +18,9 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-minishift-A4/cheatsheet-minishift-A4.pdf][cheatsheet-minishift-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-minishift-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/DennyZhang/cheatsheet-minishift-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-minishift-A4][this repo]].
-
-See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** Minishift Summary
 | Name                             | Command                                                                          |
 |----------------------------------+----------------------------------------------------------------------------------|
@@ -31,6 +29,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | OpenShift web console            | https://192.168.99.100:8443, system/admin                                        |
 | Stop/delete minishift env        | =minishift stop=, =minishift delete=                                             |
 | ssh minishift                    | =minishift ssh=                                                                  |
+| Get minishift IP                 | =minishift ip=                                                                   |
 | Check status                     | =minishift status=, =oc config view=, =minishift oc-env=, =minishift docker-env= |
 | List addons                      | =minishift addons list=                                                          |
 | Apply addon                      | =minishift addons apply admin-user=                                              |

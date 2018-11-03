@@ -18,20 +18,26 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concourse-A4/cheatsheet-concourse-A4.pdf][cheatsheet-concourse-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
-
-See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
-
 ** Concourse Advanced
 | Name                                         | Summary                                                                                      |
 |----------------------------------------------+----------------------------------------------------------------------------------------------|
-| github-release resource cannot find old tag  | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]                        |
+| github-release resource cannot find old tag  | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]                        | 
 | fly set-pipeline run into "error: forbidden" | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][Link: GitHub]] |
 | List team details for all targets            | =fly -t $target teams -d=, =~/.flyrc=                                                        |
+| Hijack to container of a successful run      | You can't. By design when task has passed, the container will be deleted                     |
 | Concourse examples                           | [[https://github.com/pivotal-cf/pcf-pipelines/tree/v0.23.0][github: pcf-pipelines]]                                                                        |
-** Concourse Containers
+** Concourse Resources
+| Name                                        | Summary                   |
+|---------------------------------------------+---------------------------|
+| [[https://github.com/pivotalservices/concourse-curl-resource][concourse-curl-resource]]: http download link | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/url-download.yml][url-download.yml]] |
+| [[https://github.com/concourse/git-resource][git-resource]]                                | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]]  |
+| [[https://github.com/concourse/github-release-resource][github-release]]                              |                           |
+| [[https://github.com/concourse/docker-image-resource][docker-image-resource]]: docker image         |                           |
+| [[https://github.com/frodenas/gcs-resource][gcs-resource]]: google bucket                 |                           |
+** concourse Containers
 | Name                            | Summary                                    |
 |---------------------------------+--------------------------------------------|
 | Login to container              | =fly -t $target hijack -u $job_url=        |
@@ -66,28 +72,21 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Fly conf file                      | =~/.flyrc=                                                                       |
 | Reference                          | After login to the *main* team, you can update other teams. [[https://concourse-ci.org/teams.html][Link: Concourse Team]] |
 ** Concourse Pipeline
-| Name                              | Summary                                                                     |
-|-----------------------------------+-----------------------------------------------------------------------------|
-| List all authenticated end points | =fly targets= [[https://concourse-ci.org/fly.html#fly-targets][Link: fly targets]]                                             |
-| fly login                         | =fly -t $target login -c $concourse_url -n $team_name=                      |
-| Get pipeline definition           | =fly -t $target get-pipeline -p $job-name > job.yaml= [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][Link: fly-getpipeline]] |
-| Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name --config pipeline.yml=       |
-| Destroy pipeline                  | =fly -t $target destroy-pipeline -p $pipeline_name=                         |
-| Format pipeline                   | =fly format-pipeline -c pipeline.yml=                                       |
-| Validate pipeline                 | =fly validate-pipeline -c pipeline.yml=                                     |
+| Name                              | Summary                                                                                                |
+|-----------------------------------+--------------------------------------------------------------------------------------------------------|
+| List all authenticated end points | =fly targets= [[https://concourse-ci.org/fly.html#fly-targets][Link: fly targets]]                                                                        |
+| fly login                         | =fly -t $target login -c $concourse_url -n $team_name=                                                 |
+| Get pipeline definition           | =fly -t $target get-pipeline -p $job-name > job.yaml= [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][Link: fly-getpipeline]]                            |
+| Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name --config pipeline.yml --load-vars-from credentials.yml= |
+| Destroy pipeline                  | =fly -t $target destroy-pipeline -p $pipeline_name=                                                    |
+| Format pipeline                   | =fly format-pipeline -c pipeline.yml=                                                                  |
+| Validate pipeline                 | =fly validate-pipeline -c pipeline.yml=                                                                |
 ** Concourse GUI/UI
 | Name                               | Summary                             |
 |------------------------------------+-------------------------------------|
 | URL for pipelines for a given team | Search by team, then generate a url |
 | Get fly version                    | =fly --version=                     |
 
-** Concourse Resources
-| Name                                | Summary                                                             |
-|-------------------------------------+---------------------------------------------------------------------|
-| Docker image: docker-image-resource | https://github.com/concourse/docker-image-resource                  |
-| Google bucket: gcs-resource         | https://github.com/frodenas/gcs-resource                            |
-| git-resource                        | https://github.com/concourse/git-resource, example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]] |
-| github-release                      | https://github.com/concourse/github-release-resource                |
 ** fly Online Usage
 #+BEGIN_EXAMPLE
 bash-3.2$ fly --help

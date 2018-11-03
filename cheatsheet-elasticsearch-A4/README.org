@@ -18,14 +18,13 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-elasticsearch-A4/cheatsheet-elasticsearch-A4.pdf][cheatsheet-elasticsearch-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-elasticsearch-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-couchbase-A4][Couchbase CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/DennyZhang/cheatsheet-elasticsearch-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-elasticsearch-A4][this repo]].
-
-See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** Elasticsearch Summary
-| Name                     | Command                                                         |
-|--------------------------+-----------------------------------------------------------------|
+| Name | Command |
+|------+---------|
+|      |         |
 
 ** More Resources
 

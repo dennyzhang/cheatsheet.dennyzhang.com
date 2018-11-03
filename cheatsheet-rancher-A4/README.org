@@ -18,21 +18,27 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-rancher-A4/cheatsheet-rancher-A4.pdf][cheatsheet-rancher-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/kubernetes/][kubernetes]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-rancher-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/DennyZhang/cheatsheet-rancher-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-rancher-A4][this repo]].
-
-See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** Rancher Summary
-| Name                     | Command                                                         |
-|--------------------------+-----------------------------------------------------------------|
-| Setup rancher in vagrant | [[https://github.com/rancher/quickstart/tree/master/vagrant][GitHub: quickstart/vagrant]], https://172.22.101.101/ admin/admin |
-| Reference                | [[https://rancher.com/docs/rancher/v2.x/en/][Rancher v2.0 Documentation]], [[http://slack.rancher.io/][Rancher Slack]], [[https://forums.rancher.com/][Rancher Forum]]        |
-| Reference                | [[https://www.youtube.com/watch?v=HQ4nT8dnvJc][YouTube: Rancher Overview]], [[https://www.youtube.com/watch?v=JQ4yUD3EWv4][YouTube: Setup Rancher In A Hard Way]] |
-| Reference                | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-rancher-A4][Rancher CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]        |
+| Name                                       | Command                                                         |
+|--------------------------------------------+-----------------------------------------------------------------|
+| Setup rancher in vagrant                   | [[https://github.com/rancher/quickstart/tree/master/vagrant][GitHub: quickstart/vagrant]], https://172.22.101.101/ admin/admin |
+| Start rancher control plane with container | =docker run -d -p 80:80 -p 443:443 rancher/rancher=             |
+| Reference                                  | [[https://rancher.com/docs/rancher/v2.x/en/][Rancher v2.0 Documentation]], [[http://slack.rancher.io/][Rancher Slack]], [[https://forums.rancher.com/][Rancher Forum]]        |
+| Reference                                  | [[https://www.youtube.com/watch?v=HQ4nT8dnvJc][YouTube: Rancher Overview]], [[https://www.youtube.com/watch?v=JQ4yUD3EWv4][YouTube: Setup Rancher In A Hard Way]] |
+| Reference                                  | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-rancher-A4][Rancher CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]        |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-rancher-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-rancher-A4/rancher-architecture.png]]
-** Rancher Concepts
+** Rancher Components
+| Name                    | Command                                                        |
+|-------------------------+----------------------------------------------------------------|
+| Control plane - [[https://github.com/rancher/rancher][rancher]] | Complete container management platform                         |
+| [[https://github.com/rancher/cli][cli]]                     | Rancher CLI                                                    |
+| VM distro - [[https://github.com/rancher/os][os]]          | Tiny Linux distro that runs the entire OS as Docker containers |
+| Storage - [[https://github.com/rancher/longhorn][longhorn]]      | Distributed block storage for Kubernetes                       |
+** rancher Concepts
 | Name          | Command |
 |---------------+---------|
 | Node driver   |         |
@@ -45,7 +51,6 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Select project      | =rancher context switch=                                    |
 | Rancher ssh to vm   | =rancher ssh node-001=                                      |
 | Run kubectl command | =rancher kubectl get nodes=                                 |
-| Create a cluster    | =rke cluster up --cluster-file cluster.yaml=                |
 ** Rancher Source Code
 | Name                      | Command                                               |
 |---------------------------+-------------------------------------------------------|
@@ -133,13 +138,7 @@ Commands:
 Run 'rancher COMMAND --help' for more information on a command.
 #+END_EXAMPLE
 ** More Resources
-https://www.okd.io/
-
-https://access.redhat.com/documentation/en-us/rancher_container_platform/3.11/
-
-https://access.redhat.com/documentation/en-us/rancher_container_platform/3.11/html/cli_reference/cli-reference-basic-cli-operations
-
-https://docs.okd.io/latest/rancher/getting-started/quickstart.html
+https://rancher.com/docs/rancher/v2.x/en/quick-start-guide/deployment/
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
@@ -182,4 +181,13 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 * TODO rancher: what node driver means: activate/deactivate        :noexport:
 * TODO rancher ssh and kubectl command timeout                     :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-
+* TODO Create a cluster: rke cluster up --cluster-file cluster.yaml :noexport:
+* TODO Blog: Rancher support multiple cloud                        :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Blog: X Useful Unqiue Features Rancher has provided         :noexport:
+** Multi-cloud
+** Launch kubectl from webconsole
+** Nodedriver, node template
+* TODO Scenario: How rancher secure k8s api calls?                 :noexport:
+https://rancher.com/docs/rancher/v2.x/en/overview/architecture/
+* TODO Scenario: How rancher do the vm life-cycle-management?      :noexport:
