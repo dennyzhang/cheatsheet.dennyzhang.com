@@ -38,6 +38,7 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | Upload stemcell from cli    | =omcli upload-stemcell -s </path/stemcell.tgz>=                                                                          |
 | List products               | =omcli curl -s -p /api/v0/staged/products=                                                                               |
 | Get attribute               | =omcli curl -s --path /api/v0/deployed/products/${product_guid}/credentials/.properties.pks_uaa_management_admin_client= |
+| Get tile properties         | =bosh deployments=, =omcli curl --path /api/v0/staged/products/${bosh-deployment}/properties -s=                         |
 ** Ops manager
 | Name                | Command                                                                  |
 |---------------------+--------------------------------------------------------------------------|
@@ -181,7 +182,7 @@ https://gitlab.eng.vmware.com/PKS/pks-vrli-release/commit/7f8bda1c5ce9a9c44c2f41
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Run errand to do a feature cleanup                          :noexport:
 * TODO Run hook a tile                                             :noexport:
-* TODO [#A] How pks tile know the packages: wavefront 0.8.0+dev.2
+* TODO [#A] How pks tile know the packages: wavefront 0.8.0+dev.2  :noexport:
 #+BEGIN_EXAMPLE
    /Users/zdenny/git_code/kubernets_community/p-pks-integrations  ./create-tile.sh                                                                                                                                                     oratos-vmware-wavefront ✘ ✹  ✔ 0
 Git SHA: [a25febbb6a27d2ccebc1faf249702f66a30045c7]

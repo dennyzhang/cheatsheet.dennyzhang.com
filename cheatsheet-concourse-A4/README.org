@@ -34,13 +34,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | Name                                        | Summary                                                |
 |---------------------------------------------+--------------------------------------------------------|
 | Hello world pipeline                        | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/helloworld.yml][helloworld.yml]]                                |
-| Pass output to input across jobs            | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/tasks-output-input.yml][tasks-output-input.yml]]                        |
+| Pass output to input across different tasks | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/tasks-output-input.yml][tasks-output-input.yml]]                        |
 | Trigger pipeline test every 5 minutes       | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/run-test-regularly.yml][run-test-regularly.yml]]                        |
 | [[https://github.com/concourse/git-resource][git-resource]]                                | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/example-git.yml][example-git.yml]]                               |
+| [[https://github.com/pivotalservices/concourse-curl-resource][concourse-curl-resource]]: http download link | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/url-download.yml][url-download.yml]]                              |
 | [[https://github.com/concourse/github-release-resource][github-release]]                              |                                                        |
 | [[https://github.com/concourse/docker-image-resource][docker-image-resource]]: docker image         |                                                        |
 | [[https://github.com/frodenas/gcs-resource][gcs-resource]]: google bucket                 |                                                        |
-| [[https://github.com/pivotalservices/concourse-curl-resource][concourse-curl-resource]]: http download link | example: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/url-download.yml][url-download.yml]]                              |
 | [[https://github.com/pivotalservices/file-downloader-resource][file-downloader-resource]]                    | enable downloading pivotal product files and stemcells |
 | PCF pipelines examples                      | [[https://github.com/pivotal-cf/pcf-pipelines/tree/v0.23.0][GitHub: pcf-pipelines]]                                  |
 
@@ -60,16 +60,10 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | fly                   | Pipelines are configured entirely via the fly. There is no GUI. [[https://concourse-ci.org/fly.html][Link: fly]] |
 | Behaviors             |                                                                           |
 | [[https://concourse-ci.org/tags-step-modifier.html][Step: tags]]            | Use tag to match workers                                                  |
-| Input resource        |                                                                           |
-| Output resource       |                                                                           |
+| Resource              | Allow you to define inputs and outputs to jobs in a pipeline              |
 | [[https://concourse-ci.org/fly.html#fly-targets][Targets]]               | Alias of Concourse endpoints                                              |
 | Teams                 |                                                                           |
 | bbl (bosh-bootloader) | [[https://github.com/cloudfoundry/bosh-bootloader][GitHub: bosh-bootloader]]                                                   |
-** Concourse Tasks
-| Name                                | Summary |
-|-------------------------------------+---------|
-| [[https://concoursetutorial.com/basics/task-outputs-to-inputs/][Passing Task Outputs to Task Inputs]] |         |
-
 ** Concourse Authentication & Authorization
 | Name                               | Summary                                                                          |
 |------------------------------------+----------------------------------------------------------------------------------|
@@ -318,7 +312,6 @@ error: websocket: bad handshake
 *.pivotal
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO write code in concourse yaml file                           :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Blog: X Performance Tips To Speed Up Your Concourse Pipeline :noexport:
 ** TODO [#A] Avoid pass big files across tasks: How often concourse check tile resource in gcp bucket? :noexport:
 ** TODO Concourse speed up the docker image load                   :noexport:
@@ -327,7 +320,6 @@ https://concourse-ci.org/jobs.html
 * TODO [#A] Concourse significant delay across steps               :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Pass the output to multiple pipelines                       :noexport:
-* TODO Concourse how to explictly and implictly dependency         :noexport:
 * TODO Concourse manage the layout                                 :noexport:
 Each row for one project
 https://ci.vcna.io/?search=team%3A%20oratos-vmware
@@ -338,3 +330,8 @@ https://github.com/concourse/concourse/issues/1994
 https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concourse-A4/render-for-render.md
 * TODO Concourse execute one step only                             :noexport:
 https://github.com/starkandwayne/concourse-tutorial/blob/master/tutorials/basic/task-scripts/task_show_uname.yml
+* TODO Concourse: avoid run one pipeline in parallel               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Concourse how to explictly and implictly dependency         :noexport:
+* TODO Concourse caculate the total duration for a given pipeline  :noexport:
+* TODO Concourse get the failure rate for a given pipeline         :noexport:
