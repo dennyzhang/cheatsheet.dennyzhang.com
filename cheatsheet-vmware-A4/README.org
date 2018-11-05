@@ -1,0 +1,96 @@
+* CheatSheet: VMware Products                                        :VMware:
+:PROPERTIES:
+:type:     vmware
+:export_file_name: cheatsheet-vmware-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-vmware-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-vmware-A4/cheatsheet-vmware-A4.pdf][cheatsheet-vmware-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/kubernetes/][kubernetes]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-vmware-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][CheatSheet: Cloud Virtualization]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
+** Cloud Platform
+| Name                      | Summary |
+|---------------------------+---------|
+| vSphere                   |         |
+| vmc (VMware Cloud On AWS) |         |
+** Cloud Management
+| Name                         | Summary                                                       |
+|------------------------------+---------------------------------------------------------------|
+| vRealize                     |                                                               |
+| vrli (log insight)           | [[https://www.youtube.com/watch?v=h_99uAgopAQ&t=2s][YouTube: PKS and VMware vRealize Log Insight]]                  |
+| Log intelligence             |                                                               |
+| wavefront                    | [[https://www.youtube.com/watch?v=NAOUUSr9HDU&t=9s][YouTube: Pivotal Container Service (PKS) and VMware Wavefront]] |
+| vrops                        | [[https://www.youtube.com/watch?v=YHpI_DcBlDM&list=PLrFo2o1FG9n4q6F9hjK1-OxI-3s7luhmJ][YouTube: VMware vRealize Operations]]                           |
+| [[https://www.cloudhealthtech.com/][cloudhealth]]                  |                                                               |
+| vcd (VMware vCLoud Director) | [[https://www.youtube.com/watch?v=95Pgh0QTQnE][YouTube: VMware vCloud Director Overview]]                      |
+** Cloud Native
+| Name | Summary |
+|------+---------|
+| PKS  |         |
+| VKE  |         |
+** NSX Networking
+| Name  | Summary |
+|-------+---------|
+| NSX-T |         |
+| NSX-V |         |
+** Partners
+| Name              | Summary |
+|-------------------+---------|
+| bosh              |         |
+| Cloud foundry PAS |         |
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-vmware-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-vmware-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-vmware-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
+* TODO Add an image                                                :noexport:
+* TODO Add interlinks                                              :noexport:
+* TODO Explain concepts                                            :noexport:
+Automation & Governance
+
+VM Life cycle management
+
+virtual cloud director
+
+Insights & Analytics

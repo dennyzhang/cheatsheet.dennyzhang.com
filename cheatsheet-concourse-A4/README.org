@@ -24,11 +24,12 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 ** Concourse Advanced
 | Name                                                 | Summary                                                                                      |
 |------------------------------------------------------+----------------------------------------------------------------------------------------------|
-| github-release resource cannot find old tag          | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]                        |
 | fly set-pipeline run into "error: forbidden"         | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][Link: GitHub]] |
+| github-release resource cannot find old tag          | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]                        |
 | List team details for all targets                    | =fly -t $target teams -d=, =~/.flyrc=                                                        |
-| Hijack to containers with a successful run           | You can't. By design when task has passed, the container will be deleted                     |
-| Split one pipeline yaml into small *reusable* pieces | Not supported. [[https://github.com/concourse/concourse/issues/1994][Link: GitHub]]. For now, we need to workaround it.                              |
+| Hijack to containers with a successful run           | Not supported. By design when task has passed, the container will be deleted                 |
+| Split one pipeline yaml into small *reusable* pieces | Not supported. For now, we need to workaround it. [[https://github.com/concourse/concourse/issues/1994][Link: GitHub]]                               |
+| Add a readonly member to one team                    | Not supported. Concourse only support authentication control, but not authorization control  |
 | Reference                                            | [[https://github.com/starkandwayne/concourse-tutorial][concourse-tutorial]], [[https://github.com/pivotalservices/concourse-pipeline-samples][concourse-pipeline-samples]]                                               |
 ** Concourse Resources & Examples
 | Name                                        | Summary                                                |
@@ -383,3 +384,4 @@ available workers:
       tags:
       - VMware
 #+END_EXAMPLE
+* TODO concourse add timeout for one group of tasks                :noexport:

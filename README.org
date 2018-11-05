@@ -245,6 +245,7 @@ https://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
  #+END_EXAMPLE
 ** TODO generate A4 pdf: https://github.com/PrateekKumarSingh/CheatSheets :noexport:
 * TODO [#A] Role model                                             :noexport:
+** https://github.com/detailyang/awesome-cheatsheet
 ** [#A] https://www.cheatography.com/language/en/
 ** http://cheatsheetworld.com/
 ** [#A] https://github.com/rstacruz/cheatsheets
@@ -360,7 +361,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO systemctl & systemd: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4 :noexport:
-* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-cp-a4  :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4 :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-cron-A4 :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-diff-a4 :noexport:
@@ -368,21 +368,17 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO [#A] github org-ruby fails to generate TOC: https://github.com/dennyzhang/challenges-k8s-istio :noexport:
 * TODO ps & kill: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO cheatsheet: linux check plain text file                     :noexport:
-* TODO cheatsheet: linux check process                             :noexport:
-** HALF linux sort problem by ram usage
-top -b -o +%MEM |head -30
-
-https://www.commandlinefu.com/commands/view/3/display-the-top-ten-running-processes-sorted-by-memory-usage
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO asterisk: /Users/zdenny/cheat/cheat/cheatsheets/asterisk    :noexport:
 * TODO shred: /Users/zdenny/cheat/cheat/cheatsheets/shred          :noexport:
 * TODO ncdu: /Users/zdenny/cheat/cheat/cheatsheets/                :noexport:
 * TODO nkf: /Users/zdenny/cheat/cheat/cheatsheets/                 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO google adsense image icon: https://code.dennyzhang.com/     :noexport:
+
 * TODO cheatsheet link highlight: https://cheatsheet.dennyzhang.com/cheatsheet-gcp-a4 :noexport:
 * TODO generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-a4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-procfs-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-wget-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-apt-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-grep-A4 :noexport:
@@ -395,9 +391,22 @@ https://www.commandlinefu.com/commands/view/3/display-the-top-ten-running-proces
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-chef-a4 :noexport:
 
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-process-A4 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO github: try to fold things: https://github.com/LeCoupa/awesome-cheatsheets :noexport:
+* TODO [#A] blog link: avoid going to an external link: [[url-external: doesn't work for org-ruby: https://cheatsheet.dennyzhang.com/cheatsheet-git
+
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-health-A4 :noexport:
 * TODO [#A] health cheatsheet: /Users/mac/Dropbox/org_data/life/life.org :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cheatsheet column: set the minimium width: https://github.com/dennyzhang/cheatsheet-kubernetes-A4 :noexport:
+
 * TODO [#A] PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
 * TODO [#A] avoid underline: https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cheatsheet: helm                                            :noexport:
+| Component | Role   | Location                            |
+|-----------+--------+-------------------------------------|
+| helm      | Client | Runs on your local workstation      |
+| tiller    | Server | Runs inside your Kubernetes cluster |
