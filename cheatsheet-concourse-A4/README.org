@@ -335,3 +335,51 @@ https://github.com/starkandwayne/concourse-tutorial/blob/master/tutorials/basic/
 * TODO Concourse how to explictly and implictly dependency         :noexport:
 * TODO Concourse caculate the total duration for a given pipeline  :noexport:
 * TODO Concourse get the failure rate for a given pipeline         :noexport:
+* TODO concourse: worker tag: https://ci.vcna.io/teams/oratos-vmware/pipelines/pks-vrops-install-tile/jobs/claim-lock/builds/1 :noexport:
+#+BEGIN_EXAMPLE
+pks-vrops-install-tile
+/
+claim-lock
+dennyzhang
+claim-lock #1
+started	18m 37s ago
+finished	18m 36s ago
+duration	1s
+1
+path	oratos-vmware/vrli/pivotal-container-service-1.3.0-build.6.pivotal
+untested-tile
+no workers satisfying: resource type 'gcs-resource', tag 'VMware'
+
+available workers: 
+  - platform 'linux'
+  - platform 'linux'
+  - platform 'linux'
+  - platform 'linux'
+  - platform 'linux'
+  - platform 'linux'
+  - platform 'linux'
+  - platform 'linux'
+  - platform 'linux'
+  - platform 'linux'
+  - platform 'linux'
+  - platform 'linux'
+  - platform 'linux'
+  - platform 'linux'
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+- name: claim-lock
+  serial: true
+  plan:
+  - get: untested-tile
+    trigger: true
+    tags:
+    - VMware
+  - aggregate:
+    - get: p-pks-integrations
+      tags:
+      - VMware
+    - get: git-environments-metadata
+      tags:
+      - VMware
+#+END_EXAMPLE
