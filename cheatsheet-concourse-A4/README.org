@@ -22,15 +22,16 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
 ** Concourse Advanced
-| Name                                                 | Summary                                                                                      |
-|------------------------------------------------------+----------------------------------------------------------------------------------------------|
-| fly set-pipeline run into "error: forbidden"         | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][Link: GitHub]] |
-| github-release resource cannot find old tag          | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]                        |
-| List team details for all targets                    | =fly -t $target teams -d=, =~/.flyrc=                                                        |
-| Hijack to containers with a successful run           | Not supported. By design when task has passed, the container will be deleted                 |
-| Split one pipeline yaml into small *reusable* pieces | Not supported. For now, we need to workaround it. [[https://github.com/concourse/concourse/issues/1994][Link: GitHub]]                               |
-| Add a readonly member to one team                    | Not supported. Concourse only support authentication control, but not authorization control  |
-| Reference                                            | [[https://github.com/starkandwayne/concourse-tutorial][concourse-tutorial]], [[https://github.com/pivotalservices/concourse-pipeline-samples][concourse-pipeline-samples]]                                               |
+| Name                                                 | Summary                                                                                        |
+|------------------------------------------------------+------------------------------------------------------------------------------------------------|
+| fly set-pipeline run into "error: forbidden"         | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][Link: GitHub]]   |
+| github-release resource cannot find old tag          | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]                          |
+| List team details for all targets                    | =fly -t $target teams -d=, =~/.flyrc=                                                          |
+| Concourse UI runs into a blank page                  | If pipeline has recursive dependencies, Concourse UI may have issue to run its javascript code |
+| Split one pipeline yaml into small *reusable* pieces | Not supported. An uncomfortable workaround: generating yaml with other tools. [[https://github.com/concourse/concourse/issues/1994][Link: GitHub]]     |
+| Add a readonly member to one team                    | Not supported. Concourse only support authentication control, but not authorization control    |
+| Hijack to containers with a successful run           | Not supported. By design when task has passed, the container will be deleted                   |
+| Reference                                            | [[https://github.com/starkandwayne/concourse-tutorial][concourse-tutorial]], [[https://github.com/pivotalservices/concourse-pipeline-samples][concourse-pipeline-samples]]                                                 |
 ** Concourse Resources & Examples
 | Name                                        | Summary                                                |
 |---------------------------------------------+--------------------------------------------------------|
@@ -52,20 +53,32 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | Login to container              | =fly -t $target hijack -u $job_url=        |
 | Run command without sudden exit | =nohup SOMECOMMAND &=; =tail -f nohup.out= |
 ** Concourse Concepts
-| Name                  | Summary                                                                   |
-|-----------------------+---------------------------------------------------------------------------|
-| Links                 | [[https://concourse-ci.org/concepts.html][Link: Concourse Concepts]], [[https://concoursetutorial.com/][Link: concoursetutorial.com]]                     |
-| Pipelines             |                                                                           |
-| Jobs                  |                                                                           |
-| Tasks                 |                                                                           |
-| fly                   | Pipelines are configured entirely via the fly. There is no GUI. [[https://concourse-ci.org/fly.html][Link: fly]] |
-| Behaviors             |                                                                           |
-| [[https://concourse-ci.org/tags-step-modifier.html][Step: tags]]            | Use tag to match workers                                                  |
-| Resource              | Allow you to define inputs and outputs to jobs in a pipeline              |
-| [[https://concourse-ci.org/fly.html#fly-targets][Targets]]               | Alias of Concourse endpoints                                              |
-| Teams                 |                                                                           |
-| bbl (bosh-bootloader) | [[https://github.com/cloudfoundry/bosh-bootloader][GitHub: bosh-bootloader]]                                                   |
-** Concourse Authentication & Authorization
+| Name                  | Summary                                                         |
+|-----------------------+-----------------------------------------------------------------|
+| [[https://concourse-ci.org/fly.html][fly]]                   | Pipelines are configured entirely via the fly. There is no GUI. |
+| Teams                 |                                                                 |
+| [[https://concourse-ci.org/fly.html#fly-targets][Targets]]               | Alias of Concourse endpoints                                    |
+| Pipelines             |                                                                 |
+| Jobs                  |                                                                 |
+| Tasks                 |                                                                 |
+| Resource              | Allow you to define inputs and outputs to jobs in a pipeline    |
+| Behaviors             |                                                                 |
+| [[https://concourse-ci.org/tags-step-modifier.html][Step: tags]]            | Use tag to match workers                                        |
+| bbl (bosh-bootloader) | [[https://github.com/cloudfoundry/bosh-bootloader][GitHub: bosh-bootloader]]                                         |
+| Reference             | [[https://concourse-ci.org/concepts.html][Link: Concourse Concepts]], [[https://concoursetutorial.com/][Link: concoursetutorial.com]]           |
+** Concourse Pipeline
+| Name                              | Summary                                                                            |
+|-----------------------------------+------------------------------------------------------------------------------------|
+| List all authenticated end points | =fly targets= [[https://concourse-ci.org/fly.html#fly-targets][Link: fly targets]]                                                    |
+| Get fly version                   | =fly --version=                                                                    |
+| fly login                         | =fly -t $target login -c $concourse_url -n $team_name=                             |
+| Get pipeline definition           | =fly -t $target get-pipeline -p $job-name > job.yaml= [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][Link: fly-getpipeline]]        |
+| Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name -c pipeline.yml -l credentials.yml= |
+| Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name -c pipeline.yml -v env1=var1=       |
+| Destroy pipeline                  | =fly -t $target destroy-pipeline -p $pipeline_name=                                |
+| Format pipeline                   | =fly format-pipeline -c pipeline.yml=                                              |
+| Validate pipeline                 | =fly validate-pipeline -c pipeline.yml=                                            |
+** Concourse Security
 | Name                               | Summary                                                                          |
 |------------------------------------+----------------------------------------------------------------------------------|
 | Fly login to the default main team | =fly -t $target login -n main -c $concourse_url=                                 |
@@ -78,23 +91,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | Login to a team                    | =fly -t $target set-team -n $team_name=                                          |
 | Fly conf file                      | =~/.flyrc=                                                                       |
 | Reference                          | After login to the *main* team, you can update other teams. [[https://concourse-ci.org/teams.html][Link: Concourse Team]] |
-** Concourse Pipeline
-| Name                              | Summary                                                                            |
-|-----------------------------------+------------------------------------------------------------------------------------|
-| List all authenticated end points | =fly targets= [[https://concourse-ci.org/fly.html#fly-targets][Link: fly targets]]                                                    |
-| fly login                         | =fly -t $target login -c $concourse_url -n $team_name=                             |
-| Get pipeline definition           | =fly -t $target get-pipeline -p $job-name > job.yaml= [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][Link: fly-getpipeline]]        |
-| Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name -c pipeline.yml -l credentials.yml= |
-| Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name -c pipeline.yml -v env1=var1=       |
-| Destroy pipeline                  | =fly -t $target destroy-pipeline -p $pipeline_name=                                |
-| Format pipeline                   | =fly format-pipeline -c pipeline.yml=                                              |
-| Validate pipeline                 | =fly validate-pipeline -c pipeline.yml=                                            |
-** Concourse GUI/UI
-| Name                               | Summary                             |
-|------------------------------------+-------------------------------------|
-| URL for pipelines for a given team | Search by team, then generate a url |
-| Get fly version                    | =fly --version=                     |
-
 ** fly Online Usage
 #+BEGIN_EXAMPLE
 bash-3.2$ fly --help
@@ -320,22 +316,21 @@ error: websocket: bad handshake
 https://concourse-ci.org/jobs.html
 * TODO [#A] Concourse significant delay across steps               :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Pass the output to multiple pipelines                       :noexport:
+* TODO Concourse pipeline use multiple file instead of one yaml file :noexport:
+https://github.com/concourse/concourse/issues/1994
 * TODO Concourse manage the layout                                 :noexport:
 Each row for one project
 https://ci.vcna.io/?search=team%3A%20oratos-vmware
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Concourse pipeline use multiple file instead of one yaml file :noexport:
-https://github.com/concourse/concourse/issues/1994
+* TODO [#A] Pass the output to multiple pipelines                  :noexport:
 * TODO Concourse: Interprate variable template: high order rendering :noexport:
 https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concourse-A4/render-for-render.md
+* TODO Concourse: avoid run one pipeline in parallel               :noexport:
 * TODO Concourse execute one step only                             :noexport:
 https://github.com/starkandwayne/concourse-tutorial/blob/master/tutorials/basic/task-scripts/task_show_uname.yml
-* TODO Concourse: avoid run one pipeline in parallel               :noexport:
+* TODO [#B] Concourse caculate the total duration for a given pipeline :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Concourse how to explictly and implictly dependency         :noexport:
-* TODO Concourse caculate the total duration for a given pipeline  :noexport:
 * TODO Concourse get the failure rate for a given pipeline         :noexport:
+* TODO Concourse how to explictly and implictly dependency         :noexport:
 * TODO concourse: worker tag: https://ci.vcna.io/teams/oratos-vmware/pipelines/pks-vrops-install-tile/jobs/claim-lock/builds/1 :noexport:
 #+BEGIN_EXAMPLE
 pks-vrops-install-tile
@@ -385,3 +380,19 @@ available workers:
       - VMware
 #+END_EXAMPLE
 * TODO concourse add timeout for one group of tasks                :noexport:
+* TODO [#A] release-env: use the same lock: https://ci.vcna.io/teams/main/pipelines/wavefront-proxy-release/jobs/release-env/builds/3 :noexport:IMPORTANT:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Concourse worker: https://concourse-ci.org/worker-internals.html :noexport:
+* TODO concourse doesn't work well with git push --force           :noexport:
+* TODO Concourse get env to override parameter                     :noexport:
+* TODO [#A] Concourse workflow hack-nimbus, what if when initialize-vrli has finished, but locks are still in claimed state.
+* TODO Concourse cycle dependency                                  :noexport:
+#+BEGIN_EXAMPLE
+but for the record; please be careful not to create any cycles in a Concourse pipeline such as:
+```get: A, passed: B
+get: B, passed: A```
+
+because Concourse doesn’t do cycle detection and everything will be bad
+#+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Concourse tag the worker, and use it for the same pipeline  :noexport:

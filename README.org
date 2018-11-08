@@ -1,5 +1,5 @@
 * CheatSheet
-#+BEGIN_EXPORT HTML
+#+BEGIN_HTML
 <a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -24,7 +24,7 @@ See more cheatsheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 - Refresh all cheatsheet pdf files: =make refresh-cheatsheet=
 ** More Resources
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
-#+BEGIN_EXPORT HTML
+#+BEGIN_HTML
  <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
  <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
@@ -75,7 +75,7 @@ I'm [[https://www.linkedin.com/in/dennyzhang001][Denny Zhang]]. A coder at work.
 
 [[https://cheatsheet.dennyzhang.com/contact][https://cdn.dennyzhang.com/images/brain/denny_intro.jpg]]
 
-#+BEGIN_EXPORT HTML
+#+BEGIN_HTML
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
@@ -103,7 +103,7 @@ Cheers!
 
 - See more cheatsheets:
 
-#+BEGIN_EXPORT HTML
+#+BEGIN_HTML
 [get_tags]
 #+END_HTML
 
@@ -346,6 +346,43 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO [#A] org-mode seperator use a different one                 :noexport:
 * TODO Automatically generate picture from text                    :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cheatsheet link highlight: https://cheatsheet.dennyzhang.com/cheatsheet-gcp-a4 :noexport:
+* TODO [#A] github markdown = = don't quite ": https://github.com/dennyzhang/cheatsheet-shell-A4#11-basic :noexport:
+* TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-a4 :noexport:
+* TODO [#A] blog link: avoid going to an external link: [[url-external: doesn't work for org-ruby: https://cheatsheet.dennyzhang.com/cheatsheet-git
+
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO github: try to fold things: https://github.com/LeCoupa/awesome-cheatsheets :noexport:
+* TODO [#A] github org-ruby fails to generate TOC: https://github.com/dennyzhang/challenges-k8s-istio :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-cron-A4 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-wget-A4 :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-apt-A4 :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4 :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-dns-A4 :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4 :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-chef-a4 :noexport:
+
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-health-A4 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-couchbase-A4 :noexport:
+* TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-elasticsearch-A4 :noexport:
+* TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-jenkins-A4 :noexport:
+* TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-process-A4 :noexport:
+* TODO [#A] health cheatsheet: /Users/mac/Dropbox/org_data/life/life.org :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cheatsheet column: set the minimium width: https://github.com/dennyzhang/cheatsheet-kubernetes-A4 :noexport:
+
+* TODO [#A] PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
+* TODO [#A] avoid underline: https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4 :noexport:
+* TODO cheatsheet: helm                                            :noexport:
+| Component | Role   | Location                            |
+|-----------+--------+-------------------------------------|
+| helm      | Client | Runs on your local workstation      |
+| tiller    | Server | Runs inside your Kubernetes cluster |
 * TODO markdown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO [#A] apparmor: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO asciiart: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
@@ -359,54 +396,7 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO openssl: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO mount & udisksctl: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO systemctl & systemd: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4 :noexport:
-* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4 :noexport:
-* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-cron-A4 :noexport:
-* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-diff-a4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] github org-ruby fails to generate TOC: https://github.com/dennyzhang/challenges-k8s-istio :noexport:
-* TODO ps & kill: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* TODO cheatsheet: linux check plain text file                     :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO asterisk: /Users/zdenny/cheat/cheat/cheatsheets/asterisk    :noexport:
 * TODO shred: /Users/zdenny/cheat/cheat/cheatsheets/shred          :noexport:
 * TODO ncdu: /Users/zdenny/cheat/cheat/cheatsheets/                :noexport:
 * TODO nkf: /Users/zdenny/cheat/cheat/cheatsheets/                 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO google adsense image icon: https://code.dennyzhang.com/     :noexport:
-
-* TODO cheatsheet link highlight: https://cheatsheet.dennyzhang.com/cheatsheet-gcp-a4 :noexport:
-* TODO generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-a4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-wget-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-apt-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-grep-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-dns-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-jenkins-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-couchbase-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-elasticsearch-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-chef-a4 :noexport:
-
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-process-A4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO github: try to fold things: https://github.com/LeCoupa/awesome-cheatsheets :noexport:
-* TODO [#A] blog link: avoid going to an external link: [[url-external: doesn't work for org-ruby: https://cheatsheet.dennyzhang.com/cheatsheet-git
-
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-health-A4 :noexport:
-* TODO [#A] health cheatsheet: /Users/mac/Dropbox/org_data/life/life.org :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO cheatsheet column: set the minimium width: https://github.com/dennyzhang/cheatsheet-kubernetes-A4 :noexport:
-
-* TODO [#A] PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
-* TODO [#A] avoid underline: https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO cheatsheet: helm                                            :noexport:
-| Component | Role   | Location                            |
-|-----------+--------+-------------------------------------|
-| helm      | Client | Runs on your local workstation      |
-| tiller    | Server | Runs inside your Kubernetes cluster |

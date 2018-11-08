@@ -35,7 +35,6 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 ** Get bosh/pks tile credential from om
 | Name                                        | Summary                                                                                                                |
 |---------------------------------------------+------------------------------------------------------------------------------------------------------------------------|
-| omcli                                       | alias omcli="om -t https://30.0.0.5 -u admin -p $passwd -k"                                                            |
 | bosh tile -> Bosh Commandline Credentials   | =omcli curl -p /api/v0/deployed/director/credentials/bosh2_commandline_credentials=                                    |
 | Get ops-manager ca cert                     | =omcli curl -p /api/v0/certificate_authorities=                                                                        |
 | pks tile -> Uaa Admin Password              | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.uaa_admin_password=                |
@@ -48,8 +47,8 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 ** Tile Reference
 | Name      | Command                                                                         |
 |-----------+---------------------------------------------------------------------------------|
+| [[https://github.com/pivotal-cf/kiln][kiln]]      | A command line tool to help you maintain tile metadata. [[https://github.com/pivotal-cf/kiln/releases][Download tile]]           |
 | Example   | [[https://github.com/pivotal-cf-experimental/ops-manager-example/blob/master/example-product/metadata/example-product.yml.erb][example-product/metadata/example-product.yml.erb]]                                |
-| [[https://github.com/pivotal-cf/kiln][kiln]]      | A command line tool to help you maintain tile metadata                          |
 | Reference | [[https://docs.pivotal.io/tiledev/2-1/product-template-reference.html#form-properties][Forms Reference]], [[https://docs.pivotal.io/tiledev/2-2/product-template-reference.html][Product Template Reference]], [[https://docs.pivotal.io/tiledev/2-2/property-reference.html][Property Reference]], [[https://docs.pivotal.io/tiledev/2-1/tile-generator.html][Tile Generator]] |
 ** Ops manager
 | Name                | Command                                                                  |
@@ -166,6 +165,30 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* TODO [#A] Blog: Avoid uploading pivotal file via scp, instead of from opsmanager :noexport:
+https://clijockey.com/pcf-tile-uploads/
+- Download kiln. No need for docker.
+- Build tile in your ops manager or internal network
+- Use om cli to upload the tile
+
+sudo wget -O /usr/local/bin/kiln https://github.com/pivotal-cf/kiln/releases/download/0.14.0/kiln-linux
+sudo chmod 755 /usr/local/bin/kiln
+
+om -k -t "https://30.0.0.5" -u admin -p 'Admin!23' -k upload-product -p pivotal-container-service-1.2.3-build.1.pivotal
+om -k -t "https://30.0.0.5" -u admin -p 'Admin!23' curl -p /api/v0/available_products
+
+https://gist.github.com/patrickcrocker/1b84350d640f1e662b2e
+https://github.com/pivotal-cf/om/issues/74
+http://theblasfrompas.blogspot.com/2016/11/uploading-tiles-into-pivotal-cloud_18.html
+
+ls -lth  /tmp/thin-body*
+
+ls -lth /tmp/ops_manager/
+
+time ./create-tile.sh
+
+time omcli upload-product -p /home/denny/pks-tile/out/pivotal-container-service-1.2.9-build.1.pivotal
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improvements/Wishlist for cloudfoundry Tile                 :noexport:
 ** Use container, instead of VM
 ** Small pack size
@@ -187,9 +210,9 @@ https://gitlab.eng.vmware.com/PKS/wavefront-proxy-release/issues/14
 https://gitlab.eng.vmware.com/PKS/pks-vrli-release/commit/7f8bda1c5ce9a9c44c2f41c6ee88a9f5ad5eb461
 
 * TODO [#A] opsmanager: upgrade all clusters                       :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO How to remove packages in tile                              :noexport:
 * TODO How to remove k8s load in tile                              :noexport:
-* TODO manually deploy pks tile: export configuration: use om      :noexport:
 * TODO No way to review the changes                                :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Run errand to do a feature cleanup                          :noexport:
@@ -238,32 +261,8 @@ Calculating md5 sum of /Users/zdenny/Downloads/pks-tile/out/pivotal-container-se
 Calculated md5 sum: 5c16e6765b47e467f1e08f1104f500d8
 #+END_EXAMPLE
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] Blog: Avoid uploading pivotal file via scp, instead of from opsmanager :noexport:
-https://clijockey.com/pcf-tile-uploads/
-- Download kiln. No need for docker.
-- Build tile in your ops manager or internal network
-- Use om cli to upload the tile
-
-sudo wget -O /usr/local/bin/kiln https://github.com/pivotal-cf/kiln/releases/download/0.14.0/kiln-linux
-sudo chmod 755 /usr/local/bin/kiln
-
-om -k -t "https://30.0.0.5" -u admin -p 'Admin!23' -k upload-product -p pivotal-container-service-1.2.3-build.1.pivotal
-om -k -t "https://30.0.0.5" -u admin -p 'Admin!23' curl -p /api/v0/available_products
-
-https://gist.github.com/patrickcrocker/1b84350d640f1e662b2e
-https://github.com/pivotal-cf/om/issues/74
-http://theblasfrompas.blogspot.com/2016/11/uploading-tiles-into-pivotal-cloud_18.html
-
-ls -lth  /tmp/thin-body*
-
-ls -lth /tmp/ops_manager/
-
-time ./create-tile.sh
-
-time omcli upload-product -p /home/denny/pks-tile/out/pivotal-container-service-1.2.9-build.1.pivotal
 * TODO Why my errand is not in the list                            :noexport:
 bosh -d service-instance_97396f8f-8525-4a54-bac3-04d4af279a8d run-errand  unregister-errand
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO bosh run errand with a new version                          :noexport:
 #+BEGIN_EXAMPLE
 kubo@jumper:/home/denny/wavefront-proxy-release$ bosh -d service-instance_97396f8f-8525-4a54-bac3-04d4af279a8d releases
@@ -304,4 +303,40 @@ wavefront-proxy           0.8.0+dev.7      efd7611
 
 Succeeded
 #+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] what is service broker in tile                         :noexport:
+* TODO How tile do the garbage clean                               :noexport:
+* TODO pks tile: wavefront-proxy                                   :noexport:
+      - name: wavefront-proxy
+        version: $( release "wavefront-proxy" | select "version" )
+        jobs:
+        - wavefront-proxy
+      - name: pks-vrops
+        version: $( release "pks-vrops" | select "version" )
+        jobs:
+        - vrops-ops-files
+
+* TODO configure tile                                              :noexport:
+#+BEGIN_EXAMPLE
+  def self.configure_product(properties)
+    cmd = 'configure-product --product-name="pivotal-container-service" '
+    cmd += format("--product-properties='%s' ", JSON.generate(properties))
+
+    om_command(cmd)
+  end
+
+  def self.configured_networks
+    cmd = "curl -p '/api/v0/staged/products/#{guid}/networks_and_azs'"
+
+    JSON.parse(om_command(cmd))
+  end
+
+  def self.configure_product_network(properties)
+    cmd = 'configure-product --product-name="pivotal-container-service" '
+    cmd += format("--product-network='%s' ", JSON.generate(properties))
+
+    om_command(cmd)
+  end
+#+END_EXAMPLE
+
+* TODO install kiln

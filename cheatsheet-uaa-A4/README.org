@@ -275,3 +275,4 @@ curl "https://OPS-MAN-FQDN/download_root_ca_cert \
       -H "Authorization: Bearer YOUR-UAA-ACCESS-TOKEN"
 * TODO uaac change password                                        :noexport:
 https://stackoverflow.com/questions/37225899/password-change-using-the-uaa-rest-api
+* TODO uaa workflow in pks: https://docs.vmware.com/en/VMware-Pivotal-Container-Service/1.0/vmware-pks-10/GUID-PKS10-manage-users.html :noexport:
