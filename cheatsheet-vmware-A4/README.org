@@ -54,17 +54,19 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 |------+---------|
 | [[https://docs.vmware.com/en/VMware-vSAN/index.html][vSAN]] |         |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-vmware-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-vmware-A4/master/vsan.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-vmware-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-vmware-A4/master/vmware-vsan.png]]
 
 ** Misc
-| Name              | Summary                           |
-|-------------------+-----------------------------------|
-| [[https://labs.vmware.com/flings][Flings]]            | Marketplace for vsphere ecosystem |
+| Name                                        | Summary                           |
+|---------------------------------------------+-----------------------------------|
+| [[https://labs.vmware.com/flings][Flings]]                                      | Marketplace for vsphere ecosystem |
+| [[https://docs.vmware.com/en/VMware-Cloud-Foundation/index.html][VCF (VMware Cloud Foundation)]]               |                                   |
+| [[https://www.vmware.com/support/pubs/vmware-validated-design-pubs.html][VVD (VMware Validated Design Documentation)]] |                                   |
 ** Partners
-| Name                                            | Summary |
-|-------------------------------------------------+---------|
-| [[https://bosh.io/docs/][Cloud foundry bosh]]                              |         |
-| [[https://pivotal.io/platform/pivotal-application-service][Cloud foundry PAS (Pivotal Application Service)]] |         |
+| Name                                            | Summary                                    |
+|-------------------------------------------------+--------------------------------------------|
+| [[https://bosh.io/docs/][Cloud foundry bosh]]                              | VM lifecycle management                    |
+| [[https://pivotal.io/platform/pivotal-application-service][Cloud foundry PAS (Pivotal Application Service)]] | On-prem PAAS solution for enterprise users |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
