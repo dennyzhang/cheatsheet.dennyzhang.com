@@ -22,17 +22,17 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
 ** Cloud Native
-| Name             | Summary        |
-|------------------+----------------|
-| VMware PKS       | [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]] |
-| VMware Cloud PKS |                |
+| Name             | Summary                                                             |
+|------------------+---------------------------------------------------------------------|
+| VMware PKS       | A purpose-built kubernetes solution for enterprises. [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]] |
+| VMware Cloud PKS |                                                                     |
 ** Cloud Platform
-| Name                      | Summary                                                   |
-|---------------------------+-----------------------------------------------------------|
-| vSphere Suite             |                                                           |
-| ESXi                      | Enterprise-Grade virtualization                           |
-| vCenter                   |                                                           |
-| [[https://aws.amazon.com/vmware/][vmc (VMware Cloud On AWS)]] | Run vSphere suite on Amazon infrastruture in Public Cloud |
+| Name                      | Summary                                                          |
+|---------------------------+------------------------------------------------------------------|
+| vSphere Suite             |                                                                  |
+| ESXi                      | Enterprise-Grade hypervisor virtualization technology to run VMs |
+| vCenter                   |                                                                  |
+| [[https://aws.amazon.com/vmware/][vmc (VMware Cloud On AWS)]] | Run vSphere suite on Amazon infrastruture in Public Cloud        |
 ** Cloud Management
 | Name                         | Summary                                                                        |
 |------------------------------+--------------------------------------------------------------------------------|
@@ -42,8 +42,8 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | [[https://www.vmware.com/products/vrealize-operations.html][vrops (vRealize Operations)]]  | Capacity planning & monitoring. [[https://www.youtube.com/watch?v=YHpI_DcBlDM&list=PLrFo2o1FG9n4q6F9hjK1-OxI-3s7luhmJ][YouTube: VMware vRealize Operations]]            |
 | [[https://www.vmware.com/products/vrealize-automation.html][vRA (vRealize Automation)]]    | Visualized VM management                                                       |
 | [[https://www.vmware.com/products/vcloud-director.html][vcd (VMware vCLoud Director)]] | Hybrid envs [[https://www.youtube.com/watch?v=95Pgh0QTQnE][YouTube: VMware vCloud Director Overview]]                           |
-| [[https://www.wavefront.com/][wavefront]]                    | SaaS monitoring. [[https://www.youtube.com/watch?v=NAOUUSr9HDU&t=9s][YouTube: Pivotal Container Service (PKS) and VMware Wavefront]] |
-| [[https://www.cloudhealthtech.com/][cloudhealth]]                  | Container monitoring.                                                          |
+| [[https://www.wavefront.com/][Wavefront]]                    | SaaS monitoring. [[https://www.youtube.com/watch?v=NAOUUSr9HDU&t=9s][YouTube: Pivotal Container Service (PKS) and VMware Wavefront]] |
+| [[https://www.cloudhealthtech.com/][Cloudhealth]]                  | Container monitoring.                                                          |
 ** NSX Networking
 | Name  | Summary |
 |-------+---------|
@@ -54,7 +54,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 |------+---------|
 | [[https://docs.vmware.com/en/VMware-vSAN/index.html][vSAN]] |         |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-vmware-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-vmware-A4/master/vmware-vsan.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-vmware-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-vmware-A4/vmware-vsan.png]]
 
 ** Misc
 | Name                                        | Summary                           |
@@ -62,6 +62,9 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | [[https://labs.vmware.com/flings][Flings]]                                      | Marketplace for vsphere ecosystem |
 | [[https://docs.vmware.com/en/VMware-Cloud-Foundation/index.html][VCF (VMware Cloud Foundation)]]               |                                   |
 | [[https://www.vmware.com/support/pubs/vmware-validated-design-pubs.html][VVD (VMware Validated Design Documentation)]] |                                   |
+| VIC                                         |                                   |
+| PCF                                         |                                   |
+| VxRail/VxRack                               |                                   |
 ** Partners
 | Name                                            | Summary                                    |
 |-------------------------------------------------+--------------------------------------------|
@@ -110,3 +113,5 @@ VM Life cycle management
 virtual cloud director
 
 Insights & Analytics
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Learn VVD                                                   :noexport:

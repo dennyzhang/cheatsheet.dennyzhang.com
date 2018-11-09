@@ -392,7 +392,7 @@ but for the record; please be careful not to create any cycles in a Concourse pi
 ```get: A, passed: B
 get: B, passed: A```
 
-because Concourse doesn’t do cycle detection and everything will be bad
+because Concourse doesn't do cycle detection and everything will be bad
 #+END_EXAMPLE
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Concourse tag the worker, and use it for the same pipeline  :noexport:
