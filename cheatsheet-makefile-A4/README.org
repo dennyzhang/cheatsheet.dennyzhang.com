@@ -18,7 +18,7 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-makefile-A4/cheatsheet-makefile-A4.pdf][cheatsheet-makefile-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/linux/][linux]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-makefile-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet: Linux Find]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: Shell]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: Shell]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-makefile-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-makefile-A4][this repo]].
 ** Makefile
@@ -26,10 +26,10 @@ File me [[https://github.com/dennyzhang/cheatsheet-makefile-A4/issues][Issues]] 
 |-------------------------------------+----------------------------------------------------------------|
 | Makefile indentation                | It should always be tab, instead of whitespaces                |
 | Debug makefile                      | make -n                                                        |
-| Makefile use variables              | =make MODULE=audit build -f Makefile-debug= See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-debug][Makefile-debug]] |
-| Phony target will always be rebuilt | See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-phony][Makefile-phony]]                                             |
-| Makefile use if clause              | See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-if][Makefile-if]]                                                |
-| Makefile use for clause             | See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-makefile-A4/Makefile-for][Makefile-for]]                                               |
+| Makefile use variables              | =make MODULE=audit build -f Makefile-debug= See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-makefile-A4/Makefile-debug][Makefile-debug]] |
+| Phony target will always be rebuilt | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-makefile-A4/Makefile-phony][Makefile-phony]]                                             |
+| Makefile use if clause              | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-makefile-A4/Makefile-if][Makefile-if]]                                                |
+| Makefile use for clause             | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-makefile-A4/Makefile-for][Makefile-for]]                                               |
 | Reference                           | [[https://www.gnu.org/software/make/manual/html_node/Quick-Reference.html][Link: Makefile Quick Reference]]                                 |
 ** More Resources
 License: Code is licenmakefile under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

@@ -30,6 +30,7 @@ function refresh_cheatsheet {
         dirname=$(basename $(dirname $f))
         cd $dirname
         /Applications/Emacs.app/Contents/MacOS/Emacs-x86_64-10_10 --batch -l ../emacs-update-cheatsheet.el
+        rm -rf *.tex
         cd ..
     done
 }

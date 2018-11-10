@@ -18,7 +18,7 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-wget-A4/cheatsheet-wget-A4.pdf][cheatsheet-wget-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/linux/][linux]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-wget-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-find-A4][CheatSheet: Linux Find]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-wget-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-wget-A4][this repo]].
 
@@ -27,7 +27,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-wget-A4/issues][Issues]] or s
 |-------------------------+-----------------------------------------------|
 | Download one url        | =wget -O /tmp/google.html https://google.com= |
 | Download mutiple urls   | =wget https://google.com https://bing.com=    |
-| Download a list of urls | =wget -i url-list.txt=, [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-wget-A4/url-list.txt][url-list.txt]]          |
+| Download a list of urls   | =wget -i url-list.txt=, [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-wget-A4/url-list.txt][url-list.txt]]          |
 
 ** More Resources
 License: Code is licenwget under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

@@ -32,7 +32,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 | Check process start command            | =cat /proc/$pid/cmdline= |
 | Check process environment variables    | =cat /proc/$pid/environ= |
 | Check process ulimits setting          | =cat /proc/$pid/limits=  |
-| Get current IP from /proc              | See [[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-process-A4/proc-get-ip.sh][proc-get-ip.sh]]       |
+| Get current IP from /proc              | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-process-A4/proc-get-ip.sh][proc-get-ip.sh]]       |
 | Get process command line from /proc    |                          |
 | Get listening port for a given process |                          |
 ** More Resources
@@ -68,5 +68,6 @@ License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_lic
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO ps & kill: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO grep, pstree, strace, kill, killall                         :noexport:

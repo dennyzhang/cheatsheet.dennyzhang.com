@@ -31,38 +31,48 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 | Show the first 20 bytes                           | =head -c20 /etc/hosts=                                    |
 | Show the last 3 lines                             | =tail -n3 /etc/hosts=                                     |
 | Show the last 20 bytes                            | =tail -c20 /etc/hosts=                                    |
-| Keep tailing log files                            | =tail -f /var/log/system.log=, =taif /var/log/system.log= |
+| Keep tailing log file                             | =tail -f /var/log/system.log=, =taif /var/log/system.log= |
 | Show file starting from 4th line                  | =more +4 /etc/hosts=                                      |
 | Show the 4th line                                 | =sed -n '4p' /etc/hosts=                                  |
 | Show 4th, 5th, 7th and 8th lines                  | =sed -n '4,5p;7,8p' /etc/hosts=                           |
 | Show matched string with 3 lines before and after | =grep -C 3 "127.0.0.1" /etc/hosts=                        |
-| For table-like files, show 2nd column             | =awk -F'\t' '{print $2}' /etc/hosts=                      |
-| For table-like files, swap 1st and 2nd columns    | =awk -F'\t' '{print $2,$1}' /etc/hosts=                   |
-** Watch files
+| For table-like file, show 2nd column              | =awk -F'\t' '{print $2}' /etc/hosts=                      |
+| For table-like file, swap 1st and 2nd columns     | =awk -F'\t' '{print $2,$1}' /etc/hosts=                   |
+| Find file encoding                                | =file -i /var/log/corecaptured.log=                       |
+** Find file
+| Name                                 | Summary                                                                 |
+|--------------------------------------+-------------------------------------------------------------------------|
+| Basic find                           | find /home/mac/<myfolder> -name "my*.log"                               |
+| Find files with two patterns         | find . -iname "my*.log" -o -iname "my*.txt"                             |
+| Find folder old than 3 days          | =find . -maxdepth 1 -type d -ctime +3=                                  |
+| Find files changed within 60 minutes | =find /var/log -mmin 60 -type f=                                        |
+| Find with ls details                 | =find . \( -iname README.md \) -ls=                                     |
+| Find files filtered by size          | =find /var/log -type f -size +50k -size -100k=                          |
+| Find files older than another file   | =find . -newer /tmp/file=                                               |
+| Find files while excluding patterns  | =find . -name "*.log" -prune -o -name ".git" -prune -o -type f -print0= |
+** Find and delete
+| Name                                        | Summary                                                    |
+|---------------------------------------------+------------------------------------------------------------|
+| Find and delete with given names            | =find . -name Thumbs.db -delete=                           |
+| Recursively delete empty folders            | =find . -type d -empty -delete=                            |
+| Delete files haven't been updated in 5 days | =find . -mtime +5 -exec rm {} \;=                          |
+| Delete folders created older than 5 days    | =find . -name "npm-*" -type d -ctime +2 -exec rm -rf {} += |
+
+** Watch file
 | Name                   | Comment                                                   |
 |------------------------+-----------------------------------------------------------|
 | Show file changes      | =watch -d -n 1 stat /var/log/message=                     |
 | Keep tailing log files | =tail -f /var/log/system.log=, =taif /var/log/system.log= |
-** cp file
+** Copy file
 | Name                                             | Comment                                       |
 |--------------------------------------------------+-----------------------------------------------|
 | Copy one file                                    | =cp /etc/hosts /tmp/hosts=                    |
 | Copy one folder                                  | =cp -r /usr/local/bin/ /tmp/bin/=             |
 | Copy for backup                                  | =cp /tmp/hosts{,.bak}=, =ls -lth /tmp/hosts*= |
-| Create a copy but ask confirmation for overwrite | =cp -i ~/foo.txt /tmp/foo.txt= |
-| Create a copy for backup with timstamp as suffix | =cp myfile.txt{,."$(date +%Y%m%d-%H%M%S)"}= |
-** rsync file
-| Name                             | Comment                         |
-|----------------------------------+---------------------------------|
-| Copy files by checking timestamp | =rsync -av $src_dir $dest_dir=  |
-| Copy files by comparing checksum | =rsync -avc $src_dir $dest_dir= |
-** Make directory
-| Name                                               | Comment                                          |
-|----------------------------------------------------+--------------------------------------------------|
-| Make directory. Report error, if existing          | =mkdir foo=                                      |
-| Make directory. Avoid reporting error, if existing | =mkdir -p foo=                                   |
-| Make directory and its parents                     | =mkdir -p foo/bar/dir1=                          |
-| Make directories with the hierachy                 | =mkdir -p foo/{bar,bad/{dir1,dir2}}=, =tree foo= |
+| Create a copy but ask confirmation for overwrite | =cp -i ~/foo.txt /tmp/foo.txt=                |
+| Create a copy for backup with timstamp as suffix | =cp myfile.txt{,."$(date +%Y%m%d-%H%M%S)"}=   |
+| Copy files by checking timestamp                 | =rsync -av $src_dir $dest_dir=                |
+| Copy files by comparing checksum                 | =rsync -avc $src_dir $dest_dir=               |
 ** Diff File
 | Name                           | Command                                   |
 |--------------------------------+-------------------------------------------|
@@ -70,11 +80,15 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 | Ignore uppercase and lowercase | =diff -i <file1> <file2>=                 |
 | Diff output of two commands    | =diff <(date) <(somecommand)=             |
 | Generate patch from two files  | =diff -Naur <file1> <file2> > diff.patch= |
-** Diff Folder
-| Name                    | Command                         |
-|-------------------------+---------------------------------|
-| Diff two directories    | =diff -r <dir1> <dir2>=         |
-| Show only brief summary | =diff -r --brief <dir1> <dir2>= |
+| Diff two directories           | =diff -r <dir1> <dir2>=                   |
+| Show only brief summary        | =diff -r --brief <dir1> <dir2>=           |
+** Make directory
+| Name                                               | Comment                                          |
+|----------------------------------------------------+--------------------------------------------------|
+| Make directory. Report error, if existing          | =mkdir foo=                                      |
+| Make directory. Avoid reporting error, if existing | =mkdir -p foo=                                   |
+| Make directory and its parents                     | =mkdir -p foo/bar/dir1=                          |
+| Make directories with the hierachy                 | =mkdir -p foo/{bar,bad/{dir1,dir2}}=, =tree foo= |
 ** More Resources
 License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -108,3 +122,66 @@ License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_lic
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* Find with grep                                                   :noexport:
+- Find with grep
+#+BEGIN_SRC sh
+find /home/mac/devstack -name "*.log" -prune -o \
+     -name "data" -prune -o -type f \
+     -print0 | xargs -0 -e grep '172\.16\.33' /opt/stack
+#+END_SRC
+
+- Find files and sort by modify time
+#+BEGIN_SRC sh
+find /var/lib/jenkins/jobs -name config.xml -printf '%T@ %p\n' \
+     | sort -n | tail -n 1 | awk -F' ' '{print $2}'
+#+END_SRC
+* file1                                                            :noexport:
+# To find files by case-insensitive extension (ex: .jpg, .JPG, .jpG):
+find . -iname "*.jpg"
+
+# To find directories:
+find . -type d
+
+# To find files:
+find . -type f
+
+# To find files by octal permission:
+find . -type f -perm 777
+
+# To find files with setuid bit set:
+find . -xdev \( -perm -4000 \) -type f -print0 | xargs -0 ls -l
+
+# To find files with extension '.txt' and remove them:
+find ./path/ -name '*.txt' -exec rm '{}' \;
+
+# To find files with extension '.txt' and look for a string into them:
+find ./path/ -name '*.txt' | xargs grep 'string'
+
+# To find files with size bigger than 5 Mebibyte and sort them by size:
+find . -size +5M -type f -print0 | xargs -0 ls -Ssh | sort -z
+
+# To find files bigger than 2 Megabyte and list them:
+find . -type f -size +200000000c -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'
+
+# To find files modified more than 7 days ago and list file information
+find . -type f -mtime +7d -ls
+
+# To find symlinks owned by a user and list file information
+find . -type l --user=username -ls
+
+# To search for and delete empty directories
+find . -type d -empty -exec rmdir {} \;
+
+# To search for directories named build at a max depth of 2 directories
+find . -maxdepth 2 -name build -type d
+
+# To search all files who are not in .git directory
+find . ! -iwholename '*.git*' -type f
+
+# To find all files that have the same node (hard link) as MY_FILE_HERE
+find . -type f -samefile MY_FILE_HERE 2>/dev/null
+
+# To find all files in the current directory and modify their permissions
+find . -type f -exec chmod 644 {} \;
+
+* TODO when find has failed, set exit code to not zero             :noexport:
