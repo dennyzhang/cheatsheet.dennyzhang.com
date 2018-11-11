@@ -26,7 +26,22 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 |-----------------------------+--------------------------------------------------|
 | Sort processes by ram usage | =ps -eo size,pid,user,pcpu,command --sort -rss=  |
 | Sort processes by cpu usage | =ps -eo size,pid,user,pcpu,command --sort -pcpu= |
-** /proc filesystem
+|                             | =pgrep <process_name>=                           |
+** Debug process
+| Name | Comment                 |
+|------+-------------------------|
+|      | =strace -p <pid>=       |
+|      | =lsof -p <pid>=         |
+|      | =pstree -A -n -p <pid>= |
+** Kill process
+| Name                                  | Comment                                            |
+|---------------------------------------+----------------------------------------------------|
+| Kill process gracefully               | =kill <pid>=, =kill -15 <pid>=, =kill -TERM <pid>= |
+| Kill process forcefully               | =kill -9 <pid>=, =kill -KILL <pid>=                |
+| kill process by its full process name | =pkill <processname>=                              |
+| kill process by it's partial name     | =pkill -f <process-string>=                        |
+| Kill process by process name          | =killall <process_name>=                           |
+** Explore /proc filesystem
 | Name                                   | Comment                  |
 |----------------------------------------+--------------------------|
 | Check process start command            | =cat /proc/$pid/cmdline= |
@@ -69,5 +84,50 @@ License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_lic
 #+LINK_UP:
 #+LINK_HOME:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO ps & kill: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* TODO grep, pstree, strace, kill, killall                         :noexport:
+* TODO Draw an diagram for the overall status                      :noexport:
+* TODO grep                                                        :noexport:
+# Search a file for a pattern
+grep pattern file
+
+# Case insensitive search (with line numbers)
+grep -in pattern file
+
+# Recursively grep for string <pattern> in folder:
+grep -R pattern folder
+
+# Read search patterns from a file (one per line)
+grep -f pattern_file file
+
+# Find lines NOT containing pattern
+grep -v pattern file
+
+# You can grep with regular expressions
+grep "^00" file  #Match lines starting with 00
+grep -E "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" file  #Find IP add
+
+# Find all files which match {pattern} in {directory}
+# This will show: "file:line my research"
+grep -rnw 'directory' -e "pattern"
+
+# Exclude grep from your grepped output of ps.
+# Add [] to the first letter. Ex: sshd -> [s]shd
+ps aux | grep '[h]ttpd'
+
+# Colour in red {bash} and keep all other lines
+ps aux | grep -E --color 'bash|$'
+* TODO ps                                                          :noexport:
+# To list every process on the system:
+ps aux
+
+# To list a process tree
+ps axjf
+
+# To list every process owned by foouser:
+ps -aufoouser
+
+# To list every process with a user-defined format:
+ps -eo pid,user,command
+
+# Exclude grep from your grepped output of ps.
+# Add [] to the first letter. Ex: sshd -> [s]shd
+ps aux | grep '[h]ttpd'

@@ -5764,3 +5764,615 @@ sudo /etc/init.d/nagios3 start
 http://sharadchhetri.com/2013/06/05/error-could-not-stat-command-file-varlibnagios3rwnagios-cmd/
 http://www.krenger.ch/blog/nagios-error-could-not-stat-command-file/
 http://www.asim.pk/2012/08/12/error-could-not-stat-command-file-var-lib-nagios3-rw-nagios-cmd/
+* [#A] Zabbix: Open Source Monitoring Solution           :noexport:IMPORTANT:
+http://www.zabbix.com/documentation/2.0/manual/introduction\\
+
+http://ecae-102.dev:18000/zabbix/\\
+
+http://www.zabbix.com/documentation/2.0/manual/config/items/itemtypes/external?s[]=external&s[]=script\\
+
+- 对于host需要自己加template, 同时注意agent的port是否正确　
+- 查看Latest data, 看看有没最新信息被采集出来了
+- Zabbix configuration data require a fixed amount of disk space and do not grow much.
+** basic use
+#+BEGIN_EXAMPLE
+http://www.zabbix.com/documentation/2.0/manual/introduction\\
+#+begin_example
+Zabbix is an enterprise-class open source distributed monitoring
+solution.
+
+Zabbix is software that monitors numerous parameters of a network and
+the health and integrity of servers. Zabbix uses a flexible
+notification mechanism that allows users to configure e-mail based
+alerts for virtually any event. This allows a fast reaction to server
+problems. Zabbix offers excellent reporting and data visualisation
+features based on the stored data. This makes Zabbix ideal for
+capacity planning.
+
+Zabbix supports both polling and trapping. All Zabbix reports and
+statistics, as well as configuration parameters, are accessed through
+a web-based front end. A web-based front end ensures that the status
+of your network and the health of your servers can be assessed from
+any location. Properly configured, Zabbix can play an important role
+in monitoring IT infrastructure. This is equally true for small
+organisations with a few servers and for large companies with a
+multitude of servers.
+#+end_example
+#+END_EXAMPLE
+** Zabbix features
+http://www.zabbix.com/documentation/2.0/manual/introduction\\
+#+begin_example
+Zabbix is a highly integrated network monitoring solution, offering a
+multiplicity of features in a single package.
+
+Data gathering
+
+    availability and performance checks
+    support for SNMP (both trapping and polling), IPMI, JMX monitoring
+    custom checks
+    gathering desired data at custom intervals
+    performed by server/proxy and by agents
+
+Flexible threshold definitions
+
+    you can define very flexible problem thresholds, called triggers,
+    referencing values from the back-end database
+
+Highly configurable alerting
+
+    sending notifications can be customized for the escalation
+    schedule, recipient, media type notifications can be made
+    meaningful and helpful using macro variables automatic actions
+    include remote commands
+
+Real-time graphing
+
+    monitored items are immediately graphed using the built-in
+    graphing functionality
+
+Web monitoring capabilities
+
+    Zabbix can follow a path of simulated mouse clicks on a web site
+    and check for functionality and response time
+
+Extensive visualisation options
+
+    ability to create custom graphs that can combine multiple items into a single view
+    network maps
+    custom screens and slide shows for a dashboard-style overview
+    reports
+    high-level (business) view of monitored resources
+
+Historical data storage
+
+    data stored in a database
+    configurable history
+    built-in housekeeping procedure
+
+Easy configuration
+
+    add monitored devices as hosts
+    hosts are picked up for monitoring, once in the database
+    apply templates to monitored devices
+
+Use of templates
+
+    grouping checks in templates
+    templates can inherit other templates
+
+Network discovery
+
+    automatic discovery of network devices
+    agent auto registration
+    discovery of file systems, network interfaces and SNMP OIDs
+
+Fast web interface
+
+    a web-based front-end in PHP
+    accessible from anywhere
+    you can click your way through
+    audit log
+
+Zabbix API
+
+    Zabbix API provides programmable interface to Zabbix for mass
+    manipulations, 3rd party software integration and other purposes.
+
+Permissions system
+
+    secure user authentication
+    certain users can be limited to certain views
+
+Full featured and easily extensible agent
+
+    deployed on monitoring targets
+    can be deployed on both Linux and Windows
+
+Binary daemons
+
+    written in C, for performance and small memory footprint
+    easily portable
+
+Ready for complex environments
+
+    remote monitoring made easy by using a Zabbix proxy
+#+end_example
+** Zabbix concepts
+   http://www.zabbix.com/documentation/2.0/manual/concepts\\
+** TODO [#A] Install and try zabbix
+   http://www.zabbix.com/wiki/howto/install/ubuntu/ubuntuinstall\\
+   http://www.zabbix.com/documentation/2.0/manual/installation/install#from_distribution_packages\\
+** TODO zabbix的trapping是什么功能?
+** useful link
+ http://www.zabbix.com/\\
+** TODO configure: error: Not found NET-SNMP library
+   You need both net-snmp and net-snmp-devel installed.
+
+   sudo apt-get install build-essential mysql-server
+   libmysqlclient15-dev php5 php5-gd php5-mysql snmp libsnmp-dev snmpd
+   libcurl4-openssl-dev fping
+
+   http://www.zabbix.com/forum/showthread.php?t=23941\\
+
+http://www.zabbix.com/wiki/howto/install/ubuntu/ubuntuinstall\\
+** DONE [#A] 在hudson中部署zabbix                        :IMPORTANT:noexport:
+   CLOSED: [2012-06-12 Tue 17:03]
+*** TODO [#C] zabbix-server无法自动发现client agent
+*** DONE zabbix-server需要装: php-bcmath php-gd
+    CLOSED: [2012-06-06 Wed 18:18]
+#+begin_example
+2012/06/06 17:59:24 [error] 27357#0: *3 FastCGI sent in stderr: "PHP Notice:  openlog don't init in Unknown on line 0
+PHP Fatal error:  Call to undefined function bcscale() in /usr/share/zabbix/include/defines.inc.php on line 797" while reading response header from upstream, client: 192.168.75.111, server: ecae-13.demo, request: "HEAD /zabbix/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "192.168.75.111:18000"
+#+end_example
+**** useful link
+http://www.zabbix.com/forum/showthread.php?t=23735\\
+*** DONE zabbix-server的php配置问题
+    CLOSED: [2012-06-06 Wed 18:31]
+/etc/php.ini
+
+post_max_size = 16M
+max_input_time = 300
+
+http://drupal.org/node/109994\\
+#+begin_example
+PHP post max size	8M	16M is minimum size of PHP post
+PHP max input time	60	300 sec is a minimal limitation on input parse time for PHP scripts
+#+end_example
+*** DONE zabbix-server中特别的configuration: /usr/local/nginx/conf/vhosts/monitor.conf
+    CLOSED: [2012-06-06 Wed 18:43]
+#+begin_example
+# server {
+#     listen       18000;
+#     server_name _;
+#     root /dev/null;
+# }
+#+end_example
+** DONE zabbix, nagios与cacti的区别
+   CLOSED: [2012-06-16 六 03:24]
+   http://kkovacs.eu/zabbix-vs-nagios\\
+   http://www.innovatedigital.com/node/553\\
+   http://bbs.linuxtone.org/thread-9068-1-1.html\\
+   http://www.linuxquestions.org/questions/linux-enterprise-47/nagios-vs-zabbix-216790/\\
+** mail: zabbix                                                    :noexport:
+#+begin_example
+From: 吕志浩 <lvzhihao@shopex.cn>
+Subject: zabbix
+To: 张巍 <zhangwei@shopex.cn>
+CC: 王磊 <flaboy@shopex.cn>
+Date: Fri, 27 Apr 2012 14:49:34 +0800
+
+http://ecae-102.dev:18000/zabbix/\\
+
+ecae
+
+welovecae
+
+Your best partner
+
+吕志浩
+
+Email: lvzhihao@shopex.cn
+
+ECAE: http://www.ec-ae.com
+#+end_example
+** sample files of zabbix
+*** zabbix template
+#+begin_example
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>2.0</version>
+    <date>2012-07-14T17:01:50Z</date>
+    <groups>
+        <group>
+            <name>mygroup</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>tempate1</template>
+            <name>tempate1</name>
+            <groups>
+                <group>
+                    <name>mygroup</name>
+                </group>
+            </groups>
+            <applications/>
+            <items>
+                <item>
+                    <name>newitem1</name>
+                    <type>10</type>
+                    <snmp_community></snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid></snmp_oid>
+                    <key>sanitycheck.sh</key>
+                    <delay>30</delay>
+                    <history>90</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts></allowed_hosts>
+                    <units></units>
+                    <delta>0</delta>
+                    <snmpv3_securityname></snmpv3_securityname>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authpassphrase></snmpv3_authpassphrase>
+                    <snmpv3_privpassphrase></snmpv3_privpassphrase>
+                    <formula>1</formula>
+                    <delay_flex></delay_flex>
+                    <params></params>
+                    <ipmi_sensor></ipmi_sensor>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username></username>
+                    <password></password>
+                    <publickey></publickey>
+                    <privatekey></privatekey>
+                    <port></port>
+                    <description></description>
+                    <inventory_link>0</inventory_link>
+                    <applications/>
+                    <valuemap/>
+                </item>
+            </items>
+            <discovery_rules/>
+            <macros/>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{tempate1:sanitycheck.sh.last(0)}=1</expression>
+            <name>trigger1</name>
+            <url></url>
+            <status>0</status>
+            <priority>0</priority>
+            <description></description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{tempate1:sanitycheck.sh.last(0)}=0</expression>
+            <name>trigger2</name>
+            <url></url>
+            <status>0</status>
+            <priority>0</priority>
+            <description></description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+    </triggers>
+</zabbix_export>
+#+end_example
+*** hosts
+#+begin_example
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>2.0</version>
+    <date>2012-07-14T17:01:11Z</date>
+    <groups>
+        <group>
+            <name>mygroup</name>
+        </group>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <hosts>
+        <host>
+            <host>localhost</host>
+            <name>ubuntu</name>
+            <proxy/>
+            <status>0</status>
+            <ipmi_authtype>-1</ipmi_authtype>
+            <ipmi_privilege>2</ipmi_privilege>
+            <ipmi_username></ipmi_username>
+            <ipmi_password></ipmi_password>
+            <templates>
+                <template>
+                    <name>tempate1</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>mygroup</name>
+                </group>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <interfaces>
+                <interface>
+                    <default>1</default>
+                    <type>1</type>
+                    <useip>1</useip>
+                    <ip>127.0.0.1</ip>
+                    <dns></dns>
+                    <port>10050</port>
+                    <interface_ref>if1</interface_ref>
+                </interface>
+            </interfaces>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <macros/>
+            <inventory/>
+        </host>
+    </hosts>
+</zabbix_export>
+#+end_example
+** DONE [#A] Sending list of active checks to [127.0.0.1] failed: host [localhost] not found :IMPORTANT:
+   CLOSED: [2012-08-06 Mon 15:50]
+http://www.zabbix.com/forum/showthread.php?t=24421\\
+#+begin_example
+In your zabbix_agentd.conf don't use 'localhost'
+
+Try this:
+
+Server=10.15.1.18
+Hostname=NameOfServerInZabbixGUI
+
+Note, Hostname is NOT dns name. It is the Name you give in zabbix hosts page.
+#+end_example
+** DONE [#B] zabbix add favorite graphics                :IMPORTANT:noexport:
+   CLOSED: [2012-08-06 Mon 17:57]
+#+begin_example
+/sshx:root@192.168.75.236: #$ svn diff -r 680:681 http://app.ec-os.net/svn/ecaeroot/trunk/puppet/modules/monitor/templates
+Index: zabbix-template.sql
+===================================================================
+--- zabbix-template.sql	(revision 680)
++++ zabbix-template.sql	(revision 681)
+@@ -3,6 +3,7 @@
+ <% host_id=80001 -%>
+ <% graphid=400 -%>
+ <% gitemid=1000 -%>
++<% profileid=400 -%>
+ <% zabbix_item_id=90001 -%>
+ <% zabbix_trigger_id=70001 -%>
+ <% zabbix_function_id=60001 -%>
+@@ -11,6 +12,7 @@
+ INSERT INTO groups VALUES (<%= groupid %>,'Ecae Servers',1);
+
+ DELETE FROM graphs WHERE name like 'ecae_graph_%';
++DELETE FROM profiles WHERE value_str='ecae favorite graph';
+ <% all_servers.each do |server| -%>
+ -- Add hosts
+ DELETE FROM hosts WHERE hostid=<%= host_id %>;
+@@ -21,6 +23,8 @@
+ <% hostgroupid=hostgroupid+1 -%>
+ -- Add graph for the host
+ INSERT INTO graphs(graphid, name, width, height, yaxismin, yaxismax, templateid, show_work_period, show_triggers, graphtype, show_legend, show_3d, percent_left, percent_right, ymin_type, ymax_type, ymin_itemid, ymax_itemid) VALUES (<%= graphid %>, 'ecae_graph_<%= server %>', 900, 200, 0.0000, 100.0000, 0, 0, 0, 0, 0, 0, 0.0000, 0.0000, 0, 0, 0, 0);
++-- Add favorite graphs
++INSERT INTO profiles(profileid, userid, idx, idx2, value_id, value_int, value_str, source, type) values (<%= profileid %>, 1, 'web.favorite.graphids', 0, <%= graphid %>, 0, 'ecae favorite graph', 'graphid', 1);
+
+ DELETE FROM graphs_items WHERE graphid=<%= graphid %>;
+ -- DELETE FROM items WHERE description like 'ecae_item_%';
+@@ -54,5 +58,6 @@
+ <% end -%>
+ --######################################################
+ <% graphid=graphid+1 -%>
++<% profileid=profileid+1 -%>
+ <% host_id=host_id+1 -%>
+ <% end -%>
+/sshx:root@192.168.75.236: #$
+#+end_example
+** DONE [#B] zabbix的sql文件更新                         :IMPORTANT:noexport:
+   CLOSED: [2012-08-07 Tue 17:09]
+#+begin_example
+Index: /etc/puppet/modules/monitor/manifests/checktemplate.pp
+===================================================================
+--- /etc/puppet/modules/monitor/manifests/checktemplate.pp	(revision 693)
++++ /etc/puppet/modules/monitor/manifests/checktemplate.pp	(working copy)
+@@ -94,7 +94,7 @@
+   }
+   exec {
+     update-monitor:
+-      command=>"/usr/bin/mysql -u${zabbix_server_dbuser} -p${zabbix_server_dbpasswd} -P${zabbix_mysql_port} --socket=/var/lib/mysql/mysql-${zabbix_mysql_port}.sock ${zabbix_server_dbname} < /etc/zabbix/zabbix-template.sql",
++      command=>"/usr/bin/mysql -u${zabbix_server_dbuser} -p${zabbix_server_dbpasswd} -P${zabbix_mysql_port} --socket=/var/lib/mysql/mysql-${zabbix_mysql_port}.sock ${zabbix_server_dbname} < /etc/zabbix/zabbix-template.sql || (> /etc/zabbix/zabbix-template.sql; /bin/false)",
+       user=>"root",
+       require => Exec["init-zabbix"],
+       subscribe => File["/etc/zabbix/zabbix-template.sql"],
+#+end_example
+** DONE [#A] 保证zabbix的修改不被丢失                    :IMPORTANT:noexport:
+   CLOSED: [2012-08-09 Thu 10:59]
+- 删除时，不能删除别人自定义的内容
+   带特定flag属性的删除; 级联删除;
+- 添加时，不能覆盖别人自定义的内容
+*** checktemplate.pp
+#+begin_example
+class monitor::checktemplate {
+  ####################### sanity_check #######################
+  $zabbix_sanity_check_command_runner=["sanity_check_command_runner", "ecae.sanitycheck[\"$thrift_command_runner_port\"]",300, $all_servers]
+  $zabbix_sanity_check_crontab_generator=["sanity_check_crontab_generator", "ecae.sanitycheck[\"$thrift_crontab_generator_port\"]",300, $crontab_generator_servers]
+  $zabbix_sanity_check_crontab_scanner=["sanity_check_crontab_scanner", "ecae.sanitycheck[\"$thrift_crontab_scanner_port\"]",300, $crontab_scanner_servers]
+  $zabbix_sanity_check_rrda=["sanity_check_rrda", "ecae.sanitycheck[\"$thrift_rrda_mgmt_port\"]",300, $rrda_servers]
+  $zabbix_sanity_check_rrdz=["sanity_check_rrdz", "ecae.sanitycheck[\"$thrift_rrdz_mgmt_port\"]", 300, $rrdz_servers]
+  $zabbix_sanity_check_elmar=["sanity_check_elmar", "ecae.sanitycheck[\"$thrift_elmar_api_port\"]", 300, $elmar_servers]
+  $zabbix_sanity_check_ecae_router=["sanity_check_ecae_router", "ecae.sanitycheck[\"$thrift_ecae_router_port\"]", 300, $ecae_router_servers]
+  $zabbix_sanity_check_ecae_webapp=["sanity_check_ecae_webapp", "ecae.sanitycheck[\"$thrift_ecae_webapp_port\"]", 300, $ecae_webapp_servers]
+  $zabbix_sanity_check_snake_worker=["sanity_check_snake_worker", "ecae.sanitycheck[\"$thrift_snake_worker_port\"]", 300, $snake_worker_servers]
+  $zabbix_sanity_check_missa=["sanity_check_missa", "ecae.sanitycheck[\"$thrift_missa_mgmt_port\"]", 300, $missa_servers]
+  $zabbix_sanity_check_imgprosrv=["sanity_check_imgprosrv", "ecae.sanitycheck[\"$thrift_imgprosrv_api_port\"]", 300, $imgprosrv_servers]
+  $zabbix_sanity_check_ecae_mgmt=["sanity_check_ecae", "ecae.sanitycheck[\"$thrift_ecae_mgmt_port\"]", 300, $ecae_servers]
+  $zabbix_sanity_check_ecae_mongo=["sanity_check_ecae_mongo", "ecae.sanitycheck[\"$thrift_ecae_mongo_port\"]", 300, $ecae_mongo_servers]
+  $zabbix_sanity_check_ecae_memcache=["sanity_check_ecae_mongo", "ecae.sanitycheck[\"$thrift_ecae_mongo_port\"]", 300, $ecae_mongo_servers]
+  $zabbix_sanity_check_ecae_crypto=["sanity_check_ecae_crypto", "ecae.sanitycheck[\"$thrift_ecae_crypto_port\"]", 300, $ecae_crypto_servers]
+  $zabbix_sanity_check_queue_worker=["sanity_check_queue_worker", "ecae.sanitycheck[\"$thrift_queue_worker_port\"]", 300, $queue_worker_servers]
+
+  ####################### rebar_ping #######################
+  $zabbix_rebar_ping_command_runner=["rebar_ping_command_runner", "ecae.rebarcheck[\"command_runnerd\"]", 240, $all_servers]
+  $zabbix_rebar_ping_ecae=["rebar_ping_ecae", "ecae.rebarcheck[\"ecaed\"]", 240, $ecae_servers]
+  $zabbix_rebar_ping_missa=["rebar_ping_missa", "ecae.rebarcheck[\"missad\"]", 240, $missa_servers]
+  $zabbix_rebar_ping_crontab_generator=["rebar_ping_crontab_generator", "ecae.rebarcheck[\"crontab_generatord\"]", 240, $crontab_generator_servers]
+  $zabbix_rebar_ping_crontab_scanner=["rebar_ping_crontab_scanner", "ecae.rebarcheck[\"crontab_scannerd\"]", 240, $crontab_scanner_servers]
+  $zabbix_rebar_ping_rrda=["rebar_ping_rrda", "ecae.rebarcheck[\"rrdad\"]", 240, $rrda_servers]
+  $zabbix_rebar_ping_rrdz=["rebar_ping_rrdz", "ecae.rebarcheck[\"rrdzd\"]", 240, $rrdz_servers]
+  $zabbix_rebar_ping_elmar=["rebar_ping_elmar", "ecae.rebarcheck[\"elmard\"]", 240, $elmar_servers]
+  $zabbix_rebar_ping_snake_worker=["rebar_ping_snake_worker", "ecae.rebarcheck[\"snake_workerd\"]", 240, $snake_worker_servers]
+  $zabbix_rebar_ping_queue_worker=["rebar_ping_queue_worker", "ecae.rebarcheck[\"queue_workerd\"]", 240, $queue_worker_servers]
+  $zabbix_rebar_ping_reporting=["rebar_ping_reporting", "ecae.rebarcheck[\"reportingd\"]", 240, $reporting_servers]
+
+  ##################### check service status #################
+  $zabbix_service_status_zookeeper=["service_status_zookeeper", "ecae.servicestatuscheck[\"zookeeper\"]", 300, $zk_servers]
+  $zabbix_service_status_varnish=["service_status_varnish", "ecae.servicestatuscheck[\"varnish\"]", 300, $varnish_servers]
+  $zabbix_service_status_mysqld=["service_status_mysqld", "ecae.servicestatuscheck[\"mysqld\"]", 300, $mysql_servers]
+  $zabbix_service_status_syslogng=["service_status_syslogng", "ecae.servicestatuscheck[\"syslog-ng\"]", 300, $all_servers]
+  $zabbix_service_status_zabbixagent=["service_status_zabbixagent", "ecae.servicestatuscheck[\"zabbix-agent\"]", 300, $all_servers]
+  $zabbix_service_status_zabbix=["service_status_zabbix", "ecae.servicestatuscheck[\"zabbix\"]", 300, $zabbix_monitorserver]
+
+  ##################### check orphan process #################
+  $zabbix_orphan_process_spawnfcgi=["orphan_process_spawnfcgi", "ecae.orphancheck[\"spawn-fcgi\"]", 300, $all_servers]
+  $zabbix_orphan_process_php=["orphan_process_php", "ecae.orphancheck[\"/usr/bin/php\"]", 300, $all_servers]
+  $zabbix_orphan_process_smccli_enable=["orphan_process_smccli_enable", "ecae.orphancheck[\"smc_cli -e\"]", 300, $all_servers]
+  $zabbix_orphan_process_smccli_getinstance=["orphan_process_smccli_getinstance", "ecae.orphancheck[\"smc_cli -c\"]", 300, $all_servers]
+  $zabbix_orphan_process_mongod=["orphan_process_mongod", "ecae.orphancheck[\"/usr/bin/mongod\"]", 300, $all_servers]
+
+  ##################### check worker hang ###################
+  $zabbix_worker_hang_spawnfcgi=["worker_hang_spawnfcgi", "ecae.workerhangcheck[\"spawn-fcgi\"]", 300, $all_servers]
+  $zabbix_worker_hang_php=["worker_hang_php", "ecae.workerhangcheck[\"/usr/bin/php\"]", 300, $all_servers]
+  $zabbix_worker_hang_smccli_option=["worker_hang_smccli_option", "ecae.workerhangcheck[\"smc_cli -c option\"]", 300, $all_servers]
+  $zabbix_worker_hang_smccli_listservice=["worker_hang_smccli_listservice", "ecae.workerhangcheck[\"smc_cli -c listservice\"]", 300, $all_servers]
+  $zabbix_worker_hang_getinstance=["worker_hang_getinstance", "ecae.workerhangcheck[\"smc_cli -c getinstance\"]", 300, $all_servers]
+
+  ##################### check process resource ###############
+
+  $zabbix_check_list=[ ### sanity_check
+                       $zabbix_sanity_check_command_runner, $zabbix_sanity_check_crontab_generator,
+                       $zabbix_sanity_check_crontab_scanner, $zabbix_sanity_check_rrda,
+                       $zabbix_sanity_check_rrdz, $zabbix_sanity_check_elmar,
+                       $zabbix_sanity_check_ecae_router, $zabbix_sanity_check_ecae_webapp,
+                       $zabbix_sanity_check_snake_worker, $zabbix_sanity_check_missa,
+                       $zabbix_sanity_check_imgprosrv, $zabbix_sanity_check_ecae_mgmt,
+                       $zabbix_sanity_check_ecae_mongo, $zabbix_sanity_check_ecae_memcache,
+                       $zabbix_sanity_check_ecae_crypto, $zabbix_sanity_check_queue_worker,
+                       ### rebar_ping
+                       $zabbix_rebar_ping_command_runner, $zabbix_rebar_ping_ecae,
+                       $zabbix_rebar_ping_missa, $zabbix_rebar_ping_crontab_generator,
+                       $zabbix_rebar_ping_crontab_scanner, $zabbix_rebar_ping_rrda,
+                       $zabbix_rebar_ping_rrdz, $zabbix_rebar_ping_elmar,
+                       $zabbix_rebar_ping_snake_worker, $zabbix_rebar_ping_queue_worker,
+                       $zabbix_rebar_ping_reporting,
+                       ### check service status
+                       ## TODO: temporarily disable the following, due to priviledge problems
+                       # $zabbix_service_status_zookeeper, $zabbix_service_status_varnish,
+                       # $zabbix_service_status_mysqld, $zabbix_service_status_syslogng,
+                       # $zabbix_service_status_zabbixagent, $zabbix_service_status_zabbix,
+                       ### check orphan process
+                       $zabbix_orphan_process_spawnfcgi, $zabbix_orphan_process_php,
+                       $zabbix_orphan_process_smccli_enable, $zabbix_orphan_process_smccli_getinstance,
+                       $zabbix_orphan_process_mongod,
+                       ### check worker hang
+                       $zabbix_worker_hang_spawnfcgi, $zabbix_worker_hang_php,
+                       $zabbix_worker_hang_smccli_option, $zabbix_worker_hang_smccli_listservice,
+                       $zabbix_worker_hang_getinstance,
+                       ]
+  file {
+    "/etc/zabbix/externalscripts/rebar_ping.sh":
+      mode => 0755, owner => root , group => root,
+      content => template("monitor/checktemplate/rebar_ping.sh");
+    "/etc/zabbix/zabbix-template.sql":
+      mode => 0644, owner => root , group => root,
+      content => template("monitor/zabbix-template.sql");
+  }
+  exec {
+    update-monitor:
+      command=>"/usr/bin/mysql -u${zabbix_server_dbuser} -p${zabbix_server_dbpasswd} -P${zabbix_mysql_port} --socket=/var/lib/mysql/mysql-${zabbix_mysql_port}.sock ${zabbix_server_dbname} < /etc/zabbix/zabbix-template.sql || (mv /etc/zabbix/zabbix-template.sql /etc/zabbix/zabbix-template.sql.bak; /bin/false)",
+      user=>"root",
+      require => Exec["init-zabbix"],
+      subscribe => File["/etc/zabbix/zabbix-template.sql"],
+      refreshonly => true;
+  }
+}
+#+end_example
+*** zabbix-template.sql
+#+begin_example
+DELETE FROM hosts_groups WHERE groupid IN (SELECT groupid FROM groups WHERE name='Ecae Servers');
+DELETE FROM functions WHERE triggerid IN (SELECT triggerid FROM triggers WHERE description LIKE 'ecae_trigger_%');
+DELETE FROM items WHERE description like 'ecae_item_%';
+DELETE FROM triggers WHERE description like 'ecae_trigger_%';
+DELETE FROM graphs WHERE name like 'ecae_graph_%';
+DELETE FROM profiles WHERE value_str='ecae favorite graph';
+DELETE FROM graphs_items WHERE color='009911';
+DELETE FROM groups WHERE name = 'Ecae Servers';
+
+<% hostgroupid=100 -%>
+<% host_id=80001 -%>
+<% zabbix_function_id=60001 -%>
+<% groupid=80 -%>
+<% graphid=400 -%>
+<% gitemid=1000 -%>
+<% profileid=400 -%>
+<% zabbix_item_id=90001 -%>
+<% zabbix_trigger_id=70001 -%>
+
+-- Add host groups
+INSERT INTO groups VALUES (<%= groupid %>,'Ecae Servers',1);
+
+<% all_servers.each do |server| -%>
+-- Add hosts
+REPLACE INTO hosts VALUES (<%= host_id %>,0,'ecae_<%= server %>','<%= server %>',0,'0.0.0.0',<%= zabbix_agent_port %>,0,0,'',0,0,0,0,0,0,623,-1,2,'','',0,0,0,0,0,0,0,0,'',0,0,'','');
+-- Add hosts to groups
+INSERT INTO hosts_groups(hostgroupid, hostid, groupid) VALUES (<%= hostgroupid %>, <%= host_id %>,<%= groupid %>);
+<% hostgroupid=hostgroupid-1 -%>
+-- Add graph for the host
+INSERT INTO graphs(graphid, name, width, height, yaxismin, yaxismax, templateid, show_work_period, show_triggers, graphtype, show_legend, show_3d, percent_left, percent_right, ymin_type, ymax_type, ymin_itemid, ymax_itemid) VALUES (<%= graphid %>, 'ecae_graph_<%= server %>', 900, 200, 0.0000, 100.0000, 0, 0, 0, 0, 0, 0, 0.0000, 0.0000, 0, 0, 0, 0);
+-- Add favorite graphs
+INSERT INTO profiles(profileid, userid, idx, idx2, value_id, value_int, value_str, source, type) values (<%= profileid %>, 1, 'web.favorite.graphids', 0, <%= graphid %>, 0, 'ecae favorite graph', 'graphid', 1);
+
+--####### Add zabbix check: sanity_check for elmar #######
+<% zabbix_check_list.each do |zabbix_check| -%>
+<% zabbix_check_name=zabbix_check[0] -%>
+<% zabbix_check_rule=zabbix_check[1] -%>
+<% zabbix_check_interval=zabbix_check[2] -%>
+<% server_list=zabbix_check[3] -%>
+<% if ((server_list.to_s() != "") and (server_list.to_s() != "undef") and (server_list.include? server)) then -%>
+-- Add zabbix items
+INSERT INTO items VALUES (<%= zabbix_item_id %>,7,'','',161,<%= host_id %>, 'ecae_item_<%= zabbix_check_name %>', '<%= zabbix_check_rule %>',<%= zabbix_check_interval %>,30,365,NULL,NULL,NULL,0,3,'','',0,0,NULL,'',0,'','','0','',0,'',0,0,'','','',0,0,'','','','',0);
+
+-- Add graph items
+INSERT INTO graphs_items(gitemid, graphid, itemid, drawtype, sortorder, color , yaxisside, calc_fnc, type, periods_cnt) VALUES (<%= gitemid %>, <%= graphid %>, <%= zabbix_item_id %>, 0, 0, '009911', 0, 2, 0, 5);
+
+-- Add functions
+INSERT INTO functions VALUES (<%= zabbix_function_id %>,<%= zabbix_item_id %>,<%= zabbix_trigger_id %>,NULL,'last','0');
+
+-- Add triggers
+INSERT INTO triggers VALUES (<%= zabbix_trigger_id %>,'{<%= zabbix_function_id %>}#0','ecae_trigger_<%= zabbix_check_name %>','',0,1,0,0,0,'','',0,0);
+<% gitemid=gitemid-1 -%>
+<% zabbix_item_id=zabbix_item_id-1 -%>
+<% zabbix_function_id=zabbix_function_id-1 -%>
+<% zabbix_trigger_id=zabbix_trigger_id-1 -%>
+<% end -%>
+<% end -%>
+--######################################################
+<% graphid=graphid-1 -%>
+<% profileid=profileid-1 -%>
+<% host_id=host_id-1 -%>
+<% end -%>
+#+end_example
+** CANCELED zabbix agent运行命令时，该用户是否有权限
+   CLOSED: [2012-08-11 Sat 17:58]
+*** zabbix 检测/etc/init.d/zabbix-agent status是否活着
+** BYPASS zabbix添加port检查: 返回的结果不好两次处理，自己写脚本来实现了
+   CLOSED: [2012-08-22 Wed 16:56]
+net.tcp.port[192.168.0.2,80]
+  http://www.360doc.com/content/12/0307/12/834950_192437194.shtml

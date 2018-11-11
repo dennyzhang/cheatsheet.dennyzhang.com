@@ -27,7 +27,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-wget-A4/issues][Issues]] or s
 |-------------------------+-----------------------------------------------|
 | Download one url        | =wget -O /tmp/google.html https://google.com= |
 | Download mutiple urls   | =wget https://google.com https://bing.com=    |
-| Download a list of urls   | =wget -i url-list.txt=, [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-wget-A4/url-list.txt][url-list.txt]]          |
+| Download a list of urls | =wget -i url-list.txt=, [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-wget-A4/url-list.txt][url-list.txt]]          |
 
 ** More Resources
 License: Code is licenwget under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

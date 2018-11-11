@@ -57,7 +57,6 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 | Recursively delete empty folders            | =find . -type d -empty -delete=                            |
 | Delete files haven't been updated in 5 days | =find . -mtime +5 -exec rm {} \;=                          |
 | Delete folders created older than 5 days    | =find . -name "npm-*" -type d -ctime +2 -exec rm -rf {} += |
-
 ** Watch file
 | Name                   | Comment                                                   |
 |------------------------+-----------------------------------------------------------|
@@ -73,6 +72,15 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 | Create a copy for backup with timstamp as suffix | =cp myfile.txt{,."$(date +%Y%m%d-%H%M%S)"}=   |
 | Copy files by checking timestamp                 | =rsync -av $src_dir $dest_dir=                |
 | Copy files by comparing checksum                 | =rsync -avc $src_dir $dest_dir=               |
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+** Watch file
+| Name                             | Command                                      |
+|----------------------------------+----------------------------------------------|
+| Remove a file or folder          | =rm -rf <path>=                              |
+| Remove a file or an empty folder | =rm -f <path>=                               |
+| Remove a file by inode           | =find <path> -inum 5555 -exec rm -i '{}' \;= |
 ** Diff File
 | Name                           | Command                                   |
 |--------------------------------+-------------------------------------------|

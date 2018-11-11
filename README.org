@@ -120,6 +120,22 @@ Cheers!
 * CANCELED                                                         :noexport:
 ** CANCELED Create symol link: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
    CLOSED: [2018-09-09 Sun 00:42]
+** CANCELED move adsense to the right, and also related cheatsheets: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
+   CLOSED: [2018-08-15 Wed 19:50]
+
+** CANCELED cheatsheet add blog post summary
+   CLOSED: [2018-08-15 Wed 19:51]
+
+** CANCELED make blog wider: https://cheatsheet.dennyzhang.com/cheatsheet-kubernets/
+   CLOSED: [2018-08-15 Wed 19:51]
+
+** CANCELED first adsense doesn't show up: https://cheatsheet.dennyzhang.com/contact
+   CLOSED: [2018-08-16 Thu 00:08]
+
+** CANCELED cheatsheet ssl issue: http://cheatsheet.dennyzhang.com/cheatsheet-groovy/
+   CLOSED: [2018-08-16 Thu 00:08]
+** CANCELED no summary or preview
+   CLOSED: [2018-08-16 Thu 00:09]
 * DONE                                                             :noexport:
 ** DONE cheatsheet: add category
    CLOSED: [2018-08-14 Tue 00:31]
@@ -138,15 +154,6 @@ Cheers!
    CLOSED: [2018-08-15 Wed 19:50]
 ** DONE cheatsheet: add submodules
    CLOSED: [2018-08-15 Wed 19:50]
-** CANCELED move adsense to the right, and also related cheatsheets: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
-   CLOSED: [2018-08-15 Wed 19:50]
-
-** CANCELED cheatsheet add blog post summary
-   CLOSED: [2018-08-15 Wed 19:51]
-
-** CANCELED make blog wider: https://cheatsheet.dennyzhang.com/cheatsheet-kubernets/
-   CLOSED: [2018-08-15 Wed 19:51]
-
 ** DONE cheatsheet: Use emacs to update everything automatically
    CLOSED: [2018-08-15 Wed 20:24]
 
@@ -160,13 +167,6 @@ Cheers!
 ** DONE blog post: list everything by category
    CLOSED: [2018-08-16 Thu 00:08]
 
-** CANCELED first adsense doesn't show up: https://cheatsheet.dennyzhang.com/contact
-   CLOSED: [2018-08-16 Thu 00:08]
-
-** CANCELED cheatsheet ssl issue: http://cheatsheet.dennyzhang.com/cheatsheet-groovy/
-   CLOSED: [2018-08-16 Thu 00:08]
-** CANCELED no summary or preview
-   CLOSED: [2018-08-16 Thu 00:09]
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] blog post: avoid open a new link             :noexport:IMPORTANT:
 * [#A] Submit PR to related communities                            :noexport:
@@ -175,16 +175,12 @@ Cheers!
 ** https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
 ** https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4
 * PR: Send PR to concouse: https://concourse-ci.org/exposing.html  :noexport:
-* TODO change directory to github repo: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-prometheus-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] cheatsheet.dennyzhang.com                              :noexport:
 ** TODO align icon horizontally in blog: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
 https://cheatsheet.dennyzhang.com/contact
 https://code.dennyzhang.com/contact
-** TODO [#A] export more github repo to cheatsheet blog
-** HALF icon: emacs, uaac
 ** TODO featured image: the same height
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** [#A] similar websites: dash                                    :IMPORTANT:
 https://kapeli.com/cheatsheets
 ** similar websites: 
@@ -196,7 +192,6 @@ https://www.mediaatelier.com/CheatSheet/
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** HALF file link doesn't look nice: http://cheatsheet.dennyzhang.com/cheatsheet-golang/
 ** TODO How people can contribute?
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** Discussion
 *** TODO make the font bigger
 * HALF [#A] Generate cheatsheet PDF A4                             :noexport:
@@ -339,7 +334,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO [#A] Make it more useful                                    :noexport:
 ** TODO enable people to better search; https://devhints.io/       :noexport:
 ** TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#B] Fail the pdf generating job when some lines are truncated :noexport:
 * TODO [#A] Build internal links                                   :noexport:
 * TODO Add guideline for how people to contribute                  :noexport:
@@ -364,20 +358,11 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-dns-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-chef-a4 :noexport:
-
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-health-A4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-couchbase-A4 :noexport:
-* TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-elasticsearch-A4 :noexport:
-* TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-jenkins-A4 :noexport:
-* TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-process-A4 :noexport:
-* TODO [#A] health cheatsheet: /Users/mac/Dropbox/org_data/life/life.org :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-docker-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO cheatsheet column: set the minimium width: https://github.com/dennyzhang/cheatsheet-kubernetes-A4 :noexport:
 
 * TODO [#A] PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
-* TODO [#A] avoid underline: https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4 :noexport:
 * TODO cheatsheet: helm                                            :noexport:
 | Component | Role   | Location                            |
 |-----------+--------+-------------------------------------|
@@ -387,7 +372,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO [#A] apparmor: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO asciiart: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO yum & rpm & rpm2cpio & urpm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* TODO du & dd && df & lsblk & lvm & mdadm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO chmod & chown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO convert: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -400,3 +384,8 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO shred: /Users/zdenny/cheat/cheat/cheatsheets/shred          :noexport:
 * TODO ncdu: /Users/zdenny/cheat/cheat/cheatsheets/                :noexport:
 * TODO nkf: /Users/zdenny/cheat/cheat/cheatsheets/                 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-health-A4 :noexport:
+* TODO [#A] health cheatsheet: /Users/mac/Dropbox/org_data/life/life.org :noexport:
+* TODO du & dd && df & lsblk & lvm & mdadm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO [#A] avoid underline: https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4 :noexport:

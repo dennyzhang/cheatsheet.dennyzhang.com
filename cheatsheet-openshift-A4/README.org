@@ -178,6 +178,9 @@ File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]]
 | useridentitymappings                |              | user.openshift.io                | false       | UserIdentityMapping                |
 | users                               |              | user.openshift.io                | false       | User                               |
 | openshiftwebconsoleconfigs          |              | webconsole.operator.openshift.io | false       | OpenShiftWebConsoleConfig          |
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
 ** OpenShift Source Code
 | Name                         | Command                             |
 |------------------------------+-------------------------------------|
@@ -681,3 +684,5 @@ postgresql-1-hh4z9                  1/1       Running     0          38m
 https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/index.html
 ** Builds and image streams
 ** Templates
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] How openshift design and implement the monitoring feature? :noexport:

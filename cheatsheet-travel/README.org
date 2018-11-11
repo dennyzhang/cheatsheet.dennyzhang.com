@@ -18,7 +18,11 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][Cheatsheet: Driver License]], [[https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4][Cheatsheet: Visa]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 Checklist before travel by flights
-** Mandatory
+** Basic
+| Item                                   | Summary                             |
+|----------------------------------------+-------------------------------------|
+| Check flight status for United Airline | [[https://www.united.com/web/en-US/apps/travel/flightstatus/default.aspx][Link: Flight status and information]] |
+** Checklist: Mandatory
 | Item       | Summary                                                     |
 |------------+-------------------------------------------------------------|
 | ID         | driver license, passport, etc.                              |
@@ -26,17 +30,16 @@ Checklist before travel by flights
 | Cash       | Tips for hotels; Or scenarios which won't take credit cards |
 | Chargers   | cellphones, laptop, etc.                                    |
 | Slippers   | be more comfortable on the plane or hotel                   |
-
-** International Flights
-| Item             | Summary                   |
-|------------------+---------------------------|
-| Check-in earlier | Choose seats              |
-| Earphone         | noisy background on plane |
-| Blanket             | It could cold on the plane            |
-| Pillow              | Sleep well on the flights             |
-| Glass protection    | Sleep well on the flights             |
-
-** Optional
+** Checklist: International Flights
+| Item             | Summary                    |
+|------------------+----------------------------|
+| Fruits           | Apples, Oranges, etc       |
+| Check-in earlier | Choose seats               |
+| Earphone         | Noisy background on plane  |
+| Blanket          | It could cold on the plane |
+| Pillow           | Sleep well on the flights  |
+| Glass protection | Sleep well on the flights  |
+** Checklist: Optional
 | Item                | Summary                               |
 |---------------------+---------------------------------------|
 | Sport shoes         | In case of lots of walking.           |

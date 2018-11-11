@@ -1,4 +1,4 @@
-* Elasticsearch CheatSheet                                               :Tools:
+* Elasticsearch CheatSheet                                            :Tools:
 :PROPERTIES:
 :type:     elasticsearch, database
 :export_file_name: cheatsheet-elasticsearch-A4.pdf
@@ -22,11 +22,28 @@
 
 File me [[https://github.com/DennyZhang/cheatsheet-elasticsearch-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-elasticsearch-A4][this repo]].
 ** Elasticsearch Summary
-| Name | Command |
-|------+---------|
-|      |         |
+| Name                  | Command                                        |
+|-----------------------+------------------------------------------------|
+| elasticsearch-head[1] | A web tool: [[http://localhost:9200/_plugin/head/][$es_ip:$es_port/_plugin/head/]]      |
+| elasticdump           | Import and export tools                        |
+| Get cluster health    | =$es_ip:$es_port/_cluster/health?pretty=       |
+| Get cluster setting   | =$es_ip:$es_port/_cluster/settings?v=          |
+| Get Index Setting     | =$es_ip:$es_port/$es_name/_settings?v=         |
+| List Nodes            | =$es_ip:$es_port/_cat/nodes?v=                 |
+| List shards           | =$es_ip:$es_port/_cat/shards?v=                |
+| List indices          | =$es_ip:$es_port/_cat/indices?v=               |
+| Get allocation        | =$es_ip:$es_port/_cat/allocation?v=            |
+| Get Version           | =$es_ip:$es_port=                              |
+| Version By CLI        | =bin/elasticsearch --version=                  |
+| Indice Summary        | =$es_ip:$es_port/$index/_count?pretty=         |
+| Indice Stats          | =$es_ip:$es_port/$index/_stats?pretty=         |
+| Get all docs          | =$es_ip:$es_port/$index/_search?pretty=        |
+| Full Text Search      | =$es_ip:$es_port/$index/_search?q=50=          |
+| Search By field       | =$es_ip:$es_port/$index/_search?q=f1:50=       |
+| Search By 2 fields    | $es_ip:$es_port/$index/_search?q="f1:v1&f2=v2" |
 
 ** More Resources
+https://www.dennyzhang.com/query_elasticsearch
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
@@ -2280,7 +2297,6 @@ no, just bringing ideas from what I'm reading, we are still to hear feedback fro
 will try to schedule a meeting for today
 #+END_EXAMPLE
 
-
 ** TODO Detect ES disconnect timeout
 #+BEGIN_EXAMPLE
 [2017-08-23 01:48:35,567][INFO ][cluster.service          ] [bematech-do-es-10.localdomain] removed {{bematech-do-es-01.localdomain}{_goKs3R1Q5mTe06faT5IUg}{138.197.215.132}{138.197.215.132:9300}{max_local_storage_nodes=1},}, reason: zen-disco-receive(from master [{bematech-do-es-18.localdomain}{2ScQBOZqQVCOKOdztMtHjA}{165.227.25.149}{165.227.25.149:9300}{max_local_storage_nodes=1}])
@@ -2659,11 +2675,6 @@ root@bematech-do-es-01:~/elasticsearch-cli-tool# curl http://$es_ip:9200/master-
 ** TODO Detect elasticsearch hot threading
 ** TODO elasticsearch detect I/O
 ** TODO Detect elasticsearch segments activities
-** TODO https://qbox.io/blog/maximize-guide-elasticsearch-indexing-performance-part-2
-** TODO https://www.elastic.co/guide/en/elasticsearch/reference/current/tune-for-search-speed.html
-** TODO https://www.elastic.co/blog/performance-considerations-elasticsearch-indexing
-** TODO https://www.elastic.co/guide/en/elasticsearch/guide/master/hardware.html
-** TODO https://www.elastic.co/guide/en/elasticsearch/guide/current/indexing-performance.html
 ** TODO [#A] elasticsearch: indices.store.throttle.max_bytes_per_sec
 https://www.elastic.co/guide/en/elasticsearch/guide/current/indexing-performance.html
 https://discuss.elastic.co/t/indices-store-throttle-max-bytes-per-sec-config-setting-and-2-2/44771
@@ -2759,7 +2770,6 @@ javax.ws.rs.WebApplicationException: HTTP 404 endpoints "elasticsearch-discovery
 bematech-do-es-16/check_elasticsearch_log is OK
 bematech-do-es-07/check_elasticsearch_log is WARNING:
 WARNING - (1 warnings) - [staging-index-b7c160f0e0ac11e79f15dec7170128a9-new3][[staging-index-b7c160f0e0ac11e79f15dec7170128a9-new3][6]] EngineClosedException[CurrentState[CLOSED] Closed]
-** TODO [#A] read blog: https://www.loggly.com/blog/nine-tips-configuring-elasticsearch-for-high-performance/
 ** TODO get elasticsearch pending tasks
 #+BEGIN_EXAMPLE
 root@bematech-do-es-16:~# curl $es_ip:9200/_cluster/health?pretty
@@ -3015,3 +3025,101 @@ CPU load: 0.00 0.00 0.00 2/136 19983.
 ** TODO Running an Elasticsearch cluster with Docker: https://stefanprodan.com//2016/elasticsearch-cluster-with-docker/
 ** TODO elasticsearch: node.max_local_storage_nodes: 1
 ** TODO get how many shards each Elasticsearch node has
+* TODO test es5                                                    :noexport:
+http://injenkins.carol.ai:48080/job/DockerDeployAllInOne/506/console
+denny-es5
+1.91-elasticsearch5
+
+es5-fresh-deployment
+
+qa
+
+ssh root@159.89.154.53
+export env1_ip="159.89.154.53"
+export env2_ip="138.68.245.33"
+
+wget -O app-1.91.0-es5-SNAPSHOT.jar http://injenkins.carol.ai:28001/1.91-elasticsearch5/app-1.91.0-es5-SNAPSHOT.jar
+wget -O backupserver-1.91.0-es5-SNAPSHOT.jar http://injenkins.carol.ai:28001/1.91-elasticsearch5/backupserver-1.91.0-es5-SNAPSHOT.jar
+
+couchbase: http://138.68.245.33:8091
+
+https://www.dennyzhang.com/backup_elasticsearch
+** DONE update firwall
+   CLOSED: [2018-05-21 Mon 16:05]
+qa
+
+ssh root@159.89.154.53
+
+ufw allow from 159.89.154.53
+ufw allow from 45.33.87.74
+http://138.68.245.33:8091
+** HALF flush all cb buckets: http://138.68.245.33:8091
+** scp es2
+scp -r /usr/share/elasticsearch/repo/* root@138.68.245.33:/usr/share/elasticsearch/repo
+
+export snapshot_name="snapshot_20180518"
+
+time curl -XPOST "http://$es_ip:$es_port/_snapshot/$repo_name/$snapshot_name/_restore?wait_for_completion=true" -d "{
+    \"indices\": \"$es_index_list\",
+    \"ignore_unavailable\": true,
+    \"include_global_state\": false
+}'"
+
+
+curl -XGET "http://$es_ip:$es_port/_snapshot/$repo_name/_all"
+** check es version
+curl $es_ip:9200/
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** DONE
+*** HALF /etc/elasticsearch/jvm.options: -Dlog4j2.disable.jmx=true
+https://github.com/elastic/elasticsearch/issues/21932
+*** HALF remove path.repo: ''
+*** HALF target ES 5: mkdir -p /usr/share/elasticsearch/repo && chmod 777 /usr/share/elasticsearch/repo
+** backup es2
+es_ip=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+curl $es_ip:9200/_cat/indices?v
+
+#+BEGIN_EXAMPLE
+root@all-in-one-DockerDeployAllInOne-463:/# curl $es_ip:9200/_cat/indices?v
+health status index                                          pri rep docs.count docs.deleted store.size pri.store.size
+green  open   staging-index-13a1f8adbec032ed68f3d035449ef48d   1   0          0            0       159b           159b
+green  open   config-index-e4010da4110ba377d100f050cb4440db    1   0        272            1    323.6kb        323.6kb
+green  open   master-index-13a1f8adbec032ed68f3d035449ef48d    1   0          0            0       159b           159b
+green  open   master-index-46078234297e400a1648d9c427dc8c4b    1   0          2            1     20.1kb         20.1kb
+green  open   config-index-098f6bcd4621d373cade4e832627b4f6    1   0          1            2     12.2kb         12.2kb
+green  open   master-index-e4010da4110ba377d100f050cb4440db    1   0        130            0    206.9kb        206.9kb
+green  open   staging-index-8cd6e43115e9416eb23609486fa053e3   1   0          1            0    116.6kb        116.6kb
+green  open   config-index-8cd6e43115e9416eb23609486fa053e3    1   0        445           32      1.3mb          1.3mb
+green  open   master-index-098f6bcd4621d373cade4e832627b4f6    1   0          0            0       159b           159b
+green  open   config-index-46078234297e400a1648d9c427dc8c4b    1   0          3            2     30.4kb         30.4kb
+green  open   config-index-13a1f8adbec032ed68f3d035449ef48d    1   0          1            0      8.7kb          8.7kb
+green  open   staging-index-098f6bcd4621d373cade4e832627b4f6   1   0          0            0       159b           159b
+green  open   staging-index-e4010da4110ba377d100f050cb4440db   1   0     111781            8    110.5mb        110.5mb
+green  open   staging-index-46078234297e400a1648d9c427dc8c4b   1   0      50159           13     48.3mb         48.3mb
+green  open   master-index-8cd6e43115e9416eb23609486fa053e3    1   0       1679            0    999.5kb        999.5kb
+#+END_EXAMPLE
+
+export es_index_list="*-index-8cd6e43115e9416eb23609486fa053e3,*-index-e4010da4110ba377d100f050cb4440db"
+es_ip=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+es_port=9200
+export repo_name="my_backup"
+export es_fs_mnt="/usr/share/elasticsearch/repo"
+
+curl -X PUT "http://$es_ip:$es_port/_snapshot/$repo_name" -d "{
+    \"type\": \"fs\",
+    \"settings\": {
+        \"location\": \"$es_fs_mnt\",
+        \"compress\": true,
+        \"chunk_size\": \"10m\"
+    }
+}"
+
+export snapshot_name="snapshot_20180518"
+
+time curl -XPUT "http://$es_ip:$es_port/_snapshot/$repo_name/${snapshot_name}?wait_for_completion=true" -d "{
+    \"indices\": \"$es_index_list\",
+    \"ignore_unavailable\": true,
+    \"include_global_state\": false
+}"
+
+ls -lth $es_fs_mnt

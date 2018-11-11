@@ -115,4 +115,3 @@ http://stackoverflow.com/questions/37434589/how-to-use-library-module-in-cookboo
 ** TODO DevOps Puzzle: prod-audit-03 why chef deployment is fine, but it's not working
 ** TODO Update ssh authorized_keys of workstation node, to run chef deployment
 ** TODO chef whether to avoid elasticsearch restart
-

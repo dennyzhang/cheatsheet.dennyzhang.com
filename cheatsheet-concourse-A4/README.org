@@ -78,6 +78,9 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | Destroy pipeline                  | =fly -t $target destroy-pipeline -p $pipeline_name=                                |
 | Format pipeline                   | =fly format-pipeline -c pipeline.yml=                                              |
 | Validate pipeline                 | =fly validate-pipeline -c pipeline.yml=                                            |
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
 ** Concourse Security
 | Name                               | Summary                                                                          |
 |------------------------------------+----------------------------------------------------------------------------------|

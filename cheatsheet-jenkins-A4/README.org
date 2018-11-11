@@ -22,10 +22,44 @@
 
 File me [[https://github.com/DennyZhang/cheatsheet-jenkins-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-jenkins-A4][this repo]].
 ** Jenkins Summary
-| Name                     | Command                                                         |
-|--------------------------+-----------------------------------------------------------------|
-
+| Name                              | Command                          |
+|-----------------------------------+----------------------------------|
+| Test groovy code from Jenkins GUI | Manage Jenkins -> Script Console |
+| Jenkins Slave Node                |                                  |
+** Jenkins Plugins
+| Name                        | Command                 |
+|-----------------------------+-------------------------|
+| Backup jenkins              | [[https://wiki.jenkins-ci.org/display/JENKINS/thinBackup][ThinBackup Plugin]]       |
+| Load the ssh key            | [[https://wiki.jenkins-ci.org/display/JENKINS/Credentials+Plugin][Credentials Plugin]]      |
+| Add timestamp to job output | [[https://wiki.jenkins-ci.org/display/JENKINS/Timestamper][Timestamper Plugin]]      |
+| Create dashboard            | [[https://wiki.jenkins-ci.org/display/JENKINS/Dashboard+View][Dashboard View Plugin]]   |
+| Abort if job takes too long | [[https://wiki.jenkins-ci.org/display/JENKINS/Build-timeout+Plugin][Build-timeout Plugin]]    |
+| Retry failed a job          | [[https://wiki.jenkins-ci.org/display/JENKINS/Naginator+Plugin][Naginator Plugin]]        |
+| Backup job configuration    | JobConfigHistory Plugin |
+** Jenkins Pipeline
+| Name                                 | Command                        |
+|--------------------------------------+--------------------------------|
+| Pass parameter across jenkins jobs   | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-jenkins-A4/jenkinsfile-pass-parameter][jenkinsfile-pass-parameter]] |
+| Set timeout & retry                  | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-jenkins-A4/jenkinsfile-timeout-retry][jenkinsfile-timeout-retry]]  |
+| Use finally to do cleanup            | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-jenkins-A4/jenkinsfile-finally][jenkinsfile-finally]]        |
+| Run jenkins jobs in a sequential way | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-jenkins-A4/jenkinsfile-sequentially][jenkinsfile-sequentially]]   |
+| Run jenkins jobs in parallel         | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-jenkins-A4/jenkinsfile-parallelly][jenkinsfile-parallelly]]     |
+** Jenkins Groovy
+| Name                           | Command                          |
+|--------------------------------+----------------------------------|
+| Print message to stdout        | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-jenkins-A4/print.groovy][print.groovy]]                 |
+| Get environment variables      | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-jenkins-A4/get-env.groovy][get-env.groovy]]               |
+| Convert string to list         | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-jenkins-A4/split-string.groovy][split-string.groovy]]          |
+| Create string with multi-lines | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-jenkins-A4/multi-line-string.groovy][multi-line-string.groovy]]     |
+| Loop a map                     | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-jenkins-A4/loop-map.groovy][loop-map.groovy]]              |
+| Get hostname by ip             | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-jenkins-A4/get-ip-by-hostname.groovy][get-ip-by-hostname.groovy]]    |
+| Convert list to string         | =l.join(";")=, [[http://groovy-lang.org/groovy-dev-kit.html#_list_literals][link: groovy list]] |
 ** More Resources
+http://groovy-lang.org/
+
+https://jenkins.io/doc/pipeline/examples/
+
+https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
@@ -61,7 +95,17 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
-* misc                                                             :noexport:
+* TODO [#A] Blog: Jenkins pipeline: run multiple related jobs in a managed order :noexport:IMPORTANT:
+** basic use
+Jenkins Pipeline is a suite of plugins which supports implementing and
+integrating continuous delivery pipelines into Jenkins.
+** TODO jenkins pipeline show slack error message
+** TODO why unecessary delay when running jobs via pipeline: http://injenkins.carol.ai:48080/view/Pipeline/job/PipelineMonitor/
+** TODO Why pipeline scheduling takes serveral minutes
+** TODO [#A] How to support testing different branch with scm: http://jenkins.shibgeek.com:48084/view/Pipeline/job/PipelineCodeCheck/
+** TODO [#A] Jenkins pipeline doesn't set who initiate the deployment
+jenkins APP [11:32 AM]
+RefreshDemoEnvAll - #7 Started by upstream project "PipelineRefreshDemoEnvAll" build number 3 (Open)
 ** TODO [#A] kill in jenkins job doesn't stop the bash: curl
  root@bematech-do-es-2:~/elasticsearch-cli-tool# curl "http://${es_ip}:9200/_alias/staging-8a18aa800e5911e785f24a8136534b63"
  {"staging-index-8a18aa800e5911e785f24a8136534b63-new3":{"aliases":{"staging-8a18aa800e5911e785f24a8136534b63":{}}}}root@bematech-do-es-2:~/elasticsearch-cli-tool# curl "http://${es_ip}:9200/_alias/staging-8a18aa800e5911e785f24a8136534b63"
@@ -70,6 +114,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
  root     11109  9468  0 22:51 pts/2    00:00:00 grep --color=auto curl
  root     13367 13348  0 13:05 ?        00:00:04 curl -XPOST http://138.68.246.50:9200/_reindex?pretty -d       {        "conflicts": "proceed",        "source": {        "index": "master-index-321bb9606b2111e7b579a2f42be00f79-new2",        "size": "500"     },        "dest": {        "index": "master-index-321bb9606b2111e7b579a2f42be00f79-new3",        "op_type": "create"     }  }
  root@bematech-do-es-2:~/elasticsearch-cli-tool# date
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** TODO [#A] Jenkinsfile/Pipeline                                 :IMPORTANT:
  https://jenkins.io/doc/book/pipeline/jenkinsfile/
 
@@ -169,10 +214,6 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 https://dzone.com/articles/top-10-best-practices-for-jenkins-pipeline
 ** TODO jenkins plugins: git, checkstyle, build-pipeline-plugin, clone-workspace-scm, deploy, Text-finder
 https://github.com/ThoughtWorks-Chengdu-DevOps-Club/tw_devops_workshop/tree/master/season_1/workshop_2
-** TODO jenkins load the ssh key: Credentials Plugin: http://injenkins.carol.ai:48080/view/All/job/dennytest/4/console
-https://wiki.jenkins-ci.org/display/JENKINS/Credentials+Plugin
-
-https://www.cloudbees.com/blog/injecting-secrets-jenkins-builds-using-credentials-plugin
 ** TODO verify whether local docker image is up-to-date
 ** TODO Why jenkins container use so much memory?
 ** TODO jenkins docker demo: https://hub.docker.com/u/jenkinsci/
@@ -207,7 +248,6 @@ http://stackoverflow.com/questions/23995648/jenkins-execute-shell-script-vars-ne
 https://issues.jenkins-ci.org/browse/JENKINS-25355
 ** TODO [#A] jenkins docker plugin                                 :IMPORTANT:
 ** TODO [#A] QA jenkins job doesn't destroy the VMs
-http://injenkins.carol.ai:48080/view/TeamWise/job/DeployDigitalOceanMDMQACluster/42/console
 
 ImagesNetworkingMonitoringAPISupport
 C
@@ -298,13 +338,11 @@ https://support.cloudbees.com/hc/en-us/articles/218353308-How-to-update-job-conf
 dennyzhang
 lrpChangeMe1
 
-curl -X GET http://dennyzhang:lrpChangeMe1@bematech-do-jenkins.carol.ai:18080/job/dennytestRehearsal/config.xml -o mylocalconfig.xml
+curl -X GET http://dennyzhang:lrpChangeMe1@myjenkins:18080/job/dennytestRehearsal/config.xml -o mylocalconfig.xml
 
-curl -X POST http://dennyzhang:lrpChangeMe1@bematech-do-jenkins.carol.ai:18080/job/dennytestRehearsal/config.xml --data-binary "@mymodifiedlocalconfig.xml"
-** TODO why has_error variable hasn't passed: http://bematech-do-jenkins.carol.ai:18080/job/CheckDNSPropagation/14/console
+curl -X POST http://dennyzhang:lrpChangeMe1@myjenkins:18080/job/dennytestRehearsal/config.xml --data-binary "@mymodifiedlocalconfig.xml"
+** TODO why has_error variable hasn't passed: http://myjenkins:18080/job/CheckDNSPropagation/14/console
 ** TODO jenkins docker image: why /var/jenkins_home/.bashrc folder is missing?
-** TODO [#A] Blog: use groovy to reconfigure ThinBackup, and inject credential
-*** create slack token
 ** Blog: Just Enough Groovy For Jenkins
 https://github.com/DennyZhang/jenkins-groovy-study
 *** HALF Start a GitHub repo: groovy-for-jenkins
@@ -346,6 +384,7 @@ http://shrubbery.homeip.net/c/display/W/Environment+Variables+and+Groovy
 def env = System.getenv()
 def baseDir = env['BASE_DIR']
 #+END_SRC
+
 *** Validate User Input
 - string is not empty
 #+BEGIN_SRC groovy
@@ -400,127 +439,10 @@ testString.replace("\\", "/")
 *** HALF check whether string is empty
 *** HALF check whether variable is in a list
 *** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-*** useful link
-http://groovy-lang.org/
-*** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-*** DONE hello world
-   CLOSED: [2017-08-17 Thu 11:39]
-String message = 'Hello from Groovy'
-println message
-*** DONE [#A] groovy get environment variable
-  CLOSED: [2017-06-11 Sun 18:15]
-https://stackoverflow.com/questions/40215394/how-to-get-environment-variable-in-jenkins-groovy-script-console
-https://stackoverflow.com/questions/31707667/how-to-access-jenkins-environment-variables-with-dsl
-def envVars = Jenkins.instance.getGlobalNodeProperties()[0].getEnvVars()
-println envVars['myVar']
-
-#+BEGIN_EXAMPLE
-import hudson.model.*;
-import jenkins.model.*;
-
-Thread.start {
-      sleep 10000
-      println "--> setting agent port for jnlp"
-      def env = System.getenv()
-      int port = env['JENKINS_SLAVE_AGENT_PORT'].toInteger()
-      Jenkins.instance.setSlaveAgentPort(port)
-      println "--> setting agent port for jnlp... done"
-}
-#+END_EXAMPLE
-*** DONE groovy list
-  CLOSED: [2017-06-27 Tue 21:17]
-http://groovy-lang.org/groovy-dev-kit.html#_list_literals
-*** DONE Groovy multi-line String?
-  CLOSED: [2017-08-17 Thu 11:42]
-https://stackoverflow.com/questions/5079797/whats-wrong-with-groovy-multi-line-string
-http://grails.asia/groovy-multiline-string
-def a = """test
-test
-test"""
-*** DONE groovy string to list: string.split("\n")
-  CLOSED: [2017-08-17 Thu 15:32]
-String ip_hostname_list = """ 138.197.192.172  bematech-do-jenkins
-   138.68.254.56  bematech-do-lb-1
-  138.68.254.215  bematech-do-lb-2
-   165.227.8.194  bematech-do-cb-01
-  138.197.215.93  bematech-do-cb-02   """;
-
-def l = ip_hostname_list.split("\n")
-print l.join("a")
-*** DONE groovy list to string: l.join(";")
-   CLOSED: [2017-08-17 Thu 15:32]
 *** BYPASS groovy working directory
    CLOSED: [2017-08-30 Wed 09:11]
 https://stackoverflow.com/questions/18179200/how-to-change-the-current-working-directory-in-groovy
-*** #  --8<-------------------------- separator ------------------------>8--
 *** TODO Jenkins Scripts not permitted to use new java.util.ArrayList
-*** DONE groovy loop map
-  CLOSED: [2017-12-29 Fri 23:19]
-#+BEGIN_EXAMPLE
-def sampleMap = ['Key#1':'Value#1', 'Key#2':'Value#2']
-println sampleMap['Key#1']
-node{
-    // itertate over stages
-    for (key in sampleMap.keySet()){
-        val = "${sampleMap[key]}"
-        println key
-        println val
-        stage('Run Key'){
-            println "Ran ${key}"
-        }
-
-        stage('Ran Value for that Key'){
-            println "Ran ${val}"
-        }
-
-        stage('Clean Up'){
-            println "Ran Some sort of Cleanup"
-        }
-    }
-}
-
-#+END_EXAMPLE
-*** DONE groovy use dictionary
-  CLOSED: [2017-12-29 Fri 22:41]
-#+BEGIN_EXAMPLE
-Amrit [10:37 PM]
-trying to figure out whether its possible to iterate stages in a Jenkinsfile using hash?
-
-
-Amrit [10:37 PM]
-added this Plain Text snippet: sample
-def sampleMap = ['Key#1':'Value#1', 'Key#2':'Value#2']
-println sampleMap['Key#1']
-// itertate over stages
-Add Comment Collapse
-
-
-
-Amrit [10:38 PM]
-running that ^^ runs into errors
-
-
-Denny Zhang (Github . Blogger)
-[10:41 PM]
-```def salaryMap = [:]
-salaryMap['John'] = '1000'
-salaryMap['Peter'] = '1020'
-salaryMap['Mark'] = '2000'
-
-println "Salary of John is: ${salaryMap['John']}"
-```
-
-
-[10:41]
-@Amrit This looks good in my test.
-#+END_EXAMPLE
-*** DONE groovy get hostname by ip
-  CLOSED: [2018-04-06 Fri 17:28]
-https://asoftwareguy.com/2014/04/17/get-the-ip-address-for-a-host-name-in-groovy/
-def hostname = 'google.com'
-println InetAddress.getByName(hostname).address.collect { it & 0xFF }.join('.')
-*** DONE How to easily test groovy script: get script console from Jenkins: Manage Jenkins -> Script Console
-   CLOSED: [2018-04-06 Fri 17:27]
 ** TODO jenkins pipeline job: add node
 *** original one
 node {
@@ -583,7 +505,6 @@ https://stackoverflow.com/questions/26230225/hashmap-getting-first-key-value
 /usr/local/scripts/terraform_jenkins_digitalocean/bematech-do-es-39/terraform.tfstate
 ** HALF groovy send http request
 https://stackoverflow.com/questions/25692515/groovy-built-in-rest-http-client
-** TODO Blog: use groovy to configure ThinBackup plugin
 ** TODO jenkins monitor
 Denny Zhang [4:47 PM]
 Nice, any screenshots? (Ignore, if it's against the policy)
@@ -631,26 +552,6 @@ https://wiki.jenkins.io/display/JENKINS/SCM+Sync+configuration+plugin
 *** jenkinsfile: groovy script
 *** Manage Jenkins Jobs with YAML
 https://blogs.rdoproject.org/6006/manage-jenkins-jobs-with-yaml
-*** backup at folder level
-http://www.vogella.com/tutorials/Jenkins/article.html#jenkins-backup-and-copying-files
-
-6. Jenkins backup and copying files
-Jenkins stores all the settings, logs and build artifacts in its home directory. For example, in /var/lib/jenkins under the default install location of Ubuntu.
-
-To create a backup of your Jenkins setup, just copy this directory.
-
-The jobs directory contains the individual jobs configured in the Jenkins install. You can move a job from one Jenkins installation to another by copying the corresponding job directory. You can also copy a job directory to clone a job or rename the directory.
-
-You only need to copy the config.xml file. If you are using Git in the jobs directory you can use the following .gitignore file to exclude everything except this file.
-
-# Ignore everything in /jobs
-**
-# Reinclude all folders in /jobs
-!*/
-# Ignore everything in the subfolders of /jobs
-**/*
-# Reinclude config.xml files in the first-level subfolders of /jobs
-!*/config.xml
 ** TODO configure pipeline status in a better way
 ** TODO jenkins pipeline: can't abort it
 ** TODO Jenkins group stage: 5 groups
@@ -988,12 +889,12 @@ I have made a note. Will think more, and discuss with Carlos and Kung
 ** TODO How to add jenkins slave nodes in jenkins master server using Chef cookbook
  https://stackoverflow.com/questions/32219134/how-to-add-jenkins-slave-nodes-in-jenkins-master-server-using-chef-cookbook
 ** TODO Use a jenkins job to reconfigure the same chef_json for 3 jobs: DeploySystemDOBematech, DeploySystemRehearsalDOBematech, UpdateHAProxyNodeListDOBematech
-** HALF copy json folder across nodes: http://bematech-do-jenkins.carol.ai:18080/job/CopyFolderFromNode1ToNode2/
+** HALF copy json folder across nodes: http://myjenkins:18080/job/CopyFolderFromNode1ToNode2/
  > copy_folder_node1_to_node2.sh && vim copy_folder_node1_to_node2.sh
 
  bash -ex copy_folder_node1_to_node2.sh "138.197.206.101" "/data/staging/" "165.227.52.135" "/tmp/staging"
-** HALF [#A] doc: why vm shutdown has failed: http://bematech-do-jenkins.carol.ai:18080/job/RunCommandOnServers/187/
-** TODO [#A] problem: Fail to shutdown couchbase nodes: http://bematech-do-jenkins.carol.ai:18080/job/RunCommandOnServers/181/console
+** HALF [#A] doc: why vm shutdown has failed: http://myjenkins:18080/job/RunCommandOnServers/187/
+** TODO [#A] problem: Fail to shutdown couchbase nodes: http://myjenkins:18080/job/RunCommandOnServers/181/console
 https://issues.couchbase.com/browse/MB-11765
 159.65.76.92 (bematech-do-cb-008)
 
@@ -1030,9 +931,9 @@ Kernel pid terminated (application_controller) ({application_start_failure,kerne
 ** TODO https://jenkins.io/doc/book/managing/cli/#remoting-connection-mode
 ** TODO Jenkins: SCM Sync configuration plugin: https://wiki.jenkins.io/display/JENKINS/SCM+Sync+configuration+plugin
 ** TODO learn from other repo: aws jenkins: https://github.com/search?p=2&q=aws-jenkins&type=Repositories&utf8=✓
-** TODO http://bematech-do-jenkins.carol.ai:18080/job/CopyFolderFromNode1ToNode2/
-** TODO mute the output of token: http://bematech-do-jenkins.carol.ai:18080/job/CreateAndProvisionVMInCloud/176/console
-** TODO restart es: console output is very slow to show: http://bematech-do-jenkins.carol.ai:18080/job/RestartOneESSafely/5/console
+** TODO http://myjenkins:18080/job/CopyFolderFromNode1ToNode2/
+** TODO mute the output of token: http://myjenkins:18080/job/CreateAndProvisionVMInCloud/176/console
+** TODO restart es: console output is very slow to show: http://myjenkins:18080/job/RestartOneESSafely/5/console
 ** TODO https://medium.com/meedan-updates/github-jenkins-hubot-slack-1e61a466e388
 ** TODO Pull Request Validation Between Jenkins and Bitbucket: http://icarobichir.com.br/posts/pull-request-validation-between-jenkins-and-bitbucket/
 ** TODO beautify ansible output: http://jenkinscn.dennyzhang.com:18088/job/dennytest/3/console
