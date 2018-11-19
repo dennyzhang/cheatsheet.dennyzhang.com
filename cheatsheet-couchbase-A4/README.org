@@ -792,12 +792,6 @@ http://localhost:8091
 ** DONE [#A] couchbase cluster enables email alerts: Setting -> Alerts -> Email Alerts
   CLOSED: [2016-07-29 Fri 16:32]
 http://stackoverflow.com/questions/10878052/couchbase-email-alert-setup-using-smtp-gmail-com
-smtp.zoho.com
-587
-contact@dennyzhang.com
-Require TLS: yes
-
-Recipients: devops.totvslabs@dennyzhang.com
 ** DONE serverspec: check couchbase bucket replica status
   CLOSED: [2016-08-08 Mon 16:40]
 http://docs.couchbase.com/admin/admin/REST/rest-bucket-info.html
@@ -15624,3 +15618,115 @@ cp -r /root/mdmdevops/cookbooks/couchbase-mdm /tmp/kitchen/cookbooks/
  So should I create one email in slack?
 ** TODO couchbase monnitoring: http://blog.couchbase.com/top-10-things-ops-sys-admin-must-know-about-couchbase
 ** TODO couchbase nagios plugin: https://exchange.nagios.org/directory/Plugins/Databases/nagios-2Dplugin-2Dcouchbase/details
+* local notes                                                      :noexport:
+** TODO couchbase command line to get bucket detail info about replica
+** TODO [#B] couchbase get bucket item count, regardless of replica and multiple nodes
+** TODO intra-cluster replication for couchbase
+http://docs.couchbase.com/admin/admin/XDCR/xdcr-intro.html
+
+Intra-cluster replication is the process of replicating data on
+multiple servers within a cluster in order to provide data redundancy
+should one or more servers crash. Data in Couchbase Server is
+distributed uniformly across all the servers in a cluster, with each
+server holding active and replica documents. When a new document is
+added to Couchbase Server, in addition to being persisted, it is also
+replicated to other servers within the cluster (this is configurable
+up to three replicas). If a server goes down, failover promotes
+replica data to active.
+** TODO when couchbase restore, what will happen to the data read and write requests
+** TODO couchbase DBA tips: http://blog.couchbase.com/top-10-things-ops-sys-admin-must-know-about-couchbase
+** TODO about couchbase: https://dzone.com/articles/couchbase-architecture-deep
+** TODO [#A] couchbase fail to add node: Unexpected server error, request logged.
+https://forums.couchbase.com/t/help-server-going-berserk/2164
+
+cb01:
+ssh -p 2702 root@173.230.144.20
+
+cb07:
+ssh -p 2702 root@45.79.70.179
+
+curl --noproxy 127.0.0.1 -u Administrator:password1234 173.230.144.20:8091/controller/addNode -d 'hostname=45.79.70.179&user=Administrator&password=password1234'
+
+#+BEGIN_EXAMPLE
+root@explorecb1:~# curl --noproxy 127.0.0.1 -u Administrator:password1234 173.230.144.20:8091/controller/addNode -d 'hostname=45.79.70.179&user=Administrator&password=password1234'
+["Unexpected server error, request logged."]
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+Bruno Volpato [5:06 PM]
+yes
+
+[5:08]
+this is the error, adding in the UI
+
+[5:08]
+Attention - Prepare join failed. This server does not have sufficient memory to support requested memory quota. Total quota is 11502MB (services: index, kv, n1ql), maximum allowed quota for the node is 10990MB.
+
+
+Nagios BOT [5:09 PM]
+explorecb6/check_couchbase_fd is OK
+
+[5:10]
+explorecb1/check_memory is OK
+
+[5:10]
+explorecb1/check_swap_usage is OK
+
+Bruno Volpato [5:10 PM]
+add from the UI worked @denny.zhang
+
+
+Nagios BOT [5:10 PM]
+explorecb5/check_memory is WARNING:
+MEMORY WARNING : Mem used: 53.40%, Swap used: 84.89%
+#+END_EXAMPLE
+** TODO couchbase bucket replica is 1 in explore env
+@bruno @kungwang
+
+Please note: currently replica of couchbase buckets is 1. So we can only accept one node failure.
+
+If 2 CB nodes crash, we might lose data.
+
+** TODO couchbase service: Data, Data Index Query
+** TODO get couchbase record count from backupset
+** TODO slow LAN bandwith, result in couchbase cluster lose data
+** TODO people didn't notice couchbase cluster issue 26 hours ago.
+Denny Zhang [12:39 PM]
+From above screenshot, it’s split-brain indeed.
+
+One party: 10.1.1.10, the other party: other nodes.
+
+Ever since *12:48:31 - Thu Feb 16, 2017* (more than 26 hours ago), we starts to see issues related to 10.1.1.10(bematech-cb-4)
+
+Why this node only? Is there anything special with this node? (edited)
+
+Bruno Volpato [12:39 PM]
+it was the master before going down it seems
+
+Denny Zhang [12:41 PM]
+So we’re having couchbase issues, starting from 26 hours ago.
+
+People didn’t notice that, until early this morning.
+
+Right?
+
+** TODO couchbase get how long rebalancing is done
+** TODO couchbase cluster issue
+From<denny.zhang@totvs.com>
+Tocouchbase_email_alerts
+DateToday at 2:23 PM
+IP address seems to have changed. Unable to listen on 'ns_1@138.68.229.74'. (Underlaying POSIX error code: 'nxdomain')
+
+--
+
+AVISO LEGAL:
+Esta mensagem, incluindo seus anexos, é destinada exclusivamente para a(s) pessoa(s)
+** TODO Couchbase cluster get memcached node list
+/tmp/test.log
+
+cd /opt/couchbase/var/lib/couchbase/logs
+find . -name "mem*" | xargs grep -i error | grep mdm-master > /tmp/test.log
+
+find . -name "mem*" | xargs grep -iE "exception|error" > /tmp/error.log
+
+cat /tmp/error.log | grep -v couchstore_open_db | grep -v "Failed to fetch data"

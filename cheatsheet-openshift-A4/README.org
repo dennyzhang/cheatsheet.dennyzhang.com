@@ -350,6 +350,10 @@ https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/
 
 https://docs.okd.io/latest/minishift/getting-started/quickstart.html
 
+https://www.openshift.com/
+
+https://docs.openshift.com/online/architecture/index.html
+
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
@@ -459,11 +463,6 @@ I1025 17:24:58.263517   75586 get.go:443] no kind is registered for the type v1b
 NAME                                READY     STATUS    RESTARTS   AGE
 dummy-deployment-6d6759c786-5kwth   1/1       Running   1          2h
 #+END_EXAMPLE
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO openshift list all CRD                                      :noexport:
-* TODO openshift multi-cloud                                       :noexport:
-* TODO how minishift implement catalog? I don't seem to see helm/tiler :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * HALF install openshift                                           :noexport:
 https://blog.openshift.com/openshift-developers-set-full-cluster-30-minutes/
 https://www.okd.io/minishift/
@@ -529,6 +528,67 @@ To login as administrator:
 
 -- Exporting of OpenShift images is occuring in background process with pid 39119.
 #+END_EXAMPLE
+* HALF [#A] Blog: Play With OpenShift In VirtualBox                :noexport:
+https://www.projectatomic.io/blog/2017/05/minishift-intro/
+** Concept of OpenShift
+Project
+Build
+Catalog
+** Install minishift
+https://github.com/minishift/minishift
+** Deploy an application to minishift
+** Deploy a pod with oc
+oc scale --replicas=2 replicationcontrollers apache-test-1
+oc scale --replicas=2 replicationcontrollers foo
+oc get pods
+
+#+BEGIN_EXAMPLE
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dummy-deployment
+  namespace: dennytest
+spec:
+  selector:
+    matchLabels:
+      app: dummy
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: dummy
+    spec:
+      containers:
+      - name: dummy
+        image: ubuntu
+        # image: busybox
+        args: [/bin/sh, -c,
+            'i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1; done']
+#+END_EXAMPLE
+
+oc get pods
+
+oc scale --replicas=3 deployment dummy-deployment
+
+#+BEGIN_EXAMPLE
+   /Users/zdenny  oc get pod                                                                                                                                                                                                                                         ✔ 0
+NAME                                READY     STATUS      RESTARTS   AGE
+apache-test-1-build                 0/1       Completed   0          12m
+apache-test-1-mxd6d                 1/1       Running     0          12m
+django-psql-persistent-1-build      0/1       Completed   0          38m
+django-psql-persistent-1-fmjr5      1/1       Running     0          37m
+dummy-deployment-6d6759c786-5kwth   1/1       Running     0          41s
+dummy-deployment-6d6759c786-l4dvs   1/1       Running     0          41s
+dummy-deployment-6d6759c786-t8rcc   1/1       Running     0          6s
+postgresql-1-hh4z9                  1/1       Running     0          38m
+#+END_EXAMPLE
+** DONE OpenShift Cheatsheet
+   CLOSED: [2018-10-25 Thu 14:59]
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO openshift list all CRD                                      :noexport:
+* TODO openshift multi-cloud                                       :noexport:
+* TODO how minishift implement catalog? I don't seem to see helm/tiler :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO why openshift only show one CRD                             :noexport:
 #+BEGIN_EXAMPLE
    /Users/zdenny  oc get crd --all-namespaces                                                                                                                       ✔ 0
@@ -624,65 +684,11 @@ openshift-metrics/config.yml
 Logging Install
 openshift-logging /config.yml
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* HALF [#A] Blog: Play With OpenShift In VirtualBox                :noexport:
-https://www.projectatomic.io/blog/2017/05/minishift-intro/
-** Concept of OpenShift
-Project
-Build
-Catalog
-** Install minishift
-https://github.com/minishift/minishift
-** Deploy an application to minishift
-** Deploy a pod with oc
-oc scale --replicas=2 replicationcontrollers apache-test-1
-oc scale --replicas=2 replicationcontrollers foo
-oc get pods
-
-#+BEGIN_EXAMPLE
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: dummy-deployment
-  namespace: dennytest
-spec:
-  selector:
-    matchLabels:
-      app: dummy
-  replicas: 2
-  template:
-    metadata:
-      labels:
-        app: dummy
-    spec:
-      containers:
-      - name: dummy
-        image: ubuntu
-        # image: busybox
-        args: [/bin/sh, -c,
-            'i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1; done']
-#+END_EXAMPLE
-
-oc get pods
-
-oc scale --replicas=3 deployment dummy-deployment
-
-#+BEGIN_EXAMPLE
-   /Users/zdenny  oc get pod                                                                                                                                                                                                                                         ✔ 0
-NAME                                READY     STATUS      RESTARTS   AGE
-apache-test-1-build                 0/1       Completed   0          12m
-apache-test-1-mxd6d                 1/1       Running     0          12m
-django-psql-persistent-1-build      0/1       Completed   0          38m
-django-psql-persistent-1-fmjr5      1/1       Running     0          37m
-dummy-deployment-6d6759c786-5kwth   1/1       Running     0          41s
-dummy-deployment-6d6759c786-l4dvs   1/1       Running     0          41s
-dummy-deployment-6d6759c786-t8rcc   1/1       Running     0          6s
-postgresql-1-hh4z9                  1/1       Running     0          38m
-#+END_EXAMPLE
-** DONE OpenShift Cheatsheet
-   CLOSED: [2018-10-25 Thu 14:59]
 * TODO Blog: X New Concepts I Like In OpenShift                    :noexport:
 https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/index.html
 ** Builds and image streams
 ** Templates
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] How openshift design and implement the monitoring feature? :noexport:
+* DONE openshift monitoring feature: GAP                           :noexport:
+  CLOSED: [2018-11-12 Mon 08:38]
+https://www.google.com.hk/search?q=openshift+monitoring

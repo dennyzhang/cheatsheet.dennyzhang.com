@@ -947,4 +947,51 @@ https://wiki.jenkins.io/display/JENKINS/thinBackup
 https://issues.jenkins-ci.org/browse/JENKINS-13239
 
 Have you installed any plugin called Thin backup? if yes  it might  configured to shut down after back up, then change the setting.
+* TODO [#A] Find official doc for Jenkins Groovy code              :noexport:
+https://gist.github.com/jnbnyc/c6213d3d12c8f848a385
+* TODO [#A] Blog: Use helm to deployment 3 nodes Jenkins cluster in Kubernetes :noexport:
+brew install kubernetes-helm
+| Name                          | Summary |
+|-------------------------------+---------|
+| helm repo list                |         |
+| helm helm search mysql        |         |
+| helm inspect stable/mysql     |         |
+| helm install .                |         |
+| helm delete --purge ugly-newt |         |
+| helm list                     |         |
+| helm status $name             |         |
+** TODO How to configure kubernetes global configuration
+** use helm
+https://github.com/kubernetes/helm
+https://docs.helm.sh/using_helm/#quickstart-guide
+* TODO local notes                                                 :noexport:
+** TODO Jenkins credential parameter
+  http://steve-jansen.github.io/blog/2014/12/16/parsing-jenkins-secrets-in-a-shell-script/
+https://stackoverflow.com/questions/34815482/accessing-credentials-in-jenkins-with-the-credentials-parameter-plugin
+https://www.cloudbees.com/blog/injecting-secrets-jenkins-builds-using-credentials-plugin
+** TODO Jenkins shell get credential secret text
+** TODO Jenkins parse credential parameter
+https://stackoverflow.com/questions/34815482/accessing-credentials-in-jenkins-with-the-credentials-parameter-plugin
+https://wiki.jenkins-ci.org/display/JENKINS/Credentials+Binding+Plugin
+** TODO Jenkins apache issue!
+ls -lth /var/run/apache2/apache2.pid
+** TODO bug: cancel backup from Jenkins won't kill the process
+root@bematech-do-jenkins:/opt/couchbase/backup# ps -ef | grep cou
+root     30800 30799  0 18:57 ?        00:00:00 python /opt/devops/bin/cb_backup.py --bucket_list=mdm-session --cbserver=http://138.68.225.199:8091 --cbbackup_bin=/opt/couchbase/mdmpublic/couchbase-cli/bin/cbbackup --backup_dir=/opt/couchbase/backup --username Administrator --password password1234 --backup_method full
+root     30801 30800  0 18:57 ?        00:00:00 /bin/sh -c /opt/couchbase/mdmpublic/couchbase-cli/bin/cbbackup http://138.68.225.199:8091 /opt/couchbase/backup/mdm-session -u Administrator -p password1234 -b mdm-session -m full -t 4 >> /var/log/cb_backup.log
+root     30802 30801 99 18:57 ?        00:00:43 python /opt/couchbase/mdmpublic/couchbase-cli/lib/python/cbbackup http://138.68.225.199:8091 /opt/couchbase/backup/mdm-session -u Administrator -p password1234 -b mdm-session -m full -t 4
+root     31120 12741  0 18:58 pts/4    00:00:00 grep --color=auto cou
+root@bematech-do-jenkins:/opt/couchbase/backup# kill 30800
+** TODO Jenkins create a global variable: to avoid duplication configurations
+** TODO Automate the thinbackup Jenkins restore
+** TODO Jenkins agent and servers
+** TODO automate Jenkins restore from thinbackup
+** TODO High Jenkins CPU load: we can't run the jobs
+** TODO Run Docker commands from Jenkins container
+https://sreeninet.wordpress.com/2016/01/23/ci-cd-with-docker-jenkins-and-tutum/
 
+https://stackoverflow.com/questions/38510952/jenkins-running-docker-commands-on-a-docker-slave
+https://github.com/jenkinsci/docker-workflow-plugin/tree/master/demo
+https://stackoverflow.com/questions/36088227/how-to-run-a-docker-command-in-jenkins-build-execute-shell
+https://stackoverflow.com/questions/42859443/execute-docker-commands-in-jenkins-in-docker-container
+** TODO Use AWS S3 for my critical backup: Jenkins configurations

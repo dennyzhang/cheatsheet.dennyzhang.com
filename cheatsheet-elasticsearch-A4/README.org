@@ -79,7 +79,141 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
-* TODO misc                                                        :noexport:
+* TODO [#A] Why es run into yellow                       :noexport:IMPORTANT:
+[staging-index-839920f07e6b11e6b71d0401f8d88101-new3][[staging-index-839920f07e6b11e6b71d0401f8d88101-new3][5]] ElasticsearchException[failed to create shard]; nested: LockObtainFailedException[Can't lock shard [staging-index-839920f07e6b11e6b71d0401f8d88101-new3][5], timed out after 5000ms];
+        at org.elasticsearch.index.IndexService.createShard(IndexService.java:389)
+        at org.elasticsearch.indices.cluster.IndicesClusterStateService.applyInitializingShard(IndicesClusterStateService.java:601)
+        at org.elasticsearch.indices.cluster.IndicesClusterStateService.applyNewOrUpdatedShards(IndicesClusterStateService.java:501)
+        at org.elasticsearch.indices.cluster.IndicesClusterStateService.clusterChanged(IndicesClusterStateService.java:166)
+        at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:610)
+        at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
+        at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
+        at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.lucene.store.LockObtainFailedException: Can't lock shard [staging-index-839920f07e6b11e6b71d0401f8d88101-new3][5], timed out after 5000ms
+        at org.elasticsearch.env.NodeEnvironment$InternalShardLock.acquire(NodeEnvironment.java:609)
+        at org.elasticsearch.env.NodeEnvironment.shardLock(NodeEnvironment.java:537)
+        at org.elasticsearch.index.IndexService.createShard(IndexService.java:306)
+        ... 10 more
+[2018-03-30 13:25:18,904][WARN ][indices.cluster          ] [bematech-do-es-15.localdomain] [[staging-index-4fc7bce0072311e890833a4115ef3a9f][7]] marking and sending shard failed due to [failed to create shard]
+[staging-index-4fc7bce0072311e890833a4115ef3a9f][[staging-index-4fc7bce0072311e890833a4115ef3a9f][7]] ElasticsearchException[failed to create shard]; nested: LockObtainFailedException[Can't lock shard [staging-index-4fc7bce0072311e890833a4115ef3a9f][7], timed out after 5000ms];
+        at org.elasticsearch.index.IndexService.createShard(IndexService.java:389)
+        at org.elasticsearch.indices.cluster.IndicesClusterStateService.applyInitializingShard(IndicesClusterStateService.java:601)
+        at org.elasticsearch.indices.cluster.IndicesClusterStateService.applyNewOrUpdatedShards(IndicesClusterStateService.java:501)
+        at org.elasticsearch.indices.cluster.IndicesClusterStateService.clusterChanged(IndicesClusterStateService.java:166)
+        at org.elasticsearch.cluster.service.InternalClusterService.runTasksForExecutor(InternalClusterService.java:610)
+        at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:772)
+        at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:231)
+        at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:194)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.lucene.store.LockObtainFailedException: Can't lock shard [staging-index-4fc7bce0072311e890833a4115ef3a9f][7], timed out after 5000ms
+        at org.elasticsearch.env.NodeEnvironment$InternalShardLock.acquire(NodeEnvironment.java:609)
+        at org.elasticsearch.env.NodeEnvironment.shardLock(NodeEnvironment.java:537)
+        at org.elasticsearch.index.IndexService.createShard(IndexService.java:306)
+        ... 10 more
+* TODO test es5                                                    :noexport:
+http://injenkins.carol.ai:48080/job/DockerDeployAllInOne/506/console
+denny-es5
+1.91-elasticsearch5
+
+es5-fresh-deployment
+
+qa
+
+ssh root@159.89.154.53
+export env1_ip="159.89.154.53"
+export env2_ip="138.68.245.33"
+
+wget -O app-1.91.0-es5-SNAPSHOT.jar http://injenkins.carol.ai:28001/1.91-elasticsearch5/app-1.91.0-es5-SNAPSHOT.jar
+wget -O backupserver-1.91.0-es5-SNAPSHOT.jar http://injenkins.carol.ai:28001/1.91-elasticsearch5/backupserver-1.91.0-es5-SNAPSHOT.jar
+
+couchbase: http://138.68.245.33:8091
+
+https://www.dennyzhang.com/backup_elasticsearch
+** DONE update firwall
+   CLOSED: [2018-05-21 Mon 16:05]
+qa
+
+ssh root@159.89.154.53
+
+ufw allow from 159.89.154.53
+ufw allow from 45.33.87.74
+http://138.68.245.33:8091
+** HALF flush all cb buckets: http://138.68.245.33:8091
+** scp es2
+scp -r /usr/share/elasticsearch/repo/* root@138.68.245.33:/usr/share/elasticsearch/repo
+
+export snapshot_name="snapshot_20180518"
+
+time curl -XPOST "http://$es_ip:$es_port/_snapshot/$repo_name/$snapshot_name/_restore?wait_for_completion=true" -d "{
+    \"indices\": \"$es_index_list\",
+    \"ignore_unavailable\": true,
+    \"include_global_state\": false
+}'"
+
+
+curl -XGET "http://$es_ip:$es_port/_snapshot/$repo_name/_all"
+** check es version
+curl $es_ip:9200/
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** DONE
+*** HALF /etc/elasticsearch/jvm.options: -Dlog4j2.disable.jmx=true
+https://github.com/elastic/elasticsearch/issues/21932
+*** HALF remove path.repo: ''
+*** HALF target ES 5: mkdir -p /usr/share/elasticsearch/repo && chmod 777 /usr/share/elasticsearch/repo
+** backup es2
+es_ip=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+curl $es_ip:9200/_cat/indices?v
+
+#+BEGIN_EXAMPLE
+root@all-in-one-DockerDeployAllInOne-463:/# curl $es_ip:9200/_cat/indices?v
+health status index                                          pri rep docs.count docs.deleted store.size pri.store.size
+green  open   staging-index-13a1f8adbec032ed68f3d035449ef48d   1   0          0            0       159b           159b
+green  open   config-index-e4010da4110ba377d100f050cb4440db    1   0        272            1    323.6kb        323.6kb
+green  open   master-index-13a1f8adbec032ed68f3d035449ef48d    1   0          0            0       159b           159b
+green  open   master-index-46078234297e400a1648d9c427dc8c4b    1   0          2            1     20.1kb         20.1kb
+green  open   config-index-098f6bcd4621d373cade4e832627b4f6    1   0          1            2     12.2kb         12.2kb
+green  open   master-index-e4010da4110ba377d100f050cb4440db    1   0        130            0    206.9kb        206.9kb
+green  open   staging-index-8cd6e43115e9416eb23609486fa053e3   1   0          1            0    116.6kb        116.6kb
+green  open   config-index-8cd6e43115e9416eb23609486fa053e3    1   0        445           32      1.3mb          1.3mb
+green  open   master-index-098f6bcd4621d373cade4e832627b4f6    1   0          0            0       159b           159b
+green  open   config-index-46078234297e400a1648d9c427dc8c4b    1   0          3            2     30.4kb         30.4kb
+green  open   config-index-13a1f8adbec032ed68f3d035449ef48d    1   0          1            0      8.7kb          8.7kb
+green  open   staging-index-098f6bcd4621d373cade4e832627b4f6   1   0          0            0       159b           159b
+green  open   staging-index-e4010da4110ba377d100f050cb4440db   1   0     111781            8    110.5mb        110.5mb
+green  open   staging-index-46078234297e400a1648d9c427dc8c4b   1   0      50159           13     48.3mb         48.3mb
+green  open   master-index-8cd6e43115e9416eb23609486fa053e3    1   0       1679            0    999.5kb        999.5kb
+#+END_EXAMPLE
+
+export es_index_list="*-index-8cd6e43115e9416eb23609486fa053e3,*-index-e4010da4110ba377d100f050cb4440db"
+es_ip=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+es_port=9200
+export repo_name="my_backup"
+export es_fs_mnt="/usr/share/elasticsearch/repo"
+
+curl -X PUT "http://$es_ip:$es_port/_snapshot/$repo_name" -d "{
+    \"type\": \"fs\",
+    \"settings\": {
+        \"location\": \"$es_fs_mnt\",
+        \"compress\": true,
+        \"chunk_size\": \"10m\"
+    }
+}"
+
+export snapshot_name="snapshot_20180518"
+
+time curl -XPUT "http://$es_ip:$es_port/_snapshot/$repo_name/${snapshot_name}?wait_for_completion=true" -d "{
+    \"indices\": \"$es_index_list\",
+    \"ignore_unavailable\": true,
+    \"include_global_state\": false
+}"
+
+ls -lth $es_fs_mnt
+* TODO local notes                                                 :noexport:
 ** TODO [#A] Blog: es setting incompatible change: ES2 to ES5
 *** TODO discovery.zen.ping.multicast.enabled
  #+BEGIN_EXAMPLE
@@ -1542,7 +1676,7 @@ I think it's familiar to me.
 [6:30]
 Let me give it a try
 ** TODO application ES performance downgrade
-https://github.com/TOTVS/totvslabs-framework/commit/06f49e79eb733b4e5bbc623137b9e61c780ae39e
+
 ** TODO ES relocating performance downgrade
 #+BEGIN_EXAMPLE
 Denny Zhang
@@ -2159,80 +2293,7 @@ Nagios APP [12:06 PM]
 bematech-do-app-1/check_mdm_server_err_rate is C
 #+END_EXAMPLE
 *** for different schemas of data, we should have different indexes.
-#+BEGIN_EXAMPLE
-Bruno Volpato
-[11:57 AM]
-the problem with Lucene is that type doesn't come from Lucene, it's some solution that Elasticsearch added on top of it
-
-
-[11:57]
-different schemas for different types lead to sparsity. basically the documents are created in the same level, but all the other fields not from that type are present in each document, but with empty values
-
-
-[11:58]
-so it's kind of if we have 2 types - company (with "mdmcompanyname") and product (with "mdmproductname"), records will look like:
-
-```{"_type": "company", "mdmcompanyname": "TOTVS", "mdmproductname": ""}```
-```{"_type": "product", "mdmcompanyname": "", "mdmproductname": "Carol"}```
-
-
-[11:59]
-https://www.elastic.co/guide/en/elasticsearch/guide/current/mapping.html#_type_takeaways
-
-
-[12:00]
-so the best way would be, for different schemas of data, we should have different indexes.
-#+END_EXAMPLE
 *** too many type for the index
-#+BEGIN_EXAMPLE
-Bruno Volpato
-[11:57 AM]
-the problem with Lucene is that type doesn't come from Lucene, it's some solution that Elasticsearch added on top of it
-
-
-[11:57]
-different schemas for different types lead to sparsity. basically the documents are created in the same level, but all the other fields not from that type are present in each document, but with empty values
-
-
-[11:58]
-so it's kind of if we have 2 types - company (with "mdmcompanyname") and product (with "mdmproductname"), records will look like:
-
-```{"_type": "company", "mdmcompanyname": "TOTVS", "mdmproductname": ""}```
-```{"_type": "product", "mdmcompanyname": "", "mdmproductname": "Carol"}```
-
-
-[11:59]
-https://www.elastic.co/guide/en/elasticsearch/guide/current/mapping.html#_type_takeaways
-
-
-Bruno Volpato
-[12:00 PM]
-so the best way would be, for different schemas of data, we should have different indexes.
-1 reply Today at 12:12 PM View thread
-
-
-Bruno Volpato
-[12:00 PM]
-we kind of know that we can't have many mappings, but our feeling was that the schema for Bematech for example is not big. he is more experienced and said it is
-
-
-[12:01]
-so I think we will explore some separations soon. it will also be nice for reindexing, but I believe monitoring will be more difficult, @denny.zhang
-
-
-[12:02]
-more indexes for each tenant
-
-
-Denny Zhang
-[12:03 PM]
-Should be feasible, Bruno. And yes, let's re-index first.
-
-
-
-Nagios APP [12:06 PM]
-bematech-do-app-1/check_mdm_server_err_rate is CRITICAL:
-#+END_EXAMPLE
 ** TODO ES performance learning
 Mitu Singh [11:01 PM]
 https://www.elastic.co/guide/en/elasticsearch/reference/current/general-recommendations.html
@@ -3025,101 +3086,1063 @@ CPU load: 0.00 0.00 0.00 2/136 19983.
 ** TODO Running an Elasticsearch cluster with Docker: https://stefanprodan.com//2016/elasticsearch-cluster-with-docker/
 ** TODO elasticsearch: node.max_local_storage_nodes: 1
 ** TODO get how many shards each Elasticsearch node has
-* TODO test es5                                                    :noexport:
-http://injenkins.carol.ai:48080/job/DockerDeployAllInOne/506/console
-denny-es5
-1.91-elasticsearch5
-
-es5-fresh-deployment
-
-qa
-
-ssh root@159.89.154.53
-export env1_ip="159.89.154.53"
-export env2_ip="138.68.245.33"
-
-wget -O app-1.91.0-es5-SNAPSHOT.jar http://injenkins.carol.ai:28001/1.91-elasticsearch5/app-1.91.0-es5-SNAPSHOT.jar
-wget -O backupserver-1.91.0-es5-SNAPSHOT.jar http://injenkins.carol.ai:28001/1.91-elasticsearch5/backupserver-1.91.0-es5-SNAPSHOT.jar
-
-couchbase: http://138.68.245.33:8091
-
-https://www.dennyzhang.com/backup_elasticsearch
-** DONE update firwall
-   CLOSED: [2018-05-21 Mon 16:05]
-qa
-
-ssh root@159.89.154.53
-
-ufw allow from 159.89.154.53
-ufw allow from 45.33.87.74
-http://138.68.245.33:8091
-** HALF flush all cb buckets: http://138.68.245.33:8091
-** scp es2
-scp -r /usr/share/elasticsearch/repo/* root@138.68.245.33:/usr/share/elasticsearch/repo
-
-export snapshot_name="snapshot_20180518"
-
-time curl -XPOST "http://$es_ip:$es_port/_snapshot/$repo_name/$snapshot_name/_restore?wait_for_completion=true" -d "{
-    \"indices\": \"$es_index_list\",
-    \"ignore_unavailable\": true,
-    \"include_global_state\": false
-}'"
-
-
-curl -XGET "http://$es_ip:$es_port/_snapshot/$repo_name/_all"
-** check es version
-curl $es_ip:9200/
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** DONE
-*** HALF /etc/elasticsearch/jvm.options: -Dlog4j2.disable.jmx=true
-https://github.com/elastic/elasticsearch/issues/21932
-*** HALF remove path.repo: ''
-*** HALF target ES 5: mkdir -p /usr/share/elasticsearch/repo && chmod 777 /usr/share/elasticsearch/repo
-** backup es2
-es_ip=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
-curl $es_ip:9200/_cat/indices?v
-
+** TODO es master: why list nodes api is inconsistent               :noexport:
+** TODO elasticsearch master: can deploy only one instancer in one vm :noexport:
+** TODO es log file: bin/elasticsearch -Epath.data=data1 -Epath.logs=log1
+** TODO install es shard
+** TODO understand es node api
+root@prod-es-16:/data/elasticsearch# curl $es_ip:9200/_cat/nodes?v | grep "es-"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2280  100  2280    0     0   1805      0  0:00:01  0:00:01 --:--:--  1806
+198.199.95.111  198.199.95.111            68          88 3.57 d         m      prod-es-9
+159.203.219.53  159.203.219.53            72          85 1.44 d         m      prod-es-4
+107.170.218.112 107.170.218.112            3          86 0.91 d         m      prod-es-17
+107.170.253.222 107.170.253.222           56          87 0.07 d         m      prod-es-15
+104.236.187.173 104.236.187.173           72          99 3.22 d         m      prod-es-10
+159.203.216.25  159.203.216.25            40          98 1.25 d         m      prod-es-1
+192.241.211.99  192.241.211.99            56          99 3.60 d         m      prod-es-3
+192.241.206.113 192.241.206.113           66          87 1.97 d         m      prod-es-13
+192.241.203.166 192.241.203.166           71          99 0.83 d         m      prod-es-8
+107.170.212.76  107.170.212.76            53          97 1.66 d         *      prod-es-2
+107.170.237.239 107.170.237.239           55          98 2.82 d         m      prod-es-7
+192.241.228.149 192.241.228.149           29          99 1.75 d         m      prod-es-12
+107.170.216.152 107.170.216.152           45          99 1.51 d         m      prod-es-14
+138.68.3.169    138.68.3.169              66          94 1.56 d         m      prod-es-16
+107.170.252.123 107.170.252.123           39          95 2.32 d         m      prod-es-11
+159.203.192.146 159.203.192.146           44          99 2.40 d         m      prod-es-6
+159.203.211.150 159.203.211.150           41          97 1.55 d         m      prod-es-5
+** TODO check detail status of es shard initilizing
 #+BEGIN_EXAMPLE
-root@all-in-one-DockerDeployAllInOne-463:/# curl $es_ip:9200/_cat/indices?v
-health status index                                          pri rep docs.count docs.deleted store.size pri.store.size
-green  open   staging-index-13a1f8adbec032ed68f3d035449ef48d   1   0          0            0       159b           159b
-green  open   config-index-e4010da4110ba377d100f050cb4440db    1   0        272            1    323.6kb        323.6kb
-green  open   master-index-13a1f8adbec032ed68f3d035449ef48d    1   0          0            0       159b           159b
-green  open   master-index-46078234297e400a1648d9c427dc8c4b    1   0          2            1     20.1kb         20.1kb
-green  open   config-index-098f6bcd4621d373cade4e832627b4f6    1   0          1            2     12.2kb         12.2kb
-green  open   master-index-e4010da4110ba377d100f050cb4440db    1   0        130            0    206.9kb        206.9kb
-green  open   staging-index-8cd6e43115e9416eb23609486fa053e3   1   0          1            0    116.6kb        116.6kb
-green  open   config-index-8cd6e43115e9416eb23609486fa053e3    1   0        445           32      1.3mb          1.3mb
-green  open   master-index-098f6bcd4621d373cade4e832627b4f6    1   0          0            0       159b           159b
-green  open   config-index-46078234297e400a1648d9c427dc8c4b    1   0          3            2     30.4kb         30.4kb
-green  open   config-index-13a1f8adbec032ed68f3d035449ef48d    1   0          1            0      8.7kb          8.7kb
-green  open   staging-index-098f6bcd4621d373cade4e832627b4f6   1   0          0            0       159b           159b
-green  open   staging-index-e4010da4110ba377d100f050cb4440db   1   0     111781            8    110.5mb        110.5mb
-green  open   staging-index-46078234297e400a1648d9c427dc8c4b   1   0      50159           13     48.3mb         48.3mb
-green  open   master-index-8cd6e43115e9416eb23609486fa053e3    1   0       1679            0    999.5kb        999.5kb
+root@prod-es-18:/data/elasticsearch# curl $es_ip:9200/_cat/shards?v | grep -v STARTED
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0index                                          shard prirep state             docs   store ip              node
+master-index-abae8b30ac9b11e692000401f8d88101  3     r      INITIALIZING                   107.170.223.238 prod-es-18
+100 52360  100 52360    0     0  18517      0  0:00:02  0:00:02 --:--:-- 18514
+root@prod-es-16:/data/elasticsearch#
+Every 2.0s: df -h /                                     Tue Jan 10 21:13:06 2017
+
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1       315G  117G  186G  39% /
+#+END_EXAMPLE
+** TODO [#A] why disk of es nodes drops?
+es-2, es-5, es-6, es-8 running into almost no disk.
+
+Any tips to check why this is happening? I don’t see shards relocating to them.
+
+So what action cause their disk capacities drop dramatically?
+
+new messages
+Kung Wang [6:59 PM]
+don’t know yet, let’s investigate. let me check es-5
+
+denny zhang [7:27 PM]
+Checked all es nodes whose free disk is under 5%.
+
+They all hold shards of *-index-8cd6e43115e9416eb23609486fa053e3 indices.
+
+If we check current shards list for those nodes, the shard is not found.
+http://prodjenkins.fluigdata.com:18080/job/RunCommandOnServers/190/console
+
+Take es-5 for example
+
+> root@prod-es-5:~# ls -lth /usr/share/elasticsearch/mdm/nodes/0/indices | grep abae8b30ac9b11e692000401f8d88101
+> drwxr-xr-x 4 elasticsearch elasticsearch 4.0K Dec  8 20:52 staging-index-abae8b30ac9b11e692000401f8d88101
+> drwxr-xr-x 4 elasticsearch elasticsearch 4.0K Dec  6 21:10 master-index-abae8b30ac9b11e692000401f8d88101
+> root@prod-es-5:~# curl 159.203.211.150:9200/_cat/shards?v | grep es-5 | grep abae8b30ac9b11e692000401f8d88101
+
+Looks like es-cluster is waiting other nodes to take the ownership for old shard of es-5.
+
+When it’s ready in other nodes, it will remove this directory in es-5 and reclaim the disk.
+
+** TODO [#A] DevOps Puzzle: what ES re-index commands fail in the middle?
+** TODO [#A] ES OOM issue: why it happened quite suddenly
+Denny Zhang [5:16 PM]
+One thing I quite don't understand.
+
+We have OS memory check every 5 minutes. Usually ES runs into OOM, but we never get OS memory warning.
+
+So it means ES suddenly reclaim huge block of memory. Then OS kill it.
+
+Any thoughts about this? It was suddenly assigned take a big shard? (edited)
+
+Bruno Volpato [5:16 PM]
+good point
+
+[5:16]
+or some giant query
+
+[5:17]
+if that's the case, the circuit breaker may help
+
+Denny Zhang [5:17 PM]
+If shard allocation, it means we mislead ES cluster somehow. -> configuration issue
+
+If giant query, could we limit that at application level? Or send some warning? I understand, if it’s hard to achieve.
+
+Just want to understand why.
+** TODO index.merge.policy.expunge_deletes_allowed
+
+ Note : there is a index.merge.policy.expunge_deletes_allowed settings in elasticsearch.yml that we can set. The definition of it is:
++When expungeDeletes is called, we only merge away a segment if its delete percentage is over this threshold. Default is 10. If you run the forceMerge and found index size does not change, it maybe contains deletes less than 10% of all documents, that's why nothing is triggered. If we want to make forceMerge always in effect even just one document is deleted, set this to 0. But the impact is, since merge index is indeed creating another segment and dump all segments into new one, it's a costly operation, and if only do for one deleted document, it is not worth it.
+
+** TODO [#A] ES rebalancing doesn't work, after stop one ES instance
+*** prod-es-03
+[2017-04-02 03:30:04,748][WARN ][discovery.zen.ping.unicast] [prod-es-03] failed to send ping to [{prod-es-18}{5psmoEaSRBaGpIzDdJQlLw}{138.197.217.98}{138.197.217.98:9300}{max_local_storage_nodes=1}]
+RemoteTransportException[[prod-es-18][138.197.217.98:9300][internal:discovery/zen/unicast]]; nested: IllegalStateException[received ping request while not started];
+Caused by: java.lang.IllegalStateException: received ping request while not started
+        at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing.handlePingRequest(UnicastZenPing.java:497)
+        at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing.access$2400(UnicastZenPing.java:83)
+        at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing$UnicastPingRequestHandler.messageReceived(UnicastZenPing.java:522)
+        at org.elasticsearch.discovery.zen.ping.unicast.UnicastZenPing$UnicastPingRequestHandler.messageReceived(UnicastZenPing.java:518)
+        at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+        at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+        at org.elasticsearch.transport.netty.MessageChannelHandler.handleRequest(MessageChannelHandler.java:245)
+        at org.elasticsearch.transport.netty.MessageChannelHandler.messageReceived(MessageChannelHandler.java:114)
+        at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+        at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+        at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+        at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+        at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:462)
+        at org.jboss.netty.handler.codec.frame.FrameDecoder.callDecode(FrameDecoder.java:443)
+        at org.jboss.netty.handler.codec.frame.FrameDecoder.messageReceived(FrameDecoder.java:303)
+        at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+        at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+        at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+        at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:75)
+        at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+        at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+        at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+        at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+        at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+        at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+        at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+        at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+        at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+        at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+        at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+[2017-04-02 03:30:10,437][INFO ][cluster.service          ] [prod-es-03] detected_master {prod-es-02}{AZBG5fD4SuujYUu2yUMczA}{138.68.5.55}{138.68.5.55:9300}{max_local_storage_nodes=1}, reason: zen-disco-receive(from master [{prod-es-02}{AZBG5fD4SuujYUu2yUMczA}{138.68.5.55}{138.68.5.55:9300}{max_local_storage_nodes=1}])
+*** prod-es-02
+[2017-04-02 03:30:08,693][INFO ][discovery.zen            ] [prod-es-02] master_left [{prod-es-18}{5psmoEaSRBaGpIzDdJQlLw}{138.197.217.98}{138.197.217.98:9300}{max_local_storage_nodes=1}], reason [shut_down]
+[2017-04-02 03:30:08,707][WARN ][discovery.zen            ] [prod-es-02] master left (reason = shut_down), current nodes: {{prod-app-02node}{FHFCb2DoQiWGdLy4VdHV3g}{138.197.199.11}{138.197.199.11:9301}{data=false, master=false},{prod-app-01node}{lAnQcfbvQFK8JDfpad9Hag}{138.197.193.53}{138.197.193.53:9301}{data=false, master=false},{prod-es-03}{VZpcSkTzSTmHx62iKnj_rw}{138.68.41.211}{138.68.41.211:9300}{max_local_storage_nodes=1},{prod-app-03node}{OiDJ_MOhTwmh_IL0BCzXQQ}{138.197.199.169}{138.197.199.169:9301}{data=false, master=false},{prod-es-02}{AZBG5fD4SuujYUu2yUMczA}{138.68.5.55}{prod-es-02/138.68.5.55:9300}{max_local_storage_nodes=1},{prod-es-16}{ocu0P8FuS2WWgac62fHdbw}{138.68.3.169}{138.68.3.169:9300}{max_local_storage_nodes=1},{prod-es-01}{gD732uP8SaOnI9JhOGpR0w}{138.68.250.138}{138.68.250.138:9300}{max_local_storage_nodes=1},{prod-es-17}{Oq5EDwVBRMOpnyEMFxNblQ}{138.197.216.23}{138.197.216.23:9300}{max_local_storage_nodes=1},}
+[2017-04-02 03:30:08,734][INFO ][cluster.service          ] [prod-es-02] removed {{prod-es-18}{5psmoEaSRBaGpIzDdJQlLw}{138.197.217.98}{138.197.217.98:9300}{max_local_storage_nodes=1},}, reason: zen-disco-master_failed ({prod-es-18}{5psmoEaSRBaGpIzDdJQlLw}{138.197.217.98}{138.197.217.98:9300}{max_local_storage_nodes=1})
+[2017-04-02 03:30:14,356][INFO ][cluster.routing.allocation] [prod-es-02] Cluster health status changed from [GREEN] to [YELLOW] (reason: [nodes joined]).
+[2017-04-02 03:30:14,399][INFO ][cluster.service          ] [prod-es-02] new_master {prod-es-02}{AZBG5fD4SuujYUu2yUMczA}{138.68.5.55}{prod-es-02/138.68.5.55:9300}{max_local_storage_nodes=1}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2017-04-02 03:30:14,570][DEBUG][action.admin.indices.alias.get] [prod-es-02] no known master node, scheduling a retry
+[2017-04-02 03:30:14,570][DEBUG][action.admin.indices.alias.get] [prod-es-02] no known master node, scheduling a retry
+[2017-04-02 03:30:14,648][DEBUG][action.admin.indices.alias.get] [prod-es-02] no known master node, scheduling a retry
+[2017-04-02 03:30:14,650][DEBUG][action.admin.indices.alias.get] [prod-es-02] no known master node, scheduling a retry
+[2017-04-02 03:30:14,735][DEBUG][action.admin.indices.alias.get] [prod-es-02] no known master node, scheduling a retry
+[2017-04-02 03:30:15,040][DEBUG][action.admin.indices.alias.get] [prod-es-02] no known master node, scheduling a retry
+[2017-04-02 03:30:15,040][DEBUG][action.admin.indices.alias.get] [prod-es-02] no known master node, scheduling a retry
+[2017-04-02 03:30:15,042][DEBUG][action.admin.indices.alias.get] [prod-es-02] no known master node, scheduling a retry
+[2017-04-02 03:30:15,131][DEBUG][action.admin.cluster.health] [prod-es-02] no known master node, scheduling a retry
+[2017-04-02 03:30:16,047][DEBUG][action.admin.cluster.state] [prod-es-02] no known master node, scheduling a retry
+[2017-04-02 03:30:16,123][DEBUG][action.admin.indices.alias.get] [prod-es-02] no known master node, scheduling a retry
+[2017-04-02 03:30:16,125][DEBUG][action.admin.indices.alias.get] [prod-es-02] no known master node, scheduling a retry
+[2017-04-02 03:30:19,334][INFO ][cluster.routing          ] [prod-es-02] delaying allocation for [125] unassigned shards, next check in [1m]
+*** prod-es-01
+[2017-04-02 03:30:08,149][INFO ][discovery.zen            ] [prod-es-01] master_left [{prod-es-18}{5psmoEaSRBaGpIzDdJQlLw}{138.197.217.98}{138.197.217.98:9300}{max_local_storage_nodes=1}], reason [transport disconnected]
+[2017-04-02 03:30:08,149][DEBUG][action.admin.indices.stats] [prod-es-01] failed to execute [indices:monitor/stats] on node [5psmoEaSRBaGpIzDdJQlLw]
+NodeDisconnectedException[[prod-es-18][138.197.217.98:9300][indices:monitor/stats[n]] disconnected]
+[2017-04-02 03:30:08,156][WARN ][discovery.zen            ] [prod-es-01] master left (reason = transport disconnected), current nodes: {{prod-es-03}{VZpcSkTzSTmHx62iKnj_rw}{138.68.41.211}{138.68.41.211:9300}{max_local_storage_nodes=1},{prod-app-01node}{lAnQcfbvQFK8JDfpad9Hag}{138.197.193.53}{138.197.193.53:9301}{data=false, master=false},{prod-es-16}{ocu0P8FuS2WWgac62fHdbw}{138.68.3.169}{138.68.3.169:9300}{max_local_storage_nodes=1},{prod-app-03node}{OiDJ_MOhTwmh_IL0BCzXQQ}{138.197.199.169}{138.197.199.169:9301}{data=false, master=false},{prod-es-01}{gD732uP8SaOnI9JhOGpR0w}{138.68.250.138}{prod-es-01/138.68.250.138:9300}{max_local_storage_nodes=1},{prod-es-17}{Oq5EDwVBRMOpnyEMFxNblQ}{138.197.216.23}{138.197.216.23:9300}{max_local_storage_nodes=1},{prod-app-02node}{FHFCb2DoQiWGdLy4VdHV3g}{138.197.199.11}{138.197.199.11:9301}{data=false, master=false},{prod-es-02}{AZBG5fD4SuujYUu2yUMczA}{138.68.5.55}{138.68.5.55:9300}{max_local_storage_nodes=1},}
+[2017-04-02 03:30:08,160][INFO ][cluster.service          ] [prod-es-01] removed {{prod-es-18}{5psmoEaSRBaGpIzDdJQlLw}{138.197.217.98}{138.197.217.98:9300}{max_local_storage_nodes=1},}, reason: zen-disco-master_failed ({prod-es-18}{5psmoEaSRBaGpIzDdJQlLw}{138.197.217.98}{138.197.217.98:9300}{max_local_storage_nodes=1})
+[2017-04-02 03:30:11,780][DEBUG][action.admin.cluster.state] [prod-es-01] no known master node, scheduling a retry
+[2017-04-02 03:30:13,852][INFO ][cluster.service          ] [prod-es-01] detected_master {prod-es-02}{AZBG5fD4SuujYUu2yUMczA}{138.68.5.55}{138.68.5.55:9300}{max_local_storage_nodes=1}, reason: zen-disco-receive(from master [{prod-es-02}{AZBG5fD4SuujYUu2yUMczA}{138.68.5.55}{138.68.5.55:9300}{max_local_storage_nodes=1}])
+[2017-04-02 03:30:13,871][DEBUG][action.index             ] [prod-es-01] failed to execute [index {[master-8a18aa800e5911e785f24a8136534b63][mdmlogregistrationGolden][abf659f0175411e7ab0026b7a582476b], source[{"mdmEntityTemplateId":"704b0600108111e785f24a8136534b63","mdmGoldenFieldAndValues":{"subsidiary":"SUBSIDIARY HABILITATION ID","classdisciplineid":"20336","registrationstatus":"37","mdmeventdate":"2008-08-04","studentkey":"STUDENT KEY","logregistrationid":"2163977","studentid":"RA00030819"},"mdmGoldenFieldDetails":{"logregistrationid":{"mdmSurvivorshipRuleName":"RECENCY","mdmSurvivedApplicationMasterRecordId":{"8aa40a5010b911e785f24a8136534b63":["abc7f6f0175411e7ab0026b7a582476b"]}},"mdmeventdate":{"mdmSurvivorshipRuleName":"RECENCY","mdmSurvivedApplicationMasterRecordId":{"8aa40a5010b911e785f24a8136534b63":["abc7f6f0175411e7ab0026b7a582476b"]}},"registrationstatus":{"mdmSurvivorshipRuleName":"RECENCY","mdmSurvivedApplicationMasterRecordId":{"8aa40a5010b911e785f24a8136534b63":["abc7f6f0175411e7ab0026b7a582476b"]}},"studentid":{"mdmSurvivorshipRuleName":"RECENCY","mdmSurvivedApplicationMasterRecordId":{"8aa40a5010b911e785f24a8136534b63":["abc7f6f0175411e7ab0026b7a582476b"]}},"studentkey":{"mdmSurvivorshipRuleName":"RECENCY","mdmSurvivedApplicationMasterRecordId":{"8aa40a5010b911e785f24a8136534b63":["abc7f6f0175411e7ab0026b7a582476b"]}},"subsidiary":{"mdmSurvivorshipRuleName":"RECENCY","mdmSurvivedApplicationMasterRecordId":{"8aa40a5010b911e785f24a8136534b63":["abc7f6f0175411e7ab0026b7a582476b"]}},"classdisciplineid":{"mdmSurvivorshipRuleName":"RECENCY","mdmSurvivedApplicationMasterRecordId":{"8aa40a5010b911e785f24a8136534b63":["abc7f6f0175411e7ab0026b7a582476b"]}}},"mdmApplicationIdMasterRecordId":{"8aa40a5010b911e785f24a8136534b63":["abc7f6f0175411e7ab0026b7a582476b"]},"mdmApplicationIdMasterRecord":{},"mdmApplicationIdStagingTypeMasterRecordId":{"8aa40a5010b911e785f24a8136534b63_slogmatricula":["abc7f6f0175411e7ab0026b7a582476b"]},"mdmMasterCount":1.0,"mdmMergePending":false,"mdmRelationshipPending":false,"mdmFlaggedFieldIds":[],"mdmErrors":[],"mdmCrosswalk":[{"mdmApplicationId":"8aa40a5010b911e785f24a8136534b63","mdmCrossreference":{"SLOGMATRICULA":{"IDTURMADISC":"20336","CODCOLIGADA":"1","IDLOGMATRICULA":"2163977","RA":"RA00030819"}}}],"mdmPreviousIds":[],"mdmCounterForEntity":519884.0,"mdmId":"abf659f0175411e7ab0026b7a582476b","mdmEntityType":"mdmlogregistrationGolden","mdmCreated":"2017-04-02T03:30:08.782Z","mdmLastUpdated":"2017-04-02T03:30:08.785Z","mdmTenantId":"8a18aa800e5911e785f24a8136534b63"}]}] on [[master-index-8a18aa800e5911e785f24a8136534b63][2]]
+[master-index-8a18aa800e5911e785f24a8136534b63][[master-index-8a18aa800e5911e785f24a8136534b63][2]] IllegalIndexShardStateException[CurrentState[STARTED] shard is not a primary]
+        at org.elasticsearch.index.shard.IndexShard.prepareIndexOnPrimary(IndexShard.java:557)
+        at org.elasticsearch.action.index.TransportIndexAction.prepareIndexOperationOnPrimary(TransportIndexAction.java:212)
+        at org.elasticsearch.action.index.TransportIndexAction.executeIndexRequestOnPrimary(TransportIndexAction.java:224)
+        at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:158)
+        at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:66)
+        at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.doRun(TransportReplicationAction.java:639)
+        at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+        at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:279)
+        at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryOperationTransportHandler.messageReceived(TransportReplicationAction.java:271)
+        at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+        at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:376)
+        at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+*** prod-es-16
+[2017-04-02 04:00:13,844][DEBUG][action.search            ] [prod-es-16] [staging-index-8cd6e43115e9416eb23609486fa053e3-new2][18], node[VZpcSkTzSTmHx62iKnj_rw], [R], v[4], s[STARTED], a[id=s2-8V-86QM2IHN3JGIpWVg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1e19cf2d]
+RemoteTransportException[[prod-es-03][138.68.41.211:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":0,"query":{"bool":{"must":[{"match":{"mdmTenantId.raw":"41d17930c8e211e6aae30401f8d88101"}},{"nested":{"path":"mdmGoldenFieldAndValues.mdmaddress","query":{"bool":{"must_not":{"exists":{"field":"mdmGoldenFieldAndValues.mdmaddress.mdmcoordinates"}}}}}}]}},"aggs":{"grades_count":{"value_count":{"field":"mdmEntityType.raw"}}}}]]; nested: QueryParsingException[[nested] failed to find nested object under path [mdmGoldenFieldAndValues.mdmaddress]];
+Caused by: SearchParseException[failed to parse search source [{"size":0,"query":{"bool":{"must":[{"match":{"mdmTenantId.raw":"41d17930c8e211e6aae30401f8d88101"}},{"nested":{"path":"mdmGoldenFieldAndValues.mdmaddress","query":{"bool":{"must_not":{"exists":{"field":"mdmGoldenFieldAndValues.mdmaddress.mdmcoordinates"}}}}}}]}},"aggs":{"grades_count":{"value_count":{"field":"mdmEntityType.raw"}}}}]]; nested: QueryParsingException[[nested] failed to find nested object under path [mdmGoldenFieldAndValues.mdmaddress]];
+        at org.elasticsearch.search.SearchService.parseSource(SearchService.java:855)
+        at org.elasticsearch.search.SearchService.createContext(SearchService.java:654)
+        at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:620)
+        at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:371)
+        at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+        at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+        at org.elasticsearch.transport.TransportRequestHandler.messageReceived(TransportRequestHandler.java:33)
+        at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:75)
+        at org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler.doRun(MessageChannelHandler.java:300)
+        at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: [staging-index-8cd6e43115e9416eb23609486fa053e3-new2] QueryParsingException[[nested] failed to find nested object under path [mdmGoldenFieldAndValues.mdmaddress]]
+        at org.elasticsearch.index.query.support.NestedInnerQueryParseSupport.setPath(NestedInnerQueryParseSupport.java:159)
+        at org.elasticsearch.index.query.NestedQueryParser.parse(NestedQueryParser.java:82)
+        at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+        at org.elasticsearch.index.query.BoolQueryParser.parse(BoolQueryParser.java:110)
+        at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:250)
+        at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:320)
+        at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:223)
+        at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:218)
+        at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+        at org.elasticsearch.search.SearchService.parseSource(SearchService.java:838)
+        ... 12 more
+** TODO Avoid giant ES index
+Kung Wang [4:16 PM]
+@denny.zhang , there is a query people said it's very slow. but when I look into, the query is not fancy, just the data size a little large.
+
+```curl -XPOST http://localhost:19200/staging-8a18aa800e5911e785f24a8136534b63/_search -d '{
+  "size": 0,
+  "query": {
+    "match_all": {}
+  },
+  "aggs": {
+    "tenant": {
+      "terms": {
+        "field": "_type",
+        "size": 100
+      }
+    }
+  }
+}'
+```
+
+Denny Zhang [4:17 PM]
+Thanks for the information.
+
+Anything I can do about this?
+
+Kung Wang [4:17 PM]
+so, we are thinking:
+
+curl -XGET http://localhost:19200/_cat/shards/staging-index-8a18aa800e5911e785f24a8136534b63 | grep " p "
+
+if we can shard it to 10 shards, will it speed up? (edited)
+
+Denny Zhang [4:18 PM]
+Frankly speaking, I have doubt on that.
+
+If the query need to scan all data, all shards will need to be proceeded. Right?
+
+Kung Wang [4:18 PM]
+or shard it to 20 shards.
+
+[4:19]
+yes, but we have 8 machines, but only 5 primary shards, so 3 machines can not help
+
+Denny Zhang [4:19 PM]
+Agree, that won’t help.
+
+[4:20]
+If we have more shards, it will spread out to more machines.
+
+So more machines will be able to provide the scan.
+
+Thus it will speed up.
+
+Kung Wang [4:20 PM]
+yes, that's why we have this hypothesis.
+
+[4:20]
+if we can shard it more, then other machines can help
+
+Denny Zhang [4:21 PM]
+Apparently we all agree to avoid giant shards, but what about giant indices?
+
+Do we need to re-think whether we can avoid GIANT indices?
+
+Kung Wang [4:22 PM]
+well, that we may not be able to avoid.
+
+Denny Zhang [4:22 PM]
+Then could we make some draft estimation for the maximum size to support?
+
+new messages
+Kung Wang [4:24 PM]
+it is ok, we can talk on this later
+** TODO How to get the progress of ES snapshot creating
+** TODO ES shard initializing: how to check deeper; how much more time it would took
+Every 2.0s: curl 138.197.217.98:9200/_cat/shards?v | grep master-index-8cd6e43115e9416eb23609486fa053e3          Tue Apr 11 21:58:25 2017
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0   0     0    0     0    0     0      0      0 --:--:-- --
+:--:-- --:--:--     0 100 57096  100 57096    0     0  74070      0 --:--:-- --:--:-- --:--:-- 74054
+master-index-8cd6e43115e9416eb23609486fa053e3       2     r      INITIALIZING                  138.197.217.98 prod-es-18
+master-index-8cd6e43115e9416eb23609486fa053e3       2     p      STARTED       8681935   6.5gb 138.68.250.138 prod-es-01
+master-index-8cd6e43115e9416eb23609486fa053e3       2     r      INITIALIZING                  138.68.3.169   prod-es-16
+master-index-8cd6e43115e9416eb23609486fa053e3       4     r      STARTED       8704452   6.4gb 138.197.217.98 prod-es-18
+master-index-8cd6e43115e9416eb23609486fa053e3       4     p      STARTED       8704452   6.4gb 138.68.250.138 prod-es-01
+master-index-8cd6e43115e9416eb23609486fa053e3       4     r      STARTED       8704452   6.4gb 138.68.41.211  prod-es-03
+master-index-8cd6e43115e9416eb23609486fa053e3       3     p      STARTED       8697156   5.5gb 138.197.217.98 prod-es-18
+master-index-8cd6e43115e9416eb23609486fa053e3       3     r      STARTED       8697156   5.5gb 138.68.3.169   prod-es-16
+master-index-8cd6e43115e9416eb23609486fa053e3       3     r      UNASSIGNED
+master-index-8cd6e43115e9416eb23609486fa053e3       1     p      STARTED       8685097   5.4gb 138.197.217.98 prod-es-18
+master-index-8cd6e43115e9416eb23609486fa053e3       1     r      INITIALIZING                  138.68.5.55    prod-es-02
+master-index-8cd6e43115e9416eb23609486fa053e3       1     r      STARTED       8685097   5.4gb 138.68.41.211  prod-es-03
+master-index-8cd6e43115e9416eb23609486fa053e3       0     p      STARTED       8681571   6.4gb 138.197.217.98 prod-es-18
+master-index-8cd6e43115e9416eb23609486fa053e3       0     r      INITIALIZING                  138.68.5.55    prod-es-02
+master-index-8cd6e43115e9416eb23609486fa053e3       0     r      UNASSIGNED
+
+
+** TODO Use DO private networking for ES cluster
+** TODO [#A] DevOps Puzzle: Forget to add ES volume: how to avoid this, or detect this issue earlier?
+ls /dev/disk/by-id
+
+export mnt_point=/mnt/es-extra-volume
+export volume_label=$(ls /dev/disk/by-id/ | grep Volume)
+# TODO: verify volume_label is not empty
+sudo mkfs.ext4 -F /dev/disk/by-id/$volume_label
+
+# To mount the volume, copy and paste the text below:
+# Create a mount point under /mnt
+sudo mkdir -p $mnt_point
+
+# Mount the volume
+sudo mount -o discard,defaults /dev/disk/by-id/$volume_label  $mnt_point
+
+# Change fstab so the volume will be mounted after a reboot
+echo "/dev/disk/by-id/$volume_label $mnt_point ext4 defaults,nofail,discard 0 0" | sudo tee -a /etc/fstab
+
+cat  /etc/fstab
+
+df -h
+# The volume is now accessible at $mnt_point, and you are able to write files and store other data. This data will persist if you detach the volume, and will continue to be available when the volume is reattached to another Droplet. If you want you can customize the commands above, please refer to the following articles:
+
+# create directory
+mkdir -p $mnt_point/elasticsearch
+chmod 777 $mnt_point/elasticsearch
+mkdir -p /data/
+ln -s $mnt_point/elasticsearch /data/elasticsearch2
+cd /data/elasticsearch2
+
+** TODO [#A] run re-index again: would we missing ES mapping?
+https://www.elastic.co/guide/en/elasticsearch/guide/current/reindex.html
+If you continue making changes to the old index, you will want to make sure that you include the newly added documents in your new index as well. This can be done by rerunning the reindex process
+
+** TODO [#A] After adding new ES nodes, how fast rebalancing takes
+** TODO Get tenant list
+Robson Poffo [4:55 PM]
+@denny.zhang, @kungwang and @bruno, this URL is down: senarn.carol.ai
+
+[4:55]
+I am getting a message: Tenant not found
+
+[4:56]
+supposedly, the domain should be senar.carol.ai, but it’s not working.
+
+[4:56]
+senarn is the tennat name
+
+Robson Poffo [4:57 PM]
+uploaded this image: Pasted image at 2017-05-04, 2:57 PM
+Add Comment
+
+Denny Zhang
+[5:00 PM]
+@kungwang any thoughts?
+** TODO [#A] Configure es shards per indices on fly
+** TODO [#A] ES disk issue: enforce data retention for deleted documents and old version
+https://www.elastic.co/blog/lucenes-handling-of-deleted-documents
+maybe ES is keeping track of deleted documents/old version, this is why it's using that much storage...
+
+denny zhang [9:01 AM]
+Yeah, 2 shards are relocating.
+
+Bruno Volpato [9:01 AM]
+uploaded an image: Pasted image at 2016-12-21, 5:01 PM
+Add Comment
+
+denny zhang [9:01 AM]
+Good point.
+
+[9:02]
+Let's see how to enforce proper data retention for ES.
+** TODO ES cluster running into GC
+es-02:
+
+[2017-07-05 17:38:49,664][WARN ][monitor.jvm              ] [bematech-do-es-2] [gc][old][6069033][17737] duration [31.4s], collections [1]/[31.4s], total [31.4s]/[1.6h], memory [11.9gb]->[11.8gb]/[11.9gb], all_pools {[young] [665.6mb]->[665.6mb]/[665.6mb]}{[survivor] [74mb]->[8.8mb]/[83.1mb]}{[old] [11.1gb]->[11.1gb]/[11.1gb]}
+
+6069038
+** TODO [#A] ES replace one node with another one
+Bruno Volpato [6:09 PM]
+but we should have excluded before adding the new node. or immediately after, because the es-13 is already filled with other stuff (not shards that were on es-12)
+
+
+Denny Zhang
+[6:18 PM]
+Bruno, I don’t quite get your point.
+
+Once the rebalancing is done, we should be able to shutdown es-12.
+
+About es-13, I think that’s how ES cluster balancing data. Better we leave it to ES cluster, right?
+
+
+Bruno Volpato
+[6:27 PM]
+I meant, we should've allocated es13 to replace es12
+
+
+[6:27]
+but we added es13 as an additional node, and it got shards from others, not es12
+
+
+Denny Zhang
+[6:30 PM]
+We’re adding es-14.
+
+ES-13 is an old node
+
+
+Bruno Volpato
+[6:31 PM]
+yes that's what I meant :smile:
+
+
+[6:31]
+es-14
+
+
+[6:31]
+the new node
+
+
+Denny Zhang
+[6:31 PM]
+I see. you mean literally replace es-12 with es-14
+** TODO ES ChatOps
+Kung Wang
+[12:50 PM]
+if shard is unbalanced and has more shards for the data that are processing in that node, can also be slow too (edited)
+
+
+[12:51]
+ ```One node has the majority of primary shards, and will crash as a result
+```
+
+
+Denny Zhang
+[12:52 PM]
+Thanks. Will update, if I find something
+
+
+Kung Wang
+[12:57 PM]
+@denny.zhang , maybe, we can make a bot to check ES performance, I will help listing thing what I see from other people post
+
+
+Denny Zhang
+[1:04 PM]
+Definitely, please share me with your magic.
+
+I will integrate them into monitoring system or ChatOps part accordingly.
+
+** TODO monitor: Robson's ES check DNS
+#+BEGIN_EXAMPLE
+Robson Poffo [5:56 PM]
+@denny.zhang, I am seeing that our kibana instance (stats.carol.ai) doesn’t have access to do-es-001.carol.ai:9200
+
+
+[5:56]
+could you verify?
+
+
+Denny Zhang
+[5:56 PM]
+Let me check.
+
+
+Robson Poffo [5:56 PM]
+telnet is failing
+
+[5:58]
+prod-app-01/check_mdm_healthcheck is CRITICAL:
+Connection refused
+
+
+Bruno Volpato [5:59 PM]
+we dropped do-es-001 right?
+
+
+Denny Zhang
+[5:59 PM]
+hmm, I see what you reports, @robson.poffo
+
+Checked ES node, firewall doesn’t allow that.
+
+Was it working previously?
+ 3 replies Last reply today at 6:11 PM View thread
+
+
+Denny Zhang
+[6:00 PM]
+Yes, @bruno
+
+We can easily add the rule in do-es-001.carol.ai, which is bematech-do-es-2.
+
+Just to confirm where we stand right now. (Looks like we need add some monitoring checks somewhere) (edited)
+
+
+
+jenkins APP [6:05 PM]
+----------------
+DeploySystemDOProd - #282 Success after 13 min (Open)
+#+END_EXAMPLE
+** TODO Why Es run into yellow suddenly
+Denny Zhang
+[9:13 AM]
+Why ES runs into yellow suddenly?
+
+bematech-do-es-12 timeout, then rejoin the cluster.
+
+```[2017-08-30 14:12:24,441][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99361] (timeout [30s], pending nodes: [{bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}])
+[2017-08-30 14:12:24,634][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([staging-index-8a18aa800e5911e785f24a8136534b63][2], node[Sw5V83ICS92_ypNNjpOZ2A], [R], v[63], s[INITIALIZING], a[id=XaavbcvWQjyMmdigL15RDw], unassigned_info[[reason=NODE_LEFT], at[2017-08-30T14:07:34.088Z], details[node_left[I4PMZGm-Ss6DmzFXPtYjcg]]], expected_shard_size[1640641495]), reason [after recovery (replica) from node [{bematech-do-es-18.localdomain}{63ZmTqpvSs-_zxMStLAWRg}{165.227.25.149}{165.227.25.149:9300}{max_local_storage_nodes=1}]],shard-started ([staging-index-8a18aa800e5911e785f24a8136534b63][4], node[4gyYmBDXTXK6BY_ujUQGTA], [R], v[58], s[INITIALIZING], a[id=uuhSCgQiSJu6zSL9iPZWGQ], unassigned_info[[reason=NODE_LEFT], at[2017-08-30T14:07:34.088Z], details[node_left[I4PMZGm-Ss6DmzFXPtYjcg]]], expected_shard_size[1627348711]), reason [after recovery (replica) from node [{bematech-do-es-07.localdomain}{elqF0TY7R4Cbb5-DZJih2g}{165.227.21.128}{165.227.21.128:9300}{max_local_storage_nodes=1}]]] took 30.2s above the warn threshold of 30s```
+*** /var/log/elasticsearch/mdm.log
+#+BEGIN_EXAMPLE
+root@bematech-do-es-12:~# tail -n 500 /var/log/elasticsearch/mdm.log
+tail -n 500 /var/log/elasticsearch/mdm.log
+[2017-08-30 00:06:15,549][INFO ][cluster.metadata         ] [bematech-do-es-12.localdomain] [staging-index-321bb9606b2111e7b579a2f42be00f79] update_mapping [mdmStagingSchema]
+[2017-08-30 00:06:40,806][INFO ][cluster.metadata         ] [bematech-do-es-12.localdomain] [staging-index-321bb9606b2111e7b579a2f42be00f79] create_mapping [8bdce3206bf811e7b579a2f42be00f79_sb3010]
+[2017-08-30 00:07:00,588][INFO ][cluster.metadata         ] [bematech-do-es-12.localdomain] [staging-index-321bb9606b2111e7b579a2f42be00f79] update_mapping [8bdce3206bf811e7b579a2f42be00f79_sb3010]
+[2017-08-30 00:07:21,816][INFO ][cluster.metadata         ] [bematech-do-es-12.localdomain] [staging-index-321bb9606b2111e7b579a2f42be00f79] update_mapping [mdmStagingSchema]
+[2017-08-30 00:07:38,403][INFO ][cluster.metadata         ] [bematech-do-es-12.localdomain] [staging-index-321bb9606b2111e7b579a2f42be00f79] create_mapping [8bdce3206bf811e7b579a2f42be00f79_sbe010]
+[2017-08-30 00:07:52,744][INFO ][cluster.metadata         ] [bematech-do-es-12.localdomain] [staging-index-321bb9606b2111e7b579a2f42be00f79] update_mapping [8bdce3206bf811e7b579a2f42be00f79_sbe010]
+[2017-08-30 00:53:22,259][INFO ][cluster.metadata         ] [bematech-do-es-12.localdomain] [staging-index-321bb9606b2111e7b579a2f42be00f79] update_mapping [mdmStagingSchema]
+[2017-08-30 00:53:42,980][INFO ][cluster.metadata         ] [bematech-do-es-12.localdomain] [staging-index-321bb9606b2111e7b579a2f42be00f79] create_mapping [8bdce3206bf811e7b579a2f42be00f79_sf4010]
+[2017-08-30 00:54:00,821][INFO ][cluster.metadata         ] [bematech-do-es-12.localdomain] [staging-index-321bb9606b2111e7b579a2f42be00f79] update_mapping [8bdce3206bf811e7b579a2f42be00f79_sf4010]
+[2017-08-30 02:24:52,261][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99324] (timeout [30s], pending nodes: [{bematech-do-es-19.localdomain}{k-RJnkMxS1OyGrX95ksXKA}{138.197.205.85}{138.197.205.85:9300}{max_local_storage_nodes=1}])
+[2017-08-30 02:24:53,207][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([master-index-abae8b30ac9b11e692000401f8d88101-new3][2], node[DMibMY5tQ2OAiM31rJpong], relocating [k-RJnkMxS1OyGrX95ksXKA], [R], v[157], s[INITIALIZING], a[id=fblz3JW6QoKO1VwJERcY7A, rId=EM_I6RW3TsON3j7FEMkJLg], expected_shard_size[42690164069]), reason [after recovery (replica) from node [{bematech-do-es-14.localdomain}{Sddyx4aNQaSnmRRV7uH50Q}{138.68.23.132}{138.68.23.132:9300}{max_local_storage_nodes=1}]]] took 31s above the warn threshold of 30s
+[2017-08-30 02:44:47,691][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99325] (timeout [30s], pending nodes: [{bematech-do-es-19.localdomain}{k-RJnkMxS1OyGrX95ksXKA}{138.197.205.85}{138.197.205.85:9300}{max_local_storage_nodes=1}])
+[2017-08-30 02:44:47,972][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([master-index-abae8b30ac9b11e692000401f8d88101-new3][5], node[U8qsG-1sQ9GYRBvuNYU_ZA], relocating [63ZmTqpvSs-_zxMStLAWRg], [R], v[127], s[INITIALIZING], a[id=8g-FzkFAQbC8fLLujyNnqg, rId=TxY3X9RiS3GV39lW-hy28A], expected_shard_size[35081993179]), reason [after recovery (replica) from node [{bematech-do-es-08.localdomain}{4gyYmBDXTXK6BY_ujUQGTA}{138.68.30.61}{138.68.30.61:9300}{max_local_storage_nodes=1}]]] took 30.3s above the warn threshold of 30s
+[2017-08-30 03:44:17,754][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-abae8b30ac9b11e692000401f8d88101-new3][9] received shard failed for target shard [[master-index-abae8b30ac9b11e692000401f8d88101-new3][9], node[sn9Lk6UdSXa65A6DlPXGXg], relocating [elqF0TY7R4Cbb5-DZJih2g], [R], v[154], s[INITIALIZING], a[id=9e37XGXKS3CoUpBJDLhpRQ, rId=RQW6joHLSUCXX70om0esVA], expected_shard_size[43454556437]], indexUUID [NoVKqnGdRAaxePBg9j6uJA], message [failed recovery], failure [RecoveryFailedException[[master-index-abae8b30ac9b11e692000401f8d88101-new3][9]: Recovery failed from {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1} into {bematech-do-es-1.localdomain}{sn9Lk6UdSXa65A6DlPXGXg}{165.227.24.213}{bematech-do-es-1/165.227.24.213:9300}{max_local_storage_nodes=1} (no activity after [30m])]; nested: ElasticsearchTimeoutException[no activity after [30m]]; ]
+RecoveryFailedException[[master-index-abae8b30ac9b11e692000401f8d88101-new3][9]: Recovery failed from {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1} into {bematech-do-es-1.localdomain}{sn9Lk6UdSXa65A6DlPXGXg}{165.227.24.213}{bematech-do-es-1/165.227.24.213:9300}{max_local_storage_nodes=1} (no activity after [30m])]; nested: ElasticsearchTimeoutException[no activity after [30m]];
+	at org.elasticsearch.indices.recovery.RecoveriesCollection$RecoveryMonitor.doRun(RecoveriesCollection.java:236)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ElasticsearchTimeoutException[no activity after [30m]]
+	... 5 more
+[2017-08-30 03:44:47,946][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99326] (timeout [30s], pending nodes: [{bematech-do-es-19.localdomain}{k-RJnkMxS1OyGrX95ksXKA}{138.197.205.85}{138.197.205.85:9300}{max_local_storage_nodes=1}])
+[2017-08-30 03:44:48,250][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-failed ([master-index-abae8b30ac9b11e692000401f8d88101-new3][9], node[sn9Lk6UdSXa65A6DlPXGXg], relocating [elqF0TY7R4Cbb5-DZJih2g], [R], v[154], s[INITIALIZING], a[id=9e37XGXKS3CoUpBJDLhpRQ, rId=RQW6joHLSUCXX70om0esVA], expected_shard_size[43454556437]), message [failed recovery]] took 30.4s above the warn threshold of 30s
+[2017-08-30 13:35:58,716][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99339] (timeout [30s], pending nodes: [{bematech-do-es-1.localdomain}{sn9Lk6UdSXa65A6DlPXGXg}{165.227.24.213}{165.227.24.213:9300}{max_local_storage_nodes=1}])
+[2017-08-30 13:35:58,974][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([master-index-abae8b30ac9b11e692000401f8d88101-new3][0], node[U8qsG-1sQ9GYRBvuNYU_ZA], relocating [I4PMZGm-Ss6DmzFXPtYjcg], [R], v[184], s[INITIALIZING], a[id=Krwk3-TZRim7DYOwJ51WYQ, rId=6K7c2ZzCT3i-L3lVWuP-ww], expected_shard_size[34684120436]), reason [after recovery (replica) from node [{bematech-do-es-1.localdomain}{sn9Lk6UdSXa65A6DlPXGXg}{165.227.24.213}{165.227.24.213:9300}{max_local_storage_nodes=1}]]] took 30.3s above the warn threshold of 30s
+[2017-08-30 13:37:35,072][WARN ][monitor.jvm              ] [bematech-do-es-12.localdomain] [gc][young][583236][28668] duration [1.3s], collections [1]/[1.6s], total [1.3s]/[1.5h], memory [9.5gb]->[6.3gb]/[15.6gb], all_pools {[young] [3.1gb]->[2.4mb]/[3.2gb]}{[survivor] [50mb]->[58.4mb]/[409.5mb]}{[old] [6.2gb]->[6.2gb]/[12gb]}
+[2017-08-30 13:41:04,124][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99340] (timeout [30s], pending nodes: [{bematech-do-es-4.localdomain}{DMibMY5tQ2OAiM31rJpong}{138.68.21.77}{138.68.21.77:9300}{max_local_storage_nodes=1}])
+[2017-08-30 13:41:04,335][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([master-index-8a18aa800e5911e785f24a8136534b63][0], node[sn9Lk6UdSXa65A6DlPXGXg], relocating [mrhCiAPvRxekqyhVPTq5LQ], [P], v[70], s[INITIALIZING], a[id=3FNaM7aaTrOWI_aOuGqYzw, rId=nNyCaHQWQOOpPBrjdCGo5w], expected_shard_size[6781527273]), reason [after recovery (replica) from node [{bematech-do-es-11.localdomain}{mrhCiAPvRxekqyhVPTq5LQ}{138.197.221.161}{138.197.221.161:9300}{max_local_storage_nodes=1}]]] took 30.3s above the warn threshold of 30s
+[2017-08-30 13:45:24,941][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99341] (timeout [30s], pending nodes: [{bematech-do-es-1.localdomain}{sn9Lk6UdSXa65A6DlPXGXg}{165.227.24.213}{165.227.24.213:9300}{max_local_storage_nodes=1}])
+[2017-08-30 13:45:25,182][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([master-index-8a18aa800e5911e785f24a8136534b63][1], node[DMibMY5tQ2OAiM31rJpong], relocating [Sddyx4aNQaSnmRRV7uH50Q], [P], v[43], s[INITIALIZING], a[id=0gDJso2STz6HF7q1fUbQZQ, rId=cO0DLATzT3CVPqzhEGhOQg], expected_shard_size[6561544200]), reason [after recovery (replica) from node [{bematech-do-es-14.localdomain}{Sddyx4aNQaSnmRRV7uH50Q}{138.68.23.132}{138.68.23.132:9300}{max_local_storage_nodes=1}]]] took 30.3s above the warn threshold of 30s
+[2017-08-30 13:48:28,050][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99342] (timeout [30s], pending nodes: [{bematech-do-es-4.localdomain}{DMibMY5tQ2OAiM31rJpong}{138.68.21.77}{138.68.21.77:9300}{max_local_storage_nodes=1}])
+[2017-08-30 13:48:28,233][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([staging-index-8a18aa800e5911e785f24a8136534b63][8], node[sn9Lk6UdSXa65A6DlPXGXg], relocating [VA8KBulRQymfG8LR5DACnQ], [R], v[30], s[INITIALIZING], a[id=mFOm6dAjSPKGBgixszDk5Q, rId=7yGqrixzT3-TMsyEO3p3Yw], expected_shard_size[1824681318]), reason [after recovery (replica) from node [{bematech-do-es-10.localdomain}{ArXwkkoAQUKcxdY5N8x4DQ}{138.197.221.191}{138.197.221.191:9300}{max_local_storage_nodes=1}]]] took 30.3s above the warn threshold of 30s
+[2017-08-30 13:52:46,491][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99343] (timeout [30s], pending nodes: [{bematech-do-es-2.localdomain}{U8qsG-1sQ9GYRBvuNYU_ZA}{138.68.246.50}{138.68.246.50:9300}{max_local_storage_nodes=1}])
+[2017-08-30 13:52:46,671][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([staging-index-8a18aa800e5911e785f24a8136534b63][14], node[DMibMY5tQ2OAiM31rJpong], relocating [eCteNDCeTk2uXlDCz5JZxg], [R], v[2013], s[INITIALIZING], a[id=by2gnlLiSxGDyVw_3guwZw, rId=DyEUzi3aQXuI4roJCap3zw], expected_shard_size[1653933330]), reason [after recovery (replica) from node [{bematech-do-es-03.localdomain}{SrY2diUXTNiHR--I0FzXPw}{165.227.5.192}{165.227.5.192:9300}{max_local_storage_nodes=1}]]] took 30.3s above the warn threshold of 30s
+[2017-08-30 13:57:32,575][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99344] (timeout [30s], pending nodes: [{bematech-do-es-3.localdomain}{lyuFLGhoRLKjXqAfxreteQ}{165.227.22.228}{165.227.22.228:9300}{max_local_storage_nodes=1}])
+[2017-08-30 13:57:33,076][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([master-index-8a18aa800e5911e785f24a8136534b63][11], node[U8qsG-1sQ9GYRBvuNYU_ZA], relocating [ArXwkkoAQUKcxdY5N8x4DQ], [R], v[43], s[INITIALIZING], a[id=gmyVHIw7RreKV4d4RvzTqw, rId=ZXwvLDajRiChGjvxhDjh0g], expected_shard_size[7123289797]), reason [after recovery (replica) from node [{bematech-do-es-02.localdomain}{ppQNYbLgRLKJOrP7CbIclA}{138.68.50.117}{138.68.50.117:9300}{max_local_storage_nodes=1}]]] took 30.6s above the warn threshold of 30s
+[2017-08-30 14:06:46,158][DEBUG][action.admin.cluster.node.stats] [bematech-do-es-12.localdomain] failed to execute on node [I4PMZGm-Ss6DmzFXPtYjcg]
+ReceiveTimeoutTransportException[[bematech-do-es-15.localdomain][138.68.230.220:9300][cluster:monitor/nodes/stats[n]] request_id [11282476] timed out after [15003ms]]
+	at org.elasticsearch.transport.TransportService$TimeoutHandler.run(TransportService.java:679)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-08-30 14:07:10,537][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99347] (timeout [30s], pending nodes: [{bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}])
+[2017-08-30 14:07:10,717][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([master-index-839920f07e6b11e6b71d0401f8d88101-new3][0], node[lyuFLGhoRLKjXqAfxreteQ], relocating [k-RJnkMxS1OyGrX95ksXKA], [P], v[113], s[INITIALIZING], a[id=sIWjHhQ3TemwrjzS8FenyQ, rId=Fuv4inLQRq-2QTK-KvyNiA], expected_shard_size[1809995998]), reason [after recovery (replica) from node [{bematech-do-es-19.localdomain}{k-RJnkMxS1OyGrX95ksXKA}{138.197.205.85}{138.197.205.85:9300}{max_local_storage_nodes=1}]]] took 30.2s above the warn threshold of 30s
+[2017-08-30 14:07:34,431][INFO ][cluster.routing.allocation] [bematech-do-es-12.localdomain] Cluster health status changed from [GREEN] to [YELLOW] (reason: [[{bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}] failed]).
+[2017-08-30 14:07:34,434][INFO ][cluster.service          ] [bematech-do-es-12.localdomain] removed {{bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1},}, reason: zen-disco-node_failed({bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}), reason failed to ping, tried [3] times, each with maximum [30s] timeout
+[2017-08-30 14:07:34,741][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-abae8b30ac9b11e692000401f8d88101-new3][3] received shard failed for target shard [[master-index-abae8b30ac9b11e692000401f8d88101-new3][3], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[2189], s[STARTED], a[id=fDSSTtssQ-O67xvR9Jog7g]], indexUUID [NoVKqnGdRAaxePBg9j6uJA], message [failed to perform indices:data/write/index on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/index[r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/index[r]] disconnected]
+[2017-08-30 14:07:34,993][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-8cd6e43115e9416eb23609486fa053e3-new3][1] received shard failed for target shard [[master-index-8cd6e43115e9416eb23609486fa053e3-new3][1], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[96], s[STARTED], a[id=DFHBoOxpQeSi6zohGSid2Q]], indexUUID [gmf5NVEUTdCkC-P2Cxv0vA], message [failed to perform indices:data/write/index on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/index[r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/index[r]] disconnected]
+[2017-08-30 14:07:35,055][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][0] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][0], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[34], s[STARTED], a[id=bUvkhwEmRUqS1tM4U17IgA]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,055][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][0] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][0], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[34], s[STARTED], a[id=bUvkhwEmRUqS1tM4U17IgA]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,055][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][0] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][0], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[34], s[STARTED], a[id=bUvkhwEmRUqS1tM4U17IgA]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,055][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][0] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][0], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[34], s[STARTED], a[id=bUvkhwEmRUqS1tM4U17IgA]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,055][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][0] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][0], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[34], s[STARTED], a[id=bUvkhwEmRUqS1tM4U17IgA]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,055][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][0] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][0], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[34], s[STARTED], a[id=bUvkhwEmRUqS1tM4U17IgA]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,057][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][0] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][0], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[34], s[STARTED], a[id=bUvkhwEmRUqS1tM4U17IgA]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,055][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][0] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][0], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[34], s[STARTED], a[id=bUvkhwEmRUqS1tM4U17IgA]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,057][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][0] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][0], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[34], s[STARTED], a[id=bUvkhwEmRUqS1tM4U17IgA]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,057][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][0] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][0], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[34], s[STARTED], a[id=bUvkhwEmRUqS1tM4U17IgA]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,144][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-abae8b30ac9b11e692000401f8d88101-new3][2] received shard failed for target shard [[master-index-abae8b30ac9b11e692000401f8d88101-new3][2], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[160], s[STARTED], a[id=O7Unb7aaSHOZLcUe0eaclQ]], indexUUID [NoVKqnGdRAaxePBg9j6uJA], message [failed to perform indices:data/write/delete on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/delete[r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/delete[r]] disconnected]
+[2017-08-30 14:07:35,149][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-abae8b30ac9b11e692000401f8d88101-new3][2] received shard failed for target shard [[master-index-abae8b30ac9b11e692000401f8d88101-new3][2], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[160], s[STARTED], a[id=O7Unb7aaSHOZLcUe0eaclQ]], indexUUID [NoVKqnGdRAaxePBg9j6uJA], message [failed to perform indices:data/write/index on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/index[r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/index[r]] disconnected]
+[2017-08-30 14:07:35,889][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,891][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:data/write/index on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/index[r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/index[r]] disconnected]
+[2017-08-30 14:07:35,895][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,907][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-abae8b30ac9b11e692000401f8d88101-new3][7] received shard failed for target shard [[master-index-abae8b30ac9b11e692000401f8d88101-new3][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[127], s[STARTED], a[id=bd6rN2zOS7CIFuXatIH2ag]], indexUUID [NoVKqnGdRAaxePBg9j6uJA], message [failed to perform indices:data/write/delete on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/delete[r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/delete[r]] disconnected]
+[2017-08-30 14:07:35,936][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,936][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,937][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,937][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,942][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,943][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,945][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,956][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,956][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-abae8b30ac9b11e692000401f8d88101-new3][7] received shard failed for target shard [[master-index-abae8b30ac9b11e692000401f8d88101-new3][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[127], s[STARTED], a[id=bd6rN2zOS7CIFuXatIH2ag]], indexUUID [NoVKqnGdRAaxePBg9j6uJA], message [failed to perform indices:data/write/index on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/index[r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/index[r]] disconnected]
+[2017-08-30 14:07:35,956][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:35,956][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-1154b0b041d211e7b7c04a8136534b63][7] received shard failed for target shard [[master-index-1154b0b041d211e7b7c04a8136534b63][7], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[56], s[STARTED], a[id=ItBNgHKgSRKtwkGcSOrF-g]], indexUUID [gJB7jAQPQX6TzmcxK9ewSQ], message [failed to perform indices:admin/refresh[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:admin/refresh[s][r]] disconnected]
+[2017-08-30 14:07:38,225][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-abae8b30ac9b11e692000401f8d88101-new3][22] received shard failed for target shard [[master-index-abae8b30ac9b11e692000401f8d88101-new3][22], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[214], s[STARTED], a[id=hjP0VxMGQoSHiq7UmHR-FQ]], indexUUID [NoVKqnGdRAaxePBg9j6uJA], message [failed to perform indices:data/write/delete on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/delete[r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/delete[r]] disconnected]
+[2017-08-30 14:07:38,226][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [master-index-abae8b30ac9b11e692000401f8d88101-new3][22] received shard failed for target shard [[master-index-abae8b30ac9b11e692000401f8d88101-new3][22], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[214], s[STARTED], a[id=hjP0VxMGQoSHiq7UmHR-FQ]], indexUUID [NoVKqnGdRAaxePBg9j6uJA], message [failed to perform indices:data/write/index on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/index[r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/index[r]] disconnected]
+[2017-08-30 14:07:46,179][DEBUG][action.admin.cluster.node.stats] [bematech-do-es-12.localdomain] failed to execute on node [I4PMZGm-Ss6DmzFXPtYjcg]
+ReceiveTimeoutTransportException[[bematech-do-es-15.localdomain][138.68.230.220:9300][cluster:monitor/nodes/stats[n]] request_id [11284043] timed out after [15009ms]]
+	at org.elasticsearch.transport.TransportService$TimeoutHandler.run(TransportService.java:679)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-08-30 14:07:51,884][INFO ][cluster.routing          ] [bematech-do-es-12.localdomain] delaying allocation for [99] unassigned shards, next check in [1m]
+[2017-08-30 14:07:53,202][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,202][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,203][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,218][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,204][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,220][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,241][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,243][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,244][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,244][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,247][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,247][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,248][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,248][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,248][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,247][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,248][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,248][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,248][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,248][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,248][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,249][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,248][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,249][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,249][DEBUG][action.admin.indices.stats] [bematech-do-es-12.localdomain] failed to execute [indices:monitor/stats] on node [I4PMZGm-Ss6DmzFXPtYjcg]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:monitor/stats[n]] disconnected]
+[2017-08-30 14:07:53,252][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,253][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,255][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,256][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,259][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,259][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,259][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,260][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,261][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,261][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,260][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,262][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,260][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,262][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,262][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,262][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,263][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,263][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,263][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,263][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,263][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,263][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,263][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,264][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,264][DEBUG][action.admin.indices.stats] [bematech-do-es-12.localdomain] failed to execute [indices:monitor/stats] on node [I4PMZGm-Ss6DmzFXPtYjcg]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:monitor/stats[n]] disconnected]
+[2017-08-30 14:07:53,264][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,264][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,265][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,265][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,265][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,265][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,269][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,270][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,271][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,271][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,271][WARN ][action.bulk              ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] failed to perform indices:data/write/bulk[s][r] on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:07:53,271][WARN ][cluster.action.shard     ] [bematech-do-es-12.localdomain] [staging-index-0acedf50628d11e7b815a2f42be00f79][6] received shard failed for target shard [[staging-index-0acedf50628d11e7b815a2f42be00f79][6], node[I4PMZGm-Ss6DmzFXPtYjcg], [R], v[43], s[STARTED], a[id=5QUKM0Q_S7efY4vReNloyQ]], indexUUID [ECzL09ykQLS0QzeegznNEQ], message [failed to perform indices:data/write/bulk[s] on replica on node {bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}], failure [NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]]
+NodeDisconnectedException[[bematech-do-es-15.localdomain][138.68.230.220:9300][indices:data/write/bulk[s][r]] disconnected]
+[2017-08-30 14:10:10,140][INFO ][cluster.service          ] [bematech-do-es-12.localdomain] added {{bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1},}, reason: zen-disco-join(join from node[{bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}])
+[2017-08-30 14:10:40,688][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99358] (timeout [30s], pending nodes: [{bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}])
+[2017-08-30 14:10:40,703][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [zen-disco-join(join from node[{bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}])] took 30.5s above the warn threshold of 30s
+[2017-08-30 14:11:23,968][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99359] (timeout [30s], pending nodes: [{bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}])
+[2017-08-30 14:11:24,205][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([master-index-1154b0b041d211e7b7c04a8136534b63][0], node[6CePE_vbRvKYu4PCICzRAw], [R], v[36], s[INITIALIZING], a[id=Bl32U2W7RQW-JRZlazM4hw], unassigned_info[[reason=NODE_LEFT], at[2017-08-30T14:07:34.088Z], details[node_left[I4PMZGm-Ss6DmzFXPtYjcg]]], expected_shard_size[554807819]), reason [after recovery (replica) from node [{bematech-do-es-10.localdomain}{ArXwkkoAQUKcxdY5N8x4DQ}{138.197.221.191}{138.197.221.191:9300}{max_local_storage_nodes=1}]]] took 30.3s above the warn threshold of 30s
+[2017-08-30 14:11:54,241][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99360] (timeout [30s], pending nodes: [{bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}])
+[2017-08-30 14:11:54,420][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([staging-index-b74f5a703d5e11e68ac00401f8d88501][3], node[-IC3Gx06T7WBqmGQvjOZJA], [R], v[38], s[INITIALIZING], a[id=YoarsuBoRGOYsTtVOdgX1g], unassigned_info[[reason=NODE_LEFT], at[2017-08-30T14:07:34.088Z], details[node_left[I4PMZGm-Ss6DmzFXPtYjcg]]], expected_shard_size[50780242]), reason [after recovery (replica) from node [{bematech-do-es-04.localdomain}{VA8KBulRQymfG8LR5DACnQ}{165.227.17.43}{165.227.17.43:9300}{max_local_storage_nodes=1}]],shard-started ([staging-index-03b541d0208111e7bbb0a2f42be00f79][2], node[ppQNYbLgRLKJOrP7CbIclA], [R], v[57], s[INITIALIZING], a[id=zCMSGjcWRJygaOhZ1L1OLw], unassigned_info[[reason=NODE_LEFT], at[2017-08-30T14:07:34.088Z], details[node_left[I4PMZGm-Ss6DmzFXPtYjcg]]], expected_shard_size[20513538]), reason [after recovery (replica) from node [{bematech-do-es-18.localdomain}{63ZmTqpvSs-_zxMStLAWRg}{165.227.25.149}{165.227.25.149:9300}{max_local_storage_nodes=1}]],shard-started ([master-index-03b541d0208111e7bbb0a2f42be00f79][8], node[6nppGDL-REe8UE973F6D5w], [R], v[55], s[INITIALIZING], a[id=itNrK2nXSsuB2Uh7UAmxPA], unassigned_info[[reason=NODE_LEFT], at[2017-08-30T14:07:34.088Z], details[node_left[I4PMZGm-Ss6DmzFXPtYjcg]]], expected_shard_size[38288933]), reason [after recovery (replica) from node [{bematech-do-es-04.localdomain}{VA8KBulRQymfG8LR5DACnQ}{165.227.17.43}{165.227.17.43:9300}{max_local_storage_nodes=1}]],shard-started ([staging-index-b74f5a703d5e11e68ac00401f8d88501][3], node[-IC3Gx06T7WBqmGQvjOZJA], [R], v[38], s[INITIALIZING], a[id=YoarsuBoRGOYsTtVOdgX1g], unassigned_info[[reason=NODE_LEFT], at[2017-08-30T14:07:34.088Z], details[node_left[I4PMZGm-Ss6DmzFXPtYjcg]]], expected_shard_size[50780242]), reason [master {bematech-do-es-12.localdomain}{-IC3Gx06T7WBqmGQvjOZJA}{138.197.200.214}{bematech-do-es-12/138.197.200.214:9300}{max_local_storage_nodes=1} marked shard as initializing, but shard state is [POST_RECOVERY], mark shard as started]] took 30.2s above the warn threshold of 30s
+[2017-08-30 14:12:24,441][WARN ][discovery.zen.publish    ] [bematech-do-es-12.localdomain] timed out waiting for all nodes to process published state [99361] (timeout [30s], pending nodes: [{bematech-do-es-15.localdomain}{I4PMZGm-Ss6DmzFXPtYjcg}{138.68.230.220}{138.68.230.220:9300}{max_local_storage_nodes=1}])
+[2017-08-30 14:12:24,634][WARN ][cluster.service          ] [bematech-do-es-12.localdomain] cluster state update task [shard-started ([staging-index-8a18aa800e5911e785f24a8136534b63][2], node[Sw5V83ICS92_ypNNjpOZ2A], [R], v[63], s[INITIALIZING], a[id=XaavbcvWQjyMmdigL15RDw], unassigned_info[[reason=NODE_LEFT], at[2017-08-30T14:07:34.088Z], details[node_left[I4PMZGm-Ss6DmzFXPtYjcg]]], expected_shard_size[1640641495]), reason [after recovery (replica) from node [{bematech-do-es-18.localdomain}{63ZmTqpvSs-_zxMStLAWRg}{165.227.25.149}{165.227.25.149:9300}{max_local_storage_nodes=1}]],shard-started ([staging-index-8a18aa800e5911e785f24a8136534b63][4], node[4gyYmBDXTXK6BY_ujUQGTA], [R], v[58], s[INITIALIZING], a[id=uuhSCgQiSJu6zSL9iPZWGQ], unassigned_info[[reason=NODE_LEFT], at[2017-08-30T14:07:34.088Z], details[node_left[I4PMZGm-Ss6DmzFXPtYjcg]]], expected_shard_size[1627348711]), reason [after recovery (replica) from node [{bematech-do-es-07.localdomain}{elqF0TY7R4Cbb5-DZJih2g}{165.227.21.128}{165.227.21.128:9300}{max_local_storage_nodes=1}]]] took 30.2s above the warn threshold of 30s
 #+END_EXAMPLE
 
-export es_index_list="*-index-8cd6e43115e9416eb23609486fa053e3,*-index-e4010da4110ba377d100f050cb4440db"
-es_ip=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
-es_port=9200
-export repo_name="my_backup"
-export es_fs_mnt="/usr/share/elasticsearch/repo"
+** TODO ES run into yellow
+#+BEGIN_EXAMPLE
+[2017-09-02 00:25:42,396][INFO ][cluster.service          ] [bematech-do-es-01.localdomain] detected_master {bematech-do-es-12.localdomain}{-IC3Gx06T7WBqmGQvjOZJA}{138.197.200.214}{138.197.200.214:9300}{max_local_storage_nodes=1}, added {{bematech-do-es-12.localdomain}{-IC3Gx06T7WBqmGQvjOZJA}{138.197.200.214}{138.197.200.214:9300}{max_local_storage_nodes=1},}, reason: zen-disco-receive(from master [{bematech-do-es-12.localdomain}{-IC3Gx06T7WBqmGQvjOZJA}{138.197.200.214}{138.197.200.214:9300}{max_local_storage_nodes=1}])
+[2017-09-02 00:25:55,535][WARN ][http.netty               ] [bematech-do-es-01.localdomain] Caught exception while handling client http traffic, closing connection [id: 0xf1078a49, /12.145.25.178:39686 => /138.197.215.132:9200]
+java.io.IOException: No route to host
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-09-02 00:28:21,815][INFO ][monitor.jvm              ] [bematech-do-es-01.localdomain] [gc][young][1039465][269011] duration [809ms], collections [1]/[1.1s], total [809ms]/[14.3h], memory [10.9gb]->[10.2gb]/[15.9gb], all_pools {[young] [664.1mb]->[4.3mb]/[665.6mb]}{[survivor] [34.5mb]->[35.6mb]/[83.1mb]}{[old] [10.2gb]->[10.2gb]/[15.1gb]}
+#+END_EXAMPLE
+** TODO interesting es indices api return
+root@bematech-do-es-01:~/elasticsearch-cli-tool# curl $es_ip:9200/_cat/indices?v
+{"error":{"root_cause":[{"type":"index_not_found_exception","reason":"no such index","resource.type":"index_or_alias","resource.id":"staging-index-8e2d11502c5511e79481a2f42be00f79-new2","index":"staging-index-8e2d11502c5511e79481a2f42be00f79-new2"}],"type":"index_not_found_exception","reason":"no such index","resource.type":"index_or_alias","resource.id":"staging-index-8e2d11502c5511e79481a2f42be00f79-new2","index":"staging-index-8e2d11502c5511e79481a2f42be00f79-new2"},"status":404}
 
-curl -X PUT "http://$es_ip:$es_port/_snapshot/$repo_name" -d "{
-    \"type\": \"fs\",
-    \"settings\": {
-        \"location\": \"$es_fs_mnt\",
-        \"compress\": true,
-        \"chunk_size\": \"10m\"
-    }
-}"
+** TODO Add more ES nodes to the cluster
+** TODO ES re-indexing has failed
+#+BEGIN_EXAMPLE
+bematech-do-es-5/check_elasticsearch_health is WARNING:
+WARN: elasticsearch cluster status is yellow, by checking 159.89.140.37:9200/_cluster/health
 
-export snapshot_name="snapshot_20180518"
 
-time curl -XPUT "http://$es_ip:$es_port/_snapshot/$repo_name/${snapshot_name}?wait_for_completion=true" -d "{
-    \"indices\": \"$es_index_list\",
-    \"ignore_unavailable\": true,
-    \"include_global_state\": false
-}"
+[9:33]
+bematech-do-es-32/check_elasticsearch_health is WARNING:
+WARN: elasticsearch cluster status is yellow, by checking 138.68.245.64:9200/_cluster/health
 
-ls -lth $es_fs_mnt
+
+[9:33]
+bematech-do-es-8/check_elasticsearch_health is WARNING:
+WARN: elasticsearch cluster status is yellow, by checking 159.89.140.11:9200/_cluster/health
+
+
+[9:33]
+bematech-do-es-29/check_elasticsearch_health is WARNING:
+WARN: elasticsearch cluster status is yellow, by checking 138.68.252.11:9200/_cluster/health
+
+
+[9:33]
+bematech-do-es-28/check_elasticsearch_health is WARNING:
+WARN: elasticsearch cluster status is yellow, by checking 165.227.16.232:9200/_cluster/health
+
+
+[9:34]
+bematech-do-app-3/check_mdm_server_err_rate is CRITICAL:
+ERROR: 5XX error rate in latest 15 minutes is over 8000.000000! Multiply by 10^12.
+
+
+[9:36]
+bematech-do-app-04/check_mdm_server_err_rate is CRITICAL:
+ERROR: 5XX error rate in latest 15 minutes is over 8000.000000! Multiply by 10^12.
+
+
+[9:36]
+bematech-do-app-7/check_mdm_server_err_rate is CRITICAL:
+ERROR: 5XX error rate in latest 15 minutes is over 8000.000000! Multiply by 10^12.
+
+
+[9:37]
+bematech-do-es-16/check_elasticsearch_health is WARNING:
+WARN: elasticsearch cluster status is yellow, by checking 165.227.49.45:9200/_cluster/health
+
+
+Denny Zhang (DevOps) [9:38 AM]
+Re-indexing for some tenants has failed. I’m checking
+
+
+Denny Zhang (DevOps) [9:42 AM]
+added this Plain Text snippet: bematech-do-es-16(165.227.49.45)
+bematech-do-es-16(165.227.49.45) has been out and in for a while.
+```
+[2018-01-11 14:23:50,113][INFO ][cluster.metadata ] [bematech-do-es-16.localdomain] [staging-index-8e2d11502c5511e79481a2f42be00f79-new3] update_mapping [mdmStagingChunk]
+[2018-01-11 15:29:22,163][INFO ][cluster.metadata ] [bematech-do-es-16.localdomain] [staging-index-c277f9b097ef11e7a69b0e4789ade3a3-new1] update_mapping [invoicemanufacturingRejected]
+[2018-01-11 15:29:47,293][WARN ][discovery.zen ] [bematech-do-es-16.localdomain] received a request to rejoin the cluster from [1f9IYNkeR0GuyS3wP1FZtg], current nodes: {{bematech-do-app-05node}{fV4_NNB_Q5KiDprpBsroZQ}{138.68.252.252}{138.68.252.252:9301}{data=false, master=false},{bematech-do-app-1node}{NRJjzjnuTyaDvu2AjumrPw}{138.68.41.110}{138.68.41.110:9301}{data=false, master=false},{bematech-do-es-33.localdomain}{NTD_Kzr0SRCTcI_IRc9cBg}{165.227.5.218}{165.227.5.218:9300}{max_local_storage_nodes=1},{bematech-do-es-12.localdomain}{fDGAFRHsROKPE6O1NKk8XA}{138.68.26.13}{138.68.26.13:9300}{max_local_storage_nodes=1},{bematech-do-es-22.localdomain}{AoQPbQ6CTj-u8pO6ERDqnQ}{138.68.5.190}{138.68.5.190:9300}{max_local_storage_nodes=1},{bematech-do-es-23.localdomain}{8FuAUMf1RM-kgAdjf6MEQA}{138.68.253.40}{138.68.253.40:9300}{max_local_storage_nodes=1},{bematech-do-es-11.localdomain}{gN8gzeZwT-6Unq0jt9irTw}{159.89.140.24}{159.89.140.24:9300}{max_local_storage_nodes=1},{bematech-do-es-13.localdomain}{Fcnx_F9BTSSUt72on-JF_Q}{165.227.49.160}{165.227.49.160:9300}{max_local_storage_nodes=1},{bematech-do-es-31.localdomain}{N0wNF_TYTdusdZuAsRJfnQ}{165.227.7.221}{165.227.7.221:9300}{max_local_storage_nodes=1},{bematech-do-es-20.localdomain}{CzkrHcehQcK3SHqF0pYXyw}{138.197.219.73}{138.197.219.73:9300}{max_local_storage_nodes=1},{bematech-do-app-04node}{vHSckkHOTi2jzssrV8OsNA}{138.68.252.224}{138.68.252.224:9301}{data=false, master=false},{bematech-do-es-29.localdomain}{M6CFA7QxQiivErq0WiosYg}{138.68.252.11}{138.68.252.11:9300}{max_local_storage_nodes=1},{bematech-do-app-6node}{Toh8xlbRR667znc_dKc6cg}{165.227.18.191}{165.227.18.191:9301}{data=false, master=false},{bematech-do-es-16.localdomain}{-X2pzwOZTEqfKe94dp1tGw}{165.227.49.45}{bematech-do-es-16/165.227.49.45:9300}{max_local_storage_nodes=1},{bematech-do-es-26.localdomain}{FU2MIuv5QEqxFBrK5a1rTQ}{165.227.7.247}{165.227.7.247:9300}{max_local_storage_nodes=1},{bematech-do-es-25.localdomain}{aNk6ANPgSL6e1F8gjuDagA}{138.68.253.103}{138.68.253.103:9300}{max_local_storage_nodes=1},{bematech-do-es-27.localdomain}{Om0fJREORgeHb83OMcsK0g}{138.197.195.41}{138.197.195.41:9300}{max_local_storage_nodes=1},{bematech-do-es-4.localdomain}{kb4pbM0pT2qAzMUQjppOgQ}{138.68.59.205}{138.68.59.205:9300}{max_local_storage_nodes=1},{bematech-do-es-28.localdomain}{MHXL23OPRIe6PMA09KBFew}{165.227.16.232}{165.227.16.232:9300}{max_local_storage_nodes=1},{bematech-do-es-21.localdomain}{dOuhq_PtS8KfyrVlOCpN1Q}{165.227.24.107}{165.227.24.107:9300}{max_local_storage_nodes=1},{bematech-do-es-5.localdomain}{j6kJk_3OQRutPEDNeKjVxg}{159.89.140.37}{159.89.140.37:9300}{max_local_storage_nodes=1},{bematech-do-es-8.localdomain}{1f9IYNkeR0GuyS3wP1FZtg}{159.89.140.11}{159.89.140.11:9300}{max_local_storage_nodes=1},{bematech-do-es-6.localdomain}{RRt1LR0hRYGjOtKrWSR2_A}{165.227.19.254}{165.227.19.254:9300}{max_local_storage_nodes=1},{bematech-do-app-2node}{XhoRBsf6TRuebxkbtdHVFQ}{138.68.241.113}{138.68.241.113:9301}{data=false, master=false},{bematech-do-app-3node}{uq3_a0KxQzamNvfNQlOhLQ}{138.68.252.199}{138.68.252.199:9301}{data=false, master=false},{bematech-do-es-24.localdomain}{4H6JfqzRSpiBmMI4hR7zGg}{138.68.255.53}{138.68.255.53:9300}{max_local_storage_nodes=1},{bematech-do-app-7node}{XwQEX5pjQ0GyVBe93liAwQ}{165.227.17.174}{165.227.17.174:9301}{data=false, master=false},{bematech-do-es-35.localdomain}{JX_NvdLFT7SENYpWuaZgWg}{165.227.17.250}{165.227.17.250:9300}{max_local_storage_nodes=1},{bematech-do-es-10.localdomain}{Q0zTnfgFQeqTCGgjodjXUA}{159.89.140.56}{159.89.140.56:9300}{max_local_storage_nodes=1},{bematech-do-es-2.localdomain}{U8qsG-1sQ9GYRBvuNYU_ZA}{138.68.246.50}{138.68.246.50:9300}{max_local_storage_nodes=1},{bematech-do-es-32.localdomain}{jmMXHuYITHqk9TCYU_PsgQ}{138.68.245.64}{138.68.245.64:9300}{max_local_storage_nodes=1},{bematech-do-es-34.localdomain}{8OlLE4wFQN2M1YY0QzlYZw}{165.227.13.11}{165.227.13.11:9300}{max_local_storage_nodes=1},{bematech-do-es-3.localdomain}{lyuFLGhoRLKjXqAfxreteQ}{165.227.22.228}{165.227.22.228:9300}{max_local_storage_nodes=1},{bematech-do-es-1.localdomain}{L1BFoh5lRY-zlpy0aW0vhw}{159.89.140.13}{159.89.140.13:9300}{max_local_storage_nodes=1},{bematech-do-es-9.localdomain}{rT0BQnslRAODF3vVwhiiXA}{159.89.140.52}{159.89.140.52:9300}{max_local_storage_nodes=1},}
+@
+```
+Add Comment Collapse
+
+
+
+Denny Zhang (DevOps) [9:42 AM]
+I will run again, once es cluster is green
+
+
+
+Nagios APP [9:42 AM]
+bematech-do-app-6/check_mdm_server_err_rate is CRITICAL:
+ERROR: 5XX error rate in latest 15 minutes is over 8000.000000! Multiply by 10^12.
+#+END_EXAMPLE
+
+http://bematech-do-jenkins.carol.ai:18080/job/ESReIndex/165/parameters/
+#+BEGIN_EXAMPLE
+
+17:10:08 green  open   config-index-a5893fc08f3a11e784e50e4789ade3a3-new3    1   2          0            0       477b           159b
+17:10:08 green  open   master-index-6de6b440936711e783f0dec7170128a9        10   2      24016            0     27.3mb          9.2mb
+17:10:08        close  staging-index-e4010da4110ba377d100f050cb4440db-new2
+17:10:08 green  open   staging-index-e4010da4110ba377d100f050cb4440db-new3   5   2      33203            0    305.5mb        102.4mb
+17:10:08 green  open   config-index-1154b0b041d211e7b7c04a8136534b63-new3    1   2          0            0       477b           159b
+17:10:08 green  open   master-index-78917020e67c11e7ac7edec7170128a9-new3   10   2          0            0      4.6kb          1.5kb
+17:10:08 green  open   staging-index-d3ae95b0d12811e69edf0401f8d88501-new3   5   2          0            0      2.3kb           795b
+17:10:08 green  open   staging-index-d3ae95b0d12811e69edf0401f8d88501-new2   5   2      13335            7     42.6mb         14.2mb
+17:10:08 green  open   config-index-40e0def05c1f11e7a9954a8136534b63-new3    1   2        388            1      1.4mb        541.4kb
+17:10:08        close  master-index-c277f9b097ef11e7a69b0e4789ade3a3
+17:10:08 green  open   config-index-7a90c9f0b81611e7bcc70e4789ade3a3-new3    1   2          0            0       477b           159b
+17:10:08 green  open   config-index-d104b4e0843111e7b589dec7170128a9         1   2        130           11    902.5kb        300.8kb
+17:10:08 green  open   config-index-92c10080cf6811e7a2610e4789ade3a3-new3    1   2          0            0       477b           159b
+17:10:08 green  open   config-index-f5c8d070d9a111e7844bdec7170128a9         1   2       1424        16954     10.2mb          4.5mb
+17:10:08 green  open   config-index-0f65ca607d5911e7b17a0e4789ade3a3         1   2          4            0     88.2kb         29.4kb
+17:10:08 green  open   staging-index-9961ac10d5ed11e785ebdec7170128a9       10   2          4            0      2.8mb        967.9kb
+17:10:08        close  staging-index-c277f9b097ef11e7a69b0e4789ade3a3
+17:10:08 green  open   config-index-0acedf50628d11e7b815a2f42be00f79-new3    1   2          0            0       477b           159b
+17:10:08 green  open   config-index-92c10080cf6811e7a2610e4789ade3a3         1   2         18            0     30.8mb         10.2mb
+17:10:08
+100 44625  100 44625    0     0   7721      0  0:00:05  0:00:05 --:--:-- 12475
+17:10:08 + assert_index_status 138.68.246.50 9200 staging-index-da1c1280ac9b11e68e250401f8d88501-new3
+17:10:08 + local es_ip=138.68.246.50
+17:10:08 + local es_port=9200
+17:10:08 + local index_name=staging-index-da1c1280ac9b11e68e250401f8d88501-new3
+17:10:08 ++ curl '138.68.246.50:9200/_cat/shards?v'
+17:10:08 ++ grep staging-index-da1c1280ac9b11e68e250401f8d88501-new3
+17:10:08 ++ grep -c -v STARTED
+17:10:08   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+17:10:08                                  Dload  Upload   Total   Spent    Left  Speed
+17:10:08
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0
+  1 1336k    1 16299    0     0   3481      0  0:06:33  0:00:04  0:06:29  3481
+100 1336k  100 1336k    0     0   285k      0  0:00:04  0:00:04 --:--:--  383k
+17:10:13 index(staging-index-da1c1280ac9b11e68e250401f8d88501-new3) is up and running
+17:10:13 + '[' 0 = 0 ']'
+17:10:13 + echo 'index(staging-index-da1c1280ac9b11e68e250401f8d88501-new3) is up and running'
+17:10:13 + '[' no = no ']'
+17:10:13 + log 'Reindex index. Attention: this will take a very long time, if the index is big'
+17:10:13 + local 'msg=Reindex index. Attention: this will take a very long time, if the index is big'
+17:10:13 ++ date '+[%Y-%m-%d %H:%M:%S]'
+17:10:13 [2018-01-12 01:09:59] Reindex index. Attention: this will take a very long time, if the index is big
+17:10:13 + date_timestamp='[2018-01-12 01:09:59]'
+17:10:13 + echo -ne '[2018-01-12 01:09:59] Reindex index. Attention: this will take a very long time, if the index is big\n'
+17:10:13 + '[' -n '' ']'
+17:10:13 + curl -XPOST 'http://138.68.246.50:9200/_reindex?pretty' -d '
+17:10:13      {
+17:10:13        "conflicts": "proceed",
+17:10:13        "source": {
+17:10:13        "index": "staging-index-da1c1280ac9b11e68e250401f8d88501-new2",
+17:10:13        "size": "800"
+17:10:13     },
+17:10:13        "dest": {
+17:10:13        "index": "staging-index-da1c1280ac9b11e68e250401f8d88501-new3",
+17:10:13        "op_type": "create"
+17:10:13     }
+17:10:13  }'
+17:10:13 + tee -a /var/log/run_reindex_sh_165.log
+17:10:13   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+17:10:13                                  Dload  Upload   Total   Spent    Left  Speed
+17:10:13
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   280    0     0  100   280      0    233  0:00:01  0:00:01 --:--:--   233
+100   280    0     0  100   280      0    127  0:00:02  0:00:02 --:--:--   127
+100   280    0     0  100   280      0     87  0:00:03  0:00:03 --:--:--    87
+100   280    0     0  100   280      0     66  0:00:04  0:00:04 --:--:--    66
+...
+100   280    0     0    0   280      0      0 --:--:--  0:09:21 --:--:--     0
+100   280    0     0    0   280      0      0 --:--:--  0:09:22 --:--:--     0
+100   280    0     0    0   280      0      0 --:--:--  0:09:23 --:--:--     0
+100   280    0     0    0   280      0      0 --:--:--  0:09:24 --:--:--     0{
+17:19:38   "took" : 565211,
+17:19:38   "timed_out" : false,
+17:19:38   "total" : 72911606,
+17:19:38   "updated" : 0,
+17:19:38   "created" : 0,
+17:19:38   "batches" : 289,
+17:19:38   "version_conflicts" : 231200,
+17:19:38   "noops" : 0,
+17:19:38   "retries" : 0,
+17:19:38   "failures" : [ {
+17:19:38     "shard" : -1,
+17:19:38     "index" : null,
+17:19:38     "reason" : {
+17:19:38       "type" : "es_rejected_execution_exception",
+17:19:38       "reason" : "rejected execution of org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler@76ebc7b5 on EsThreadPoolExecutor[search, queue capacity = 1000, org.elasticsearch.common.util.concurrent.EsThreadPoolExecutor@6d13d801[Running, pool size = 19, active threads = 19, queued tasks = 1000, completed tasks = 2446638431]]"
+17:19:38     }
+17:19:38   } ]
+17:19:38 }
+17:19:38
+100   946  100   666    0   280      1      0  0:11:06  0:09:25  0:01:41    87
+100   946  100   666    0   280      1      0  0:11:06  0:09:25  0:01:41   113
+17:19:38
+17:19:38 real	9m25.226s
+17:19:38 user	0m0.056s
+17:19:38 sys	0m0.026s
+17:19:38 + tail -n 5 /var/log/run_reindex_sh_165.log
+17:19:38 + grep '"failures" : \[ \]'
+17:19:38 + log 'ERROR to run previous curl command'
+17:19:38 + local 'msg=ERROR to run previous curl command'
+17:19:38 ++ date '+[%Y-%m-%d %H:%M:%S]'
+17:19:38 [2018-01-12 01:19:24] ERROR to run previous curl command
+17:19:38 + date_timestamp='[2018-01-12 01:19:24]'
+17:19:38 + echo -ne '[2018-01-12 01:19:24] ERROR to run previous curl command\n'
+17:19:38 + '[' -n '' ']'
+17:19:38 + tail -n 5 /var/log/run_reindex_sh_165.log
+17:19:38       "type" : "es_rejected_execution_exception",
+17:19:38       "reason" : "rejected execution of org.elasticsearch.transport.netty.MessageChannelHandler$RequestHandler@76ebc7b5 on EsThreadPoolExecutor[search, queue capacity = 1000, org.elasticsearch.common.util.concurrent.EsThreadPoolExecutor@6d13d801[Running, pool size = 19, active threads = 19, queued tasks = 1000, completed tasks = 2446638431]]"
+17:19:38     }
+17:19:38   } ]
+17:19:38 }
+17:19:38 + exit 1
+17:19:38 Build step 'Execute shell' marked build as failure
+17:19:40 Finished: FAILURE
+Page generated: Jan 11, 2018 5:30:19 PM PSTREST APIJenkins ver. 2.46.3
+#+END_EXAMPLE
+
+** TODO es run into red
+*** healthcheck
+root@bematech-do-es-34:/var/log/elasticsearch# curl $es_ip:9200/_cluster/health?pretty
+{
+  "error" : {
+    "root_cause" : [ {
+      "type" : "master_not_discovered_exception",
+      "reason" : null
+    } ],
+    "type" : "master_not_discovered_exception",
+    "reason" : null
+  },
+  "status" : 503
+}
+root@bematech-do-es-34:/var/log/elasticsearch#
+You have new mail in /var/mail/root
+root@bematech-do-es-34:/var/log/elasticsearch# curl $es_ip:9200/_cluster/health?pretty
+{
+  "cluster_name" : "mdm",
+  "status" : "red",
+  "timed_out" : false,
+  "number_of_nodes" : 30,
+  "number_of_data_nodes" : 28,
+  "active_primary_shards" : 1954,
+  "active_shards" : 4271,
+  "relocating_shards" : 0,
+  "initializing_shards" : 67,
+  "unassigned_shards" : 2148,
+  "delayed_unassigned_shards" : 199,
+  "number_of_pending_tasks" : 383,
+  "number_of_in_flight_fetch" : 0,
+  "task_max_waiting_in_queue_millis" : 1250753,
+  "active_shards_percent_as_number" : 65.8495220474869
+}
+
+** TODO ES improve re-index performance
+#+BEGIN_EXAMPLE
+Mitu Singh [4:18 PM]
+https://discuss.elastic.co/t/improving-performance-of-reindex-api/58028/6
+
+Denny Zhang (DevOps) [4:19 PM]
+Yes, we tried to change the batch size to 1000
+However mdm will complain slowness and errors. What's worse. es even run into red twice. So we lower it to 500 now.
+
+Mitu Singh [4:22 PM]
+ok
+
+Denny Zhang (DevOps) [4:30 PM]
+But we haven’t tried to change `refresh interval`.
+
+We can do some experiments against it. Probably this will come with some cost.
+Looks like positive to us.
+Thanks, @mitu
+#+END_EXAMPLE
+** TODO enforce check about ES hotthreads
+** TODO [#A] Why only 2 ES runs into full GC requently
+** TODO [#A] sometimes ES list shards API will stuck for more than 1 minute
+** TODO cb node, es node -> bring prod env fail for some data, need manual intervine
+** TODO update doc: When es node runs into single node, what to do?
+** TODO [#A] elasticsearch: close indices and remove VMs with rebalancing, what if I want to re-open the indices?

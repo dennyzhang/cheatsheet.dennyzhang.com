@@ -87,8 +87,6 @@ https://get.slack.help/hc/en-us/articles/217626598-Get-around-faster-with-keyboa
 * [#A] Slack: Team Communication & Better Integration              :noexport:
 ** basic use
 Make all of the work and conversations seamlessly available in one place.
-*** DONE check slack commands: https://totvslabs.slack.com/apps/manage/custom-integrations
-    CLOSED: [2017-01-23 Mon 11:26]
 ** DONE [#A] DigitalOcean Slack: list #fd-metric
    CLOSED: [2016-12-24 Sat 19:31]
 http://jerrygamblin.com/2016/12/22/digital-ocean-slack-bot/
