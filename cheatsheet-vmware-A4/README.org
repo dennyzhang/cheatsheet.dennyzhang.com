@@ -120,3 +120,19 @@ Insights & Analytics
 * TODO [#A] vmware PCF                                             :noexport:
 * TODO [#A] vmware WCP                                             :noexport:
 * TODO vmware hatchway                                             :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* [#A] Radio ideas                                                 :noexport:
+** TODO Blog/Proposal: Push model for reliable & scalable container logging
+ 3 Issues:
+ - Missing log
+ - Can't scale log agent for heavy env
+ - Can't support SLA
+** TODO Blog/Proposal: Multi-cloud monitoring
+ - Firewall issue: Master agent can't pull from cross data center env
+ - Prometheus federation
+** TODO Blog/Proposal: Cloud cost analysis
+ - vrops product
+** TODO Blog/Proposal: Container security center
+ - Integrate existing security tool chains
+ - Lower the bar to understand the failures
+
