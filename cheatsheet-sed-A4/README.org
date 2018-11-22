@@ -185,3 +185,4 @@ sed '/Once upon a time/i\Chapter 1'
 
 # Add a line after a matching pattern:
 sed '/happily ever after/a\The end.'
+* TODO sed cheatsheet https://jimmysong.io/cheatsheets/sed         :noexport:

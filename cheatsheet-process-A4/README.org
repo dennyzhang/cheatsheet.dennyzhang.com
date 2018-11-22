@@ -26,13 +26,14 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 |-----------------------------+--------------------------------------------------|
 | Sort processes by ram usage | =ps -eo size,pid,user,pcpu,command --sort -rss=  |
 | Sort processes by cpu usage | =ps -eo size,pid,user,pcpu,command --sort -pcpu= |
-|                             | =pgrep <process_name>=                           |
+| Find process by name        | =pgrep <process_name>=                           |
+| List zombie processes       | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-process-A4/zombie-process.sh][zombie-process.sh]]                            |
 ** Debug process
-| Name | Comment                 |
-|------+-------------------------|
-|      | =strace -p <pid>=       |
-|      | =lsof -p <pid>=         |
-|      | =pstree -A -n -p <pid>= |
+| Name                                  | Comment                 |
+|---------------------------------------+-------------------------|
+| Trace system calls and signals by pid | =strace -p <pid>=       |
+| List all file handlers by pid         | =lsof -p <pid>=         |
+| Display process tree by pid           | =pstree -A -n -p <pid>= |
 ** Kill process
 | Name                                  | Comment                                            |
 |---------------------------------------+----------------------------------------------------|

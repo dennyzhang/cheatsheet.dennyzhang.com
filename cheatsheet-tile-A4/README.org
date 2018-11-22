@@ -27,12 +27,17 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | [[https://github.com/pivotal-cf/om][om]]                                   | a command-line API client for Pivotal Operations Manager                                     |
 | omcli                                | alias omcli="om -t https://30.0.0.5 -u admin -p <password> -k"                               |
 | List all available products          | =omcli available-products=, or =omcli curl -p /api/v0/available_products=                    |
+| List all deployed products           | =omcli deployed-products=                                                                    |
 | Upload tile from cli                 | =omcli upload-product -p </path/myproduct.pivotal>=                                          |
 | Upload stemcell from cli             | =omcli upload-stemcell -s </path/stemcell.tgz>=                                              |
 | List all properties for a deployment | =bosh deployments=, =omcli curl -p /api/v0/staged/products/${bosh_deployment}/properties -s= |
 | List all installed tiles             | =omcli curl -p /api/v0/installations=                                                        |
 | List products                        | =omcli curl -s -p /api/v0/staged/products=                                                   |
-| Delete product                       | =omcli -k delete-product -p pivotal-container-service -v 1.3.8=                              |
+** Tile cleanup
+| Name                       | Summary                                                                 |
+|----------------------------+-------------------------------------------------------------------------|
+| Delete all unused products | =omcli delete-unused-products=                                          |
+| Delete product             | =omcli -k delete-product -p pivotal-container-service -v 1.3.0-build.3= |
 ** Get bosh/pks tile credential from om
 | Name                                        | Summary                                                                                                                |
 |---------------------------------------------+------------------------------------------------------------------------------------------------------------------------|
@@ -118,7 +123,7 @@ Commands:
   installation-log                output installation logs
   installations                   list recent installation events
   pending-changes                 lists pending changes
-  regenerate-certificates         deletes all non-configurable certificates in Ops Manager so they will automatically be regenerated on the next apply-changes
+  regenerate-certificates         deletes all non-configurable certificates in Ops Manager...
   revert-staged-changes           reverts staged changes on the Ops Manager targeted
   set-errand-state                sets state for a product's errand
   stage-product                   stages a given product in the Ops Manager targeted
@@ -341,4 +346,5 @@ Succeeded
 #+END_EXAMPLE
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO bosh vm type
+* TODO bosh vm type                                                :noexport:
+* TODO [#A] om cli can't delete product, until we delete it from opsmanager :noexport:
