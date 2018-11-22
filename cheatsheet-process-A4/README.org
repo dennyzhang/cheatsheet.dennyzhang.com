@@ -29,28 +29,27 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 | Find process by name        | =pgrep <process_name>=                           |
 | List zombie processes       | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-process-A4/zombie-process.sh][zombie-process.sh]]                            |
 ** Debug process
-| Name                                  | Comment                 |
-|---------------------------------------+-------------------------|
-| Trace system calls and signals by pid | =strace -p <pid>=       |
-| List all file handlers by pid         | =lsof -p <pid>=         |
-| Display process tree by pid           | =pstree -A -n -p <pid>= |
+| Name                                   | Comment                  |
+|----------------------------------------+--------------------------|
+| Trace system calls and signals by pid  | =strace -p <pid>=        |
+| List all file handlers by pid          | =lsof -p <pid>=          |
+| Display process tree by pid            | =pstree -A -n -p <pid>=  |
+| Get listening port for a given process | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-process-A4/proc-listen-ports.sh][proc-listen-ports.sh]] |
 ** Kill process
 | Name                                  | Comment                                            |
 |---------------------------------------+----------------------------------------------------|
 | Kill process gracefully               | =kill <pid>=, =kill -15 <pid>=, =kill -TERM <pid>= |
-| Kill process forcefully               | =kill -9 <pid>=, =kill -KILL <pid>=                |
+| Kill process by force                 | =kill -9 <pid>=, =kill -KILL <pid>=                |
 | kill process by its full process name | =pkill <processname>=                              |
 | kill process by it's partial name     | =pkill -f <process-string>=                        |
 | Kill process by process name          | =killall <process_name>=                           |
 ** Explore /proc filesystem
-| Name                                   | Comment                  |
-|----------------------------------------+--------------------------|
-| Check process start command            | =cat /proc/$pid/cmdline= |
-| Check process environment variables    | =cat /proc/$pid/environ= |
-| Check process ulimits setting          | =cat /proc/$pid/limits=  |
-| Get current IP from /proc              | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-process-A4/proc-get-ip.sh][proc-get-ip.sh]]       |
-| Get process command line from /proc    |                          |
-| Get listening port for a given process |                          |
+| Name                                | Comment                  |
+|-------------------------------------+--------------------------|
+| Check process start command         | =cat /proc/$pid/cmdline= |
+| Check process environment variables | =cat /proc/$pid/environ= |
+| Check process ulimits setting       | =cat /proc/$pid/limits=  |
+| Get current IP from /proc           | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-process-A4/proc-get-ip.sh][proc-get-ip.sh]]       |
 ** More Resources
 License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
