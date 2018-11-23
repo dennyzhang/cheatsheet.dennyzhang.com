@@ -7472,3 +7472,4 @@ https://developer.couchbase.com/documentation/server/4.5/connectors/elasticsearc
 https://developer.couchbase.com/documentation/server/current/architecture/high-availability-replication-architecture.html
 https://developer.couchbase.com/documentation/server/current/architecture/architecture-intro.html
 https://developer.couchbase.com/documentation/server/current/architecture/core-data-access-buckets.html
+* TODO [#A] cheatsheet https://www.expeditedssl.com/aws-in-plain-english :noexport:
