@@ -17,7 +17,7 @@ File me [[https://github.com/DennyZhang/cheatsheet.dennyzhang.com/issues][Issues
 
 See more cheatsheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-[[cheatsheet.dennyzhang.com][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/denny-cheatsheet.png]]
+[[https://cheatsheet.dennyzhang.com/][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/denny_cheatsheet.jpg]]
 
 ** Common Actions
 - git push all local cheatsheet updates: =make git-push=
