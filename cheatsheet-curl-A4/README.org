@@ -175,3 +175,4 @@ curl httpbin.org/ip
 
 # Get only the HTTP status code
 curl -o /dev/null -w '%{http_code}\n' -s -I URL
+* TODO curl cheatsheet: https://jimmysong.io/cheatsheets/curl      :noexport:

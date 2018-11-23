@@ -21,23 +21,25 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-tile-A4][this repo]].
-** om command line
+** om - Basic
 | Name                                 | Command                                                                                      |
 |--------------------------------------+----------------------------------------------------------------------------------------------|
 | [[https://github.com/pivotal-cf/om][om]]                                   | a command-line API client for Pivotal Operations Manager                                     |
 | omcli                                | alias omcli="om -t https://30.0.0.5 -u admin -p <password> -k"                               |
-| List all available products          | =omcli available-products=, or =omcli curl -p /api/v0/available_products=                    |
-| List all deployed products           | =omcli deployed-products=                                                                    |
-| Upload tile from cli                 | =omcli upload-product -p </path/myproduct.pivotal>=                                          |
 | Upload stemcell from cli             | =omcli upload-stemcell -s </path/stemcell.tgz>=                                              |
 | List all properties for a deployment | =bosh deployments=, =omcli curl -p /api/v0/staged/products/${bosh_deployment}/properties -s= |
 | List all installed tiles             | =omcli curl -p /api/v0/installations=                                                        |
-| List products                        | =omcli curl -s -p /api/v0/staged/products=                                                   |
-** Tile cleanup
-| Name                       | Summary                                                                 |
-|----------------------------+-------------------------------------------------------------------------|
-| Delete all unused products | =omcli delete-unused-products=                                          |
-| Delete product             | =omcli -k delete-product -p pivotal-container-service -v 1.3.0-build.3= |
+** om product
+| Name                        | Summary                                                                   |
+|-----------------------------+---------------------------------------------------------------------------|
+| Upload tile from cli        | =omcli upload-product -p </path/myproduct.pivotal>=                       |
+| List products               | =omcli curl -s -p /api/v0/staged/products=                                |
+| List all available products | =omcli available-products=, or =omcli curl -p /api/v0/available_products= |
+| List all deployed products  | =omcli deployed-products=                                                 |
+| Delete all unused products  | =omcli delete-unused-products=                                            |
+| Delete product              | =omcli -k delete-product -p pivotal-container-service -v 1.3.0-build.3=   |
+| Unstage product             | =omcli -k unstage-product -p pivotal-container-service=                   |
+| Stage product               | =omcli -k stage-product -p pivotal-container-service -v 1.3.0-build.3=    |
 ** Get bosh/pks tile credential from om
 | Name                                        | Summary                                                                                                                |
 |---------------------------------------------+------------------------------------------------------------------------------------------------------------------------|
@@ -195,6 +197,29 @@ time ./create-tile.sh
 
 time omcli upload-product -p /home/denny/pks-tile/out/pivotal-container-service-1.2.9-build.1.pivotal
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] configure product                                      :noexport:
+#+BEGIN_EXAMPLE
+  def self.configure_product(properties)
+    cmd = 'configure-product --product-name="pivotal-container-service" '
+    cmd += format("--product-properties='%s' ", JSON.generate(properties))
+
+    om_command(cmd)
+  end
+
+  def self.configured_networks
+    cmd = "curl -p '/api/v0/staged/products/#{guid}/networks_and_azs'"
+
+    JSON.parse(om_command(cmd))
+  end
+
+  def self.configure_product_network(properties)
+    cmd = 'configure-product --product-name="pivotal-container-service" '
+    cmd += format("--product-network='%s' ", JSON.generate(properties))
+
+    om_command(cmd)
+  end
+#+END_EXAMPLE
+
 * TODO Improvements/Wishlist for cloudfoundry Tile                 :noexport:
 ** Use container, instead of VM
 ** Small pack size
@@ -321,29 +346,6 @@ Succeeded
         version: $( release "pks-vrops" | select "version" )
         jobs:
         - vrops-ops-files
-
-* TODO configure tile                                              :noexport:
-#+BEGIN_EXAMPLE
-  def self.configure_product(properties)
-    cmd = 'configure-product --product-name="pivotal-container-service" '
-    cmd += format("--product-properties='%s' ", JSON.generate(properties))
-
-    om_command(cmd)
-  end
-
-  def self.configured_networks
-    cmd = "curl -p '/api/v0/staged/products/#{guid}/networks_and_azs'"
-
-    JSON.parse(om_command(cmd))
-  end
-
-  def self.configure_product_network(properties)
-    cmd = 'configure-product --product-name="pivotal-container-service" '
-    cmd += format("--product-network='%s' ", JSON.generate(properties))
-
-    om_command(cmd)
-  end
-#+END_EXAMPLE
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO bosh vm type                                                :noexport:

@@ -17,6 +17,8 @@ File me [[https://github.com/DennyZhang/cheatsheet.dennyzhang.com/issues][Issues
 
 See more cheatsheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
+[[cheatsheet.dennyzhang.com][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/denny-cheatsheet.png]]
+
 ** Common Actions
 - git push all local cheatsheet updates: =make git-push=
 - Pull changes for all remote cheatsheet git repos: =make git-pull=
@@ -343,7 +345,7 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO cheatsheet link highlight: https://cheatsheet.dennyzhang.com/cheatsheet-gcp-a4 :noexport:
 * TODO [#A] github markdown = = don't quite ": https://github.com/dennyzhang/cheatsheet-shell-A4#11-basic :noexport:
 * TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-a4 :noexport:
-* TODO [#A] blog link: avoid going to an external link: [[url-external: doesn't work for org-ruby: https://cheatsheet.dennyzhang.com/cheatsheet-git
+* TODO [#A] blog link: avoid going to an external link: [[url-external: doesn't work for org-ruby: https://cheatsheet.dennyzhang.com/cheatsheet-git :noexport:
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO github: try to fold things: https://github.com/LeCoupa/awesome-cheatsheets :noexport:
@@ -382,6 +384,7 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO systemctl & systemd: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO asterisk: /Users/zdenny/cheat/cheat/cheatsheets/asterisk    :noexport:
 * TODO shred: /Users/zdenny/cheat/cheat/cheatsheets/shred          :noexport:
+* TODO vagrant cheatsheet: https://jimmysong.io/cheatsheets/vagrant :noexport:
 * TODO ncdu: /Users/zdenny/cheat/cheat/cheatsheets/                :noexport:
 * TODO nkf: /Users/zdenny/cheat/cheat/cheatsheets/                 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -390,5 +393,8 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO du & dd && df & lsblk & lvm & mdadm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO [#A] avoid underline: https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO html cheatsheet: https://jimmysong.io/cheatsheets/html      :noexport:
+* TODO nginx cheatsheet: https://jimmysong.io/cheatsheets/nginx    :noexport:
 * TODO css cheatsheet: https://jimmysong.io/cheatsheets/cheatsheet-styles :noexport:
 * TODO yaml cheatsheet: https://jimmysong.io/cheatsheets/yaml      :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
