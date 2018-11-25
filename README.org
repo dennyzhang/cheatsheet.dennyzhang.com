@@ -342,12 +342,10 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO [#A] org-mode seperator use a different one                 :noexport:
 * TODO Automatically generate picture from text                    :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO cheatsheet link highlight: https://cheatsheet.dennyzhang.com/cheatsheet-gcp-a4 :noexport:
 * TODO [#A] github markdown = = don't quite ": https://github.com/dennyzhang/cheatsheet-shell-A4#11-basic :noexport:
-* TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-a4 :noexport:
 * TODO [#A] blog link: avoid going to an external link: [[url-external: doesn't work for org-ruby: https://cheatsheet.dennyzhang.com/cheatsheet-git :noexport:
 
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-a4 :noexport:
 * TODO github: try to fold things: https://github.com/LeCoupa/awesome-cheatsheets :noexport:
 * TODO [#A] github org-ruby fails to generate TOC: https://github.com/dennyzhang/challenges-k8s-istio :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -398,3 +396,4 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO css cheatsheet: https://jimmysong.io/cheatsheets/cheatsheet-styles :noexport:
 * TODO yaml cheatsheet: https://jimmysong.io/cheatsheets/yaml      :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cheatsheet link highlight: https://cheatsheet.dennyzhang.com/cheatsheet-gcp-a4 :noexport:
