@@ -359,10 +359,8 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-dns-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-docker-A4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO cheatsheet column: set the minimium width: https://github.com/dennyzhang/cheatsheet-kubernetes-A4 :noexport:
 
-* TODO [#A] PR: add my yaml examples to https://github.com/kubernetes/examples :noexport:
 * TODO cheatsheet: helm                                            :noexport:
 | Component | Role   | Location                            |
 |-----------+--------+-------------------------------------|
@@ -397,3 +395,11 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO yaml cheatsheet: https://jimmysong.io/cheatsheets/yaml      :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO cheatsheet link highlight: https://cheatsheet.dennyzhang.com/cheatsheet-gcp-a4 :noexport:
+* TODO publish cheatsheet: azure                                   :noexport:
+* TODO publish cheatsheet: digitalocean                            :noexport:
+* TODO publish amazon mongodb                                      :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cheatsheet: wordpress                                       :noexport:
+* TODO [#A] linux cheatsheet: file, process, memory, networking, device, disk :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Create my own cheatsheet.dennyzhang.com link, instead of the general one

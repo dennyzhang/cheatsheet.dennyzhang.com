@@ -1,6 +1,6 @@
-* CheatSheet: SDN & NSX-T                                     :VMware:
+* CheatSheet: Linux Networking                                       :Linux:
 :PROPERTIES:
-:type:     cloud, vmware
+:type:     linux, networking
 :export_file_name: cheatsheet-networking-A4.pdf
 :END:
 
@@ -16,107 +16,60 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-networking-A4/cheatsheet-networking-A4.pdf][cheatsheet-networking-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/kubernetes/][kubernetes]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-networking-A4/cheatsheet-networking-A4.pdf][cheatsheet-networking-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/linux/][linux]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][CheatSheet: Cloud Virtualization]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
-** SDN
-*** SDN Basic Concepts
-| Name                             | Command                                                                                    |
-|----------------------------------+--------------------------------------------------------------------------------------------|
-| [[https://en.wikipedia.org/wiki/Software-defined_networking][SDN(Software-defined networking)]] |                                                                                            |
-| NAT(Network address translation) | Allow you to hide the IP addresses.                                                        |
-| DNAT                             | For ingress traffic, hide your server IP                                                   |
-| SNAT                             | For egress traffic, hide your server IP                                                    |
-| [[https://en.wikipedia.org/wiki/Virtual_LAN][VLAN (Virtual LAN)]]               | Group hosts together even if not directly connected to same network switch                 |
-| [[https://searchsdn.techtarget.com/definition/east-west-traffic][East/West traffic]]                | Traffic within a data center. Usually depict local area network (LAN) traffic horizontally |
-| [[https://networkengineering.stackexchange.com/questions/18873/what-is-the-meaning-origin-of-the-terms-north-south-and-east-west-traffic][North/South traffic]]              | Traffic coming into and out of the network into Internet space                             |
-| [[https://en.wikipedia.org/wiki/Border_Gateway_Protocol][BGP(Border Gateway Protocol)]]     | Among autonomous systems (AS) *on the Internet*. eBGP vs iBGP                              |
-| Overlay networks                 |                                                                                            |
-| vnet(a virtual network)          | allows instances to migrate among compute nodes without changing networking conf           |
-| Floating IP Pool                 |                                                                                            |
-
-*** SDN More Concepts
-| Name                                      | Command                                                               |
-|-------------------------------------------+-----------------------------------------------------------------------|
-| [[https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm][VNIC (Virtualized Network Interface Card)]] | A virtual NIC based on a physical one, then added to a network bridge |
-| [[https://en.wikipedia.org/wiki/Virtual_network_interface][VIF (Virtual Network Interface)]]           |                                                                       |
-| [[http://www.definethecloud.net/vxlan-deep-dive/][VTEP (VXLAN Tunnel Endpoint)]]              |                                                                       |
-| [[https://en.wikipedia.org/wiki/Link_aggregation][LAG(Link aggregation)]]                     |                                                                       |
-| Transport Network                         |                                                                       |
-| BFD(Bidirectional Forwarding Detection)   | BFD can be used for BGP peers but also for static routes              |
-| DFW(Distributed Firewall)                 |                                                                       |
-| [[https://en.wikipedia.org/wiki/Network_function_virtualization][NFV(Network function virtualization)]]      |                                                                       |
-| L2 networking                             | L2 bridge                                                             |
-| L3 networking                             |                                                                       |
-| L7 networking                             |                                                                       |
-| GRE(Generic Routing Encapsulation)        |                                                                       |
-
-*** Switch - L2 layer
- | Name                           | Command                                                                             |
- |--------------------------------+-------------------------------------------------------------------------------------|
- | [[https://en.wikipedia.org/wiki/Virtual_LAN][VLAN (Virtual LAN)]]             | Group hosts together even if they are not directly connected to same network switch |
- | [[https://en.wikipedia.org/wiki/Virtual_Extensible_LAN][VXLAN (Virtual Extensible LAN)]] |                                                                                     |
- | Geneve                         |                                                                                     |
- | Logical Switch                 | Spin up isolated logical L2 networks                                                |
- | OVS (Open vSwitch)             |                                                                                     |
- | VNI(Virtual Network Instance)  |                                                                                     |
- | TEP table                      |                                                                                     |
-
-[[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/open-vswitch.png]]
-
-*** Router - L3 layer
- | Name                           | Command                                                                      |
- |--------------------------------+------------------------------------------------------------------------------|
- | LR(Logical Router)             | Create multiple routing domains with a single router. It composes: DR and SR |
- | Two-tier routing               | T0-router(physical routing infra), T1-router(per tenant first hop router)    |
- | Uplink                         | Used to connect to physical infrastructure                                   |
- | Router Link                    | Used to interconnect Tier0 and Tier1 Logical routers                         |
- | Downlink                       | Used to connect logical switches                                             |
- | Static Routing/Dynamic Routing |                                                                              |
- | DR(Distributed Router)         |                                                                              |
- | SR(Service Router)             |                                                                              |
- | LRP                            |                                                                              |
-
- [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/two_routers.png]]
-
-** VMWare NSX-T
-[[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-networking-A4/nsxt-topology-nat.png]]
-
-*** NSX-T Components
-| Name             | Command                                                                             |
-|------------------+-------------------------------------------------------------------------------------|
-| NSX Manager node | hosts API services.                                                                 |
-| NSX Controller   | host the central control plane cluster daemons.                                     |
-| NSX-T Edge       | Provides routing services and connectivity to networks external to NSX-T deployment |
-
-*** NSX-T In PKS
-| NSX-T Component       | Summary                                                                                  |
-|-----------------------+------------------------------------------------------------------------------------------|
-| NSX Manager Appliance | 1 instance; 16 GB RAM per Instance; 4 vCPU per instance; 140GB Disk per Instance         |
-| NSX Controllers       | 3 instance; 16 GB RAM per Instance; 4 vCPU per instance; 120GB Disk per Instance         |
-| NSX-T Edge            | 1 up to 8 instance; 16 GB RAM per Instance; 8 vCPU per instance; 120GB Disk per Instance |
-
-*** NSX-T Concepts
-| Name                              | Command                                                               |
-|-----------------------------------+-----------------------------------------------------------------------|
-| NCP                               | NSX-T container plugin CNI. [[https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.ncp_kubernetes.doc/GUID-52A92986-0FDF-43A5-A7BB-C037889F7559.html][Link: Overview of NSX-T Container Plug-in]] |
-| N-VDS                             | NSX Virtual Distributed Switch                                        |
-| LCP(Local Control Panel)          |                                                                       |
-| CCP(Central Control Panel)        |                                                                       |
-| ASGs(Application Security Groups) |                                                                       |
-| Link                              | [[https://www.vmware.com/products.html][VMware Products]], [[https://docs.vmware.com/en/VMware-NSX-T/2.2/com.vmware.nsxt.ncp_kubernetes.doc/GUID-FB641321-319D-41DC-9D16-37D6BA0BC0DE.html][NSX-T Container Plug-in for Kubernetes]]               |
-| Transport nodes                   | host local control plane daemons and forwarding engines.              |
-| Plane agent                       | Every node hosts a management plane agent.                            |
-
-*** NSX-T Commands
-| Name                    | Command                                                        |
-|-------------------------+----------------------------------------------------------------|
-| nsxcli in PKS           | =/var/vcap/jobs/ncp/bin/nsxcli -c get ncp-master status=       |
-| ncp log                 | =/var/vcap/sys/log/ncp/=                                       |
-| NSX-T networking in PKS | https://docs.pivotal.io/runtimes/pks/1-1/nsxt-prepare-env.html |
-
+** Linux Networking
+| Name                                            | Comment                        |
+|-------------------------------------------------+--------------------------------|
+| Scan tcp listening ports for a given server     | =sudo nmap -O 192.168.1.103=   |
+| Check dns naming                                | =sudo nslookup www.google.com= |
+| Print routing table                             | =netstat -rn=                  |
+| List all the router hops                        | =traceroute=                   |
+| DNS lookup utility                              | =host www.google.com=          |
+| Get detail report for a given NIC               | =ethtool -S eth0=              |
+| Check system configuration                      | =sysctl -a=                    |
+| Linux mapping from well-known services to ports | =cat /etc/services=            |
+|                                                 | =netstat -i=                   |
+|                                                 | =arp -a=                       |
+** Networking testing
+| Name                     | Comment                                       |
+|--------------------------+-----------------------------------------------|
+| [[http://bencane.com/2012/07/16/tc-adding-simulated-network-latency-to-your-linux-server/][tc]]                       | Adding simulated network latency              |
+| Add 97ms latency to eth0 | =tc qdisc add dev eth0 root netem delay 97ms= |
+| Check status             | =tc -s qdisc=                                 |
+| Remove the rule          | =tc qdisc del dev eth0 root netem=            |
+| Test your network speed  | http://www.att.com/speedtest/                 |
+** TCP sockets workflow
+| Name                                                      | Comment                        |
+|-----------------------------------------------------------+--------------------------------|
+| create a new anonymous socket                             | =s = socket(<parameters>)=     |
+| Bind tcp port to a socket                                 | =bind(s, <local IP:port>)=     |
+| Create a socket to remote endpoint                        | =connect(s, <remote IP:port>)= |
+| Create local socket and make it eligible to take requests | =listen(s, ...)=               |
+| Accept client requests                                    | =s2 = accept(s)=               |
+| Read n bytes from a socket                                | =n = read(s, buffer, n)=       |
+| Write n bytes to a socket                                 | =n = write(s, buffer, n)=      |
+| Close a socket                                            | =close(s)=                     |
+| Shutdown stdin and stdout/stderr for a socket             | =shutdown(s, <side>)=          |
+| Read socket options                                       | =getsockopt(s, ..)=            |
+| Change socket options                                     | =setsockopt(s, ..)=            |
+** TCP
+| Name       | Comment            |
+|------------+--------------------|
+| Tcp manual | =man 7 tcp=        |
+| Reference  | [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]] |
+** HTTP
+| Name      | Comment         |
+|-----------+-----------------|
+| Reference | [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][Curl CheatSheet]] |
+** References
+| Name      | Comment                                             |
+|-----------+-----------------------------------------------------|
+| RFC793    | http://www.ietf.org/rfc/rfc793.txt                  |
+| Reference | [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][Curl CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-ssh-A4][SSH CheatSheet]] |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -127,8 +80,8 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
+#+DESCRIPTION:
+#+KEYWORDS:
 #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
 #+LaTeX_CLASS_OPTIONS: [8pt]
 #+LATEX_HEADER: \usepackage[english]{babel}
@@ -148,53 +101,2028 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+EXPORT_EXCLUDE_TAGS: exclude noexport
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
-* TODO Questions                                                   :noexport:
-** TODO VSS vs VDS vs N-VDS                                        :noexport:
-** TODO ncp for networksecurity                                    :noexport:
+#+LINK_UP:
+#+LINK_HOME:
+* [#B] Linux http                                        :noexport:IMPORTANT:
+** [#B] [question] When users close a loading web page, what will be sent to the web server?
+** [#A] [question] 确定不同浏览器对http Keep-Alive支持的行为,以通过keep alive来提供高性能的web server
+** [question] 如下各种错误,web server是如何实现的: between 502(bad gateway) , 504 (gateway timeout) and 404 (not found)
+** [question] HTTP connection的值为close时,说明操作完成之后需关闭这条持久连接.这个功能是如何转化成TCP协议行为的
+** [#B] [question] http Pragma, Cache-Control, ETag, Content-Disposition, Content-type
+** [question] 如果客户端Accept-Charset在服务器端不支持, 是如何做转化的？
+** [question] 通过curl模拟http trace/http options请求
+** # --8<-------------------------- separator ------------------------>8--
+** [question] 当客户端设置了Accpet, 那么服务器端针对一个特定的URI, 需要有多种展示？
+** [question] PHP中$_POST与$_REQUEST的区别
+** [#A] [question] http Keep-alive and Pipelining
+#+begin_example
+Even in an optimized case, a full one-way route between the client and
+server can take 10-50ms. Now multiply that three times to complete the TCP handshake, and we're already looking at a 150ms ceiling!
+
+1. Keep-alive allows us to reuse the same connection between different requests and amortize this cost.
+2. While keep-alive helps us amortize the cost of creating a TCP connection, pipelining allows us to break the strict "send a request,
+wait for response" model.
+
+Instead, we can dispatch multiple requests, in parallel, over the same connection, without waiting for a
+response in serial fashion.
+
+let's consider the following scenario: request 1
+and request 2 are pipelined, request 1 takes 1.5s to render on the server, whereas request 2 takes 1s. What is the total runtime?
+
+Of course, the answer depends on the amount of data sent back, but the lower bound is actually 1.5s! Because the requests are
+pipelined, both request 1 and request 2 can be processed by the server in parallel. Hence, request 2 completes before request 1,
+but is sent immediately after request 1 is complete.
+
+# --8<-------------------------- §separator§ ------------------------>8--
+Pipelining is only supported in HTTP/1.1, not in 1.0.
+
+http://en.wikipedia.org/wiki/HTTP_pipelining\\
+HTTP pipelining - Wikipedia, the free encyclopedia
+http://www.blaze.io/mobile/http-pipelining-big-in-mobile/\\
+HTTP Pipelining &#8211; Big in Mobile | Blaze.io
+#+end_example
+* [#A] Linux network -- tcp/ip                            :noexport:Personal:
+** [#B] [question] For tcp exceptions, What's the difference for TCP reset and TCP close
+** [question] TCP三次握手? 为什么是三次? 为什么关闭连接要来四次?
+** [question] TCP的Active和Passive分别是什么意思
+** [question] TCP的KeepAlive参数
+** # --8<-------------------------- separator ------------------------>8--
+** [question] When received a TCP RST, what the client will do?
+- recive buffer will be erased
+** [question] tcp reuseaddr是什么意思
+** [question] tcp server是如何实现一个进程同时应答多个请求的
+** [question] 当tcp长链断开时,应用层何时才会感知得到
+** [question] 服务器能接受的的最大TCP长连接数都和什么有关?
+** [question] 客户端最多能发起的TCP长连接数都和什么有关?
+** # --8<-------------------------- separator ------------------------>8--
+** [question] TCP在tcp close时,会做什么
+** [question] socket bind时,reuseaddr是什么意思
+如果[question]端口忙,但 TCP 状态位于 TIME_WAIT ,可以重用端口.
+htt[question]www.cnblogs.com/zhenjing/archive/2011/04/20/2021791.html\\
+#+b[question]_example
+Q: [question] TCP/SOCK_STREAM 服务程序时, SO_REUSEADDR 到底什么意思？
+   [question]
+A: [question]套接字选项通知内核,如果端口忙,但 TCP 状态位于 TIME_WAIT ,可以
+重用[question]端口.如果端口忙,而 TCP 状态位于其他状态,重用端口时依旧得到一个错
+误信[question]息,指明 " 地址已经使用中 " . 如果你的服务程序停止后想立即重启 ,
+而新[question]套接字依旧使用同一端口,此时 SO_REUSEADDR 选项非常有用.必须意识到,
+此时[question]任何非期 望数据到达,都可能导致服务程序反应混乱,不过这只是一种可能,
+事实[question]上很不 可能.
+   [question]
+一个[question]套接字由相关五元组构成,协议 `本地地址`本地端口`远程地址`远程端
+口.[question] SO_REUSEADDR 仅仅表示可以重用本地本地地址`本地端口 ,整个相关五元
+组 [question]唯一确定的.所以,重启后的服务程序有可能收到非期望数据 .必须慎
+重使[question]用 SO_REUSEADDR 选项.
+#+e[question]xample
+** [question] Pipe与Socket的区别
+htt[question]www.cnblogs.com/zhenjing/archive/2011/04/20/2021772.html\\
+#+b[question]_example
+套接[question]口就好像UNIX中pipe（管道）,通信双方进程通过它来与对方发送或接受数
+据.[question]如同pipe用文件描述字表示一样,socket也用文件描述字表示,也称为套接
+口描[question]述字,或简称套接字.在网络编程时要用套接字表示通信的对方.但两者不
+同的[question]是,pipe的通信双方在一台机器上,共用一个pipe,双方使用不同的文件描
+述字[question];而socket通信双方一般在不同机器上,因而通信双方均有一socket和对应
+的套[question]接字负责通信,当然他们之间必须连接起来.
+#+e[question]xample
+** TCP的半关闭: TCP提供了连接的一端在结束它的发送后还能接收来自另一端数据的能力
+即我已经完成了数据传送,因此发送一个文件结束(FIN)给另一端,但我还想接收另一端发来的数据,直到它给我发来文件结束(FIN)
+** TCP的同时关闭
+** TCP的主动关闭: 经过若干状态变迁后,会进入TIME_WAIT状态,等待一段时间后会变成CLOSE的状态
+FIN_WAIT_1, FIN_WAIT_2
+CLOSING,
+TIME_WAIT
+** DONE 熟悉TFO(tcp fast open): google提交的rfc, 是对tcp的一个增强,简而言之就是在3次握手的时候也用来交换数据.
+   CLOSED: [2012-09-23 日 21:35]
+   http://www.pagefault.info/?p=282\\
+** useful link
+http://www.cnblogs.com/zhenjing/archive/2011/04/20/2021791.html\\
+** basic use
+#+begin_example
+影响TCP性能的协议因素:（1）TCP连接建立握手（2）TCP慢启动拥塞控制;（3）
+数据聚集的Nagle算法;（4）用于捎带确认的TCP延迟确认机制.（5）
+TIME_WAIT时延和端口耗尽.1`2可通过长连接避免,3可使用TCP_NODELAY避免,
+4可通过调整内核栈参数避免,但调整需谨慎,5通常只在性能测试环境出现.
+#+end_example
+*** [#A] TCP的半关闭                                              :IMPORTANT:
+- 关闭连接的输出信息总是很安全的.
+  连接另一端的对等实体会从其缓冲区中读出所有数据之后收到一条通知,说明流结束了.这样它就知道你将连接关闭了.
+- 关闭连接的输入信息是比较危险的
+  除非你知道另一端不打算再发送其他数据了
+  如果另一端向你已关闭的输入信息发送数据,OS会向另一端机器回送一条TCP RST的报文
+*** TCP slow start
+#+begin_example
+TCP数据传输的性能还取决于TCP连接的使用期(age).TCP连接会随着时间进行自
+我"调谐",起初会限制连接的最大速度,如果数据成功传输,会随着时间的推移
+提高传输的速度.这种调谐被称为TCP慢启动(slow start),用于防止internet的
+突然过载和拥塞.
+
+TCP慢启动限制了一个TCP端点在任意时刻可以传输的分组数.简单来说,每成功
+接收一个分组,发送端就有了发送另外两个分组的权限.如果某个HTTP事务有大
+量数据要发送,是不能一次将所有分组都发送出去的.必须发送一个分组,等待
+确认;然后可以发送两个分组.第一个分组都必须被确认,这样就可以发送四个
+分组了,以此类推.这种方式被称为"打开拥塞窗口"
+#+end_example
+** DONE 已完结
+*** TCP Connection State Diagram
+  http://www.ietf.org/rfc/rfc793.txt\\
+- TCB: Transmission Control Block
+#+begin_example
+                              +---------+ ---------\      active OPEN
+                              |  CLOSED |            \    -----------
+                              +---------+<---------\   \   create TCB
+                                |     ^              \   \  snd SYN
+                   passive OPEN |     |   CLOSE        \   \
+                   ------------ |     | ----------       \   \
+                    create TCB  |     | delete TCB         \   \
+                                V     |                      \   \
+                              +---------+            CLOSE    |    \
+                              |  LISTEN |          ---------- |     |
+                              +---------+          delete TCB |     |
+                   rcv SYN      |     |     SEND              |     |
+                  -----------   |     |    -------            |     V
+ +---------+      snd SYN,ACK  /       \   snd SYN          +---------+
+ |         |<-----------------           ------------------>|         |
+ |   SYN   |                    rcv SYN                     |   SYN   |
+ |   RCVD  |<-----------------------------------------------|   SENT  |
+ |         |                    snd ACK                     |         |
+ |         |------------------           -------------------|         |
+ +---------+   rcv ACK of SYN  \       /  rcv SYN,ACK       +---------+
+   |           --------------   |     |   -----------
+   |                  x         |     |     snd ACK
+   |                            V     V
+   |  CLOSE                   +---------+
+   | -------                  |  ESTAB  |
+   | snd FIN                  +---------+
+   |                   CLOSE    |     |    rcv FIN
+   V                  -------   |     |    -------
+ +---------+          snd FIN  /       \   snd ACK          +---------+
+ |  FIN    |<-----------------           ------------------>|  CLOSE  |
+ | WAIT-1  |------------------                              |   WAIT  |
+ +---------+          rcv FIN  \                            +---------+
+   | rcv ACK of FIN   -------   |                            CLOSE  |
+   | --------------   snd ACK   |                           ------- |
+   V        x                   V                           snd FIN V
+ +---------+                  +---------+                   +---------+
+ |FINWAIT-2|                  | CLOSING |                   | LAST-ACK|
+ +---------+                  +---------+                   +---------+
+   |                rcv ACK of FIN |                 rcv ACK of FIN |
+   |  rcv FIN       -------------- |    Timeout=2MSL -------------- |
+   |  -------              x       V    ------------        x       V
+    \ snd ACK                 +---------+delete TCB         +---------+
+     ------------------------>|TIME WAIT|------------------>| CLOSED  |
+                              +---------+                   +---------+
+
+                      TCP Connection State Diagram
+                               Figure 6.
+#+end_example
+**** TCP connection status list
+#+begin_example
+  A connection progresses through a series of states during its
+  lifetime.  The states are:  LISTEN, SYN-SENT, SYN-RECEIVED,
+  ESTABLISHED, FIN-WAIT-1, FIN-WAIT-2, CLOSE-WAIT, CLOSING, LAST-ACK,
+  TIME-WAIT, and the fictional state CLOSED.  CLOSED is fictional
+  because it represents the state when there is no TCB, and therefore,
+  no connection.  Briefly the meanings of the states are:
+
+    LISTEN - represents waiting for a connection request from any remote
+    TCP and port.
+
+    SYN-SENT - represents waiting for a matching connection request
+    after having sent a connection request.
+
+    SYN-RECEIVED - represents waiting for a confirming connection
+    request acknowledgment after having both received and sent a
+    connection request.
+
+    ESTABLISHED - represents an open connection, data received can be
+    delivered to the user.  The normal state for the data transfer phase
+    of the connection.
+
+    FIN-WAIT-1 - represents waiting for a connection termination request
+    from the remote TCP, or an acknowledgment of the connection
+    termination request previously sent.
+
+    FIN-WAIT-2 - represents waiting for a connection termination request
+    from the remote TCP.
+
+    CLOSE-WAIT - represents waiting for a connection termination request
+    from the local user.
+
+    CLOSING - represents waiting for a connection termination request
+    acknowledgment from the remote TCP.
+
+    LAST-ACK - represents waiting for an acknowledgment of the
+    connection termination request previously sent to the remote TCP
+    (which includes an acknowledgment of its connection termination
+    request).
+
+    TIME-WAIT - represents waiting for enough time to pass to be sure
+    the remote TCP received the acknowledgment of its connection
+    termination request.
+
+    CLOSED - represents no connection state at all.
+
+  A TCP connection progresses from one state to another in response to
+  events.  The events are the user calls, OPEN, SEND, RECEIVE, CLOSE,
+  ABORT, and STATUS; the incoming segments, particularly those
+  containing the SYN, ACK, RST and FIN flags; and timeouts.
+#+end_example
+*** TCP Header Format
+  http://www.ietf.org/rfc/rfc793.txt\\
+#+begin_example
+    0                   1                   2                   3
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |          Source Port          |       Destination Port        |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                        Sequence Number                        |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                    Acknowledgment Number                      |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |  Data |           |U|A|P|R|S|F|                               |
+   | Offset| Reserved  |R|C|S|S|Y|I|            Window             |
+   |       |           |G|K|H|T|N|N|                               |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |           Checksum            |         Urgent Pointer        |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                    Options                    |    Padding    |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                             data                              |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+                            TCP Header Format
+
+          Note that one tick mark represents one bit position.
+#+end_example
+*** TCP Closing a Connection
+   http://www.ietf.org/rfc/rfc793.txt\\
+#+begin_example
+A TCP will reliably deliver all buffers SENT before the connection was
+CLOSED so a user who expects no data in return need only wait to hear
+the connection was CLOSED successfully to know that all his data was
+received at the destination TCP.
+#+end_example
+**** three cases of TCP close
+***** The user initiates by telling the TCP to CLOSE the connection
+#+begin_example
+In this case, a FIN segment can be constructed and placed on the
+outgoing segment queue.  No further SENDs from the user will be
+accepted by the TCP, and it enters the FIN-WAIT-1 state.  RECEIVEs
+are allowed in this state.  All segments preceding and including FIN
+will be retransmitted until acknowledged.  When the other TCP has
+both acknowledged the FIN and sent a FIN of its own, the first TCP
+can ACK this FIN.  Note that a TCP receiving a FIN will ACK but not
+send its own FIN until its user has CLOSED the connection also.
+#+end_example
+****** Normal Close Sequence
+#+begin_example
+      TCP A                                                TCP B
+
+  1.  ESTABLISHED                                          ESTABLISHED
+
+  2.  (Close)
+      FIN-WAIT-1  --> <SEQ=100><ACK=300><CTL=FIN,ACK>  --> CLOSE-WAIT
+
+  3.  FIN-WAIT-2  <-- <SEQ=300><ACK=101><CTL=ACK>      <-- CLOSE-WAIT
+
+  4.                                                       (Close)
+      TIME-WAIT   <-- <SEQ=300><ACK=101><CTL=FIN,ACK>  <-- LAST-ACK
+
+  5.  TIME-WAIT   --> <SEQ=101><ACK=301><CTL=ACK>      --> CLOSED
+
+  6.  (2 MSL)
+      CLOSED
+
+                         Normal Close Sequence
+#+end_example
+***** The remote TCP initiates by sending a FIN control signal
+#+begin_example
+If an unsolicited FIN arrives from the network, the receiving TCP
+can ACK it and tell the user that the connection is closing.  The
+user will respond with a CLOSE, upon which the TCP can send a FIN to
+the other TCP after sending any remaining data.  The TCP then waits
+until its own FIN is acknowledged whereupon it deletes the
+connection.  If an ACK is not forthcoming, after the user timeout
+the connection is aborted and the user is told.
+#+end_example
+***** Both users CLOSE simultaneously
+#+begin_example
+A simultaneous CLOSE by users at both ends of a connection causes
+FIN segments to be exchanged.  When all segments preceding the FINs
+have been processed and acknowledged, each TCP can ACK the FIN it
+has received.  Both will, upon receiving these ACKs, delete the
+connection.
+#+end_example
+****** Simultaneous Close Sequence
+#+begin_example
+      TCP A                                                TCP B
+
+  1.  ESTABLISHED                                          ESTABLISHED
+
+  2.  (Close)                                              (Close)
+      FIN-WAIT-1  --> <SEQ=100><ACK=300><CTL=FIN,ACK>  ... FIN-WAIT-1
+                  <-- <SEQ=300><ACK=100><CTL=FIN,ACK>  <--
+                  ... <SEQ=100><ACK=300><CTL=FIN,ACK>  -->
+
+  3.  CLOSING     --> <SEQ=101><ACK=301><CTL=ACK>      ... CLOSING
+                  <-- <SEQ=301><ACK=101><CTL=ACK>      <--
+                  ... <SEQ=101><ACK=301><CTL=ACK>      -->
+
+  4.  TIME-WAIT                                            TIME-WAIT
+      (2 MSL)                                              (2 MSL)
+      CLOSED                                               CLOSED
+
+                      Simultaneous Close Sequence
+#+end_example
+*** tcp manual: man 7 tcp                                :IMPORTANT:noexport:
+#+begin_example
+TCP(7)                     Linux Programmer's Manual                    TCP(7)
+
+
+
+NAME
+       tcp - TCP protocol
+
+SYNOPSIS
+       #include <sys/socket.h>
+       #include <netinet/in.h>
+       #include <netinet/tcp.h>
+
+       tcp_socket = socket(AF_INET, SOCK_STREAM, 0);
+
+DESCRIPTION
+       This  is  an  implementation  of  the  TCP protocol defined in RFC 793,
+       RFC 1122 and RFC 2001 with the NewReno and SACK  extensions.   It  pro‐
+       vides  a  reliable, stream-oriented, full-duplex connection between two
+       sockets on top of ip(7), for both v4 and v6 versions.   TCP  guarantees
+       that the data arrives in order and retransmits lost packets.  It gener‐
+       ates and checks a per-packet checksum  to  catch  transmission  errors.
+       TCP does not preserve record boundaries.
+
+       A  newly  created  TCP socket has no remote or local address and is not
+       fully specified.  To create an outgoing TCP connection  use  connect(2)
+       to establish a connection to another TCP socket.  To receive new incom‐
+       ing connections, first bind(2) the socket to a local address  and  port
+       and  then  call  listen(2)  to put the socket into the listening state.
+       After that a new socket for each incoming connection  can  be  accepted
+       using  accept(2).   A socket which has had accept(2) or connect(2) suc‐
+       cessfully called on it is fully specified and may transmit data.   Data
+       cannot be transmitted on listening or not yet connected sockets.
+
+       Linux supports RFC 1323 TCP high performance extensions.  These include
+       Protection Against Wrapped Sequence Numbers (PAWS), Window Scaling  and
+       Timestamps.  Window scaling allows the use of large (> 64K) TCP windows
+       in order to support links with high latency or bandwidth.  To make  use
+       of them, the send and receive buffer sizes must be increased.  They can
+       be   set   globally   with    the    /proc/sys/net/ipv4/tcp_wmem    and
+       /proc/sys/net/ipv4/tcp_rmem  files,  or  on individual sockets by using
+       the SO_SNDBUF and SO_RCVBUF socket options with the setsockopt(2) call.
+
+       The maximum sizes for socket buffers declared  via  the  SO_SNDBUF  and
+       SO_RCVBUF    mechanisms    are   limited   by   the   values   in   the
+       /proc/sys/net/core/rmem_max  and   /proc/sys/net/core/wmem_max   files.
+       Note that TCP actually allocates twice the size of the buffer requested
+       in the setsockopt(2) call, and so a succeeding getsockopt(2) call  will
+       not  return  the  same size of buffer as requested in the setsockopt(2)
+       call.  TCP uses the extra space for administrative purposes and  inter‐
+       nal  kernel  structures,  and  the /proc file values reflect the larger
+       sizes compared to the actual TCP windows.  On  individual  connections,
+       the socket buffer size must be set prior to the listen(2) or connect(2)
+       calls in order to have it take effect.  See socket(7) for more informa‐
+       tion.
+
+       TCP  supports  urgent data.  Urgent data is used to signal the receiver
+       that some important message is part of the  data  stream  and  that  it
+       should  be  processed as soon as possible.  To send urgent data specify
+       the MSG_OOB option to send(2).  When urgent data is received, the  ker‐
+       nel sends a SIGURG signal to the process or process group that has been
+       set as the socket "owner" using the SIOCSPGRP or FIOSETOWN  ioctls  (or
+       the  POSIX.1-2001-specified  fcntl(2)  F_SETOWN  operation).   When the
+       SO_OOBINLINE socket option is enabled, urgent data is put into the nor‐
+       mal  data stream (a program can test for its location using the SIOCAT‐
+       MARK ioctl described below), otherwise it can be only received when the
+       MSG_OOB flag is set for recv(2) or recvmsg(2).
+
+       Linux  2.4  introduced  a number of changes for improved throughput and
+       scaling, as well as enhanced functionality.   Some  of  these  features
+       include  support for zero-copy sendfile(2), Explicit Congestion Notifi‐
+       cation, new management of TIME_WAIT sockets, keep-alive socket  options
+       and support for Duplicate SACK extensions.
+
+   Address Formats
+       TCP  is built on top of IP (see ip(7)).  The address formats defined by
+       ip(7) apply to TCP.  TCP only  supports  point-to-point  communication;
+       broadcasting and multicasting are not supported.
+
+   /proc interfaces
+       System-wide  TCP  parameter  settings  can  be accessed by files in the
+       directory /proc/sys/net/ipv4/.  In addition, most IP  /proc  interfaces
+       also  apply  to TCP; see ip(7).  Variables described as Boolean take an
+       integer value, with a nonzero value ("true") meaning  that  the  corre‐
+       sponding option is enabled, and a zero value ("false") meaning that the
+       option is disabled.
+
+       tcp_abc (Integer; default: 0; since Linux 2.6.15)
+              Control the Appropriate Byte Count (ABC), defined in  RFC  3465.
+              ABC  is  a  way  of increasing the congestion window (cwnd) more
+              slowly in response to partial acknowledgments.  Possible  values
+              are:
+
+              0  increase cwnd once per acknowledgment (no ABC)
+
+              1  increase cwnd once per acknowledgment of full sized segment
+
+              2  allow  increase  cwnd by two if acknowledgment is of two seg‐
+                 ments to compensate for delayed acknowledgments.
+
+       tcp_abort_on_overflow (Boolean; default: disabled; since Linux 2.4)
+              Enable resetting connections if the  listening  service  is  too
+              slow  and  unable  to keep up and accept them.  It means that if
+              overflow occurred due to a burst, the connection  will  recover.
+              Enable  this option only if you are really sure that the listen‐
+              ing  daemon  cannot  be  tuned  to  accept  connections  faster.
+              Enabling this option can harm the clients of your server.
+
+       tcp_adv_win_scale (integer; default: 2; since Linux 2.4)
+              Count   buffering   overhead  as  bytes/2^tcp_adv_win_scale,  if
+              tcp_adv_win_scale    is    greater    than    0;    or    bytes-
+              bytes/2^(-tcp_adv_win_scale),  if tcp_adv_win_scale is less than
+              or equal to zero.
+
+              The socket receive buffer space is shared between  the  applica‐
+              tion  and  kernel.   TCP maintains part of the buffer as the TCP
+              window, this is the size of the receive window advertised to the
+              other  end.   The rest of the space is used as the "application"
+              buffer, used to isolate the network from scheduling and applica‐
+              tion  latencies.   The  tcp_adv_win_scale  default  value  of  2
+              implies that the space used for the application  buffer  is  one
+              fourth that of the total.
+
+       tcp_allowed_congestion_control  (String; default: see text; since Linux
+       2.4.20)
+              Show/set the congestion control algorithm choices  available  to
+              unprivileged  processes  (see the description of the TCP_CONGES‐
+              TION socket option).  The list is a subset of  those  listed  in
+              tcp_available_congestion_control.   The  default  value for this
+              list is "reno" plus the default setting  of  tcp_congestion_con‐
+              trol.
+
+       tcp_available_congestion_control   (String;   read-only;   since  Linux
+       2.4.20)
+              Show a list of the congestion-control algorithms that are regis‐
+              tered.    This   list   is  a  limiting  set  for  the  list  in
+              tcp_allowed_congestion_control.  More  congestion-control  algo‐
+              rithms may be available as modules, but not loaded.
+
+       tcp_app_win (integer; default: 31; since Linux 2.4)
+              This  variable  defines  how  many  bytes  of the TCP window are
+              reserved for buffering overhead.
+
+              A maximum of (window/2^tcp_app_win, mss) bytes in the window are
+              reserved  for the application buffer.  A value of 0 implies that
+              no amount is reserved.
+
+       tcp_base_mss (Integer; default: 512; since Linux 2.6.17)
+              The initial value of search_low to be used by the  packetization
+              layer  Path  MTU  discovery  (MTU  probing).   If MTU probing is
+              enabled, this is the initial MSS used by the connection.
+
+       tcp_bic (Boolean; default: disabled; Linux 2.4.27/2.6.6 to 2.6.13)
+              Enable BIC TCP  congestion  control  algorithm.   BIC-TCP  is  a
+              sender-side only change that ensures a linear RTT fairness under
+              large windows while offering both scalability and  bounded  TCP-
+              friendliness.  The protocol combines two schemes called additive
+              increase and binary search increase.  When the congestion window
+              is  large, additive increase with a large increment ensures lin‐
+              ear RTT fairness as well as good scalability.  Under small  con‐
+              gestion  windows,  binary search increase provides TCP friendli‐
+              ness.
+
+       tcp_bic_low_window (integer; default: 14; Linux 2.4.27/2.6.6 to 2.6.13)
+              Set the threshold window (in packets) where BIC  TCP  starts  to
+              adjust  the  congestion  window.   Below  this threshold BIC TCP
+              behaves the same as the default TCP Reno.
+
+       tcp_bic_fast_convergence (Boolean; default: enabled; Linux 2.4.27/2.6.6
+       to 2.6.13)
+              Force  BIC  TCP to more quickly respond to changes in congestion
+              window.  Allows two flows sharing the same  connection  to  con‐
+              verge more rapidly.
+
+       tcp_congestion_control (String; default: see text; since Linux 2.4.13)
+              Set  the default congestion-control algorithm to be used for new
+              connections.  The algorithm  "reno"  is  always  available,  but
+              additional choices may be available depending on kernel configu‐
+              ration.  The default value for this file is set as part of  ker‐
+              nel configuration.
+
+       tcp_dma_copybreak (integer; default: 4096; since Linux 2.6.24)
+              Lower  limit, in bytes, of the size of socket reads that will be
+              offloaded to a DMA copy engine, if one is present in the  system
+              and the kernel was configured with the CONFIG_NET_DMA option.
+
+       tcp_dsack (Boolean; default: enabled; since Linux 2.4)
+              Enable RFC 2883 TCP Duplicate SACK support.
+
+       tcp_ecn (Boolean; default: disabled; since Linux 2.4)
+              Enable RFC 2884 Explicit Congestion Notification.  When enabled,
+              connectivity to some  destinations  could  be  affected  due  to
+              older, misbehaving routers along the path causing connections to
+              be dropped.
+
+       tcp_fack (Boolean; default: enabled; since Linux 2.2)
+              Enable TCP Forward Acknowledgement support.
+
+       tcp_fin_timeout (integer; default: 60; since Linux 2.2)
+              This specifies how many seconds to wait for a final  FIN  packet
+              before the socket is forcibly closed.  This is strictly a viola‐
+              tion of the TCP specification, but required to  prevent  denial-
+              of-service attacks.  In Linux 2.2, the default value was 180.
+
+       tcp_frto (integer; default: 0; since Linux 2.4.21/2.6)
+              Enable F-RTO, an enhanced recovery algorithm for TCP retransmis‐
+              sion timeouts (RTOs).  It is particularly beneficial in wireless
+              environments  where packet loss is typically due to random radio
+              interference rather than intermediate  router  congestion.   See
+              RFC 4138 for more details.
+
+              This file can have one of the following values:
+
+              0  Disabled.
+
+              1  The basic version F-RTO algorithm is enabled.
+
+              2  Enable SACK-enhanced F-RTO if flow uses SACK.  The basic ver‐
+                 sion can be used also when SACK is in use though in that case
+                 scenario(s)  exists  where  F-RTO  interacts  badly  with the
+                 packet counting of the SACK-enabled TCP flow.
+
+              Before Linux 2.6.22, this parameter was a  Boolean  value,  sup‐
+              porting just values 0 and 1 above.
+
+       tcp_frto_response (integer; default: 0; since Linux 2.6.22)
+              When  F-RTO  has  detected that a TCP retransmission timeout was
+              spurious (i.e, the timeout would have been avoided had TCP set a
+              longer retransmission timeout), TCP has several options concern‐
+              ing what to do next.  Possible values are:
+
+              0  Rate halving  based;  a  smooth  and  conservative  response,
+                 results  in  halved  congestion  window (cwnd) and slow-start
+                 threshold (ssthresh) after one RTT.
+
+              1  Very conservative  response;  not  recommended  because  even
+                 though  being  valid,  it  interacts  poorly with the rest of
+                 Linux TCP; halves cwnd and ssthresh immediately.
+
+              2  Aggressive response; undoes congestion-control measures  that
+                 are  now known to be unnecessary (ignoring the possibility of
+                 a lost retransmission that would require TCP to be more  cau‐
+                 tious); cwnd and ssthresh are restored to the values prior to
+                 timeout.
+
+       tcp_keepalive_intvl (integer; default: 75; since Linux 2.4)
+              The number of seconds between TCP keep-alive probes.
+
+       tcp_keepalive_probes (integer; default: 9; since Linux 2.2)
+              The maximum number of TCP keep-alive probes to send before  giv‐
+              ing  up  and  killing  the connection if no response is obtained
+              from the other end.
+
+       tcp_keepalive_time (integer; default: 7200; since Linux 2.2)
+              The number of seconds a connection needs to be idle  before  TCP
+              begins sending out keep-alive probes.  Keep-alives are only sent
+              when the SO_KEEPALIVE socket option  is  enabled.   The  default
+              value  is  7200 seconds (2 hours).  An idle connection is termi‐
+              nated after approximately an additional 11 minutes (9 probes  an
+              interval of 75 seconds apart) when keep-alive is enabled.
+
+              Note that underlying connection tracking mechanisms and applica‐
+              tion timeouts may be much shorter.
+
+       tcp_low_latency (Boolean; default: disabled; since Linux 2.4.21/2.6)
+              If enabled, the TCP stack  makes  decisions  that  prefer  lower
+              latency as opposed to higher throughput.  It this option is dis‐
+              abled, then higher throughput is preferred.  An  example  of  an
+              application  where  this  default  should  be changed would be a
+              Beowulf compute cluster.
+
+       tcp_max_orphans (integer; default: see below; since Linux 2.4)
+              The maximum number of orphaned (not attached to  any  user  file
+              handle)  TCP sockets allowed in the system.  When this number is
+              exceeded, the orphaned connection is  reset  and  a  warning  is
+              printed.   This  limit  exists only to prevent simple denial-of-
+              service attacks.  Lowering this limit is not recommended.   Net‐
+              work  conditions  might  require  you  to increase the number of
+              orphans allowed, but note that each orphan can eat up to ~64K of
+              unswappable  memory.   The default initial value is set equal to
+              the kernel parameter NR_FILE.  This initial default is  adjusted
+              depending on the memory in the system.
+
+       tcp_max_syn_backlog (integer; default: see below; since Linux 2.2)
+              The  maximum  number  of  queued  connection requests which have
+              still  not  received  an  acknowledgement  from  the  connecting
+              client.  If this number is exceeded, the kernel will begin drop‐
+              ping requests.  The default value of 256 is  increased  to  1024
+              when the memory present in the system is adequate or greater (>=
+              128Mb), and reduced to 128 for those systems with very low  mem‐
+              ory  (<=  32Mb).   It  is  recommended  that if this needs to be
+              increased above 1024,  TCP_SYNQ_HSIZE  in  include/net/tcp.h  be
+              modified to keep TCP_SYNQ_HSIZE*16<=tcp_max_syn_backlog, and the
+              kernel be recompiled.
+
+       tcp_max_tw_buckets (integer; default: see below; since Linux 2.4)
+              The maximum number of sockets in TIME_WAIT state allowed in  the
+              system.  This limit exists only to prevent simple denial-of-ser‐
+              vice attacks.   The  default  value  of  NR_FILE*2  is  adjusted
+              depending  on  the  memory  in  the  system.   If this number is
+              exceeded, the socket is closed and a warning is printed.
+
+       tcp_moderate_rcvbuf   (Boolean;   default:   enabled;    since    Linux
+       2.4.17/2.6.7)
+              If  enabled, TCP performs receive buffer auto-tuning, attempting
+              to automatically size the buffer (no greater  than  tcp_rmem[2])
+              to match the size required by the path for full throughput.
+
+       tcp_mem (since Linux 2.4)
+              This  is  a  vector of 3 integers: [low, pressure, high].  These
+              bounds, measured in units of the system page size, are  used  by
+              TCP  to  track its memory usage.  The defaults are calculated at
+              boot time from the amount of available memory.   (TCP  can  only
+              use  low  memory  for  this,  which  is  limited  to  around 900
+              megabytes on 32-bit systems.  64-bit systems do not suffer  this
+              limitation.)
+
+              low       TCP  doesn't  regulate  its memory allocation when the
+                        number of pages it has  allocated  globally  is  below
+                        this number.
+
+              pressure  When  the  amount  of  memory allocated by TCP exceeds
+                        this number of pages, TCP moderates  its  memory  con‐
+                        sumption.   This  memory pressure state is exited once
+                        the number of pages  allocated  falls  below  the  low
+                        mark.
+
+              high      The  maximum  number of pages, globally, that TCP will
+                        allocate.   This  value  overrides  any  other  limits
+                        imposed by the kernel.
+
+       tcp_mtu_probing (integer; default: 0; since Linux 2.6.17)
+              This parameter controls TCP Packetization-Layer Path MTU Discov‐
+              ery.  The following values may be assigned to the file:
+
+              0  Disabled
+
+              1  Disabled by default, enabled when an ICMP black hole detected
+
+              2  Always enabled, use initial MSS of tcp_base_mss.
+
+       tcp_no_metrics_save (Boolean; default: disabled; since Linux 2.6.6)
+              By default, TCP saves various connection metrics  in  the  route
+              cache  when  the  connection  closes, so that connections estab‐
+              lished in the near future can use these to  set  initial  condi‐
+              tions.   Usually, this increases overall performance, but it may
+              sometimes cause performance degradation.  If tcp_no_metrics_save
+              is enabled, TCP will not cache metrics on closing connections.
+
+       tcp_orphan_retries (integer; default: 8; since Linux 2.4)
+              The  maximum number of attempts made to probe the other end of a
+              connection which has been closed by our end.
+
+       tcp_reordering (integer; default: 3; since Linux 2.4)
+              The maximum a packet can be reordered in  a  TCP  packet  stream
+              without  TCP assuming packet loss and going into slow start.  It
+              is not advisable to  change  this  number.   This  is  a  packet
+              reordering  detection  metric  designed  to minimize unnecessary
+              back off and retransmits provoked by reordering of packets on  a
+              connection.
+
+       tcp_retrans_collapse (Boolean; default: enabled; since Linux 2.2)
+              Try to send full-sized packets during retransmit.
+
+       tcp_retries1 (integer; default: 3; since Linux 2.2)
+              The  number  of times TCP will attempt to retransmit a packet on
+              an established connection normally, without the extra effort  of
+              getting the network layers involved.  Once we exceed this number
+              of retransmits, we first have the network layer update the route
+              if  possible before each new retransmit.  The default is the RFC
+              specified minimum of 3.
+
+       tcp_retries2 (integer; default: 15; since Linux 2.2)
+              The maximum number of times a TCP  packet  is  retransmitted  in
+              established  state  before  giving up.  The default value is 15,
+              which corresponds to a duration of approximately between  13  to
+              30  minutes,  depending  on  the  retransmission  timeout.   The
+              RFC 1122 specified minimum limit of  100  seconds  is  typically
+              deemed too short.
+
+       tcp_rfc1337 (Boolean; default: disabled; since Linux 2.2)
+              Enable TCP behavior conformant with RFC 1337.  When disabled, if
+              a RST is received in TIME_WAIT state, we close the socket  imme‐
+              diately without waiting for the end of the TIME_WAIT period.
+
+       tcp_rmem (since Linux 2.4)
+              This  is  a  vector  of  3 integers: [min, default, max].  These
+              parameters are used by TCP to  regulate  receive  buffer  sizes.
+              TCP  dynamically adjusts the size of the receive buffer from the
+              defaults listed below, in the range of these  values,  depending
+              on memory available in the system.
+
+              min       minimum  size  of  the receive buffer used by each TCP
+                        socket.  The default value is the  system  page  size.
+                        (On  Linux  2.4,  the  default value is 4K, lowered to
+                        PAGE_SIZE bytes in low-memory systems.)  This value is
+                        used  to  ensure that in memory pressure mode, alloca‐
+                        tions below this size will still succeed.  This is not
+                        used  to bound the size of the receive buffer declared
+                        using SO_RCVBUF on a socket.
+
+              default   the default size of  the  receive  buffer  for  a  TCP
+                        socket.   This  value  overwrites  the initial default
+                        buffer    size     from     the     generic     global
+                        net.core.rmem_default  defined for all protocols.  The
+                        default value is 87380 bytes.   (On  Linux  2.4,  this
+                        will  be  lowered to 43689 in low-memory systems.)  If
+                        larger receive buffer sizes are  desired,  this  value
+                        should  be  increased  (to  affect  all  sockets).  To
+                        employ  large  TCP  windows,   the   net.ipv4.tcp_win‐
+                        dow_scaling must be enabled (default).
+
+              max       the  maximum  size  of the receive buffer used by each
+                        TCP socket.  This value does not override  the  global
+                        net.core.rmem_max.  This is not used to limit the size
+                        of the receive buffer declared using  SO_RCVBUF  on  a
+                        socket.   The  default  value  is calculated using the
+                        formula
+
+                            max(87380, min(4MB, tcp_mem[1]*PAGE_SIZE/128))
+
+                        (On Linux 2.4, the default is 87380*2  bytes,  lowered
+                        to 87380 in low-memory systems).
+
+       tcp_sack (Boolean; default: enabled; since Linux 2.2)
+              Enable RFC 2018 TCP Selective Acknowledgements.
+
+       tcp_slow_start_after_idle   (Boolean;  default:  enabled;  since  Linux
+       2.6.18)
+              If enabled, provide RFC 2861 behavior and time out  the  conges‐
+              tion  window after an idle period.  An idle period is defined as
+              the current RTO (retransmission timeout).  If disabled, the con‐
+              gestion window will not be timed out after an idle period.
+
+       tcp_stdurg (Boolean; default: disabled; since Linux 2.2)
+              If  this option is enabled, then use the RFC 1122 interpretation
+              of the TCP urgent-pointer field.  According to this  interpreta‐
+              tion, the urgent pointer points to the last byte of urgent data.
+              If this option is disabled, then use the  BSD-compatible  inter‐
+              pretation  of  the  urgent pointer: the urgent pointer points to
+              the first byte after the urgent data.  Enabling this option  may
+              lead to interoperability problems.
+
+       tcp_syn_retries (integer; default: 5; since Linux 2.2)
+              The  maximum number of times initial SYNs for an active TCP con‐
+              nection attempt will be retransmitted.  This value should not be
+              higher  than  255.  The default value is 5, which corresponds to
+              approximately 180 seconds.
+
+       tcp_synack_retries (integer; default: 5; since Linux 2.2)
+              The maximum number of times a SYN/ACK segment for a passive  TCP
+              connection  will  be  retransmitted.   This number should not be
+              higher than 255.
+
+       tcp_syncookies (Boolean; since Linux 2.2)
+              Enable TCP syncookies.  The kernel must be  compiled  with  CON‐
+              FIG_SYN_COOKIES.  Send out syncookies when the syn backlog queue
+              of a socket overflows.  The syncookies feature attempts to  pro‐
+              tect a socket from a SYN flood attack.  This should be used as a
+              last resort, if at all.  This is a violation of the  TCP  proto‐
+              col,  and  conflicts  with other areas of TCP such as TCP exten‐
+              sions.  It can cause problems for clients and relays.  It is not
+              recommended  as a tuning mechanism for heavily loaded servers to
+              help with overloaded or misconfigured  conditions.   For  recom‐
+              mended alternatives see tcp_max_syn_backlog, tcp_synack_retries,
+              and tcp_abort_on_overflow.
+
+       tcp_timestamps (Boolean; default: enabled; since Linux 2.2)
+              Enable RFC 1323 TCP timestamps.
+
+       tcp_tso_win_divisor (integer; default: 3; since Linux 2.6.9)
+              This parameter controls what percentage of the congestion window
+              can  be  consumed  by  a  single  TCP Segmentation Offload (TSO)
+              frame.  The setting of this  parameter  is  a  tradeoff  between
+              burstiness and building larger TSO frames.
+
+       tcp_tw_recycle (Boolean; default: disabled; since Linux 2.4)
+              Enable  fast  recycling  of  TIME_WAIT  sockets.   Enabling this
+              option is not recommended since this causes problems when  work‐
+              ing with NAT (Network Address Translation).
+
+       tcp_tw_reuse (Boolean; default: disabled; since Linux 2.4.19/2.6)
+              Allow  to reuse TIME_WAIT sockets for new connections when it is
+              safe from protocol viewpoint.  It should not be changed  without
+              advice/request of technical experts.
+
+       tcp_vegas_cong_avoid (Boolean; default: disabled; Linux 2.2 to 2.6.13)
+              Enable TCP Vegas congestion avoidance algorithm.  TCP Vegas is a
+              sender-side only change to TCP that  anticipates  the  onset  of
+              congestion  by  estimating the bandwidth.  TCP Vegas adjusts the
+              sending rate by modifying  the  congestion  window.   TCP  Vegas
+              should  provide less packet loss, but it is not as aggressive as
+              TCP Reno.
+
+       tcp_westwood (Boolean; default: disabled; Linux 2.4.26/2.6.3 to 2.6.13)
+              Enable TCP Westwood+ congestion control  algorithm.   TCP  West‐
+              wood+  is a sender-side only modification of the TCP Reno proto‐
+              col stack that optimizes the performance of TCP congestion  con‐
+              trol.   It  is  based  on end-to-end bandwidth estimation to set
+              congestion window and slow start threshold  after  a  congestion
+              episode.  Using this estimation, TCP Westwood+ adaptively sets a
+              slow start threshold and a congestion window  which  takes  into
+              account  the  bandwidth  used  at the time congestion is experi‐
+              enced.  TCP  Westwood+  significantly  increases  fairness  with
+              respect  to TCP Reno in wired networks and throughput over wire‐
+              less links.
+
+       tcp_window_scaling (Boolean; default: enabled; since Linux 2.2)
+              Enable RFC 1323 TCP window scaling.  This feature allows the use
+              of  a large window (> 64K) on a TCP connection, should the other
+              end support it.  Normally, the 16 bit window length field in the
+              TCP  header  limits  the window size to less than 64K bytes.  If
+              larger windows are desired, applications can increase  the  size
+              of  their  socket  buffers and the window scaling option will be
+              employed.  If tcp_window_scaling is disabled, TCP will not nego‐
+              tiate  the  use of window scaling with the other end during con‐
+              nection setup.
+
+       tcp_wmem (since Linux 2.4)
+              This is a vector of 3  integers:  [min,  default,  max].   These
+              parameters  are  used by TCP to regulate send buffer sizes.  TCP
+              dynamically adjusts the size of the send buffer from the default
+              values  listed below, in the range of these values, depending on
+              memory available.
+
+              min       Minimum size of the  send  buffer  used  by  each  TCP
+                        socket.   The  default  value is the system page size.
+                        (On Linux 2.4, the default value is 4K  bytes.)   This
+                        value  is used to ensure that in memory pressure mode,
+                        allocations below this size will still succeed.   This
+                        is  not  used  to  bound  the  size of the send buffer
+                        declared using SO_SNDBUF on a socket.
+
+              default   The default size of the send buffer for a TCP  socket.
+                        This  value overwrites the initial default buffer size
+                        from           the           generic            global
+                        /proc/sys/net/core/wmem_default defined for all proto‐
+                        cols.  The default value is 16K bytes.  If larger send
+                        buffer   sizes  are  desired,  this  value  should  be
+                        increased (to affect all sockets).   To  employ  large
+                        TCP windows, the /proc/sys/net/ipv4/tcp_window_scaling
+                        must be set to a nonzero value (default).
+
+              max       The maximum size of the send buffer used by  each  TCP
+                        socket.   This  value  does  not override the value in
+                        /proc/sys/net/core/wmem_max.   This  is  not  used  to
+                        limit  the  size  of  the  send  buffer declared using
+                        SO_SNDBUF on a socket.  The default  value  is  calcu‐
+                        lated using the formula
+
+                            max(65536, min(4MB, tcp_mem[1]*PAGE_SIZE/128))
+
+                        (On  Linux  2.4, the default value is 128K bytes, low‐
+                        ered 64K depending on low-memory systems.)
+
+       tcp_workaround_signed_windows (Boolean; default: disabled; since  Linux
+       2.6.26)
+              If  enabled,  assume  that no receipt of a window-scaling option
+              means that the remote TCP is broken and treats the window  as  a
+              signed quantity.  If disabled, assume that the remote TCP is not
+              broken even if we do not receive a window  scaling  option  from
+              it.
+
+   Socket Options
+       To  set  or get a TCP socket option, call getsockopt(2) to read or set‐
+       sockopt(2) to write the option with the option level  argument  set  to
+       IPPROTO_TCP.   In addition, most IPPROTO_IP socket options are valid on
+       TCP sockets.  For more information see ip(7).
+
+       TCP_CORK (since Linux 2.2)
+              If set, don't send  out  partial  frames.   All  queued  partial
+              frames  are sent when the option is cleared again.  This is use‐
+              ful for prepending headers before calling  sendfile(2),  or  for
+              throughput  optimization.   As currently implemented, there is a
+              200 millisecond ceiling on the time for which output  is  corked
+              by  TCP_CORK.   If  this ceiling is reached, then queued data is
+              automatically transmitted.  This option  can  be  combined  with
+              TCP_NODELAY  only since Linux 2.5.71.  This option should not be
+              used in code intended to be portable.
+
+       TCP_DEFER_ACCEPT (since Linux 2.4)
+              Allow a listener to be awakened only when data  arrives  on  the
+              socket.   Takes  an  integer value (seconds), this can bound the
+              maximum number of attempts TCP will make to complete the connec‐
+              tion.   This  option  should  not be used in code intended to be
+              portable.
+
+       TCP_INFO (since Linux 2.4)
+              Used to collect  information  about  this  socket.   The  kernel
+              returns   a   struct   tcp_info   as   defined   in   the   file
+              /usr/include/linux/tcp.h.  This option should  not  be  used  in
+              code intended to be portable.
+
+       TCP_KEEPCNT (since Linux 2.4)
+              The  maximum  number  of keepalive probes TCP should send before
+              dropping the connection.  This option should not be used in code
+              intended to be portable.
+
+       TCP_KEEPIDLE (since Linux 2.4)
+              The time (in seconds) the connection needs to remain idle before
+              TCP starts  sending  keepalive  probes,  if  the  socket  option
+              SO_KEEPALIVE  has  been  set on this socket.  This option should
+              not be used in code intended to be portable.
+
+       TCP_KEEPINTVL (since Linux 2.4)
+              The time (in seconds) between individual keepalive probes.  This
+              option should not be used in code intended to be portable.
+
+       TCP_LINGER2 (since Linux 2.4)
+              The  lifetime  of orphaned FIN_WAIT2 state sockets.  This option
+              can be used to override the  system-wide  setting  in  the  file
+              /proc/sys/net/ipv4/tcp_fin_timeout for this socket.  This is not
+              to be confused with the socket(7) level option SO_LINGER.   This
+              option should not be used in code intended to be portable.
+
+       TCP_MAXSEG
+              The  maximum  segment  size  for  outgoing TCP packets.  If this
+              option is set before connection establishment, it  also  changes
+              the  MSS value announced to the other end in the initial packet.
+              Values greater than the (eventual) interface MTU have no effect.
+              TCP  will  also  impose  its minimum and maximum bounds over the
+              value provided.
+
+       TCP_NODELAY
+              If set, disable the Nagle algorithm.  This means  that  segments
+              are  always  sent  as  soon as possible, even if there is only a
+              small amount of data.  When not  set,  data  is  buffered  until
+              there  is  a sufficient amount to send out, thereby avoiding the
+              frequent sending of small packets, which results  in  poor  uti‐
+              lization of the network.  This option is overridden by TCP_CORK;
+              however, setting this option forces an explicit flush of pending
+              output, even if TCP_CORK is currently set.
+
+       TCP_QUICKACK (since Linux 2.4.4)
+              Enable quickack mode if set or disable quickack mode if cleared.
+              In quickack mode, acks are sent immediately, rather than delayed
+              if  needed  in accordance to normal TCP operation.  This flag is
+              not permanent, it only enables a  switch  to  or  from  quickack
+              mode.   Subsequent operation of the TCP protocol will once again
+              enter/leave quickack mode depending on  internal  protocol  pro‐
+              cessing  and  factors such as delayed ack timeouts occurring and
+              data transfer.  This option should not be used in code  intended
+              to be portable.
+
+       TCP_SYNCNT (since Linux 2.4)
+              Set  the  number  of SYN retransmits that TCP should send before
+              aborting the attempt to connect.  It cannot  exceed  255.   This
+              option should not be used in code intended to be portable.
+
+       TCP_WINDOW_CLAMP (since Linux 2.4)
+              Bound the size of the advertised window to this value.  The ker‐
+              nel imposes a minimum size of  SOCK_MIN_RCVBUF/2.   This  option
+              should not be used in code intended to be portable.
+
+   Sockets API
+       TCP  provides  limited  support for out-of-band data, in the form of (a
+       single byte of) urgent data.  In Linux this  means  if  the  other  end
+       sends  newer out-of-band data the older urgent data is inserted as nor‐
+       mal data into the stream (even when SO_OOBINLINE  is  not  set).   This
+       differs from BSD-based stacks.
+
+       Linux  uses  the  BSD  compatible  interpretation of the urgent pointer
+       field by default.  This violates RFC 1122, but is required for interop‐
+       erability    with    other    stacks.     It   can   be   changed   via
+       /proc/sys/net/ipv4/tcp_stdurg.
+
+       It is possible to peek at out-of-band data using the  recv(2)  MSG_PEEK
+       flag.
+
+       Since  version  2.4,  Linux  supports the use of MSG_TRUNC in the flags
+       argument of recv(2) (and recvmsg(2)).  This flag  causes  the  received
+       bytes of data to be discarded, rather than passed back in a caller-sup‐
+       plied buffer.  Since Linux 2.4.4, MSG_PEEK also has  this  effect  when
+       used in conjunction with MSG_OOB to receive out-of-band data.
+
+   Ioctls
+       The  following ioctl(2) calls return information in value.  The correct
+       syntax is:
+
+              int value;
+              error = ioctl(tcp_socket, ioctl_type, &value);
+
+       ioctl_type is one of the following:
+
+       SIOCINQ
+              Returns the amount of queued unread data in the receive  buffer.
+              The socket must not be in LISTEN state, otherwise an error (EIN‐
+              VAL) is returned.   SIOCINQ  is  defined  in  <linux/sockios.h>.
+              Alternatively,  you  can use the synonymous FIONREAD, defined in
+              <sys/ioctl.h>.
+
+       SIOCATMARK
+              Returns true (i.e., value is nonzero) if the inbound data stream
+              is at the urgent mark.
+
+              If the SO_OOBINLINE socket option is set, and SIOCATMARK returns
+              true, then the next read from the socket will return the  urgent
+              data.  If the SO_OOBINLINE socket option is not set, and SIOCAT‐
+              MARK returns true, then the  next  read  from  the  socket  will
+              return the bytes following the urgent data (to actually read the
+              urgent data requires the recv(MSG_OOB) flag).
+
+              Note that a read never reads across  the  urgent  mark.   If  an
+              application  is  informed  of  the  presence  of urgent data via
+              select(2) (using the exceptfds argument) or through delivery  of
+              a SIGURG signal, then it can advance up to the mark using a loop
+              which repeatedly tests SIOCATMARK and performs a read  (request‐
+              ing any number of bytes) as long as SIOCATMARK returns false.
+
+       SIOCOUTQ
+              Returns the amount of unsent data in the socket send queue.  The
+              socket must not be in LISTEN state, otherwise an error  (EINVAL)
+              is  returned.  SIOCOUTQ is defined in <linux/sockios.h>.  Alter‐
+              natively, you  can  use  the  synonymous  TIOCOUTQ,  defined  in
+              <sys/ioctl.h>.
+
+   Error Handling
+       When  a  network  error  occurs, TCP tries to resend the packet.  If it
+       doesn't succeed after some time, either ETIMEDOUT or the last  received
+       error on this connection is reported.
+
+       Some  applications  require  a quicker error notification.  This can be
+       enabled with the IPPROTO_IP level IP_RECVERR socket option.  When  this
+       option  is  enabled,  all incoming errors are immediately passed to the
+       user program.  Use this option with care - it makes TCP  less  tolerant
+       to routing changes and other normal network conditions.
+
+ERRORS
+       EAFNOTSUPPORT
+              Passed socket address type in sin_family was not AF_INET.
+
+       EPIPE  The  other  end closed the socket unexpectedly or a read is exe‐
+              cuted on a shut down socket.
+
+       ETIMEDOUT
+              The other end didn't acknowledge retransmitted data  after  some
+              time.
+
+       Any  errors  defined  for ip(7) or the generic socket layer may also be
+       returned for TCP.
+
+VERSIONS
+       Support for Explicit Congestion  Notification,  zero-copy  sendfile(2),
+       reordering  support and some SACK extensions (DSACK) were introduced in
+       2.4.  Support for forward acknowledgement (FACK), TIME_WAIT  recycling,
+       and per-connection keepalive socket options were introduced in 2.3.
+
+BUGS
+       Not all errors are documented.
+       IPv6 is not described.
+
+SEE ALSO
+       accept(2),  bind(2),  connect(2), getsockopt(2), listen(2), recvmsg(2),
+       sendfile(2), sendmsg(2), socket(2), ip(7), socket(7)
+
+       RFC 793 for the TCP specification.
+       RFC 1122 for the TCP requirements and a description of the Nagle  algo‐
+       rithm.
+       RFC 1323 for TCP timestamp and window scaling options.
+       RFC 1644 for a description of TIME_WAIT assassination hazards.
+       RFC 3168 for a description of Explicit Congestion Notification.
+       RFC 2581 for TCP congestion control algorithms.
+       RFC 2018 and RFC 2883 for SACK and extensions to SACK.
+
+COLOPHON
+       This  page  is  part of release 3.35 of the Linux man-pages project.  A
+       description of the project, and information about reporting  bugs,  can
+       be found at http://man7.org/linux/man-pages/.
+
+
+
+Linux                             2010-09-10                            TCP(7)
+#+end_example
+*** IP协议规定: 一个IP不能创建超过65535个本地端口的TCP链接
+    http://lists.process-one.net/pipermail/tsung-users/2010-October/001552.html\\
+*** 监听的ip地址类型
+http://www.cnblogs.com/zhenjing/archive/2011/04/20/2021791.html\\
+#+begin_example
+[root@localhost i386]# netstat -nlp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address        Foreign Address      State       PID/Program name
+tcp  0   0 0.0.0.0:3306          0.0.0.0:*       LISTEN      2804/mysqld
+tcp  0   0 222.230.14.16:80    0.0.0.0:*       LISTEN      4433/(squid)
+tcp  0   0 127.0.0.1:80          0.0.0.0:*       LISTEN      4350/httpd
+tcp  0   0 127.0.0.1:2006        0.0.0.0:*       LISTEN      27724/php
+tcp  0   0 0.0.0.0:25              0.0.0.0:*       LISTEN      26234/master
+tcp  0   0 0.0.0.0:443            0.0.0.0:*       LISTEN      27724/php
+tcp  0   0 :::22                     :::*            LISTEN      2674/sshd
+udp  0   0 0.0.0.0:16384        0.0.0.0:*                      4433/(squid)
+udp  0   0 0.0.0.0:3130         0.0.0.0:*                       4433/(squid)
+
+我说的本地地址的四种类型:
+0 0.0.0.0
+222.230.14.16
+127.0.0.1
+:::
+都是本地地址为何要有这四种类型呢？都是代表什么含义和作用呢？
+
+一般 0.0.0.0 表示 all or any address , 以 listen 0.0.0.0 來說 , 表示
+listen 主机所有 interface 的 ip 位址 .
+
+至於你說的 222.230.14.16 or 127.0.0.1 那都只是表示listen特定ip位址 而已
+
+::: 那表示 listen 主机所有 interface 的 ipv6 位址 .
+#+end_example
+*** What is the loopback interface: 通过软件虚拟出的localhost网卡
+  http://unix.stackexchange.com/questions/1911/what-is-the-loopback-interface\\
+#+begin_example
+The loopback networking interface is a virtual network device
+implemented entirely in software. All traffic sent to it "loops back"
+and just targets services on your local machine.
+
+eth0 tends to be the name of the first hardware network device (on
+linux, at least), and will send network traffic to remote
+machines. You might see it as en0, ent0, et0, or various other names
+depending on which OS you're using at the time. (It could also be a
+virtual device, but that's another topic)
+
+The loopback option used when mounting an ISO image has nothing to do
+with the networking interface, it just means that the mount command
+has to first associate the file with a device node (/dev/loopback or
+something with a similar name) before mounting it to the target
+directory. It "loops back" reads (and writes, if supported) to a file
+on an existing mount, instead of using a device directly.
+#+end_example
+*** Sample code                                                    :noexport:
+**** TCP Client
+#+begin_src c
+#include   <sys/stat.h>
+#include   <sys/types.h>
+#include   <sys/socket.h>
+#include   <stdio.h>
+#include   <malloc.h>
+#include   <netdb.h>
+#include   <fcntl.h>
+#include   <unistd.h>
+#include   <netinet/in.h>
+#include   <arpa/inet.h>
+#define    RES_LENGTH  10240 //接受字符的最大长度
+int     connect_socket(char * server,int serverPort);
+int     send_msg(int sockfd,char * sendBuff);
+char *  recv_msg(int sockfd);
+int     close_socket(int sockfd);
+int main(int argc, char ** argv)
+{
+	int   sockfd=0;
+	char  sendMsg[30]="abc.org\r\n\r";
+	char* res;
+	int   port = 4242;
+	char  ip[128] = {0};
+	strncpy(ip, "127.0.0.1", 128);
+	if(argc > 2)
+	{
+		strncpy(ip, argv[1], 128);
+		port = atoi(argv[2]);
+		printf("Input IP: %s, port : %d\n", ip, port);
+	}
+	else if(argc > 1)
+	{
+		port = atoi(argv[1]);
+		printf("Input port : %d\n", port);
+	}
+	sockfd=connect_socket(ip, port);
+
+	send_msg(sockfd,sendMsg);
+	/* res=recv_msg(sockfd); */
+
+	printf("return from recv function\n");
+	printf(res);
+	free(res);
+	close_socket(sockfd);
+	return 0;
+}
+/************************************************************
+ * 连接SOCKET服务器,如果出错返回-1,否则返回socket处理代码
+ * server:服务器地址(域名或者IP),serverport:端口
+ * ********************************************************/
+int    connect_socket(char * server,int serverPort){
+	int    sockfd=0;
+	struct    sockaddr_in    addr;
+	struct    hostent        * phost;
+	//向系统注册,通知系统建立一个通信端口
+	//AF_INET表示使用IPv4协议
+	//SOCK_STREAM表示使用TCP协议
+	if((sockfd=socket(AF_INET,SOCK_STREAM,0))<0){
+		herror("Init socket error!");
+		return -1;
+	}
+	bzero(&addr,sizeof(addr));
+	addr.sin_family = AF_INET;
+	addr.sin_port = htons(serverPort);
+	addr.sin_addr.s_addr = inet_addr(server);//按IP初始化
+
+	if(addr.sin_addr.s_addr == INADDR_NONE){//如果输入的是域名
+		phost = (struct hostent*)gethostbyname(server);
+		if(phost==NULL){
+			herror("Init socket s_addr error!");
+			return -1;
+		}
+		addr.sin_addr.s_addr =((struct in_addr*)phost->h_addr)->s_addr;
+	}
+	if(connect(sockfd,(struct sockaddr*)&addr, sizeof(addr))<0)
+	{
+		perror("Connect server fail!");
+		return -1; //0表示成功,-1表示失败
+	}
+	else
+		return sockfd;
+}
+/**************************************************************
+ * 发送消息,如果出错返回-1,否则返回发送的字符长度
+ * sockfd:socket标识,sendBuff:发送的字符串
+ * *********************************************************/
+int send_msg(int sockfd,char * sendBuff)
+{
+	int sendSize=0;
+	if((sendSize=send(sockfd,sendBuff,strlen(sendBuff),0))<=0){
+		herror("Send msg error!");
+		return -1;
+	}else
+		return sendSize;
+}
+/****************************************************************
+ *接受消息,如果出错返回NULL,否则返回接受字符串的指针(动态分配,注意释放)
+ *sockfd:socket标识
+ * *********************************************************/
+char* recv_msg(int sockfd){
+	char * response;
+	int  flag=0,recLenth=0;
+	response=(char *)malloc(RES_LENGTH);
+	memset(response,0,RES_LENGTH);
+
+	for(flag=0;;)
+	{
+		printf("======recv data:\n");
+		if(( recLenth=recv(sockfd,response+flag,RES_LENGTH-flag,0))==-1 )
+		{
+			free(response);
+			printf("Return value : %d\n", recLenth);
+			perror("Recv msg error : ");
+			return NULL;
+		}
+		else if(recLenth==0)
+			break;
+		else
+		{
+			printf("%d char recieved data : %s.\n", recLenth, response+flag);
+			flag+=recLenth;
+			recLenth=0;
+		}
+	}
+	printf("Return value : %d\n", recLenth);
+	response[flag]='\0';
+	return response;
+}
+/**************************************************
+ *关闭连接
+ * **********************************************/
+int close_socket(int sockfd)
+{
+	close(sockfd);
+	return 0;
+}
+#+end_src
+**** TCP Server
+#+begin_src c
+#include <unistd.h> /* fork, close */
+#include <stdlib.h> /* exit */
+#include <string.h> /* strlen */
+#include <stdio.h> /* perror, fdopen, fgets */
+#include <sys/socket.h>
+#include <sys/wait.h> /* waitpid */
+#include <netdb.h> /* getaddrinfo */
+#define die(msg) do { perror(msg); exit(EXIT_FAILURE); } while (0)
+#define PORT "4242"
+#define NUM_CHILDREN 3
+#define MAXLEN 1024
+int readline(int fd, char *buf, int maxlen); // forward declaration
+int recvdata(int fd, char *buf, int maxlen); // forward declaration
+int main(int argc, char** argv)
+{
+	int i, n, sockfd, clientfd;
+	int yes = 1;    // used in setsockopt(2)
+	struct addrinfo *ai;
+	struct sockaddr_in *client;
+	socklen_t client_t;
+	pid_t cpid;     // child pid
+	char line[MAXLEN];
+	char cpid_s[32];
+	char welcome[32];
+	/* Create a socket and get its file descriptor -- socket(2) */
+	sockfd = socket(AF_INET, SOCK_STREAM, 0);
+	if (sockfd == -1) {
+		die("Couldn't create a socket");
+	}
+	/* Prevents those dreaded "Address already in use" errors */
+	if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, (const void *)&yes, sizeof(int)) == -1) {
+		die("Couldn't setsockopt");
+	}
+	/* Fill the address info struct (host + port) -- getaddrinfo(3) */
+	if (getaddrinfo(NULL, PORT, NULL, &ai) != 0) {   // get localhost
+		die("Couldn't get address");
+	}
+	/* Assign address to this socket's fd */
+	if (bind(sockfd, ai->ai_addr, ai->ai_addrlen) != 0) {  // only bind on localhost ip
+		die("Couldn't bind socket to address");
+	}
+	/* Free the memory used by our address info struct */
+	freeaddrinfo(ai);
+	/* Mark this socket as able to accept incoming connections */
+	/* printf("Process %d Listening\n", getpid()); */
+	if (listen(sockfd, 10) == -1) {
+		die("Couldn't make socket listen");
+	}
+	printf("One new connection is coming!\n");
+	/* Fork you some child processes. */
+	for (i = 0; i < NUM_CHILDREN; i++) {
+		cpid = fork();
+		if (cpid == -1) {
+			die("Couldn't fork");
+		}
+		if (cpid == 0) { // We're in the child ...
+			for (;;) { // Run forever ...
+				/* Necessary initialization for accept(2) */
+				client_t = sizeof client;
+				/* Blocks! */
+				printf("Waiting new connection!\n");
+				clientfd = accept(sockfd, (struct sockaddr *)&client, &client_t);
+				if (clientfd == -1) {
+					die("Couldn't accept a connection");
+				}
+				/* Send a welcome message/prompt */
+				bzero(cpid_s, 32);
+				bzero(welcome, 32);
+				sprintf(cpid_s, "%d", getpid());
+				sprintf(welcome, "Child %s echo> ", cpid_s);
+				send(clientfd, welcome, strlen(welcome), 0);
+				/* Read a line from the client socket ... */
+				/* n = readline(clientfd, line, MAXLEN);
+				if (n == -1) {
+					die("Couldn't read line from connection");
+				}                                                 */
+
+				n = recvdata(clientfd, line, MAXLEN);
+				printf("recieve data: %s", line);
+				/* ... and echo it back */
+				send(clientfd, line, n, 0);
+				/* Clean up the client socket */
+				close(clientfd);
+				printf("Close client socket.\n");
+			}
+		}
+	}
+	/* Sit back and wait for all child processes to exit */
+	while (waitpid(-1, NULL, 0) > 0);
+	/* Close up our socket */
+	close(sockfd);
+	printf("Close server socket.\n");
+	return 0;
+}
+
+/**
+ * Simple utility function that reads a line from a file descriptor fd,
+ * up to maxlen bytes -- ripped from Unix Network Programming, Stevens.
+ */
+int readline(int fd, char *buf, int maxlen)
+{
+	int n, rc;
+	char c;
+	for (n = 1; n < maxlen; n++) {
+		if ((rc = read(fd, &c, 1)) == 1) {
+			*buf++ = c;
+			if (c == '\n')
+				break;
+		} else if (rc == 0) {
+			if (n == 1)
+				return 0; // EOF, no data read
+			else
+				break; // EOF, read some data
+		} else
+			return -1; // error
+	}
+	*buf = '\0'; // null-terminate
+
+	return n;
+}
+int recvdata(int fd, char *buf, int maxlen)
+{
+	return recv(fd, buf, maxlen, 0);
+}
+#+end_src
+**** 采用Select的TCP Server:
+#+begin_src c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#define MYPORT 1234    // the port users will be connecting to
+#define BACKLOG 5     // how many pending connections queue will hold
+#define BUF_SIZE 1024
+int fd_A[BACKLOG];    // accepted connection fd
+int conn_amount;      // current connection amount
+void showclient()
+{
+	int i;
+	printf("client amount: %d\n", conn_amount);
+	for (i = 0; i < BACKLOG; i++) {
+		printf("[%d]:%d  ", i, fd_A[i]);
+	}
+	printf("\n\n");
+}
+int main(void)
+{
+	int sock_fd, new_fd;             // listen on sock_fd, new connection on new_fd
+	struct sockaddr_in server_addr;  // server address information
+	struct sockaddr_in client_addr;  // connector's address information
+	socklen_t sin_size;
+	int yes = 1;
+	char buf[BUF_SIZE];
+	int ret;
+	int i;
+	if ((sock_fd = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
+		perror("socket");
+		exit(1);
+	}
+	if (setsockopt(sock_fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1) {
+		perror("setsockopt");
+		exit(1);
+	}
+	server_addr.sin_family = AF_INET;         // host byte order
+	server_addr.sin_port = htons(MYPORT);     // short, network byte order
+	server_addr.sin_addr.s_addr = INADDR_ANY; // automatically fill with my IP
+	memset(server_addr.sin_zero, '\0', sizeof(server_addr.sin_zero));
+	if (bind(sock_fd, (struct sockaddr *)&server_addr, sizeof(server_addr)) == -1) {
+		perror("bind");
+		exit(1);
+	}
+	if (listen(sock_fd, BACKLOG) == -1) {
+		perror("listen");
+		exit(1);
+	}
+	printf("listen port %d\n", MYPORT);
+	fd_set fdsr;
+	int maxsock;
+	struct timeval tv;
+	conn_amount = 0;
+	sin_size = sizeof(client_addr);
+	maxsock = sock_fd;
+	while (1)
+	{
+		// initialize file descriptor set
+		FD_ZERO(&fdsr);
+		FD_SET(sock_fd, &fdsr);  // add fd
+		// timeout setting
+		tv.tv_sec = 30;
+		tv.tv_usec = 0;
+		// add active connection to fd set
+		for (i = 0; i < BACKLOG; i++) {
+			if (fd_A[i] != 0) {
+				FD_SET(fd_A[i], &fdsr);
+			}
+		}
+		ret = select(maxsock + 1, &fdsr, NULL, NULL, &tv);
+		if (ret < 0) {          // error
+			perror("select");
+			break;
+		} else if (ret == 0) {  // time out
+			printf("timeout\n");
+			continue;
+		}
+		// check every fd in the set
+		for (i = 0; i < conn_amount; i++)
+		{
+			if (FD_ISSET(fd_A[i], &fdsr)) // check which fd is ready
+			{
+				ret = recv(fd_A[i], buf, sizeof(buf), 0);
+				if (ret <= 0)
+				{        // client close
+					printf("ret : %d and client[%d] close\n", ret, i);
+					close(fd_A[i]);
+					FD_CLR(fd_A[i], &fdsr);  // delete fd
+					fd_A[i] = 0;
+					conn_amount--;
+				}
+				else
+				{        // receive data
+					if (ret < BUF_SIZE)
+						memset(&buf[ret], '\0', 1); // add NULL('\0')
+					printf("client[%d] send:%s\n", i, buf);
+				}
+			}
+		}
+		// check whether a new connection comes
+		if (FD_ISSET(sock_fd, &fdsr))  // accept new connection
+		{
+			new_fd = accept(sock_fd, (struct sockaddr *)&client_addr, &sin_size);
+			if (new_fd <= 0)
+			{
+				perror("accept");
+				continue;
+			}
+			// add to fd queue
+			if (conn_amount < BACKLOG)
+			{
+				fd_A[conn_amount++] = new_fd;
+				printf("new connection client[%d] %s:%d\n", conn_amount,
+						inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
+				if (new_fd > maxsock)  // update the maxsock fd for select function
+					maxsock = new_fd;
+			}
+			else
+			{
+				printf("max connections arrive, exit\n");
+				send(new_fd, "bye", 4, 0);
+				close(new_fd);
+				break;
+			}
+		}
+		showclient();
+	}
+	// close other connections
+	for (i = 0; i < BACKLOG; i++)
+	{
+		if (fd_A[i] != 0)
+		{
+			close(fd_A[i]);
+		}
+	}
+	exit(0);
+}
+#+end_src
+*** DONE SYN Flood是如何发生的,怎么预防?
+  CLOSED: [2012-08-22 三 23:41]
+http://en.wikipedia.org/wiki/Syn_flood\\
+
+- 通信双方的包的顺序一般为: SYN, SYN-ACK, ACK
+- 服务器等待三次握手的最后一步ACK时,会等待一个相当长的Timeout
+
+- 防范SYN Flood的方法: 将ACK的等待时间设置短一些.
+#+begin_example
+A SYN flood attack works by not responding to the server with the
+expected ACK code. The malicious client can either simply not send the
+expected ACK, or by spoofing the source IP address in the SYN, causing
+the server to send the SYN-ACK to a falsified IP address - which will
+not send an ACK because it "knows" that it never sent a SYN.
+
+The server will wait for the acknowledgement for some time, as simple
+network congestion could also be the cause of the missing ACK, but in
+an attack increasingly large numbers of half-open connections will
+bind resources on the server until no new connections can be made,
+resulting in a denial of service to legitimate traffic. Some systems
+may also malfunction badly or even crash if other operating system
+functions are starved of resources in this way.
+#+end_example
+**** useful link
+http://en.wikipedia.org/wiki/Syn_flood\\
+http://www.cisco.com/web/about/ac123/ac147/archived_issues/ipj_9-4/syn_flooding_attacks.html\\
+Defenses Against TCP SYN Flooding Attacks - The Internet Protocol Journal - Volume 9, Number 4 - Cisco Systems
+* [#B] Linux network troubleshooting                               :noexport:
+- At the lowest levels of the network stack, Linux can detect the rate at which data traffic is flowing through the link layer.
+
+| Comment                           | Item                       |
+|-----------------------------------+----------------------------|
+| website to proxy network commands | http://www.whoisstuff.net/ |
+|                                   | http://www.ip138.com/      |
+
+- Extension tools
+| Item   | Summary                                              |
+|--------+------------------------------------------------------|
+| iptraf | a console-based network statistics utility for Linux |
+| atop   | more informative process monitor, compared to top    |
+| iftop  | display bandwidth usage on an interface by host      |
+** config network nics
+** ubuntu /etc/network/interfaces
+http://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu
+#+begin_example
+auto lo eth0
+iface lo inet loopback
+iface eth0 inet static
+        address xxx.xxx.xxx.xxx(enter your ip here)
+        netmask xxx.xxx.xxx.xxx
+        gateway xxx.xxx.xxx.xxx(enter gateway ip here,usually the address of the router)
+#+end_example
+** Centos: /etc/sysconfig/network-scripts/ifcfg-eth0
+https://gist.github.com/fernandoaleman/2172388
+#+begin_example
+DEVICE="eth0"
+NM_CONTROLLED="yes"
+ONBOOT=yes
+HWADDR=A4:BA:DB:37:F1:04
+TYPE=Ethernet
+BOOTPROTO=static
+NAME="System eth0"
+UUID=5fb06bd0-0bb0-7ffb-45f1-d6edd65f3e03
+IPADDR=192.168.1.44
+NETMASK=255.255.255.0
+
+#+end_example
+** [question] 在家的电脑中traceroute百度,但并没有打印出gateway/router之类的路由信息
+#+begin_example
+denny@denny-Vostro-1014:~$ sudo traceroute -T www.baidu.com
+traceroute to www.baidu.com (61.135.169.105), 30 hops max, 60 byte packets
+ 1  61.135.169.105 (61.135.169.105)  39.175 ms  39.193 ms *
+denny@denny-Vostro-1014:~$ sudo ifconfig
+eth0      Link encap:Ethernet  HWaddr 14:fe:b5:9e:c7:93
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+          Interrupt:46 Base address:0xa000
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:3228 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3228 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:510710 (510.7 KB)  TX bytes:510710 (510.7 KB)
+
+wlan0     Link encap:Ethernet  HWaddr 90:00:4e:44:e1:69
+          inet addr:192.168.1.103  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::9200:4eff:fe44:e169/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:40793 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:41859 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:38933882 (38.9 MB)  TX bytes:17453721 (17.4 MB)
+
+#+end_example
+** [question] How to get public ip by cli
+- http://www.ip138.com/
+** [question] analysis report of "netstat -s"
+- segments retransmited
+- connections reset due to unexpected data
+#+begin_example
+[root@storage storage.ecae 192.168.11.15 /usr/local/command_runner]
+# netstat -s
+Ip:
+    2622551267 total packets received
+    12 with invalid headers
+    336 with invalid addresses
+    224485551 forwarded
+    0 incoming packets discarded
+    2393280408 incoming packets delivered
+    2319764256 requests sent out
+    4 outgoing packets dropped
+    14 fragments dropped after timeout
+    170 reassemblies required
+    78 packets reassembled ok
+    14 packet reassembles failed
+    9 fragments received ok
+    19 fragments created
+Icmp:
+    7860404 ICMP messages received
+    625 input ICMP message failed.
+    ICMP input histogram:
+        destination unreachable: 278016
+        timeout in transit: 1150
+        echo requests: 7523896
+        echo replies: 57275
+    12100479 ICMP messages sent
+    0 ICMP messages failed
+    ICMP output histogram:
+        destination unreachable: 4518312
+        time exceeded: 12
+        echo request: 58259
+        echo replies: 7523896
+IcmpMsg:
+        InType0: 57275
+        InType3: 278016
+        InType8: 7523896
+        InType11: 1150
+        OutType0: 7523896
+        OutType3: 4518312
+        OutType8: 58259
+        OutType11: 12
+Tcp:
+    54505140 active connections openings
+    75243520 passive connection openings
+    513079 failed connection attempts
+    383066 connection resets received
+    661 connections established
+    1828784369 segments received
+    1514833839 segments send out
+    11283987 segments retransmited
+    42597 bad segments received.
+    1247495 resets sent
+Udp:
+    556033650 packets received
+    174249 packets to unknown port received.
+    9 packet receive errors
+    557104471 packets sent
+TcpExt:
+    127969 invalid SYN cookies received
+    151083 resets received for embryonic SYN_RECV sockets
+    4940 packets pruned from receive queue because of socket buffer overrun
+    10190296 TCP sockets finished time wait in fast timer
+    281 time wait sockets recycled by time stamp
+    50505469 TCP sockets finished time wait in slow timer
+    202889 passive connections rejected because of time stamp
+    369 packets rejects in established connections because of timestamp
+    31109461 delayed acks sent
+    6446 delayed acks further delayed because of locked socket
+    Quick ack mode was activated 374984 times
+    1074974 times the listen queue of a socket overflowed
+    1074974 SYNs to LISTEN sockets ignored
+    1348693 packets directly queued to recvmsg prequeue.
+    73865 packets directly received from backlog
+    5666695 packets directly received from prequeue
+    641221625 packets header predicted
+    72340 packets header predicted and directly queued to user
+    423842097 acknowledgments not containing data received
+    327837344 predicted acknowledgments
+    108891 times recovered from packet loss due to fast retransmit
+    1837599 times recovered from packet loss due to SACK data
+    52 bad SACKs received
+    Detected reordering 7595 times using FACK
+    Detected reordering 4219 times using SACK
+    Detected reordering 9 times using reno fast retransmit
+    Detected reordering 2039 times using time stamp
+    1798 congestion windows fully recovered
+    12841 congestion windows partially recovered using Hoe heuristic
+    TCPDSACKUndo: 3216
+    1155401 congestion windows recovered after partial ack
+    1777648 TCP data loss events
+    TCPLostRetransmit: 652
+    13348 timeouts after reno fast retransmit
+    327655 timeouts after SACK recovery
+    82287 timeouts in loss state
+    3031581 fast retransmits
+    370555 forward retransmits
+    1007404 retransmits in slow start
+    4746713 other TCP timeouts
+    TCPRenoRecoveryFail: 78502
+    263738 sack retransmits failed
+    399047 packets collapsed in receive queue due to low socket buffer
+    355404 DSACKs sent for old packets
+    1084 DSACKs sent for out of order packets
+    954832 DSACKs received
+    12375 DSACKs for out of order packets received
+    440968 connections reset due to unexpected data
+    30105 connections reset due to early user close
+    236044 connections aborted due to timeout
+IpExt:
+    InMcastPkts: 3560
+    OutMcastPkts: 30
+    InBcastPkts: 717562
+]0;root@storage.ecae
+#+end_example
+** # --8<-------------------------- separator ------------------------>8--
+** [#B] [question] 当网络慢的时候,如何快速确认是网络传输慢,还是对方服务器慢
+** [question] 如果电脑有两块用于外网的网卡,那上google的时候,数据走哪个网卡是如何确定的
+sudo route -n
+** [question] 连ssh server,有时候可以,有时候timeout, 此时怎样trouble shooting
+- use tcpdump to monitor port 22
+   CLOSED: [2012-09-23 日 21:39]
+* [#A] IP configuration -- ip配置相关               :noexport:Linux:Personal:
+:PROPERTIES:
+:type:   Linux
+:END:
+
+| Name                                                | Summary       |
+|-----------------------------------------------------+---------------|
+| sudo ifdown eth1                                    |               |
+| sudo ifup eth1                                      |               |
+| ubuntu /etc/network/interfaces                      |               |
+| Centos: /etc/sysconfig/network-scripts/ifcfg-eth0   |               |
+| sudo ifconfig eth0 10.0.0.100 netmask 255.255.255.0 |               |
+** DONE ethtool p6p1 | grep Link detected: 检查网卡的硬件条件
+   CLOSED: [2014-02-25 Tue 16:12]
+** DONE dmesg | grep -i duplex: 查看网卡是双工还是单工以及速度
+   CLOSED: [2014-02-25 Tue 16:12]
+** DONE 如何判断一个nic是物理device还是virtual device: ethtool -i p6p1; ls -lth /sys/class/net
+   CLOSED: [2014-02-25 Tue 17:00]
+http://unix.stackexchange.com/questions/57309/how-can-i-tell-whether-a-network-interface-is-physical-device-or-virtual-alia
+http://unix.stackexchange.com/questions/40560/how-to-know-if-a-network-interface-is-tap-tun-bridge-or-physical
+#+begin_example
+I don't think there's an easy way to distinguish them. Poking around in /sys/class/net I found the following distinctions:
+
+Physical devices have a /sys/class/net/eth0/device symlink
+Bridges have a /sys/class/net/br0/bridge directory
+TUN and TAP devices have a /sys/class/net/tap0/tun_flags file
+Bridges and loopback interfaces have 00:00:00:00:00:00 in /sys/class/net/lo/address
+#+end_example
+
+#+begin_example
+[root@osc-serv-01 ~(keystone_admin)]# ls -lth /sys/class/net/
+ls -lth /sys/class/net/
+total 0
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 br-ex -> ../../devices/virtual/net/br-ex
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 br-int -> ../../devices/virtual/net/br-int
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 br-tun -> ../../devices/virtual/net/br-tun
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 em1 -> ../../devices/pci0000:00/0000:00:1c.4/0000:06:00.0/net/em1
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 em2 -> ../../devices/pci0000:00/0000:00:1c.4/0000:06:00.1/net/em2
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 ovs-system -> ../../devices/virtual/net/ovs-system
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 p5p1 -> ../../devices/pci0000:40/0000:40:03.0/0000:43:00.0/net/p5p1
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 p5p2 -> ../../devices/pci0000:40/0000:40:03.0/0000:43:00.1/net/p5p2
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 p6p1 -> ../../devices/pci0000:40/0000:40:01.0/0000:41:00.0/net/p6p1
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 p6p2 -> ../../devices/pci0000:40/0000:40:01.0/0000:41:00.1/net/p6p2
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 tap0ef6a690-2d -> ../../devices/virtual/net/tap0ef6a690-2d
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 tap36e99292-a5 -> ../../devices/virtual/net/tap36e99292-a5
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 tap38ed97c9-0b -> ../../devices/virtual/net/tap38ed97c9-0b
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 tap91f35271-26 -> ../../devices/virtual/net/tap91f35271-26
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 tapcc43d31c-b8 -> ../../devices/virtual/net/tapcc43d31c-b8
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 tapfc0be4f7-ec -> ../../devices/virtual/net/tapfc0be4f7-ec
+lrwxrwxrwx. 1 root root 0 Feb 25 16:59 lo -> ../../devices/virtual/net/lo
+[root@osc-serv-01 ~(keystone_admin)]#
+#+end_example
+** DONE ubuntu设置网卡为开机自动启动: add "auto XX" for /etc/network/interfaces
+  CLOSED: [2014-02-25 Tue 16:41]
+#+begin_example
+root@janitor:~# cat /etc/network/interfaces
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+	address 192.168.1.176
+	netmask	255.255.255.0
+#+end_example
+** DONE ip netns | xargs -i ip netns exec {} ip a
+   CLOSED: [2014-04-17 Thu 14:58]
+** DONE [#A] linux set ip:  ifconfig eth0 192.168.1.5 netmask 255.255.255.0 up
+  CLOSED: [2014-01-18 Sat 14:51]
+
+http://www.cyberciti.biz/faq/linux-change-ip-address/
+** DONE Error RTNETLINK answers: File exists
+  CLOSED: [2014-07-22 Tue 13:43]
+http://askubuntu.com/questions/293827/error-rtnetlink-answers-file-exists
+
+The problem was that two default gateways were being set, one static
+and one by dhcp. You can't have two default gateways with the same
+metric.
+* Linux Debug Network issue                                        :noexport:
+** DONE monitor network traffic: iftop
+  CLOSED: [2015-04-02 Thu 14:24]
+http://www.binarytides.com/linux-commands-monitor-network/
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE [#A] linux virtual network nic                              :noexport:
+  CLOSED: [2016-02-06 Sat 23:56]
+Creating a Virtual Network Interface
+https://www.bentasker.co.uk/documentation/linux/255-creating-a-virtual-network-interface-in-debian
+https://linuxconfig.org/configuring-virtual-network-interfaces-in-linux
+http://unix.stackexchange.com/questions/152331/how-can-i-create-a-virtual-ethernet-interface-on-a-machine-without-a-physical-ad
+http://stackoverflow.com/questions/2082722/how-do-i-create-virtual-ethernet-devices-in-linux
+http://www.innervoice.in/blogs/2013/12/02/linux-bridge-virtual-networking/
+https://myunixlab.wordpress.com/2011/02/04/how-to-add-virtual-ip-address-in-linux/
+http://www.lazysystemadmin.com/2010/05/add-virtual-interfaces-in-linux-quick.html
+http://ask.xmodulo.com/configure-linux-bridge-network-manager-ubuntu.html
+
+cp /etc/network/interfaces{,.bak}
+cat > /etc/network/interfaces <<EOF
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth0
+iface eth0 inet dhcp
+
+auto eth0:1
+allow-hotplug eth0:1
+iface eth0:1 inet dhcp
+EOF
+
+service networking restart
+
+ifconfig
+* DONE [#A] Office network: keep ping google, it fails from time to time: router issue :noexport:
+  CLOSED: [2015-06-02 Tue 11:40]
+- People will be disconnected from VPN from time to time
+- Transfer big files will fail
+* DONE ss -lpntu: show the network ports and related processes     :noexport:
+  CLOSED: [2016-01-22 Fri 15:42]
+http://linux-audit.com/audit-which-ports-are-used-by-a-linux-process/
+ss is used to dump socket statistics.
 #+BEGIN_EXAMPLE
- Denny Zhang [1:41 PM]
- XXX, any idea how vmware ncp supports k8s network policy behind the scene?
-
- XXX YYY [1:41 PM]
- nsx has distributed firewalls..so ncp just ask nsx to create firewall
-
- Denny Zhang [1:41 PM]
- And the firewall is out of the data VM. Right?
-
- XXX YYY [1:42 PM]
- its in hypervisor
-
- Denny Zhang [1:42 PM]
- I see. It controls the hypervisor networking.
-
- What kind of firewall it is? iptables?
-
- XXX YYY [1:42 PM]
- and there is some rules configured in the worker vm too
- no i think its native implementation in hypervisor by nsx
-
- Denny Zhang [1:43 PM]
- cool
+oot@oregon:~# ss -lpntu
+Netid  State      Recv-Q Send-Q                                                                   Local Address:Port                                                                     Peer Address:Port
+udp    UNCONN     0      0                                                                                    *:39057                                                                               *:*      users:(("squid3",27325,6))
+udp    UNCONN     0      0                                                                                   :::47638                                                                              :::*      users:(("squid3",27325,5))
+tcp    LISTEN     0      1                                                                     ::ffff:127.0.0.1:8005                                                                               :::*      users:(("java",1668,44))
+tcp    LISTEN     0      128                                                                                 :::61031                                                                              :::*      users:(("exe",22323,5))
+tcp    LISTEN     0      128                                                                                 :::9000                                                                               :::*      users:(("ssh",4402,5))
+tcp    LISTEN     0      128                                                                                  *:9000                                                                                *:*      users:(("ssh",4402,4))
+tcp    LISTEN     0      100                                                                                 :::8009                                                                               :::*      users:(("java",1668,42))
+tcp    LISTEN     0      128                                                                                 :::61034                                                                              :::*      users:(("exe",22313,5))
+tcp    LISTEN     0      128                                                                                 :::18000                                                                              :::*      users:(("exe",22980,5))
+tcp    LISTEN     0      128                                                                                 :::48080                                                                              :::*      users:(("exe",22920,5))
+tcp    LISTEN     0      100                                                                                 :::8080                                                                               :::*      users:(("java",1668,41))
+tcp    LISTEN     0      128                                                                                  *:80                                                                                  *:*      users:(("apache2",2176,3),("apache2",2175,3),("apache2",1566,3))
+tcp    LISTEN     0      128                                                                                 :::4243                                                                               :::*      users:(("docker",19186,4))
+tcp    LISTEN     0      128                                                                                 :::4022                                                                               :::*      users:(("exe",23018,5))
+tcp    LISTEN     0      128                                                                                 :::22                                                                                 :::*      users:(("sshd",18933,4))
+tcp    LISTEN     0      128                                                                                  *:22                                                                                  *:*      users:(("sshd",18933,3))
+tcp    LISTEN     0      128                                                                                 :::3128                                                                               :::*      users:(("squid3",27325,12))
+tcp    LISTEN     0      128                                                                                  *:443                                                                                 *:*      users:(("apache2",2176,4),("apache2",2175,4),("apache2",1566,4))
+tcp    LISTEN     0      128                                                                          127.0.0.1:40001                                                                               *:*      users:(("sshd",10265,8))
+tcp    LISTEN     0      128                                                                                ::1:40001                                                                              :::*      users:(("sshd",10265,7))
+tcp    LISTEN     0      128                                                                                  *:8001                                                                                *:*      users:(("apache2",2176,5),("apache2",2175,5),("apache2",1566,5))
+tcp    LISTEN     0      128                                                                          127.0.0.1:40003                                                                               *:*      users:(("sshd",10127,8))
+tcp    LISTEN     0      128                                                                                ::1:40003                                                                              :::*      users:(("sshd",10127,7))root@mytest:/# ss -lpntu
 #+END_EXAMPLE
-** TODO Get TEP table for a VNI. Command: get logical-switch <vni or vni-uuid> vtep :noexport:
-** TODO [#A] Don't use overlay to biuld your firewall
-** TODO Question about PKS NSX-T
-- T0: provides routing for NAT
-** TODO proactive SR
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** VIP vs EIP
-** NAT: traffic overhead is huge
-** iptable rules: won't scale when your envs grow
-** NAT vs no-NAT in PKS
+* TODO [#A] command line to test network speed                     :noexport:
+http://linuxaria.com/article/tool-command-line-bandwidth-linux?lang=en
+http://stackoverflow.com/questions/4297835/how-do-i-test-the-net-speed-from-the-command-line-on-a-linux-serverno-gui
+* route -- 路由和网络配置                                    :noexport:Linux:
+:PROPERTIES:
+:type:   Linux
+:END:
 
-* [#A] Explain NSX-T in a simple way                               :noexport:
-* DONE vmware: NSX-V NSX-T                                         :noexport:
-  CLOSED: [2018-08-23 Thu 23:11]
-https://www.vembu.com/blog/vmware-nsx-v-vs-nsx-t-comparison/
+cp /etc/resolv.conf{,.bak}
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+| Name             | Summary                                                        |
+|------------------+----------------------------------------------------------------|
+| list route rules | route -n; netstat -nr                                          |
+| add default rule | route add default gw 10.0.0.1 netmask 255.255.255.0 dev eth0   |
+| add rule         | route add -net 0.0.0.0 gw 192.168.1.1 netmask 0.0.0.0 dev eth0 |
+| del rule         | route del -net 192.168.3.0 netmask 255.255.255.0 dev eth1      |
+** DONE centos doesn't have traceroute: yum install traceroute
+  CLOSED: [2014-02-25 Tue 15:31]
+#+begin_example
+[root@osc-serv-01 ~(keystone_admin)]# traceroute 180.76.3.151
+traceroute 180.76.3.151
+-bash: traceroute: command not found
+#+end_example
+** DONE 持久化的添加route规则: ubuntu修改/etc/network/interfaces
+  CLOSED: [2014-02-25 Tue 16:44]
+http://unix.stackexchange.com/questions/84552/set-persistent-routing-table-on-debian
+#+begin_example
+You can add the calls to the post-up hook when the interface comes up. The interface configuration sits in /etc/network/interfaces. Here an example:
 
-The NSX-V platform is the original NSX platform that has been around for a few years now.
+auto eth1
+iface eth1 inet dhcp
+  post-up route del -net 10.1.2.0 netmask 255.255.255.0
+  post-up route add -host 10.1.2.51 eth1
+  post-up route add -host 10.1.2.52 eth1
+  pre-down route add -net 10.1.2.0 netmask 255.255.255.0
+  pre-down route add -host 10.1.2.51 eth1
+  pre-down route add -host 10.1.2.52 eth1
+From the man page - interfaces:
 
-NSX-V (NSX for "vSphere") is designed for vSphere deployments only and is architected so that a single NSX-V manager platform is tied to a single VMware vCenter Server instance. 
-NSX-T (NSX "Transformers") is designed to address many of the use cases that NSX-V was not designed for, such as the multi-hypervisors. 
+post-up command
+Run command after bringing the interface up. If this command fails then ifup aborts, refraining from marking the interface as configured (even though it has really been configured), prints an error message, and exits with status 0.
+
+pre-down command
+Run command before taking the interface down. If this command fails then ifdown aborts, marks the interface as deconfigured (even though it has not really been deconfigured), and exits with status 0.
+#+end_example
+* RDP: Remote desktop client                                       :noexport:
+** DONE ubuntu rdp to windows: Remmina Remote Desktop Client
+  CLOSED: [2014-02-26 Wed 08:49]
+http://www.7tutorials.com/connecting-windows-remote-desktop-ubuntu
+** DONE mac OS rdo to windows: 使用CoRD
+  CLOSED: [2014-02-26 Wed 09:38]
+http://cord.sourceforge.net
+http://superuser.com/questions/619116/osx-rdp-to-winows-server-2012
+#+begin_example
+According to Microsoft's Download Center page, the Remote Desktop
+Connection client for Mac was last updated on 5/5/2011, over 2 years
+ago. As it says, "Microsoft Remote Desktop Connection Client for Mac
+(version 2.1.1) is not intended for use with Mac OS X v10.7 (Lion) or
+later."
+
+Also note that that page does not list Windows Server 2012 at all under the "System Requirements."
+
+I would suggest using a newer client (e.g. I use CoRD which supports
+OS X 10.5-10.8), as there may be unexpected behavior from using
+Microsoft's old software.
+#+end_example
+
+http://cord.sourceforge.net
+http://www.microsoft.com/en-us/download/details.aspx?id=18140
+http://technet.microsoft.com/en-us/library/dn473012.aspx
+https://discussions.apple.com/thread/2459517
+* TODO ethtool --offload eth0 gro off                              :noexport:
+how to persist ethtool settings across reboot
+http://www.chenshake.com/how-node-installation-centos-6-4-openstack-havana-ovsgre/#comment-3561

@@ -1,0 +1,1519 @@
+* CheatSheet: VMware Wavefront                                       :VMware:
+:PROPERTIES:
+:type:     vmware, monitoring
+:export_file_name: cheatsheet-wavefront-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-wavefront-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-wavefront-A4/cheatsheet-wavefront-A4.pdf][cheatsheet-wavefront-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/kubernetes/][kubernetes]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-wavefront-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][Prometheus CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4][Nagios CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
+** Wavefront Summary
+| Name                   | Summary                                                                        |
+|------------------------+--------------------------------------------------------------------------------|
+| [[https://www.wavefront.com/][Wavefront]]              | SaaS monitoring. [[https://www.youtube.com/watch?v=NAOUUSr9HDU&t=9s][YouTube: Pivotal Container Service (PKS) and VMware Wavefront]] |
+| wavefront trial portal | https://try.wavefront.com/dashboard/tutorial-intro                             |
+| Reference              | https://try.wavefront.com/api-docs/ui/                                         |
+** Wavefront Web UI
+| Name                      | Summary                                        |
+|---------------------------+------------------------------------------------|
+| Explore wavefront metrics | =Browse -> Metrics=                            |
+| Explore wavefront sources | =https://try.wavefront.com/source/<source-id>= |
+
+** Wavefront ts query
+| Name            | Summary                                                                                                             |
+|-----------------+---------------------------------------------------------------------------------------------------------------------|
+| query by fields | =ts(pks.heapster.pod.cpu.usage, cluster="service-instance_e732626aXXX" and pod_name="busybox-io-mpxrg")=            |
+| sum             | =sum(ts(pks.kube.node.status.condition.gauge, condition=Ready and status=true and cluster="wavefront_deployment"))= |
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-wavefront-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-wavefront-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-wavefront-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* PKS wavefront Integration                                        :noexport:
+   CLOSED: [2018-08-10 Fri 16:32]
+** query metrics
+No metrics matching: [pks.heapster.cluster.*] and host: []
+
+/Users/zdenny/Dropbox/private_data/work/vmware/code/pks-ci/tests/integration-tests/wavefront-proxy-release/wavefront-proxy/wavefront_proxy_test.go
+** DONE wavefront-proxy.yml all
+   CLOSED: [2018-11-27 Tue 23:31]
+#+BEGIN_EXAMPLE
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: wavefront-proxy
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: kube-state-metrics
+rules:
+# https://github.com/apprenda/kismatic/blob/master/ansible/roles/heapster/templates/heapster-rbac.yaml
+- apiGroups: [""]
+  resources: ["nodes/stats"]
+  verbs: ["create", "get", "watch", "list"]
+- apiGroups: [""]
+  resources:
+  - configmaps
+  - secrets
+  - nodes
+  - pods
+  - services
+  - resourcequotas
+  - replicationcontrollers
+  - limitranges
+  - persistentvolumeclaims
+  - persistentvolumes
+  - namespaces
+  - endpoints
+  verbs: ["list", "watch"]
+- apiGroups: ["extensions"]
+  resources:
+  - daemonsets
+  - deployments
+  - replicasets
+  verbs: ["list", "watch"]
+- apiGroups: ["apps"]
+  resources:
+  - statefulsets
+  verbs: ["list", "watch"]
+- apiGroups: ["batch"]
+  resources:
+  - cronjobs
+  - jobs
+  verbs: ["list", "watch"]
+- apiGroups: ["autoscaling"]
+  resources:
+  - horizontalpodautoscalers
+  verbs: ["list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: wavefront-kube-state-metrics
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: kube-state-metrics
+subjects:
+- kind: ServiceAccount
+  name: wavefront-proxy
+  namespace: kube-system
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: wavefront-heapster
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:heapster
+subjects:
+- kind: ServiceAccount
+  name: wavefront-proxy
+  namespace: kube-system
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: wavefront-proxy
+    name: wavefront-proxy
+  name: wavefront-proxy
+  namespace: kube-system
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: wavefront-proxy
+        version: v1
+    spec:
+      containers:
+        - name: wavefront-proxy
+          image: wavefronthq/proxy:4.27
+          imagePullPolicy: Never
+          env:
+            - name: WAVEFRONT_URL
+              value: https://try.wavefront.com/api
+            - name: WAVEFRONT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: wavefront-secret
+                  key: wavefront-token
+            - name: WAVEFRONT_HOSTNAME
+              value: wf-deployment-0-10-0-dev-16
+            - name: WAVEFRONT_PROXY_ARGS
+              value: "--prefix pks"
+            - name: JAVA_HEAP_USAGE
+              value: 1G
+          ports:
+            - containerPort: 2878
+              protocol: TCP
+          resources:
+            limits:
+              memory: "1.5G"
+        - name: heapster
+          image: k8s.gcr.io/heapster-amd64:v1.5.2
+          imagePullPolicy: Never
+          command:
+            - /heapster
+            - --source=kubernetes:https://master.cfcr.internal:8443?useServiceAccount=true&kubeletHttps=true&kubeletPort=10250&insecure=true
+            - --sink=wavefront:localhost:2878?clusterName=wf-deployment-0-10-0-dev-16
+          volumeMounts:
+            - name: ssl-certs
+              mountPath: /etc/ssl/certs
+              readOnly: true
+        - name: kube-state-metrics
+          image: quay.io/coreos/kube-state-metrics:v1.3.1
+          imagePullPolicy: Never
+          command:
+            - /kube-state-metrics
+            - --port=8080
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+        - name: telegraf
+          image: telegraf:1.7
+          imagePullPolicy: Never
+          command:
+            - telegraf
+            - --config
+            - /tmp/telegraf.conf
+          volumeMounts:
+            - name: telegraf-conf
+              mountPath: /tmp/telegraf.conf
+              readOnly: true
+      volumes:
+        - name: ssl-certs
+          hostPath:
+            path: /etc/ssl/certs
+        - name: telegraf-conf
+          hostPath:
+            path: /var/vcap/jobs/wavefront-proxy-images/config/telegraf.conf
+
+      serviceAccountName: wavefront-proxy
+#+END_EXAMPLE
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO [#A] How I manually retry from the failing point
+** TODO [#A] queryStr sum(ts(pks.kube.node.status.condition.gauge, condition=Ready and status=true and cluster="wavefront_deployment"))
+ func VerifyHealthyComponentCountWithRetry(queryStr, component string, expected int) {
+	 operation := func() (int, error) {
+		 var qr *wavefront.QueryResponse
+		 var err error
+** TODO [#A] How I check the server side in wavefront?
+** TODO [#A] How to use wavefront
+** TODO wavefront slides
+** TODO How to run "go test" in wavefront?
+** TODO Logic of wavefront tile
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO Merge wiki: https://confluence.eng.vmware.com/display/PKS/Wavefront
+** TODO Merge wiki: https://confluence.eng.vmware.com/pages/viewpage.action?pageId=310884211
+** TODO Merge wiki: https://confluence.eng.vmware.com/pages/viewpage.action?pageId=284313020
+** TODO Merge wiki: https://confluence.eng.vmware.com/display/CNA/Wavefront+Integration
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** Known Issues & Challenges
+- In-house solution of Wavefront vs community-driven Prometheus
+- We use wavefront to call heapster monitor k8s cluster. However wavefront agent is a pod, if k8s cluster is down. monitoring feature won't work.
+- For wavefront integration, how the workload will be spread out? (wavefront UI, bosh integration, pks integraiton)
+** wavefront links
+https://confluence.eng.vmware.com/display/PERF/Wavefront
+https://confluence.eng.vmware.com/pages/viewpage.action?pageId=300119565
+https://confluence.eng.vmware.com/display/PS/Wavefront+Tips
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** DONE code logic: should check cluster metrics
+   CLOSED: [2018-07-11 Wed 09:24]
+#+BEGIN_SRC go
+			s := fmt.Sprintf("ts(pks.heapster.cluster.*, cluster=\"%s\")", clusterName)
+			wavefront_helpers.QueryWavefront(client, s)
+#+END_SRC
+
+• Failure [660.996 seconds]
+Wavefront-proxy job tests
+/root/go/src/github.com/vmware/pks-ci/tests/integration-tests/wavefront-proxy-release/wavefront-proxy/wavefront_proxy_test.go:87
+  cluster level
+  /root/go/src/github.com/vmware/pks-ci/tests/integration-tests/wavefront-proxy-release/wavefront-proxy/wavefront_proxy_test.go:118
+    should check cluster metrics [It]
+    /root/go/src/github.com/vmware/pks-ci/tests/integration-tests/wavefront-proxy-release/wavefront-proxy/wavefront_proxy_test.go:119
+
+    Expected
+        <wavefront_helpers.MetricsNotFoundError>: {
+            err: "metrics not found: \"pks.heapster.cluster.cpu.request\" doesn't exist for cluster=service-instance_ff9ab429-cac6-42aa-b0e5-1ab8bcc7490d\n",
+        }
+    to be nil
+
+    /root/go/src/github.com/vmware/pks-ci/tests/integration-tests/wavefront-proxy-release/wavefront-proxy/wavefront_proxy_test.go:250
+------------------------------
+Wavefront-proxy job tests namespace level 
+  should check namespace metrics
+  /root/go/src/github.com/vmware/pks-ci/tests/integration-tests/wavefront-proxy-release/wavefront-proxy/wavefront_proxy_test.go:131
+Warning - No metrics matching: [pks.heapster.ns.*] and host: []|
+
+The query response doesn't contain any timeseries
+** DONE code logic: should check namespace metrics
+   CLOSED: [2018-07-11 Wed 09:24]
+#+BEGIN_SRC go
+			s := fmt.Sprintf("ts(pks.heapster.ns.*, cluster=\"%s\")", clusterName)
+			wavefront_helpers.QueryWavefront(client, s)
+#+END_SRC
+
+• Failure [661.898 seconds]
+Wavefront-proxy job tests
+/root/go/src/github.com/vmware/pks-ci/tests/integration-tests/wavefront-proxy-release/wavefront-proxy/wavefront_proxy_test.go:87
+  namespace level
+  /root/go/src/github.com/vmware/pks-ci/tests/integration-tests/wavefront-proxy-release/wavefront-proxy/wavefront_proxy_test.go:130
+    should check namespace metrics [It]
+    /root/go/src/github.com/vmware/pks-ci/tests/integration-tests/wavefront-proxy-release/wavefront-proxy/wavefront_proxy_test.go:131
+
+    Expected
+        <wavefront_helpers.MetricsNotFoundError>: {
+            err: "metrics not found: \"pks.heapster.ns.cpu.request\" doesn't exist for namespace=kube-system\n",
+        }
+    to be nil
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** HALF kubectl describe ClusterRole kube-state-metrics 
+ kubo@jumper:~/denny$ kubectl describe ClusterRole kube-state-metrics 
+ Name:         kube-state-metrics
+ Labels:       <none>
+ Annotations:  kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRole","metadata":{"annotations":{},"name":"kube-state-metrics","namespace":""},"rules":[{"a...
+ PolicyRule:
+   Resources                             Non-Resource URLs  Resource Names  Verbs
+   ---------                             -----------------  --------------  -----
+   configmaps                            []                 []              [list watch]
+   endpoints                             []                 []              [list watch]
+   limitranges                           []                 []              [list watch]
+   namespaces                            []                 []              [list watch]
+   nodes                                 []                 []              [list watch]
+   persistentvolumeclaims                []                 []              [list watch]
+   persistentvolumes                     []                 []              [list watch]
+   pods                                  []                 []              [list watch]
+   replicationcontrollers                []                 []              [list watch]
+   resourcequotas                        []                 []              [list watch]
+   secrets                               []                 []              [list watch]
+   services                              []                 []              [list watch]
+   statefulsets.apps                     []                 []              [list watch]
+   horizontalpodautoscalers.autoscaling  []                 []              [list watch]
+   cronjobs.batch                        []                 []              [list watch]
+   jobs.batch                            []                 []              [list watch]
+   daemonsets.extensions                 []                 []              [list watch]
+   deployments.extensions                []                 []              [list watch]
+   replicasets.extensions                []                 []              [list watch]
+ kubo@jumper:~/denny$ 
+** HALF run wavefront test
+ export wavefront_api_url=https://try.wavefront.com/api
+ export wavefront_token=c41f0c3c-dc50-4843-bbdf-7f0885ad7082
+ export PATH_TO_KUBECONFIG=/root/.kube/config
+
+ source "/tmp/build/4ecf0f02/git-pks-ci/hack/devtools.sh"
+ source /tmp/build/4ecf0f02/git-pks-ci/ci/scripts/lib/pks-test-setup.sh
+
+ cd $GOPATH/src/github.com/vmware/pks-ci/tests/integration-tests/wavefront-proxy-release/wavefront-proxy
+
+ export PROXY_IP=10.162.9.152
+ export PROXY_USERNAME=kubo
+ export PROXY_PASSWORD='Ponies!23'
+ export http_proxy=10.162.9.152:80
+ export https_proxy=10.162.9.152:80
+
+ kubectl --kubeconfig /root/.kube/config --namespace kube-system describe deployment wavefront-proxy
+ kubectl --kubeconfig /root/.kube/config --namespace kube-system get pods
+
+ kubectl get pods --all-namespaces
+** TODO [#A] weavefront integration problem: https://pks-releng.ci.cf-app.com/teams/main/pipelines/odpks-nsx-om21-cfcr18/jobs/wavefront-acceptance-tests-vsphere-nsx/builds/5?
+ https://github.com/pivotal-cf/pks-kubo-release/commit/291f284cf465991fbab6763f1219c4e190896534#diff-fde81eef0fa816739090aff30b6209a8R67
+
+ https://github.com/pivotal-cf/pks-kubo-release/blob/master/jobs/apply-specs/templates/specs/heapster.yml.erb
+
+ a container name must be specified for pod wavefront-proxy-5445c8c8b7-6wlsr, choose one of: [wavefront-proxy heapster kube-state-metrics telegraf]
+
+ ssh kubo@10.192.181.210
+ pw: Ponies!23
+
+ kubectl get pods -n kube-system
+ kubectl describe pods -n kube-system wavefront-proxy-5445c8c8b7-6wlsr
+
+ kubectl logs -n kube-system -c wavefront-proxy wavefront-proxy-5445c8c8b7-6wlsr
+*** test
+ cd /home/kubo/denny
+
+ kubectl apply -f heapster.yml
+
+ cat > heapster.yml <<EOF
+ apiVersion: v1
+ kind: ServiceAccount
+ metadata:
+   name: heapster
+   namespace: kube-system
+ ---
+ kind: ClusterRoleBinding
+ apiVersion: rbac.authorization.k8s.io/v1beta1
+ metadata:
+   name: heapster
+ roleRef:
+   apiGroup: rbac.authorization.k8s.io
+   kind: ClusterRole
+   name: system:heapster
+ subjects:
+ - kind: ServiceAccount
+   name: heapster
+   namespace: kube-system
+ ---
+
+ apiVersion: extensions/v1beta1
+ kind: Deployment
+ metadata:
+   name: heapster
+   namespace: kube-system
+ spec:
+   replicas: 1
+   template:
+     metadata:
+       labels:
+         task: monitoring
+         k8s-app: heapster
+     spec:
+       containers:
+       - name: heapster
+         image: k8s.gcr.io/heapster-amd64:v1.5.3
+         imagePullPolicy: IfNotPresent
+         command:
+         - /heapster
+         - --source=kubernetes:https://master.cfcr.internal:8443?useServiceAccount=true&kubeletHttps=true&kubeletPort=10250&insecure=true
+         - --sink=influxdb:https://monitoring-influxdb:8086?secure=true
+         - --tls_cert=/certs/heapster-cert
+         - --tls_key=/certs/heapster-key
+         - --vmodule=*=5
+         volumeMounts:
+         - mountPath: /certs
+           name: heapster-certs
+           readOnly: true
+         - mountPath: /etc/ssl/certs/
+           name: kubo-ca
+           readOnly: true
+       volumes:
+       - name: heapster-certs
+         secret:
+           secretName: heapster-certs
+       - name: kubo-ca
+         secret:
+           secretName: heapster-certs
+           items:
+           - key: ca
+             path: ca-certificates.crt
+       serviceAccountName: heapster
+ ---
+ kind: ClusterRole
+ apiVersion: rbac.authorization.k8s.io/v1beta1
+ metadata:
+   name: heapster-node-stats
+ rules:
+ - apiGroups: [""]
+   resources: ["nodes/stats"]
+   verbs: ["create", "get"]
+ ---
+ kind: ClusterRoleBinding
+ apiVersion: rbac.authorization.k8s.io/v1beta1
+ metadata:
+   name: heapster-node-stats
+ roleRef:
+   apiGroup: rbac.authorization.k8s.io
+   kind: ClusterRole
+   name: heapster-node-stats
+ subjects:
+ - kind: ServiceAccount
+   name: heapster
+   namespace: kube-system
+ ---
+
+ apiVersion: v1
+ kind: Service
+ metadata:
+   labels:
+     task: monitoring
+     # For use as a Cluster add-on (https://github.com/kubernetes/kubernetes/tree/master/cluster/addons)
+     # If you are NOT using this as an addon, you should comment out this line.
+     kubernetes.io/cluster-service: 'true'
+     kubernetes.io/name: Heapster
+   name: heapster
+   namespace: kube-system
+ spec:
+   ports:
+   - port: 8443
+     targetPort: 8082
+   selector:
+     k8s-app: heapster
+ EOF
+*** describe pod wavefront
+#+BEGIN_EXAMPLE
+ kubo@jumper:~/denny$ kubectl describe pods -n kube-system wavefront-proxy-5445c8c8b7-6wlsr
+ Name:           wavefront-proxy-5445c8c8b7-6wlsr
+ Namespace:      kube-system
+ Node:           c0f6b58c-67a9-4023-b115-3861303eacf9/30.0.2.4
+ Start Time:     Tue, 10 Jul 2018 14:23:32 -0700
+ Labels:         app=wavefront-proxy
+                 pod-template-hash=1001747463
+                 version=v1
+ Annotations:    <none>
+ Status:         Running
+ IP:             40.0.3.6
+ Controlled By:  ReplicaSet/wavefront-proxy-5445c8c8b7
+ Containers:
+   wavefront-proxy:
+     Container ID:   docker://a4f379d00548cc00c9419ccdbbb2af2a0bbb665ade65e23b644a0ad65718d675
+     Image:          wavefronthq/proxy:4.26
+     Image ID:       docker://sha256:def7fd42cffb1f38d3e0f4754338ba2d164d9caa04c6cda8836a2b2283a68804
+     Port:           2878/TCP
+     Host Port:      0/TCP
+     State:          Running
+       Started:      Tue, 10 Jul 2018 17:17:01 -0700
+     Last State:     Terminated
+       Reason:       OOMKilled
+       Exit Code:    137
+       Started:      Tue, 10 Jul 2018 16:33:32 -0700
+       Finished:     Tue, 10 Jul 2018 17:17:00 -0700
+     Ready:          True
+     Restart Count:  4
+     Limits:
+       memory:  1500M
+     Requests:
+       memory:  1500M
+     Environment:
+       WAVEFRONT_URL:         https://try.wavefront.com/api
+       WAVEFRONT_TOKEN:       <set to the key 'wavefront-token' in secret 'wavefront-secret'>  Optional: false
+       WAVEFRONT_HOSTNAME:    service-instance_42d092ac-07b7-4219-ac29-d5f3d89ed99c
+       WAVEFRONT_PROXY_ARGS:  --prefix pks
+     Mounts:
+       /var/run/secrets/kubernetes.io/serviceaccount from wavefront-proxy-token-tl9hs (ro)
+   heapster:
+     Container ID:  docker://56f40d7181cfb257ca365072004af118808ed9b83c78204eea2ed0c5b03a38f6
+     Image:         k8s.gcr.io/heapster-amd64:v1.5.2
+     Image ID:      docker://sha256:b2d460f2d2b93642441d95a8f1f677402a0e6b56d62120f5515856ec7404e27d
+     Port:          <none>
+     Host Port:     <none>
+     Command:
+       /heapster
+       --source=kubernetes:https://master.cfcr.internal:8443?useServiceAccount=true&kubeletHttps=true&kubeletPort=10250&insecure=true
+       --sink=wavefront:localhost:2878?clusterName=service-instance_42d092ac-07b7-4219-ac29-d5f3d89ed99c
+     State:          Running
+       Started:      Tue, 10 Jul 2018 14:23:34 -0700
+     Ready:          True
+     Restart Count:  0
+     Environment:    <none>
+     Mounts:
+       /etc/ssl/certs from ssl-certs (ro)
+       /var/run/secrets/kubernetes.io/serviceaccount from wavefront-proxy-token-tl9hs (ro)
+   kube-state-metrics:
+     Container ID:  docker://a26997b59b17b4320e2e71bd1f0011f1a1a8486c52afef89039036c62254ff8c
+     Image:         quay.io/coreos/kube-state-metrics:v1.3.0
+     Image ID:      docker://sha256:eeb40c842b44771b9a5a4b16df36f84b75650d7f60191912b78063aaaf0a82d2
+     Port:          8080/TCP
+     Host Port:     0/TCP
+     Command:
+       /kube-state-metrics
+       --port=8080
+     State:          Running
+       Started:      Tue, 10 Jul 2018 14:23:35 -0700
+     Ready:          True
+     Restart Count:  0
+     Environment:    <none>
+     Mounts:
+       /var/run/secrets/kubernetes.io/serviceaccount from wavefront-proxy-token-tl9hs (ro)
+   telegraf:
+     Container ID:  docker://81bbf2e7565cfaa19b08d1a1ecd8fed818204078562d542a4b2c7cd933b6fd14
+     Image:         telegraf:1.5.2-alpine
+     Image ID:      docker://sha256:24ed111dab9ba806a67b8332803d2bcd9e169cef65e92cfa36db685a99648b6b
+     Port:          <none>
+     Host Port:     <none>
+     Command:
+       telegraf
+       --config
+       /tmp/telegraf.conf
+     State:          Running
+       Started:      Tue, 10 Jul 2018 14:23:35 -0700
+     Ready:          True
+     Restart Count:  0
+     Environment:    <none>
+     Mounts:
+       /tmp/telegraf.conf from telegraf-conf (ro)
+       /var/run/secrets/kubernetes.io/serviceaccount from wavefront-proxy-token-tl9hs (ro)
+ Conditions:
+   Type           Status
+   Initialized    True 
+   Ready          True 
+   PodScheduled   True 
+ Volumes:
+   ssl-certs:
+     Type:          HostPath (bare host directory volume)
+     Path:          /etc/ssl/certs
+     HostPathType:  
+   telegraf-conf:
+     Type:          HostPath (bare host directory volume)
+     Path:          /var/vcap/jobs/wavefront-proxy-images/config/telegraf.conf
+     HostPathType:  
+   wavefront-proxy-token-tl9hs:
+     Type:        Secret (a volume populated by a Secret)
+     SecretName:  wavefront-proxy-token-tl9hs
+     Optional:    false
+ QoS Class:       Burstable
+ Node-Selectors:  <none>
+ Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                  node.kubernetes.io/unreachable:NoExecute for 300s
+ Events:
+   Type    Reason   Age              From                                           Message
+   ----    ------   ----             ----                                           -------
+   Normal  Pulled   2m (x5 over 2h)  kubelet, c0f6b58c-67a9-4023-b115-3861303eacf9  Container image "wavefronthq/proxy:4.26" already present on machine
+   Normal  Created  2m (x5 over 2h)  kubelet, c0f6b58c-67a9-4023-b115-3861303eacf9  Created container
+   Normal  Started  2m (x5 over 2h)  kubelet, c0f6b58c-67a9-4023-b115-3861303eacf9  Started container
+#+END_EXAMPLE
+*** Heapster not collecting stats from one node in cluster
+ https://github.com/kubernetes/heapster/issues/1586
+*** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+*** weavefront-proxy output
+#+BEGIN_EXAMPLE
+ kubo@jumper:~/denny$ kubectl logs  -n kube-system -c wavefront-proxy wavefront-proxy-5445c8c8b7-6wlsr
+ + spool_dir=/var/spool/wavefront-proxy
+ + mkdir -p /var/spool/wavefront-proxy
+ + WAVEFRONT_HOSTNAME=service-instance_42d092ac-07b7-4219-ac29-d5f3d89ed99c
+ + export WAVEFRONT_HOSTNAME
+ + autoconf=/opt/wavefront/wavefront-proxy/bin/autoconf-wavefront-proxy.sh
+ + /bin/bash -x /opt/wavefront/wavefront-proxy/bin/autoconf-wavefront-proxy.sh
+ + APP_BASE=wavefront
+ + CONF_FILE=/etc/wavefront/wavefront-proxy/wavefront.conf
+ + DEFAULT_URL=https://metrics.wavefront.com/api/
+ ++ hostname
+ + DEFAULT_HOSTNAME=wavefront-proxy-5445c8c8b7-6wlsr
+ Setting server=https://try.wavefront.com/api
+ + [[ -z https://try.wavefront.com/api ]]
+ + echo 'Setting server=https://try.wavefront.com/api'
+ + grep -q '^#server' /etc/wavefront/wavefront-proxy/wavefront.conf
+ + sed -ri 's,^server.*,server=https://try.wavefront.com/api,g' /etc/wavefront/wavefront-proxy/wavefront.conf
+ Setting token=1c28c290-76ea-4c73-96c8-c070b60f1810
+ Setting hostname=service-instance_42d092ac-07b7-4219-ac29-d5f3d89ed99c
+ + [[ -z 1c28c290-76ea-4c73-96c8-c070b60f1810 ]]
+ + echo 'Setting token=1c28c290-76ea-4c73-96c8-c070b60f1810'
+ + grep -q '^#token' /etc/wavefront/wavefront-proxy/wavefront.conf
+ + sed -ri 's,^#token.*,token=1c28c290-76ea-4c73-96c8-c070b60f1810,g' /etc/wavefront/wavefront-proxy/wavefront.conf
+ + [[ -z service-instance_42d092ac-07b7-4219-ac29-d5f3d89ed99c ]]
+ + echo 'Setting hostname=service-instance_42d092ac-07b7-4219-ac29-d5f3d89ed99c'
+ + grep -q '^#hostname' /etc/wavefront/wavefront-proxy/wavefront.conf
+ + sed -ri 's,^#hostname.*,hostname=service-instance_42d092ac-07b7-4219-ac29-d5f3d89ed99c,g' /etc/wavefront/wavefront-proxy/wavefront.conf
+ + response=
+ + [[ -n false ]]
+ + response=false
+ + '[' -z false ']'
+ Disabling Graphite settings
+ + [[ false =~ ^[Yy]$ ]]
+ + echo 'Disabling Graphite settings'
+ + sed -ri 's,^graphitePorts(.*),#graphitePorts\1,g' /etc/wavefront/wavefront-proxy/wavefront.conf
+ + sed -ri 's,^graphiteFormat(.*),#graphiteFormat\1,g' /etc/wavefront/wavefront-proxy/wavefront.conf
+ + sed -ri 's,^graphiteDelimiters(.*),#graphiteDelimiters\1,g' /etc/wavefront/wavefront-proxy/wavefront.conf
+ + DO_SERVICE_RESTART=false
+ + [[ false == \t\r\u\e ]]
+ + exit 0
+ + java_heap_usage=4G
+ + java -Xmx4G -Xms4G -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager -Dlog4j.configurationFile=/etc/wavefront/wavefront-proxy/log4j2.xml -jar /opt/wavefront/wavefront-proxy/bin/wavefront-push-agent.jar -f /etc/wavefront/wavefront-proxy/wavefront.conf --prefix pks
+ 2018-07-10 22:50:42,188 INFO  [agent:start] Starting proxy version 4.26
+ 2018-07-10 22:50:42,192 INFO  [agent:start] Arguments: -f, /etc/wavefront/wavefront-proxy/wavefront.conf, --prefix, pks
+ 2018-07-10 22:50:42,258 WARN  [agent:loadListenerConfigurationFile] Loaded configuration file /etc/wavefront/wavefront-proxy/wavefront.conf
+ 2018-07-10 22:50:42,268 INFO  [agent:readOrCreateDaemonId] Proxy Id created: bc55d94e-287d-4ef5-856e-fcf095ead9c9
+ 2018-07-10 22:50:42,948 INFO  [QueuedAgentService:<init>] Pushing to Wavefront without user defined rate limit.
+ 2018-07-10 22:50:43,023 INFO  [agent:getSourceTagFlushTasks] Using 6 flush threads to send batched data to Wavefront for data received on port: 2878
+ 2018-07-10 22:50:43,034 INFO  [agent:getFlushTasks] Using 6 flush threads to send batched graphite_v2 data to Wavefront for data received on port: 2878
+ 2018-07-10 22:50:43,069 INFO  [QueuedAgentService:lambda$new$5] retry queue has been cleared
+ 2018-07-10 22:50:43,072 WARN  [QueuedAgentService:lambda$new$5] source tag retry queue has been cleared
+ 2018-07-10 22:50:43,107 INFO  [agent:startListeners] Not loading logs ingestion -- no config specified.
+ 2018-07-10 22:50:44,052 INFO  [PostPushDataTimedTask:createAgentPostBatch] [2878] (SUMMARY): points attempted: 0; blocked: 0
+ 2018-07-10 22:50:44,059 INFO  [PostPushDataTimedTask:createAgentPostBatch] [2878] (SUMMARY): points attempted: 0; blocked: 0
+ 2018-07-10 22:50:44,059 INFO  [PostPushDataTimedTask:createAgentPostBatch] [2878] (SUMMARY): points attempted: 0; blocked: 0
+ 2018-07-10 22:50:44,062 INFO  [PostPushDataTimedTask:createAgentPostBatch] [2878] (SUMMARY): points attempted: 0; blocked: 0
+ 2018-07-10 22:50:44,062 INFO  [PostPushDataTimedTask:createAgentPostBatch] [2878] (SUMMARY): points attempted: 0; blocked: 0
+ 2018-07-10 22:50:44,063 INFO  [PostPushDataTimedTask:createAgentPostBatch] [2878] (SUMMARY): points attempted: 0; blocked: 0
+ 2018-07-10 22:50:48,160 INFO  [agent:fetchConfig] fetching configuration from server at: https://try.wavefront.com/api
+ 2018-07-10 22:50:48,633 INFO  [agent:run] scheduling regular configuration polls
+ 2018-07-10 22:50:48,634 INFO  [agent:run] initial configuration is available, setting up proxy
+ 2018-07-10 22:50:48,676 INFO  [agent:run] setup complete
+ 2018-07-10 22:50:58,649 INFO  [agent:fetchConfig] fetching configuration from server at: https://try.wavefront.com/api
+ 2018-07-10 22:51:42,665 INFO  [PostPushDataTimedTask:createAgentPostBatch] [2878] (SUMMARY): points attempted: 5268; blocked: 0
+ 2018-07-10 22:51:42,750 INFO  [PostPushDataTimedTask:createAgentPostBatch] [2878] (SUMMARY): points attempted: 5268; blocked: 0
+ 2018-07-10 22:51:42,755 INFO  [PostPushDataTimedTask:createAgentPostBatch] [2878] (SUMMARY): points attempted: 5268; blocked: 0
+ 2018-07-10 22:51:42,755 INFO  [PostPushDataTimedTask:createAgentPostBatch] [2878] (SUMMARY): points attempted: 5268; blocked: 0
+ 2018-07-10 22:51:42,768 INFO  [PostPushDataTimedTask:createAgentPostBatch] [2878] (SUMMARY): points attempted: 5268; blocked: 0
+ 2018-07-10 22:51:42,768 INFO  [PostPushDataTimedTask:createAgentPostBatch] [2878] (SUMMARY): points attempted: 5268; blocked: 0
+ 2018-07-10 22:51:43,038 WARN  [PostSourceTagTimedTask:createAgentPostBatch] [2878] (SUMMARY): sourceTags attempted: 0; blocked: 0
+ 2018-07-10 22:51:43,038 WARN  [PostSourceTagTimedTask:createAgentPostBatch] [2878] (SUMMARY): sourceTags attempted: 0; blocked: 0
+ 2018-07-10 22:51:43,038 WARN  [PostSourceTagTimedTask:createAgentPostBatch] [2878] (SUMMARY): sourceTags attempted: 0; blocked: 0
+ 2018-07-10 22:51:43,038 WARN  [PostSourceTagTimedTask:createAgentPostBatch] [2878] (SUMMARY): sourceTags attempted: 0; blocked: 0
+ 2018-07-10 22:51:43,038 WARN  [PostSourceTagTimedTask:createAgentPostBatch] [2878] (SUMMARY): sourceTags attempted: 0; blocked: 0
+ 2018-07-10 22:51:43,040 WARN  [PostSourceTagTimedTask:createAgentPostBatch] [2878] (SUMMARY): sourceTags attempted: 0; blocked: 0
+ 2018-07-10 22:51:58,760 INFO  [agent:fetchConfig] fetching configuration from server at: https://try.wavefront.com/api
+#+END_EXAMPLE
+*** heapster output
+#+BEGIN_EXAMPLE
+ kubo@jumper:~/denny$ kubectl logs  -n kube-system -c heapster wavefront-proxy-5445c8c8b7-6wlsr
+ I0710 21:23:35.702190       1 heapster.go:78] /heapster --source=kubernetes:https://master.cfcr.internal:8443?useServiceAccount=true&kubeletHttps=true&kubeletPort=10250&insecure=true --sink=wavefront:localhost:2878?clusterName=service-instance_42d092ac-07b7-4219-ac29-d5f3d89ed99c
+ I0710 21:23:35.702304       1 heapster.go:79] Heapster version v1.5.2
+ I0710 21:23:35.705725       1 configs.go:61] Using Kubernetes client with master "https://master.cfcr.internal:8443" and version v1
+ I0710 21:23:35.705765       1 configs.go:62] Using kubelet port 10250
+ I0710 21:23:35.801881       1 heapster.go:202] Starting with Wavefront Sink
+ I0710 21:23:35.802076       1 heapster.go:202] Starting with Metric Sink
+ I0710 21:23:35.830123       1 heapster.go:112] Starting heapster on port 8082
+ E0710 21:24:05.071611       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:24:05.086592       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:24:25.002027       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:24:25.009992       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:25:05.030260       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:25:05.035894       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:25:25.000954       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:25:25.009381       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:26:05.015293       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:26:05.029907       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:26:25.000840       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:26:25.009972       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:27:05.031541       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:27:05.031633       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:27:25.000633       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:27:25.009704       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:28:05.030681       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:28:05.030692       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:28:25.000657       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:28:25.008716       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:29:05.015353       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:29:05.022643       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:29:25.000603       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:29:25.007571       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:30:05.021703       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:30:05.021795       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:30:25.000570       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:30:25.007974       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:31:05.027029       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:31:05.027086       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:31:25.000549       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:31:25.007607       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:32:05.016135       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:32:05.026438       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:32:25.000574       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:32:25.008121       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:33:05.030435       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:33:05.038426       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:33:25.000579       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:33:25.009575       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:34:05.019784       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:34:05.020026       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:34:25.000547       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:34:25.012322       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:35:05.034736       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:35:05.034894       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:35:25.000641       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:35:25.010503       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:36:05.011078       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:36:05.030881       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:36:25.000562       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:36:25.006997       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:37:05.022216       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:37:05.022256       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:37:25.000544       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:37:25.008153       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:38:05.031145       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:38:05.036475       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:38:25.000684       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:38:25.010934       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:39:05.023112       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:39:05.023140       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:39:25.000779       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:39:25.008753       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:40:05.022853       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:40:05.042266       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:40:25.000742       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:40:25.009229       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:41:05.019111       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:41:05.029294       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:41:25.000700       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:41:25.008577       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:42:05.021727       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:42:05.021799       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:42:25.000679       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:42:25.009148       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:43:05.039468       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:43:05.051748       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:43:25.000763       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:43:25.011040       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:44:05.014138       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:44:05.014341       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:44:25.000821       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:44:25.009741       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:45:05.030278       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:45:05.030345       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:45:25.000724       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:45:25.008920       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:46:05.025804       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:46:05.037286       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:46:25.000665       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:46:25.009175       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:47:05.088086       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:47:05.093469       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:47:25.000767       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:47:25.008788       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:48:05.015165       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:48:05.015175       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:48:25.000686       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:48:25.008835       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:49:05.032389       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:49:05.032497       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:49:25.000661       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:49:25.008958       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:50:05.007225       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:50:05.024993       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:50:25.000610       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:50:25.009728       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:51:05.013837       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:51:05.024564       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:51:25.000573       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:51:25.009515       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:52:05.033249       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:52:05.038189       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:52:25.000813       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:52:25.009188       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:53:05.013359       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:53:05.018706       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:53:25.000663       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:53:25.008864       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:54:05.010679       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:54:05.016293       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:54:25.000701       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:54:25.011779       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:55:05.020193       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:55:05.034558       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:55:25.000561       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:55:25.008707       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:56:05.018596       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:56:05.029458       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:56:25.000641       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:56:25.007423       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:57:05.012529       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:57:05.012543       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:57:25.000488       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:57:25.007195       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:58:05.019277       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:58:05.031502       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:58:25.000681       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:58:25.010225       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:59:05.017703       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:59:05.039525       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:59:25.000611       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:59:25.006720       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:00:05.031849       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:00:05.032072       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:00:25.000525       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:00:25.009290       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:01:05.027357       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:01:05.027436       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:01:25.000653       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:01:25.008459       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:02:05.018563       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:02:05.023614       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:02:25.000545       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:02:25.007691       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:03:05.023347       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:03:05.028627       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:03:25.000536       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:03:25.007950       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:04:05.033456       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:04:05.033518       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:04:25.000549       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:04:25.008516       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:05:05.027341       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:05:05.027402       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:05:25.000497       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:05:25.007617       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:06:05.030669       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:06:05.039727       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:06:25.000675       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:06:25.007518       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:07:05.010427       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:07:05.030331       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:07:25.000613       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:07:25.008099       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:08:05.024614       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:08:05.024653       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:08:25.000764       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:08:25.008563       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:09:05.025308       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:09:05.050540       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:09:25.000659       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:09:25.009066       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:10:05.031224       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:10:05.031337       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:10:25.000536       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:10:25.006924       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:11:05.019940       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:11:05.025514       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:11:25.000664       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:11:25.007190       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:12:05.019388       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:12:05.030411       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:12:25.000603       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:12:25.008121       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:13:05.017388       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:13:05.017487       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:13:25.000582       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:13:25.008379       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:14:05.011194       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:14:05.016463       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:14:25.000623       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:14:25.007056       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:15:05.010452       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:15:05.017577       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:15:25.000660       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:15:25.007373       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:16:05.023598       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:16:05.023819       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:16:25.000666       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:16:25.009021       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:17:05.040904       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:17:05.063531       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:17:25.000458       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:17:25.007655       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:18:05.023949       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:18:05.031188       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:18:25.000469       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:18:25.006912       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:19:05.023655       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:19:05.023811       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:19:25.000473       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:19:25.006691       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:20:05.022211       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:20:05.039089       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:20:25.000637       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:20:25.007444       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:21:05.012530       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:21:05.012635       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:21:25.000488       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:21:25.006412       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:22:05.017756       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:22:05.035973       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:22:25.000442       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:22:25.008430       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:23:05.016328       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:23:05.027998       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:23:25.000653       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:23:25.008235       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:24:05.011233       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:24:05.018066       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:24:25.000423       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:24:25.007514       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:25:05.017951       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:25:05.027273       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:25:25.000660       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:25:25.007177       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:26:05.014004       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:26:05.025533       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:26:25.000619       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:26:25.006594       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:27:05.021693       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:27:05.021696       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:27:25.000631       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:27:25.007695       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:28:05.025968       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:28:05.033737       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:28:25.000995       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:28:25.007445       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:29:05.025378       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:29:05.025418       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:29:25.000794       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:29:25.008165       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:30:05.009904       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:30:05.022461       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:30:25.000549       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:30:25.006855       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:31:05.033378       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:31:05.040734       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:31:25.000638       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:31:25.009730       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:32:05.023182       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:32:05.035595       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:32:25.000532       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:32:25.007505       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:33:05.021710       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:33:05.036747       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:33:25.000734       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:33:25.007842       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:34:05.026378       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:34:05.026508       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:34:25.000623       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:34:25.008155       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:35:05.020623       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:35:05.021156       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:35:25.000500       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:35:25.007356       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:36:05.030866       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:36:05.030949       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:36:25.000510       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:36:25.007556       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:37:05.030917       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:37:05.030992       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:37:25.000642       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:37:25.008515       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:38:05.025217       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:38:05.033899       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:38:25.000645       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:38:25.007297       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:39:05.019495       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:39:05.019551       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:39:25.000760       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:39:25.008876       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:40:05.026542       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:40:05.026655       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:40:25.000486       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:40:25.007144       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:41:05.021111       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:41:05.031680       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:41:25.000558       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:41:25.007671       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:42:05.020432       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:42:05.040828       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:42:25.000579       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:42:25.007908       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:43:05.024872       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:43:05.024956       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:43:25.000605       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:43:25.008937       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:44:05.012369       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:44:05.025583       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:44:25.000597       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:44:25.007803       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:45:05.021404       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:45:05.028603       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:45:25.000532       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:45:25.008187       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:46:05.030082       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:46:05.043532       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:46:25.000551       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:46:25.008106       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:47:05.020810       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:47:05.027820       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:47:25.000651       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:47:25.007542       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:48:05.027965       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:48:05.027986       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:48:25.000586       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:48:25.006884       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:49:05.019852       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:49:05.034205       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:49:25.000449       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:49:25.007535       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:50:05.032411       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:50:05.043997       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:50:25.000739       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:50:25.009005       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:51:05.023472       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 22:51:05.023523       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 22:51:25.000647       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 22:51:25.008623       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ kubo@jumper:~/denny$ 
+#+END_EXAMPLE
+*** kube-state-metrics output
+#+BEGIN_EXAMPLE
+ kubo@jumper:~/denny$ kubectl logs  -n kube-system -c kube-state-metrics wavefront-proxy-5445c8c8b7-6wlsr
+ I0710 21:23:35.854318       1 main.go:222] Using default collectors
+ I0710 21:23:35.854469       1 main.go:236] Using all namespace
+ W0710 21:23:35.857156       1 client_config.go:529] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+ I0710 21:23:35.863351       1 main.go:274] Testing communication with server
+ I0710 21:23:35.929439       1 main.go:279] Running with Kubernetes cluster version: v1.10. git version: v1.10.4. git tree state: clean. commit: 5ca598b4ba5abb89bb773071ce452e33fb66339d. platform: linux/amd64
+ I0710 21:23:35.929495       1 main.go:281] Communication with server successful
+ I0710 21:23:35.930454       1 replicationcontroller.go:79] collect replicationcontroller with v1
+ I0710 21:23:35.930693       1 main.go:290] Starting kube-state-metrics self metrics server: 0.0.0.0:81
+ I0710 21:23:35.931223       1 secret.go:71] collect secret with v1
+ I0710 21:23:35.931359       1 pod.go:198] collect pod with v1
+ I0710 21:23:35.931561       1 resourcequota.go:53] collect resourcequota with v1
+ I0710 21:23:35.931689       1 job.go:108] collect job with batch/v1
+ I0710 21:23:35.931854       1 configmap.go:55] collect configmap with v1
+ I0710 21:23:35.931963       1 limitrange.go:55] collect limitrange with v1
+ I0710 21:23:35.932098       1 service.go:65] collect service with v1
+ I0710 21:23:35.932212       1 cronjob.go:89] collect cronjob with batch/v1beta1
+ I0710 21:23:35.932323       1 persistentvolumeclaim.go:75] collect persistentvolumeclaim with v1
+ I0710 21:23:35.932405       1 replicaset.go:73] collect replicaset with extensions/v1beta1
+ I0710 21:23:35.932582       1 deployment.go:111] collect deployment with extensions/v1beta1
+ I0710 21:23:35.932682       1 node.go:134] collect node with v1
+ I0710 21:23:35.932954       1 statefulset.go:95] collect statefulset with apps/v1beta1
+ I0710 21:23:35.933137       1 persistentvolume.go:62] collect persistentvolume with v1
+ I0710 21:23:35.933263       1 namespace.go:76] collect namespace with v1
+ I0710 21:23:35.933609       1 hpa.go:73] collect hpa with autoscaling/v1
+ I0710 21:23:35.933820       1 endpoint.go:71] collect endpoint with v1
+ I0710 21:23:35.933938       1 daemonset.go:92] collect daemonset with extensions/v1beta1
+ I0710 21:23:35.934053       1 main.go:360] Active collectors: replicationcontrollers,secrets,pods,resourcequotas,jobs,configmaps,limitranges,services,cronjobs,persistentvolumeclaims,replicasets,deployments,nodes,statefulsets,persistentvolumes,namespaces,horizontalpodautoscalers,endpoints,daemonsets
+ I0710 21:23:35.934126       1 main.go:315] Starting metrics server: 0.0.0.0:8080
+ kubo@jumper:~/denny$ 
+#+END_EXAMPLE
+*** telegraf output
+#+BEGIN_EXAMPLE
+ kubo@jumper:~/denny$ kubectl logs  -n kube-system -c telegraf wavefront-proxy-5445c8c8b7-6wlsr
+ 2018-07-10T21:23:36Z E! Failed to connect to output wavefront, retrying in 15s, error was 'Wavefront: TCP connect fail dial tcp 127.0.0.1:2878: getsockopt: connection refused' 
+ 2018-07-10T21:23:51Z I! Starting Telegraf v1.5.2
+ 2018-07-10T21:23:51Z I! Loaded outputs: wavefront
+ 2018-07-10T21:23:51Z I! Loaded inputs: inputs.prometheus
+ 2018-07-10T21:23:51Z I! Tags enabled: cluster=service-instance_42d092ac-07b7-4219-ac29-d5f3d89ed99c host=wavefront-proxy-5445c8c8b7-6wlsr
+ 2018-07-10T21:23:51Z I! Agent Config: Interval:10s, Quiet:false, Hostname:"wavefront-proxy-5445c8c8b7-6wlsr", Flush Interval:10s 
+ kubo@jumper:~/denny$ 
+#+END_EXAMPLE
+*** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+*** misc
+
+#+BEGIN_EXAMPLE
+ kubo@jumper:~$ kubectl logs  -n kube-system wavefront-proxy-5445c8c8b7-6wlsr
+ Error from server (BadRequest): a container name must be specified for pod wavefront-proxy-5445c8c8b7-6wlsr, choose one of: [wavefront-proxy heapster kube-state-metrics telegraf]
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+ kubo@jumper:~$ kubectl logs  -n kube-system -c heapster wavefront-proxy-5445c8c8b7-6wlsr
+ I0710 21:23:35.702190       1 heapster.go:78] /heapster --source=kubernetes:https://master.cfcr.internal:8443?useServiceAccount=true&kubeletHttps=true&kubeletPort=10250&insecure=true --sink=wavefront:localhost:2878?clusterName=service-instance_42d092ac-07b7-4219-ac29-d5f3d89ed99c
+ I0710 21:23:35.702304       1 heapster.go:79] Heapster version v1.5.2
+ I0710 21:23:35.705725       1 configs.go:61] Using Kubernetes client with master "https://master.cfcr.internal:8443" and version v1
+ I0710 21:23:35.705765       1 configs.go:62] Using kubelet port 10250
+ I0710 21:23:35.801881       1 heapster.go:202] Starting with Wavefront Sink
+ I0710 21:23:35.802076       1 heapster.go:202] Starting with Metric Sink
+ I0710 21:23:35.830123       1 heapster.go:112] Starting heapster on port 8082
+ E0710 21:24:05.071611       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:24:05.086592       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:24:25.002027       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:24:25.009992       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:25:05.030260       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:25:05.035894       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:25:25.000954       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:25:25.009381       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:26:05.015293       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:26:05.029907       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:26:25.000840       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:26:25.009972       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:27:05.031541       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:27:05.031633       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:27:25.000633       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:27:25.009704       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:28:05.030681       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:28:05.030692       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:28:25.000657       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:28:25.008716       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:29:05.015353       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:29:05.022643       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:29:25.000603       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:29:25.007571       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:30:05.021703       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:30:05.021795       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:30:25.000570       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:30:25.007974       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:31:05.027029       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:31:05.027086       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:31:25.000549       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:31:25.007607       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:32:05.016135       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:32:05.026438       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:32:25.000574       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:32:25.008121       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:33:05.030435       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:33:05.038426       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:33:25.000579       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:33:25.009575       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:34:05.019784       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:34:05.020026       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:34:25.000547       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:34:25.012322       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:35:05.034736       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:35:05.034894       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:35:25.000641       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:35:25.010503       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:36:05.011078       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:36:05.030881       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:36:25.000562       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:36:25.006997       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:37:05.022216       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:37:05.022256       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:37:25.000544       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:37:25.008153       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:38:05.031145       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:38:05.036475       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:38:25.000684       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:38:25.010934       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:39:05.023112       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:39:05.023140       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:39:25.000779       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:39:25.008753       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:40:05.022853       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:40:05.042266       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:40:25.000742       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:40:25.009229       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:41:05.019111       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:41:05.029294       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:41:25.000700       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:41:25.008577       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:42:05.021727       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:42:05.021799       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:42:25.000679       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:42:25.009148       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:43:05.039468       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:43:05.051748       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:43:25.000763       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:43:25.011040       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:44:05.014138       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:44:05.014341       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:44:25.000821       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:44:25.009741       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:45:05.030278       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:45:05.030345       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:45:25.000724       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:45:25.008920       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:46:05.025804       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:46:05.037286       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:46:25.000665       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:46:25.009175       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:47:05.088086       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:47:05.093469       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:47:25.000767       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:47:25.008788       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:48:05.015165       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:48:05.015175       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:48:25.000686       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:48:25.008835       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:49:05.032389       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:49:05.032497       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:49:25.000661       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:49:25.008958       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:50:05.007225       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:50:05.024993       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:50:25.000610       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:50:25.009728       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:51:05.013837       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:51:05.024564       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:51:25.000573       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:51:25.009515       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:52:05.033249       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:52:05.038189       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:52:25.000813       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:52:25.009188       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:53:05.013359       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:53:05.018706       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:53:25.000663       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:53:25.008864       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:54:05.010679       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:54:05.016293       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:54:25.000701       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:54:25.011779       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:55:05.020193       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:55:05.034558       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:55:25.000561       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:55:25.008707       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:56:05.018596       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:56:05.029458       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:56:25.000641       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:56:25.007423       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:57:05.012529       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:57:05.012543       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:57:25.000488       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:57:25.007195       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:58:05.019277       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:58:05.031502       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:58:25.000681       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:58:25.010225       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 21:59:05.017703       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.4:10250: failed to get all container stats from Kubelet URL "https://30.0.2.4:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ E0710 21:59:05.039525       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: failed to get all container stats from Kubelet URL "https://30.0.2.3:10250/stats/container/": request failed - "403 Forbidden", response: "Forbidden (user=system:serviceaccount:kube-system:wavefront-proxy, verb=create, resource=nodes, subresource=stats)"
+ W0710 21:59:25.000611       1 manager.go:152] Failed to get all responses in time (got 0/2)
+ I0710 21:59:25.006720       1 wavefront.go:224] Connected to Wavefront proxy at address: localhost:2878
+ E0710 22:00:05.031849       1 manager.go:101] Error in scraping containers from kubelet:30.0.2.3:10250: fai
+#+END_EXAMPLE
+*** problems
+#+BEGIN_EXAMPLE
+ Alton Fong [1:03 PM]
+ Hi Denny, are you working on the Wavefront integration now?
+ Heard that you were handed off that work from the Austin team
+
+ Denny Zhang [1:03 PM]
+ Yes, I have got some knowledge transfer about wavefront
+
+ Alton Fong [1:04 PM]
+ We're trying to integrate kubo-release 0.18 into PKS, but it's causing wavefront acceptence tests to fail
+ https://pks-releng.ci.cf-app.com/teams/main/pipelines/odpks-nsx-om21-cfcr18/jobs/wavefront-acceptance-tests-vsphere-nsx/builds/5
+ the reason is because access to the kubelet is now secured
+ so the service account that wavefront is using for heapster doesn't have the privileges to access the kubelet
+
+ Denny Zhang [1:05 PM]
+ Got it.
+
+ Let me take a look after the meeting
+#+END_EXAMPLE
+** TODO k8s RBAC: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+** TODO Use wavefront for the usage of datadog
+** TODO wavefront-alert-creation
+uri
+
+#+BEGIN_SRC golang
+ func (client *WFClient) DeleteAlerts(alerts []*models.Alert) error {
+	 client.logger.Info("starting to delete alerts")
+	 ac := client.apiClient.Alert
+	 for _, alert := range alerts {
+		 client.logger.Debug("deleting alert", lager.Data{
+			 "alert": alert.Name,
+		 })
+
+		 param := alertclient.NewDeleteAlertParams().WithID(alert.ID)
+		 if _, err := ac.DeleteAlert(param, client.authInfo); err != nil {
+			 return fmt.Errorf("failed to delete alert '%s': %s", *(alert.Name), formatErrorResponse(err).Error())
+		 }
+	 }
+#+END_SRC
+*** console output
+#+BEGIN_EXAMPLE
+ + echo Running errand ''\''wavefront-alert-creation'\''' for deployment ''\''wf-deployment-0-7-0-dev-3'\''...'
+ Running errand 'wavefront-alert-creation' for deployment 'wf-deployment-0-7-0-dev-3'...
+ + echo
+
+ + bosh-cli -n -d wf-deployment-0-7-0-dev-3 run-errand wavefront-alert-creation
+ Using environment '30.0.0.11' as client 'ops_manager'
+
+ Using deployment 'wf-deployment-0-7-0-dev-3'
+
+ Task 23
+
+ Task 23 | 22:15:41 | Preparing deployment: Preparing deployment (00:00:02)
+ Task 23 | 22:15:43 | Running errand: master/575df66e-4cd9-4632-b5b7-6558ad5861a8 (0)
+ Task 23 | 22:15:43 | Running errand: master/1d2efcdf-27bc-4740-8d0b-988d5f0c75be (2)
+ Task 23 | 22:15:43 | Running errand: master/5fbe2038-e3dc-4b04-a765-219e4f10b7d3 (1) (00:00:15)
+ Task 23 | 22:15:58 | Fetching logs for master/5fbe2038-e3dc-4b04-a765-219e4f10b7d3 (1): Finding and packing log files
+ Task 23 | 22:15:58 | Running errand: master/575df66e-4cd9-4632-b5b7-6558ad5861a8 (0) (00:00:15)
+ Task 23 | 22:15:58 | Running errand: master/1d2efcdf-27bc-4740-8d0b-988d5f0c75be (2) (00:00:15)
+ Task 23 | 22:15:58 | Fetching logs for master/575df66e-4cd9-4632-b5b7-6558ad5861a8 (0): Finding and packing log files
+ Task 23 | 22:15:58 | Fetching logs for master/1d2efcdf-27bc-4740-8d0b-988d5f0c75be (2): Finding and packing log files
+ Task 23 | 22:15:59 | Fetching logs for master/5fbe2038-e3dc-4b04-a765-219e4f10b7d3 (1): Finding and packing log files (00:00:01)
+ Task 23 | 22:15:59 | Fetching logs for master/575df66e-4cd9-4632-b5b7-6558ad5861a8 (0): Finding and packing log files (00:00:01)
+ Task 23 | 22:15:59 | Fetching logs for master/1d2efcdf-27bc-4740-8d0b-988d5f0c75be (2): Finding and packing log files (00:00:01)
+
+ Task 23 Started  Wed Jul 11 22:15:41 UTC 2018
+ Task 23 Finished Wed Jul 11 22:15:59 UTC 2018
+ Task 23 Duration 00:00:18
+ Task 23 done
+
+ Instance   master/1d2efcdf-27bc-4740-8d0b-988d5f0c75be  
+ Exit Code  0  
+ Stdout     [Wed Jul 11 22:15:42 UTC 2018] Starting wavefront-alert-creation errand ...  
+             
+             
+            [Wed Jul 11 22:15:57 UTC 2018] Wavefront-alert-creation errand finished successfully  
+             
+ Stderr     {"timestamp":"1531347343.027148962","source":"alert-creation","message":"alert-creation.initializing wavefront client","log_level":1,"data":{"Host":"try.wavefront.com","Scheme":"https"}}  
+            {"timestamp":"1531347343.029325485","source":"alert-creation","message":"alert-creation.recording existing alerts before creating new ones","log_level":1,"data":{}}  
+            {"timestamp":"1531347343.462030172","source":"alert-creation","message":"alert-creation.starting to create alerts","log_level":1,"data":{}}  
+            {"timestamp":"1531347355.920925856","source":"alert-creation","message":"alert-creation.finished creating alerts","log_level":1,"data":{}}  
+            {"timestamp":"1531347355.921131611","source":"alert-creation","message":"alert-creation.deleting recorded alerts after creating new ones","log_level":1,"data":{}}  
+            {"timestamp":"1531347355.921334982","source":"alert-creation","message":"alert-creation.starting to delete alerts","log_level":1,"data":{}}  
+            {"timestamp":"1531347357.208357334","source":"alert-creation","message":"alert-creation.finished deleting alerts","log_level":1,"data":{}}  
+             
+
+ Instance   master/575df66e-4cd9-4632-b5b7-6558ad5861a8  
+ Exit Code  0  
+ Stdout     [Wed Jul 11 22:15:43 UTC 2018] Starting wavefront-alert-creation errand ...  
+             
+             
+            [Wed Jul 11 22:15:57 UTC 2018] Wavefront-alert-creation errand finished successfully  
+             
+ Stderr     {"timestamp":"1531347343.176451445","source":"alert-creation","message":"alert-creation.initializing wavefront client","log_level":1,"data":{"Host":"try.wavefront.com","Scheme":"https"}}  
+            {"timestamp":"1531347343.178144455","source":"alert-creation","message":"alert-creation.recording existing alerts before creating new ones","log_level":1,"data":{}}  
+            {"timestamp":"1531347343.605857134","source":"alert-creation","message":"alert-creation.starting to create alerts","log_level":1,"data":{}}  
+            {"timestamp":"1531347356.965244055","source":"alert-creation","message":"alert-creation.finished creating alerts","log_level":1,"data":{}}  
+            {"timestamp":"1531347356.965373039","source":"alert-creation","message":"alert-creation.deleting recorded alerts after creating new ones","log_level":1,"data":{}}  
+            {"timestamp":"1531347356.965611696","source":"alert-creation","message":"alert-creation.starting to delete alerts","log_level":1,"data":{}}  
+            {"timestamp":"1531347357.507961035","source":"alert-creation","message":"alert-creation.finished deleting alerts","log_level":1,"data":{}}  
+             
+
+ Instance   master/5fbe2038-e3dc-4b04-a765-219e4f10b7d3  
+ Exit Code  1  
+ Stdout     [Wed Jul 11 22:15:43 UTC 2018] Starting wavefront-alert-creation errand ...  
+             
+             
+ Stderr     {"timestamp":"1531347343.262650013","source":"alert-creation","message":"alert-creation.initializing wavefront client","log_level":1,"data":{"Host":"try.wavefront.com","Scheme":"https"}}  
+            {"timestamp":"1531347343.263673782","source":"alert-creation","message":"alert-creation.recording existing alerts before creating new ones","log_level":1,"data":{}}  
+            {"timestamp":"1531347343.634397984","source":"alert-creation","message":"alert-creation.starting to create alerts","log_level":1,"data":{}}  
+            {"timestamp":"1531347357.471320152","source":"alert-creation","message":"alert-creation.finished creating alerts","log_level":1,"data":{}}  
+            {"timestamp":"1531347357.471636295","source":"alert-creation","message":"alert-creation.deleting recorded alerts after creating new ones","log_level":1,"data":{}}  
+            {"timestamp":"1531347357.471781015","source":"alert-creation","message":"alert-creation.starting to delete alerts","log_level":1,"data":{}}  
+            Error: failed to delete alert 'too many pods crashing': response code - 404, message - 404 Not Found, body -   
+             
+
+ 3 errand(s)
+
+ Errand 'wavefront-alert-creation' completed with error (exit code 1)
+
+ Exit code 1
+ ++ cleanup
+#+END_EXAMPLE
+** TODO [#A] doc: https://try.wavefront.com/api/v2/swagger.json
+** TODO /Users/zdenny/Dropbox/private_data/work/vmware/code/wavefront-proxy-release/src/wavefront-alert/swagger/raw.json
+** TODO bosh-cli -n -d wf-deployment-0-7-0-dev-3 run-errand wavefront-alert-creation --instance master/0
+** TODO bosh_run_errand
+ function bosh_run_errand() {
+   local deployment_name=${1}
+   local deployment_errand=${2}
+
+   bosh_header "Running errand '${deployment_errand}' for deployment '${deployment_name}'..."
+
+   bosh-cli -n -d ${deployment_name} run-errand ${deployment_errand}
+ }
+
+** TODO wavefront-proxy restart
+** TODO Error: failed to create alert 'node CPU usage too high': context deadline exceeded
+** TODO run wavefront cli
+ /Users/zdenny/go/bin/wavefront-alert create --configPath config_example.json --alerts-json predefined-alerts.json
+
+** TODO manually env: wavefrontProxyTestVars[CLUSTER_NAME] = GetEnvWithDefault(CLUSTER_NAME, "wavefront_deployment")
+
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+
+** TODO check sourcesexistsbyhostname
+ func UniqueSourceExistsByHostname(client *wavefront.Client, hostname string) (bool, error) {
+	 params := &wavefront.SearchParams{
+		 Conditions: []*wavefront.SearchCondition{
+			 {
+				 Key:            SourceNameKey,
+				 Value:          hostname,
+				 MatchingMethod: "EXACT",
+			 },
+		 }}
+
+	 s, err := client.NewSearch("source", params).Execute()
+	 if err != nil {
+		 return false, fmt.Errorf("failed to search source \"%s\": %s", hostname, err)
+	 }
+
+	 var sources []WavefrontSource
+	 err = json.Unmarshal(s.Response.Items, &sources)
+	 if err != nil {
+		 return false, fmt.Errorf("failed to unmarshal search response: %s", err)
+	 }
+
+	 return uniqueExistence(len(sources))
+ }
+
+** TODO wavefront problem: https://pks-releng.ci.cf-app.com/teams/main/pipelines/vsphere-om22-1.1.x/jobs/wavefront-acceptance-tests-vsphere/builds/1?
+https://pks-releng.ci.cf-app.com/teams/main/pipelines/vsphere-om22-1.1.x/jobs/wavefront-acceptance-tests-vsphere/builds/1?
+
+ Phil Goodwin
+** TODO wavefront query
+ The query response doesn't contain any timeseries
+ query:  ts(pks.heapster.pod.cpu.usage, cluster="service-instance_e732626a-f943-47dc-a993-32407ba0684a" and pod_name="busybox-io-mpxrg")
+ "pks.heapster.pod.cpu.usage" doesn't exist for pod=busybox-io-mpxrg
+** TODO wavefront components
+| Type               | Name                         | Comment                                                                                             |
+|--------------------+------------------------------+-----------------------------------------------------------------------------------------------------|
+| ServiceAccount     | wavefront-proxy              |                                                                                                     |
+| ClusterRole        | kube-state-metrics           |                                                                                                     |
+| ClusterRoleBinding | wavefront-kube-state-metrics | kube-state-metrics(Role) -> wavefront-proxy(ServiceAccount)                                         |
+| ClusterRoleBinding | wavefront-heapster           | system:heapster(Role) -> wavefront-proxy(ServiceAccount)                                            |
+| Deployment         | wavefront-proxy              | heapster(container), kube-state-metrics(container), telegraf(container), wavefront-proxy(container) |
+* TODO wavefront tool                                              :noexport:
+Dhruvin Shah [4:37 PM]
+@ndalal If you filter the metrics by that label, you can see only those metrics. Value will change over the period of time, but label remains constant.
+What is the usecase, and metrics you are looking at?
+
+Conor Beverland [4:38 PM]
+you could consider using this cmdline tool that Box released as well: https://www.wavefront.com/automation-tooling-wavectl/
+Wavefront by VMware
+New Automation Tooling for Wavefront gets Boxed-up by Box - Wavefront by VMware
+Cloud content management leader, Box, recently open sourced its automation tooling for Wavefront to further assist the larger Wavefront user community.
+* HALF wavefront proxy docker image                                :noexport:
+* TODO [#A] bump kubo version for wavefront                        :noexport:
+https://github.com/pivotal-cf/p-pks-integrations/blob/cidr-range-158387175/dependencies.yml
+
+https://ci.vcna.io/teams/oratos-vmware/pipelines/pks-wavefront-release/jobs/run-tests/builds/14#L5bdc82b5:1858:1944
+
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] wavefront metrics limitation                           :noexport:
+#+BEGIN_EXAMPLE
+Jason Goocher [1:45 PM]
+@Denny Zhang I think the issue here is the key tied to `wf-deployment-0-10-0-dev-1`. It looks like there is a source named `wf-deployment-0-10-0-dev-1` and a pTag key called `cluster` with a value of `wf-deployment-0-10-0-dev-1`. It looks like source `wf-deployment-0-10-0-dev-1` only reported `pks.heapster.cluster*` metrics, but `cluster=wf-deployment-0-10-0-dev-1` are found across nodes like `pks.heapster.node`, `pks.heapster.pod_container`, etc.
+
+https://try.wavefront.com/u/CcfpcVPm9d
+
+I did an aggregation by metrics in order to have the legend show you all of the metrics reported by `wf-deployment-0-10-0-dev-1`.
+The metrics browser can't be filtered by a point tag key|value at this time
+
+Denny Zhang [1:46 PM]
+Jason, thanks for the help.
+
+Let me read and understand your findings!
+#+END_EXAMPLE
+
+* TODO [#A] wavefront golang client QueryWavefront                 :noexport:
+git-pks-ci/ci/scripts/run-wavefront-proxy-tests.sh
+
+/root/go/src/github.com/vmware/pks-ci/tests/integration-tests/wavefront-proxy-release/wavefront-proxy
+
+sum(ts("pks.heapster.*" and not "pks.heapster.cluster*", cluster="wf-deployment-0-10-0-dev-1"), sources)
+
+ts("pks.heapster.cluster.cpu.limit", source="service-instance_1aaddb77-d691-4a47-b511-2027bcbef7af")
+
+sum(ts("pks.heapster.*" and not "pks.heapster.cluster*", cluster="service-instance_1aaddb77-d691-4a47-b511-2027bcbef7af"), sources)
+
+https://try.wavefront.com/chart#_v01(c:(cs:(type:line),id:chart,n:%22pks.heapster.cluster.cpu.limit%22,s:!((e:%27%27,n:Query,q:%27ts(%22pks.heapster.cluster.cpu.limit%22,%20source=%22service-instance_1aaddb77-d691-4a47-b511-2027bcbef7af%22)%27,qb:%27%7B%22_v%22:1,%22metric%22:%22ts(%5C%22pks.heapster.cluster.cpu.limit%5C%22)%22,%22filters%22:%5B%5B%5B%22source%22,%22service-instance_1aaddb77-d691-4a47-b511-2027bcbef7af%22%5D%5D,%22and%22%5D,%22functions%22:%5B%5D%7D%27,qbe:!t,s:Y))),g:(c:off,d:21600,ls:!f,s:1541525115,w:%276h%27))
+
+sum(ts("pks.heapster.*", cluster="service-instance_1aaddb77-d691-4a47-b511-2027bcbef7af"), sources)
+
+ts(pks.heapster.ns.cpu.request, cluster="wf-deployment-0-10-0-dev-3" and namespace_name="kube-system")
+** error
+https://try.wavefront.com/chart#_v01(c:(cs:(type:line),id:chart,n:%22pks.heapster.cluster.cpu.limit%22,s:!((e:%27%27,n:Query,q:%27ts(%22pks.heapster.cluster.cpu.limit%22,%20source=%22service-instance_1aaddb77-d691-4a47-b511-2027bcbef7af%22)%27,qb:%27%7B%22_v%22:1,%22metric%22:%22ts(%5C%22pks.heapster.cluster.cpu.limit%5C%22)%22,%22filters%22:%5B%5B%5B%22source%22,%22service-instance_1aaddb77-d691-4a47-b511-2027bcbef7af%22%5D%5D,%22and%22%5D,%22functions%22:%5B%5D%7D%27,qbe:!t,s:Y))),g:(c:off,d:21600,ls:!f,s:1541525115,w:%276h%27))
+
+ts("pks.heapster.cluster.cpu.limit", source="service-instance_1aaddb77-d691-4a47-b511-2027bcbef7af")
+** ok
+ts("pks.heapster.cluster.cpu.limit", cluster="service-instance_1aaddb77-d691-4a47-b511-2027bcbef7af")
+
+ts("pks.heapster.cluster.cpu.limit", cluster="service-instance_604a905f-e22f-4863-9c0c-32887e6e825c")
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] can't find metric                                      :noexport:
+#+BEGIN_EXAMPLE
+
+Warning - No metrics matching: [pks.heapster.ns.cpu.request] and source(s): []|
+
+The query response doesn't contain any timeseries
+query:  ts(pks.heapster.ns.cpu.request, cluster="wf-deployment-0-10-0-dev-23" and namespace_name="kube-system")
+"pks.heapster.ns.cpu.request" doesn't exist for namespace=kube-system
+#+END_EXAMPLE

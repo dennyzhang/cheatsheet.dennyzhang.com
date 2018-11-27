@@ -53,11 +53,15 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | pks tile -> wavefront token                 | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.wavefront.enabled.wavefront_token= |
 | Reference                                   | [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]]                                                                                        |
 ** Tile Reference
-| Name      | Command                                                                         |
-|-----------+---------------------------------------------------------------------------------|
-| [[https://github.com/pivotal-cf/kiln][kiln]]      | A command line tool to help you maintain tile metadata. [[https://github.com/pivotal-cf/kiln/releases][Download kiln]]           |
-| Example   | [[https://github.com/pivotal-cf-experimental/ops-manager-example/blob/master/example-product/metadata/example-product.yml.erb][example-product/metadata/example-product.yml.erb]]                                |
-| Reference | [[https://docs.pivotal.io/tiledev/2-1/product-template-reference.html#form-properties][Forms Reference]], [[https://docs.pivotal.io/tiledev/2-2/product-template-reference.html][Product Template Reference]], [[https://docs.pivotal.io/tiledev/2-2/property-reference.html][Property Reference]], [[https://docs.pivotal.io/tiledev/2-1/tile-generator.html][Tile Generator]] |
+| Name           | Command                                                                         |
+|----------------+---------------------------------------------------------------------------------|
+| [[https://github.com/pivotal-cf/kiln][kiln]]           | A command line tool to help you maintain tile metadata. [[https://github.com/pivotal-cf/kiln/releases][Download kiln]]           |
+| Example        | [[https://github.com/pivotal-cf-experimental/ops-manager-example/blob/master/example-product/metadata/example-product.yml.erb][example-product/metadata/example-product.yml.erb]]                                |
+| nozzle         |                                                                                 |
+| firehose       |                                                                                 |
+| service broker |                                                                                 |
+| buildpack      |                                                                                 |
+| Reference      | [[https://docs.pivotal.io/tiledev/2-1/product-template-reference.html#form-properties][Forms Reference]], [[https://docs.pivotal.io/tiledev/2-2/product-template-reference.html][Product Template Reference]], [[https://docs.pivotal.io/tiledev/2-2/property-reference.html][Property Reference]], [[https://docs.pivotal.io/tiledev/2-1/tile-generator.html][Tile Generator]] |
 ** Ops manager
 | Name                | Command                                                                  |
 |---------------------+--------------------------------------------------------------------------|

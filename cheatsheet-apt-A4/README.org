@@ -154,3 +154,103 @@ aptitude autoclean
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** TODO apt-get install -f
 ** TODO dpkg -I: # List all installed packages with versions and details
+* Ubuntu apt                                                       :noexport:
+** DONE bash: apt-add-repository: command not found
+  CLOSED: [2016-05-18 Wed 15:20]
+apt-get install software-properties-common python-software-properties
+http://lifeonubuntu.com/ubuntu-missing-add-apt-repository-command/
+** DONE sudo: add-apt-repository: command not found: sudo apt-get install software-properties-common
+  CLOSED: [2015-06-07 Sun 15:23]
+https://ostechnix.wordpress.com/2013/04/29/resolve-the-error-add-apt-repository-command-not-found-in-ubuntu-12-10/
+https://muffinresearch.co.uk/ubuntu-add-apt-repository-command-not-found/
+** DONE [#B] apt-key
+   CLOSED: [2015-08-07 Fri 16:22]
+*** apt-key finger
+#+BEGIN_EXAMPLE
+root@ca90313b14c2:/etc/apt# apt-key finger
+/etc/apt/trusted.gpg
+--------------------
+pub   1024D/437D05B5 2004-09-12
+      Key fingerprint = 6302 39CC 130E 1A7F D81A  27B1 4097 6EAF 437D 05B5
+uid                  Ubuntu Archive Automatic Signing Key <ftpmaster@ubuntu.com>
+sub   2048g/79164387 2004-09-12
+
+pub   1024D/FBB75451 2004-12-30
+      Key fingerprint = C598 6B4F 1257 FFA8 6632  CBA7 4618 1433 FBB7 5451
+uid                  Ubuntu CD Image Automatic Signing Key <cdimage@ubuntu.com>
+
+pub   4096R/C0B21F32 2012-05-11
+      Key fingerprint = 790B C727 7767 219C 42C8  6F93 3B4F E6AC C0B2 1F32
+uid                  Ubuntu Archive Automatic Signing Key (2012) <ftpmaster@ubuntu.com>
+
+pub   4096R/EFE21092 2012-05-11
+      Key fingerprint = 8439 38DF 228D 22F7 B374  2BC0 D94A A3F0 EFE2 1092
+uid                  Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>
+
+pub   1024R/9D06AF36 2012-09-22
+      Key fingerprint = 3D16 1563 28D0 E305 6D88  5D0B D7CC 6F01 9D06 AF36
+uid                  Launchpad PPA for Cheng-Wei Chien
+
+pub   1024D/D50582E6 2009-02-01
+      Key fingerprint = 150F DE3F 7787 E7D1 1EF4  E12A 9B7D 32F2 D505 82E6
+uid                  Kohsuke Kawaguchi <kk@kohsuke.org>
+uid                  Kohsuke Kawaguchi <kohsuke.kawaguchi@sun.com>
+uid                  [jpeg image of size 3704]
+sub   2048g/10AF40FE 2009-02-01
+
+pub   1024R/84F281ED 2009-06-29
+      Key fingerprint = 3972 CA88 B828 D518 2ED7  FE6C 07B8 9372 84F2 81ED
+uid                  Launchpad 389 Directory Server
+#+END_EXAMPLE
+*** apt-key list
+#+BEGIN_EXAMPLE
+root@ca90313b14c2:~/iamdevops# apt-key list
+/etc/apt/trusted.gpg
+--------------------
+pub   1024D/437D05B5 2004-09-12
+uid                  Ubuntu Archive Automatic Signing Key <ftpmaster@ubuntu.com>
+sub   2048g/79164387 2004-09-12
+
+pub   1024D/FBB75451 2004-12-30
+uid                  Ubuntu CD Image Automatic Signing Key <cdimage@ubuntu.com>
+
+pub   4096R/C0B21F32 2012-05-11
+uid                  Ubuntu Archive Automatic Signing Key (2012) <ftpmaster@ubuntu.com>
+
+pub   4096R/EFE21092 2012-05-11
+uid                  Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>
+
+pub   1024R/9D06AF36 2012-09-22
+uid                  Launchpad PPA for Cheng-Wei Chien
+
+pub   1024D/D50582E6 2009-02-01
+uid                  Kohsuke Kawaguchi <kk@kohsuke.org>
+uid                  Kohsuke Kawaguchi <kohsuke.kawaguchi@sun.com>
+uid                  [jpeg image of size 3704]
+sub   2048g/10AF40FE 2009-02-01
+
+pub   1024R/84F281ED 2009-06-29
+uid                  Launchpad 389 Directory Server
+#+END_EXAMPLE
+** DONE Install gcc and build-essential: yum groupinstall "Development tools"; apt-get install build-essential
+  CLOSED: [2014-03-10 Mon 17:02]
+http://stackoverflow.com/questions/19816275/no-acceptable-c-compiler-found-in-path-when-installing-python
+
+#+begin_example
+checking machine type as reported by uname -m... x86_64
+checking for --without-gcc... no
+checking for gcc... no
+checking for cc... no
+checking for cl.exe... no
+configure: error: in `/tmp/Python-2.7.3':
+configure: error: no acceptable C compiler found in $PATH
+See `config.log' for more details
+[root@unknown9494260198c6 Python-2.7.3]# make && make install
+make: *** No targets specified and no makefile found.  Stop.
+#+end_example
+** DONE aptitude: command not found: apt-get install aptitude
+  CLOSED: [2015-06-08 Mon 19:25]
+#+BEGIN_EXAMPLE
+root@387d504951ef:~#  aptitude -y install squid3
+-bash: aptitude: command not found
+#+END_EXAMPLE
