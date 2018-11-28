@@ -183,7 +183,7 @@ https://www.youtube.com/watch?v=LOtlICZR5bE
 
 
  XXX Li [1 minute ago]
- first time it’s `pks_setup_login`, then it’s just `pks_login`
+ first time it's `pks_setup_login`, then it's just `pks_login`
  #+END_EXAMPLE
 * TODO vke: VMware Kubernetes Engine                               :noexport:
 https://cloud.vmware.com/vmware-kubernetes-engine

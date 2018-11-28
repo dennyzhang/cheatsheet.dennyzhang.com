@@ -1517,3 +1517,94 @@ The query response doesn't contain any timeseries
 query:  ts(pks.heapster.ns.cpu.request, cluster="wf-deployment-0-10-0-dev-23" and namespace_name="kube-system")
 "pks.heapster.ns.cpu.request" doesn't exist for namespace=kube-system
 #+END_EXAMPLE
+* HALF wavefront curl test                                         :noexport:
+https://github.com/wavefrontHQ/wavefront-cli
+
+https://github.com/wavefrontHQ/python-client
+
+sudo pip install wavefront-api-client
+
+api_key = 'XXX'
+
+#+BEGIN_SRC python
+import wavefront_api_client as wave_api
+
+base_url = 'https://YOUR_INSTANCE.wavefront.com'
+api_key = 'YOUR_API_TOKEN'
+
+config = wave_api.Configuration()
+config.host = base_url
+client = wave_api.ApiClient(configuration=config, header_name='Authorization', header_value='Bearer ' + api_key)
+
+# instantiate source API
+source_api = wave_api.SourceApi(client)
+sources = source_api.get_all_source()
+print sources
+#+END_SRC
+
+* TODO wavefront issue: Can't submit data to wavefront server      :noexport:
+#+BEGIN_EXAMPLE
+2018-11-03 06:14:25,109 WARN  [QueuedAgentService:run] [RETRY THREAD 2] saw too many submission errors. Will re-attempt later
+2018-11-03 06:14:25,967 INFO  [agent:fetchConfig] fetching configuration from server at: https://try.wavefront.com
+2018-11-03 06:14:25,996 ERROR [agent:fetchConfigError] *******************************************************
+2018-11-03 06:14:25,996 ERROR [agent:fetchConfigError] HTTP 405 error: Unable to retrieve proxy configuration!
+2018-11-03 06:14:25,996 ERROR [agent:fetchConfigError] https://try.wavefront.com: HTTP 405 Method Not Allowed
+2018-11-03 06:14:25,996 ERROR [agent:fetchConfigError] *******************************************************
+2018-11-03 06:14:26,996 INFO  [agent:fetchConfig] fetching configuration from server at: https://try.wavefront.com
+2018-11-03 06:14:27,025 ERROR [agent:fetchConfigError] *******************************************************
+2018-11-03 06:14:27,025 ERROR [agent:fetchConfigError] HTTP 405 error: Unable to retrieve proxy configuration!
+2018-11-03 06:14:27,025 ERROR [agent:fetchConfigError] https://try.wavefront.com: HTTP 405 Method Not Allowed
+2018-11-03 06:14:27,025 ERROR [agent:fetchConfigError] *******************************************************
+2018-11-03 06:14:27,870 INFO  [QueuedAgentService:lambda$new$5] current retry queue sizes: [40/40/39/39]
+2018-11-03 06:14:28,025 INFO  [agent:fetchConfig] fetching configuration from server at: https://try.wavefront.com
+
+2018-11-03 06:14:33,014 WARN  [QueuedAgentService:run] [RETRY THREAD 1] cannot submit data to Wavefront servers. Will re-attempt later
+java.lang.RuntimeException: Server error: 405
+	at com.wavefront.agent.QueuedAgentService.parsePostingResponse(QueuedAgentService.java:722) ~[wavefront-push-agent.jar:?]
+	at com.wavefront.agent.QueuedAgentService.access$700(QueuedAgentService.java:89) ~[wavefront-push-agent.jar:?]
+	at com.wavefront.agent.QueuedAgentService$PostPushDataResultTask.execute(QueuedAgentService.java:1017) ~[wavefront-push-agent.jar:?]
+	at com.wavefront.agent.QueuedAgentService$7.run(QueuedAgentService.java:374) [wavefront-push-agent.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_72]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [?:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [?:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_72]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_72]
+2018-11-03 06:14:33,052 WARN  [QueuedAgentService:run] [RETRY THREAD 1] cannot submit data to Wavefront servers. Will re-attempt later
+java.lang.RuntimeException: Server error: 405
+	at com.wavefront.agent.QueuedAgentService.parsePostingResponse(QueuedAgentService.java:722) ~[wavefront-push-agent.jar:?]
+	at com.wavefront.agent.QueuedAgentService.access$700(QueuedAgentService.java:89) ~[wavefront-push-agent.jar:?]
+	at com.wavefront.agent.QueuedAgentService$PostPushDataResultTask.execute(QueuedAgentService.java:1017) ~[wavefront-push-agent.jar:?]
+	at com.wavefront.agent.QueuedAgentService$7.run(QueuedAgentService.java:374) [wavefront-push-agent.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_72]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [?:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [?:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_72]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_72]
+2018-11-03 06:14:33,101 WARN  [QueuedAgentService:run] [RETRY THREAD 1] cannot submit data to Wavefront servers. Will re-attempt later
+java.lang.RuntimeException: Server error: 405
+	at com.wavefront.agent.QueuedAgentService.parsePostingResponse(QueuedAgentService.java:722) ~[wavefront-push-agent.jar:?]
+	at com.wavefront.agent.QueuedAgentService.access$700(QueuedAgentService.java:89) ~[wavefront-push-agent.jar:?]
+	at com.wavefront.agent.QueuedAgentService$PostPushDataResultTask.execute(QueuedAgentService.java:1017) ~[wavefront-push-agent.jar:?]
+	at com.wavefront.agent.QueuedAgentService$7.run(QueuedAgentService.java:374) [wavefront-push-agent.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_72]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [?:1.8.0_72]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [?:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_72]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_72]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_72]
+2018-11-03 06:14:33,109 WARN  [QueuedAgentService:run] [RETRY THREAD 1] saw too many submission errors. Will re-attempt later
+2018-11-03 06:14:33,171 INFO  [agent:fetchConfig] fetching configuration from server at: https://try.wavefront.com
+2018-11-03 06:14:33,200 ERROR [agent:fetchConfigError] *******************************************************
+2018-11-03 06:14:33,200 ERROR [agent:fetchConfigError] HTTP 405 error: Unable to retrieve proxy configuration!
+2018-11-03 06:14:33,200 ERROR [agent:fetchConfigError] https://try.wavefront.com: HTTP 405 Method Not Allowed
+2018-11-03 06:14:33,200 ERROR [agent:fetchConfigError] *******************************************************
+kubo@jumper:~$
+#+END_EXAMPLE
+
+* TODO How wavefront proxy get deployed for each kubernetes cluster? :noexport:
+* TODO [#A] how wavefront generate the metrics. Can we do it faster? :noexport:IMPORTANT:
