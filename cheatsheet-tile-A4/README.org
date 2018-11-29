@@ -29,6 +29,7 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | Upload stemcell from cli             | =omcli upload-stemcell -s </path/stemcell.tgz>=                                              |
 | List all properties for a deployment | =bosh deployments=, =omcli curl -p /api/v0/staged/products/${bosh_deployment}/properties -s= |
 | List all installed tiles             | =omcli curl -p /api/v0/installations=                                                        |
+| json output                          | =omcli -k --format=json staged-products=                                                     |
 ** om product
 | Name                        | Summary                                                                   |
 |-----------------------------+---------------------------------------------------------------------------|

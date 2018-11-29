@@ -21,6 +21,14 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-cloudfoundry-A4][Cloudfoundry CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
+** VMware Overview
+| Name                          | Summary                             |
+|-------------------------------+-------------------------------------|
+| vSphere Suite                 | Virtualization                      |
+| [[https://docs.vmware.com/en/VMware-vSAN/index.html][vSAN]]                          | Storage                             |
+| NSX                           | Networking                          |
+| [[https://docs.vmware.com/en/VMware-Cloud-Foundation/index.html][VCF (VMware Cloud Foundation)]] | SDDC (Software defined data center) |
+[[https://cheatsheet.dennyzhang.com/cheatsheet-vmware-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-vmware-A4/vmware-overview.jpg]]
 ** Cloud Platform
 | Name                      | Summary                                                          |
 |---------------------------+------------------------------------------------------------------|
@@ -118,6 +126,7 @@ Insights & Analytics
 * TODO vmware hatchway                                             :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * [#A] Radio ideas                                                 :noexport:
+https://docs.google.com/document/d/1ROZKs2OnWNJBvpCMqM0V6T-2D_1ktDAxi0B371nRv3o/edit?usp=sharing
 ** previous radio
 https://radio.eng.vmware.com/2018/events/1866
 Spherelet - A Kubelet for ESXi
