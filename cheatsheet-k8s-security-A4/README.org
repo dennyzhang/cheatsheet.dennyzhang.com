@@ -25,9 +25,9 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | Name                                 | Summary                                                                             |
 |--------------------------------------+-------------------------------------------------------------------------------------|
 | Kubernetes RBAC                      | Kubernetes API Security                                                             |
-| [[https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/][Admission Controls]]                   | Intercepts requests to the Kubernetes API server prior to persistence of the object |
 | [[https://kubernetes.io/docs/concepts/policy/pod-security-policy/][Pod Security Policy]]                  | enable fine-grained authorization of pod creation and updates.                      |
 | Pod security context                 |                                                                                     |
+| [[https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/][Admission Controls]]                   | Intercepts requests to the Kubernetes API server prior to persistence of the object |
 | Network security policy              | a specification of how groups of pods are allowed to communicate with each other.   |
 | [[http://man7.org/linux/man-pages/man7/capabilities.7.html][Linux capabilities]]                   | Allow you to break apart the power of root into smaller groups of privileges        |
 | SElinux                              |                                                                                     |

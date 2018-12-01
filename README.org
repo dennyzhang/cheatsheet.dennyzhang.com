@@ -403,4 +403,3 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO [#A] linux cheatsheet: file, process, memory, networking, device, disk :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Create my own cheatsheet.dennyzhang.com link, instead of the general one :noexport:
-* TODO [#A] cheatsheet for k8s security                            :noexport:
