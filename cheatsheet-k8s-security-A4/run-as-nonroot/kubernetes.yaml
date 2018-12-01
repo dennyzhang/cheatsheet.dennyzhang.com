@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  namespace: my-test
+  labels:
+    app: myapp
+spec:
+  containers:
+  - name: myapp-container
+    # image: denny/node:alphine
+    image: node:alpine
+    command: ['sh', '-c', 'echo Hello Kubernetes! && sleep 3600']
+    securityContext:  
+      runAsNonRoot: true  

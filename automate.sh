@@ -52,10 +52,10 @@ function git_push {
         if [ -d "$d" ] && [ -f "$d/.git" ] ; then
             cd "$d"
             echo "In ${d}, git commit and push"
-            git commit -am "update doc"
-            git push origin master
-            # git commit --amend --no-edit
-            # git push origin master --force
+            git add *.org
+            # git commit -am "update doc"
+            git commit --amend --no-edit
+            git push origin master --force
             cd ..
         fi
     done
