@@ -22,21 +22,22 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
 ** AWS Products - Fundamental
-| Name                 | Summary                                                   |
-|----------------------+-----------------------------------------------------------|
-| [[https://aws.amazon.com/ec2/][AWS EC2]]              | Virtual servers                                           |
-| [[https://aws.amazon.com/esk/][AWS EKS]]              | Kubernetes services in AWS                                |
-| [[https://aws.amazon.com/ecs/][AWS ECS]]              | Docker container service with orchestrated by AWS itself. |
-| [[https://aws.amazon.com/ebs/][AWS EBS]]              | Block storage                                             |
-| [[https://aws.amazon.com/s3/][AWS S3]]               | Object storage                                            |
-| [[https://aws.amazon.com/rds/][AWS RDS]]              | Relational Database: e.g, mysql                           |
-| [[https://aws.amazon.com/vpc/][AWS VPC]]              | Virtual private cloud: provides networking isolation      |
-| [[https://aws.amazon.com/elasticloadbalancing/][AWS ELB]]              | Load balancer                                             |
-| [[https://aws.amazon.com/cloudwatch/][AWS CloudWatch]]       | Monitoring                                                |
-| [[https://aws.amazon.com/cloudformation/][AWS CloudFormation]]   | Create AWS infra in a programming way                     |
-| [[https://aws.amazon.com/lambda/][AWS Lambda]]           | Function as a service                                     |
-| [[https://aws.amazon.com/machine-learning/][AWS Machine Learning]] | Build Smart Applications Quickly and Easily               |
-| Reference            | [[http://docs.aws.amazon.com/general/latest/gr/rande.html][Link: check AWS availability]], [[http://aws.amazon.com/products/][Link: AWS products]]          |
+| Name                 | Summary                                                                         |
+|----------------------+---------------------------------------------------------------------------------|
+| [[https://aws.amazon.com/ec2/][AWS EC2]]              | Virtual servers                                                                 |
+| [[https://aws.amazon.com/esk/][AWS EKS]]              | Kubernetes services in AWS                                                      |
+| [[https://aws.amazon.com/ecs/][AWS ECS]]              | Docker container service with orchestrated by AWS itself.                       |
+| [[https://aws.amazon.com/ebs/][AWS EBS]]              | Block storage                                                                   |
+| [[https://aws.amazon.com/s3/][AWS S3]]               | Object storage                                                                  |
+| [[https://aws.amazon.com/rds/][AWS RDS]]              | Relational Database: e.g, mysql                                                 |
+| [[https://aws.amazon.com/vpc/][AWS VPC]]              | Virtual private cloud: provides networking isolation                            |
+| [[https://aws.amazon.com/elasticloadbalancing/][AWS ELB]]              | Load balancer                                                                   |
+| [[https://aws.amazon.com/cloudwatch/][AWS CloudWatch]]       | Monitoring                                                                      |
+| [[https://aws.amazon.com/cloudformation/][AWS CloudFormation]]   | Create AWS infra in a programming way                                           |
+| [[https://aws.amazon.com/lambda/][AWS Lambda]]           | Function as a service                                                           |
+| [[https://aws.amazon.com/machine-learning/][AWS Machine Learning]] | Build Smart Applications Quickly and Easily                                     |
+| [[https://aws.amazon.com/outposts/][AWS Outposts]]         | Run AWS infrastructure on-premises. And it's fully managed and supported by AWS |
+| Reference            | [[http://docs.aws.amazon.com/general/latest/gr/rande.html][Link: check AWS availability]], [[http://aws.amazon.com/products/][Link: AWS products]]                                |
 ** AWS Products - Big Data
 | Name            | Summary                                    |
 |-----------------+--------------------------------------------|

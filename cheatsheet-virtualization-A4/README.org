@@ -34,12 +34,13 @@ File me [[https://github.com/dennyzhang/cheatsheet-virtualization-A4/issues][Iss
 [[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-virtualization-A4/vsphere-schedule-drs.png]]
 
 ** Basic Concepts
-| Name                                | Command |
-|-------------------------------------+---------|
-| Thin  Provisioning                  |         |
-| co-located                          |         |
-| [[https://www.vmware.com/products/vsphere/drs-dpm.html][DRS(Distributed Resource Scheduler)]] |         |
-| [[https://en.wikipedia.org/wiki/Non-uniform_memory_access][NUMA(Non-uniform memory access)]]     |         |
+| Name                                | Command                                                                                                         |
+|-------------------------------------+-----------------------------------------------------------------------------------------------------------------|
+| Thin  Provisioning                  |                                                                                                                 |
+| co-located                          |                                                                                                                 |
+| [[https://www.vmware.com/products/vsphere/drs-dpm.html][DRS(Distributed Resource Scheduler)]] |                                                                                                                 |
+| [[https://en.wikipedia.org/wiki/Non-uniform_memory_access][NUMA(Non-uniform memory access)]]     |                                                                                                                 |
+| [[https://en.wikipedia.org/wiki/VMDK][vmdk]]                                | a file format describes containers for virtual hard disk drives to be used in VMware Workstation or VirtualBox. |
 
 ** VSphere Concepts
 | Name           | Summary                                                                                       |
@@ -58,13 +59,6 @@ File me [[https://github.com/dennyzhang/cheatsheet-virtualization-A4/issues][Iss
 | dockerd |                                                                                          |
 | [[https://github.com/rkt/rkt][rkt]]     | a pod-native container engine for Linux.                                                 |
 | [[https://github.com/kubernetes-sigs/cri-o][CRI-O]]   | Open Container Initiative-based implementation of Kubernetes Container Runtime Interface |
-
-** Storage
-| Name     | Command                                                                                                                         |
-|----------+---------------------------------------------------------------------------------------------------------------------------------|
-| vmdk     | a file format describes containers for virtual hard disk drives to be used in VMware Workstation or VirtualBox. [[https://en.wikipedia.org/wiki/VMDK][wikipedia: VMDK]] |
-| hatchway | Persistent Storage for Cloud Native Applications. [[https://vmware.github.io/hatchway/][github: hatchway]]                                                              |
-| vSAN     |                                                                                                                                 |
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
