@@ -41,6 +41,12 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | Delete product              | =omcli -k delete-product -p pivotal-container-service -v 1.3.0-build.3=   |
 | Unstage product             | =omcli -k unstage-product -p pivotal-container-service=                   |
 | Stage product               | =omcli -k stage-product -p pivotal-container-service -v 1.3.0-build.3=    |
+** pivnet-cli
+| Name                     | Comment                                                                                     |
+|--------------------------+---------------------------------------------------------------------------------------------|
+| [[https://github.com/pivotal-cf/pivnet-cli][pivnet]]                   | CLI to interact with Pivotal Network. [[https://github.com/pivotal-cf/pivnet-cli/releases/][Install pivnet CLI]]                                    |
+| pivnet login             | =pivnet login --api-token <your_token>=                                                     |
+| pivnet download stemcell | =pivnet download-product-files -p stemcells-ubuntu-xenial -r 170.9 -g '*vsphere*' -d /tmp/= |
 ** Get bosh/pks tile credential from om
 | Name                                        | Summary                                                                                                                |
 |---------------------------------------------+------------------------------------------------------------------------------------------------------------------------|
