@@ -1,0 +1,131 @@
+* CheatSheet: Mongodb                                              :Tool:
+:PROPERTIES:
+:type:     tool, database
+:export_file_name: cheatsheet-mongodb-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-mongodb-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-mongodb-A4/cheatsheet-mongodb-A4.pdf][cheatsheet-mongodb-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/kubernetes/][kubernetes]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][Prometheus CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4][Nagios CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
+** Mongodb Operation
+| Name                        | Summary                                                                             |
+|-----------------------------+-------------------------------------------------------------------------------------|
+| Connect to mongodb          | =mongo 192.168.75.108:12345/d_2003 -u u_2003 -p XXXX=                               |
+| Start mongo                 | =mongod --config /etc/mongod.conf=                                                  |
+| Stop mongo                  | =kill -15 <pid>; mongo --eval "db.getSiblingDB('admin').shutdownServer()"=          |
+| Mongo script get parameters | mongo --eval "var day='2013-07-26'" localhost:27017/shopex mongojs/update-index.js  |
+| Mongo data folder           | =/var/lib/mongodb/journal=                                                       |
+| Export to json file         | =mongoexport --db shopex --collection order --out collection.json=                  |
+| Import json file            | =mongoimport --upsert --db shopex --collection order --file collection.json=        |
+
+** Mongodb Basic
+| Name                        | Summary                                                                             |
+|-----------------------------+-------------------------------------------------------------------------------------|
+| Remove table                | =db.kvstore.remove()=                                                               |
+| define stored procedure     | =db.system.js.save({_id:"addNumbers", value:function(x, y){ return x + y; }})=      |
+| view stored procedure       | =db.system.js.find()=                                                               |
+| call stored procedure       | =db.eval('addNumbers(3, 4.2)')=                                                     |
+| Create record               | =db.users.insert({"name":{"first":"refactor","last":"refactor2"},"age":24})=        |
+| Update record               | =db.users.update({"age":30}, {$set:{"age":31}});=                                   |
+| Delete by filtering         | =db.users.remove({"age":30})=                                                       |
+| Loop cusror                 | =while(s.hasNext()) printjson(s.next());=                                           |
+| Loop array                  | i=0; while(i < s.length) printjson(s[i++]);                                         |
+
+** Mongodb Query
+| Name                  | Summary                                                                                                          |
+|-----------------------+------------------------------------------------------------------------------------------------------------------|
+| Basic query           | db.users.find({"name":{"first":"refactor","last":"refactor2"}})                                                  |
+| Basic query           | db.users.find({"name.first":"refactor"})                                                                         |
+| great than / or equal | db.users.find({"age":{"$gte":20}})                                                                               |
+| not equal             | db.users.find({"age":{"$ne":31}})                                                                                |
+| exists                | db.users.find({"age":{"$exists":true}})                                                                          |
+| in                    | db.users.find({"age":{"$in":[21,24]}})                                                                           |
+| not in                | db.users.find({"age":{"$nin":[21,23]}})                                                                          |
+| or                    | db.users.find({"$or":[{"name.last":"another"}, {"age":31}]})                                                     |
+| Count matched records | db.order.find({"created":{"$regex":"2013-07-12.*"}}).count()                                                     |
+|-----------------------+------------------------------------------------------------------------------------------------------------------|
+|                       | db.users.find({"age":{"$nin":[21,23]}}).count()                                                                  |
+| query by offset       | db.users.find({"age":{"$nin":[21,23]}}).skip(1).limit(2)                                                         |
+| sort                  | db.users.find().sort({"age":24});                                                                                |
+| reverse order         | db.users.find().sort({"name.last": -1})                                                                          |
+|                       | db.users.find().forEach( function(u) { printjson(u); } );                                                        |
+| mod 20                | db.users.find({"age":{"$mod":[20,4]}})                                                                           |
+|-----------------------+------------------------------------------------------------------------------------------------------------------|
+| Parse string to float | parseFloat(v.availableConfirmFee, 10);                                                                           |
+| filter by "like"      | db.taobao.find({"created":/2013-07-12.*/})                                                                       |
+|                       | db.order.find({"created":/2013-07-14.*/, "num":{"$exists":false}}).forEach( function(u) { printjson(u.tid); } ); |
+|-----------------------+------------------------------------------------------------------------------------------------------------------|
+|                       | db.order.find({"created":{"$regex":day}}).count();                                                               |
+|                       | db.order.distinct("buyerNick", {"created":{"$regex":day}}).length                                                |
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-mongodb-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-mongodb-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* TODO publish mongodb cheatsheet                                  :noexport:
+MongoDB = JSON + Indexes
+- MongoDB是一个基于分布式文件存储的数据库.由C++语言编写.
+- MongoDB旨在为WEB应用提供可扩展的高性能数据存储解决方案.
+- 默认端口为27017, MongoDB在32位模式运行时支持的最大文件尺寸为2GB
+- mongod --config /etc/mongod.conf
+
+mongo --eval "db.media_action.count()" localhost:27017/dataplatform
+
+mongo --eval "var day='2013-08-01'" localhost:27017/shopex mongo_js/update_index.js
+** DONE centos install mongo server
+  CLOSED: [2014-01-24 Fri 01:26]
+cat >/etc/yum.repos.d/10gen.repo<<EOF
+[10gen]
+name=10gen Repository
+baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64
+gpgcheck=0
+EOF
+
+sudo yum install -y mongo-10gen mongo-10gen-server
+sudo service mongod start
+sudo chkconfig mongod on
+** TODO mongo query
+* misc query                                                       :noexport:
+| caculate the sum of  a field | var reduce = function(values) { var count=0; values.forEach(function(v) { count+=v.age; }); return {count: count};}; var s = db.users.find(); reduce(s); |

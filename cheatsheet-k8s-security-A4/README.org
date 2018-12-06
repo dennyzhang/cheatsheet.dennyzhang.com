@@ -65,6 +65,10 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 
 [[CheatSheet: Kubernetes Security][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-k8s-security-A4/admission_controller.png]]
 
+| Name                                                 | Summary                                      |
+|------------------------------------------------------+----------------------------------------------|
+| Example: admission webhook                           | [[https://github.com/kelseyhightower/denyenv-validating-admission-webhook][GitHub: denyenv-validating-admission-webhook]] |
+| Example: Admission controller for guarding namespace | [[https://github.com/yahoo/k8s-namespace-guard][GitHub: k8s-namespace-guard]]                  |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

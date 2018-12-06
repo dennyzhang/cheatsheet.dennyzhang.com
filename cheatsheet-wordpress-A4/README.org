@@ -1,0 +1,1444 @@
+* CheatSheet: Wordpress                                              :Tool:
+:PROPERTIES:
+:type:     tool
+:export_file_name: cheatsheet-wordpress-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-wordpress-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-wordpress-A4/cheatsheet-wordpress-A4.pdf][cheatsheet-wordpress-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/kubernetes/][kubernetes]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-wordpress-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][Prometheus CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4][Nagios CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
+** SEO Concept
+| Name        | Summary                    |
+|-------------+----------------------------|
+| SEO         | Search Engine Optimization |
+| SEM         | Search engine marketing    |
+| PR          | Page Rank                  |
+| Bounce Rate |                            |
+| UV          | User view                  |
+| PV          | Page view                  |
+
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-wordpress-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-wordpress-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-wordpress-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE [#A] create database for wordpress                          :noexport:
+  CLOSED: [2017-11-08 Wed 23:37]
+mysql> CREATE DATABASE databasename;
+Query OK, 1 row affected (0.00 sec)
+
+
+mysql> CREATE USER wordpressuser;
+Query OK, 0 rows affected (0.00 sec)
+
+
+mysql> SET PASSWORD FOR wordpressuser = PASSWORD("wordpresspassword");
+Query OK, 0 rows affected (0.00 sec)
+
+
+GRANT ALL PRIVILEGES ON databasename.* TO "wordpressuser"@"%" IDENTIFIED BY "wordpresspassword";
+
+mysql> GRANT ALL PRIVILEGES ON databasename.* TO "wordpressuser"@"localhost" IDENTIFIED BY "wordpresspassword";
+Query OK, 0 rows affected (0.00 sec)
+
+
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+
+
+mysql> EXIT
+
+* [#A] Blog Improvement                                  :noexport:IMPORTANT:
+** DONE wordpress导航的标签云,居占摆放
+   CLOSED: [2012-12-05 Wed 23:15]
+   <p style="padding:35px;" align="center">
+** DONE blog交换video和freemind的位置
+   CLOSED: [2012-12-05 Wed 23:15]
+** BYPASS wordpress的freemind,居占摆放: 加两个空行
+  CLOSED: [2012-12-05 Wed 23:23]
+&nbsp;
+
+&nbsp;
+
+[freemind file="./wp-content/plugins/freemind-wp-browser/mediaplayer/index.mm" /]
+** DONE [#B] wordpress: Image horizontal reel scroll slideshow    :IMPORTANT:
+  CLOSED: [2012-12-05 Wed 15:00]
+  http://www.gopiplus.com/work/2011/05/08/wordpress-plugin-image-horizontal-reel-scroll-slideshow/#.UL7duOCzj3w
+
+- 安装plugin
+- 在post中添加如下内容
+[ihrss-gallery type="video" w="600" h="170" speed="1" bgcolor="#FFFFFF" gap="5" random="YES"]
+** DONE blog显示总共有多少页: wordpress插件WP Pagenavi
+  CLOSED: [2012-12-09 Sun 16:53]
+http://www.williamlong.info/archives/558.html
+
+http://www.lesterchan.net/wordpress/readme/wp-pagenavi.html
+#+begin_example
+WP Pagenavi
+
+　　默认安装的Wordpress在操作大量文章时候,使用"上一篇"和"下一篇"进行页
+面导航,Lester Chan开发的WP Pagenavi则可以让你在文章上增加页码来链接多
+个页面,这将使浏览多文章页面的时候更加容易.
+#+end_example
+#+end_example
+** DONE blog每页只显示8项: 设置-->阅读
+   CLOSED: [2012-12-09 Sun 16:53]
+** DONE wordpress显示相似的文章: wordpress插件WP Related Entries
+  CLOSED: [2012-12-09 Sun 17:04]
+  http://www.williamlong.info/archives/558.html
+  http://wordpress.org/extend/plugins/wordpress-23-related-posts-plugin/
+#+begin_example
+Alexander Malov的WP Related Entries插件是一个自动显示相关文章的插件,它
+的加载和运行是完全自动的,通过比较文章的 内容自动产生相关文档的链接,这
+意味着它可能会有一点点小误差.当然,95％的时间它会显示读者感兴趣的相关
+内容,并鼓励读者浏览你更多的文章.
+#+end_example
+** DONE wordpress的robots.txt优化
+  CLOSED: [2012-12-09 Sun 20:04]
+  http://www.williamlong.info/archives/1050.html
+#+begin_example
+在博客根目录下放置一个robots.txt的文件,可以指定搜索引擎只收录指定的内
+容. 对于WordPress来说,有一些地址是不应该被搜索引擎索引的,比如后台程
+序`日志文件`FEED地址等,一个针对WordPress的robots.txt的例子如下:
+
+User-agent: *
+Disallow: /wp-
+Disallow: /feed/
+Disallow: /comments/feed
+Disallow: /trackback/
+
+#+end_example
+** DONE 搜索引擎优化:All in One SEO Pack
+  CLOSED: [2012-12-09 Sun 20:46]
+  http://www.williamlong.info/archives/1322.html
+  http://wordpress.org/extend/plugins/all-in-one-seo-pack/
+#+begin_example
+搜索引擎优化:All in One SEO Pack
+
+使用All in One SEO Pack可以在不修改模板的情况下对WordPress进行SEO搜索引
+擎优化,还可以给每篇页面添加独立的关键词和摘要,加速和优化Google等搜索
+引擎的索引,使用这个插件可能会增加一些系统资源的使用,因此最好在静态化
+的WordPress下使用.
+#+end_example
+** DONE RSS Feed:FeedBurner FeedSmith
+  CLOSED: [2012-12-09 Sun 20:46]
+  http://www.williamlong.info/archives/1322.html
+  http://wordpress.org/extend/plugins/feedburner-setting/
+#+begin_example
+RSS Feed:FeedBurner FeedSmith
+
+FeedBurner FeedSmith可以将WordPress自己的Feed转发到FeedBurner等Feed托管
+服务,以节省系统资源和带宽,此插件稍加修改（将feedburner|feedvalidator
+修改为feedsky|feedburner|feedvalidator）即可应用于FeedSky上.
+#+end_example
+** DONE 缓存和静态化:cos-html-cache
+  CLOSED: [2012-12-09 Sun 20:46]
+  http://www.williamlong.info/archives/1322.html
+  http://wordpress.org/extend/plugins/cos-html-cache/
+#+begin_example
+缓存和静态化:cos-html-cache
+
+做为一个WordPress静态化插件,cos-html-cache可以将首页和文章页自动生成静
+态HTML文件,提高了系统的性能,减少了WordPress占用的系统资源,虽然目录页
+没有静态化,不过也可以安装WP Super Cache来配合使用.
+#+end_example
+** DONE wordpress插件: Google Sitemaps:Google XML Sitemaps
+  CLOSED: [2012-12-09 Sun 20:46]
+  http://www.williamlong.info/archives/1322.html
+  http://wordpress.org/extend/plugins/google-sitemap-generator/
+#+begin_example
+Google XML Sitemaps可以自动生成WordPress的Google Sitemaps并将其修改到
+robots文件中,有利于Google的索引,当然你也可以登录到Google Webmasters中
+手动提交你的Google Sitemaps.
+#+end_example
+** DONE wordpress latex: WP LaTeX
+   CLOSED: [2012-12-09 Sun 20:54]
+   http://wordpress.org/extend/plugins/wp-latex/
+   http://en.support.wordpress.com/latex/
+   http://cnzhx.net/blog/wordpress-latex/
+** DONE blog的显示设置更窄一些
+  CLOSED: [2012-12-09 Sun 22:01]
+  http://wordpress.org/support/topic/how-to-change-the-width-of-pages-and-posts
+#+begin_example
+denny@denny-Vostro-1014:~/backup/essential/Dropbox/private_data/temp/ecae_blog/wp-content/themes/inove$ svn diff -r 214:218 http://scm.ec-ae.com/blog/trunk/wp-content/themes/inove
+Index: style.css
+===================================================================
+--- style.css	(revision 214)
++++ style.css	(revision 218)
+@@ -161,7 +161,7 @@
+ }
+ #container {
+ 	margin:0 auto;
+-	width:936px;
++	width:836px;
+ }
+ /* layout END */
+
+@@ -1083,19 +1083,20 @@
+ /* one-column START */
+ .one-column #content {
+ 	background:#FFF;
++        width:836px;
+ }
+ .one-column #main {
+-	width:906px;
++	width:806px;
+ }
+ .one-column #comment {
+-	width:902px;
++	width:834px;
+ }
+ .one-column .trackback,
+ .one-column .trackback .title {
+-	width:876px;
++	width:806px;
+ }
+ .one-column .comment .info {
+-	width:795px;
++	width:675px;
+ }
+ .one-column .comment .info,
+ .one-column .comment .content {
+#+end_example
+** DONE [#A] wordpress中主要的文章,加上摘要                      :IMPORTANT:
+  CLOSED: [2012-12-09 Sun 23:27]
+下面字符串是用来分隔digest与正文的
+<!--more-->
+** DONE [#B] 通过思维导图展示每天做了什么
+  CLOSED: [2012-12-10 Mon 08:15]
+
+><richcontent TYPE="NODE"><html><body><p>\1</p></body></html></richcontent>
+
+ text="\([^">]*\)">
+
+  Freemind Viewer
+  http://www.drawmeanidea.com/2012/05/interactive-mind-map-with-thinglink.html
+*** wordpress plug-in:  FreeMind WP Browser
+** DONE wordpress的自我介绍去掉中间的线
+  CLOSED: [2012-12-10 Mon 10:58]
+  http://www.jb51.net/web/28414.html
+#+begin_example
+为td增加个css:
+
+<td style="border: none">
+
+或者在你.css文件里:
+
+td { border: none }
+#+end_example
+** DONE 制作二维码效果: I am DennyZhang; I like linux and emacs
+   CLOSED: [2012-12-10 Mon 10:39]
+   http://www.read.org.cn/html/2098-2008%E5%B9%B4%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%B1%87%E6%80%BB.html
+   http://cli.im/
+** DONE blog的3D链接中加一个I'm DennyZhang
+   CLOSED: [2012-12-10 Mon 10:23]
+** DONE 为blog关键文章找图片,尤其是带有个人气息的图片
+  CLOSED: [2012-12-10 Mon 19:01]
+- erlang debug skills
+- Leverage Ramfs to fasten your intense disk access
+- Empower mobile phones for local knowledge-base
+- Linux network tcp/ip
+- Emacs -- fundanmental features
+- motto -- 个人格言
+- Form good habits - 养成良好的习惯
+- Difficulties in shell/bash
+- Difficulties in Hudson/Jenkins
+- Difficulties in latex beamer
+
+- Linux internal: 研究linux源码,它山之石可以攻玉
+- linux调试工具集
+- linux performance analysis
+- linux systemtap
+** DONE blog视频中把泄密信息的视频做一些处理: 锐化图片,删除不要的视频,更新视频,
+   CLOSED: [2012-12-11 Tue 00:24]
+** DONE blog更新: Question I am interested
+   CLOSED: [2012-12-11 Tue 00:30]
+** DONE port ledger to wordpress
+   CLOSED: [2012-12-15 Sat 17:18]
+** DONE [ledger] 出于个人隐私,只显示comment中的前四个字
+   CLOSED: [2012-12-19 Wed 14:17]
+** DONE 将动态变化转成平铺效果
+  CLOSED: [2012-12-19 Wed 23:49]
+<pre>[ihrss-gallery type="video" w="600" h="249" speed="1" bgcolor="#FFFFFF" gap="1" random="YES"]</pre>
+
+<style type="text/css">
+#thumbs {
+	background-color: #000;
+	clear: left;
+	float: left;
+	padding: 0 1px 1px 0;
+}
+#thumbs img {
+	background-color: #12161B;
+	height: 144px;
+	width: 192px;
+	border-width: 0px;
+	float: left;
+	margin: 1px 0px 0px 1px;
+}
+</style>
+<div id="thumbs">
+<a href="http://blog.ec-ae.com/?page_id=3812"><img src="./wp-content/plugins/image-horizontal-reel-scroll-slideshow/images/denny_intro.png" alt="I'm DennyZhang"/></a>
+<a href="http://blog.ec-ae.com/wp-content/denny/daily_journal.html"><img src="./wp-content/plugins/image-horizontal-reel-scroll-slideshow/images/daily_journal.png" alt="my daily journal"/></a>
+<a href="http://you.video.sina.com.cn/api/sinawebApi/outplayrefer.php/vid=92201917_1686664253_b0+8G3duWWDK+l1lHz2stqkP7KQNt6nkj2KyvVSgJwtaQ0/XM5GQYN8H4SDXB9kEqDhATZo9df8v1ho/s.swf"><img src="./wp-content/plugins/image-horizontal-reel-scroll-slideshow/images/tickmark_cover.png" alt="Excel plug-in: automatically add tickmark"/></a>
+<a href="http://you.video.sina.com.cn/api/sinawebApi/outplayrefer.php/vid=92201877_1686664253_aB7gSiJtDDLK+l1lHz2stqkP7KQNt6nkj2KyvVSgJwtaQ0/XM5GQYN8H4SHRB9kEqDhATZo9df8u0Bo/s.swf"><img src="./wp-content/plugins/image-horizontal-reel-scroll-slideshow/images/setfont_covert.png" alt="Excel plug-in: setfont of Chinese and English"/></a>
+<a href="http://blog.ec-ae.com/wp-content/denny/monthly_expense.html"><img src="./wp-content/plugins/image-horizontal-reel-scroll-slideshow/images/ledger.png" alt="ledger personal accounting"/></a>
+<a href="http://blog.ec-ae.com/?p=5273"><img src="./wp-content/plugins/image-horizontal-reel-scroll-slideshow/images/work_puzzle.png" alt="Technical difficulties in my daily work"/></a>
+</div>
+<div style="clear: both; height: 30px;"></div>
+** DONE [#B] blog支持RSS订阅
+  CLOSED: [2012-12-20 Thu 00:09]
+  http://zhidao.baidu.com/question/159384499.html
+  http://www.wikihow.com/Add-RSS-to-Your-Wordpress-Blog
+  http://wordpress.org/extend/plugins/addfeed-widget/screenshots/
+  http://wordpress.org/support/topic/plugin-podpress-add-feed-link-to-the-blog-header-feature-for-category-casting
+#+begin_example
+denny@denny-Vostro-1014:~/backup/essential/Dropbox/private_data/temp/ecae_blog$ svn diff -r 256:258 http://scm.ec-ae.com/blog/trunk
+
+Index: wp-content/themes/inove/templates/header.php
+===================================================================
+--- wp-content/themes/inove/templates/header.php	(revision 256)
++++ wp-content/themes/inove/templates/header.php	(revision 258)
+@@ -3,8 +3,8 @@
+
+ 	<!-- banner START -->
+ 	<?php if( $options['banner_content'] && (
+-		($options['banner_registered'] && $user_ID) ||
+-		($options['banner_commentator'] && !$user_ID && isset($_COOKIE['comment_author_'.COOKIEHASH])) ||
++		($options['banner_registered'] && $user_ID) ||
++		($options['banner_commentator'] && !$user_ID && isset($_COOKIE['comment_author_'.COOKIEHASH])) ||
+ 		($options['banner_visitor'] && !$user_ID && !isset($_COOKIE['comment_author_'.COOKIEHASH]))
+ 	) ) : ?>
+ 		<div class="banner">
+@@ -34,6 +34,7 @@
+ 				wp_list_pages('title_li=0&sort_column=menu_order');
+ 			}
+ 		?>
++                <li class="rss"><a href="http://fusion.google.com/add?feedurl=http://blog.ec-ae.com/?feed=rss"><img src="./wp-includes/images/rss.png" alt="Subscribe to Google"/></a></li>
+ 		<li><a class="lastmenu" href="javascript:void(0);"></a></li>
+ 	</ul>
+ 	<!-- menus END -->
+denny@denny-Vostro-1014:~/backup/essential/Dropbox/private_data/temp/ecae_blog$ denny@denny-Vostro-1014:~/backup/essential/Dropbox/private_data/temp/ecae_blog$
+#+end_example
+** DONE 查看blog在ie, xp下的可视效果: blog layout for pictures
+   CLOSED: [2012-12-19 Wed 19:48]
+** DONE [#B] blog 标题和正文的行间距太近
+  CLOSED: [2013-01-14 Mon 00:28]
+<img src="https://www.dennyzhang.com/wp-content/uploads/2014/04//blog_systemtap.png"  alt="https://www.dennyzhang.com/wp-content/uploads/2014/04//blog_systemtap.png" />
+</p>
+    (goto-char (point-min))
+    (when (search-forward-regexp "<p>:PROPERTIES:" nil t)
+      (replace-match "<br/>\n<p>:PROPERTIES:"))
+** DONE add a list of certification to Contact: DZone MVP, Chef Certification
+    CLOSED: [2016-09-19 Mon 09:49]
+Keep same dimension of two pictures
+** DONE add tag about my skillsets
+  CLOSED: [2016-09-19 Mon 11:12]
+http://www.labouisse.com/tags/
+** DONE wordpress mysql: check post SEO for metdata field: select * from wp_postmeta where post_id='3971';
+  CLOSED: [2016-09-20 Tue 16:40]
+update wp_postmeta set meta_key='keywords' where post_id='3971' and meta_key='metakeywords';
+** DONE wordpress page jump : https://www.dennyzhang.com/false_negative/#sec-1-3
+   CLOSED: [2016-09-20 Tue 17:07]
+** DONE SEO no keywords metadata
+  CLOSED: [2016-09-20 Tue 16:53]
+search engine doesn't recognize keywords metadata anymore
+
+http://www.matteoduo.com/seo-content/
+
+http://www.matteoduo.com/focus-keyword-wordpress-seo/
+
+#+BEGIN_EXAMPLE
+Focus keywords aren't to be confused with meta keywords, those words and phrases SEO "gurus" used to insert in a website to trick search engines back in the days. Those should have been an additional way for webmasters to provide search engines with even more descriptive information about their site, thus rank better. But guess what, webmasters started filling up their website with "free mp3", "free porn videos" or other huge online searches and results where crap. Today Google and other search engines don't evaluate them anymore.
+
+By default WordPress SEO by Yoast doesn't allow meta keywords (for this very good reason), but still some users want the possibility to use them within their SEO strategy. If you'd like to waste some of your time and stuff your WordPress site with meta keywords, you can still enable them.
+#+END_EXAMPLE
+
+wp-content/plugins/wordpress-seo/frontend/class-frontend.php
+
+- Know what your clients really want
+
+- Keyword Search Tool Tool
+  Google Adwords: http://www.google.com/adwords/
+  https://www.semrush.com
+
+- Search simulating real users in google. Then observe and modify
+   Use the phrases that users write like "How to ...".
+
+- In Blog title, place keywords in the beginning.
+
+- Try Google search toolbar and learn
+
+- Use Long tail keywords
+** DONE change blogroll: Appearance -> Widgets -> Text: Blogroll
+   CLOSED: [2016-09-20 Tue 11:16]
+<ul>
+	<li><a href="https://dzone.com/devops-tutorials-tools-news" target="_blank">DevOps In dzone.com</a></li>
+	<li><a href="https://www.reddit.com/r/devops/" target="_blank">Reddit: Everything DevOps</a></li>
+	<li><a href="https://blog.serverdensity.com/" target="_blank">serverdensity.com</a></li>
+	<li><a href="https://joscor.com/blog/" target="_blank">Joscor: Cloud Security & Automation</a></li>
+</ul>
+** DONE org-mode export html subheading with no number
+  CLOSED: [2016-09-20 Tue 12:41]
+http://orgmode.org/manual/Export-settings.html
+H:
+Set the number of headline levels for export (org-export-headline-levels). Below that level, headlines are treated differently. In most back-ends, they become list items.
+num:
+Toggle section-numbers (org-export-with-section-numbers). It can also be set to a number 'n', so only headlines at that level or above will be numbered. Finally, irrespective of the level of a specific headline, the numbering of it can be disabled by setting the UNNUMBERED property to non-nil. This also affects subheadings.
+** DONE create short http link: https://goo.gl
+   CLOSED: [2016-09-21 Wed 21:59]
+https://www.dennyzhang.com/vps_linode
+** DONE mailchimp sign up form link: Lists -> Signup forms -> General forms
+  CLOSED: [2016-09-24 Sat 15:38]
+http://kb.mailchimp.com/lists/signup-forms/share-your-signup-form
+** DONE Create wordpress page that shows posts with specific tags: create a custom links to Menu
+  CLOSED: [2016-09-25 Sun 09:20]
+
+https://lorelleteaches.com/2013/09/23/how-to-link-to-posts-pages-categories-tags-authors-and-feeds-in-wordpress/
+*** create a page listing posts with certain tags
+http://wordpress.stackexchange.com/questions/38906/how-to-create-wordpress-page-that-shows-posts-with-specific-tags
+http://wordpress.stackexchange.com/questions/57576/display-posts-by-tag-on-page
+
+<?php
+// retrieve post with the tag of foo
+query_posts( 'tag=foo' );
+// the Loop
+while (have_posts()) : the_post();
+    the_content( 'Read the full post »' );
+endwhile;
+?>
+*** Display Your Most Popular Posts In the Last 30 Days by Code
+https://premium.wpmudev.org/blog/daily-tip-display-your-most-popular-posts-in-the-last-30-days-without-a-plugin/?nct=b&utm_expid=3606929-85.mSQ3nlVLSHShaT4smJ6ikw.1
+<ul>
+<?php
+function filter_where($where = '') {
+    //posts in the last 30 days
+    $where .= " AND post_date > '" . date('Y-m-d', strtotime('-30 days')) . "'";
+    return $where;
+}
+add_filter('posts_where', 'filter_where');
+
+query_posts('post_type=post&posts_per_page=10&orderby=comment_count&order=DESC');
+
+while (have_posts()): the_post(); ?>
+
+<li><a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr('Permalink to %s'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a></li>
+
+<?php
+endwhile;
+wp_reset_query();
+?>
+</ul>
+** DONE [#A] submit posts to webmaster tools
+  CLOSED: [2016-09-28 Wed 21:51]
+https://www.google.com/webmasters/
+
+Check status
+Login to Google Webmaster Tools -> Select website -> Crawl -> Sitemaps
+
+https://blog.kissmetrics.com/beginners-guide-to-google-webmaster-tools/
+https://kassandraproject.wordpress.com/rules-to-be-a-good-blogger/
+SEO
+
+It's quite important for your blog to be visible: visibility is almost everything for every website into the Internet.
+
+How can you improve your visibility? By submitting your blog URL to search engine like Google, Technorati, Yahoo, etc.
+
+In order to do this, search "submit url search engine" or "add url search engine", in order to obtain a list of powerful search engine and follow their instructions to submit your blog URL.
+
+We suggest to submit your blog to blog search engine like blog catalog, blogapedia, blogorama, etc: create your own description of your blog, define your keywords and put them as your tag.
+** DONE Use Google Alerts To Track Links To Your Blog
+  CLOSED: [2016-09-28 Wed 21:58]
+https://www.google.com/alerts
+http://hellboundbloggers.com/2011/11/google-alerts-to-track-links-to-blog-35570/
+** DONE Growing a mailing list is still the most important thing
+  CLOSED: [2016-09-28 Wed 13:10]
+http://www.blogtyrant.com/start-a-blog-2014/
+
+Growing a mailing list is still the most important thing
+
+If you asked a big blogger for advice about the most important thing to do in 2006 they would have probably told you to grow a mailing list.
+
+Ten years later and nothing has changed.
+
+Your email list is a means to get into people's inboxes whenever you like. That can lead to increased traffic to your new blog posts as well as more sales when you launch a product or promote an affiliate product.
+
+But the main reason that you want to grow an email list is because you just can't trust Google for traffic. And you can't trust social networking sites that constantly change their policies. It's only the mailing list that gives you a constant source of traffic, should something go wrong.
+
+We'll talk more about how to get email subscribers below, but I recommend a site like Aweber for bloggers who want to professionally manage and grow their list.
+** DONE 404 error for my blog posts: Use google analytics; Broken Link Checker plugin
+  CLOSED: [2016-10-01 Sat 23:16]
+https://yoast.com/404-error-pages-checking/
+http://www.wpexplorer.com/plugins-fix-404-errors-wordpress/
+
+Broken Link Checker: Once installed, it will scan your website for any link that is not doing its job.
+** DONE post view history: understand better for Google SEO: Google analytics supports this.
+   CLOSED: [2016-10-04 Tue 16:58]
+** DONE exclude your own visits from Google Analytics: Block Yourself from Analytics browser extension for both safari and chrome
+  CLOSED: [2016-10-05 Wed 10:22]
+http://www.azanweb.com/en/5-ways-to-exclude-your-own-visits-from-google-analytics/
+http://bloggingspree.com/how-to-stop-google-analytics-from-tracking-my-visits/
+
+1. Google Analytics account dashboard -> Admin -> Filter
+
+2. Chrome plugin: Block Yourself from Analytics
+https://chrome.google.com/webstore/detail/block-yourself-fm-analy/fadgflmigmogfionelcpalhohefbnehm?utm_source=georgebanis
+
+3. Safari Extension: Block Yourself from Analytics
+http://www.igorware.com/extensions/block-yourself-from-analytics
+** DONE org-mode export html support coloring: [[color:#c7254e][test
+  CLOSED: [2016-10-05 Wed 14:59]
+http://bencane.com/2015/09/22/preventing-duplicate-cron-job-executions/
+http://stackoverflow.com/questions/12450697/colorize-structured-text-in-emacs-org-mode-in-html-export
+https://lists.gnu.org/archive/html/emacs-orgmode/2010-08/msg00224.html
+https://www.mail-archive.com/emacs-orgmode@gnu.org/msg29988.html
+(org-add-link-type
+ "color" nil
+ (lambda (path desc format)
+  (cond
+   ((eq format 'html)
+    (format "<span style=\"background-color:#f9f2f4;color:%s;\">%s</span>" path desc))
+   ((eq format 'latex)
+    (format "{\\color{%s}%s}" path desc)))))
+** DONE list words: https://miteshshah.github.io/linux/basics/investigating-and-managing-processes/#disqus_thread
+  CLOSED: [2016-10-05 Wed 10:48]
+https://wordpress.org/plugins/wp-word-count/screenshots/
+** DONE create ppt for summary of topic: inner link existing posts + drive traffic
+   CLOSED: [2016-10-07 Fri 11:48]
+** DONE blog image: [[image-blog:9 Useful Tips For Linux Server Security][
+   CLOSED: [2016-10-15 Sat 16:30]
+** DONE [#A] make sure image link back to my original post
+   CLOSED: [2016-10-15 Sat 22:28]
+https://dzone.com/articles/reverse-ssh-tunnel-export-your-mac-laptop-to-the-i
+** DONE blog comments won't help for backlinks: use comments only to building relationships.
+  CLOSED: [2016-10-30 Sun 23:00]
+Most blog comments are tagged with nofollow so they are useless.
+
+https://www.quora.com/Are-blog-comments-backlinks-efficient-for-SEO-or-not
+
+Why build a relationship with a blogger? Well, if they're a popular
+blogger maybe at some point they will write an article about your
+website. Or mention you in a blog post. Or even just retweet one of
+your tweets to your website. All of those equate to traffic and SEO
+value. And you may even make a friend along the way.
+
+#  --8<-------------------------- separator ------------------------>8--
+Comments like "Great Post" aren't valuable comments. They are just a waste of time.
+
+If you want to grow your blog, you need to make relations with other bloggers in your niche.
+
+Leaving a valuable comment on someone's blog is the easiest way to get on their radar.
+
+If you are serious about your blog's growth, use comments only to building relationships.
+** DONE [#A] Chrome add-on to show e Domain Authority and Page Authority
+  CLOSED: [2016-11-04 Fri 14:01]
+https://moz.com/products/pro/seo-toolbar
+
+http://okdork.com/2014/04/02/how-you-can-create-content-that-generates-40000-targeted-visitors/
+
+https://chrome.google.com/webstore/detail/mozbar/eakacpaijcpapndcfffdgphdiccmpknp
+
+https://moz.com/
+*You want to find pages that have a relatively high Page Authority and low Domain Authority.*
+
+That usually indicates that the content is ranking based on merit...not due to the fact that the site is run by a Fortune 500.
+** DONE [#A] reference css issue: https://www.dennyzhang.com/query_elasticsearch
+  CLOSED: [2016-10-16 Sun 09:11]
+https://www.everythingcli.org/intrusion-detection-with-git-the-basics/
+class="footdef"
+class="footnum"
+
+<sup>
+1->[1]
+*** embeded css font: 14px
+   .footpara { display: block; font-size:14px;}
+   .footref { font-size:14px;}
+*** original
+<div id="footnotes">
+<p class="footnotes">Footnotes: </p>
+<div id="text-footnotes">
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup>
+<p class="footpara">
+www.gnu.org/software/bash/manual/bashref.html#The-Set-Builtin<br  />
+</p>
+</div>
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup>
+<p class="footpara">
+stackoverflow.com/questions/25794905/why-does-set-e-true-false-true-not-exit<br  />
+</p>
+</div>
+*** updated
+<div><a id="fn.1" name="fn.1" href="#fnr.1">[1]</a>
+www.gnu.org/software/bash/manual/bashref.html#The-Set-Builtin<br  />
+</div>
+
+<div><a id="fn.2" name="fn.2" href="#fnr.2">[2]</a>
+stackoverflow.com/questions/25794905/why-does-set-e-true-false-true-not-exit<br  />
+</div>
+** DONE how to easily post link to Google+ community: https://plus.google.com/u/0/communities/108411154501017640980
+  CLOSED: [2016-10-21 Fri 22:20]
+- DevOps: https://plus.google.com/u/0/communities/108411154501017640980
+- Linux: https://plus.google.com/u/0/communities/109254488709825102030
+** DONE wordpress enable disqus for comment
+  CLOSED: [2016-11-18 Fri 21:06]
+https://wordpress.org/plugins/disqus-comment-system/installation/
+
+https://disqus.com/admin/wordpress/
+sample: https://www.reinisfischer.com/linode-referrals-program-20-signup
+** DONE wordpress configure WP_SITEURL in wp-config.php
+  CLOSED: [2017-07-23 Sun 23:02]
+https://codex.wordpress.org/Editing_wp-config.php
+define('WP_SITEURL', 'http://example.com/wordpress');
+** DONE How to Nofollow All External Links in WordPress
+  CLOSED: [2017-09-09 Sat 15:26]
+https://wordpress.org/plugins/nofollow-for-external-link/
+http://www.wpbeginner.com/plugins/how-to-add-a-nofollow-checkbox-to-insert-link-section-in-wordpress/
+http://www.wpbeginner.com/plugins/how-to-nofollow-all-external-links-in-wordpress/
+
+Add rel=nofollow for all the external links of your website posts / pages / menus.
+Add target=_blank for all the external links of your website posts / pages / menus.
+
+<a href="https://www.linkedin.com/in/dennyzhang001" target="_blank" rel="nofollow">
+** DONE [#A] html + css: get mail form
+  CLOSED: [2017-08-13 Sun 10:51]
+http://www.cssflow.com/snippets/newsletter-sign-up-form/demo/scss
+
+https://www.freshdesignweb.com/css-registration-form-templates/
+** DONE get wordpress version: wp-includes/version.php
+  CLOSED: [2017-08-11 Fri 18:52]
+Look in wp-includes/version.php
+https://stackoverflow.com/questions/1390255/how-do-i-find-out-what-version-of-wordpress-is-running
+
+/**
+ * The WordPress version string
+ *
+ * @global string $wp_version
+ */
+$wp_version = '2.8.4';
+** #  --8<-------------------------- separator ------------------------>8--
+** TODO w3 cache: Enter your sitemap URL.
+https://www.howlthemes.com/wordpress-caching-w3-total-cache-setup-guide/
+** TODO W3 Cache: Cache Preload -> Sitemap URL:
+** TODO How to detect 404 when loading a URL page
+#+BEGIN_EXAMPLE
+dennyzhang [4:11 PM]
+uploaded this image: Contact Help Desk: runs into 404
+Add Comment
+
+dennyzhang
+[4:14 PM]
+Contact Help Desk runs into 404 error. In demo env (edited)
+#+END_EXAMPLE
+** TODO Blog Test without IP
+curl -I https://www.dennyzhang.com/jenkins_benefits
+curl -I -k https://104.237.153.158/jenkins_benefits
+
+git pull && docker restart wwwdennyzhangcom_wordpress_1
+
+sed -i 's/104\.237\.153\.158/www.dennyzhang.com/g' /root/blog-devops.sql
+** CANCELED
+*** CANCELED rel="canonical": Syndicate carefully
+  CLOSED: [2016-10-21 Fri 22:18]
+https://support.google.com/webmasters/answer/66359?hl=en
+
+Syndicate carefully: If you syndicate your content on other sites,
+Google will always show the version we think is most appropriate for
+users in each given search, which may or may not be the version you'd
+prefer. However, it is helpful to ensure that each site on which your
+content is syndicated includes a link back to your original
+article. You can also ask those who use your syndicated material to
+use the noindex meta tag to prevent search engines from indexing their
+version of the content.
+
+https://moz.com/blog/canonical-url-tag-the-most-important-advancement-in-seo-practices-since-sitemaps
+https://moz.com/learn/seo/canonicalization
+http://www.williamlong.info/archives/4366.html
+
+在内容相同或高度相似的所有网页中,该网页为最规范最有价值的页面,推荐将该网页排在搜索结果中靠前的位置
+*** CANCELED submit links to google webmasters: https://www.google.com/webmasters/tools/submit-url?pli=1
+    CLOSED: [2016-10-21 Fri 22:19]
+*** CANCELED wordpress donate button: https://www.dennyzhang.com/blind_wait
+  CLOSED: [2016-10-22 Sat 08:05]
+
+I have a blog with over 6,000 subscribers and tried the "Buy me a
+Coffee" button. After a full year and tons of traffic I got a total of
+$0, from it. So yea, I'd avoid it if I were you.
+
+http://www.blogtyrant.com/donate-button/
+
+http://www.warriorforum.com/main-internet-marketing-discussion-forum/46717-adding-donation-buy-me-coffee-button-your-blog-lame.html
+
+https://miteshshah.github.io
+https://en.support.wordpress.com/paypal/view-all/
+
+https://www.dennyzhang.com/donations/buy-me-a-coffee
+https://www.paypalobjects.com/webstatic/mktg/integration-guides/blogger.pdf
+
+[give_form id="5214"]
+
+WordPress Donation Plugin: Give, PayPal Donations
+**** useful link
+http://www.wpbeginner.com/beginners-guide/how-to-add-a-paypal-donate-button-in-wordpress/
+https://itxdesign.com/paypal-donate-button-wordpress-blog/
+https://en.support.wordpress.com/paypal/get-paypal-button-code/
+https://www.elegantthemes.com/blog/resources/tip-jars-the-5-best-wordpress-donation-plugins-that-work
+*** CANCELED CloudAcademy affiliate link: doesn't seem to have one
+  CLOSED: [2016-10-23 Sun 08:21]
+https://cloudacademy.com/resellers/
+*** CANCELED Nofollow external links and Dofollow trusted links
+  CLOSED: [2016-10-26 Wed 11:44]
+http://www.shoutmeloud.com/9-killer-blogspot-seo-tips-for-bloggers.html
+
+Nofollow is an HTML attribute specified on hyperlinks to block search
+engine advantage of external links in a website. In Blogger, you can
+select HTML section of the post window and add rel="nofollow"
+attribute just after URL to prevent search engines from crawling a
+particular link. Also read: How to add nofollow link attribute to any
+link.
+
+The Comment section should be no-followed and moderated to avoid spam comments.
+*** CANCELED [#D] for chinese users, don't show google ads but other ads: already ban ads of certain channels
+    CLOSED: [2016-10-25 Tue 08:35]
+*** CANCELED Add Websites to StumbleUpon To get Traffic: no much directly related topics
+  CLOSED: [2016-10-30 Sun 17:05]
+http://www.shoutmeloud.com/simple-way-to-submit-a-website-to-stumble-upon.html
+*** CANCELED avoid people to copy and paste your content
+http://mashable.com/2013/02/09/monetize-affiliate-marketing/#NkWDSMdLzmqQ
+*** CANCELED Don't keep CSS and Javascript files on the same domain, reducing threading and increasing load times
+   CLOSED: [2016-10-04 Tue 11:04]
+http://www.iblognet.com/100-seo-common-mistakes.html
+*** CANCELED more recommended posts: Related Posts for WordPress plugin
+  CLOSED: [2016-10-05 Wed 15:19]
+https://wordpress.org/plugins/related-posts-for-wp/screenshots/
+
+https://miteshshah.github.io/devops/nagios/how-to-setup-nagios-monitoring-system/
+http://www.wpbeginner.com/plugins/5-best-related-posts-plugins-for-wordpress/
+*** CANCELED Replicate blogs to oscgc blog, then send out group email
+   CLOSED: [2016-10-05 Wed 22:48]
+http://www.oscgc.com/wp-login.php
+dennyzhang/lrpDennyChangeMe1
+
+New Blog posts for this week:
+
+Easy and Reliable Sandbox Setup Matters
+http://www.oscgc.com/2016/08/07/easy-and-reliable-sandbox-setup-matters/
+*** CANCELED host CSS of wordpress plugin in current site: CDN won't work then, it slows down the page loading
+    CLOSED: [2016-10-12 Wed 23:24]
+*** CANCELED add blogroll: not useful any more
+  CLOSED: [2016-10-30 Sun 13:07]
+http://www.shoutmeloud.com/101-ways-to-get-quality-backlinks-to-your-blog.html
+https://theagileadmin.com
+*** CANCELED use Amazon products screenshot instead of iframe: https://www.dennyzhang.com/tools
+    CLOSED: [2016-11-08 Tue 08:34]
+*** CANCELED embded source code in github gist: GFW won't work in China: http://jerrygamblin.com/2016/04/29/osx-system-information-script/
+    CLOSED: [2016-09-22 Thu 12:31]
+*** CANCELED submit my website to DMOZ: doesn't seem to take it: http://www.dmoz.org/docs/en/add.html
+  CLOSED: [2016-11-16 Wed 10:02]
+http://www.shoutmeloud.com/get-higher-search-rankings-with-dmoz-listings.html
+*** CANCELED wordpress link vimeo video
+  CLOSED: [2016-11-20 Sun 11:10]
+https://wordpress.org/plugins/codeflavors-vimeo-video-post-lite/
+*** CANCELED blog improvement: show page count, not only "Older Posts"
+  CLOSED: [2017-08-03 Thu 23:12]
+https://www.dennyzhang.com
+
+Sample: http://www.wpbeginner.com/category/beginners-guide/
+*** CANCELED enable disquiz for discussion: drag it slow
+    CLOSED: [2017-07-31 Mon 08:53]
+** DONE [#A] fork me on github                                    :IMPORTANT:
+  CLOSED: [2017-09-09 Sat 22:40]
+https://github.com/blog/273-github-ribbons
+https://github.com/petethepig/github-ribbons-css
+https://github.com/tholman/github-corners
+https://simonwhitaker.github.io/github-fork-ribbon-css/
+** DONE wordpress plugin add slack buttons
+  CLOSED: [2018-02-19 Mon 18:07]
+https://en.support.wordpress.com/add-social-media-buttons-to-your-sidebar-or-footer/
+** DONE Blog Improvement: Check google for my website: site:www.dennyzhang.com
+  CLOSED: [2018-03-02 Fri 11:29]
+http://hankerzheng.com/blog/make-your-website-searchable-by-google
+
+* [#A] wordpress: setup personal website                 :noexport:IMPORTANT:
+- Need manually add category
+http://roadtoblogging.com/category/search-engine-optimization/
+** [#A] centos install wordpress: a new website                   :IMPORTANT:
+http://www.tecmint.com/install-wordpress-using-lamp-or-lemp-on-rhel-centos-fedora/
+
+#+begin_example
+yum install -y mysql mysql-server
+yum install -y php php-mysql
+
+cd /tmp
+wget http://wordpress.org/latest.tar.gz
+
+tar -xvzf latest.tar.gz -C /var/www/html
+cp -r /var/www/html/wordpress /var/www/html/openstack
+
+# create mysql database
+mysql -u root -p
+Enter password:
+
+CREATE USER openstack@localhost IDENTIFIED BY "your_password_here";
+create database openstack;
+GRANT ALL ON openstack.* TO openstack@localhost;
+FLUSH PRIVILEGES;
+exit
+
+# add virtual host
+
+cat > /etc/httpd/conf.d/openstack.conf <<EOF
+Alias /openstack /var/www/html/openstack
+<VirtualHost *:80>
+  ServerAdmin tecmint@tecmint.com
+  DocumentRoot /var/www/html/openstack
+  ServerName openstack
+  ErrorLog /var/log/httpd/openstack-error-log
+  CustomLog /var/log/httpd/openstack-acces-log common
+</VirtualHost>
+EOF
+
+cd /var/www/html/openstack
+cp wp-config-sample.php wp-config.php
+vi wp-config.php
+
+service httpd restart
+#+end_example
+** #  --8<-------------------------- separator ------------------------>8--
+** [#A] copy a new wordpress website: a new site                  :IMPORTANT:
+- copy file
+  cd /var/www/html/; cp -r story visaguide
+- add virtual host
+  cd /etc/httpd/conf.d; cp 4story.conf 7visaguide.conf; make necessary change
+- change godaddy
+- add google analytics: Admin->create new account
+  http://www.google.com/analytics/
+- change footer.php
+  sed -i 's/UA-51815936-1/UA-52242700-1/g' /var/www/html/visaguide/wp-content/themes/portfolio-press/footer.php
+
+- add mysql users
+CREATE USER visaguide@localhost IDENTIFIED BY "sophia1";
+create database visaguide;
+GRANT ALL ON visaguide.* TO visaguide@localhost;
+FLUSH PRIVILEGES;
+exit
+
+- change /var/www/html/visaguide/wp-config.php
+  sed -i 's/story/visaguide/g' /var/www/html/visaguide/wp-config.php
+
+- /etc/init.d/httpd restart
+
+- Choose template in wp-admin
+
+- Enable plugins in wp-admin
+  Limit login, Contact Form 7, WP-PostViews
+
+- change permlink: Settings->Permalinks
+
+- define menu, and add page
+
+- Add contact page
+Contact page
+#+begin_example
+关于我们的介绍, 联系方式,用户留言
+
+[contact-form-7 id="280" title="Contact form 1"]
+#+end_example
+
+- change icon
+
+- set menu, page
+
+- change icon: 95x95
+wp-content/themes/portfolio-press/images/denny100.png
+
+- add sample post
+<!--more-->
+** ubuntu install wordpress
+https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04
+apt-get install mysql-server
+** DONE [#A] test wordpress sample                                :IMPORTANT:
+   CLOSED: [2014-05-25 Sun 16:23]
+#+begin_src php
+<?php
+define('WP_USE_THEMES', false);
+require('wp-blog-header.php');
+bloginfo('rdf_url');
+
+echo "\n";
+bloginfo('rss_url');
+
+echo "\n";
+bloginfo('rss2_url');
+
+echo "\n";
+bloginfo('atom_url');
+
+echo "\n";
+bloginfo('comments_rss2_url');
+
+?>
+#+end_src
+** DONE Update post_name to persist permalink change
+  CLOSED: [2014-05-20 Tue 09:29]
+wordpress xml rpc permalink
+http://wordpress.org/support/topic/how-to-set-permalink-with-xmlrpc-method-metawebblognewpost
+
+wp_slug
+** DONE Easiest Way to Embed PDF files in WordPress: Google Doc Embedder wordpress plugin
+  CLOSED: [2014-05-22 Thu 14:22]
+通过 https://docs.google.com/viewer 来打开pdf
+
+<a href="http://docs.google.com/viewer?url=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F0BxDj6Cq3QTk-c3RhcnRlcl9maWxl%2Fedit%3Fusp%3Dsharing">View</a>
+
+http://docs.google.com/viewer?url=http%3A%2F%2Fwww.dennyzhang.com%2Fwp-content%2Fuploads%2Fdenny%2Fdennyzhang_com.pdf
+
+http://roadtoblogging.com/embed-pdf-files-in-wordpress-blog-post/
+https://docs.google.com/viewer
+
+http://www.davistribe.org/gde/
+** DONE update blog icon
+  CLOSED: [2014-05-14 Wed 10:57]
+<link rel="icon" href="http://127.0.0.1/wordpress/wp-content/themes/portfolio-press/images/icon.png" type="image/x-icon">
+** DONE [#B] php get current hostname domain name
+  CLOSED: [2014-05-12 Mon 12:32]
+
+<img src="./wp-content/themes/portfolio-press/images/weesubs-banner.jpg" alt="some image">
+
+<img src="<?php echo esc_url( home_url() . '/wp-content/themes/portfolio-press/images/weesubs-banner.jpg' ); ?>" alt="some image"/>
+
+#+begin_example
+<script src="<?php echo esc_url( get_template_directory_uri() . '/js/head.min.js' ); ?>"></script>
+<script>
+    head.load(
+    	"<?php echo esc_url( includes_url() . '/js/jquery/jquery.js' ); ?>",
+    	"<?php echo esc_url( get_template_directory_uri() . '/js/nprogress.js' ); ?>",
+    	"<?php echo esc_url( includes_url() . '/js/jquery/jquery-migrate.min.js' ); ?>",
+    	"<?php echo esc_url( includes_url() . '/js/comment-reply.min.js' ); ?>",
+    	"<?php echo esc_url( get_template_directory_uri() . '/js/theme.js' ); ?>"
+#+end_example
+** DONE Find out wordpress password
+  CLOSED: [2014-05-10 Sat 10:46]
+http://codex.wordpress.org/Resetting_Your_Password
+SELECT ID, user_login, user_pass FROM wp_users;
+
+UPDATE wp_users SET user_pass=md5("Mark.filebat2") WHERE user_login = "admin";
+** DONE where is .htaccess of Apache wordpress: same location like wp-content
+  CLOSED: [2014-05-04 Sun 17:41]
+http://stackoverflow.com/questions/6937009/htaccess-where-is-located-when-not-in-www-base-dir
+** DONE generate wordpress sitemap and update to bing/google
+  CLOSED: [2014-05-05 Mon 23:56]
+
+http://roadtoblogging.com/sitemap.xml
+http://www.arnebrachhold.de/projects/wordpress-plugins/google-xml-sitemaps-generator/
+
+touch /var/www/html/wordpress/sitemap.xml
+chmod 777 /var/www/html/wordpress/sitemap.xml
+touch /var/www/html/wordpress/sitemap.xml.gz
+chmod 777 /var/www/html/wordpress/sitemap.xml.gz
+
+tail /var/www/html/wordpress/sitemap.xml
+https://www.dennyzhang.com/sitemap.xml
+*** why we need wordpress sitemap: Help Search Engine bots to find all URLs of the posts in a single page and can index it quickly.
+*** Use Google XML Sitemaps Plugin  to generate wordpress sitemap
+*** update sitemap to google
+http://roadtoblogging.com/how-to-submit-your-blog-sitemap-on-bing/
+**** sample                                                        :noexport:
+#+begin_example
+
+webmaster
+Verify ownership for: www.dennyzhang.com
+Option 1: Place an XML file on your web server
+
+Download BingSiteAuth.xml
+Upload the file to https://www.dennyzhang.com/BingSiteAuth.xml
+Confirm successful upload by visiting https://www.dennyzhang.com/BingSiteAuth.xml in your browser
+Click the verify button below
+Option 2: Copy and paste a <meta> tag in your default webpage
+
+You can add a <meta> tag containing the authentication code to the <head> section of your default webpage.
+<meta name="msvalidate.01" content="353C25D5FC5103083971F3B67CA63C34" />
+An example:
+<html>
+	<head>
+		<meta name="msvalidate.01" content="353C25D5FC5103083971F3B67CA63C34" />
+		<title>Your SEO optimized title</title>
+	</head>
+	<body>
+		page contents
+	</body>
+</html>
+
+Option 3: Add CNAME record to DNS
+
+Add CNAME (alias) record with name 362d07d15450c14299299480b6e587c4 and value verify.bing.com.
+So your DNS provider will resolve host 362d07d15450c14299299480b6e587c4.dennyzhang.com to verify.bing.com.
+How to add a CNAME record to:
+
+PROFILE  MESSAGES 1  HELP ?
+DENNY
+
+Privacy and Cookies Legal Advertise Help Feedback Community
+
+#+end_example
+** DONE WordPress robots.txt to disallow google robot
+  CLOSED: [2014-05-04 Sun 17:53]
+https://yoast.com/example-robots-txt-wordpress/
+http://en.wikipedia.org/wiki/Robots_exclusion_standard
+http://www.thesitewizard.com/archive/robotstxt.shtml
+#+begin_example
+cat > robots.txt  <<EOF
+User-agent: *
+Disallow: /
+EOF
+#+end_example
+** # --8<-------------------------- separator ------------------------>8--
+** wordpress update siteurl from database
+update wp_options set option_value='http://wordpress2.dennyzhang.com' where option_name = 'siteurl';
+** DONE show table counts of wordpress database
+  CLOSED: [2014-05-18 Sun 21:56]
+#+begin_example
+select 'wp_commentmeta', count(1) from wp_commentmeta;
+select 'wp_comments', count(1) from wp_comments;
+select 'wp_gde_profiles', count(1) from wp_gde_profiles;
+select 'wp_gde_secure', count(1) from wp_gde_secure;
+select 'wp_links', count(1) from wp_links;
+select 'wp_options', count(1) from wp_options;
+select 'wp_postmeta', count(1) from wp_postmeta;
+select 'wp_posts', count(1) from wp_posts;
+select 'wp_term_relationships', count(1) from wp_term_relationships;
+select 'wp_term_taxonomy', count(1) from wp_term_taxonomy;
+select 'wp_terms', count(1) from wp_terms;
+select 'wp_usermeta', count(1) from wp_usermeta;
+select 'wp_users', count(1) from wp_users;
+#+end_example
+
+select * from wp_posts limit3;
+
+select post_title, post_name from wp_posts where post_title like '6 useful%';
+** DONE Prevent comments with url link
+  CLOSED: [2014-05-05 Mon 18:15]
+Settings -> Discussion: Comment Moderation/Comment Blacklist
+** DONE blog添加了一个添加计数: wp-postviews.上传到wp-content/plugins后,GUI的启用它
+   CLOSED: [2012-11-19 Mon 17:51]
+https://wordpress.org/plugins/wp-postviews/
+
+http://blog.wpjam.com/article/wp-postviews/
+
+Note that the theme files must contain a call to the_views() in order for any view count to be displayed.
+** # --8<-------------------------- separator ------------------------>8--
+** where to install plugin instead of ftp
+cp -r bizantine /var/www/html/wordpress/wp-content/plugins/
+chown -R nobody:nfsnobody /var/www/html/wordpress/wp-content/plugins/bizantine
+** wordpress misc stuff
+(dotimes (i 70) (update-wordpress-current-entry))
+
+select ID, post_title, post_status from wp_posts where post_status ='publish' order by id asc;
+
+
+mysql> select * from wp_posts limit 1;
+select * from wp_posts limit 1;
++----+-------------+---------------------+---------------------+----------------------------------------------------------------------------------------+--------------+--------------+-------------+----------------+-------------+---------------+-------------+---------+--------+---------------------+---------------------+-----------------------+-------------+-----------------------------------+------------+-----------+----------------+---------------+
+| ID | post_author | post_date           | post_date_gmt       | post_content                                                                           | post_title   | post_excerpt | post_status | comment_status | ping_status | post_password | post_name   | to_ping | pinged | post_modified       | post_modified_gmt   | post_content_filtered | post_parent | guid                              | menu_order | post_type | post_mime_type | comment_count |
++----+-------------+---------------------+---------------------+----------------------------------------------------------------------------------------+--------------+--------------+-------------+----------------+-------------+---------------+-------------+---------+--------+---------------------+---------------------+-----------------------+-------------+-----------------------------------+------------+-----------+----------------+---------------+
+|  1 |           1 | 2014-04-02 19:09:48 | 2014-04-02 19:09:48 | Welcome to WordPress. This is your first post. Edit or delete it, then start blogging! | Hello world! |              | publish     | open           | open        |               | hello-world |         |        | 2014-04-02 19:09:48 | 2014-04-02 19:09:48 |                       |           0 | http://server:9280/wordpress/?p=1 |          0 | post      |                |             1 |
++----+-------------+---------------------+---------------------+----------------------------------------------------------------------------------------+--------------+--------------+-------------+----------------+-------------+---------------+-------------+---------+--------+---------------------+---------------------+-----------------------+-------------+-----------------------------------+------------+-----------+----------------+---------------+
+1 row in set (0.00 sec)
+
+mysql>
+** wordpress可以依赖的亮点
+*** 导航框架
+*** 产品更新的RSS
+*** 产品(即文章)的展示
+*** 用户对产品评论
+*** 全站搜索, 并支持paging方式
+*** 样式切换
+*** 用户
+** 好的wordpress站点
+ http://wordpress.org/showcase/tag/education/\\
+ WordPress &#8250; Showcase &raquo; Tag &raquo; Education
+ http://www.trueventures.com/\\
+ True Ventures&nbsp;|&nbsp;Early Stage Capital
+ http://www.bloginity.com/\\
+ Online Magazine for Culture and Arts - Fashion News - Bloginity.com
+ http://www.clouds365.com/shop/\\
+ Clouds 365 Project Shop
+ http://thegoldennotebook.org/\\
+ Doris Lessing&#8217;s The Golden Notebook
+ http://www.cloudera.com/\\
+ Hadoop | Hadoop Download | Cloudera Hadoop | Cloudera
+*** WP you
+ http://www.wpyou.com/\\
+ WordPress主题_WordPress企业主题_WordPress主题定制_WordPress主题下载 | WPYOU.com
+** WordPress提供的功能包括
+ 　　1.文章发布`分类`归档.
+ 　　2.提供文章`评论`分类等多种形式的RSS聚合.
+ 　　3.提供链接的添加`归类功能.
+ 　　4.支持评论的管理,垃圾信息过滤功能.
+ 　　5.支持对样式CSS和PHP程序的直接编辑`修改.
+ 　　6.在Blog系统外,方便的添加所需页面.
+ 　　7.通过对各种参数进行设置,使Blog更具个性化.
+ 　　8.静态html页面生成.
+ 　　9.通过选择不同主题,方便地改变页面的显示效果.
+ 　　10.通过添加插件,可提供多种特殊的功能.
+ 　　11.支持Trackback和pingback.
+ 　　12.支持针对某些其它blog软件`平台的导入功能.
+ 　　13.支持多用户.
+** [#A] Wordpress主要模块
+ http://www.xkzzz.com/zz/ymzj/WordPress/201009/15-55772.html\\
+ WordPress 主题简明入门教程 - 侠客站长站
+
+在一个完整的 WP 主题文件夹中都应该包含下列文件(也称为模板文件):
+页面 	模板文件 	用途
+首页 	index.php 	显示网站首页
+单页 	single.php 	显示博文的页面(相当于细节页)
+静态页 	page.php 	显示静态页的页面(包含各级静态页面)
+分类页 	category.php 	显示分类页的页面(相当于栏目页)
+存档页 	archive.php 	显示存档页的页面(相当于按时间归类的栏目页)
+搜索页 	search.php 	显示搜索结果的页面
+评论页 	comments.php 	显示评论的页面
+弹出式评论页 	comments-popup.php 	显示弹出式评论的页面
+404错误页 	404.php 	显示 404 错误信息的页面
+层叠样式表 	style.css 	控制页面布局外观
+;; § -------------------------- separator --------------------------
+loop.index显示产品的列表
+
+wp-includes/general-template.php: general template tags
+*** entry: loop.php
+entry-title
+entry-meta
+entry-content
+** codesample
+*** TODO 定义 WordPress 评论最少字数限制
+http://www.mangguo.org/define-minimum-word-count-comment/\\
+
+add_action('pre_comment_on_post', 'twentyten_minmum_comment');
+if ( ! function_exists( 'twentyten_minmum_comment' ) ) :
+
+/**
+ * 定义 WordPress 评论最少字数限制
+ *
+ * @provided by denny
+ */
+function twentyten_minmum_comment($comment) {
+ global $comment;
+ $num = 10; //设置评论最少字数限制为 10
+ $content = $comment->comment_content;
+ if(str_word_count($content) < $num) {
+ wp_die('错误: 字数太少,　少于'.$num);
+ }
+}
+endif;
+*** 为 WordPress 手工添加收藏代码
+ http://www.mangguo.org/add-bookmark-code-manually-for-wordpress/\\
+ 为 WordPress 手工添加收藏代码 | 芒果小站
+如果不想使用 WordPress 插件来实现收藏功能,完全可以在你的 WordPress 模板文件中手工添加代码,方便读者收藏.
+
+1. 美味书签 (Delicious)
+
+<a href="http://www.delicious.com/post?url=<?php the_permalink() ?>&title=<?php the_title(); ?>" target="_blank">美味书签 (Delicious)</a>
+
+2. Google 书签
+
+<a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=<?php the_permalink() ?>&title=<?php the_title(); ?>" target="_blank">Google 书签</a>
+
+3. 雅虎收藏
+
+<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?u=<?php the_permalink() ?>&=<?php the_title(); ?>" target="_blank">Yahoo 收藏</a>
+
+4. Digg.com
+
+<a href="http://digg.com/submit?phase=2&url=<?php the_permalink() ?>&title=<?php the_title(); ?>" target="_blank">digg</a>
+
+5. 百度搜藏
+
+<a href="http://cang.baidu.com/do/add?it=<?php the_title(); ?>&iu=<?php the_permalink() ?>" target="_blank">百度搜藏</a>
+
+6. QQ 书签
+
+<a href="http://shuqian.qq.com/post?from=3&title=<?php the_title(); ?>&uri=<?php the_permalink() ?>" target="_blank">QQ书签</a>
+
+7. 鲜果热文
+
+<a href="http://www.xianguo.com/service/submitfav/?link=<?php the_permalink() ?>&title=<?php the_title(); ?>" target="_blank">收藏到鲜果</a>
+
+版权所有,转载请注明出处.
+
+ 转载自 <a href="http://www.mangguo.org/add-bookmark-code-manually-for-wordpress/" title="为 WordPress 手工添加收藏代码" rel="bookmark">为 WordPress 手工添加收藏代码 | 芒果小站</a>
+** wordpress实现细节
+*** WordPress Object Cache
+ http://codex.wordpress.org/Class_Reference/WP_Object_Cache\\
+ Class Reference/WP Object Cache &laquo; WordPress Codex
+
+WP_Object_Cache is WordPress' class for caching data which may be computationally expensive to regenerate, such as the result of complex database queries. The object cache is defined in wp-includes/cache.php.
+
+Do not use the class directly in your code when writing plugins, but use the wp_cache functions listed below.
+
+By default, the object cache is non-persistent. This means that data stored in the cache resides in memory only and only for the duration of the session. Cached data will not be stored persistently across page loads unless you install a persistent caching plugin.
+
+Use the Transients API instead of these functions if you need to guarantee that your data will be cached. If persistent caching is configured, then the transients functions will use the wp_cache functions described in this document. However if persistent caching has not been enabled, then the data will instead be cached to the options table.
+wp_cache functions
+
+Most of these functions take a:
+
+ $key: the key to indicate the value.
+ $data: the value you want to store.
+ $group: (optional) this is a way of grouping data within the cache. Allows you to use the same key across multiple groups.
+ $expire: (optional) this defines how many seconds to keep the cache for. Only applicable to some functions. Defaults to 0 (as long as possible).
+
+wp_cache_add( $key, $data, $group, $expire )
+
+This function adds data to the cache if the cache key doesn't already exist. If it does exist, the data is not added and the function returns false.
+
+wp_cache_set( $key, $data, $group, $expire )
+
+Adds data to the cache. If the cache key already exists, then it will be overwritten; if not then it will be created.
+
+wp_cache_get( $key, $group )
+
+Returns the value of the cached object. Returns false if the cache key doesn't exist.
+
+wp_cache_delete( $id, $group )
+
+Clears data from the cache for the given key.
+
+wp_cache_replace( $key, $data, $group, $expire )
+
+Replaces the given cache if it exists, returns false otherwise. This is similar to wp_cache_set() except the cache object is not added if it doesn't already exist.
+
+wp_cache_flush()
+
+Clears all cached data.
+Examples
+
+The most common use for the object cache is caching the results of expensive SQL queries so they're not performed multiple times within a page load. In the below example, imagine the $query variable is an expensive SQL query.
+
+$result = wp_cache_get( 'my_result' );
+if ( false == $result ) {
+	$result = $wpdb->get_results( $query );
+	wp_cache_set( 'my_result', $result );
+}
+// Do something with $result;
+
+Persistent Caching
+
+Prior to WordPress 2.5, data stored using the wp_cache functions was stored persistently if you added define('WP_CACHE', true) to your wp-config.php file.
+
+This is no longer the case, and adding the define will have no effect unless you install a persistent cache plugin (see list below).
+Persistent Cache Plugins
+
+ W3 Total Cache provides object level caching using disk, opcode or memcache(d) memory stores. W3TC also provides: browser, page and database caching, in addition to Content Delivery Network Support, Mobile Support, Minification and more.
+ WP File Cache implements object level persistent caching by shifting the load from your database to your disk/file system.
+ Memcached Object Cache provides a persistent backend for the WordPress object cache. A memcached server and the PECL memcached extension are required.
+ APC Object Cache provides a persistent backend for the WordPress object cache using APC, the default opcode and key/value cache of PHP (built-in by default in newer versions of PHP, requires setup on earlier versions).
+ File-Based Caching for WordPress re-implements the file-based object caching mechanism found in WordPress 2.1 - 2.3.
+
+Related
+
+The Transients_API provides persistent but temporary data caching by giving it a custom name and a timeframe after which it will be expired and regenerated.
+Additional Resources
+
+ Frank Bültge's plugin WP Cache Inspect helps you analyze the object cache.
+** DONE [#A] wordpress如何添加一个动态页面                        :IMPORTANT:
+ CLOSED: [2011-07-07 Thu 18:03]
+ 先定义一个template, 然后再添加一个静态页面; 同时, 公开度为私人.
+** wordpress插件或工具
+*** wordpress的theme开发工具: whiteboard
+http://whiteboardframework.com/\\
+*** 如何将wordpress的网站方便地port到手机上
+ http://paranimage.com/10-wordpress-plug-in-phones/\\
+ 10+Wordpress手机插件 | 帕兰映像
+**** wap-wordpress插件
+ http://code.google.com/p/wap-wordpress/\\
+ wap-wordpress
+***** 无法定位WordPress Content目录(wp-content) 解决方案
+ http://zgqhyh.iteye.com/blog/481986\\
+ 无法定位WordPress Content目录(wp-content) 解决方案 - 天天成长的博客ddgrow.com - ITeye技术网站
+ 方案: 打开htdocs目录下的wp-config.php文件,将下面的代码放在wp-config.php最后一行的"?>"前面即可.注意,不要忘记上传到服务器上啊.
+ Php代码 收藏代码
+ if(is_admin()) {add_filter('filesystem_method', create_function('$a', 'return "direct";' ));define( 'FS_CHMOD_DIR', 0751 );}
+** useful link
+ http://codex.wordpress.org/Plugin_API\\
+ Plugin API &laquo; WordPress Codex
+ http://baike.baidu.com/view/23618.htm\\
+ WordPress_百度百科
+ http://cn.wordpress.org/\\
+ WordPress | China 简体中文
+ http://milton.bloghome.cn/posts/64564.html\\
+ wordpress简明使用指南
+** ;; -------------------------- separator --------------------------
+** TODO 修改article实体的属性, 将其定义为书本这个实体: 书名, 作者, 出版社, 封面, 定价, 介绍
+** TODO 通过wordpress插件的方式添加新的功能
+ 严格记录对当前worpress源代码的修改
+** TODO wordpress开放, 向游客发布文章的权限
+** TODO 小心修改wordpress相关代码, 避免无法使用它们的升级后的好处
+** TODO wordpress插件提供的样式切换, 有什么功能
+** TODO 第三方提供的插件都是什么功能
+** TODO wordpress每个产品有除了标题外的其它属性, 例如图片等来实现书架的效果
+** wordpress plugin
+ http://codex.wordpress.org/Plugin_API\\
+ Plugin API &laquo; WordPress Codex
+*** basic use
+#+BEGIN_EXAMPLE
+ Actions: Actions are the hooks that the WordPress core launches at specific points during execution, or when specific events occur. Your plugin can specify that one or more of its PHP functions are executed at these points, using the Action API.
+ Filters: Filters are the hooks that WordPress launches to modify text of various types before adding it to the database or sending it to the browser screen. Your plugin can specify that one or more of its PHP functions is executed to modify specific types of text at these times, using the Filter API.
+
+ @global array $wp_filter Stores all of the filters
+ @global array $wp_actions Increments the amount of times action was triggered.
+#+END_EXAMPLE
+** TODO WordPress 固定链接怎样设置最好？修改固定链接后不能访问文章问题
+** TODO link management                                           :IMPORTANT:
+/var/www/book_server/wp-includes/link-template.php
+** 着重于如何将wordpress快速原型转化为其它业务系统
+** ;; -------------------------- separator --------------------------
+** TODO 自定义字段
+http://www.alibuybuy.com/posts/7564.html\\
+** TODO wordpress的url重写方式
+** WordPress 基本函数集锦
+http://www.mangguo.org/wordpress-basic-function-collection/\\
+基本条件判断函数
+
+is_home():是否为主页
+is_single():是否为内容页 (Post)
+is_page():是否为内容页 (Page)
+is_category():是否为 Category/Archive 页
+is_tag():是否为标签 (Tag) 存档页
+is_date():是否为指定日期存档页
+is_year():是否为指定年份存档页
+is_month():是否为指定月份存档页
+is_day():是否为指定日存档页
+is_time():是否为指定时间存档页
+is_archive():是否为存档页
+is_search():是否为搜索结果页
+is_404():是否为 "HTTP 404: Not Found" 错误页
+is_paged():主页 /Category/Archive 页是否以多页显示
+
+Header 部分常用到的 PHP 函数
+
+<?php bloginfo('name'); ?>:博客名称 (Title)
+<?php bloginfo('stylesheet_url'); ?>:CSS 文件路径
+<?php bloginfo('pingback_url'); ?>:PingBack URL
+<?php bloginfo('template_url'); ?>:模板文件路径
+<?php bloginfo('version'); ?>:WordPress 版本
+<?php bloginfo('atom_url'); ?>:Atom URL
+<?php bloginfo('rss2_url'); ?>:RSS 2.o URL
+<?php bloginfo('url'); ?>:博客 URL
+<?php bloginfo('html_type'); ?>:博客网页 HTML 类型
+<?php bloginfo('charset'); ?>:博客网页编码
+<?php bloginfo('description'); ?>:博客描述
+<?php wp_title(); ?>:特定内容页 (Post/Page) 的标题
+
+模板常用的 PHP 函数及命令
+
+<?php get_header(); ?>:调用 Header 模板
+<?php get_sidebar(); ?>:调用 Sidebar 模板
+<?php get_footer(); ?>:调用 Footer 模板
+<?php the_content(); ?>:显示内容 (Post/Page)
+<?php if(have_posts()):?>:检查是否存在 Post/Page
+<?php while(have_posts()):the_post(); ?>:如果存在Post/Page则予以显示
+<?php endwhile; ?>:While 结束
+<?php endif; ?>:If 结束
+<?php the_time('字符串') ?>:显示时间,时间格式由"字符串"参数决定,具体参考 PHP 手册
+<?php comments_popup_link(); ?>:正文中的留言链接,如果使用 comments_popup_script(); 则新窗口打开链接
+<?php the_title(); ?>:内容页 (Post/Page) 标题
+<?php the_permalink() ?>:内容页 (Post/Page) URL
+<?php the_category(',') ?>:特定内容页 (Post/Page) 所属 Category
+<?php the_author(); ?>:作者
+<?php the_ID(); ?>:特定内容页 (Post/Page) ID
+<?php edit_post_link(); ?>:如果用户已登录并具有权限,显示编辑链接
+<?php get_links_list(); ?>:显示 Blogroll 中的链接
+<?php comments_template(); ?>:调用留言/回复模板
+<?php wp_list_pages(); ?>:显示 Page 列表
+<?php wp_list_categories(); ?>:显示 Categories 列表
+<?php next_post_link('%link '); ?>:下一篇文章链接
+<?php previous_post_link('%link'); ?>:上一篇文章链接
+<?php get_calendar(); ?>:日历
+<?php wp_get_archives() ?>:显示内容存档
+<?php posts_nav_link(); ?>:导航,显示上一篇/下一篇文章链接
+<?php include(TEMPLATEPATH . '/文件名'); ?>:嵌入其他文件,可为定制的模板或其他类型文件
+
+与模板相关的其他函数
+
+<?php _e('Message'); ?>:输出相应信息
+<?php wp_register(); ?>:显示注册链接
+<?php wp_loginout(); ?>:显示登录/注销链接
+<!–next page–>:将当前内容分页
+<!–more–>:将当前内容截断,以不在主页/目录页显示全部内容
+<?php timer_stop(1); ?>:网页加载时间(秒)
+<?php echo get_num_queries(); ?>:网页加载查询量
+** 页面访问插件
+*** top 10
+ http://www.mangguo.org/top-10-display-most-popular-post-list/\\
+ Top 10,展示最受欢迎日志列表 | 芒果小站
+*** Google Analytics for WordPress,谷歌统计插件
+ http://www.mangguo.org/google-analytics-for-wordpress-google-statistic-plugin/\\
+ Google Analytics for WordPress,谷歌统计插件 | 芒果小站
+** TODO 电子邮件无法发送. 可能原因:您的主机禁用了 mail() 函数
+** ;; § -------------------------- separator --------------------------
+** TODO [#A] php将脚本切成空后通过require方式引用,　如何传递变量,　避免使用全局变量或多次函数调用
+** wordpress: Front page can be configure
+** DONE wordpress: Your PHP installation appears to be missing the MySQL extension which is required by WordPress.
+  CLOSED: [2016-05-20 Fri 08:17]
+http://stackoverflow.com/questions/17694568/php-your-php-installation-appears-to-be-missing-the-mysql-extension-which-is-r
+apt-get install php5-mysql
+** DONE wordpress error: undefined function mysql_connect: mysql_* functions have been removed in PHP7!
+  CLOSED: [2016-09-18 Sun 16:27]
+http://stackoverflow.com/questions/10615436/fatal-error-call-to-undefined-function-mysql-connect
+http://stackoverflow.com/questions/35424982/how-to-enable-mysqli-extension-in-php-7
+#+BEGIN_EXAMPLE
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+$con = new mysqli($servername, $username, $password);
+?>
+#+END_EXAMPLE
+
+[Sun Sep 18 08:23:34.122384 2016] [:error] [pid 7481] [client 175.9.29.202:64965] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /var/www/devops_blog/wp-content/themes/portfolio-press/updatemeta.php:5\nStack trace:\n#0 {main}\n  thrown in /var/www/devops_blog/wp-content/themes/portfolio-press/updatemeta.php on line 5
+
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO wordpress中文的permlink                                     :noexport:

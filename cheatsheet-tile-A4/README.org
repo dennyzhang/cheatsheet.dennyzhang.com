@@ -27,6 +27,7 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | [[https://github.com/pivotal-cf/om][om]]                                   | a command-line API client for Pivotal Operations Manager                                     |
 | omcli                                | alias omcli="om -t https://30.0.0.5 -u admin -p <password> -k"                               |
 | Upload stemcell from cli             | =omcli upload-stemcell -s </path/stemcell.tgz>=                                              |
+| Upload tile from cli                 | =omcli upload-product -p </path/myproduct.pivotal>=                                          |
 | List all properties for a deployment | =bosh deployments=, =omcli curl -p /api/v0/staged/products/${bosh_deployment}/properties -s= |
 | List all installed tiles             | =omcli curl -p /api/v0/installations=                                                        |
 | json output                          | =omcli -k --format=json staged-products=                                                     |
@@ -362,3 +363,44 @@ Succeeded
 * TODO bosh vm type                                                :noexport:
 * TODO [#A] om cli can't delete product, until we delete it from opsmanager :noexport:
 * TODO ops_files_paths vs lifecycle_errands/post_deploy            :noexport:
+* TODO [#A] pks apply-addon: only apply: apply-specs, but not the followings :noexport:IMPORTANT:
+#+BEGIN_EXAMPLE
+XXX XXX [1:48 AM]
+ah ok so i just followed along
+if you run the errand using the instance group name, it will run the first job on the list
+
+Denny Zhang [1:55 AM]
+hmm, so only the first one? Is that a by-design limitation?
+Any pointer about this?
+
+XXX XXX [12:29 PM]
+yeah only the first one, by design i guess
+no pointer about it
+its hidden in the director code
+i can dig it out if you're interested
+#+END_EXAMPLE
+* TODO activate tile                                               :noexport:
+#+BEGIN_EXAMPLE
+kubo@jumper:~$ om --target https://30.0.0.5 --username admin --password 'Admin!23' -k stage-product -p pivotal-container-service -v 1.3.20-build.1
+staging pivotal-container-service 1.3.20-build.1
+could not execute "stage-product": failed to stage product: request failed: unexpected response:
+HTTP/1.1 404 Not Found
+Transfer-Encoding: chunked
+Cache-Control: no-cache, no-store
+Connection: keep-alive
+Content-Type: application/json; charset=utf-8
+Date: Thu, 06 Dec 2018 02:09:30 GMT
+Expires: Fri, 01 Jan 1990 00:00:00 GMT
+Pragma: no-cache
+Server: nginx/1.10.3 (Ubuntu)
+Strict-Transport-Security: max-age=15552000; includeSubDomains
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 774bc8eb-5c85-482a-bf7a-50a23c49687b
+X-Runtime: 0.060734
+X-Xss-Protection: 1; mode=block
+
+5f
+{"errors":{"base":["Product 'pivotal-container-service-97a6f4404aa1dc557a53' is not active."]}}
+0
+#+END_EXAMPLE
