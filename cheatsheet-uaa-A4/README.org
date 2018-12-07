@@ -46,11 +46,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-uaac-A4/issues][Issues]] or s
 | password |         |
 | secret   |         |
 ** credhub
-| Name          | Command                                                                                                              |
-|---------------+----------------------------------------------------------------------------------------------------------------------|
-| CredHub       | It centralizes and secures credential generation, storage, lifecycle management, and access.                         |
-| Reference     | [[https://github.com/cloudfoundry-incubator/credhub][GitHub: credhub]], [[https://github.com/cloudfoundry-incubator/credhub-cli][GitHub: credhub-cli]], [[https://docs.cloudfoundry.org/credhub/][Link: credhub]]                                                                  |
-| credhub login | =credhub login --client-name credhub-admin --client-secret "${admin_secret}" -s "${api_url}" --ca-cert "${ca_file}"= |
+| Name          | Command                                                                                                            |
+|---------------+--------------------------------------------------------------------------------------------------------------------|
+| CredHub       | It centralizes and secures credential generation, storage, lifecycle management, and access.                       |
+| Reference     | [[https://github.com/cloudfoundry-incubator/credhub][GitHub: credhub]], [[https://github.com/cloudfoundry-incubator/credhub-cli][GitHub: credhub-cli]], [[https://docs.cloudfoundry.org/credhub/][Link: credhub]]                                                                |
+| credhub login | credhub login --client-name credhub-admin --client-secret "${admin_secret}" -s "${api_url}" --ca-cert "${ca_file}" |
 [[https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-uaa-A4/credhub-service.png]]
 ** Online Help Usage
 #+BEGIN_EXAMPLE

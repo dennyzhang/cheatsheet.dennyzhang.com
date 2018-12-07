@@ -31,6 +31,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | Split one pipeline yaml into small *reusable* pieces | Not supported. An uncomfortable workaround: generating yaml with other tools. [[https://github.com/concourse/concourse/issues/1994][Link: GitHub]]     |
 | Add a readonly member to one team                    | Not supported. Concourse only support authentication control, but not authorization control    |
 | Hijack to containers with a successful run           | Not supported. By design when task has passed, the container will be deleted                   |
+| Does Concourse have REST API?                        | Not supported so far. [[https://github.com/concourse/concourse/issues/1122][Link: GitHub]], [[https://github.com/concourse/atc/blob/d8da97675ef4b8941ebf372dbd63f200d56da6cd/routes.go#L105-L197][Link: Concourse REST endpoints]]                             |
 | Reference                                            | [[https://github.com/starkandwayne/concourse-tutorial][concourse-tutorial]], [[https://github.com/pivotalservices/concourse-pipeline-samples][concourse-pipeline-samples]]                                                 |
 ** Concourse Resources & Examples
 | Name                                        | Summary                                                |

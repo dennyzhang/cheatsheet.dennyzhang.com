@@ -411,9 +411,13 @@ ansible
 * TODO [#A] update health cheatsheet: /Users/mac/Dropbox/org_data/life/life.org :noexport:
 * TODO Update cheatsheet https://cheatsheet.dennyzhang.com/cheatsheet-wordpress-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO add image: https://cheatsheet.dennyzhang.com/cheatsheet-vrops-A4 :noexport:
-* TODO add image https://cheatsheet.dennyzhang.com/cheatsheet-wordpress-A4 :noexport:
-* TODO add image https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-A4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] publish cheatsheet for web browser                     :noexport:
 ** TODO print webpage as a screenshot image
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO update: https://cheatsheet.dennyzhang.com/cheatsheet-vrops-A4 :noexport:
+* TODO update https://cheatsheet.dennyzhang.com/cheatsheet-wordpress-A4 :noexport:
+* TODO update https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-A4 :noexport:
+* TODO update https://cheatsheet.dennyzhang.com/cheatsheet-public-db-A4 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cheatsheet confluence: JIR                                  :noexport:
+** JIRA search tickets resolved in the past one month

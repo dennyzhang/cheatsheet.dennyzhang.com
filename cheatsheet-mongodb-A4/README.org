@@ -1,4 +1,4 @@
-* CheatSheet: Mongodb                                              :Tool:
+* CheatSheet: Mongodb                                              :Tools:
 :PROPERTIES:
 :type:     tool, database
 :export_file_name: cheatsheet-mongodb-A4.pdf

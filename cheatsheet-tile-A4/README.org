@@ -348,7 +348,6 @@ Succeeded
 #+END_EXAMPLE
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] what is service broker in tile                         :noexport:
-* TODO How tile do the garbage clean                               :noexport:
 * TODO pks tile: wavefront-proxy                                   :noexport:
       - name: wavefront-proxy
         version: $( release "wavefront-proxy" | select "version" )
@@ -361,7 +360,6 @@ Succeeded
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO bosh vm type                                                :noexport:
-* TODO [#A] om cli can't delete product, until we delete it from opsmanager :noexport:
 * TODO ops_files_paths vs lifecycle_errands/post_deploy            :noexport:
 * TODO [#A] pks apply-addon: only apply: apply-specs, but not the followings :noexport:IMPORTANT:
 #+BEGIN_EXAMPLE
@@ -404,3 +402,7 @@ X-Xss-Protection: 1; mode=block
 {"errors":{"base":["Product 'pivotal-container-service-97a6f4404aa1dc557a53' is not active."]}}
 0
 #+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] om cli can't delete product, until we delete it from opsmanager :noexport:
+* TODO How tile do the garbage clean                               :noexport:
+* TODO How to manually delete the tile?
