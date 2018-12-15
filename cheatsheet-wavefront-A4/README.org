@@ -16,7 +16,7 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-wavefront-A4/cheatsheet-wavefront-A4.pdf][cheatsheet-wavefront-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/kubernetes/][kubernetes]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-wavefront-A4/cheatsheet-wavefront-A4.pdf][cheatsheet-wavefront-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/vmware/][VMware]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-wavefront-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][Prometheus CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4][Nagios CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
@@ -1618,3 +1618,8 @@ kubo@jumper:~$
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO wavefront copy the metric list                              :noexport:
 https://try.wavefront.com/chart#_v01(c:(cs:(type:line),id:chart,n:pks.kube.pod.status.ready.gauge,s:!((e:'',n:Query,q:'ts(%22pks.kube.pod.status.ready.gauge%22,%20condition=true%20and%20cluster=%22service-instance_d70cea14-53d5-478a-b82c-b36efa08ad0f%22)',qbe:!f,s:Y))),g:(c:off,d:86400,ls:!f,s:1544031356,w:'1d'),h:!(wavefront-proxy-55d6f89f9f-xpntn))
+* TODO Error: failed to create alert 'node memory usage high': context deadline exceeded :noexport:
+* TODO metrics slowness                                            :noexport:
+* TODO heapster deprecation                                        :noexport:
+* TODO multi-tenancy                                               :noexport:
+* TODO wavefront proxy footprint: 500 MB; PKS footprint: 2.5GB, 1GB, 0.5GB :noexport:

@@ -1,4 +1,4 @@
-* CheatSheet: Linux Compress And Decompress                           :Linux:
+* CheatSheet: Linux Compress And Decompress                           :Tools:
 :PROPERTIES:
 :type:     tar
 :export_file_name: cheatsheet-archive-A4.pdf

@@ -28,7 +28,7 @@ File me [[https://github.com/DennyZhang/cheatsheet-cloudfoundry-A4/issues][Issue
 | [[https://pivotal.io/platform][Pivotal PCF]]                       | Pivotal Cloud Foundry                              |
 | [[https://pivotal.io/platform/pivotal-application-service][PAS (Pivotal Application Service)]] | On-prem PAAS solution for enterprise users         |
 | [[https://pivotal.io/platform/pivotal-container-service][PKS (Pivotal Container Service)]]   | Kubernetes solution for enterprise users           |
-| [[https://pivotal.io/platform/pivotal-function-service][PFS]]                               | Pivotal Function Service for serverless            |
+| [[https://pivotal.io/platform/pivotal-function-service][PFS (Pivotal Function Service)]]    | Pivotal Function Service for serverless            |
 | [[https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html][diego]]                             | Container management system, similar to kubernetes |
 | [[https://bosh.io/docs/][Cloud foundry bosh]]                | VM lifecycle management. [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]]           |
 | [[https://github.com/starkandwayne/concourse-tutorial][Concourse]]                         | CI/CD tool [[https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4][Concourse CheatSheet]]                    |

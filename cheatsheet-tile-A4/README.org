@@ -405,4 +405,5 @@ X-Xss-Protection: 1; mode=block
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] om cli can't delete product, until we delete it from opsmanager :noexport:
 * TODO How tile do the garbage clean                               :noexport:
-* TODO How to manually delete the tile?
+* TODO How to manually delete the tile?                            :noexport:
+* TODO [#A] tile: post_deploy: add vrops_register and vrops_unregister, instead of vrops_registration :noexport:IMPORTANT:

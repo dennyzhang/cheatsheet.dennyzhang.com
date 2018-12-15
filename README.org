@@ -171,12 +171,11 @@ Cheers!
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] blog post: avoid open a new link             :noexport:IMPORTANT:
-* [#A] Submit PR to related communities                            :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO convert page into github repos                              :noexport:
 ** https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
 ** https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4
-* PR: Send PR to concouse: https://concourse-ci.org/exposing.html  :noexport:
+* [#A] Submit PR to related communities: docker/concourse          :noexport:
+https://concourse-ci.org/exposing.html
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] cheatsheet.dennyzhang.com                              :noexport:
 ** TODO align icon horizontally in blog: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
@@ -279,7 +278,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 ** TODO ssl certificate warning: https://cheatsheet.dennyzhang.com/cheatsheet-emacs :noexport:
 ** Add most popular cheatsheet to github readme
 * TODO [#A] Improve Content                                        :noexport:
-** TODO improve jq cheatsheet                                      :noexport:
 ** TODO opensource improvement: apt cheatsheet                     :noexport:
  http://sai628.com/2017-02-27-homebrew-cheatsheet.html
  https://www.anintegratedworld.com/neat-little-brew-cheat-sheet/
@@ -352,16 +350,15 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO [#A] cheatsheet column: set the minimium width: https://github.com/dennyzhang/cheatsheet-kubernetes-A4 :noexport:
 
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-docker-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-jq-A4  :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4 :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4 :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-cron-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-wget-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-apt-A4 :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-dns-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4 :noexport:
 * TODO cheatsheet: helm                                            :noexport:
 | Component | Role   | Location                            |
 |-----------+--------+-------------------------------------|
@@ -411,13 +408,17 @@ ansible
 * TODO [#A] update health cheatsheet: /Users/mac/Dropbox/org_data/life/life.org :noexport:
 * TODO Update cheatsheet https://cheatsheet.dennyzhang.com/cheatsheet-wordpress-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] publish cheatsheet for web browser                     :noexport:
-** TODO print webpage as a screenshot image
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO update: https://cheatsheet.dennyzhang.com/cheatsheet-vrops-A4 :noexport:
 * TODO update https://cheatsheet.dennyzhang.com/cheatsheet-wordpress-A4 :noexport:
 * TODO update https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-A4 :noexport:
 * TODO update https://cheatsheet.dennyzhang.com/cheatsheet-public-db-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO github markdown format: https://github.com/dennyzhang/cheatsheet-knative-A4/blob/master/README.md :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] publish cheatsheet for web browser                     :noexport:
+** TODO print webpage as a screenshot image
 * TODO cheatsheet confluence: JIR                                  :noexport:
 ** JIRA search tickets resolved in the past one month
+* TODO cheatsheet: vke cli                                         :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cheatsheet: make git-push doesn't work                      :noexport:

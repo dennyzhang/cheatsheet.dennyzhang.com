@@ -1,6 +1,6 @@
 * CheatSheet: Take Flights For Travel                                                   :Life:
 :PROPERTIES:
-:type:     travel
+:type:     life
 :export_file_name: cheatsheet-travel.pdf
 :END:
 

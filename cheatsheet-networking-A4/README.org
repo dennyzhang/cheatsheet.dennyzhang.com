@@ -22,26 +22,38 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
 ** Linux Networking
-| Name                                            | Comment                        |
-|-------------------------------------------------+--------------------------------|
-| Scan tcp listening ports for a given server     | =sudo nmap -O 192.168.1.103=   |
-| Check dns naming                                | =sudo nslookup www.google.com= |
-| Print routing table                             | =netstat -rn=                  |
-| List all the router hops                        | =traceroute=                   |
-| DNS lookup utility                              | =host www.google.com=          |
-| Get detail report for a given NIC               | =ethtool -S eth0=              |
-| Check system configuration                      | =sysctl -a=                    |
-| Linux mapping from well-known services to ports | =cat /etc/services=            |
-|                                                 | =netstat -i=                   |
-|                                                 | =arp -a=                       |
-** Networking testing
-| Name                     | Comment                                       |
-|--------------------------+-----------------------------------------------|
-| [[http://bencane.com/2012/07/16/tc-adding-simulated-network-latency-to-your-linux-server/][tc]]                       | Adding simulated network latency              |
-| Add 97ms latency to eth0 | =tc qdisc add dev eth0 root netem delay 97ms= |
-| Check status             | =tc -s qdisc=                                 |
-| Remove the rule          | =tc qdisc del dev eth0 root netem=            |
-| Test your network speed  | http://www.att.com/speedtest/                 |
+| Name                              | Comment                                             |
+|-----------------------------------+-----------------------------------------------------|
+| Get detail report for a given NIC | =ethtool -S eth0=                                   |
+| Check system configuration        | =sysctl -a=                                         |
+| Ports for well-known services     | =cat /etc/services=                                 |
+| Reference                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][Curl CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-ssh-A4][SSH CheatSheet]] |
+** TCP
+| Name                          | Comment                                                   |
+|-------------------------------+-----------------------------------------------------------|
+| Port scan for a given host    | =sudo nmap -O 192.168.1.103=, [[https://viewdns.info/portscan/][Link: Website for Port Scan]] |
+| Simulate network latency test | [[http://bencane.com/2012/07/16/tc-adding-simulated-network-latency-to-your-linux-server/][tc]]                                                        |
+| Add 97ms latency to eth0      | =tc qdisc add dev eth0 root netem delay 97ms=             |
+| Check tc status               | =tc -s qdisc=                                             |
+| Remove tc rule                | =tc qdisc del dev eth0 root netem=                        |
+| Check network speed           | [[http://www.att.com/speedtest/][Link: AT&T -Test your network speed]]                       |
+| Tcp manual                    | =man 7 tcp=                                               |
+| Reference                     | [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]]                                        |
+** DNS
+| Name                     | Comment                                                       |
+|--------------------------+---------------------------------------------------------------|
+| Check dns naming         | =sudo nslookup www.google.com=                                |
+| Print routing table      | =netstat -rn=                                                 |
+| List all the router hops | =traceroute=                                                  |
+| DNS lookup utility       | =host www.google.com=                                         |
+| Websites To Register DNS | [[https://domains.google.com/registrar][Link: Google Domain DNS]], [[https://www.godaddy.com/][Link: GoDaddy]], [[https://aws.amazon.com/route53/][Link: Amazon Route 53]] |
+** HTTP - wget
+| Name                    | Command                                       |
+|-------------------------+-----------------------------------------------|
+| Download one url        | =wget -O /tmp/google.html https://google.com= |
+| Download mutiple urls   | =wget https://google.com https://bing.com=    |
+| Download a list of urls | =wget -i url-list.txt=, [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-networking-A4/url-list.txt][url-list.txt]]          |
+| Reference               | [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][Link: Curl CheatSheet]]                         |
 ** TCP sockets workflow
 | Name                                                      | Comment                        |
 |-----------------------------------------------------------+--------------------------------|
@@ -56,20 +68,6 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Shutdown stdin and stdout/stderr for a socket             | =shutdown(s, <side>)=          |
 | Read socket options                                       | =getsockopt(s, ..)=            |
 | Change socket options                                     | =setsockopt(s, ..)=            |
-** TCP
-| Name       | Comment            |
-|------------+--------------------|
-| Tcp manual | =man 7 tcp=        |
-| Reference  | [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]] |
-** HTTP
-| Name      | Comment         |
-|-----------+-----------------|
-| Reference | [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][Curl CheatSheet]] |
-** References
-| Name      | Comment                                             |
-|-----------+-----------------------------------------------------|
-| RFC793    | http://www.ietf.org/rfc/rfc793.txt                  |
-| Reference | [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][Curl CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-ssh-A4][SSH CheatSheet]] |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -2126,3 +2124,384 @@ https://discussions.apple.com/thread/2459517
 * TODO ethtool --offload eth0 gro off                              :noexport:
 how to persist ethtool settings across reboot
 http://www.chenshake.com/how-node-installation-centos-6-4-openstack-havana-ovsgre/#comment-3561
+* wget                                                         :noexport:
+# To download a single file
+wget http://path.to.the/file
+
+# To continue an aborted downloaded
+wget -c http://path.to.the/file
+
+# To mirror a whole page locally
+wget -pk http://path.to.the/page.html
+
+# To mirror a whole site locally
+wget -mk http://site.tl/
+
+# To download files according to a pattern
+wget http://www.myserver.com/files-{1..15}.tar.bz2
+
+# To download all the files in a directory with a specific extension if directory indexing is enabled
+wget -r -l1 -A.extension http://myserver.com/directory
+
+# Allows you to download just the headers of responses (-S --spider) and display them on Stdout (-O -).
+wget -S --spider -O - http://google.com
+
+# Change the User-Agent to 'User-Agent: toto'
+wget -U 'toto' http://google.com
+
+** wget -qO- https://get.docker.com/ | sh                          :noexport:
+* dns                                                         :noexport:
+** TODO DNS issue
+ #+BEGIN_EXAMPLE
+ Details about everything we have changed for DNS issue
+
+ We bought the DNS of carol.ai from eurodns. Then managed it in AWS Route53.
+
+ Last weekend
+ 1. We change the Route53 NS entry to cloudflare nameservers
+
+ From:
+ ```
+ ns-550.awsdns-04.net
+ ns-1292.awsdns-33.org
+ ns-1629.awsdns-11.co.uk
+ ns-374.awsdns-46.com
+ ```
+
+ To:
+ ```
+ meg.ns.cloudflare.com
+ plato.ns.cloudflare.com
+ ```
+ 2. Updated nameservers of eurodns to cloudflare nameservers as well.
+
+ *However eurodns nameservers has been reset to default nameserver somehow*. (We don't know why).
+
+ Default nameservers:
+ ```
+ ns1.eurodns.com
+ ns2.eurodns.com
+ ns3.eurodns.com
+ ns4.eurodns.com
+ ```
+
+ 3. Default nameserver can't resolve our DNS, since we have CNAME/A hosts only in AWS Route53 and cloudflare.
+
+ 4. We have changed nameserver back to AWS ones in both eurodns and Route53.
+
+ But still the majority of app.carol.ai still point to the wrong ip after waiting for 2 hours.
+ https://dnschecker.org/#A/app.carol.ai
+ #+END_EXAMPLE
+** TODO Ubuntu flush DNS cache
+** TODO Blog post: blog dns propagation
+** TODO serverspec haproxy: verify dns load-balancing works
+ ping www.oscgc.com
+ ping www.dennyzhang.com
+
+ ping 123.57.240.189
+ ping 52.74.151.55
+
+ a.dennyzhang.com
+** TODO Issue: dns only: we should also have http proxy (CDN)
+** TODO Understand dns MX
+ MX: carol.ai(mail exchange)
+
+ 10 mx1.emailsrvr.com.
+ 20 mx2.emailsrvr.com.
+** TODO dns nameserver
+ NS: carol.ai
+
+ ns-550.awsdns-04.net.
+ ns-1292.awsdns-33.org.
+ ns-1629.awsdns-11.co.uk.
+ ns-374.awsdns-46.com.
+** TODO dns TXT
+ TXT: carol.ai(Text)
+
+ "v=spf1 include:emailsrvr.com ~all"
+** TODO cloudflare DNS changes
+** TODO dns issue
+ William Monti [2:25 PM]
+ @denny.zhang i don't know if that is with you too
+
+ but people in TOTVS Brazil office isn't being able to access carol.com
+ dns not responding
+ seems to be outside TOTVS office too
+ people in brazil are not being able to access it
+
+ Hamilton Matos [2:30 PM]
+ outside totvs is ok
+ just tested
+ inside totvs:
+ This site can't be reached
+ carol.com's server IP address could not be found.
+ Did you mean http://caroll.com/?
+ Search Google for carol
+ ERR_NAME_NOT_RESOLVED
+ Caroll
+ Vêtements et Accessoires de mode Caroll - Site Officiel
+ Decouvrez l'ensemble des dernières collections de vêtements et accessoires pour femmes de Caroll
+ http://www.caroll.com/skin-311/frontend/enterprise/caroll_corp/images/logo_caroll_corp.png
+
+ William Monti [2:33 PM]
+ what is the dns server there?
+
+ slackbot [2:40 PM]
+ Pssst! I didn't unfurl http://caroll.com/ because it was already shared in this channel quite recently (within the last hour) and I didn't want to clutter things up. Would you like me to do it anyway?
+
+ Denny Zhang (DevOps) [2:40 PM]
+ ```➜  ~ curl -I http://carol.com/en/
+ HTTP/1.1 200 OK
+ Date: Thu, 26 Apr 2018 21:40:58 GMT
+ Server: Apache/2.4.10 (Debian)
+ Last-Modified: Sat, 10 Mar 2018 07:13:26 GMT
+ ETag: "5a32-56709a5227718"
+ Accept-Ranges: bytes
+ Content-Length: 23090
+ Vary: Accept-Encoding
+ Content-Type: text/html```
+
+ William Monti [2:41 PM]
+ i am asking pedro (he is in joinville) to test
+
+ Denny Zhang (DevOps) [2:42 PM]
+ Thanks, @wmonti
+
+ William Monti [2:43 PM]
+ not working in Joinville either, but it is also inside TOTVS infrastructure
+
+ Denny Zhang (DevOps) [2:44 PM]
+ hmm, that's interesting.
+
+ Could we ask your friend to test `dig carol.com`?
+
+ William Monti [2:45 PM]
+ <<>> DiG 9.10.6 <<>> carol.com
+ ;; global options: +cmd
+ ;; Got answer:
+ ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55833
+ ;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+ ;; OPT PSEUDOSECTION:
+ ; EDNS: version: 0, flags:; udp: 4000
+ ;; QUESTION SECTION:
+ ;carol.com.            IN    A
+
+ ;; AUTHORITY SECTION:
+ carol.com.        250    IN    SOA    sp-dc01.sp01.local. hostmaster.sp01.local. 6 900 600 86400 3600
+
+ ;; Query time: 1 msec
+ ;; SERVER: 10.80.140.101#53(10.80.140.101)
+ ;; WHEN: Thu Apr 26 18:45:07 -03 2018
+ ;; MSG SIZE  rcvd: 103
+ outside totvs in joinville it works
+ so it is a totvs issue
+
+ Denny Zhang (DevOps) [2:47 PM]
+ Thanks!
+** TODO Check dns setting webistes
+ https://asm.ca.com/en/ping.php
+** TODO mac flush DNS
+ https://help.dreamhost.com/hc/en-us/articles/214981288-Flushing-your-DNS-cache-in-Mac-OS-X-and-Linux
+ macbook$ sudo killall -HUP mDNSResponder
+** TODO What's Name server in DNS
+** TODO how to find out manufactuer company name from mac address: http://viewdns.info/maclookup/
+** TODO "Reverse NS Lookup" what does it mean: http://www.viewdns.info/reversens/?ns=www.dennyzhang.com
+** TODO dig app.carol.ai @ns-550.awsdns-04.net
+dig do-cb-001.carol.ai @ns-550.awsdns-04.net
+
+dig do-cb-001.carol.ai nx
+** TODO check dns: https://dnschecker.org/
+app.carol.ai
+supplychain.carol.ai
+bematechn.carol.ai
+do-es-001.carol.ai
+do-cb-001.carol.ai
+bematech-do-jenkins.carol.ai
+
+ping -c2 do-es-001.carol.ai
+ping -c2 do-cb-001.carol.ai
+ping -c2 bematech-do-jenkins.carol.ai
+** TODO DNS: AWS Route53 sometimes it has trailing dot, sometimes it doesn't
+** TODO AWS: How do I enable reverse DNS lookup in Amazon Route 53?
+https://aws.amazon.com/premiumsupport/knowledge-center/route-53-reverse-dns/
+** TODO DNS change list
+*** remove TXT entry
+*** change Route53 DNS nameserver TTL from 2d to +5m
+** TODO Delivery over IPv4 to awsdns-hostmaster@amazon.com could not be done.
+https://serverfault.com/questions/748923/how-can-i-fix-these-soa-dns-problems
+https://forums.aws.amazon.com/thread.jspa?messageID=538468
+
+You can safely ignore the SOA error. It is most likely a false
+positive and doesn't affect the DNS in any way. It sounds like you
+moved to Route 53 very recently. When you change name servers, it can
+take 24 - 48 hours for everything to fully propagate. The domain is
+working fine from here, so simply give it some more time and the
+problem should take care of itself.
+** TODO DNS: how we can configure for a given region: say Brazil?
+** TODO Lesson learned from DNS accidence
+#+BEGIN_EXAMPLE
+Kung Wang [12:47 PM]
+yes, no one is perfect, and people understand it. as long as we communicate well and manage people's expectations, we can do what is right and needed things to push task forward.
+
+Denny Zhang (DevOps) [12:48 PM]
+Agree.
+
+At high level, manage risks and expectations
+At low level, make small changes and safe trial for major/new critical change.
+
+e.g:
+1. Change TTL of nameserver from 2d to 5m, days ago
+2. Use a non-critical domain for testing. e.g, start with fluigdata.com, instead of carol.ai
+3. Deep dive more about DNS. Especially for NS, SOA, and domain transfer, etc.
+#+END_EXAMPLE
+** TODO [#A] Speed up a DNS change for a given country
+https://www.godaddy.com/help/what-factors-affect-dns-propagation-time-1746
+- You can set the TTL for each DNS record in your domain name's zone file.
+- Your ISP caches DNS records
+- Registries often protect their root nameservers from overuse by setting a high TTL of up to 48 hours or more for those NS records
+** TODO [#A] website to check domains
+https://dnschecker.org/#A/app.carol.ai
+https://toolbox.googleapps.com/apps/dig/#A/
+https://www.whatsmydns.net/#A/app.carol.ai
+https://www.nexcess.net/resources/tools/global-dns-checker/?h=app.carol.ai&t=A
+
+eurodns
+** TODO dig flag answer: ANSWER: 2
+https://serverfault.com/questions/729025/what-are-all-the-flags-in-a-dig-response
+flags: qr rd ra
+
+#+BEGIN_EXAMPLE
+DIG response header:
+
+Flags:
+AA = Authoritative Answer
+TC = Truncation
+RD = Recursion Desired (set in a query and copied into the response if recursion is supported)
+RA = Recursion Available (if set, denotes recursive query support is available)
+AD = Authenticated Data (for DNSSEC only; indicates that the data was authenticated)
+CD = Checking Disabled (DNSSEC only; disables checking at the receiving server)
+
+Response code:
+
+0 = NOERR, no error
+1 = FORMERR, format error (unable to understand the query)
+2 = SERVFAIL, name server problem
+3= NXDOMAIN, domain name does not exist
+4 = NOTIMPL, not implemented
+5 = REFUSED (e.g., refused zone transfer requests)
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+➜  ~ dig @8.8.8.8 do-es-001.carol.ai
+
+; <<>> DiG 9.8.3-P1 <<>> @8.8.8.8 do-es-001.carol.ai
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 42233
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;do-es-001.carol.ai.		IN	A
+
+;; ANSWER SECTION:
+do-es-001.carol.ai.	483	IN	CNAME	825610.parkingcrew.net.
+825610.parkingcrew.net.	11	IN	A	54.72.9.115
+
+;; Query time: 30 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Mon Mar  5 14:13:52 2018
+;; MSG SIZE  rcvd: 88
+#+END_EXAMPLE
+** TODO DNS resolution is flipping when querying nameserver of 8.8.8.8
+➜  ~ dig @8.8.8.8 do-es-001.carol.ai
+
+; <<>> DiG 9.8.3-P1 <<>> @8.8.8.8 do-es-001.carol.ai
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 12297
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;do-es-001.carol.ai.		IN	A
+
+;; ANSWER SECTION:
+do-es-001.carol.ai.	299	IN	A	159.89.159.45
+
+;; Query time: 59 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Mon Mar  5 14:12:08 2018
+;; MSG SIZE  rcvd: 52
+
+➜  ~ dig @8.8.8.8 do-es-001.carol.ai
+
+; <<>> DiG 9.8.3-P1 <<>> @8.8.8.8 do-es-001.carol.ai
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 24313
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;do-es-001.carol.ai.		IN	A
+
+;; ANSWER SECTION:
+do-es-001.carol.ai.	59	IN	CNAME	825610.parkingcrew.net.
+825610.parkingcrew.net.	59	IN	A	54.72.9.115
+
+;; Query time: 33 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Mon Mar  5 14:12:12 2018
+;; MSG SIZE  rcvd: 88
+** TODO "dig -trace  @8.8.8.8 app.carol.ai" vs "dig +trace  @8.8.8.8 app.carol.ai"
+#+BEGIN_EXAMPLE
+Denny Zhang (DevOps) [2:27 PM]
+In my laptop, I tried `dig +trace  @8.8.8.8 app.carol.ai` more than 5 times.
+
+Always good
+
+With `dig -trace  @8.8.8.8 app.carol.ai` in my laptop, it fails (Just seconds ago)
+
+Kung Wang [2:28 PM]
+for me both are good
+try to flush your DNS
+
+Denny Zhang (DevOps) [2:29 PM]
+I have issued `sudo killall -HUP mDNSResponder`
+
+Then run `dig -trace  @8.8.8.8 app.carol.ai` twice
+The first time, the ip is correct.
+
+The second time, it runs into 54.72.9.115
+
+But with ``dig +trace  @8.8.8.8 app.carol.ai`, it's always right
+#+END_EXAMPLE
+** TODO public DNS setting
+https://public-dns.info//nameserver/br.html
+https://public-dns.info/nameserver/us.html
+** TODO risk management for the DNS changeset
+** TODO manually change DNS nameserver locally
+** TODO How to trigger DNS refresh for given registrar
+https://developers.google.com/speed/public-dns/cache
+** TODO global DNS server: http://www.getflix.com.au/setup/dns-servers
+* TODO netstat -i                                                  :noexport:
+* TODO arp -a                                                      :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Blog: Tools To Check DNS                                    :noexport:
+** Domain whois: http://www.viewdns.info/whois/?domain=www.dennyzhang.com
+** Check dns propagation status: http://www.viewdns.info/propagation/?domain=www.dennyzhang.com
+** Check Domain: http://viewdns.info/iphistory/
+** DNS record lookup: http://www.viewdns.info/dnsrecord/?domain=dennyzhang.com
+** DNS Report: http://www.viewdns.info/dnsreport/?domain=www.dennyzhang.com
+** Check about a domain: name server? SSL expiration?
+** Guess domain name from IP: http://www.viewdns.info/reverseip/?host=45.79.161.77&t=1
+* TODO Blog: Tools To Check Server By IP                           :noexport:
+** IP location check: http://www.viewdns.info/iplocation/?ip=104.131.129.100
+** Check IP: where it is? what ports listening? Where it is started?
+** Port scan: http://www.viewdns.info/portscan/?host=www.dennyzhang.com
+** TODO Blog: find out where the server is hosted: https://check-host.net/
+well, we already host the Java/NPM resources, the idea is just to add a new repository there
+ [11:20]
+nexus.fluigdata.com (104.236.180.184)

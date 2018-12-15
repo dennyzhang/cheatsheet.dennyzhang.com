@@ -26,16 +26,24 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 |------------------------------+--------------------------------------------------|
 | Sort processes by ram usage  | =ps -eo size,pid,user,pcpu,command --sort -rss=  |
 | Sort processes by cpu usage  | =ps -eo size,pid,user,pcpu,command --sort -pcpu= |
-| Find process by name         | =pgrep <process_name>=                           |
 | Get parent process id by pid | ps -o ppid= -p <pid>                             |
+| Find process by name         | =pgrep <process_name>=                           |
 | List zombie processes        | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-process-A4/zombie-process.sh][zombie-process.sh]]                            |
-** Debug process
+| List all process             | =ps aux=, =ps axjf=                              |
+** Top Command
+| Name                               | Comment                      |
+|------------------------------------+------------------------------|
+| Top show process full command line | Use =c= to toggle            |
+| Top sort process by memory usage   | =Shift+m=                    |
+| Top for certain processes          | =top -p `pgrep -d "," java`= |
+** Examine process
 | Name                                  | Comment                  |
 |---------------------------------------+--------------------------|
 | Trace system calls and signals by pid | =strace -p <pid>=        |
 | List all file handlers by pid         | =lsof -p <pid>=          |
 | Display process tree by pid           | =pstree -A -n -p <pid>=  |
 | List all listening ports by pid       | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-process-A4/proc-listen-ports.sh][proc-listen-ports.sh]] |
+| Get process ram usage by pid          | =sudo pmap -x <pid>=     |
 ** Kill process
 | Name                                  | Comment                                            |
 |---------------------------------------+----------------------------------------------------|
@@ -45,13 +53,24 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 | kill process by it's partial name     | =pkill -f <process-string>=                        |
 | Kill process by process name          | =killall <process_name>=                           |
 ** Explore /proc filesystem
-| Name                                | Comment                  |
-|-------------------------------------+--------------------------|
-| Check process start command         | =cat /proc/$pid/cmdline= |
-| Check process environment variables | =cat /proc/$pid/environ= |
-| Check process ulimits setting       | =cat /proc/$pid/limits=  |
-| Check cpu utilization               | =/proc/loadavg=          |
-| Get current IP from /proc           | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-process-A4/proc-get-ip.sh][proc-get-ip.sh]]       |
+| Name                                | Comment                                |
+|-------------------------------------+----------------------------------------|
+| Check process start command         | =cat /proc/$pid/cmdline=               |
+| Check process environment variables | =cat /proc/$pid/environ=               |
+| Check process ulimits setting       | =cat /proc/$pid/limits=                |
+| Check cpu utilization               | =/proc/loadavg=                        |
+| List all partitions                 | =/proc/partitions=                     |
+| List all modules                    | =/proc/modules=                        |
+| List TCP/UDP packages               | =sudo cat /proc/$PID/net/nf_conntrack= |
+| Get current IP from /proc           | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-process-A4/proc-get-ip.sh][proc-get-ip.sh]]                     |
+** Linux Process Status
+| Status                                      | Type                      |
+|---------------------------------------------+---------------------------|
+| Ready or running                            | =TASK_RUNNING(R)=         |
+| Blocked (waiting for an event)              | =TASK_INTERRUPTIBLE(S)=   |
+| Blocked (usually for I/O)                   | =TASK_UNINTERRUPTIBLE(D)= |
+| Terminated but not cleaned up by its parent | =TASK_ZOMBIE(Z)=          |
+| Execution stopped                           | =TASK_STOPPED(T)=         |
 ** More Resources
 License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -86,7 +105,6 @@ License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_lic
 #+LINK_UP:
 #+LINK_HOME:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Draw an diagram for the overall status                      :noexport:
 * TODO grep                                                        :noexport:
 # Search a file for a pattern
 grep pattern file
@@ -118,12 +136,6 @@ ps aux | grep '[h]ttpd'
 # Colour in red {bash} and keep all other lines
 ps aux | grep -E --color 'bash|$'
 * TODO ps                                                          :noexport:
-# To list every process on the system:
-ps aux
-
-# To list a process tree
-ps axjf
-
 # To list every process owned by foouser:
 ps -aufoouser
 
@@ -133,21 +145,16 @@ ps -eo pid,user,command
 # Exclude grep from your grepped output of ps.
 # Add [] to the first letter. Ex: sshd -> [s]shd
 ps aux | grep '[h]ttpd'
-* TODO list which process is using a given file                    :noexport:
 * linux /proc filesystem                                 :noexport:IMPORTANT:
-
 - The proc  file  system acts as an interface to internal data structures in the kernel.
 | Item                                 | Comment                                                                                   |
 |--------------------------------------+-------------------------------------------------------------------------------------------|
 | man proc                             | manual for /proc pseudo-file system                                                       |
-| sudo cat /proc/$PID/net/nf_conntrack | TCP/UDP packages                                                                          |
 | /proc                                | /home/denny/backup/tech/large_sourcecode/linux-3.4-rc7/Documentation/filesystems/proc.txt |
 | /proc/sys/kernel                     | /home/denny/backup/tech/large_sourcecode/linux-3.4-rc7/Documentation/sysctl/kernel.txt    |
 | /proc/timer_list                     |                                                                                           |
 | /proc/uptime                         |                                                                                           |
 | /proc/locks                          |                                                                                           |
-| /proc/modules                        | lsmod                                                                                     |
-| /proc/partitions                     | fdisk -l                                                                                  |
 ** [question] /proc/net/unix是做什么的
    http://stackoverflow.com/questions/820782/how-do-i-find-out-what-programs-on-the-other-end-of-a-local-socket\\
    http://unix.stackexchange.com/questions/16300/whos-got-the-other-end-of-this-unix-socketpair\\
@@ -165,480 +172,7 @@ UDPLITE: inuse 0
 RAW: inuse 0
 FRAG: inuse 0 memory 0
 #+end_example
-** sample                                                          :noexport:
-*** cat /proc/interrupts:  determine how many interrupts are being fired, how often, and which
-devices are causing them
-#+begin_example
-[root@log log.ecae 192.168.11.16 /root]
-# cat /proc/interrupts
-           CPU0       CPU1       CPU2       CPU3
-  0: 1939853199          0          0          0    IO-APIC-edge  timer
-  1:          3          0          0          0    IO-APIC-edge  i8042
-  8:          1          0          0          0    IO-APIC-edge  rtc
-  9:          0          0          0          0   IO-APIC-level  acpi
- 12:          4          0          0          0    IO-APIC-edge  i8042
- 50:         40        507          0         32   IO-APIC-level  uhci_hcd:usb3
- 58:          0          0          0          0   IO-APIC-level  uhci_hcd:usb4
- 66:          0          0          0          0   IO-APIC-level  uhci_hcd:usb6, uhci_hcd:usb8
- 74:      17409          0 1923291699          0   IO-APIC-level  megasas
-122:      42161          0          0  991255203         PCI-MSI  eth0
-225:         24        262          0         17   IO-APIC-level  ehci_hcd:usb1
-233:         53         88          0        304   IO-APIC-level  ehci_hcd:usb2, uhci_hcd:usb5,
-uhci_hcd:usb7
-NMI:     608695     417501     309850     339995
-LOC: 1940244754 1940244690 1940244613 1940244533
-ERR:          0
-MIS:          0
-#+end_example
-*** cat /proc/timer_list
-#+begin_example
-denny@denny-Vostro-1014:/proc$ sudo cat  /proc/timer_list
-Timer List Version: v0.6
-HRTIMER_MAX_CLOCK_BASES: 3
-now at 4143695828708 nsecs
-
-cpu: 0
- clock 0:
-  .base:       ffff88007da0e800
-  .index:      0
-  .resolution: 1 nsecs
-  .get_time:   ktime_get
-  .offset:     0 nsecs
-active timers:
- #0: <ffff88007da0e900>, tick_sched_timer, S:01, hrtimer_start_range_ns, swapper/0/0
- # expires at 4143696000000-4143696000000 nsecs [in 171292 to 171292 nsecs]
- #1: <ffff8800399f7eb8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, mplayer/7638
- # expires at 4143703375529-4143703425529 nsecs [in 7546821 to 7596821 nsecs]
- #2: <ffff880036c626b0>, it_real_fn, S:01, hrtimer_start, Xorg/1067
- # expires at 4143708317341-4143708317341 nsecs [in 12488633 to 12488633 nsecs]
- #3: <ffff880078fbb8c8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, emacs/6842
- # expires at 4143788160477-4143788257418 nsecs [in 92331769 to 92428710 nsecs]
- #4: <ffff88006112f9b8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, alsa-sink/3002
- # expires at 4143825487390-4143825487390 nsecs [in 129658682 to 129658682 nsecs]
- #5: <ffff8800767ed9f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, dropbox/6540
- # expires at 4143845392007-4143845890005 nsecs [in 149563299 to 150061297 nsecs]
- #6: <ffff88003cea5e28>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, plugin-containe/5087
- # expires at 4143888179074-4143888229074 nsecs [in 192350366 to 192400366 nsecs]
- #7: <ffff88005710be28>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, plugin-containe/5081
- # expires at 4143890313145-4143890363145 nsecs [in 194484437 to 194534437 nsecs]
- #8: root_task_group, sched_rt_period_timer, S:01, start_bandwidth_timer, watchdog/0/7
- # expires at 4144000000000-4144000000000 nsecs [in 304171292 to 304171292 nsecs]
- #9: <ffff8800629bd9f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, accounts-daemon/1240
- # expires at 4144000494948-4144004493945 nsecs [in 304666240 to 308665237 nsecs]
- #10: <ffff88007da0ea80>, watchdog_timer_fn, S:01, hrtimer_start, watchdog/0/7
- # expires at 4144060003169-4144060003169 nsecs [in 364174461 to 364174461 nsecs]
- #11: <ffff88005a5f3dd8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, beam.smp/1954
- # expires at 4144325384763-4144326380761 nsecs [in 629556055 to 630552053 nsecs]
- #12: <ffff88006b2eb908>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, apache2/2089
- # expires at 4144537756090-4144538756088 nsecs [in 841927382 to 842927380 nsecs]
- #13: <ffff88005a5844b0>, it_real_fn, S:01, hrtimer_start, emacs/6842
- # expires at 4144683070221-4144683070221 nsecs [in 987241513 to 987241513 nsecs]
- #14: <ffff8800693a59f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, NetworkManager/832
- # expires at 4145000404890-4145006400888 nsecs [in 1304576182 to 1310572180 nsecs]
- #15: <ffff88003ccef9f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, update-notifier/3548
- # expires at 4145396904604-4145399888602 nsecs [in 1701075896 to 1704059894 nsecs]
- #16: <ffff88005a56d908>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, snmpd/1977
- # expires at 4146594338534-4146599338276 nsecs [in 2898509826 to 2903509568 nsecs]
- #17: <ffff88005decf908>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, epmd/1766
- # expires at 4147097195321-4147102195319 nsecs [in 3401366613 to 3406366611 nsecs]
- #18: <ffff880068bc59f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, avahi-daemon/860
- # expires at 4147843513406-4147865089403 nsecs [in 4147684698 to 4169260695 nsecs]
- #19: <ffff88005ddc79f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, rtkit-daemon/1692
- # expires at 4147643375668-4150143375668 nsecs [in 3947546960 to 6447546960 nsecs]
- #20: <ffff88005ded59f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, rtkit-daemon/1693
- # expires at 4152643340608-4152643340608 nsecs [in 8947511900 to 8947511900 nsecs]
- #21: <ffff8800611d39f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, gconfd-2/2950
- # expires at 4156348513976-4156378493974 nsecs [in 12652685268 to 12682665266 nsecs]
- #22: <ffff880067daf908>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, rsyslogd/845
- # expires at 4169701473905-4169731473901 nsecs [in 26005645197 to 26035645193 nsecs]
- #23: <ffff8800666bdeb8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, cron/990
- # expires at 4191321586559-4191321636559 nsecs [in 47625757851 to 47625807851 nsecs]
- #24: <ffff8800399619f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, dropbox/7131
- # expires at 4203281613048-4203341613046 nsecs [in 59585784340 to 59645784338 nsecs]
- #25: <ffff880042ecbdd8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, pickup/3380
- # expires at 4204916671103-4205016671102 nsecs [in 61220842395 to 61320842394 nsecs]
- #26: <ffff880036c63370>, it_real_fn, S:01, hrtimer_start, atop/1087
- # expires at 4220003999656-4220003999656 nsecs [in 76308170948 to 76308170948 nsecs]
- #27: <ffff880078a979f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, dropbox/6614
- # expires at 4228858789021-4228948789019 nsecs [in 85162960313 to 85252960311 nsecs]
- #28: <ffff8800463b59f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, zeitgeist-daemo/3220
- # expires at 4271347873288-4271447873288 nsecs [in 127652044580 to 127752044580 nsecs]
- #29: <ffff880042f07dd8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, qmgr/3379
- # expires at 4279813056601-4279913056601 nsecs [in 136117227893 to 136217227893 nsecs]
- #30: <ffff880067d88d30>, it_real_fn, S:01, hrtimer_start, qmgr/3379
- # expires at 4312813038652-4312813038652 nsecs [in 169117209944 to 169117209944 nsecs]
- #31: <ffff8800570a19f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, udisks-daemon/3044
- # expires at 5453000982845-5453100982845 nsecs [in 1309305154137 to 1309405154137 nsecs]
- #32: <ffff88004759d9f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, indicator-datet/3112
- # expires at 5873347979429-5873447979429 nsecs [in 1729652150721 to 1729752150721 nsecs]
- #33: <ffff880042e399f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, unity-scope-vid/3305
- # expires at 7340347587357-7340447587357 nsecs [in 3196651758649 to 3196751758649 nsecs]
- #34: <ffff880067d8a270>, it_real_fn, S:01, hrtimer_start, pickup/3380
- # expires at 10104916669008-10104916669008 nsecs [in 5961220840300 to 5961220840300 nsecs]
- #35: <ffff88004608b9f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, hud-service/3160
- # expires at 86463348550197-86463448550197 nsecs [in 82319652721489 to 82319752721489 nsecs]
- clock 1:
-  .base:       ffff88007da0e840
-  .index:      1
-  .resolution: 1 nsecs
-  .get_time:   ktime_get_real
-  .offset:     1347891789804610030 nsecs
-active timers:
- #0: <ffff88003ce61e28>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, firefox/5020
- # expires at 1347895934112870000-1347895934112920000 nsecs [in 1347891790417041292 to 1347891790417091292 nsecs]
- #1: <ffff8800527afe28>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, gnome-do/3094
- # expires at 1347895957918000000-1347895957918050000 nsecs [in 1347891814222171292 to 1347891814222221292 nsecs]
- #2: <ffff88002b1cfe28>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, dropbox/6619
- # expires at 1347895978305473089-1347895978305523089 nsecs [in 1347891834609644381 to 1347891834609694381 nsecs]
- #3: <ffff880036f21e28>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, dropbox/6591
- # expires at 1347896021430064916-1347896021430114916 nsecs [in 1347891877734236208 to 1347891877734286208 nsecs]
- clock 2:
-  .base:       ffff88007da0e880
-  .index:      2
-  .resolution: 1 nsecs
-  .get_time:   ktime_get_boottime
-  .offset:     5819831594749 nsecs
-active timers:
-  .expires_next   : 4143700000000 nsecs
-  .hres_active    : 1
-  .nr_events      : 1234432
-  .nr_retries     : 891
-  .nr_hangs       : 0
-  .max_hang_time  : 0 nsecs
-  .nohz_mode      : 2
-  .idle_tick      : 4143684000000 nsecs
-  .tick_stopped   : 0
-  .idle_jiffies   : 4295928216
-  .idle_calls     : 5418024
-  .idle_sleeps    : 3499614
-  .idle_entrytime : 4143682684302 nsecs
-  .idle_waketime  : 4143681368705 nsecs
-  .idle_exittime  : 4143682684302 nsecs
-  .idle_sleeptime : 1866071369115 nsecs
-  .iowait_sleeptime: 925582626190 nsecs
-  .last_jiffies   : 4295928216
-  .next_jiffies   : 4295928230
-  .idle_expires   : 4143736000000 nsecs
-jiffies: 4295928220
-
-cpu: 1
- clock 0:
-  .base:       ffff88007db0e800
-  .index:      0
-  .resolution: 1 nsecs
-  .get_time:   ktime_get
-  .offset:     0 nsecs
-active timers:
- #0: <ffff88007db0e900>, tick_sched_timer, S:01, hrtimer_start_range_ns, swapper/1/0
- # expires at 4143700000000-4143700000000 nsecs [in 4171292 to 4171292 nsecs]
- #1: <ffff88002b1939f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, plugin-containe/5068
- # expires at 4143703165516-4143703215516 nsecs [in 7336808 to 7386808 nsecs]
- #2: <ffff88005dc25eb8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, syndaemon/2989
- # expires at 4143775013413-4143775063413 nsecs [in 79184705 to 79234705 nsecs]
- #3: <ffff88005728feb8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, gvfs-afc-volume/3058
- # expires at 4143916726143-4143916776143 nsecs [in 220897435 to 220947435 nsecs]
- #4: <ffff880067de5dd8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, php5-fpm/1169
- # expires at 4144215369567-4144216369565 nsecs [in 519540859 to 520540857 nsecs]
- #5: <ffff8800611b99f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, gnome-settings-/2957
- # expires at 4144347870521-4144349805519 nsecs [in 652041813 to 653976811 nsecs]
- #6: <ffff8800463459f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, zeitgeist-datah/3240
- # expires at 4144348090862-4144352086860 nsecs [in 652262154 to 656258152 nsecs]
- #7: <ffff8800463299f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, unity-applicati/3206
- # expires at 4144348332094-4144352328092 nsecs [in 652503386 to 656499384 nsecs]
- #8: <ffff88006a40b908>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, python/6808
- # expires at 4144490631286-4144491629048 nsecs [in 794802578 to 795800340 nsecs]
- #9: <ffff88005246d9f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, threaded-ml/7641
- # expires at 4144726099234-4144727193232 nsecs [in 1030270526 to 1031364524 nsecs]
- #10: <ffff88007db0ea80>, watchdog_timer_fn, S:01, hrtimer_start, watchdog/1/7180
- # expires at 4145044687523-4145044687523 nsecs [in 1348858815 to 1348858815 nsecs]
- #11: <ffff88006b31beb8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, vnstatd/2001
- # expires at 4145072199685-4145072249685 nsecs [in 1376370977 to 1376420977 nsecs]
- #12: <ffff88003cf0f908>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, dropbox/6618
- # expires at 4145216340850-4145218340848 nsecs [in 1520512142 to 1522512140 nsecs]
- #13: <ffff88005a403908>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, puppet/1704
- # expires at 4145316804471-4145318804467 nsecs [in 1620975763 to 1622975759 nsecs]
- #14: <ffff8800764f3908>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, top/7439
- # expires at 4145480540924-4145483540922 nsecs [in 1784712216 to 1787712214 nsecs]
- #15: <ffff880042d23908>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, wpa_supplicant/3264
- # expires at 4147999007329-4148009007326 nsecs [in 4303178621 to 4313178618 nsecs]
- #16: <ffff880065c33eb8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, irqbalance/993
- # expires at 4150195391754-4150195441754 nsecs [in 6499563046 to 6499613046 nsecs]
- #17: <ffff8800629b7908>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, ssh-agent/2934
- # expires at 4151896620716-4151906620714 nsecs [in 8200792008 to 8210792006 nsecs]
- #18: <ffff8800691459f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, rpcbind/685
- # expires at 4162876557553-4162906557551 nsecs [in 19180728845 to 19210728843 nsecs]
- #19: <ffff88006110bdd8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, master/1405
- # expires at 4164916690100-4164976690098 nsecs [in 21220861392 to 21280861390 nsecs]
- #20: <ffff88005276d9f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, unity-panel-ser/3093
- # expires at 4192347741804-4192397676802 nsecs [in 48651913096 to 48701848094 nsecs]
- #21: <ffff88005724f9f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, gnome-screensav/3057
- # expires at 4254374596743-4254474596743 nsecs [in 110678768035 to 110778768035 nsecs]
- #22: <ffff88004757b9f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, indicator-print/3110
- # expires at 4262348523340-4262448523340 nsecs [in 118652694632 to 118752694632 nsecs]
- #23: <ffff880067c75dd8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, cupsd/888
- # expires at 4324139996489-4324239996489 nsecs [in 180444167781 to 180544167781 nsecs]
- #24: <ffff880036f808f0>, it_real_fn, S:01, hrtimer_start, master/1405
- # expires at 4437916688633-4437916688633 nsecs [in 294220859925 to 294220859925 nsecs]
- #25: <ffff880042df5908>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, dhclient/3301
- # expires at 6353720824588-6353820824588 nsecs [in 2210024995880 to 2210124995880 nsecs]
- #26: <ffff8800693f7eb8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, atd/991
- # expires at 7219930527674-7219930577674 nsecs [in 3076234698966 to 3076234748966 nsecs]
- #27: <ffff8800667b99f8>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, whoopsie/987
- # expires at 7220000438463-7220100438463 nsecs [in 3076304609755 to 3076404609755 nsecs]
- clock 1:
-  .base:       ffff88007db0e840
-  .index:      1
-  .resolution: 1 nsecs
-  .get_time:   ktime_get_real
-  .offset:     1347891789804610030 nsecs
-active timers:
- #0: <ffff88003cd6fe28>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, firefox/5022
- # expires at 1347895933500959000-1347895933501009000 nsecs [in 1347891789805130292 to 1347891789805180292 nsecs]
- #1: <ffff88006b2dfe28>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, puppet/2188
- # expires at 1347895933507500720-1347895933507550720 nsecs [in 1347891789811672012 to 1347891789811722012 nsecs]
- #2: <ffff8800611f5e28>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, mysqld/1482
- # expires at 1347895933840119000-1347895933840169000 nsecs [in 1347891790144290292 to 1347891790144340292 nsecs]
- #3: <ffff88006137fe28>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, mysqld/1483
- # expires at 1347895934084263000-1347895934084313000 nsecs [in 1347891790388434292 to 1347891790388484292 nsecs]
- #4: <ffff88006131be28>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, mysqld/1484
- # expires at 1347895935582706000-1347895935582756000 nsecs [in 1347891791886877292 to 1347891791886927292 nsecs]
- #5: <ffff88005253be28>, hrtimer_wakeup, S:01, hrtimer_start_range_ns, dropbox/6620
- # expires at 1347895964102787971-1347895964102837971 nsecs [in 1347891820406959263 to 1347891820407009263 nsecs]
- clock 2:
-  .base:       ffff88007db0e880
-  .index:      2
-  .resolution: 1 nsecs
-  .get_time:   ktime_get_boottime
-  .offset:     5819831594749 nsecs
-active timers:
-  .expires_next   : 4143696398970 nsecs
-  .hres_active    : 1
-  .nr_events      : 1245027
-  .nr_retries     : 665
-  .nr_hangs       : 0
-  .max_hang_time  : 0 nsecs
-  .nohz_mode      : 2
-  .idle_tick      : 4143684000000 nsecs
-  .tick_stopped   : 0
-  .idle_jiffies   : 4295928216
-  .idle_calls     : 4677366
-  .idle_sleeps    : 3032760
-  .idle_entrytime : 4143683635328 nsecs
-  .idle_waketime  : 4143683297786 nsecs
-  .idle_exittime  : 4143683635328 nsecs
-  .idle_sleeptime : 2123696915225 nsecs
-  .iowait_sleeptime: 691110786715 nsecs
-  .last_jiffies   : 4295928216
-  .next_jiffies   : 4295928247
-  .idle_expires   : 4143804000000 nsecs
-jiffies: 4295928220
-
-
-Tick Device: mode:     1
-Broadcast device
-Clock Event Device: hpet
- max_delta_ns:   149983013276
- min_delta_ns:   13409
- mult:           61496111
- shift:          32
- mode:           3
- next_event:     9223372036854775807 nsecs
- set_next_event: hpet_legacy_next_event
- set_mode:       hpet_legacy_set_mode
- event_handler:  tick_handle_oneshot_broadcast
- retries:        131369
-tick_broadcast_mask: 00000001
-tick_broadcast_oneshot_mask: 00000000
-
-
-Tick Device: mode:     1
-Per CPU device: 0
-Clock Event Device: lapic
- max_delta_ns:   172242102693
- min_delta_ns:   1203
- mult:           53548882
- shift:          32
- mode:           3
- next_event:     4143700000000 nsecs
- set_next_event: lapic_next_event
- set_mode:       lapic_timer_setup
- event_handler:  hrtimer_interrupt
- retries:        5271
-
-Tick Device: mode:     1
-Per CPU device: 1
-Clock Event Device: lapic
- max_delta_ns:   172242102693
- min_delta_ns:   1203
- mult:           53548882
- shift:          32
- mode:           3
- next_event:     4143696398970 nsecs
- set_next_event: lapic_next_event
- set_mode:       lapic_timer_setup
- event_handler:  hrtimer_interrupt
- retries:        184366
-#+end_example
-*** cat /proc/interrupts
-#+begin_example
-denny@denny-Vostro-1014:/proc$ cat /proc/interrupts
-           CPU0       CPU1
-  0:    1437537       1823   IO-APIC-edge      timer
-  1:       5453       7287   IO-APIC-edge      i8042
-  8:        288          1   IO-APIC-edge      rtc0
-  9:          3          2   IO-APIC-fasteoi   acpi
- 12:     333054        349   IO-APIC-edge      i8042
- 16:          0          0   IO-APIC-fasteoi   mmc0
- 17:     137625        127   IO-APIC-fasteoi   ath9k
- 19:         15         47   IO-APIC-fasteoi   firewire_ohci
- 20:         69         11   IO-APIC-fasteoi   ehci_hcd:usb2, uhci_hcd:usb3, uhci_hcd:usb6
- 21:        766         69   IO-APIC-fasteoi   uhci_hcd:usb4, uhci_hcd:usb7
- 22:          9          1   IO-APIC-fasteoi   ehci_hcd:usb1, uhci_hcd:usb5, uhci_hcd:usb8
- 45:     217639     147413   PCI-MSI-edge      ahci
- 46:          0          0   PCI-MSI-edge      eth0
- 47:      49998     300854   PCI-MSI-edge      i915
- 48:        116        120   PCI-MSI-edge      snd_hda_intel
-NMI:          6       1194   Non-maskable interrupts
-LOC:     494749    1070541   Local timer interrupts
-SPU:          0          0   Spurious interrupts
-PMI:          6       1194   Performance monitoring interrupts
-IWI:          0          0   IRQ work interrupts
-RES:    3479393    3462076   Rescheduling interrupts
-CAL:        295        358   Function call interrupts
-TLB:      20795      20832   TLB shootdowns
-TRM:          0          0   Thermal event interrupts
-THR:          0          0   Threshold APIC interrupts
-MCE:          0          0   Machine check exceptions
-MCP:         14         14   Machine check polls
-ERR:          0
-MIS:          0
-#+end_example
-*** cat /proc/softirqs
-#+begin_example
-denny@denny-Vostro-1014:/proc$ sudo cat softirqs
-                    CPU0       CPU1
-          HI:          2          0
-       TIMER:     451026     432345
-      NET_TX:        106         99
-      NET_RX:       2129       1447
-       BLOCK:     270802     146490
-BLOCK_IOPOLL:          2          0
-     TASKLET:     158985       7369
-       SCHED:      83436      87327
-     HRTIMER:       2001       2098
-         RCU:     453434     467032
-#+end_example
-*** cat /proc/locks
-#+begin_example
-denny@denny-Vostro-1014:/proc$ cat /proc/locks
-1: POSIX  ADVISORY  WRITE 6540 08:05:3148688 1073741824 1073742335
-2: POSIX  ADVISORY  WRITE 5004 08:05:1704718 1073741824 1073742335
-3: POSIX  ADVISORY  READ  5004 08:05:1704125 1073741826 1073742335
-4: POSIX  ADVISORY  READ  5004 08:05:1704182 128 128
-5: POSIX  ADVISORY  READ  5004 08:05:1704127 1073741826 1073742335
-6: POSIX  ADVISORY  READ  5004 08:05:1704134 128 128
-7: POSIX  ADVISORY  READ  5004 08:05:1704132 1073741826 1073742335
-8: POSIX  ADVISORY  WRITE 5004 08:05:1704116 0 EOF
-9: POSIX  ADVISORY  WRITE 3261 08:05:1704073 0 0
-10: POSIX  ADVISORY  READ  3238 08:05:1704071 128 128
-11: POSIX  ADVISORY  READ  3238 08:05:1704069 1073741826 1073742335
-12: POSIX  ADVISORY  READ  3220 08:05:1704071 128 128
-13: POSIX  ADVISORY  READ  3220 08:05:1704069 1073741826 1073742335
-14: POSIX  ADVISORY  WRITE 2001 00:10:14010 0 EOF
-15: FLOCK  ADVISORY  WRITE 1405 08:05:10495861 0 EOF
-16: FLOCK  ADVISORY  WRITE 1405 08:05:10495860 0 EOF
-17: POSIX  ADVISORY  WRITE 999 08:05:10617324 0 EOF
-18: POSIX  ADVISORY  WRITE 999 08:05:10617323 0 EOF
-19: POSIX  ADVISORY  WRITE 999 08:05:10617322 0 EOF
-20: POSIX  ADVISORY  WRITE 991 00:10:10009 0 EOF
-21: FLOCK  ADVISORY  WRITE 940 00:10:9911 0 EOF
-22: FLOCK  ADVISORY  WRITE 664 00:10:9269 0 EOF
-denny@denny-Vostro-1014:/proc$
-#+end_example
-*** cat /proc/modules:  lsmod
-#+begin_example
-denny@denny-Vostro-1014:/proc$ cat /proc/modules
-ath3k 12961 0 - Live 0x0000000000000000
-joydev 17693 0 - Live 0x0000000000000000
-rfcomm 47604 12 - Live 0x0000000000000000
-parport_pc 32866 0 - Live 0x0000000000000000
-snd_hda_codec_conexant 62358 1 - Live 0x0000000000000000
-bnep 18281 2 - Live 0x0000000000000000
-ppdev 17113 0 - Live 0x0000000000000000
-dell_wmi 12681 0 - Live 0x0000000000000000
-sparse_keymap 13890 1 dell_wmi, Live 0x0000000000000000
-snd_hda_intel 33773 4 - Live 0x0000000000000000
-snd_hda_codec 127706 2 snd_hda_codec_conexant,snd_hda_intel, Live 0x0000000000000000
-snd_hwdep 13668 1 snd_hda_codec, Live 0x0000000000000000
-snd_pcm 97188 3 snd_hda_intel,snd_hda_codec, Live 0x0000000000000000
-snd_seq_midi 13324 0 - Live 0x0000000000000000
-nfsd 277809 13 - Live 0x0000000000000000
-snd_rawmidi 30748 1 snd_seq_midi, Live 0x0000000000000000
-nfs 356410 0 - Live 0x0000000000000000
-snd_seq_midi_event 14899 1 snd_seq_midi, Live 0x0000000000000000
-lockd 86161 2 nfsd,nfs, Live 0x0000000000000000
-binfmt_misc 17540 1 - Live 0x0000000000000000
-fscache 61529 1 nfs, Live 0x0000000000000000
-auth_rpcgss 53380 2 nfsd,nfs, Live 0x0000000000000000
-nfs_acl 12883 2 nfsd,nfs, Live 0x0000000000000000
-sunrpc 245464 19 nfsd,nfs,lockd,auth_rpcgss,nfs_acl, Live 0x0000000000000000
-snd_seq 61896 2 snd_seq_midi,snd_seq_midi_event, Live 0x0000000000000000
-dell_laptop 18119 0 - Live 0x0000000000000000
-dcdbas 14490 1 dell_laptop, Live 0x0000000000000000
-snd_timer 29990 2 snd_pcm,snd_seq, Live 0x0000000000000000
-arc4 12529 2 - Live 0x0000000000000000
-snd_seq_device 14540 3 snd_seq_midi,snd_rawmidi,snd_seq, Live 0x0000000000000000
-ath9k 132390 0 - Live 0x0000000000000000
-mac80211 506816 1 ath9k, Live 0x0000000000000000
-uvcvideo 72627 0 - Live 0x0000000000000000
-videodev 98259 1 uvcvideo, Live 0x0000000000000000
-snd 78855 16 snd_hda_codec_conexant,snd_hda_intel,snd_hda_codec,snd_hwdep,snd_pcm,snd_rawmidi,snd_seq,snd_timer,snd_seq_device, Live 0x0000000000000000
-v4l2_compat_ioctl32 17128 1 videodev, Live 0x0000000000000000
-ath9k_common 14053 1 ath9k, Live 0x0000000000000000
-psmouse 87692 0 - Live 0x0000000000000000
-ath9k_hw 411151 2 ath9k,ath9k_common, Live 0x0000000000000000
-serio_raw 13211 0 - Live 0x0000000000000000
-ath 24067 3 ath9k,ath9k_common,ath9k_hw, Live 0x0000000000000000
-btusb 18288 2 - Live 0x0000000000000000
-bluetooth 180104 24 ath3k,rfcomm,bnep,btusb, Live 0x0000000000000000
-soundcore 15091 1 snd, Live 0x0000000000000000
-snd_page_alloc 18529 2 snd_hda_intel,snd_pcm, Live 0x0000000000000000
-cfg80211 205544 3 ath9k,mac80211,ath, Live 0x0000000000000000
-i915 473035 3 - Live 0x0000000000000000
-drm_kms_helper 46978 1 i915, Live 0x0000000000000000
-drm 242038 4 i915,drm_kms_helper, Live 0x0000000000000000
-mac_hid 13253 0 - Live 0x0000000000000000
-wmi 19256 1 dell_wmi, Live 0x0000000000000000
-i2c_algo_bit 13423 1 i915, Live 0x0000000000000000
-video 19596 1 i915, Live 0x0000000000000000
-lp 17799 0 - Live 0x0000000000000000
-parport 46562 3 parport_pc,ppdev,lp, Live 0x0000000000000000
-firewire_ohci 41000 0 - Live 0x0000000000000000
-firewire_core 63558 1 firewire_ohci, Live 0x0000000000000000
-crc_itu_t 12707 1 firewire_core, Live 0x0000000000000000
-sdhci_pci 18826 0 - Live 0x0000000000000000
-sdhci 33205 1 sdhci_pci, Live 0x0000000000000000
-r8169 62099 0 - Live 0x0000000000000000
-denny@denny-Vostro-1014:/proc$
-#+end_example
-*** /proc/meminfo, loadavg, uptime
-*** cat /proc/partitions: sudo fdisk -l
-#+begin_example
-denny@denny-Vostro-1014:/proc$ cat /proc/partitions
-major minor  #blocks  name
-
-   8        0  488386584 sda
-   8        1  195416064 sda1
-   8        2          1 sda2
-   8        5  290907136 sda5
-   8        6    2059264 sda6
-  11        0    1048575 sr0
-denny@denny-Vostro-1014:/proc$
-#+end_example
-
-
 * Linux processes/pipe/socket                                      :noexport:
-
 | Item                      | Summary                                                  |
 |---------------------------+----------------------------------------------------------|
 | Pipe                      | Allow the flow of Data in one direction only             |
@@ -646,24 +180,15 @@ denny@denny-Vostro-1014:/proc$
 | Message Queues            | Message passing using a queue                            |
 | Shared Memory & Semaphore |                                                          |
 | Mapped Memory             | Similar to shared memory, but use file instead of memory |
-
-- process status of linux
-| Type                    | Summary                                     |
-|-------------------------+---------------------------------------------|
-| TASK_RUNNING(R)         | ready or running                            |
-| TASK_INTERRUPTIBLE(S)   | blocked (waiting for an event)              |
-| TASK_UNINTERRUPTIBLE(D) | blocked (usually for I/O)                   |
-| TASK_ZOMBIE(Z)          | terminated but not cleaned up by its parent |
-| TASK_STOPPED(T)         | execution stopped                           |
-** [question] 为什么下面程序向stdout, stderr写内容有反应，而向stdin写内容却没有反应
+** [question] 为什么下面程序向stdout, stderr写内容有反应,而向stdin写内容却没有反应
 - /tmp/test.sh
 #+begin_src sh
 echo -n "please input your name:"
 read name
 echo $name
 #+end_src
-- 在terminal1，运行sh /tmp/test.sh 2>/dev/null
-- 在terminal2，找到该进程pid。并分别向该进程的stdout, stderr, stdin输入一些内容
+- 在terminal1,运行sh /tmp/test.sh 2>/dev/null
+- 在terminal2,找到该进程pid.并分别向该进程的stdout, stderr, stdin输入一些内容
 #+begin_example
 denny@denny-Vostro-1014:~$ ps -ef | grep /tmp/test.sh | grep -v grep
 denny    10358  9614  0 22:48 pts/3    00:00:00 sh /tmp/test.sh
@@ -672,7 +197,7 @@ denny@denny-Vostro-1014:~$ echo -e "hello\n" >   /proc/10358/fd/2
 denny@denny-Vostro-1014:~$ echo -e "hello\n" >   /proc/10358/fd/0
 denny@denny-Vostro-1014:~$
 #+end_example
-- 在terminal1，可以发现stdout会有输出, 而stderr因为启动时被禁止掉了，所以没有输出。但是，为什么stdin有输入后，该shell并没有向预想中往下走了？
+- 在terminal1,可以发现stdout会有输出, 而stderr因为启动时被禁止掉了,所以没有输出.但是,为什么stdin有输入后,该shell并没有向预想中往下走了？
 #+begin_example
 denny@denny-Vostro-1014:~$ sh /tmp/test.sh 2>/dev/null
 please input your name:hello
@@ -683,7 +208,7 @@ hello
 *** misc                                                           :noexport:
 [root@localhost ~]# sleep 10000 |  launch '/usr/bin/mongod --quota --oplogSize 1024 --auth --pidfilepath /usr/local/ecae/db/session/mongo.pid --nohttpinterface --master --port 12010 --dbpath /usr/local/ecae/db/session --logpath /usr/local/ecae/db/session/mongodb.log --logappend'
 all output going to: /usr/local/ecae/db/session/mongodb.log
-** [question] 为什么需要exec的api，来替换当前进程
+** [question] 为什么需要exec的api,来替换当前进程
 ** basic use
 *** What is a process
 - Excutable/Program Loaded -> Process
@@ -712,7 +237,7 @@ something to stderr
 denny@denny-Vostro-1014:~$ (sh /tmp/test.sh 2>&1) 1>/dev/null
 denny@denny-Vostro-1014:~$
 #+end_example
-*** DONE 在不改变系统状态下，如何得到某个服务程序stdin的内容和stdout的内容
+*** DONE 在不改变系统状态下,如何得到某个服务程序stdin的内容和stdout的内容
    CLOSED: [2012-08-18 六 22:31]
 - /tmp/test.sh
 #+begin_src sh
@@ -720,19 +245,19 @@ echo -n "please input your name:"
 read name
 echo $name
 #+end_src
-- 在terminal1，启动该test.sh，来模拟需要调试的服务程序
+- 在terminal1,启动该test.sh,来模拟需要调试的服务程序
 #+begin_example
 denny@denny-Vostro-1014:~$ sh /tmp/test.sh
 please input your name:
 #+end_example
-- 在terminal2中，通过ps找到该进程，并用strace来监听该进程的stdin和stdout的内容
+- 在terminal2中,通过ps找到该进程,并用strace来监听该进程的stdin和stdout的内容
 #+begin_example
 denny@denny-Vostro-1014:~$ ps -ef | grep /tmp/test.sh | grep -v grep
 denny    10086  9614  0 22:25 pts/3    00:00:00 sh /tmp/test.sh
 denny@denny-Vostro-1014:~$   sudo strace -e read=0 -e write=1 -p 10086
 Process 10086 attached - interrupt to quit
 #+end_example
-- 向terminal1，输入一些内容，例如hello。那么在terminal2，可以得到stdin的内容，及test.sh将要向stdout输出的内容
+- 向terminal1,输入一些内容,例如hello.那么在terminal2,可以得到stdin的内容,及test.sh将要向stdout输出的内容
 #+begin_example
 denny@denny-Vostro-1014:~$   sudo strace -e read=0 -e write=1 -p 10086
 Process 10086 attached - interrupt to quit
@@ -786,61 +311,7 @@ denny@denny-Vostro-1014:/tmp$ echo ab > /tmp/fifo
 *** DONE Why a normal pid's parent is 1                           :IMPORTANT:
   CLOSED: [2012-06-23 六 06:11]
 http://apig.bokee.com/2158632.html\\
-如果父进程未调用wait函数而终止，子进程将被‘init’进程收管，它将控制子进程退出后必须的清除工作
-**** console shot:                                                 :noexport:
-#+begin_example
-From: 王岩 <wangyan@shopex.cn>
-Subject: t
-To: 张巍 <zhangwei@shopex.cn>
-Date: Wed, 11 Apr 2012 15:15:15 +0800
-
-[root@ecae-11 701]# ls
-attr  cmdline          cpuset  environ  fd  limits    maps  mounts      oom_adj    root
-smaps  statm   task
-auxv  coredump_filter  cwd     exe      io  loginuid  mem   mountstats  oom_score  schedstat
-stat   status  wchan
-[root@ecae-11 701]# ll
-total 0
-dr-xr-xr-x 2 root root 0 Apr 11 15:02 attr
--r-------- 1 root root 0 Apr 11 15:06 auxv
--r--r--r-- 1 root root 0 Apr 11 13:22 cmdline
--rw-r--r-- 1 root root 0 Apr 11 15:06 coredump_filter
--r--r--r-- 1 root root 0 Apr 11 15:06 cpuset
-lrwxrwxrwx 1 root root 0 Apr 11 15:06 cwd -> /usr/local/rrdz (deleted)
--r-------- 1 root root 0 Apr 11 15:06 environ
-lrwxrwxrwx 1 root root 0 Apr 11 15:06 exe -> /usr/bin/smc_cli
-dr-x------ 2 root root 0 Apr 11 15:06 fd
--r--r--r-- 1 root root 0 Apr 11 15:06 io
--r-------- 1 root root 0 Apr 11 15:06 limits
--rw-r--r-- 1 root root 0 Apr 11 15:06 loginuid
--r--r--r-- 1 root root 0 Apr 11 15:06 maps
--rw------- 1 root root 0 Apr 11 15:06 mem
--r--r--r-- 1 root root 0 Apr 11 15:06 mounts
--r-------- 1 root root 0 Apr 11 15:06 mountstats
--rw-r--r-- 1 root root 0 Apr 11 15:06 oom_adj
--r--r--r-- 1 root root 0 Apr 11 15:06 oom_score
-lrwxrwxrwx 1 root root 0 Apr 11 15:06 root -> /
--r--r--r-- 1 root root 0 Apr 11 15:06 schedstat
--r-------- 1 root root 0 Apr 11 15:06 smaps
--r--r--r-- 1 root root 0 Apr 11 13:22 stat
--r--r--r-- 1 root root 0 Apr 11 15:06 statm
--r--r--r-- 1 root root 0 Apr 11 13:22 status
-dr-xr-xr-x 3 root root 0 Apr 11 15:02 task
--r--r--r-- 1 root root 0 Apr 11 15:06 wchan
-[root@ecae-11 701]# lf ./fd/
-0  1  2
-[root@ecae-11 701]# lf ./fd/
--bash: lf: command not found
-[root@ecae-11 701]# ll ./fd/
-total 0
-lr-x------ 1 root root 64 Apr 11 15:08 0 -> pipe:[3999752]
-l-wx------ 1 root root 64 Apr 11 15:08 1 -> pipe:[3999751]
-lrwx------ 1 root root 64 Apr 11 15:08 2 -> /dev/pts/0 (deleted)
-
-2012-04-11
----------------------------------------------------------------------------------------------------
-wangyan
-#+end_example
+如果父进程未调用wait函数而终止,子进程将被'init'进程收管,它将控制子进程退出后必须的清除工作
 *** Zombie
 #+begin_example
 A zombie process (a.k.a. defunct process) is a process that has ended
@@ -861,7 +332,7 @@ stopped execution except its entry in process table of Linux operating
 system (and thus consuming little system resources, if the number of
 such process is small).
 
-Therefore, you hardly can terminate defunct process by using “kill -9″
+Therefore, you hardly can terminate defunct process by using "kill -9″
 command. You might able to remove the zombie process by:
 
     Restart or terminate its parent process that spawn it.
@@ -876,112 +347,6 @@ command. You might able to remove the zombie process by:
     to a harmful level (i.e. causes system performance and reliability
     to degrade
 #+end_example
-**** DONE Process with the status of defun(zoombie)
-   CLOSED: [2010-09-04 星期六 08:36]
-http://www.webmasterworld.com/forum40/1032.htm\\
-***** DONE Can't terminate the process by "kill -9"
- CLOSED: [2010-09-04 星期六 08:36]
-kill parent process can terminate the process.
-***** useful link
-http://stackoverflow.com/questions/1506902/why-do-processes-spawned-by-cron-end-up-defunct\\
-Why do processes spawned by cron end up defunct?
-**** useful link
-     http://www.walkernews.net/2011/01/30/how-to-find-and-kill-zombie-process-on-linux-system/\\
-     How To Find And Kill Zombie Process On Linux System?
-*** DONE 我如何才能知道和对方的连接被终止？
-  CLOSED: [2012-06-17 日 22:44]
-http://apig.bokee.com/2158632.html\\
-#+begin_example
-如果你在读取一个管道、套接口、FIFO等设备时，当写入端关闭连接时，你将会
-得到一个文件结束符(EOF)(read()返回零字节读取)。如果你试图向一个管道或
-套接口写入，当读取方关闭连接，你将得到一个SIGPIPE的信号，它会使进程终
-止除非指定处理方法。(如果你选择屏蔽或忽略信号，write()会以EPIPE错误退
-出。)
-#+end_example
-*** DONE 检查worker hang与orphan worker的情况                      :noexport:
-  CLOSED: [2012-06-14 Thu 17:17]
-#+begin_example
-From: Denny Zhang <zhangwei@shopex.cn>
-To: 优优 <liyouyou@shopex.cn>, 吕志浩 <lvzhihao@shopex.cn>
-Cc: stream <liuxiaoxi@shopex.cn>,  王岩 <wangyan@shopex.cn>,  黄凤武 <huangfengwu@shopex.cn>,  吕志浩 <lvzhihao@shopex.cn>,  王磊 <flaboy@shopex.cn>
-Subject: Re: ECAE 分布式测试list
-In-Reply-To: <87haue2sb3.fsf@shopex.cn> (Denny Zhang's message of "Thu, 14 Jun
-        2012 16:47:44 +0800")
-References: <6EDB85AB-CF0F-44DB-BB23-9C8457A50A7C@shopex.cn>
-        <87haue2sb3.fsf@shopex.cn>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.2 (gnu/linux)
-X-Draft-From: ("nnfolder:mail.sent.mail" 2278)
-Date: Thu, 14 Jun 2012 17:15:27 +0800
-Message-ID: <8762au2r0w.fsf@shopex.cn>
---text follows this line--
-Denny Zhang <zhangwei@shopex.cn> writes:
-hi 优优&吕志浩
 
-虽然worker可能会随着访问，不断地被复用。　
-但是，　每个网站短期内应该不会出现24小时都有人访问的情况。
-
-所以，　我们是不是可以做如下假设: 每一个worker不可能存活多于一天?
-
-我在ecae_health_check中做了如下的检查，　以后陆续将类似功能集成到zabbix的监控中。
-,----------- svn diff -r 428:429 http://app.ec-os.net/svn/hudsonecae/trunk/health_check
-| for hostname in $all_servers ; do
-|     check_worker_hang $hostname "spawn-fcgi"
-|     check_worker_hang $hostname "/usr/bin/php"
-| done;
-`-----------
-
->
-> hi all
->
-> 在health_check中加了一个检测孤儿进程的逻辑
-> ,----------- svn diff -r 427:428 http://app.ec-os.net/svn/hudsonecae/trunk/health_check
-> | for hostname in $all_servers ; do
-> |     check_orphan_process $hostname "spawn-fcgi"
-> |     check_orphan_process $hostname "/usr/bin/php"
-> | done;
-> `-----------
->
-> @小溪， @王岩, 让我们这周把相关的list全部清掉吧。
->
-> Regards,
-> Denny
->
->> Hi all
->> 本周我们计划，人工的将这些case跑一遍，并观察这些case对服务产生的后果。
->>
->> 后期会把case转成shell脚本集成到hudson里。
->>
->> 目前主要针对三个服务 ECAE   Snake Elmar
->>
->> case地址 http://workspace.ec-ae.com/wiki/index.php?title=Hudson
->> ECAE分布式测试。
->>
->> case如果不全，希望大家能够补充。
->>
->>
-
---
-Denny Zhang(张巍)
-电话: 18621908421
-邮箱: denny.zhang001@gmail.com
-微博: http://weibo.com/1686664253
-博客: https://github.com/DennyZhang
-团队: http://blog.ec-ae.com/
-
-做你真正感兴趣的事情会让你珍惜时间
-
- ◢██████◣　　　　　　◢████◣　
-◢◤　　　　　　◥◣　　　　◢◤　　　◥◣　
-◤　　　 　　　◥◣　　◢◤　　 　 　█　
-▎　　　◢█◣　　　◥◣◢◤　　◢█　　　 █　
-◣　　◢◤　　◥◣　　　　　　◢◣◥◣　◢◤　
-◥██◤　　◢◤　　　　　　　　　◥◣　
-　　　　　　█　●　　　　　　●　█　
-　　　　　　█　〃　　　▄　　〃　 █　
-　　　　　　◥◣　　　　　　　◢◤　
-　　　　　　　◥█▅▃▃　▃▃▅█◤　
-　　　　　　　　　◢◤　　　◥◣　　
-　　　　　　　　　█　 █
-　　　　　　　　◢◤▕　　　▎◥◣ 　
-　　　　　　　▕▃◣◢▅▅▅◣◢▃▕
-#+end_example
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO list which process is using a given file                    :noexport:

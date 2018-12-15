@@ -1,4 +1,4 @@
-* Minishift CheatSheet                                               :Kubernetes:
+* Minishift CheatSheet                                               :Cloud:
 :PROPERTIES:
 :type:     kubernetes, minishift
 :export_file_name: cheatsheet-minishift-A4.pdf
@@ -16,7 +16,7 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-minishift-A4/cheatsheet-minishift-A4.pdf][cheatsheet-minishift-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-minishift-A4/cheatsheet-minishift-A4.pdf][cheatsheet-minishift-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/cloud/][Cloud]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-minishift-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
