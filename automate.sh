@@ -53,14 +53,15 @@ function git_push {
             cd "$d"
             echo "In ${d}, git commit and push"
             git add *.org
-            git commit -am "update doc"
-            # git commit --amend --no-edit
-            git push origin master
+            # git commit -am "update doc"
+            git commit --amend --no-edit
+            git push origin master --force
             cd ..
         fi
     done
     git commit -am "update doc"
     git push origin
+    git submodule update
 }
 
 function refresh_link {
