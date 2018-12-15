@@ -52,16 +52,17 @@ function git_push {
         if [ -d "$d" ] && [ -f "$d/.git" ] ; then
             cd "$d"
             echo "In ${d}, git commit and push"
+            git checkout master
             git add *.org
             # git commit -am "update doc"
-            git commit --amend --no-edit
-            git push origin master --force
+            #git commit --amend --no-edit
+            #git push origin master --force
             cd ..
         fi
     done
     git commit -am "update doc"
     git push origin
-    git submodule update
+    # git submodule update
 }
 
 function refresh_link {
