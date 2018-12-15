@@ -55,8 +55,8 @@ function git_push {
             git checkout master
             git add *.org
             # git commit -am "update doc"
-            #git commit --amend --no-edit
-            #git push origin master --force
+            git commit --amend --no-edit
+            git push origin master --force
             cd ..
         fi
     done
