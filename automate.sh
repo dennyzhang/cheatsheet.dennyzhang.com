@@ -53,9 +53,9 @@ function git_push {
             cd "$d"
             echo "In ${d}, git commit and push"
             git add *.org
-            # git commit -am "update doc"
-            git commit --amend --no-edit
-            git push origin master --force
+            git commit -am "update doc"
+            # git commit --amend --no-edit
+            git push origin master
             cd ..
         fi
     done
