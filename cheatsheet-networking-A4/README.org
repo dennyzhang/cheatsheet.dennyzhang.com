@@ -2521,3 +2521,4 @@ well, we already host the Java/NPM resources, the idea is just to add a new repo
 nexus.fluigdata.com (104.236.180.184)
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * nmap cheatsheet: https://hackertarget.com/nmap-cheatsheet-a-quick-reference-guide/ :noexport:
+* TODO consolidate https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Network/List.md?fileviewer=file-view-default :noexport:

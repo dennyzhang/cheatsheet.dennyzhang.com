@@ -1,11 +1,11 @@
-* Chef CheatSheet                                               :Tools:
+* CheatSheet: Cloud Provision & Orchestration                         :Cloud:
 :PROPERTIES:
-:type:     chef
-:export_file_name: cheatsheet-chef-A4.pdf
+:type:     provision
+:export_file_name: cheatsheet-cloud-provision-A4.pdf
 :END:
 
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-chef-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-cloud-provision-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
@@ -16,25 +16,53 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-chef-A4/cheatsheet-chef-A4.pdf][cheatsheet-chef-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
-- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-chef-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-cloud-provision-A4/cheatsheet-cloud-provision-A4.pdf][cheatsheet-cloud-provision-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/cloud/][Cloud]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-cloud-provision-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][Prometheus CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4][Nagios CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-File me [[https://github.com/DennyZhang/cheatsheet-chef-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-chef-A4][this repo]].
-** Chef Summary
-| Name                     | Command                                                         |
-|--------------------------+-----------------------------------------------------------------|
-
+File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
+** Kubernetes Provision Tools
+| Name                 | Summary                                                 |
+|----------------------+---------------------------------------------------------|
+| kubeadm              |                                                         |
+| cluster-api          | cluster-api-provider-aws, cluster-api-provider-gcp, etc |
+| kops                 |                                                         |
+| minikube             | Boostrap local all-in-one kubernetes test env           |
+| bootkube             |                                                         |
+| kube-aws             |                                                         |
+| kube-deploy          |                                                         |
+| kube-up              |                                                         |
+| kubespray            |                                                         |
+| kubeadm-dind-cluster |                                                         |
+| kubernetes-anywhere  |                                                         |
+** Cloud Provision Tools
+| Name               | Summary |
+|--------------------+---------|
+| Terraform          |         |
+| AWS Cloudformation |         |
+| Ubuntu Juju        |         |
+** Bare Metal Provision Tools
+| Name    | Summary |
+|---------+---------|
+| Foreman |         |
+| Razor   |         |
+** Configuration Management Tools
+| Name        | Summary |
+|-------------+---------|
+| Ansible     |         |
+| Puppet      |         |
+| Chef        |         |
+| Salt        |         |
+| Cfengine    |         |
+| Mcollective |         |
 ** More Resources
-
+https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Solutions/SolutionsAutomation.md?fileviewer=file-view-default
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
-<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
-<a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
-<a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
-<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a>
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
@@ -49,8 +77,8 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+LATEX_HEADER: \fancyhf{}
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
-#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-chef-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-chef-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-chef-A4}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-cloud-provision-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-cloud-provision-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-cloud-provision-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)
@@ -61,7 +89,8 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
-* TODO misc                                                        :noexport:
+* TODO https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/DevOps%20Automation/Mcollective.md?fileviewer=file-view-default :noexport:
+* TODO chef misc                                                   :noexport:
 ** TODO [#A] chef preconditions
 /Users/mac/Dropbox/private_data/project/chef/denny-chef-devops/cookbooks/chamber-kibana/recipes/_preconditions.rb
 

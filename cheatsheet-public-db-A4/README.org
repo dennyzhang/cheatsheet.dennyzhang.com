@@ -35,7 +35,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Search engine DB              | Elasticsearch, Lucence, Sphinx                |
 | Classic document and BigTable | CouchDB, HBase                                |
 | Graph DB                      | Neo4j, OrientDB                               |
-| Time series database          |                                               |
+| Time series database          | InfluxDB                                      |
 |                               | Active directory, LDAP                        |
 |                               | Amazon Quantum Ledger Database (QLDB)         |
 ** Big Data In Public Cloud
