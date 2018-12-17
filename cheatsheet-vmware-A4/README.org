@@ -9,7 +9,7 @@
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
-<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
 </div>
 
 <br/><br/>
@@ -234,7 +234,6 @@ https://www.youtube.com/watch?v=LOtlICZR5bE
 * TODO vke: VMware Kubernetes Engine                               :noexport:
 https://cloud.vmware.com/vmware-kubernetes-engine
 https://blogs.vmware.com/cloudnative/2018/11/06/try-vmware-cloud-pks-formerly-vke-today-and-the-first-150-is-on-us/
-
 * TODO [#A] VMware vRealize Suite                                  :noexport:
 https://confluence.eng.vmware.com/display/PS/vRealize+Suite+Lifecycle+Manager
 
@@ -275,3 +274,4 @@ https://www.vmware.com/support/pubs/log-insight-pubs.html
 * TODO try Pulse IoT Center                                        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] firecracker                                            :noexport:
+* TODO [#A] cloudhealth                                            :noexport:

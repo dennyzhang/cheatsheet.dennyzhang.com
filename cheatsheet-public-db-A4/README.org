@@ -9,7 +9,7 @@
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
-<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
 </div>
 
 <br/><br/>
@@ -28,14 +28,16 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Commercial RDBMS  | Oracle, Microsoft SQL Server      |
 | Customized RMDB   | AWS Aurora                        |
 ** NoSQL Database In Public Cloud
-| Name                 | Summary                                                  |
-|----------------------+----------------------------------------------------------|
-| K/V DB               | AWS DynamoDB, [[https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-A4][Mongodb]], Couchbase, Cassandra DB, level DB |
-| Time series database |                                                          |
-| Graph DB             | Neo4j                                                    |
-| Search engine DB     | Elasticsearch, Lucence, Sphinx                           |
-|                      | Active directory, LDAP                                   |
-|                      | Amazon Quantum Ledger Database (QLDB)                    |
+| Name                          | Summary                                       |
+|-------------------------------+-----------------------------------------------|
+| K/V DB                        | AWS DynamoDB, [[https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-A4][Mongodb]], Cassandra DB, level DB |
+| K/V DB - Document based       | [[https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-A4][Mongodb]], Couchbase                            |
+| Search engine DB              | Elasticsearch, Lucence, Sphinx                |
+| Classic document and BigTable | CouchDB, HBase                                |
+| Graph DB                      | Neo4j, OrientDB                               |
+| Time series database          |                                               |
+|                               | Active directory, LDAP                        |
+|                               | Amazon Quantum Ledger Database (QLDB)         |
 ** Big Data In Public Cloud
 | Name   | Summary |
 |--------+---------|
@@ -46,10 +48,13 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 ** Caching In Public Cloud
 | Name      | Summary                                |
 |-----------+----------------------------------------|
-| Memcached | In-memory caching                      |
 | Redis     | In-memory + filesystem support caching |
+| Memcached | In-memory caching                      |
 
 ** More Resources
+https://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis
+
+https://db-engines.com/de/system/Cassandra%3BCouchbase%3BElasticsearch%3BMongoDB%3BRedis
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
 #+BEGIN_HTML

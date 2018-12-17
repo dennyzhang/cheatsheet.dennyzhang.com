@@ -4,7 +4,7 @@
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
-<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
 </div>
 
 <br/><br/>
@@ -32,7 +32,7 @@ See more cheatsheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 
  <a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
  <a href="https://github.com/DennyZhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
- <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
+ <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a>
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone hidestars
@@ -81,7 +81,7 @@ I'm [[https://www.linkedin.com/in/dennyzhang001][Denny Zhang]]. A coder at work.
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
-<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
 </div>
 #+END_HTML
 
@@ -421,4 +421,17 @@ ansible
 ** JIRA search tickets resolved in the past one month
 * TODO cheatsheet: vke cli                                         :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO cheatsheet: make git-push doesn't work                      :noexport:
+* TODO linux networking: Send a PR request to https://github.com/trimstray/the-book-of-secret-knowledge :noexport:
+* TODO AppArmor cheatsheet: https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/AppArmor.md?fileviewer=file-view-default :noexport:
+* TODO ssl cheatsheet: https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/HTTPS.md?fileviewer=file-view-default :noexport:
+https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/OpenSSL.md?fileviewer=file-view-default
+https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/SSL-cert.md?fileviewer=file-view-default
+* TODO linux security cheatsheet: https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/Selinux.md?fileviewer=file-view-default :noexport:
+https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/SecNewsFeed.md?fileviewer=file-view-default
+https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/SecNewsFeed.md?fileviewer=file-view-default
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO https://zeltser.com/security-incident-survey-cheat-sheet/   :noexport:
+* TODO rkt: https://rocket.readthedocs.io/en/latest/Documentation/commands/ :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO helm cheatsheet                                             :noexport:
+https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Containers/Helm.md?fileviewer=file-view-default
