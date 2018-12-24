@@ -27,7 +27,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Examine network nic traffic   | =ethtool -S eth0=                                                               |
 | Check system configuration    | =sysctl -a=                                                                     |
 | Ports for well-known services | =cat /etc/services=                                                             |
-| Reference                     | [[https://cheatsheet.dennyzhang.com/cheatsheet-ssh-A4][SSH CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][Curl CheatSheet]]                             |
+| Reference                     | [[https://cheatsheet.dennyzhang.com/cheatsheet-ssh-A4][SSH CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][CheatSheet: Curl & Wget]]                     |
 | Reference                     | [[https://cheatsheet.dennyzhang.com/cheatsheet-file-A4][CheatSheet: Linux File]], [[https://cheatsheet.dennyzhang.com/cheatsheet-process-A4][CheatSheet: Linux Process]], [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][CheatSheet: Linux Networking]] |
 ** TCP
 | Name                          | Comment                                                   |
@@ -44,14 +44,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Name                                  | Command                                                     |
 |---------------------------------------+-------------------------------------------------------------|
 | See HTTP request statistics           | =httpstat https://www.google.com= (=brew install httpstat=) |
-| Download one url                      | =wget -O /tmp/google.html https://google.com=               |
-| Download mutiple urls                 | =wget https://google.com https://bing.com=                  |
-| Download a list of urls               | =wget -i url-list.txt=, [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-networking-A4/url-list.txt][url-list.txt]]                        |
+| Monitor HTTP URLs                     | [[http://uptimerobot.com][SaaS: uptimerobot.com]]                                       |
 | Examine web page performance          | [[https://www.pingdom.com/][SaaS: pingdom.com]]                                           |
 | Test webpage from different browsers  | [[https://www.browserling.com/][SaaS: www.browserling.com]]                                   |
 | Export local http service to Internet | [[https://ngrok.com/][SaaS: ngrok.com]]                                             |
-| Reference                             | [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][Link: Curl CheatSheet]]                                       |
-| Reference                             | [[https://github.com/ripienaar/free-for-dev][GitHub: free-for-dev]]                                        |
+| Reference                             | [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][CheatSheet: Curl & Wget]], [[https://github.com/ripienaar/free-for-dev][GitHub: free-for-dev]]               |
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
@@ -62,6 +59,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Print routing table      | =netstat -rn=                                                 |
 | List all the router hops | =traceroute=                                                  |
 | DNS lookup utility       | =host www.google.com=                                         |
+| DNS pin test             | [[http://viewdns.info/ping/?domain=dennyzhang.com][SaaS: viewdns.info]]                                            |
 | Websites To Register DNS | [[https://domains.google.com/registrar][Link: Google Domain DNS]], [[https://www.godaddy.com/][Link: GoDaddy]], [[https://aws.amazon.com/route53/][Link: Amazon Route 53]] |
 ** CDN
 | Name         | Command              |
@@ -2138,32 +2136,6 @@ https://discussions.apple.com/thread/2459517
 * TODO ethtool --offload eth0 gro off                              :noexport:
 how to persist ethtool settings across reboot
 http://www.chenshake.com/how-node-installation-centos-6-4-openstack-havana-ovsgre/#comment-3561
-* wget                                                         :noexport:
-# To download a single file
-wget http://path.to.the/file
-
-# To continue an aborted downloaded
-wget -c http://path.to.the/file
-
-# To mirror a whole page locally
-wget -pk http://path.to.the/page.html
-
-# To mirror a whole site locally
-wget -mk http://site.tl/
-
-# To download files according to a pattern
-wget http://www.myserver.com/files-{1..15}.tar.bz2
-
-# To download all the files in a directory with a specific extension if directory indexing is enabled
-wget -r -l1 -A.extension http://myserver.com/directory
-
-# Allows you to download just the headers of responses (-S --spider) and display them on Stdout (-O -).
-wget -S --spider -O - http://google.com
-
-# Change the User-Agent to 'User-Agent: toto'
-wget -U 'toto' http://google.com
-
-** wget -qO- https://get.docker.com/ | sh                          :noexport:
 * dns                                                         :noexport:
 ** TODO DNS issue
  #+BEGIN_EXAMPLE
@@ -2522,3 +2494,4 @@ nexus.fluigdata.com (104.236.180.184)
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * nmap cheatsheet: https://hackertarget.com/nmap-cheatsheet-a-quick-reference-guide/ :noexport:
 * TODO consolidate https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Network/List.md?fileviewer=file-view-default :noexport:
+* How your websites looks like for Chinese clients?                :noexport:

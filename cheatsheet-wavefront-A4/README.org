@@ -27,6 +27,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | [[https://www.wavefront.com/][Wavefront]]               | SaaS monitoring. [[https://www.youtube.com/watch?v=NAOUUSr9HDU&t=9s][YouTube: Pivotal Container Service (PKS) and VMware Wavefront]] |
 | wavefront trial portal  | https://try.wavefront.com/dashboard/tutorial-intro                             |
 | Wavefront PKS dashboard | https://try.wavefront.com/dashboard/integration-pks                            |
+| Default Limits          | ? alerts for each tenant; 10K point-per-seconds for each tenant                |
 | Reference               | https://try.wavefront.com/api-docs/ui/                                         |
 ** Wavefront Web UI
 | Name                      | Summary                                        |
@@ -1623,3 +1624,4 @@ https://try.wavefront.com/chart#_v01(c:(cs:(type:line),id:chart,n:pks.kube.pod.s
 * TODO heapster deprecation                                        :noexport:
 * TODO multi-tenancy                                               :noexport:
 * TODO wavefront proxy footprint: 500 MB; PKS footprint: 2.5GB, 1GB, 0.5GB :noexport:
+* TODO Provision more tenants: dev ci, TPM, releng ci, customers   :noexport:

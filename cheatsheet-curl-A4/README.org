@@ -1,4 +1,4 @@
-* Curl CheatSheet                                                      :Tools:
+* CheatSheet: Curl & Wget                                             :Tools:
 :PROPERTIES:
 :type:     curl
 :export_file_name: cheatsheet-curl-A4.pdf
@@ -52,6 +52,12 @@ File me [[https://github.com/dennyzhang/cheatsheet-curl-A4/issues][Issues]] or s
 | Check a website response time          | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-curl-A4/curl-url-time.sh][curl-url-time.sh]]        |
 | Beautify json output for curl response | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-curl-A4/curl-format-json.sh][curl-format-json.sh]]     |
 | Curl run remote scripts                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-curl-A4/curl-remote-scripts.sh][curl-remote-scripts.sh]]  |
+** Wget
+| Name                    | Command                                       |
+|-------------------------+-----------------------------------------------|
+| Download one url        | =wget -O /tmp/google.html https://google.com= |
+| Download mutiple urls   | =wget https://google.com https://bing.com=    |
+| Download a list of urls | =wget -i url-list.txt=, [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-networking-A4/url-list.txt][url-list.txt]]          |
 
 ** More Resources
 License: Code is licencurl under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -174,3 +180,29 @@ curl httpbin.org/ip
 # Get only the HTTP status code
 curl -o /dev/null -w '%{http_code}\n' -s -I URL
 * TODO curl cheatsheet: https://jimmysong.io/cheatsheets/curl      :noexport:
+* wget                                                         :noexport:
+# To download a single file
+wget http://path.to.the/file
+
+# To continue an aborted downloaded
+wget -c http://path.to.the/file
+
+# To mirror a whole page locally
+wget -pk http://path.to.the/page.html
+
+# To mirror a whole site locally
+wget -mk http://site.tl/
+
+# To download files according to a pattern
+wget http://www.myserver.com/files-{1..15}.tar.bz2
+
+# To download all the files in a directory with a specific extension if directory indexing is enabled
+wget -r -l1 -A.extension http://myserver.com/directory
+
+# Allows you to download just the headers of responses (-S --spider) and display them on Stdout (-O -).
+wget -S --spider -O - http://google.com
+
+# Change the User-Agent to 'User-Agent: toto'
+wget -U 'toto' http://google.com
+
+** wget -qO- https://get.docker.com/ | sh                          :noexport:

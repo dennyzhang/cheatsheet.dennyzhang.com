@@ -37,6 +37,10 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 | Name | Comment |
 |------+---------|
 |      |         |
+** Common Thinking Process
+| Name              | Comment                               |
+|-------------------+---------------------------------------|
+| Separate concerns | Developer Effciency VS Business Value |
 
 ** More Resources
 License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -71,3 +75,8 @@ License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_l
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
+* TODO [#A] Lessons learned in enterperise as an old IT engineer   :noexport:
+** For the tasks, before doing, think whether it's the right battle
+** Don't rely on people to change
+** Bring instant values
+** Connection and personal talks win, compared to remote/online discussion

@@ -434,4 +434,8 @@ https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2
 * TODO rkt: https://rocket.readthedocs.io/en/latest/Documentation/commands/ :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO helm cheatsheet                                             :noexport:
-https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Containers/Helm.md?fileviewer=file-view-default
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-linux-capabilities-A4 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-cloud-provision-A4 :noexport:
+* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-helm-A4 :noexport:
+* TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4 :noexport:
