@@ -1,11 +1,11 @@
-* Visa CheatSheet                                                      :Life:
+* CheatSheet: Web Browser                                            :Tool:
 :PROPERTIES:
-:type:     life
-:export_file_name: cheatsheet-visa-A4.pdf
+:type:     productivity
+:export_file_name: cheatsheet-browser-A4.pdf
 :END:
 
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-visa-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-browser-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
@@ -16,17 +16,26 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-visa-A4/cheatsheet-visa-A4.pdf][cheatsheet-visa-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
-- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][Cheatsheet: Driver License]], [[https://cheatsheet.dennyzhang.com/cheatsheet-travel][Cheatsheet Travel]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-browser-A4/cheatsheet-browser-A4.pdf][cheatsheet-browser-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/vmware/][vmware]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-browser-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-vim-a4][Vim CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-mac-a4][Mac Cheatsheet]]
 
-File me [[https://github.com/DennyZhang/cheatsheet-visa-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-visa-A4][this repo]].
-** Visa Summary
-| Name                         | Command                      |
-|------------------------------+------------------------------|
-| Renew Chinese passport in US | https://ppt.mfa.gov.cn/appo/ |
+File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-tile-A4][this repo]].
+** Chrome Shortcut In mac
+| Name                        | Comment                                      |
+|-----------------------------+----------------------------------------------|
+| Chrome open a new tab       | =Command + T=                                |
+| Chrome undo closed tab      | =Command + Shift + T=                        |
+| Chrome scroll to top/bottom | =Command + arrow up=, =Command + arrow down= |
+** Chrome - Plugins
+| Name     | Comment                                 |
+|----------+-----------------------------------------|
+| [[https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp?hl=en][FoxProxy]] | Configure http proxy for testing or VPN |
+** Chrome - Misc
+| Name                            | Comment                            |
+|---------------------------------+------------------------------------|
+| Backup mac OSX safari bookmarks | =~/Library/Safari/Bookmarks.plist= |
 ** More Resources
-
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
@@ -49,8 +58,8 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+LATEX_HEADER: \fancyhf{}
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
-#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-visa-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-visa-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-browser-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-browser-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-browser-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)
@@ -61,7 +70,3 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
-* TODO misc                                                        :noexport:
-** TODO US visa cheatsheet
- https://www.evus.gov/evus/#/
-

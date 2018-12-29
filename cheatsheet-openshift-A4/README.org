@@ -21,6 +21,35 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-openshift-A4][this repo]].
+** New Concepts From OpenShift
+| Name                                | Command         |
+|-------------------------------------+-----------------|
+| BuildConfig                         |                 |
+| Source2Image(s2i)                   |                 |
+| Templates                           | Like helm chart |
+| Pipelines                           | Jenkins         |
+| Fine grained security policies OOTB | Like k8s psp    |
+| Security Context Contraints(SCC)    |                 |
+
+** OpenShift Key Components
+| Name                         | Command                                |
+|------------------------------+----------------------------------------|
+| SDN                          | Based upon OVS                         |
+| VM lifecycle management      |                                        |
+| Disater Recovery             |                                        |
+| Control Plane                |                                        |
+| Management Console           |                                        |
+| Docker Image Compliance Scan | CloudForms OpenSCAP, like Harbor Clair |
+| Reference                    | [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][Link: PKS Key Components]]               |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture_overview.png]]
+** OpenShift Solutions
+| Name                | Command |
+|---------------------+---------|
+| OKD                 |         |
+| Minishift           |         |
+| OpenShift Dedicated |         |
+
 ** OpenShift Glossary
 | Name                     | Command                                                                                    |
 |--------------------------+--------------------------------------------------------------------------------------------|
@@ -42,8 +71,6 @@ File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]]
 | OpenShift online         | https://cloud.openshift.com                                                                |
 | Reference                | [[https://cheatsheet.dennyzhang.com/cheatsheet-minishift-A4][Minishift CheatSheet]] [[https://docs.okd.io/latest/minishift/index.html][Link: Minishift]]                                                       |
 | Reference                | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-rancher-A4][Rancher CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                                   |
-
-[[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture_overview.png]]
 ** OC - Highlights
 | Name                                              | Command                                                               |
 |---------------------------------------------------+-----------------------------------------------------------------------|
@@ -693,3 +720,7 @@ https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/index.html
   CLOSED: [2018-11-12 Mon 08:38]
 https://www.google.com.hk/search?q=openshift+monitoring
 * TODO https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Containers/Openshift.md?fileviewer=file-view-default :noexport:
+* TODO [#A] How OVS support openshift SDN?
+- Original plugin: ovs-subnet provided only a flat network for all pods & services
+- Ovs-multitenant plugin added project-level isolation
+- Ovs-networkpolicy plugin adding isolation policies via NetworkPolicy objects
