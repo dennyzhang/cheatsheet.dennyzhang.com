@@ -1,0 +1,146 @@
+* CheatSheet: CRI-O                                                   :Cloud:
+:PROPERTIES:
+:type:     kubernetes
+:export_file_name: cheatsheet-crio-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-crio-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-crio-A4/cheatsheet-crio-A4.pdf][cheatsheet-crio-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/cloud/][Cloud]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-crio-A4
+- Related posts:  [[https://cheatsheet.dennyzhang.com/cheatsheet-docker-A4][Docker CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
+** cri-o Basic
+| Name                           | Summary                                                            |
+|--------------------------------+--------------------------------------------------------------------|
+| cri-o                          | Container runtime for dockerd alternative. Initialized from Redhat |
+| [[https://github.com/containers/libpod][podman]]                         | CLI tool to manage pods and images                                 |
+| [[https://github.com/containers/libpod#buildah-and-podman-relationship][Buildah]]                        | CLI tool to build OCI images                                       |
+| [[https://github.com/kubernetes/minikube/blob/master/docs/alternative_runtimes.md][Run cri-o with minikube]]        | =minikube start --network-plugin=cni --container-runtime=cri-o=    |
+| [[https://github.com/kubernetes/minikube/issues/2835#issuecomment-425626518][Configure cri-o image registry]] | =registries = ['docker.io']=                                       |
+| Reference                      | [[https://cheatsheet.dennyzhang.com/cheatsheet-docker-A4][Docker CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]]                              |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-crio-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-crio-A4/crio-architecture.png]]
+** podman
+| Name                       | Summary                           |
+|----------------------------+-----------------------------------|
+| podman image registry file | =/etc/containers/registries.conf= |
+| pull container             | =podman pull nginx:alpine=        |
+| List all images            | =podman images=                   |
+| List all contianers        | =podman ps=                       |
+** podman online usage
+#+BEGIN_EXAMPLE
+$ sudo podman --help
+WARN[0000] unable to find /etc/containers/registries.conf. some podman (image shortnames) commands may be limited
+NAME:
+   podman - manage pods and images
+
+USAGE:
+   podman [global options] command [command options] [arguments...]
+
+VERSION:
+   0.4.1
+
+COMMANDS:
+     attach           Attach to a running container
+     commit           Create new image based on the changed container
+     build            Build an image using instructions in a Dockerfile
+     create           create but do not start a container
+     diff             Inspect changes on container's file systems
+     exec             Run a process in a running container
+     export           Export container's filesystem contents as a tar archive
+     history          Show history of a specified image
+     images           list images in local storage
+     import           Import a tarball to create a filesystem image
+     info             display system information
+     inspect          Displays the configuration of a container or image
+     kill             Kill one or more running containers with a specific signal
+     load             load an image from docker archive
+     login            login to a container registry
+     logout           logout of a container registry
+     logs             Fetch the logs of a container
+     mount            Mount a working container's root filesystem
+     pause            Pauses all the processes in one or more containers
+     ps               List containers
+     port             List port mappings or a specific mapping for the container
+     pull             pull an image from a registry
+     push             push an image to a specified destination
+     restart          Restart one or more containers
+     rm               podman rm will remove one or more containers from the host.  The container name or ID can be used.
+                                  This does not remove images.  Running containers will not be removed without the -f option.
+     rmi              removes one or more images from local storage
+     run              run a command in a new container
+     save             Save image to an archive
+     search           search registry for image
+     start            Start one or more containers
+     stats            Display percentage of CPU, memory, network I/O, block I/O and PIDs for one or more containers
+     stop             Stop one or more containers
+     tag              Add an additional name to a local image
+     top              Display the running processes of a container
+     umount, unmount  Unmount a working container's root filesystem
+     unpause          Unpause the processes in one or more containers
+     version          Display the PODMAN Version Information
+     wait             Block on one or more containers
+     help, h          Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --cni-config-dir value            path of the configuration directory for CNI networks
+   --config value, -c value          path of a config file detailing container server configuration options
+   --conmon value                    path of the conmon binary
+   --cpu-profile value               path for the cpu profiling results
+   --log-level value                 log messages above specified level: debug, info, warn, error (default), fatal or panic (default: "error")
+   --root value                      path to the root directory in which data, including images, is stored
+   --runroot value                   path to the 'run directory' where all state information is stored
+   --runtime value                   path to the OCI-compatible binary used to run containers, default is /usr/bin/runc
+   --storage-driver value, -s value  select which storage driver is used to manage storage of images and containers (default is overlay)
+   --storage-opt value               used to pass an option to the storage driver
+   --help, -h                        show help
+   --version, -v                     print the version
+#+END_EXAMPLE
+** More Resources
+https://cri-o.io/
+
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-crio-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-crio-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-crio-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* TODO how to restart cri-o?                                       :noexport:

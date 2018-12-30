@@ -48,6 +48,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | [[https://github.com/goharbor/harbor][Harbor]]           | Enterprise-ready container registry                                                |
 | AllSpark         | Like cross datacenter istio                                                        |
 | [[https://www.vmware.com/products/vsphere/integrated-containers.html][VIC]]              | vSphere Integrated Containers                                                      |
+| [[https://heptio.com/][Heptio]]           |                                                                                    |
 ** Networking & Security
 | Name                     | Summary                                                                                        |
 |--------------------------+------------------------------------------------------------------------------------------------|
@@ -84,23 +85,23 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | [[https://www.vmware.com/products/workspace-one.html][Workspace ONE]] | SSO for all apps                  |
 | [[https://www.vmware.com/products/horizon.html][Horizon 7]]     | virtual desktops and applications |
 ** VMware Basic Concepts
-| Name                                | Command                                                                              |
-|-------------------------------------+--------------------------------------------------------------------------------------|
-| SDDC                                | Software designed data center                                                        |
-| [[https://www.vmware.com/products/vsphere/vmotion.html][vMotion]]                             | Live Migration of Virtual Machines                                                   |
-| [[https://www.vmware.com/products/vsphere/drs-dpm.html][DRS(Distributed Resource Scheduler)]] |                                                                                      |
-| [[https://en.wikipedia.org/wiki/Non-uniform_memory_access][NUMA(Non-uniform memory access)]]     |                                                                                      |
-| [[https://en.wikipedia.org/wiki/VMDK][vmdk]]                                | a file format describes containers for virtual hard disk drives to be used by VMware |
-| Hyper Converged Infrastructure      |                                                                                      |
-| Turnkey Solution                    |                                                                                      |
-| Lifecycle Management                |                                                                                      |
-| Thin Provisioning                   |                                                                                      |
-| Co-located                          |                                                                                      |
-| Operational Efficiency              |                                                                                      |
-| Developer Productivity              |                                                                                      |
-| Conformance and Compatibility       |                                                                                      |
-| Governance                          |                                                                                      |
-| [[https://www.donnfelker.com/software-development-greeenfield-vs-brownfield][Greenfield vs Brownfield]]            | Brownfield Development happens when improving an existing application                |
+| Name                                | Command                                                                                 |
+|-------------------------------------+-----------------------------------------------------------------------------------------|
+| SDDC                                | Software designed data center                                                           |
+| [[https://www.vmware.com/products/vsphere/vmotion.html][vMotion]]                             | Live Migration of Virtual Machines                                                      |
+| [[https://www.vmware.com/products/vsphere/drs-dpm.html][DRS(Distributed Resource Scheduler)]] |                                                                                         |
+| [[https://en.wikipedia.org/wiki/Non-uniform_memory_access][NUMA(Non-uniform memory access)]]     |                                                                                         |
+| [[https://en.wikipedia.org/wiki/VMDK][vmdk]]                                | a file format describes containers for virtual hard disk drives to be used by VMware    |
+| Hyper Converged Infrastructure      | all-in-one virtualization solutions that integrate compute and software-defined storage |
+| Turnkey Solution                    |                                                                                         |
+| Lifecycle Management                |                                                                                         |
+| Thin Provisioning                   |                                                                                         |
+| Co-located                          |                                                                                         |
+| Operational Efficiency              |                                                                                         |
+| Developer Productivity              |                                                                                         |
+| Conformance and Compatibility       |                                                                                         |
+| Governance                          |                                                                                         |
+| [[https://www.donnfelker.com/software-development-greeenfield-vs-brownfield][Greenfield vs Brownfield]]            | Brownfield Development happens when improving an existing application                   |
 ** Misc
 | Name                                        | Summary                                                        |
 |---------------------------------------------+----------------------------------------------------------------|

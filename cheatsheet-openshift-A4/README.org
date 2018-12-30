@@ -22,25 +22,32 @@
 
 File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-openshift-A4][this repo]].
 ** New Concepts From OpenShift
-| Name                                | Command         |
-|-------------------------------------+-----------------|
-| BuildConfig                         |                 |
-| Source2Image(s2i)                   |                 |
-| Templates                           | Like helm chart |
-| Pipelines                           | Jenkins         |
-| Fine grained security policies OOTB | Like k8s psp    |
-| Security Context Contraints(SCC)    |                 |
-
+| Name                                | Command          |
+|-------------------------------------+------------------|
+| BuildConfig                         |                  |
+| Source2Image(s2i)                   |                  |
+| Templates                           | Like helm chart  |
+| Pipelines                           | Jenkins          |
+| Fine grained security policies OOTB | Like k8s psp     |
+| Security Context Contraints(SCC)    |                  |
+| Red Hat Container Catalog (RHCC)    |                  |
+| Route                               | Like k8s ingress |
+| Metering and Chargeback             |                  |
+| Operator SDK                        |                  |
 ** OpenShift Key Components
-| Name                         | Command                                |
-|------------------------------+----------------------------------------|
-| SDN                          | Based upon OVS                         |
-| VM lifecycle management      |                                        |
-| Disater Recovery             |                                        |
-| Control Plane                |                                        |
-| Management Console           |                                        |
-| Docker Image Compliance Scan | CloudForms OpenSCAP, like Harbor Clair |
-| Reference                    | [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][Link: PKS Key Components]]               |
+| Name                            | Command                                    |
+|---------------------------------+--------------------------------------------|
+| Computing virtualization        | [[https://en.wikipedia.org/wiki/Red_Hat_Virtualization][RHV]] (Red Hat Virtualization), based on KVM |
+| Container runtime               | [[https://cri-o.io/][cri-o]]                                |
+| SDN networking                  | Based upon OVS                             |
+| VM/Cluster lifecycle management | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] ?                               |
+| Disater Recovery                |                                            |
+| Control Plane                   |                                            |
+| Docker image registry           | [[https://www.openshift.com/products/quay][Redhat Quay]]                                |
+| Persistent volume               | Gluster                                    |
+| Management Console              |                                            |
+| Docker Image Compliance Scan    | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] OpenSCAP, like Harbor Clair     |
+| Reference                       | [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][Link: PKS Key Components]]                   |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture_overview.png]]
 ** OpenShift Solutions

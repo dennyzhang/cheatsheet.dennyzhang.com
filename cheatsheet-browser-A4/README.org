@@ -1,4 +1,4 @@
-* CheatSheet: Web Browser                                            :Tool:
+* CheatSheet: Web Browser                                            :Tools:
 :PROPERTIES:
 :type:     productivity
 :export_file_name: cheatsheet-browser-A4.pdf
