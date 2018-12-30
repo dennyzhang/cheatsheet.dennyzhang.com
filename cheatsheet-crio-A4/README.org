@@ -22,16 +22,19 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
 ** cri-o Basic
-| Name                           | Summary                                                            |
-|--------------------------------+--------------------------------------------------------------------|
-| cri-o                          | Container runtime for dockerd alternative. Initialized from Redhat |
-| [[https://github.com/containers/libpod][podman]]                         | CLI tool to manage pods and images                                 |
-| [[https://github.com/containers/libpod#buildah-and-podman-relationship][Buildah]]                        | CLI tool to build OCI images                                       |
-| [[https://github.com/kubernetes/minikube/blob/master/docs/alternative_runtimes.md][Run cri-o with minikube]]        | =minikube start --network-plugin=cni --container-runtime=cri-o=    |
-| [[https://github.com/kubernetes/minikube/issues/2835#issuecomment-425626518][Configure cri-o image registry]] | =registries = ['docker.io']=                                       |
-| Reference                      | [[https://cheatsheet.dennyzhang.com/cheatsheet-docker-A4][Docker CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]]                              |
+| Name                           | Summary                                                                   |
+|--------------------------------+---------------------------------------------------------------------------|
+| [[https://cri-o.io/#container-images][cri-o]]                          | Another container runtime like dockerd. Initialized from Redhat           |
+| =cri-o= vs =dockerd=           |                                                                           |
+| [[https://github.com/containers/libpod][podman]]                         | CLI tool to manage pods and images                                        |
+| [[https://github.com/containers/libpod#buildah-and-podman-relationship][Buildah]]                        | CLI tool to build OCI images                                              |
+| [[https://github.com/containers/skopeo/][Skopeo]]                         | CLI tool to retrieve information, images, signing content. e.g sign image |
+| [[https://quay.io/][Quay]]                           | Builds, analyzes, distributes your container images. Like [[https://www.cncf.io/project/harbor/][CNCF Harbor]]     |
+| [[https://github.com/kubernetes/minikube/blob/master/docs/alternative_runtimes.md][Run cri-o with minikube]]        | =minikube start --network-plugin=cni --container-runtime=cri-o=           |
+| [[https://github.com/kubernetes/minikube/issues/2835#issuecomment-425626518][Configure cri-o image registry]] | =registries = ['docker.io']=                                              |
+| Reference                      | [[https://cheatsheet.dennyzhang.com/cheatsheet-docker-A4][Docker CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]]                                     |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-crio-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-crio-A4/crio-architecture.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-crio-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-crio-A4/crio-arch.png]]
 ** podman
 | Name                       | Summary                           |
 |----------------------------+-----------------------------------|
@@ -109,6 +112,8 @@ GLOBAL OPTIONS:
    --version, -v                     print the version
 #+END_EXAMPLE
 ** More Resources
+https://github.com/containers
+
 https://cri-o.io/
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -143,4 +148,6 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO how to restart cri-o?                                       :noexport:
+* TODO cri-o vs dockerd                                            :noexport:
