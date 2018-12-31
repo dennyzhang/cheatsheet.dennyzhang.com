@@ -54,6 +54,7 @@ function git_push {
             echo "In ${d}, git commit and push"
             git checkout master
             git add *.org
+            git add *.pdf
             # git commit -am "update doc"
             git commit --amend --no-edit
             git push origin master --force

@@ -22,17 +22,17 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-health-A4][this repo]].
 ** Pitfall For Geek Culture
-| Name                                       | Second Thinking                                                                |
-|--------------------------------------------+--------------------------------------------------------------------------------|
-| No information barrier; sharing everything | Information is power and profit margin. Only share the relevant                |
-| No hierarchy; just talk with code          | It's more about people and business                                            |
-| Make all the possible improvements         | It would miss the priority and cross-functions cooperation                     |
-| Velocity and productivity is everything    | Besides super stars, need the whole organization to move                       |
-| Be absolutely accurate                     | Human is not machine; So it is software development world                      |
-| Curse of knowledge                         | Normal people are not dummy; they just don't have experience you have          |
-| Assume everyone is with good will          | You may be set up or manipulated                                               |
-| Rarely think about monetization            | Face it. Funding is very important even for open source projects               |
-| Do everything in a hard way                | Intellectual challenges may not be cost effective; and you can't do everything |
+| Name                                     | Second Thinking                                                            |
+|------------------------------------------+----------------------------------------------------------------------------|
+| No information barrier; sharing anything | Information is power and profit margin. Only share the relevant            |
+| No hierarchy; just talk with code        | It's more about people and business                                        |
+| Make all the possible improvements       | You may miss the priority and cross-functions cooperation                  |
+| Velocity and productivity is everything  | Besides super stars, need the whole organization to move                   |
+| Be absolutely accurate                   | Human is not machine; So it is software development world                  |
+| Curse of knowledge                       | Normal people are not dummy; they just don't have experience you have      |
+| Assume everyone is with good will        | You may be set up or manipulated                                           |
+| Rarely think about monetization          | Face it. Funding is very important, even for open source projects          |
+| Do everything in a hard way              | Intellectual challenges may not be cost effective; you can't do everything |
 ** Reference
 | Name          | Summary                                    |
 |---------------+--------------------------------------------|
@@ -108,6 +108,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 |-----------------------------------------------------+-----------------------------------------------|
 | Be cautious to share the most real of your thoughts | It could be a bad thing for everyone involved |
 | Only share to relevant people with relevant info    | People may get confused; be less helpful      |
+** Scenario - Avoid Getting Emotional
+| Name                                                                 | Summary                                     |
+|----------------------------------------------------------------------+---------------------------------------------|
+| Even if you don't like each other, you two can achieve more together |                                             |
+| The world is never fair                                              | Avoid feeling angry, if something is unfair |
 ** Scenario - Reject Politely
 | Name                               | Summary |
 |------------------------------------+---------|
@@ -123,11 +128,6 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 |---------------------------------------------------------------------+---------|
 | Don't want to cover other ass, especially when you don't like them  |         |
 | The ability to work independently, regardless of existing obstacles |         |
-** Scenario - Avoid Getting Emotional
-| Name                                                                 | Summary                                     |
-|----------------------------------------------------------------------+---------------------------------------------|
-| Even if you don't like each other, you two can achieve more together |                                             |
-| The world is never fair                                              | Avoid feeling angry, if something is unfair |
 ** More Resources
 License: Code is licencommunication under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
