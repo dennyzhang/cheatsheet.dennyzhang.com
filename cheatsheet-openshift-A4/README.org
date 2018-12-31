@@ -35,20 +35,21 @@ File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]]
 | Metering and Chargeback             |                  |
 | Operator SDK                        |                  |
 ** OpenShift Key Components
-| Name                              | Command                                    |
-|-----------------------------------+--------------------------------------------|
-| Computing virtualization          | [[https://en.wikipedia.org/wiki/Red_Hat_Virtualization][RHV]] (Red Hat Virtualization), based on KVM |
-| Container runtime                 | [[https://cri-o.io/][cri-o]]                                      |
-| SDN networking                    | Based upon OVS                             |
-| VM/Cluster lifecycle management   | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] ?                               |
-| Disater Recovery                  |                                            |
-| Control Plane                     |                                            |
-| Docker image registry             | [[https://www.openshift.com/products/quay][Redhat Quay]]                                |
-| Packages k8s cluster orchestrator | [[https://coreos.com/tectonic/docs/latest/][tectonic]]                                   |
-| Persistent volume                 | Gluster                                    |
-| Management Console                |                                            |
-| Docker Image Compliance Scan      | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] OpenSCAP, like Harbor Clair     |
-| Reference                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][Link: PKS Key Components]]                   |
+| Name                              | Command                                                  |
+|-----------------------------------+----------------------------------------------------------|
+| Computing virtualization          | [[https://en.wikipedia.org/wiki/Red_Hat_Virtualization][RHV]] (Red Hat Virtualization), based on KVM               |
+| Container runtime                 | [[https://cri-o.io/][cri-o]]                                                    |
+| SDN networking                    | Based upon OVS                                           |
+| VM/Cluster lifecycle management   | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] ?                                             |
+| Disater Recovery                  |                                                          |
+| Control Plane                     |                                                          |
+| Docker image registry             | [[https://www.openshift.com/products/quay][Redhat Quay]]                                              |
+| Packages k8s cluster orchestrator | [[https://coreos.com/tectonic/docs/latest/][tectonic]]                                                 |
+| Container optimized OS            |                                                          |
+| Persistent volume                 | Gluster                                                  |
+| Management Console                |                                                          |
+| Docker Image Compliance Scan      | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] OpenSCAP, like Harbor Clair                   |
+| Reference                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][Link: OpenShift Key Components]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][Link: PKS Key Components]] |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture_overview.png]]
 ** OpenShift Solutions
