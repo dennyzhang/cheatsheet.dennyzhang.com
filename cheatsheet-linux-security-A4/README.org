@@ -21,12 +21,29 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-process-A4][CheatSheet: Linux Process]], [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][CheatSheet: Linux Networking]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-diff-A4][this repo]].
-** chmod
+** Security Summary
+| Name      | Comment                                                         |
+|-----------+-----------------------------------------------------------------|
+| Reference | [[https://cheatsheet.dennyzhang.com/cheatsheet-linux-capabilities-A4][CheatSheet: linux-capabilities]], [[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-security-A4][CheatSheet: Kubernetes Security]] |
+** Chmod
+| Name                         | Comment           |
+|------------------------------+-------------------|
+| Add execute for shell script | =chmod a+x my.sh= |
+** Chown
+| Name                         | Comment           |
+|------------------------------+-------------------|
+** Identity Provider Management
+| Name     | Comment |
+|----------+---------|
+| htpasswd |         |
+| LDAP     |         |
+| Keystone |         |
+| Oauth    |         |
+| OpenID   |         |
+** AppArmor
 | Name | Comment |
 |------+---------|
-** chown
-| Name | Comment |
-|------+---------|
+|      |         |
 ** More Resources
 License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -61,13 +78,7 @@ License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_lic
 #+LINK_UP:
 #+LINK_HOME:
 * TODO chmod & chown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* TODO [#A] Identity provider management                           :noexport:
-htpasswd
-LDAP
-Keystone
-Oauth
-OpenID
 * TODO AppArmor cheatsheet: https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/AppArmor.md?fileviewer=file-view-default :noexport:
 * TODO linux security cheatsheet: https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/Selinux.md?fileviewer=file-view-default
 https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/SecNewsFeed.md?fileviewer=file-view-default
-https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/SecNewsFeed.md?fileviewer=file-view-default
+

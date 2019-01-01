@@ -29,17 +29,6 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Ports for well-known services | =cat /etc/services=                                                             |
 | Reference                     | [[https://cheatsheet.dennyzhang.com/cheatsheet-ssh-A4][SSH CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][CheatSheet: Curl & Wget]]                     |
 | Reference                     | [[https://cheatsheet.dennyzhang.com/cheatsheet-file-A4][CheatSheet: Linux File]], [[https://cheatsheet.dennyzhang.com/cheatsheet-process-A4][CheatSheet: Linux Process]], [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][CheatSheet: Linux Networking]] |
-** TCP
-| Name                          | Comment                                                   |
-|-------------------------------+-----------------------------------------------------------|
-| Port scan for a given host    | =sudo nmap -O 192.168.1.103=, [[https://viewdns.info/portscan/][SaaS: viewdns.info/portscan]] |
-| Simulate network latency test | [[http://bencane.com/2012/07/16/tc-adding-simulated-network-latency-to-your-linux-server/][tc]]                                                        |
-| Add 97ms latency to eth0      | =tc qdisc add dev eth0 root netem delay 97ms=             |
-| Check tc status               | =tc -s qdisc=                                             |
-| Remove tc rule                | =tc qdisc del dev eth0 root netem=                        |
-| Check network speed           | [[http://www.att.com/speedtest/][SaaS: www.att.com/speedtest]]                               |
-| Tcp manual                    | =man 7 tcp=                                               |
-| Reference                     | [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]]                                        |
 ** HTTP
 | Name                                  | Command                                                     |
 |---------------------------------------+-------------------------------------------------------------|
@@ -49,9 +38,27 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Test webpage from different browsers  | [[https://www.browserling.com/][SaaS: www.browserling.com]]                                   |
 | Export local http service to Internet | [[https://ngrok.com/][SaaS: ngrok.com]]                                             |
 | Reference                             | [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][CheatSheet: Curl & Wget]], [[https://github.com/ripienaar/free-for-dev][GitHub: free-for-dev]]               |
+** TCP
+| Name                         | Comment                                                   |
+|------------------------------+-----------------------------------------------------------|
+| List all listening tcp ports | =netstat -tunlp=                                          |
+| Port scan for a given host   | =sudo nmap -O 192.168.1.103=, [[https://viewdns.info/portscan/][SaaS: viewdns.info/portscan]] |
+| Add 97ms latency to eth0     | [[http://bencane.com/2012/07/16/tc-adding-simulated-network-latency-to-your-linux-server/][Link: tc]], =tc qdisc add dev eth0 root netem delay 97ms=   |
+| Check tc status              | =tc -s qdisc=                                             |
+| Remove tc rule               | =tc qdisc del dev eth0 root netem=                        |
+| Check network speed          | [[http://www.att.com/speedtest/][SaaS: www.att.com/speedtest]]                               |
+| Tcp manual                   | =man 7 tcp=                                               |
+| Reference                    | [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]]                                        |
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
+** Route
+| Name             | Comment                                                          |
+|------------------+------------------------------------------------------------------|
+| List route rules | =route -n=, =netstat -nr=                                        |
+| Add default rule | =route add default gw 10.0.0.1 netmask 255.255.255.0 dev eth0=   |
+| Add route rule   | =route add -net 0.0.0.0 gw 192.168.1.1 netmask 0.0.0.0 dev eth0= |
+| Del route rule   | =route del -net 192.168.3.0 netmask 255.255.255.0 dev eth1=      |
 ** DNS
 | Name                     | Comment                                                       |
 |--------------------------+---------------------------------------------------------------|
@@ -2072,12 +2079,6 @@ http://stackoverflow.com/questions/4297835/how-do-i-test-the-net-speed-from-the-
 
 cp /etc/resolv.conf{,.bak}
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-| Name             | Summary                                                        |
-|------------------+----------------------------------------------------------------|
-| list route rules | route -n; netstat -nr                                          |
-| add default rule | route add default gw 10.0.0.1 netmask 255.255.255.0 dev eth0   |
-| add rule         | route add -net 0.0.0.0 gw 192.168.1.1 netmask 0.0.0.0 dev eth0 |
-| del rule         | route del -net 192.168.3.0 netmask 255.255.255.0 dev eth1      |
 ** DONE centos doesn't have traceroute: yum install traceroute
   CLOSED: [2014-02-25 Tue 15:31]
 #+begin_example
@@ -2495,3 +2496,5 @@ nexus.fluigdata.com (104.236.180.184)
 * nmap cheatsheet: https://hackertarget.com/nmap-cheatsheet-a-quick-reference-guide/ :noexport:
 * TODO consolidate https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Network/List.md?fileviewer=file-view-default :noexport:
 * How your websites looks like for Chinese clients?                :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Why `nmap -O`? and not say `-sV`?                           :noexport:
