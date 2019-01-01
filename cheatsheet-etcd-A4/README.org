@@ -25,6 +25,7 @@ File me [[https://github.com/DennyZhang/cheatsheet-etcd-A4/issues][Issues]] or s
 | Name                         | Command                                      |
 |------------------------------+----------------------------------------------|
 | Explore etcd in minikube env | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-etcd-A4/k8s-etcd-minikube][GitHub: cheatsheet-etcd-A4/k8s-etcd-minikube]] |
+| Install etcdctl on OSX       | =brew install etcd=, =which etcdctl=         |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

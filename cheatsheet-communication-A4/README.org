@@ -27,11 +27,12 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 | No information barrier; sharing anything | Information is power and profit margin. Only share the relevant            |
 | No hierarchy; just talk with code        | It's more about people and business                                        |
 | Make all the possible improvements       | You may miss the priority and cross-functions cooperation                  |
-| Velocity and productivity is everything  | Besides super stars, need the whole organization to move                   |
+| Value inovation over cooperation         | Working solo helps to try ideas faster; but PoC is different from products |
 | Be absolutely accurate                   | Human is not machine; So it is software development world                  |
 | Curse of knowledge                       | Normal people are not dummy; they just don't have experience you have      |
 | Assume everyone is with good will        | You may be set up or manipulated                                           |
 | Rarely think about monetization          | Face it. Funding is very important, even for open source projects          |
+| Communication is not actionable          | Keep talking fancy tech, but few impressive highlights or actionable items |
 | Do everything in a hard way              | Intellectual challenges may not be cost effective; you can't do everything |
 ** Reference
 | Name          | Summary                                    |
@@ -39,20 +40,19 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 | [[https://en.wikipedia.org/wiki/SIPOC][SIPOC Diagram]] | Supplier, Input, Process, Output, Customer |
 | Six Sigma     | [[https://www.youtube.com/watch?v=wEBPVQ7W2wg][YouTube: Six Sigma]]                         |
 ** Facts
-| Name                                                | Summary                                                           |
-|-----------------------------------------------------+-------------------------------------------------------------------|
-| The only thing matters is what you value the most   | Pursuing different things will lead you to different action plans |
-| Don't underestimate your effort and values.         | You won't buy, if servants keep complaining their own products    |
-| Giving useful feedback is crucial for the senior    | Selling is even more important than doing                         |
-| Choose realistic goals                              | Are you sure you can afford that? And do you really need that?    |
-| Act differently for different persons               | Stereotype helps; but remember each individual is different       |
-| Don't lie to yourself                               | You will fail eventually                                          |
-| You can't win big by working solo                   |                                                                   |
-| You can't please everyone; Get the most of it       |                                                                   |
-| Save small money may harm the org as a whole        |                                                                   |
-| Keep pushing until someone ask you to stop          |                                                                   |
-| You don't get paid for the effort you have spent    | Only for the value you have delivered                             |
-| You can't solve all conflicts & problems            | Some problems are structured ones or conflict of interest         |
+| Name                                              | Summary                                                                    |
+|---------------------------------------------------+----------------------------------------------------------------------------|
+| The only thing matters is what you value the most | Pursuing different things will lead you to different action plans          |
+| Giving useful feedback is crucial for the senior  | Selling is even more important than doing                                  |
+| Choose realistic goals                            | Are you sure you can afford that? And do you really need that?             |
+| Act differently for different persons             | Stereotype helps; but remember each individual is different                |
+| Don't lie to yourself                             | You will fail eventually                                                   |
+| You can't win big by working solo                 |                                                                            |
+| You can't please everyone; Get the most of it     |                                                                            |
+| Saving small money may harm the org as a whole    |                                                                            |
+| Keep pushing until someone ask you to stop        |                                                                            |
+| You don't get paid for the effort you have spent  | Only for the value you have delivered                                      |
+| You can't solve all conflicts & problems          | Some problems can't be solved in your level or simply conflict of interest |
 ** Typical Things People May Want
 | Name                           | Summary |
 |--------------------------------+---------|
@@ -68,21 +68,28 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 | Entrepreneur      |         |
 | Product manager   |         |
 | IT workers        |         |
-** [#A] Scenario - Talk For Your Initiatives
-| Name                                                | Summary |
-|-----------------------------------------------------+---------|
-| Do rehearsal in advance                             |         |
-| Let people talk more, before pouring                |         |
-| Watch and response, before insisting                |         |
-| Drain info and opinions from others, before talking |         |
-| Every punch should right into the point.            |         |
 ** [#A] Scenario - Technical Discussion Meeting
-| Name                                       | Summary                                                   |
-|--------------------------------------------+-----------------------------------------------------------|
-| Avoid going to extreme                     | You will probably be wrong; and make people uncomfortable |
-| React fast for ideas people are presenting |                                                           |
-| Learn how to interrupt                     |                                                           |
-| Ask questions with the format of yes/no    |                                                           |
+| Name                                       | Summary                                                                        |
+|--------------------------------------------+--------------------------------------------------------------------------------|
+| React fast for ideas people are presenting | If you're listening to my ideas, why I would spare time in yours?              |
+| Don't underestimate your effort and values | Trust yourself. You won't buy, if servants keep complaining their own products |
+| Understand the situation and big pictures  |                                                                                |
+| Avoid going to extreme                     | You will probably be wrong; and make people uncomfortable                      |
+| Learn how to interrupt politely            |                                                                                |
+| Ask questions with the format of yes/no    |                                                                                |
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+** [#A] Scenario - Talk For Your Initiatives
+| Name                                                | Summary                                                               |
+|-----------------------------------------------------+-----------------------------------------------------------------------|
+| Do rehearsal in advance                             |                                                                       |
+| Let people talk more, before pouring                |                                                                       |
+| Know what the audience is interested                |                                                                       |
+| Watch and response, before insisting                |                                                                       |
+| Drain info and opinions from others, before talking |                                                                       |
+| Every punch should right into the point             |                                                                       |
+| You have to earn your opportunities                 | The original assigment may not be good for both you and your employer |
 ** [#A] Scenario - Build First Image
 | Name                                              | Summary                                                     |
 |---------------------------------------------------+-------------------------------------------------------------|
@@ -94,15 +101,13 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 | Be resourceful and useful  |                                          |
 | Be interesting             | Smile and small jokes bring people close |
 | Don't make people feel bad |                                          |
-#+BEGIN_HTML
-<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
-#+END_HTML
 ** Scenario - Talk With Evangelists
-| Name                             | Summary                                       |
-|----------------------------------+-----------------------------------------------|
-| Set examples by taking hard jobs | Show your muscle to win the trust and respect |
-| Admit your stupidity             | Don't hide it                                 |
-| People want to be super stars    | Company only need it for limited periods      |
+| Name                             | Summary                                               |
+|----------------------------------+-------------------------------------------------------|
+| Set examples by taking hard jobs | Show your muscle to win the trust and respect         |
+| People want to be super stars    | Companies would only need that for very few scenarios |
+| Ask the right question           | To right people, right situation                      |
+| Admit your stupidity             | Don't hide it                                         |
 ** Scenario - Decide When To Share
 | Name                                                | Summary                                       |
 |-----------------------------------------------------+-----------------------------------------------|

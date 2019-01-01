@@ -359,11 +359,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO cheatsheet: helm                                            :noexport:
-| Component | Role   | Location                            |
-|-----------+--------+-------------------------------------|
-| helm      | Client | Runs on your local workstation      |
-| tiller    | Server | Runs inside your Kubernetes cluster |
 * TODO markdown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO [#A] apparmor: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO asciiart: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
@@ -396,7 +391,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO publish cheatsheet: azure                                   :noexport:
 * TODO publish cheatsheet: digitalocean                            :noexport:
 * TODO [#A] linux cheatsheet: file, process, memory, networking, device, disk :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Create my own cheatsheet.dennyzhang.com link, instead of the general one :noexport:
 * TODO cheatsheet: k8s deployment solution                         :noexport:
 kubepray
@@ -414,12 +408,8 @@ ansible
 * TODO update https://cheatsheet.dennyzhang.com/cheatsheet-public-db-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO github markdown format: https://github.com/dennyzhang/cheatsheet-knative-A4/blob/master/README.md :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] publish cheatsheet for web browser                     :noexport:
-** TODO print webpage as a screenshot image
 * TODO cheatsheet confluence: JIR                                  :noexport:
 ** JIRA search tickets resolved in the past one month
-* TODO cheatsheet: vke cli                                         :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO linux networking: Send a PR request to https://github.com/trimstray/the-book-of-secret-knowledge :noexport:
 * TODO AppArmor cheatsheet: https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/AppArmor.md?fileviewer=file-view-default :noexport:
@@ -431,14 +421,9 @@ https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2
 https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/SecNewsFeed.md?fileviewer=file-view-default
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO https://zeltser.com/security-incident-survey-cheat-sheet/   :noexport:
-* TODO rkt: https://rocket.readthedocs.io/en/latest/Documentation/commands/ :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO helm cheatsheet                                             :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-linux-capabilities-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-cloud-provision-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-helm-A4 :noexport:
 * TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] Improve: https://cheatsheet.dennyzhang.com/cheatsheet-browser-A4 :noexport:
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-ibm-A4 :noexport:

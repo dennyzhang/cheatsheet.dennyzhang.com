@@ -732,3 +732,4 @@ https://www.google.com.hk/search?q=openshift+monitoring
 - Original plugin: ovs-subnet provided only a flat network for all pods & services
 - Ovs-multitenant plugin added project-level isolation
 - Ovs-networkpolicy plugin adding isolation policies via NetworkPolicy objects
+* Video https://vmware.zoom.us/recording/play/106MqPZArVrxC68iPX7zTqucssk3mstnMU1Ysnt4BV__H_KM0chCFQwJU_hMVrWe?continueMode=true :noexport:

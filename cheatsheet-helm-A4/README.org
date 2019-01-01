@@ -35,10 +35,10 @@ Checklist before travel by flights
 ** Helm Component
 | Name    | Command                                                                  |
 |---------+--------------------------------------------------------------------------|
-| Helm    | a chart manager.                                                         |
+| Helm    | Client. A chart manager.                                                 |
+| tiller  | Server. Helm server manages releases (installations) of your charts.     |
 | Charts  | packages of pre-configured Kubernetes resources.                         |
 | Release | a collection of Kubernetes resources deployed to the cluster using Helm. |
-| tiller  | helm server manages releases (installations) of your charts.             |
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

@@ -232,9 +232,6 @@ https://www.youtube.com/watch?v=LOtlICZR5bE
  XXX Li [1 minute ago]
  first time it's `pks_setup_login`, then it's just `pks_login`
  #+END_EXAMPLE
-* TODO vke: VMware Kubernetes Engine                               :noexport:
-https://cloud.vmware.com/vmware-kubernetes-engine
-https://blogs.vmware.com/cloudnative/2018/11/06/try-vmware-cloud-pks-formerly-vke-today-and-the-first-150-is-on-us/
 * TODO [#A] VMware vRealize Suite                                  :noexport:
 https://confluence.eng.vmware.com/display/PS/vRealize+Suite+Lifecycle+Manager
 
@@ -276,3 +273,7 @@ https://www.vmware.com/support/pubs/log-insight-pubs.html
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] firecracker                                            :noexport:
 * TODO [#A] cloudhealth                                            :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO vke: VMware Kubernetes Engine                               :noexport:
+https://cloud.vmware.com/vmware-kubernetes-engine
+https://blogs.vmware.com/cloudnative/2018/11/06/try-vmware-cloud-pks-formerly-vke-today-and-the-first-150-is-on-us/
