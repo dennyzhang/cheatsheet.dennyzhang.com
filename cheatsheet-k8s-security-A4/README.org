@@ -44,7 +44,7 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/podsecurity/podsecurity-enforce.yaml][podsecurity/podsecurity-enforce.yaml]]    | Enforce policy security by defining role and cluster role       |
 | [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/podsecurity/podsecurity-advanced.yaml][podsecurity/podsecurity-advanced.yaml]]   | A more complicated definition of pod security policy            |
 | [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/podsecurity/podsecurity-example.yaml][podsecurity/podsecurity-example.yaml]]    | A full example with everything included                         |
-| Links                                   | [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Link: Kubernetes Yaml Templates]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]]       |
+| Reference                               | [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Link: Kubernetes Yaml Templates]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]]       |
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
@@ -59,7 +59,7 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/networksecurity/networksecurity-port.yaml][networksecurity/networksecurity-port.yaml]]                 | Allow TCP 443 from one namespace                          |
 | [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/networksecurity/networksecurity-deny-othernamespaces.yaml][networksecurity/networksecurity-deny-othernamespaces.yaml]] | Deny all ingress traffic from other namespaces            |
 | [[https://github.com/dennyzhang/kubernetes-yaml-templates/blob/master/networksecurity/networksecurity-denyegress-exceptdns.yaml][networksecurity/networksecurity-denyegress-exceptdns.yaml]] | Deny all egress traffic except DNS                        |
-| Links                                                     | [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Link: Kubernetes Yaml Templates]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]] |
+| Reference                                                 | [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Link: Kubernetes Yaml Templates]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Link: kubectl cheatsheet]] |
 ** Admission Controllers
 - An admission controller is a piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object
 

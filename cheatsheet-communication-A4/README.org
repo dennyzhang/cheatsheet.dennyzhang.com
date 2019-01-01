@@ -21,7 +21,7 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4][CheatSheet: Career Path For Senior IT Professionals]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-health-A4][this repo]].
-** Pitfall For Geek Culture
+** Pitfalls For Geek Culture
 | Name                                     | Second Thinking                                                            |
 |------------------------------------------+----------------------------------------------------------------------------|
 | No information barrier; sharing anything | Information is power and profit margin. Only share the relevant            |
