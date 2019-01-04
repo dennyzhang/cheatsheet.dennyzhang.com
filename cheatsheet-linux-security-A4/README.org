@@ -21,10 +21,34 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-process-A4][CheatSheet: Linux Process]], [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][CheatSheet: Linux Networking]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-diff-A4][this repo]].
-** Security Summary
-| Name      | Comment                                                         |
-|-----------+-----------------------------------------------------------------|
-| Reference | [[https://cheatsheet.dennyzhang.com/cheatsheet-linux-capabilities-A4][CheatSheet: linux-capabilities]], [[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-security-A4][CheatSheet: Kubernetes Security]] |
+** Security Concepts
+| Name               | Comment                                                         |
+|--------------------+-----------------------------------------------------------------|
+| RABC               |                                                                 |
+| [[https://kubernetes.io/docs/reference/access-authn-authz/authentication/#user-impersonation][User impersonation]] | A user can act as another user through impersonation headers.   |
+| Reference          | [[https://cheatsheet.dennyzhang.com/cheatsheet-linux-capabilities-A4][CheatSheet: linux-capabilities]], [[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-security-A4][CheatSheet: Kubernetes Security]] |
+** Token
+| Name                  | Comment                                                            |
+|-----------------------+--------------------------------------------------------------------|
+| token                 | e.g, [[https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-token/][link: kubeadm token]]                                           |
+| Static token          |                                                                    |
+| Service Account Token |                                                                    |
+| OpenID Connect Token  |                                                                    |
+| Bear token            | In k8s, every service account has a secret with valid Bearer Token |
+| Refresh token         |                                                                    |
+** Identity Provider Management
+| Name                   | Comment                                                            |
+|------------------------+--------------------------------------------------------------------|
+| htpasswd               | HTTP basic auth                                                    |
+| Client certificates    |                                                                    |
+| Authenticating proxy   |                                                                    |
+| [[https://kubernetes.io/docs/reference/access-authn-authz/authentication/#webhook-token-authentication][Authentication webhook]] | Webhook authentication is a hook for verifying bearer tokens       |
+| LDAP                   |                                                                    |
+| Keystone               |                                                                    |
+| Oauth                  |                                                                    |
+| OpenID                 |                                                                    |
+| OIDC                   |                                                                    |
+- Multiple authenticator: Usually the first module to successfully authenticate the request short-circuits evaluation.
 ** Chmod
 | Name                         | Comment           |
 |------------------------------+-------------------|
@@ -32,19 +56,13 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 ** Chown
 | Name                         | Comment           |
 |------------------------------+-------------------|
-** Identity Provider Management
-| Name     | Comment |
-|----------+---------|
-| htpasswd |         |
-| LDAP     |         |
-| Keystone |         |
-| Oauth    |         |
-| OpenID   |         |
 ** AppArmor
 | Name | Comment |
 |------+---------|
 |      |         |
 ** More Resources
+https://stackoverflow.com/questions/46664104/how-to-sign-in-kubernetes-dashboard
+
 License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
 #+BEGIN_HTML
@@ -81,4 +99,3 @@ License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_lic
 * TODO AppArmor cheatsheet: https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/AppArmor.md?fileviewer=file-view-default :noexport:
 * TODO linux security cheatsheet: https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/Selinux.md?fileviewer=file-view-default
 https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Security/SecNewsFeed.md?fileviewer=file-view-default
-

@@ -28,7 +28,9 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | vSphere Optimization Assessment (VOA)          | pre-sales health check on a customer's vSphere environment      |
 | Hybrid Cloud Assessment (HCA)                  | show the value of vRealize Business for cloud to your customers |
 | vRBC                                           |                                                                 |
+| vrops token                                    | [[https://docs.vmware.com/en/vRealize-Operations-Manager/6.4/com.vmware.vcom.api.doc/GUID-C3F0A911-A587-40F7-9998-13D4880A0C2B.html][Link: Acquire an Authentication Token]]                           |
 | Vrops management pack for container monitoring | [[https://marketplace.vmware.com/vsx/solutions/vrealize-operations-management-pack-for-container-monitoring?ref=search][Download link]]                                                   |
+| Reference                                      | [[https://docs.vmware.com/en/vRealize-Operations-Manager/index.html][Link: vRealize Operations Manager Documentation]]                 |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -149,3 +151,9 @@ export PATH=${JQ_DIR}:$PATH
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO How vrops know k8s cluster creation time?                   :noexport:
 * TODO [#B] What's the impact of a wrong vCenter Server parameter  :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO How the bearer token is generated                           :noexport:
+* TODO [#A] How vrops talk with cadvisor                           :noexport:
+* TODO How to ssh vrops vm                                         :noexport:
+http://imallvirtual.com/dude-where-are-my-vrops-xmls/
+* TODO vrops cadvisor workflow                                     :noexport:

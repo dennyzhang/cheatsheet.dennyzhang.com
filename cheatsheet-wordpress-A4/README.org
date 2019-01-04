@@ -1442,3 +1442,51 @@ $con = new mysqli($servername, $username, $password);
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO wordpress中文的permlink                                     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO wordpress database size                                     :noexport:
+https://wordpress.org/support/topic/how-reduce-cache-size-of-wp_aal_request_cache/
+There is no setting to give a maximum allowed database table size with this plugin. However, you can set an interval to remove expired caches by going to Dashboard -> Amazon Auto Links -> Settings -> Cache -> Interval for Removing Expired Caches. Maybe you want to set it to 1 day or something.
+
+** TODO mysql show database size
+ https://www.a2hosting.com/kb/developer-corner/mysql/determining-the-size-of-mysql-databases-and-tables
+
+ SELECT table_schema AS "Database", 
+ ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Size (MB)" 
+ FROM information_schema.TABLES 
+ GROUP BY table_schema;
+
+ #+BEGIN_EXAMPLE
+ mysql> SELECT table_schema AS "Database",
+     -> ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Size (MB)"
+     -> FROM information_schema.TABLES
+     -> GROUP BY table_schema;
+
+ +--------------------+-----------+
+ | Database           | Size (MB) |
+ +--------------------+-----------+
+ | architect          |    938.33 |
+ | brain              |   5925.67 |
+ | cheatsheet         |    118.39 |
+ | information_schema |      0.01 |
+ | mysql              |      6.14 |
+ | performance_schema |      0.00 |
+ | sys                |      0.02 |
+ | wordpress          |  12145.61 |
+ +--------------------+-----------+
+ 8 rows in set (0.57 sec)
+ #+END_EXAMPLE
+
+
+ SELECT table_name AS "Table",
+ ROUND(((data_length + index_length) / 1024 / 1024), 2) AS "Size (MB)"
+ FROM information_schema.TABLES
+ WHERE table_schema = "wordpress"
+ ORDER BY (data_length + index_length) DESC;
+
+ SELECT table_name AS "Table",
+ ROUND(((data_length + index_length) / 1024 / 1024), 2) AS "Size (MB)"
+ FROM information_schema.TABLES
+ WHERE table_schema = "brain"
+ ORDER BY (data_length + index_length) DESC;
+** wordpress wp_aal_request_cache
+https://wordpress.org/support/topic/how-reduce-cache-size-of-wp_aal_request_cache/
