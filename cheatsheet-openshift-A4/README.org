@@ -67,7 +67,7 @@ File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]]
 | Minishift                    |                                                                             |
 | Reference                    | [[https://www.openshift.com/products/pricing/][Link: OpenShift plans and pricing]]                                           |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/openshift-ansible.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/openshift-ansible-flow.png]]
 ** OpenShift Glossary
 | Name                     | Command                                                                                    |
 |--------------------------+--------------------------------------------------------------------------------------------|
