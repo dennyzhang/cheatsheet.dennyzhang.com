@@ -1,4 +1,4 @@
-* CheatSheet: Career Path For Senior IT Professionals                  :Life:
+* CheatSheet: IT Career Path                                           :Life:
 :PROPERTIES:
 :type:     life
 :export_file_name: cheatsheet-it-career-A4.pdf
@@ -22,17 +22,18 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-health-A4][this repo]].
 ** Common Career Paths
-| Name                              | Role Model          | Key Value                                                  |
-|-----------------------------------+---------------------+------------------------------------------------------------|
-| Engineering in Big Corprotate     |                     | Long engagement for the project + solid people connections |
-| Switch to management track        |                     | People + Project management & Conflict management          |
-| Join a tech startup as tech leads |                     | Can-do attitude + Skills + Luck                            |
-| Software architect                |                     | Know tools + domain knowledge + fit business requirements  |
-| Tech Community evangelist         | [[https://aws.amazon.com/blogs/aws/author/jbarr/][Jeff Barr in AWS]]    |                                                            |
-| Tech super star                   | [[https://en.wikipedia.org/wiki/Jeff_Dean_(computer_scientist)][Jeff Dean in Google]] | Solve tech puzzles that no one else can do                 |
-| Run own your SaaS business        |                     | Handson + Bussiness Vision                                 |
-| Engineering to pre-sale           |                     | Understand tech quickly + design solutions for customers   |
-| Switch to non-IT industries       |                     |                                                            |
+| Name                              | Key Value                                                                        |
+|-----------------------------------+----------------------------------------------------------------------------------|
+| Engineering in Big Corprotate     | Long engagement for the project + solid people connections                       |
+| Switch to management track        | People + Project management & Conflict management                                |
+| Join a tech startup as tech leads | Can-do attitude + Skills + Luck                                                  |
+| Software architect                | Know tools + domain knowledge + fit business requirements                        |
+| Tech Community evangelist         | Model: [[https://aws.amazon.com/blogs/aws/author/jbarr/][Jeff Barr in AWS]]                                                          |
+| Tech super star                   | Model: [[https://en.wikipedia.org/wiki/Jeff_Dean_(computer_scientist)][Jeff Dean in Google]]. Solve tech puzzles that no one else can do           |
+| Run own your SaaS business        | Handson + Bussiness Vision                                                       |
+| Engineering to pre-sale           | Understand tech quickly + design solutions for customers                         |
+| Switch to non-IT industries       |                                                                                  |
+| Reference                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4][CheatSheet: IT Career Path]], [[https://cheatsheet.dennyzhang.com/cheatsheet-communication-A4][Cheatsheet: IT Communication]], [[https://cheatsheet.dennyzhang.com/cheatsheet-opensource-A4][Cheatsheet: Opensource]] |
 ** Path - Tech Community
 | Name | Comment |
 |------+---------|

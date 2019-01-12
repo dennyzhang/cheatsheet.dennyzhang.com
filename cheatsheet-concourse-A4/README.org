@@ -85,6 +85,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 ** Concourse Security
 | Name                               | Summary                                                                          |
 |------------------------------------+----------------------------------------------------------------------------------|
+| Install ansible vault in mac       | =brew install ansible=                                                           |
 | Fly login to the default main team | =fly -t $target login -n main -c $concourse_url=                                 |
 | Fly login to a different team      | =fly -t $target login -n $team_name -c $concourse_url=                           |
 | List all teams                     | =fly -t $target teams=,  =fly -t $target teams -d=                               |
@@ -95,6 +96,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | Login to a team                    | =fly -t $target set-team -n $team_name=                                          |
 | Fly conf file                      | =~/.flyrc=                                                                       |
 | Reference                          | After login to the *main* team, you can update other teams. [[https://concourse-ci.org/teams.html][Link: Concourse Team]] |
+** Concourse Workers
+| Name                          | Summary                     |
+|-------------------------------+-----------------------------|
+| List all concourse workers    | =fly -t $target workers=    |
+| List all concourse containers | =fly -t $target containers= |
 ** fly Online Usage
 #+BEGIN_EXAMPLE
 bash-3.2$ fly --help
@@ -400,3 +406,8 @@ because Concourse doesn't do cycle detection and everything will be bad
 #+END_EXAMPLE
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Concourse tag the worker, and use it for the same pipeline  :noexport:
+* TODO Concourse: insufficient subnets remaining in the pool       :noexport:
+https://github.com/concourse/concourse/issues/293
+
+"Insufficient subnets" is akin to "out of memory" or "out of disk"
+* TODO Concourse container guardian                                :noexport:

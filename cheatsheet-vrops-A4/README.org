@@ -30,6 +30,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | vRBC                                           |                                                                 |
 | vrops token                                    | [[https://docs.vmware.com/en/vRealize-Operations-Manager/6.4/com.vmware.vcom.api.doc/GUID-C3F0A911-A587-40F7-9998-13D4880A0C2B.html][Link: Acquire an Authentication Token]]                           |
 | Vrops management pack for container monitoring | [[https://marketplace.vmware.com/vsx/solutions/vrealize-operations-management-pack-for-container-monitoring?ref=search][Download link]]                                                   |
+| vrops enable sshd                              | [[https://www.vgyan.in/enable-ssh-on-vrops/][Link: vRealize Part 7 - Enable SSH on vROPS]]                     |
 | Reference                                      | [[https://docs.vmware.com/en/vRealize-Operations-Manager/index.html][Link: vRealize Operations Manager Documentation]]                 |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -83,6 +84,34 @@ their IT cost.
 * TODO As end users, why I need the monitoring feature of vrops?   :noexport:
 * TODO vrops workflow: know master and then worker nodes?          :noexport:
 * TODO Does vrops support mulitple k8s endpoints, thus it can fail-over? :noexport:
+* TODO vrops jmx: how it works?                                    :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] vrops: do we really need to ops file in pks-vrops-release.yml? :noexport:IMPORTANT:
+* TODO [#A] why we need pks-vrops-release/jobs/pks-vrops-ops-files? :noexport:
+* TODO [#A] tile: why we need ops file of add-vrops.yml?           :noexport:
+* TODO [#A] How to run clean vrops unregister manually?            :noexport:
+JQ_DIR=/var/vcap/packages/pks-vrops-jq/bin
+export PATH=${JQ_DIR}:$PATH
+
+/var/vcap/packages/pks-vrops-scripts/pks-vrops-register.sh --ru https://vc-ops-slice-1:443 --rl admin
+ --rp 'Admin!23' -x /var/vcap/jobs/vrops-register/config/server_ca.crt -k
+ --kcn service-instance_9b9611f6-eb7b-4624-9b61-11457d948a55
+ --kmu https://myk8s1.pks.com:8443 --vu https://192.168.111.131 --cp 31194 --kl admin --kt o-Vk4iXTq3Uygyu2QHKCNyvE --delete
+
+/var/vcap/packages/pks-vrops-scripts/pks-vrops-register.sh --ru https://vc-ops-slice-1:443 --rl admin --rp XXX -x /var/vcap/jobs/vrops-register/config/server_ca.crt -k --kcn service-instance_9b9611f6-eb7b-4624-9b61-11457d948a55 --kmu https://myk8s1.pks.com:8443 --vu https://192.168.111.131 --cp 31194 --kl admin --kt o-Vk4iXTq3Uygyu2QHKCNyvE --delete
+
+* How vrops works with multi-master envs?                          :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO How vrops know k8s cluster creation time?                   :noexport:
+* TODO [#B] What's the impact of a wrong vCenter Server parameter  :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO How to ssh vrops vm                                         :noexport:
+https://www.vgyan.in/enable-ssh-on-vrops/
+http://imallvirtual.com/dude-where-are-my-vrops-xmls/
+* TODO [#A] How vrops talk with cadvisor                           :noexport:
+* TODO vrops cadvisor workflow                                     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO How the bearer token is generated                           :noexport:
 * TODO [#A] vrops error: Manual delete registration from GUI, then re-register: CredentialInstance with identifier ... and name: ... already exists :noexport:
 Failed to configure VMware vRealize Operations Management pack: {"message":"\"CredentialInstance\" with identifier
 \"165dcada-35c9-4ea5-8168-c0f974b34404 and name: 5ef7c1b8-b429-4364-bbcd-06c70e0c936b\" already exists.",
@@ -131,29 +160,3 @@ Stderr
 Succeeded
 #+END_EXAMPLE
 
-* TODO vrops jmx: how it works?                                    :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] vrops: do we really need to ops file in pks-vrops-release.yml? :noexport:IMPORTANT:
-* TODO [#A] why we need pks-vrops-release/jobs/pks-vrops-ops-files? :noexport:
-* TODO [#A] tile: why we need ops file of add-vrops.yml?           :noexport:
-* TODO [#A] How to run clean vrops unregister manually?            :noexport:
-JQ_DIR=/var/vcap/packages/pks-vrops-jq/bin
-export PATH=${JQ_DIR}:$PATH
-
-/var/vcap/packages/pks-vrops-scripts/pks-vrops-register.sh --ru https://vc-ops-slice-1:443 --rl admin
- --rp 'Admin!23' -x /var/vcap/jobs/vrops-register/config/server_ca.crt -k
- --kcn service-instance_9b9611f6-eb7b-4624-9b61-11457d948a55
- --kmu https://myk8s1.pks.com:8443 --vu https://192.168.111.131 --cp 31194 --kl admin --kt o-Vk4iXTq3Uygyu2QHKCNyvE --delete
-
-/var/vcap/packages/pks-vrops-scripts/pks-vrops-register.sh --ru https://vc-ops-slice-1:443 --rl admin --rp XXX -x /var/vcap/jobs/vrops-register/config/server_ca.crt -k --kcn service-instance_9b9611f6-eb7b-4624-9b61-11457d948a55 --kmu https://myk8s1.pks.com:8443 --vu https://192.168.111.131 --cp 31194 --kl admin --kt o-Vk4iXTq3Uygyu2QHKCNyvE --delete
-
-* How vrops works with multi-master envs?                          :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO How vrops know k8s cluster creation time?                   :noexport:
-* TODO [#B] What's the impact of a wrong vCenter Server parameter  :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO How the bearer token is generated                           :noexport:
-* TODO [#A] How vrops talk with cadvisor                           :noexport:
-* TODO How to ssh vrops vm                                         :noexport:
-http://imallvirtual.com/dude-where-are-my-vrops-xmls/
-* TODO vrops cadvisor workflow                                     :noexport:

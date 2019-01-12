@@ -21,6 +21,29 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-openshift-A4][this repo]].
+** OpenShift FAQ
+| Name                                                 | Summary                                       |
+|------------------------------------------------------+-----------------------------------------------|
+| Kubernetes versions for different OpenShift versions | [[https://docs.openshift.com/container-platform/3.9/architecture/infrastructure_components/kubernetes_infrastructure.html][openshift 3.9]], [[https://docs.openshift.com/container-platform/3.10/architecture/infrastructure_components/kubernetes_infrastructure.html][openshift 3.10]], [[https://docs.openshift.com/container-platform/3.11/architecture/infrastructure_components/kubernetes_infrastructure.html][openshift 3.11]] |
+** OpenShift Key Components
+| Name                              | Command                                                        |
+|-----------------------------------+----------------------------------------------------------------|
+| Computing virtualization          | [[https://en.wikipedia.org/wiki/Red_Hat_Virtualization][RHV]] (Red Hat Virtualization), based on KVM                     |
+| SDN networking                    | Based upon OVS                                                 |
+| VM/Cluster lifecycle management   | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] ? Notification of failed components but no recovery |
+| Container optimized OS            |                                                                |
+| Container Image Compliance Scan   | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] OpenSCAP, like Harbor Clair                         |
+| Container runtime                 | dockerd, [[https://cri-o.io/][cri-o]]                                                 |
+| Container image registry          | OpenShift Container Registry (OCR), powered by [[https://www.openshift.com/products/quay][Redhat Quay]]     |
+| Packages k8s cluster orchestrator | [[https://coreos.com/tectonic/docs/latest/][tectonic]] ?                                                     |
+| Component Packaging               | Ansible modules?                                               |
+| CSI for Persistent volume         | GlusterFS, NFS, Local storage                                  |
+| [[https://docs.openshift.com/container-platform/3.11/architecture/index.html#arch-index-how-is-it-secured][Authorization]]                     | OpenShift Container Platform policy engine                     |
+| Disater Recovery                  | Notification of failed components but no recovery              |
+| Control Plane                     |                                                                |
+| Reference                         | [[https://docs.openshift.com/container-platform/3.11/scaling_performance/cluster_limits.html#scaling-performance-cluster-limits][Link: OpenShift Container Platform Cluster Limits]]              |
+| Reference                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][Link: OpenShift Key Components]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][Link: PKS Key Components]]       |
+[[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture_overview.png]]
 ** New Concepts From OpenShift
 | Name                                | Command          |
 |-------------------------------------+------------------|
@@ -34,30 +57,17 @@ File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]]
 | Route                               | Like k8s ingress |
 | Metering and Chargeback             |                  |
 | Operator SDK                        |                  |
-** OpenShift Key Components
-| Name                              | Command                                                  |
-|-----------------------------------+----------------------------------------------------------|
-| Computing virtualization          | [[https://en.wikipedia.org/wiki/Red_Hat_Virtualization][RHV]] (Red Hat Virtualization), based on KVM               |
-| Container runtime                 | [[https://cri-o.io/][cri-o]]                                                    |
-| SDN networking                    | Based upon OVS                                           |
-| VM/Cluster lifecycle management   | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] ?                                             |
-| Disater Recovery                  |                                                          |
-| Control Plane                     |                                                          |
-| Docker image registry             | [[https://www.openshift.com/products/quay][Redhat Quay]]                                              |
-| Packages k8s cluster orchestrator | [[https://coreos.com/tectonic/docs/latest/][tectonic]]                                                 |
-| Container optimized OS            |                                                          |
-| Persistent volume                 | Gluster                                                  |
-| Management Console                |                                                          |
-| Docker Image Compliance Scan      | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] OpenSCAP, like Harbor Clair                   |
-| Reference                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][Link: OpenShift Key Components]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][Link: PKS Key Components]] |
-[[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture_overview.png]]
 ** OpenShift Solutions
-| Name                | Command |
-|---------------------+---------|
-| OKD                 |         |
-| Minishift           |         |
-| OpenShift Dedicated |         |
+| Name                         | Command                                                                     |
+|------------------------------+-----------------------------------------------------------------------------|
+| [[https://www.openshift.com/products/online/][OpenShift Online]]             | Hosted by Red Hat in AWS public cloud                                       |
+| [[https://www.openshift.com/products/dedicated/][OpenShift Dedicated]]          | Virtual private cloud, managed by Red Hat in any AWS region                 |
+| [[https://www.openshift.com/products/container-platform/][OpenShift Container Platform]] | Any on-premise, public, or private cloud infra with RedHat Enterprise Linux |
+| OKD                          |                                                                             |
+| Minishift                    |                                                                             |
+| Reference                    | [[https://www.openshift.com/products/pricing/][Link: OpenShift plans and pricing]]                                           |
 
+[[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/openshift-ansible.png]]
 ** OpenShift Glossary
 | Name                     | Command                                                                                    |
 |--------------------------+--------------------------------------------------------------------------------------------|
@@ -79,6 +89,30 @@ File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]]
 | OpenShift online         | https://cloud.openshift.com                                                                |
 | Reference                | [[https://cheatsheet.dennyzhang.com/cheatsheet-minishift-A4][Minishift CheatSheet]] [[https://docs.okd.io/latest/minishift/index.html][Link: Minishift]]                                                       |
 | Reference                | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-rancher-A4][Rancher CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                                   |
+** OpenShift Assumptions
+| Name                   | Summary                                                                                              |
+|------------------------+------------------------------------------------------------------------------------------------------|
+| Single instance of K8S | One OpenShift One K8S. Use k8s namespace soly for multi-tenancy                                      |
+| [[https://docs.openshift.com/container-platform/3.11/release_notes/index.html#release-versioning-policy][No mixed versions]]      | Versions must match between master and node hosts, excluding upgrade; Old oc can talk to new servers |
+| Node roles             | Master nodes, worker nodes, and etcd nodes.                                                          |
+** OpenShift Maintainance
+| Name                 | Command                                                                                   |
+|----------------------+-------------------------------------------------------------------------------------------|
+| Install clusters     | Run ansible playbooks to install OpenShift                                                |
+| [[https://docs.openshift.com/container-platform/3.11/upgrading/index.html#install-config-upgrading-index][Upgrade clusters]]     | Support both in-place upgrade and blue-green deployments; Use ansible to upgrade clusters |
+| Node problem healing |                                                                                           |
+** OpenShift Cfg Files
+| Name                                                | Summary                                                                  |
+|-----------------------------------------------------+--------------------------------------------------------------------------|
+| [[https://docs.openshift.com/container-platform/3.11/install_config/imagestreams_templates.html#install-config-imagestreams-templates][The default image stream and template files]]         | =/usr/share/openshift/examples/=, =/etc/origin/examples/=                |
+| Data folder for master and worker nodes             | =/var/lib=                                                               |
+| Volumes and potential core dumps of the binary      | =/var/lib/origin=                                                        |
+| Cloud provider specific conf(AWS, Azure, etc)       | =/etc/origin/cloudprovider=                                              |
+| Additional third party volume plug-ins              | =/usr/libexec/kubernetes/kubelet-plugins=, =/etc/origin/kubelet-plugins= |
+| All certificates, conf files, admin.kubeconfig, etc | =/etc/origin/master=                                                     |
+| Master node conf profile                            | =/etc/origin/master/admin.kubeconfig=                                    |
+| Used for node bootstrapping nodes other than master | =/etc/origin/master/bootstrap.kubeconfig=                                |
+| Node conf profile                                   | =/etc/origin/node/node.kubeconfig=, =/etc/origin/node/node-config.yaml=  |
 ** OC - Highlights
 | Name                                              | Command                                                               |
 |---------------------------------------------------+-----------------------------------------------------------------------|
@@ -424,6 +458,10 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+LINK_UP:
 #+LINK_HOME:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE openshift monitoring feature: GAP                           :noexport:
+  CLOSED: [2018-11-12 Mon 08:38]
+https://www.google.com.hk/search?q=openshift+monitoring
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO cluster-logging-operator                                    :noexport:
 https://github.com/openshift/cluster-logging-operator
 * TODO Key factors to evaluate Kubernetes Service Solutions        :noexport:
@@ -723,13 +761,19 @@ openshift-logging /config.yml
 https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/index.html
 ** Builds and image streams
 ** Templates
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* DONE openshift monitoring feature: GAP                           :noexport:
-  CLOSED: [2018-11-12 Mon 08:38]
-https://www.google.com.hk/search?q=openshift+monitoring
 * TODO https://bitbucket.org/devops_sysops/cheatsheetcollection/src/a4b5d9acc0a852254a2eb8719068f9361d99e426/Containers/Openshift.md?fileviewer=file-view-default :noexport:
-* TODO [#A] How OVS support openshift SDN?
+* TODO [#A] How OVS support openshift SDN?                         :noexport:
 - Original plugin: ovs-subnet provided only a flat network for all pods & services
 - Ovs-multitenant plugin added project-level isolation
 - Ovs-networkpolicy plugin adding isolation policies via NetworkPolicy objects
 * Video https://vmware.zoom.us/recording/play/106MqPZArVrxC68iPX7zTqucssk3mstnMU1Ysnt4BV__H_KM0chCFQwJU_hMVrWe?continueMode=true :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO X Highlights for OpenShift                                  :noexport:
+- 3 roles
+- cri-o as alternative container runtime
+- storage: GlusterFS, NFS, Local storage
+* TODO Controller Manager Server in OpenShift master node?         :noexport:
+https://docs.openshift.com/container-platform/3.11/architecture/infrastructure_components/kubernetes_infrastructure.html#master
+* TODO Openshift not vanilla k8s? with OpenShift Add-Ons?          :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO OpenShift no control plane: how to handle time-consuming provisioning request? :noexport:

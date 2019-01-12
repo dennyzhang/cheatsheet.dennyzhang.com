@@ -22,15 +22,27 @@
 
 File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-tile-A4][this repo]].
 ** om - Basic
-| Name                                 | Command                                                                                      |
-|--------------------------------------+----------------------------------------------------------------------------------------------|
-| [[https://github.com/pivotal-cf/om][om]]                                   | a command-line API client for Pivotal Operations Manager                                     |
-| omcli                                | alias omcli="om -t https://30.0.0.5 -u admin -p <password> -k"                               |
-| Upload stemcell from cli             | =omcli upload-stemcell -s </path/stemcell.tgz>=                                              |
-| Upload tile from cli                 | =omcli upload-product -p </path/myproduct.pivotal>=                                          |
-| List all properties for a deployment | =bosh deployments=, =omcli curl -p /api/v0/staged/products/${bosh_deployment}/properties -s= |
-| List all installed tiles             | =omcli curl -p /api/v0/installations=                                                        |
-| json output                          | =omcli -k --format=json staged-products=                                                     |
+| Name                                  | Command                                                                                                 |
+|---------------------------------------+---------------------------------------------------------------------------------------------------------|
+| [[https://github.com/pivotal-cf/om][om]]                                    | A command-line API client for Pivotal Operations Manager                                                |
+| omcli                                 | export passwd='CHANGEME; alias omcli="om -t https://30.0.0.5 -u admin -p $password -k"                  |
+| Upload tile to opsmanager via cli     | =omcli upload-product -p </path/myproduct.pivotal>=                                                     |
+| Upload stemcell to opsmanager via cli | =omcli upload-stemcell -s </path/stemcell.tgz>=                                                         |
+| List all properties for a deployment  | =bosh deployments=, =omcli curl -p /api/v0/staged/products/${bosh_deployment}/properties -s=            |
+| Get uaa admin password                | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.uaa_admin_password= |
+| Get bosh connect credential           | =omcli curl -p /api/v0/deployed/director/credentials/bosh_commandline_credentials=                      |
+| List all installed tiles              | =omcli curl -p /api/v0/installations=                                                                   |
+| Show status of apply changes          | =omcli installation-log --id 2=, =omcli installation-log --id $installation_id=                         |
+| json output                           | =omcli -k --format=json staged-products=                                                                |
+| Reference                             | [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tile-A4][Tile CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4][UAA CheatSheet]]                                        |
+** Tile Challenges
+| Name                                         | Comment                                               |
+|----------------------------------------------+-------------------------------------------------------|
+| Tiles are big                                | It's usually GBs. Too big to distribute               |
+| In Opsmanager, can't cancel task             | Costly to make mistakes                               |
+| In Opsmanager, can't downgrade               | Inconvenient for development cycle                    |
+| In Opsmanager, =review changes= is confusing | The review feature should be more informative         |
+| Slow to apply changes                        | Usually it takes hours, while minutes in *kubernetes* |
 ** om product
 | Name                        | Summary                                                                   |
 |-----------------------------+---------------------------------------------------------------------------|
@@ -61,7 +73,6 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | pks tile -> pks certificates                | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.pivotal-container-service.pks_tls=            |
 | pks tile -> whether wavefront is enabled    | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.wavefront=                         |
 | pks tile -> wavefront token                 | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.wavefront.enabled.wavefront_token= |
-| Reference                                   | [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]]                                                                                        |
 ** Tile Reference
 | Name           | Command                                                                         |
 |----------------+---------------------------------------------------------------------------------|
@@ -80,14 +91,6 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | Grant file access   | =chown tempest-web:tempest-web /var/tempest/releases/<your-release.tgz>= |
 | Tile entrance file  | =/var/tempest/workspaces/default/metadata/*.yml=                         |
 | Tile jobs folder    | =/var/vcap/jobs=                                                         |
-** Tile Challenges
-| Name                                         | Comment                                               |
-|----------------------------------------------+-------------------------------------------------------|
-| Tiles are big                                | It's usually GBs. Too big to distribute               |
-| In Opsmanager, can't cancel task             | Costly to make mistakes                               |
-| In Opsmanager, can't downgrade               | Inconvenient for development cycle                    |
-| In Opsmanager, =review changes= is confusing | The review feature should be more informative         |
-| Slow to apply changes                        | Usually it takes hours, while minutes in *kubernetes* |
 ** om cli Online Help
 #+BEGIN_EXAMPLE
 > om --help
@@ -477,7 +480,7 @@ X-Xss-Protection: 1; mode=block
 * TODO How tile do the garbage clean                               :noexport:
 * TODO How to manually delete the tile?                            :noexport:
 * TODO [#A] tile: post_deploy: add vrops_register and vrops_unregister, instead of vrops_registration :noexport:IMPORTANT:
-* TODO tile: triple parentheses
+* TODO tile: triple parentheses                                    :noexport:
 #+BEGIN_EXAMPLE
 ./instance-groups/pivotal-container-service.yml:74:  username: ((( odb_broker_basicauth.username )))
 ./instance-groups/pivotal-container-service.yml:75:  password: ((( odb_broker_basicauth.password )))
@@ -487,3 +490,6 @@ X-Xss-Protection: 1; mode=block
 ./jobs/pks-api.yml:18:    username: ((( pks_api_basicauth.username )))
 ./jobs/pks-api.yml:19:    password: ((( pks_api_basicauth.password )))
 #+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO k8s windows workload
+* TODO tile get deployment status                                  :noexport:

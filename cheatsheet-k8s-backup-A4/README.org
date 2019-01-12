@@ -1,0 +1,181 @@
+* CheatSheet: Kubernetes Backup                                       :Cloud:
+:PROPERTIES:
+:type:     kubernetes
+:export_file_name: cheatsheet-k8s-backup-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-k8s-backup-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-k8s-backup-A4/cheatsheet-k8s-backup-A4.pdf][cheatsheet-k8s-backup-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/cloud/][Cloud]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-k8s-backup-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Kubernetes Yaml Templates]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-tile-A4][this repo]].
+** heptio ark
+| Name      | Summary                                             |
+|-----------+-----------------------------------------------------|
+| [[https://github.com/heptio/ark][ark]]       | Kubernetes backup and recovery. Initiated by [[https://heptio.com/][heptio]] |
+| Reference | [[https://www.youtube.com/watch?v=4v4jCHsEidw][YouTube: 15 minutes with Heptio Ark]]                 |
+| Reference | [[https://github.com/heptio/ark/blob/master/docs/support-matrix.md#compatible-storage-providers][Link: ark supported storage providers]]               |
+** heptio ark cli
+| Name                    | Command                                               |
+|-------------------------+-------------------------------------------------------|
+| Create backup by labels | =ark backup create $BACKUP_NAME --selector app=nginx= |
+| Check backupset info    | =ark backup describe $BACKUP_NAME=                    |
+| Restore from backupset  | =ark restore create --from-backup $BACKUP_NAME=       |
+| Check restore status    | =ark restore get=                                     |
+| Delete backupset        | =ark backup delete $BACKUP_NAME=                      |
+** heptio ark CRD
+| Name                                   | Summary |
+|----------------------------------------+---------|
+| backups.ark.heptio.com                 |         |
+| backupstoragelocations.ark.heptio.com  |         |
+| deletebackuprequests.ark.heptio.com    |         |
+| downloadrequests.ark.heptio.com        |         |
+| podvolumebackups.ark.heptio.com        |         |
+| podvolumerestores.ark.heptio.com       |         |
+| resticrepositories.ark.heptio.com      |         |
+| restores.ark.heptio.com                |         |
+| schedules.ark.heptio.com               |         |
+| volumesnapshotlocations.ark.heptio.com |         |
+** Sample output of ark backup
+#+BEGIN_EXAMPLE
+> ark backup describe nginx-backup
+Name:         nginx-backup
+Namespace:    heptio-ark
+Labels:       <none>
+Annotations:  <none>
+
+Phase:  New
+
+Namespaces:
+  Included:  *
+  Excluded:  <none>
+
+Resources:
+  Included:        *
+  Excluded:        <none>
+  Cluster-scoped:  auto
+
+Label selector:  app=nginx
+
+Storage Location:
+
+Snapshot PVs:  auto
+
+TTL:  720h0m0s
+
+Hooks:  <none>
+
+Backup Format Version:  0
+
+Started:    <n/a>
+Completed:  <n/a>
+
+Expiration:  0001-01-01 00:00:00 +0000 UTC
+
+Validation errors:  <none>
+
+Persistent Volumes: <none included>
+#+END_EXAMPLE
+** ark CLI Online Help
+#+BEGIN_EXAMPLE
+> ./ark --help
+Heptio Ark is a tool for managing disaster recovery, specifically for Kubernetes
+cluster resources. It provides a simple, configurable, and operationally robust
+way to back up your application state and associated data.
+
+If you're familiar with kubectl, Ark supports a similar model, allowing you to
+execute commands such as 'ark get backup' and 'ark create schedule'. The same
+operations can also be performed as 'ark backup get' and 'ark schedule create'.
+
+Usage:
+  ark [command]
+
+Available Commands:
+  backup            Work with backups
+  backup-location   Work with backup storage locations
+  bug               Report an Ark bug
+  client            Ark client related commands
+  completion        Output shell completion code for the specified shell (bash or zsh)
+  create            Create ark resources
+  delete            Delete ark resources
+  describe          Describe ark resources
+  get               Get ark resources
+  help              Help about any command
+  plugin            Work with plugins
+  restic            Work with restic
+  restore           Work with restores
+  schedule          Work with schedules
+  server            Run the ark server
+  snapshot-location Work with snapshot locations
+  version           Print the ark version and associated image
+
+Flags:
+      --alsologtostderr                  log to standard error as well as files
+  -h, --help                             help for ark
+      --kubeconfig string                Path to the kubeconfig file to use to talk to the Kubernetes apiserver. If unset, try the environment variable KUBECONFIG, as well as in-cluster configuration
+      --kubecontext string               The context to use to talk to the Kubernetes apiserver. If unset defaults to whatever your current-context is (kubectl config current-context)
+      --log_backtrace_at traceLocation   when logging hits line file:N, emit a stack trace (default :0)
+      --log_dir string                   If non-empty, write log files in this directory
+      --logtostderr                      log to standard error instead of files
+  -n, --namespace string                 The namespace in which Ark should operate (default "heptio-ark")
+      --stderrthreshold severity         logs at or above this threshold go to stderr (default 2)
+  -v, --v Level                          log level for V logs
+      --vmodule moduleSpec               comma-separated list of pattern=N settings for file-filtered logging
+
+Use "ark [command] --help" for more information about a command.
+#+END_EXAMPLE
+** More Resources
+https://kubedex.com/resource/ark/
+
+https://blog.heptio.com/announcing-ark-v0-10-with-greater-support-for-hybrid-and-multi-cloud-deployments-b52f6ec6148a
+
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+
+<a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+<a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-k8s-backup-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-k8s-backup-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-k8s-backup-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO How ark backup is done for huge dataset?                    :noexport:
+* TODO why heptio create ark cli tool, instead of reusing kubectl  :noexport:

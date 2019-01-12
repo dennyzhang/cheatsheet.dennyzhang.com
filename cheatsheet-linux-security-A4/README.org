@@ -22,11 +22,12 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-diff-A4][this repo]].
 ** Security Concepts
-| Name               | Comment                                                         |
-|--------------------+-----------------------------------------------------------------|
-| RABC               |                                                                 |
-| [[https://kubernetes.io/docs/reference/access-authn-authz/authentication/#user-impersonation][User impersonation]] | A user can act as another user through impersonation headers.   |
-| Reference          | [[https://cheatsheet.dennyzhang.com/cheatsheet-linux-capabilities-A4][CheatSheet: linux-capabilities]], [[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-security-A4][CheatSheet: Kubernetes Security]] |
+| Name                           | Comment                                                         |
+|--------------------------------+-----------------------------------------------------------------|
+| RABC                           |                                                                 |
+| [[https://en.wikipedia.org/wiki/Public_key_infrastructure][Public key infrastructure(PKI)]] |                                                                 |
+| [[https://kubernetes.io/docs/reference/access-authn-authz/authentication/#user-impersonation][User impersonation]]             | A user can act as another user through impersonation headers.   |
+| Reference                      | [[https://cheatsheet.dennyzhang.com/cheatsheet-linux-capabilities-A4][CheatSheet: linux-capabilities]], [[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-security-A4][CheatSheet: Kubernetes Security]] |
 ** Token
 | Name                  | Comment                                                            |
 |-----------------------+--------------------------------------------------------------------|
@@ -37,17 +38,18 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 | Bear token            | In k8s, every service account has a secret with valid Bearer Token |
 | Refresh token         |                                                                    |
 ** Identity Provider Management
-| Name                   | Comment                                                            |
-|------------------------+--------------------------------------------------------------------|
-| htpasswd               | HTTP basic auth                                                    |
-| Client certificates    |                                                                    |
-| Authenticating proxy   |                                                                    |
-| [[https://kubernetes.io/docs/reference/access-authn-authz/authentication/#webhook-token-authentication][Authentication webhook]] | Webhook authentication is a hook for verifying bearer tokens       |
-| LDAP                   |                                                                    |
-| Keystone               |                                                                    |
-| Oauth                  |                                                                    |
-| OpenID                 |                                                                    |
-| OIDC                   |                                                                    |
+| Name                   | Comment                                                      |
+|------------------------+--------------------------------------------------------------|
+| htpasswd               | HTTP basic auth                                              |
+| Keystone               |                                                              |
+| LDAP                   |                                                              |
+| Client certificates    |                                                              |
+| Request header         |                                                              |
+| [[https://en.wikipedia.org/wiki/OpenID_Connect][OpenID connect(OIDC)]]   |                                                              |
+| Authenticating proxy   |                                                              |
+| [[https://kubernetes.io/docs/reference/access-authn-authz/authentication/#webhook-token-authentication][Authentication webhook]] | Webhook authentication is a hook for verifying bearer tokens |
+| Oauth                  |                                                              |
+| OpenID                 |                                                              |
 - Multiple authenticator: Usually the first module to successfully authenticate the request short-circuits evaluation.
 ** Chmod
 | Name                         | Comment           |
@@ -56,12 +58,18 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 ** Chown
 | Name                         | Comment           |
 |------------------------------+-------------------|
+** Products
+| Name       | Comment                                                                                                 |
+|------------+---------------------------------------------------------------------------------------------------------|
+| [[https://www.vmware.com/products/appdefense.html][AppDefense]] | A data center endpoint security product. Protect applications running in virtualized envs. [[https://www.youtube.com/watch?v=HiJgn6GGX5w][YouTube link]] |
 ** AppArmor
 | Name | Comment |
 |------+---------|
 |      |         |
 ** More Resources
 https://stackoverflow.com/questions/46664104/how-to-sign-in-kubernetes-dashboard
+
+https://docs.openshift.com/container-platform/3.11/install_config/configuring_authentication.html#install-config-configuring-authentication
 
 License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

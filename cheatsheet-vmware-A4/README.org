@@ -22,94 +22,118 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
 ** VMware Overview
-| Name                          | Summary                                                   |
-|-------------------------------+-----------------------------------------------------------|
-| [[https://www.vmware.com/products/vsphere.html][vSphere Suite]]                 | Virtualization                                            |
-| [[https://www.vmware.com/products/vsan.html][vSAN]]                          | Storage                                                   |
-| [[https://www.vmware.com/products/nsx.html][NSX]]                           | Networking                                                |
-| [[https://www.vmware.com/products/vrealize-suite.html][vRealize Suite]]                | Management                                                |
-| [[https://docs.vmware.com/en/VMware-Cloud-Foundation/index.html][VCF (VMware Cloud Foundation)]] | An integrated software stack for everything SDDC requires |
-| Reference                     | [[https://cheatsheet.dennyzhang.com/category/vmware][VMware CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-cloudfoundry-A4][Cloudfoundry CheatSheet]]                |
+| Name                          | Summary                                                                 |
+|-------------------------------+-------------------------------------------------------------------------|
+| [[https://www.vmware.com/][VMware]]                        | Headquartered at 3401 Hillview Avenue, Palo Alto; 117 offices worldwide |
+| [[https://www.vmware.com/products/vsphere.html][vSphere Suite]]                 | Virtualization                                                          |
+| [[https://www.vmware.com/products/vsan.html][vSAN]]                          | Storage                                                                 |
+| [[https://www.vmware.com/products/nsx.html][NSX]]                           | Networking                                                              |
+| [[https://www.vmware.com/products/vrealize-suite.html][vRealize Suite]]                | Management                                                              |
+| [[https://docs.vmware.com/en/VMware-Cloud-Foundation/index.html][VCF (VMware Cloud Foundation)]] | An integrated software stack for everything SDDC requires               |
+| Reference                     | [[https://cheatsheet.dennyzhang.com/category/vmware][VMware CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-cloudfoundry-A4][Cloudfoundry CheatSheet]], [[https://en.wikipedia.org/wiki/VMware][Wikipedia: VMware]]           |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-vmware-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-vmware-A4/vmware-overview.jpg]]
 ** Cloud Platform
-| Name                      | Summary                                                   |
-|---------------------------+-----------------------------------------------------------|
-| [[https://www.vmware.com/products/vcloud-suite.html][vCloud Suite]]              | Enterprise-ready private cloud                            |
-| [[https://www.vmware.com/products/esxi-and-esx.html][ESXi]]                      | Bare Metal Hypervisor to run VMs                          |
-| [[https://www.vmware.com/products/vcenter-server.html][vCenter]]                   | Control console for all your vSphere virtualization       |
-| [[https://aws.amazon.com/vmware/][vmc (VMware Cloud On AWS)]] | Run vSphere suite on Amazon infrastruture in Public Cloud |
-| Nimbus/DevHub             | Host internal test infrastructures                        |
+| Name                                         | Summary                                                                |
+|----------------------------------------------+------------------------------------------------------------------------|
+| [[https://www.vmware.com/products/vcloud-suite.html][vCloud Suite]]                                 | Enterprise-ready private cloud                                         |
+| [[https://www.vmware.com/products/esxi-and-esx.html][ESXi]]                                         | Bare Metal Hypervisor to run VMs                                       |
+| [[https://www.vmware.com/products/vcenter-server.html][vCenter]]                                      | Control console for all your vSphere virtualization                    |
+| vSphere                                      |                                                                        |
+| vSphere with Operations Management (vSOM)    | Optimize capacity and monitor the workload performance of vSphere envs |
+| [[https://docs.vmware.com/en/VMware-Cloud-Foundation/index.html][VCF (VMware Cloud Foundation)]]                | An integrated software stack for everything SDDC requires              |
+| VMware Cloud Services                        | Enable customers to run workload across private and public clouds      |
+| [[https://aws.amazon.com/vmware/][vmc (VMware Cloud On AWS)]]                    | Run vSphere suite on Amazon infrastruture in Public Cloud              |
+| [[https://www.vmware.com/products/pulse-iot-device-management.html][Pulse IoT Center]]                             | Enterprise-grade IoT device management and monitoring solution         |
+| [[https://www.vmware.com/support/pubs/vmware-validated-design-pubs.html][VVD (VMware Validated Design Documentation)]] |                                                                |
+| VMware Cloud Provider Program Services(VCPP) |                                                                        |
+| Nimbus/DevHub                                | Host internal test infrastructures                                     |
 ** Cloud Native
-| Name             | Summary                                                                            |
-|------------------+------------------------------------------------------------------------------------|
-| [[https://docs.vmware.com/en/VMware-Pivotal-Container-Service/index.html][VMware PKS]]       | VMware kubernetes solution for enterprises. On-prem and beyond. [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]     |
-| [[https://cloud.vmware.com/vmware-kubernetes-engine][VMware Cloud PKS]] | VMware managed k8s service on top of public kubernetes service. e.g, GKE, AKS, etc |
-| [[https://github.com/goharbor/harbor][Harbor]]           | Enterprise-ready container registry                                                |
-| AllSpark         | Like cross datacenter istio                                                        |
-| [[https://www.vmware.com/products/vsphere/integrated-containers.html][VIC]]              | vSphere Integrated Containers                                                      |
-| [[https://heptio.com/][Heptio]]           |                                                                                    |
-** Networking & Security
-| Name                     | Summary                                                                                        |
-|--------------------------+------------------------------------------------------------------------------------------------|
-| [[https://www.vmware.com/products/nsx.html][NSX Data Center]]          | network virtualization platform for the SDDC                                                   |
-| NSX-V                    |                                                                                                |
-| [[https://docs.vmware.com/en/VMware-NSX-T-Data-Center/index.html][NSX-T]]                    | SDN for cloud-native environments                                                              |
-| [[https://www.vmware.com/products/vrealize-network-insight.html][vRealize Network Insight]] | helps to build an optimized, highly available and secure network infra across multi-cloud envs |
-| [[https://www.vmware.com/products/appdefense.html][AppDefense]]               |                                                                                                |
+| Name                               | Summary                                                                            |
+|------------------------------------+------------------------------------------------------------------------------------|
+| [[https://docs.vmware.com/en/VMware-Pivotal-Container-Service/index.html][VMware PKS]]                         | VMware kubernetes solution for enterprises. On-prem and beyond. [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]     |
+| [[https://cloud.vmware.com/vmware-kubernetes-engine][VMware Cloud PKS]]                   | VMware managed k8s service on top of public kubernetes service. e.g, GKE, AKS, etc |
+| [[https://github.com/goharbor/harbor][Harbor]]                             | Enterprise-ready container registry                                                |
+| [[https://heptio.com/][Heptio]]                             | Heptio products and expertise unlock the full potential of upstream Kubernetes     |
+| AllSpark                           | Like cross datacenter istio                                                        |
+| [[https://www.vmware.com/products/vsphere/integrated-containers.html][VIC(vSphere Integrated Containers)]] | It's designed to help customers adopt micro-services architectures                 |
 ** Storage
-| Name            | Summary                                                                                  |
-|-----------------+------------------------------------------------------------------------------------------|
-| [[https://www.vmware.com/products/vsan.html][vSAN]]            | Aggregates local or direct-attached data storage devices to create a single storage pool |
-| [[https://vmware.github.io/hatchway/][hatchway]]        | Persistent Storage for Cloud Native Applications                                         |
-| [[https://www.vmware.com/products/vsphere/virtual-volumes.html][Virtual Volumes]] | Integrate external storage partner to vmware solutions                                   |
+| Name                          | Summary                                                                              |
+|-------------------------------+--------------------------------------------------------------------------------------|
+| [[https://www.vmware.com/products/vsan.html][vSAN]]                          | Clusters server disks to create radically simple, shared storage designed for VMs    |
+| [[https://www.vmware.com/products/hyper-converged-infrastructure/dell-emc-vxrail.html][Dell EMC VxRail]]               | A fully integrated and pre-configured Dell EMC Appliance powered by vSAN and vSphere |
+| vSphere Replication           | Provides a cost-efficient and simple way to manage replication                       |
+| vCenter Site Recovery Manager | Protect applications against site failures and to streamline planned migrations      |
+| [[https://vmware.github.io/hatchway/][hatchway]]                      | Persistent Storage for Cloud Native Applications                                     |
+| [[https://www.vmware.com/products/vsphere/virtual-volumes.html][Virtual Volumes]]               | Integrate external storage partner to vmware solutions                               |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-vmware-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-vmware-A4/vmware-vsan.png]]
+** Networking & Security
+| Name                     | Summary                                                                                                 |
+|--------------------------+---------------------------------------------------------------------------------------------------------|
+| [[https://www.vmware.com/products/nsx.html][NSX Data Center]]          | Network virtualization platform for the SDDC                                                            |
+| NSX-V                    |                                                                                                         |
+| [[https://docs.vmware.com/en/VMware-NSX-T-Data-Center/index.html][NSX-T]]                    | SDN for cloud-native environments                                                                       |
+| [[https://www.vmware.com/products/appdefense.html][AppDefense]]               | A data center endpoint security product. Protect applications running in virtualized envs. [[https://www.youtube.com/watch?v=HiJgn6GGX5w][YouTube link]] |
+| [[https://www.vmware.com/products/vrealize-network-insight.html][vRealize Network Insight]] | helps to build an optimized, highly available and secure network infra across multi-cloud envs          |
+| [[http://www.velocloud.com/][Velocloud Networks]]       | Enables enterprises and service providers to deploy flexible and secure WAN connectivity.               |
+| VMware vCloud NFV        | A fully integrated, modular, multi-tenant network functions virtualization ("NFV") platform             |
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
 ** Cloud Management
-| Name                         | Summary                                                                        |
-|------------------------------+--------------------------------------------------------------------------------|
-| [[https://www.vmware.com/products/vrealize-suite.html][vRealize Suite]]               | Hybrid Cloud Management Platform                                               |
-| [[https://docs.vmware.com/en/vRealize-Log-Insight/index.html][vrli (vRealize Log Insight)]]  | On-prem logging solution. [[https://www.youtube.com/watch?v=h_99uAgopAQ&t=2s][YouTube: PKS and VMware vRealize Log Insight]]         |
-| [[https://cloud.vmware.com/log-intelligence][Log intelligence]]             | SaaS logging solution                                                          |
-| [[https://www.vmware.com/products/vrealize-operations.html][vrops (vRealize Operationos)]] | Intelligent Operations from app to infra: Capacity planning & monitoring       |
-| [[https://www.vmware.com/products/vrealize-automation.html][vRA (vRealize Automation)]]    | Visualized VM management                                                       |
-| [[https://www.vmware.com/products/vcloud-director.html][vcd (VMware vCLoud Director)]] | Hybrid envs [[https://www.youtube.com/watch?v=95Pgh0QTQnE][YouTube: VMware vCloud Director Overview]]                           |
-| [[https://www.wavefront.com/][Wavefront]]                    | SaaS monitoring. [[https://www.youtube.com/watch?v=NAOUUSr9HDU&t=9s][YouTube: Pivotal Container Service (PKS) and VMware Wavefront]] |
-| [[https://www.cloudhealthtech.com/][Cloudhealth]]                  | Container monitoring                                                           |
-| [[https://www.vmware.com/products/openstack.html][vio]]                          | VMware Integrated OpenStack                                                    |
-| [[https://www.youtube.com/watch?v=SErodVvlnA4][VMware CodeStream]]            | CI/CD as-a-service: Pipeline + Dashboard + Report. Like AWS Beanstalk          |
-| [[https://www.vmware.com/products/network-functions-virtualization.html][vCloud NFV]]                   | Network Functions Virtualization platform for Communications Service Providers |
-** Enterprise
-| Name          | Summary                           |
-|---------------+-----------------------------------|
-| [[https://www.vmware.com/products/workspace-one.html][Workspace ONE]] | SSO for all apps                  |
-| [[https://www.vmware.com/products/horizon.html][Horizon 7]]     | virtual desktops and applications |
+| Name                               | Summary                                                                          |
+|------------------------------------+----------------------------------------------------------------------------------|
+| [[https://www.vmware.com/products/vrealize-suite.html][vRealize Suite]]                     | Provide transparency and control over the costs and quality of IT services.      |
+| [[https://www.vmware.com/products/vrealize-operations.html][vrops (vRealize Operationos)]]       | Provides performance, capacity and conf management for virtual or physical infra |
+| [[https://www.vmware.com/products/vrealize-automation.html][vRA (vRealize Automation)]]          | Enables customers to rapidly deploy and provision cloud services                 |
+| [[https://docs.vmware.com/en/vRealize-Log-Insight/index.html][vrli (vRealize Log Insight)]]        | On-prem logging solution. [[https://www.youtube.com/watch?v=h_99uAgopAQ&t=2s][YouTube: PKS and VMware vRealize Log Insight]]           |
+| [[https://cloud.vmware.com/log-intelligence][Log intelligence]]                   | SaaS logging solution                                                            |
+| [[https://www.vmware.com/products/vcloud-director.html][vcd (VMware vCLoud Director)]]       | Hybrid envs [[https://www.youtube.com/watch?v=95Pgh0QTQnE][YouTube: VMware vCloud Director Overview]]                             |
+| [[https://www.wavefront.com/][Wavefront]]                          | SaaS monitoring. [[https://www.youtube.com/watch?v=NAOUUSr9HDU&t=9s][YouTube: Pivotal Container Service (PKS) and VMware Wavefront]]   |
+| [[https://www.cloudhealthtech.com/][Cloudhealth]]                        | Container monitoring                                                             |
+| [[https://www.vmware.com/products/openstack.html][vio]]                                | VMware Integrated OpenStack                                                      |
+| [[https://www.youtube.com/watch?v=SErodVvlnA4][VMware CodeStream]]                  | CI/CD as-a-service: Pipeline + Dashboard + Report. Like AWS Beanstalk            |
+| [[https://www.vmware.com/products/network-functions-virtualization.html][vCloud NFV]]                         | Network Functions Virtualization platform for Communications Service Providers   |
+** End-User Computing
+| Name               | Summary                                                                                |
+|--------------------+----------------------------------------------------------------------------------------|
+| End-User Computing | Access application and data from any device of the user's choice and from any location |
+| [[https://www.vmware.com/products/workspace-one.html][Workspace ONE]]      | SSO for all apps. It's powered by VMware AirWatch and Horizon                          |
+| AirWatch           | Deliver unified endpoint management                                                    |
+| [[https://www.vmware.com/products/horizon.html][Horizon 7]]          | virtual desktops and applications                                                      |
+** VMware Technology Alliances
+| Name                         | Summary                                            |
+|------------------------------+----------------------------------------------------|
+| VMworld conference           | Held in both the United States ("U.S.") and Europe |
+| vForum conference            | Held in the Asia Pacific and Japan region          |
+| [[https://labs.vmware.com/flings][Flings]]                       | Preview mode marketplace for vsphere ecosystem     |
+| Independent Hardware Vendors |                                                    |
+| Independent Software Vendors |                                                    |
+| VMware Service Providers     |                                                    |
+| VMware Partner Network       |                                                    |
+| [[https://pivotal.io/platform][Pivotal PCF]]                  | Pivotal Cloud Foundry                              |
 ** VMware Basic Concepts
 | Name                                | Command                                                                                 |
 |-------------------------------------+-----------------------------------------------------------------------------------------|
-| SDDC                                | Software designed data center                                                           |
+| Domains                             | SDDC, Hybrid Cloud Computing, End-User Computing(EUC)                                   |
+| SDDC(Software designed data center) | Compute, Storage and Availablity, Network and Security, Cloud Management and Automation |
 | [[https://www.vmware.com/products/vsphere/vmotion.html][vMotion]]                             | Live Migration of Virtual Machines                                                      |
 | [[https://www.vmware.com/products/vsphere/drs-dpm.html][DRS(Distributed Resource Scheduler)]] |                                                                                         |
 | [[https://en.wikipedia.org/wiki/Non-uniform_memory_access][NUMA(Non-uniform memory access)]]     |                                                                                         |
 | [[https://en.wikipedia.org/wiki/VMDK][vmdk]]                                | a file format describes containers for virtual hard disk drives to be used by VMware    |
+| [[https://www.donnfelker.com/software-development-greeenfield-vs-brownfield][Greenfield vs Brownfield]]            | Brownfield Development happens when improving an existing application                   |
 | Hyper Converged Infrastructure      | all-in-one virtualization solutions that integrate compute and software-defined storage |
+| Thin Provisioning                   |                                                                                         |
+| Static Provisioning                 |                                                                                         |
 | Turnkey Solution                    |                                                                                         |
 | Lifecycle Management                |                                                                                         |
-| Thin Provisioning                   |                                                                                         |
+| Airgap envs                         |                                                                                         |
 | Co-located                          |                                                                                         |
 | Operational Efficiency              |                                                                                         |
 | Developer Productivity              |                                                                                         |
 | Conformance and Compatibility       |                                                                                         |
 | Governance                          |                                                                                         |
-| [[https://www.donnfelker.com/software-development-greeenfield-vs-brownfield][Greenfield vs Brownfield]]            | Brownfield Development happens when improving an existing application                   |
-** Misc
-| Name                                        | Summary                                                        |
-|---------------------------------------------+----------------------------------------------------------------|
-| [[https://labs.vmware.com/flings][Flings]]                                      | Preview mode marketplace for vsphere ecosystem                 |
-| [[https://www.vmware.com/support/pubs/vmware-validated-design-pubs.html][VVD (VMware Validated Design Documentation)]] |                                                                |
-| [[https://www.vmware.com/products/pulse-iot-device-management.html][Pulse IoT Center]]                            | Enterprise-grade IoT device management and monitoring solution |
-| [[https://www.vmware.com/products/hyper-converged-infrastructure/dell-emc-vxrail.html][Dell EMC VxRail]]                             | Turnkey Hyperconverged Infrastructure                          |
-| [[https://pivotal.io/platform][Pivotal PCF]]                                 | Pivotal Cloud Foundry                                          |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -277,3 +301,19 @@ https://www.vmware.com/support/pubs/log-insight-pubs.html
 * TODO vke: VMware Kubernetes Engine                               :noexport:
 https://cloud.vmware.com/vmware-kubernetes-engine
 https://blogs.vmware.com/cloudnative/2018/11/06/try-vmware-cloud-pks-formerly-vke-today-and-the-first-150-is-on-us/
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO NFS vs vSAN vs NAS vs SAN                                   :noexport:
+* TODO esxi vs xen vs kvm                                          :noexport:
+https://www.linux.com/news/kvm-or-xen-choosing-virtualization-platform
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO hyper-converged infrastructure?                             :noexport:
+* TODO [#A] vRealize Automation- enables customers to rapidly deploy and provision cloud services. :noexport:
+* TODO wavefront vs Prometheus                                     :noexport:
+* TODO VMware Cloud Provider Program Services                      :noexport:
+We currently enable our customers to utilize off-premises, vSphere-based hybrid cloud computing capacity through our VMware Cloud Provider Program ("VCPP") offering (previously referred to as VMware vCloud Air Network). Our VCPP offering, a key component of our strategic priority to integrate with public clouds, is a global ecosystem of over 4,000 cloud providers in more than 100 countries providing VMware-based cloud services. Our VCPP offering is directed at hosting and cloud computing vendors, enabling organizations to choose between running applications in virtual machines on their own private clouds inside their data center or on public clouds hosted by a service provider.
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO appdefense                                                  :noexport:
+Create least privelege on compute stack
+
+- Intended state
+** aqua appdefense

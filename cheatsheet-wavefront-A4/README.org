@@ -38,17 +38,17 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Explore wavefront sources | =https://try.wavefront.com/source/<source-id>= |
 | Sample Link               | [[https://try.wavefront.com/chart#_v01(c:(cs:(type:line),id:chart,n:pks.kube.pod.status.ready.gauge,s:!((e:'',n:Query,q:'ts(%22pks.kube.pod.status.ready.gauge%22,%20condition=true%20and%20cluster=%22service-instance_d70cea14-53d5-478a-b82c-b36efa08ad0f%22)',qbe:!f,s:Y))),g:(c:off,d:86400,ls:!f,s:1544031356,w:'1d'),h:!(wavefront-proxy-55d6f89f9f-xpntn))][Wavefront sample link]]                          |
 ** Wavefront container monitoring
-| Name                    | Summary                                                                                                           |
-|-------------------------+-------------------------------------------------------------------------------------------------------------------|
-| Query cluster metrics   | ts(pks.heapster.ns.cpu.request, cluster="wf-deployment-0-10-0-dev-23")                                            |
-| Query namespace metrics | ts(pks.heapster.ns.cpu.request, cluster="wf-deployment-0-10-0-dev-23" and namespace_name="kube-system")           |
-| Query node metrics      | ts(pks.heapster.node.cpu.usage, cluster="wf-deployment-0-10-0-dev-23")                                            |
-| Query pod metrics       | ts(pks.heapster.pod.cpu.usage, cluster="wf-deployment-0-10-0-dev-23")                                             |
-| Check pod cpu usage     | ts(pks.heapster.pod.cpu.usage, cluster="service-instance_e732626aXXX" and pod_name="busybox-io-mpxrg")            |
-| Count running pods      | sum(ts(pks.kube.pod.status.ready.gauge, condition=true and cluster="wf-deployment-0-10-0-dev-23"))                |
-| List running pods       | ts(pks.kube.pod.status.ready.gauge, condition=true and cluster="wf-deployment-0-10-0-dev-23")                     |
-| List running containers | ts(pks.kube.pod.container.status.running.gaug, cluster="service-instance_e732626aXXX")                            |
-| Sum                     | sum(ts(pks.kube.node.status.condition.gauge, condition=Ready and status=true and cluster="wavefront_deployment")) |
+| Name                    | Summary                                                                                                              |
+|-------------------------+----------------------------------------------------------------------------------------------------------------------|
+| Query cluster metrics   | ts(pks.heapster.ns.cpu.request, cluster="wf-deployment-0-10-0-dev-23")                                               |
+| Query node metrics      | ts(pks.heapster.node.cpu.usage, cluster="wf-deployment-0-10-0-dev-23")                                               |
+| Query pod metrics       | ts(pks.heapster.pod.cpu.usage, cluster="wf-deployment-0-10-0-dev-23")                                                |
+| Query namespace metrics | ts(pks.heapster.ns.cpu.request, cluster="wf-deployment-0-10-0-dev-23" and namespace_name="kube-system")              |
+| Check pod cpu usage     | count(lag(30s,ts("kubernetes.pod_container.cpu.usage", cluster="${a_cluster}" and namespace_name="${b_namespace}"))) |
+| Count running pods      | sum(ts(pks.kube.pod.status.ready.gauge, condition=true and cluster="wf-deployment-0-10-0-dev-23"))                   |
+| List running pods       | ts(pks.kube.pod.status.ready.gauge, condition=true and cluster="wf-deployment-0-10-0-dev-23")                        |
+| List running containers | ts(pks.kube.pod.container.status.running.gaug, cluster="service-instance-e732626aXXX")                               |
+| Sum                     | sum(ts(pks.kube.node.status.condition.gauge, condition=Ready and status=true and cluster="wf-deployment"))           |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -1627,3 +1627,5 @@ https://try.wavefront.com/chart#_v01(c:(cs:(type:line),id:chart,n:pks.kube.pod.s
 * TODO multi-tenancy                                               :noexport:
 * TODO wavefront proxy footprint: 500 MB; PKS footprint: 2.5GB, 1GB, 0.5GB :noexport:
 * TODO Provision more tenants: dev ci, TPM, releng ci, customers   :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Wavefront list all metrics for one source              :noexport:

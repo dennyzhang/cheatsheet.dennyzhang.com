@@ -18,22 +18,23 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-communication-A4/cheatsheet-communication-A4.pdf][cheatsheet-communication-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/linux/][linux]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-communication-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4][CheatSheet: Career Path For Senior IT Professionals]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4][CheatSheet: IT Career Path]], [[https://cheatsheet.dennyzhang.com/cheatsheet-communication-A4][Cheatsheet: IT Communication]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-health-A4][this repo]].
 ** Pitfalls For Geek Culture
-| Name                                     | Second Thinking                                                            |
-|------------------------------------------+----------------------------------------------------------------------------|
-| No information barrier; sharing anything | Information is power and profit margin. Only share the relevant            |
-| No hierarchy; just talk with code        | It's more about people and business                                        |
-| Make all the possible improvements       | You may miss the priority and cross-functions cooperation                  |
-| Value inovation over cooperation         | Working solo helps to try ideas faster; but PoC is different from products |
-| Be absolutely accurate                   | Human is not machine; So it is software development world                  |
-| Curse of knowledge                       | Normal people are not dummy; they just don't have experience you have      |
-| Assume everyone is with good will        | You may be set up or manipulated                                           |
-| Rarely think about monetization          | Face it. Funding is very important, even for open source projects          |
-| Communication is not actionable          | Keep talking fancy tech, but few impressive highlights or actionable items |
-| Do everything in a hard way              | Intellectual challenges may not be cost effective; you can't do everything |
+| Name                                     | Second Thinking                                                                  |
+|------------------------------------------+----------------------------------------------------------------------------------|
+| No information barrier; sharing anything | Information is power and profit margin. Only share the relevant                  |
+| No hierarchy; just talk with code        | It's more about people and business                                              |
+| Make all the possible improvements       | You may miss the priority and cross-functions cooperation                        |
+| Value inovation over cooperation         | Working solo helps to try ideas faster; but PoC is different from products       |
+| Be absolutely accurate                   | Human is not machine; So it is software development world                        |
+| Curse of knowledge                       | Normal people are not dummy; they just don't have experience you have            |
+| Assume everyone is with good will        | You may be set up or manipulated                                                 |
+| Rarely think about monetization          | Face it. Funding is very important, even for open source projects                |
+| Communication is not actionable          | Keep talking fancy tech, but few impressive highlights or actionable items       |
+| Do everything in a hard way              | Intellectual challenges may not be cost effective; you can't do everything       |
+| Reference                                | [[https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4][CheatSheet: IT Career Path]], [[https://cheatsheet.dennyzhang.com/cheatsheet-communication-A4][Cheatsheet: IT Communication]], [[https://cheatsheet.dennyzhang.com/cheatsheet-opensource-A4][Cheatsheet: Opensource]] |
 ** Reference
 | Name          | Summary                                    |
 |---------------+--------------------------------------------|
@@ -201,4 +202,29 @@ https://ci.vcna.io/teams/oratos-vmware/pipelines/pks-vrops-release/jobs/run-test
 Error: Server Error
 The server encountered a temporary error and could not complete your request.
 Please try again in 30 seconds.
+#+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Avoid confuse people                                        :noexport:
+#+BEGIN_EXAMPLE
+Lakshmi Gayatri [32 minutes ago]
+Pasted image at 2019-01-11, 11:31 PM
+
+
+
+Denny Zhang [11 minutes ago]
+I have in recent 1.3
+
+
+Lakshmi Gayatri [4 minutes ago]
+Thanks @Denny Zhang . I filed a bug for this. Could you fix it? I had to deploy
+
+
+Denny Zhang [3 minutes ago]
+I’m not working on this part.
+
+I just happened to notice the similar error
+
+
+Lakshmi Gayatri [3 minutes ago]
+Ok.
 #+END_EXAMPLE
