@@ -27,6 +27,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 | RABC                           |                                                                 |
 | [[https://en.wikipedia.org/wiki/Public_key_infrastructure][Public key infrastructure(PKI)]] |                                                                 |
 | [[https://kubernetes.io/docs/reference/access-authn-authz/authentication/#user-impersonation][User impersonation]]             | A user can act as another user through impersonation headers.   |
+| Principal User Identities      |                                                                 |
 | Reference                      | [[https://cheatsheet.dennyzhang.com/cheatsheet-linux-capabilities-A4][CheatSheet: linux-capabilities]], [[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-security-A4][CheatSheet: Kubernetes Security]] |
 ** Token
 | Name                  | Comment                                                            |

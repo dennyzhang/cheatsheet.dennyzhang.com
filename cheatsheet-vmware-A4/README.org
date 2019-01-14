@@ -30,7 +30,8 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | [[https://www.vmware.com/products/nsx.html][NSX]]                           | Networking                                                              |
 | [[https://www.vmware.com/products/vrealize-suite.html][vRealize Suite]]                | Management                                                              |
 | [[https://docs.vmware.com/en/VMware-Cloud-Foundation/index.html][VCF (VMware Cloud Foundation)]] | An integrated software stack for everything SDDC requires               |
-| Reference                     | [[https://cheatsheet.dennyzhang.com/category/vmware][VMware CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-cloudfoundry-A4][Cloudfoundry CheatSheet]], [[https://en.wikipedia.org/wiki/VMware][Wikipedia: VMware]]           |
+| Reference                     | [[https://cheatsheet.dennyzhang.com/cheatsheet-infra-A4][CheatSheet: IT Infrastructure Fundamentals]], [[https://en.wikipedia.org/wiki/VMware][Wikipedia: VMware]]           |
+| Reference                     | [[https://cheatsheet.dennyzhang.com/category/vmware][VMware CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-cloudfoundry-A4][Cloudfoundry CheatSheet]]                              |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-vmware-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-vmware-A4/vmware-overview.jpg]]
 ** Cloud Platform
@@ -113,27 +114,6 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | VMware Service Providers     |                                                    |
 | VMware Partner Network       |                                                    |
 | [[https://pivotal.io/platform][Pivotal PCF]]                  | Pivotal Cloud Foundry                              |
-** VMware Basic Concepts
-| Name                                | Command                                                                                 |
-|-------------------------------------+-----------------------------------------------------------------------------------------|
-| Domains                             | SDDC, Hybrid Cloud Computing, End-User Computing(EUC)                                   |
-| SDDC(Software designed data center) | Compute, Storage and Availablity, Network and Security, Cloud Management and Automation |
-| [[https://www.vmware.com/products/vsphere/vmotion.html][vMotion]]                             | Live Migration of Virtual Machines                                                      |
-| [[https://www.vmware.com/products/vsphere/drs-dpm.html][DRS(Distributed Resource Scheduler)]] |                                                                                         |
-| [[https://en.wikipedia.org/wiki/Non-uniform_memory_access][NUMA(Non-uniform memory access)]]     |                                                                                         |
-| [[https://en.wikipedia.org/wiki/VMDK][vmdk]]                                | a file format describes containers for virtual hard disk drives to be used by VMware    |
-| [[https://www.donnfelker.com/software-development-greeenfield-vs-brownfield][Greenfield vs Brownfield]]            | Brownfield Development happens when improving an existing application                   |
-| Hyper Converged Infrastructure      | all-in-one virtualization solutions that integrate compute and software-defined storage |
-| Thin Provisioning                   |                                                                                         |
-| Static Provisioning                 |                                                                                         |
-| Turnkey Solution                    |                                                                                         |
-| Lifecycle Management                |                                                                                         |
-| Airgap envs                         |                                                                                         |
-| Co-located                          |                                                                                         |
-| Operational Efficiency              |                                                                                         |
-| Developer Productivity              |                                                                                         |
-| Conformance and Compatibility       |                                                                                         |
-| Governance                          |                                                                                         |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

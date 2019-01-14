@@ -26,23 +26,24 @@ File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]]
 |------------------------------------------------------+-----------------------------------------------|
 | Kubernetes versions for different OpenShift versions | [[https://docs.openshift.com/container-platform/3.9/architecture/infrastructure_components/kubernetes_infrastructure.html][openshift 3.9]], [[https://docs.openshift.com/container-platform/3.10/architecture/infrastructure_components/kubernetes_infrastructure.html][openshift 3.10]], [[https://docs.openshift.com/container-platform/3.11/architecture/infrastructure_components/kubernetes_infrastructure.html][openshift 3.11]] |
 ** OpenShift Key Components
-| Name                              | Command                                                        |
-|-----------------------------------+----------------------------------------------------------------|
-| Computing virtualization          | [[https://en.wikipedia.org/wiki/Red_Hat_Virtualization][RHV]] (Red Hat Virtualization), based on KVM                     |
-| SDN networking                    | Based upon OVS                                                 |
-| VM/Cluster lifecycle management   | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] ? Notification of failed components but no recovery |
-| Container optimized OS            |                                                                |
-| Container Image Compliance Scan   | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] OpenSCAP, like Harbor Clair                         |
-| Container runtime                 | dockerd, [[https://cri-o.io/][cri-o]]                                                 |
-| Container image registry          | OpenShift Container Registry (OCR), powered by [[https://www.openshift.com/products/quay][Redhat Quay]]     |
-| Packages k8s cluster orchestrator | [[https://coreos.com/tectonic/docs/latest/][tectonic]] ?                                                     |
-| Component Packaging               | Ansible modules?                                               |
-| CSI for Persistent volume         | GlusterFS, NFS, Local storage                                  |
-| [[https://docs.openshift.com/container-platform/3.11/architecture/index.html#arch-index-how-is-it-secured][Authorization]]                     | OpenShift Container Platform policy engine                     |
-| Disater Recovery                  | Notification of failed components but no recovery              |
-| Control Plane                     |                                                                |
-| Reference                         | [[https://docs.openshift.com/container-platform/3.11/scaling_performance/cluster_limits.html#scaling-performance-cluster-limits][Link: OpenShift Container Platform Cluster Limits]]              |
-| Reference                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][Link: OpenShift Key Components]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][Link: PKS Key Components]]       |
+| Name                              | Command                                                    |
+|-----------------------------------+------------------------------------------------------------|
+| Computing virtualization          | [[https://en.wikipedia.org/wiki/Red_Hat_Virtualization][RHV]] (Red Hat Virtualization), based on KVM                 |
+| SDN networking                    | Based upon OVS                                             |
+| VM/Cluster lifecycle management   | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] ?                                               |
+| Node healing                      | Notification of failed components but no recovery          |
+| Container optimized OS            |                                                            |
+| Container Image Compliance Scan   | [[https://www.redhat.com/en/technologies/management/cloudforms][CloudForms]] OpenSCAP, like Harbor Clair                     |
+| Container runtime                 | dockerd, [[https://cri-o.io/][cri-o]]                                             |
+| Container image registry          | OpenShift Container Registry (OCR), powered by [[https://www.openshift.com/products/quay][Redhat Quay]] |
+| Packages k8s cluster orchestrator | [[https://coreos.com/tectonic/docs/latest/][tectonic]] ?                                                 |
+| Component Packaging               | Ansible modules?                                           |
+| CSI for Persistent volume         | GlusterFS, NFS, Local storage                              |
+| [[https://docs.openshift.com/container-platform/3.11/architecture/index.html#arch-index-how-is-it-secured][Authorization]]                     | OpenShift Container Platform policy engine                 |
+| Disater Recovery                  | Notification of failed components but no recovery          |
+| Control Plane                     |                                                            |
+| Reference                         | [[https://docs.openshift.com/container-platform/3.11/scaling_performance/cluster_limits.html#scaling-performance-cluster-limits][Link: OpenShift Container Platform Cluster Limits]]          |
+| Reference                         | [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][Link: OpenShift Key Components]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][Link: PKS Key Components]]   |
 [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-openshift-A4/architecture_overview.png]]
 ** New Concepts From OpenShift
 | Name                                | Command          |
@@ -774,6 +775,18 @@ https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/index.html
 - storage: GlusterFS, NFS, Local storage
 * TODO Controller Manager Server in OpenShift master node?         :noexport:
 https://docs.openshift.com/container-platform/3.11/architecture/infrastructure_components/kubernetes_infrastructure.html#master
-* TODO Openshift not vanilla k8s? with OpenShift Add-Ons?          :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO OpenShift no control plane: how to handle time-consuming provisioning request? :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Openshift not vanilla k8s? with OpenShift Add-Ons?          :noexport:
+PKS vs. OpenShift and NSX-T
+* TODO Openshift K8s Cluster upgrade: hours?                       :noexport:
+PKS vs. OpenShift and NSX-T: page 12
+
+* HALF openshift: how to support different cloud providers         :noexport:
+openshift maintain Ansible playbooks for each IaaS
+
+This often requires customization by the users.
+* TODO For footprint size, is openshift much bigger than PKS?      :noexport:
+3-4 Months Behind Latest Release
+OpenShift is often 3-4 months behind and has a number of proprietary extensions customers may not need.
+

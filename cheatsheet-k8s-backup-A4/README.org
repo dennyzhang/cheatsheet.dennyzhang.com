@@ -22,11 +22,14 @@
 
 File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-tile-A4][this repo]].
 ** heptio ark
-| Name      | Summary                                             |
-|-----------+-----------------------------------------------------|
-| [[https://github.com/heptio/ark][ark]]       | Kubernetes backup and recovery. Initiated by [[https://heptio.com/][heptio]] |
-| Reference | [[https://www.youtube.com/watch?v=4v4jCHsEidw][YouTube: 15 minutes with Heptio Ark]]                 |
-| Reference | [[https://github.com/heptio/ark/blob/master/docs/support-matrix.md#compatible-storage-providers][Link: ark supported storage providers]]               |
+| Name                 | Summary                                                                    |
+|----------------------+----------------------------------------------------------------------------|
+| [[https://github.com/heptio/ark][ark]]                  | Kubernetes backup and recovery. Initiated by [[https://heptio.com/][heptio]]                        |
+| heptio backup volume | Backup is done at PV layer(block), instead of PVC layer(Posix filesystem). |
+| Reference            | [[https://www.youtube.com/watch?v=4v4jCHsEidw][YouTube: 15 minutes with Heptio Ark]]                                        |
+| Reference            | [[https://github.com/heptio/ark/blob/master/docs/support-matrix.md#compatible-storage-providers][Link: ark supported storage providers]]                                      |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-backup-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-k8s-backup-A4/ark-backup-process.png]]
 ** heptio ark cli
 | Name                    | Command                                               |
 |-------------------------+-------------------------------------------------------|
@@ -179,3 +182,30 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO How ark backup is done for huge dataset?                    :noexport:
 * TODO why heptio create ark cli tool, instead of reusing kubectl  :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Backup k8s: per label, per namespace; backup pv(mirror block), backup pvc(posix fs) :noexport:
+* TODO how heptio ark do the volume backup: /Users/zdenny/git_code/code_community/ark/pkg/apis/ark/v1/backup.go :noexport:
+/Users/zdenny/git_code/code_community/ark/pkg/controller/backup_controller.go
+
+/Users/zdenny/git_code/code_community/ark/pkg/backup/pvc_snapshot_tracker.go
+
+func (c *backupController) runBackup(backup *pkgbackup.Request) error {
+
+	if err := c.backupper.Backup(log, backup, backupFile, actions, pluginManager); err != nil {
+
+/Users/zdenny/git_code/code_community/ark/pkg/backup/backup.go
+func (kb *kubernetesBackupper) Backup(logger logrus.FieldLogger, backupRequest *Request, backupFile io.Writer, actions []ItemAction, blockStoreGetter BlockStoreGetter) error {
+
+github.com/heptio/ark/pkg/backup
+
+	gb := kb.groupBackupperFactory.newGroupBackupper(
+func (gb *defaultGroupBackupper) backupGroup(group *metav1.APIResourceList) error {
+
+
+/Users/zdenny/git_code/code_community/ark/pkg/backup/backup_pv_action.go
+func (a *backupPVAction) Execute(item runtime.Unstructured, backup *v1.Backup) (runtime.Unstructured, []ResourceIdentifier, error) {
+
+/Users/zdenny/git_code/code_community/ark/pkg/backup/item_backupper.go
+func (ib *defaultItemBackupper) backupItem(logger logrus.FieldLogger, obj runtime.Unstructured, groupResource schema.GroupResource) error {
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Blog: heptio backup                                         :noexport:

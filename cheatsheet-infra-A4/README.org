@@ -1,0 +1,238 @@
+* CheatSheet: IT Infrastructure Fundamentals                         :VMware:
+:PROPERTIES:
+:type:     infra
+:export_file_name: cheatsheet-infra-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-infra-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-vmware-A4/cheatsheet-vmware-A4.pdf][cheatsheet-infra-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/vmware/][Infra]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-infra-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-cloudfoundry-A4][Cloudfoundry CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
+
+** Basic Concepts
+| Name                                | Command                                                                                 |
+|-------------------------------------+-----------------------------------------------------------------------------------------|
+| Reference                           | [[https://cheatsheet.dennyzhang.com/category/vmware][VMware CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-ibm-A4][IBM CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-cloudfoundry-A4][Cloudfoundry CheatSheet]]                              |
+| Domains                             | SDDC, Hybrid Cloud Computing, End-User Computing(EUC)                                   |
+| SDDC(Software designed data center) | Compute, Storage and Availablity, Network and Security, Cloud Management and Automation |
+| [[https://www.vmware.com/products/vsphere/vmotion.html][VMware vMotion]]                      | Live Migration of Virtual Machines                                                      |
+| [[https://www.vmware.com/products/vsphere/drs-dpm.html][DRS(Distributed Resource Scheduler)]] |                                                                                         |
+| [[https://en.wikipedia.org/wiki/Non-uniform_memory_access][NUMA(Non-uniform memory access)]]     |                                                                                         |
+| VMware [[https://en.wikipedia.org/wiki/VMDK][vmdk]]                         | a file format describes containers for virtual hard disk drives to be used by VMware    |
+| [[https://www.donnfelker.com/software-development-greeenfield-vs-brownfield][Greenfield vs Brownfield]]            | Brownfield Development happens when improving an existing application                   |
+| Hyper Converged Infrastructure      | all-in-one virtualization solutions that integrate compute and software-defined storage |
+| [[https://en.wikipedia.org/wiki/Air_gap_(networking)][Airgap deployment]]                   | Electrically disconnected (with a conceptual air gap) from all other networks           |
+| Thin Provisioning                   |                                                                                         |
+| Static Provisioning                 |                                                                                         |
+| Turnkey Solution                    |                                                                                         |
+| Lifecycle Management                |                                                                                         |
+| [[https://en.wiktionary.org/wiki/co-locate][Co-located]]                          | To locate or be located at the same env                                                 |
+| Operational Efficiency              |                                                                                         |
+| Developer Productivity              |                                                                                         |
+| Conformance and Compatibility       |                                                                                         |
+| Governance                          |                                                                                         |
+| Trial-and-error methods             |                                                                                         |
+** Operations Per Stages
+| Name      | Command              |
+|-----------+----------------------|
+| Day 0     | Install              |
+| Day 1     | Configure & Operate  |
+| Day 2     | Optimize, Compliance |
+| Reference | [[https://jjasghar.github.io/blog/2016/09/01/day-0/][Link1]]                |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-infra-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-pks-infra/master/day2ops.png]]
+
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-infra-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-infra-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-infra-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* TODO Add interlinks                                              :noexport:
+* TODO Explain concepts                                            :noexport:
+Automation & Governance
+
+VM Life cycle management
+
+virtual cloud director
+
+Insights & Analytics
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Learn VVD                                                   :noexport:
+* TODO try infra hands-on labs                                    :noexport:
+* TODO [#A] What's HPC?                                            :noexport:
+* TODO [#A] infra PCF                                             :noexport:
+* TODO [#A] infra WCP                                             :noexport:
+* TODO infra hatchway                                             :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* [#A] Radio ideas                                                 :noexport:
+https://docs.google.com/document/d/1ROZKs2OnWNJBvpCMqM0V6T-2D_1ktDAxi0B371nRv3o/edit?usp=sharing
+** previous radio
+https://radio.eng.infra.com/2018/events/1866
+Spherelet - A Kubelet for ESXi
+** TODO Blog/Proposal: Cost evaluation for multi-cloud solution
+- vrops product
+** TODO Blog/Proposal: Bring security to container workloads
+- Integrate existing security tool chains
+- Lower the bar to understand the failuresw
+** TODO Blog/Proposal: Push model for reliable & scalable container logging
+3 Issues:
+- Missing log
+- Can't scale log agent for heavy env
+- Can't support SLA
+** TODO Blog/Proposal: Multi-cloud monitoring
+- Firewall issue: Master agent can't pull from cross data center env
+- Prometheus federation
+* TODO play with vSAN                                              :noexport:
+* TODO play with nsx-t                                             :noexport:
+* TODO [#A] play with wavefront                          :noexport:IMPORTANT:
+* TODO try vRealize Insight: https://confluence.eng.infra.com/display/PKS/vRealize+Network+Insight :noexport:
+* TODO [#A] vsphere DRS                                            :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO try VxRack                                                  :noexport:
+* vra                                                              :noexport:
+https://docs.infra.com/en/vRealize-Automation/7.5/com.infra.vra.prepare.use.doc/GUID-4E64F714-E8E9-4B08-86C2-55EBABFF2ED9.html
+https://www.youtube.com/watch?v=gt3DzjMw6k0&list=PL7bmigfV0EqQzsvOcT8KYfulg-lpNsooC&index=15
+* vCD Virtual Data Center                                          :noexport:
+VCD enables these SPs to create a virtual datacenters which are essentially resource pools in the vcenter clusters with some storage, networking and compute.
+https://www.youtube.com/watch?v=95Pgh0QTQnE
+https://blogs.infra.com/vcloud/2017/09/pivotal-container-service-in-cloud-provider-program.html
+https://docs.google.com/document/d/1ghd-3XzI1S0jdaSYp2-K195Ce3RWaN2FyYMAO2zp9fQ/edit
+https://www.youtube.com/watch?v=LOtlICZR5bE
+* vio                                                              :noexport:
+* vrli                                                             :noexport:
+* nsx-t                                                            :noexport:
+** [#A] code snippets
+ #+BEGIN_EXAMPLE
+ XXX Li [3 minutes ago]
+ ```source <(curl https://raw.githubusercontent.com/maplain/pks-utils/master/jumphost.sh)
+
+ source gw_scripts/static_env.sh
+ source gw_scripts/runtime_env.sh
+
+ pks_setup_login```
+
+
+ XXX Li [3 minutes ago]
+ @Denny Zhang
+
+
+ XXX Li [2 minutes ago]
+ one useful function is
+ ```delete_nat_rule [pks cluster name]```
+
+
+ XXX Li [2 minutes ago]
+ so you can `bosh ssh` into vms
+
+
+ Denny Zhang [2 minutes ago]
+ Checking https://docs.pivotal.io/runtimes/pks/1-1/create-cluster.html
+
+ Let me try your script
+
+
+ XXX Li [1 minute ago]
+ first time it's `pks_setup_login`, then it's just `pks_login`
+ #+END_EXAMPLE
+* TODO [#A] Infra vRealize Suite                                  :noexport:
+https://confluence.eng.infra.com/display/PS/vRealize+Suite+Lifecycle+Manager
+
+https://www.infra.com/products/vrealize-suite.html
+https://www.itcentralstation.com/products/infra-vrealize-suite
+** What's Included in vRealize Suite
+   - vRealize Automation
+   Automated delivery of personalized infrastructure, applications and custom IT services.
+
+   - vRealize Operations
+   Intelligent Operations from applications to infrastructure that helps organizations plan, manage and scale their SDDC.
+
+   - vRealize Log Insight
+   Real time log management and log analysis.
+
+   - vRealize Business for Cloud
+   Automated costing, usage metering, and service pricing of virtualized infrastructure.
+** vRO: vRealize Operations
+   https://www.itcentralstation.com/products/vrealize-operations-vrops
+
+   https://www.infra.com/products/vrealize-log-insight.html?CID=70134000001VfnUAAS&src=ps_57acb87c91526&kw=log%2520insight&mt=p&k_clickid=a1df1507-7cee-4baf-a17f-c0914362cc56&gclid=EAIaIQobChMI3Z6G663b2wIVlIh-Ch0L7gtzEAAYASAAEgJCWvD_BwE
+** vRA: vRealize automation
+   https://confluence.eng.infra.com/display/PS/vRealize+Automation
+   https://www.infra.com/products/vrealize-automation.html
+** vRealize Log Insight
+   https://www.itcentralstation.com/products/vrealize-log-insight
+* TODO CMBU: loginsight, log intelligence                          :noexport:
+https://cloud.infra.com/log-intelligence
+https://www.infra.com/products/vrealize-log-insight.html?CID=70134000001VfnUAAS&src=ps_57acb87c91526&kw=log%2520insight&mt=e&k_clickid=a1df1507-7cee-4baf-a17f-c0914362cc56&gclid=EAIaIQobChMIoMeqyLXU2wIViV9-Ch2eAQxcEAAYASAAEgLc8PD_BwE
+https://www.infra.com/support/pubs/log-insight-pubs.html
+** log-intelligence: amazon
+** where is the documentation
+** http: api, cli
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Dell VxRail/VxRack                                          :noexport:
+* TODO try VIC: vSphere Integrated Containers                      :noexport:
+* TODO try vCloud NFV                                              :noexport:
+* TODO try Pulse IoT Center                                        :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] firecracker                                            :noexport:
+* TODO [#A] cloudhealth                                            :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO vke: Infra Kubernetes Engine                               :noexport:
+https://cloud.infra.com/infra-kubernetes-engine
+https://blogs.infra.com/cloudnative/2018/11/06/try-infra-cloud-pks-formerly-vke-today-and-the-first-150-is-on-us/
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO NFS vs vSAN vs NAS vs SAN                                   :noexport:
+* TODO esxi vs xen vs kvm                                          :noexport:
+https://www.linux.com/news/kvm-or-xen-choosing-virtualization-platform
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO hyper-converged infrastructure?                             :noexport:
+* TODO [#A] vRealize Automation- enables customers to rapidly deploy and provision cloud services. :noexport:
+* TODO wavefront vs Prometheus                                     :noexport:
+* TODO Infra Cloud Provider Program Services                      :noexport:
+We currently enable our customers to utilize off-premises, vSphere-based hybrid cloud computing capacity through our Infra Cloud Provider Program ("VCPP") offering (previously referred to as Infra vCloud Air Network). Our VCPP offering, a key component of our strategic priority to integrate with public clouds, is a global ecosystem of over 4,000 cloud providers in more than 100 countries providing Infra-based cloud services. Our VCPP offering is directed at hosting and cloud computing vendors, enabling organizations to choose between running applications in virtual machines on their own private clouds inside their data center or on public clouds hosted by a service provider.
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO appdefense                                                  :noexport:
+Create least privelege on compute stack
+
+- Intended state
+** aqua appdefense
