@@ -55,9 +55,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | [[https://docs.vmware.com/en/VMware-Pivotal-Container-Service/index.html][VMware PKS]]                         | VMware kubernetes solution for enterprises. On-prem and beyond. [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]     |
 | [[https://cloud.vmware.com/vmware-kubernetes-engine][VMware Cloud PKS]]                   | VMware managed k8s service on top of public kubernetes service. e.g, GKE, AKS, etc |
 | [[https://github.com/goharbor/harbor][Harbor]]                             | Enterprise-ready container registry                                                |
-| [[https://heptio.com/][Heptio]]                             | Heptio products and expertise unlock the full potential of upstream Kubernetes     |
 | AllSpark                           | Like cross datacenter istio                                                        |
 | [[https://www.vmware.com/products/vsphere/integrated-containers.html][VIC(vSphere Integrated Containers)]] | It's designed to help customers adopt micro-services architectures                 |
+| [[https://heptio.com/][Heptio]]                             | Heptio products and expertise unlock the full potential of upstream Kubernetes     |
+| [[https://github.com/heptio/ark][Heptio - ark]]                       | k8s backup/restore: CRD + snapshot disk. [[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-backup-A4][Link: heptio ark]]                          |
+| [[https://github.com/heptio/sonobuoy][Heptio - sonobuoy]]                  | K8S diagnostic tool: conformance test, workload debug, data collection             |
 ** Storage
 | Name                          | Summary                                                                              |
 |-------------------------------+--------------------------------------------------------------------------------------|

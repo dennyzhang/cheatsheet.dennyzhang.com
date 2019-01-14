@@ -16,7 +16,7 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-vmware-A4/cheatsheet-vmware-A4.pdf][cheatsheet-infra-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/vmware/][Infra]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-infra-A4/cheatsheet-infra-A4.pdf][cheatsheet-infra-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/vmware/][Infra]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-infra-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-cloudfoundry-A4][Cloudfoundry CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 

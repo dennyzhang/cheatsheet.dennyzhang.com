@@ -427,3 +427,5 @@ ansible
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-linux-distro-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-opensource-A4 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO change openshift from cheatsheet to git repo                :noexport:

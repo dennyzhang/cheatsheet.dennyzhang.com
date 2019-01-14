@@ -21,15 +21,15 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Kubernetes Yaml Templates]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-tile-A4][this repo]].
-** heptio ark
-| Name                 | Summary                                                                    |
-|----------------------+----------------------------------------------------------------------------|
-| [[https://github.com/heptio/ark][ark]]                  | Kubernetes backup and recovery. Initiated by [[https://heptio.com/][heptio]]                        |
-| heptio backup volume | Backup is done at PV layer(block), instead of PVC layer(Posix filesystem). |
-| Reference            | [[https://www.youtube.com/watch?v=4v4jCHsEidw][YouTube: 15 minutes with Heptio Ark]]                                        |
-| Reference            | [[https://github.com/heptio/ark/blob/master/docs/support-matrix.md#compatible-storage-providers][Link: ark supported storage providers]]                                      |
+** heptio ark 
+| Name                 | Summary                                                                                |
+|----------------------+----------------------------------------------------------------------------------------|
+| [[https://github.com/heptio/ark][ark]]                  | Kubernetes backup and recovery. Initiated by [[https://heptio.com/][heptio]]                                    |
+| heptio backup volume | Backup is done at PV layer(e.g, snapshot EBS block), instead of PVC(Posix filesystem). |
+| Reference            | [[https://www.youtube.com/watch?v=4v4jCHsEidw][YouTube: 15 minutes with Heptio Ark]], [[https://github.com/heptio/ark/blob/master/docs/about.md][Link: How Ark Works]]                               |
+| Reference            | [[https://github.com/heptio/ark/blob/master/docs/support-matrix.md#compatible-storage-providers][Link: ark supported storage providers]]                                                  |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-backup-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-k8s-backup-A4/ark-backup-process.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-backup-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-k8s-backup-A4/ark-backup.png]]
 ** heptio ark cli
 | Name                    | Command                                               |
 |-------------------------+-------------------------------------------------------|

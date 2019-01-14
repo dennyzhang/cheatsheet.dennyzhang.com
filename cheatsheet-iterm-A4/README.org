@@ -1,6 +1,6 @@
-* CheatSheet: iterm                                                   :Tools:
+* CheatSheet: iterm & iterm2                                          :Tools:
 :PROPERTIES:
-:type:     curl
+:type:     shell
 :export_file_name: cheatsheet-iterm-A4.pdf
 :END:
 
@@ -21,9 +21,13 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-curl-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-curl-A4][this repo]].
-** Iterm Basic
-| Name                           | Command                                                                           |
-|--------------------------------+-----------------------------------------------------------------------------------|
+** Iterm2 Shortcut In Mac
+| Name                         | Command     |
+|------------------------------+-------------|
+| Delete a word backward       | =Command-w= |
+| Delete a word forward        |             |
+| Move cursor to next word     |             |
+| Move cursor to previous word |             |
 ** More Resources
 License: Code is licencurl under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
