@@ -21,17 +21,31 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][Prometheus CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4][Nagios CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
+** VROPS Web UI
+| Name                                | Summary                                                                                                       |
+|-------------------------------------+---------------------------------------------------------------------------------------------------------------|
+| VROPS management pack for container | Administrator Menu -> Solutions -> Management Pack                                                            |
+| List token auth                     | Administrator -> Management -> Credentials, then check =Token Auth= items                                     |
+| Get Container adapter ID            | Administrator->Configuration->Inventory Explorer->Adapter Instances->Kubernetes Adapter Instance->Internal ID |
+| Check container adapter log files   | Administrator -> Support -> Logs -> MASTER -> collector -> adapters -> KubernetesAdapter                      |
+| Container and vCenter mapping       | Environment -> Container Monitoring -> vSphere Host containing Kubernetes Node View                           |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-vrops-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-vrops-A4/vrops-component.png]]
 ** VROPS Summary
-| Name                                           | Summary                                                         |
-|------------------------------------------------+-----------------------------------------------------------------|
-| VROPS for Kubernetes env                       |                                                                 |
-| vSphere Optimization Assessment (VOA)          | pre-sales health check on a customer's vSphere environment      |
-| Hybrid Cloud Assessment (HCA)                  | show the value of vRealize Business for cloud to your customers |
-| vRBC                                           |                                                                 |
-| vrops token                                    | [[https://docs.vmware.com/en/vRealize-Operations-Manager/6.4/com.vmware.vcom.api.doc/GUID-C3F0A911-A587-40F7-9998-13D4880A0C2B.html][Link: Acquire an Authentication Token]]                           |
-| Vrops management pack for container monitoring | [[https://marketplace.vmware.com/vsx/solutions/vrealize-operations-management-pack-for-container-monitoring?ref=search][Download link]]                                                   |
-| vrops enable sshd                              | [[https://www.vgyan.in/enable-ssh-on-vrops/][Link: vRealize Part 7 - Enable SSH on vROPS]]                     |
-| Reference                                      | [[https://docs.vmware.com/en/vRealize-Operations-Manager/index.html][Link: vRealize Operations Manager Documentation]]                 |
+| Name                                             | Summary                                                                   |
+|--------------------------------------------------+---------------------------------------------------------------------------|
+| vrops concepts                                   | [[https://www.youtube.com/watch?v=ti4FRKGv2bQ][YouTube: VMware vRealize Operations 6 (vSOM)]]                              |
+| How vrops talk with cAdvisor for k8s envs?       | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-vrops-A4/doc.md#how-vrops-talk-with-cadvisor][GitHub Link]]                                                               |
+| How to cleanup vrops container service adapters? | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-vrops-A4/doc.md#how-to-cleanup-vrops-container-service-adapter][GitHub Link]]                                                               |
+| vSphere Optimization Assessment (VOA)            | pre-sales health check on a customer's vSphere environment                |
+| Hybrid Cloud Assessment (HCA)                    | show the value of vRealize Business for cloud to your customers           |
+| vRBC                                             |                                                                           |
+| vrops token                                      | [[https://docs.vmware.com/en/vRealize-Operations-Manager/6.4/com.vmware.vcom.api.doc/GUID-C3F0A911-A587-40F7-9998-13D4880A0C2B.html][Link: Acquire an Authentication Token]]                                     |
+| Vrops management pack for container monitoring   | [[https://marketplace.vmware.com/vsx/solutions/vrealize-operations-management-pack-for-container-monitoring?ref=search][Download link]]                                                             |
+| vrops enable sshd                                | [[https://www.vgyan.in/enable-ssh-on-vrops/][Link: vRealize Part 7 - Enable SSH on vROPS]]                               |
+| vrpos vcenter adpater instance                   | [[https://docs.vmware.com/en/vRealize-Operations-Manager/6.5/com.vmware.vcom.core.doc/GUID-19DAD6AF-7262-4655-B69F-6C665E33B52F.html][Link: Configure a vCenter Adapter Instance in vRealize Operations Manager]] |
+| Reference                                        | [[https://docs.vmware.com/en/vRealize-Operations-Manager/index.html][Link: vRealize Operations Manager Documentation]]                           |
+| Reference                                        | [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet,]] [[https://cheatsheet.dennyzhang.com/cheatsheet-vmware-A4][CheatSheet: VMware Products]]                               |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -80,16 +94,22 @@ share information on actual costs with their lines of business.
 The HCA is an enhanced proof of concept that analyzes a customers'
 existing data center to give them actual and "what-if" insights about
 their IT cost.
+* DONE [#B] We only have an VIP for k8s master URL, but cadvisor node port may not be accesible :noexport:
+  CLOSED: [2019-01-14 Mon 14:37]
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO As end users, why I need the monitoring feature of vrops?   :noexport:
-* TODO vrops workflow: know master and then worker nodes?          :noexport:
+* TODO Bug: vrops cadvisor workflow; wrong cadvisor port: doesn't seem to have effects:noexport:
+How cAdvisor is used in the big picture. E.g, we tried to put a wrong cadvisor port in vrops mgmt pack. And from vrops UI, we don't seem to see the negative impact.
+* TODO [#B] Bug: What's the impact of a wrong vCenter Server parameter :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Does vrops support mulitple k8s endpoints, thus it can fail-over? :noexport:
 * TODO vrops jmx: how it works?                                    :noexport:
+* TODO How vrops works with multi-master envs?                     :noexport:
+* TODO How vrops know k8s cluster creation time?                   :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] vrops: do we really need to ops file in pks-vrops-release.yml? :noexport:IMPORTANT:
-* TODO [#A] why we need pks-vrops-release/jobs/pks-vrops-ops-files? :noexport:
-* TODO [#A] tile: why we need ops file of add-vrops.yml?           :noexport:
-* TODO [#A] How to run clean vrops unregister manually?            :noexport:
+* TODO How to ssh vrops vm                                         :noexport:
+https://www.vgyan.in/enable-ssh-on-vrops/
+http://imallvirtual.com/dude-where-are-my-vrops-xmls/
+* TODO [#A] vrops error: Manual delete registration from GUI, then re-register: CredentialInstance with identifier ... and name: ... already exists :noexport:
 JQ_DIR=/var/vcap/packages/pks-vrops-jq/bin
 export PATH=${JQ_DIR}:$PATH
 
@@ -99,20 +119,7 @@ export PATH=${JQ_DIR}:$PATH
  --kmu https://myk8s1.pks.com:8443 --vu https://192.168.111.131 --cp 31194 --kl admin --kt o-Vk4iXTq3Uygyu2QHKCNyvE --delete
 
 /var/vcap/packages/pks-vrops-scripts/pks-vrops-register.sh --ru https://vc-ops-slice-1:443 --rl admin --rp XXX -x /var/vcap/jobs/vrops-register/config/server_ca.crt -k --kcn service-instance_9b9611f6-eb7b-4624-9b61-11457d948a55 --kmu https://myk8s1.pks.com:8443 --vu https://192.168.111.131 --cp 31194 --kl admin --kt o-Vk4iXTq3Uygyu2QHKCNyvE --delete
-
-* How vrops works with multi-master envs?                          :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO How vrops know k8s cluster creation time?                   :noexport:
-* TODO [#B] What's the impact of a wrong vCenter Server parameter  :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO How to ssh vrops vm                                         :noexport:
-https://www.vgyan.in/enable-ssh-on-vrops/
-http://imallvirtual.com/dude-where-are-my-vrops-xmls/
-* TODO [#A] How vrops talk with cadvisor                           :noexport:
-* TODO vrops cadvisor workflow                                     :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO How the bearer token is generated                           :noexport:
-* TODO [#A] vrops error: Manual delete registration from GUI, then re-register: CredentialInstance with identifier ... and name: ... already exists :noexport:
+** error1
 Failed to configure VMware vRealize Operations Management pack: {"message":"\"CredentialInstance\" with identifier
 \"165dcada-35c9-4ea5-8168-c0f974b34404 and name: 5ef7c1b8-b429-4364-bbcd-06c70e0c936b\" already exists.",
 "httpStatusCode":422,"apiErrorCode":1508}
@@ -159,4 +166,19 @@ Stderr
 
 Succeeded
 #+END_EXAMPLE
+** error2
+#+BEGIN_EXAMPLE
+kubo@jumper:~$ bosh -d service-instance_506bc229-40e2-4004-b0e5-fe23a420744e task 416 --result
+Using environment '30.0.0.11' as client 'ops_manager'
 
+Task 416
+
+{"instance":{"group":"apply-addons","id":"283ecdd1-1aaa-46ff-a1e0-18c9ff35ce11"},"errand_name":"vrops-registration","exit_code":0,"stdout":"Register vROps setup\n\n","stderr":"\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   225    0   178  100    47    668    176 --:--:-- --:--:-- --:--:--   674\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100  2923    0  2923    0     0  17336      0 --:--:-- --:--:-- --:--:-- 17502\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100 11341    0 11341    0     0  47015      0 --:--:-- --:--:-- --:--:-- 47254\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   920    0     0  100   920      0    910  0:00:01  0:00:01 --:--:--   912\r100  1662    0   742  100   920    733    909  0:00:01  0:00:01 --:--:--   910\nFailed to configure VMware vRealize Operations Management pack: {\"message\":\"Internal Server error, cause unknown.\",\"moreInformation\":[{\"name\":\"errorMessage\",\"value\":\"Failed to create AI resource: Resource with key = {resName=myenv4_service-instance_506bc229-40e2-4004-b0e5-fe23a420744e, resKind=KubernetesAdapter Instance, adKind=KubernetesAdapter, ids={CADVISOR_DAEMONSET_PORT=31194 - identifying, CADVISOR_SERVICE=true - identifying, DATA_RETENTION_PLAN=PLATFORM - informational, K8S_MASTERURL=https://192.168.150.114:8443 - identifying, MONITOR_JAVA=false - informational, VCENTER_SERVER_IDENT=https://192.168.111.121 - informational}} already exists.\"},{\"name\":\"localizedMessage\",\"value\":\"Failed to create AI resource. Resource with same key already exists.;\"}],\"httpStatusCode\":500,\"apiErrorCode\":500}\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n","logs":{"blobstore_id":"b8d61a9d-b885-4126-4fa8-236a1caaa5ec","sha1":"ea66fe8019269cbb7f915f9fe6d1eb0d10c18f42"}}
+
+Task 416 done
+#+END_EXAMPLE
+* TODO Show the usage of vrops                                     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO As end users, why I need the monitoring feature of vrops?   :noexport:
+* TODO [#A] How the bearer token is generated and token lifecycle management :noexport:
+Lifecycle management for the token registering each k8s cluster. e.g, how the bearer token is generated, and what if it expires.
