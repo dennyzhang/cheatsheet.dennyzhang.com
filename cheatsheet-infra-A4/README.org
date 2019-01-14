@@ -35,25 +35,25 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | [[https://www.donnfelker.com/software-development-greeenfield-vs-brownfield][Greenfield vs Brownfield]]            | Brownfield Development happens when improving an existing application                   |
 | Hyper Converged Infrastructure      | all-in-one virtualization solutions that integrate compute and software-defined storage |
 | [[https://en.wikipedia.org/wiki/Air_gap_(networking)][Airgap deployment]]                   | Electrically disconnected (with a conceptual air gap) from all other networks           |
+| [[https://en.wiktionary.org/wiki/co-locate][Co-located]]                          | To locate or be located at the same env                                                 |
 | Thin Provisioning                   |                                                                                         |
 | Static Provisioning                 |                                                                                         |
 | Turnkey Solution                    |                                                                                         |
 | Lifecycle Management                |                                                                                         |
-| [[https://en.wiktionary.org/wiki/co-locate][Co-located]]                          | To locate or be located at the same env                                                 |
 | Operational Efficiency              |                                                                                         |
 | Developer Productivity              |                                                                                         |
 | Conformance and Compatibility       |                                                                                         |
 | Governance                          |                                                                                         |
 | Trial-and-error methods             |                                                                                         |
 ** Operations Per Stages
-| Name      | Command              |
-|-----------+----------------------|
-| Day 0     | Install              |
-| Day 1     | Configure & Operate  |
-| Day 2     | Optimize, Compliance |
-| Reference | [[https://jjasghar.github.io/blog/2016/09/01/day-0/][Link1]]                |
+| Name      | Command                     |
+|-----------+-----------------------------|
+| Day 0     | Install                     |
+| Day 1     | Configure & Operate         |
+| Day 2     | Optimize, Compliance        |
+| Reference | [[https://jjasghar.github.io/blog/2016/09/01/day-0/][Link: VMware infrastructure]] |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-infra-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-pks-infra/master/day2ops.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-infra-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-infra-A4/day2ops.png]]
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
