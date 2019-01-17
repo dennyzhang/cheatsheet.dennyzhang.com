@@ -84,3 +84,7 @@ From time to time, we receive inquiries or claims from authors or distributors o
 • revise or modify our product code to remove alleged infringing code;
 • release the source code of our proprietary software; or
 • take other steps to avoid or remedy an alleged infringement.
+* TODO consolidate link: https://jjasghar.github.io/blog/2018/03/23/leading-an-opensource-community/ :noexport:
+You need to market your code, you need to get people involved, you need to have folks already engaged and committed to shepherd them through the process of engaging with what you have created.
+
+Building and leading an Open Source community is like organizing a trash pick up in your neighborhood.

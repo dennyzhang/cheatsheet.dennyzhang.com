@@ -367,8 +367,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-ibm-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-rkt-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-containerd-A4 :noexport:
-* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-operator-A4 :noexport:
-* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-istio-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Create my own cheatsheet.dennyzhang.com link, instead of the general one :noexport:
 
@@ -413,19 +411,19 @@ ansible
 * TODO publish cheatsheet: azure                                   :noexport:
 * TODO publish cheatsheet: digitalocean                            :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-harbor-A4 :noexport:
 * TODO [#A] linux cheatsheet: file, process, memory, networking, device, disk :noexport:
 * TODO [#A] communication cheatsheet: Points you shouldn't hit     :noexport:
 - Don't be sad and negative
 - Don't make a firm judgement, before you're 100% sure. It will make people uncomfortable
 - Don't show underestimation about value of low-value tasks or directions
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-harbor-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-gke-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-iterm-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-k8s-backup-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-linux-distro-A4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-opensource-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO change openshift from cheatsheet to git repo                :noexport:
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-operator-A4 :noexport:
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-istio-A4 :noexport:

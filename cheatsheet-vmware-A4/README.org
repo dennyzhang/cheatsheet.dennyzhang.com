@@ -299,3 +299,4 @@ Create least privelege on compute stack
 
 - Intended state
 ** aqua appdefense
+* TODO VMware CMBU get 1 billion revenue?                          :noexport:
