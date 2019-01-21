@@ -35,7 +35,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | [[https://github.com/cloudfoundry/bosh-bootloader][bbl (bosh-bootloader)]] | Command line utility for standing up a BOSH director on any IAAS         |
 | Reference             | [[https://concourse-ci.org/concepts.html][Link: Concourse Concepts]], [[https://concoursetutorial.com/][Link: concoursetutorial.com]]                    |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse_architecture.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-architecture.png]]
 
 ** Concourse Containers
 | Name                                       | Summary                                                       |
