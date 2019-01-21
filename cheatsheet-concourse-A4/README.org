@@ -35,8 +35,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | [[https://github.com/cloudfoundry/bosh-bootloader][bbl (bosh-bootloader)]] | Command line utility for standing up a BOSH director on any IAAS         |
 | Reference             | [[https://concourse-ci.org/concepts.html][Link: Concourse Concepts]], [[https://concoursetutorial.com/][Link: concoursetutorial.com]]                    |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-architecture.png]]
-
 ** Concourse Containers
 | Name                                       | Summary                                                       |
 |--------------------------------------------+---------------------------------------------------------------|
@@ -76,7 +74,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 |-------------------------------+-----------------------------|
 | List all concourse workers    | =fly -t $target workers=    |
 | List all concourse containers | =fly -t $target containers= |
-** Concourse Advanced
+** Concourse Advanced                                              :noexport:
 | Name                                                 | Summary                                                                                        |
 |------------------------------------------------------+------------------------------------------------------------------------------------------------|
 | fly set-pipeline run into "error: forbidden"         | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][Link: GitHub]]   |
@@ -103,6 +101,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | [[https://github.com/concourse/docker-image-resource][docker-image-resource]]: docker image         |                                                        |
 | [[https://github.com/frodenas/gcs-resource][gcs-resource]]: google bucket                 |                                                        |
 | Reference                                   | [[https://github.com/pivotal-cf/pcf-pipelines/tree/v0.23.0][GitHub: pcf-pipelines]]                                  |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-design.png]]
 ** fly Online Usage
 #+BEGIN_EXAMPLE
 bash-3.2$ fly --help
@@ -397,7 +397,7 @@ available workers:
 * TODO Concourse worker: https://concourse-ci.org/worker-internals.html :noexport:
 * TODO concourse doesn't work well with git push --force           :noexport:
 * TODO Concourse get env to override parameter                     :noexport:
-* TODO [#A] Concourse workflow hack-nimbus, what if when initialize-vrli has finished, but locks are still in claimed state.
+* TODO [#A] Concourse workflow hack-nimbus, what if when initialize-vrli has finished, but locks are still in claimed state. :noexport:
 * TODO Concourse cycle dependency                                  :noexport:
 #+BEGIN_EXAMPLE
 but for the record; please be careful not to create any cycles in a Concourse pipeline such as:
@@ -414,3 +414,8 @@ https://github.com/concourse/concourse/issues/293
 "Insufficient subnets" is akin to "out of memory" or "out of disk"
 * TODO Concourse container guardian                                :noexport:
 * TODO Concourse different colors: https://ci.vcna.io/teams/oratos-vmware/pipelines/pks-vrli-install-tile/jobs/test-tile-deployment/builds/11 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Add back: Concourse Advanced                                :noexport:
+
+
+
