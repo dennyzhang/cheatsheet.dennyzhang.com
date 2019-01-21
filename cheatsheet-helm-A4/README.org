@@ -19,19 +19,22 @@
 
 Checklist before travel by flights
 ** Helm Basic
-| Name | Command                                          |
-|------+--------------------------------------------------|
-|      | =helm init=                                      |
-|      | =helm list=, =helm list -a=                      |
-|      | =helm repo update=                               |
-|      | =helm install stable/mysql=                      |
-|      | =helm install --name mysql-release stable/mysql= |
-|      | =helm inspect stable/mysql=                      |
-|      | =helm status $=helm_name=                        |
-|      | =helm delete $=helm_name=                        |
-|      | =helm delete --purge $=helm_name=                |
-|------+--------------------------------------------------|
-|      | ~/.helm/cache/archive                            |
+| Name                       | Command                                                  |
+|----------------------------+----------------------------------------------------------|
+| [[https://github.com/helm/helm/blob/master/docs/install.md][Install helm]]               | =brew install kubernetes-helm=                           |
+| Download dependencies      | =helm dependency build=                                  |
+| Rendering template to yaml | =helm template -n my-namespace --namespace my-namespace= |
+| helm data file             | ~/.helm/cache/archive                                    |
+|                            | =helm init=                                              |
+|                            | =helm list=, =helm list -a=                              |
+|                            | =helm repo update=                                       |
+|                            | =helm install stable/mysql=                              |
+|                            | =helm install --name mysql-release stable/mysql=         |
+|                            | =helm inspect stable/mysql=                              |
+|                            | =helm status $=helm_name=                                |
+|                            | =helm delete $=helm_name=                                |
+|                            | =helm delete --purge $=helm_name=                        |
+
 ** Helm Component
 | Name    | Command                                                                  |
 |---------+--------------------------------------------------------------------------|

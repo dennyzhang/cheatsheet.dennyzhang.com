@@ -26,7 +26,7 @@ File me [[https://github.com/DennyZhang/cheatsheet-cloudfoundry-A4/issues][Issue
 | Name                              | Command                                                                                   |
 |-----------------------------------+-------------------------------------------------------------------------------------------|
 | [[https://pivotal.io/platform][PCF (Pivotal Cloud Foundry)]]       | Accelerates and streamlines software development for cloud-native and legacy applications |
-| Pivotal Labs                      | Consulting by implementing modern agile development practices.                            |
+| Pivotal Labs                      | Consulting by implementing modern agile development practices                             |
 | [[https://pivotal.io/platform/pivotal-application-service][PAS (Pivotal Application Service)]] | On-prem PAAS solution for enterprise users                                                |
 | [[https://pivotal.io/platform/pivotal-container-service][PKS (Pivotal Container Service)]]   | Kubernetes solution for enterprise users                                                  |
 | [[https://pivotal.io/platform/pivotal-function-service][PFS (Pivotal Function Service)]]    | Pivotal Function Service for serverless                                                   |

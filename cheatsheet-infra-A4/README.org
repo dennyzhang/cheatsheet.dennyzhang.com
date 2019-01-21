@@ -25,7 +25,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 ** Basic Concepts
 | Name                                | Command                                                                                 |
 |-------------------------------------+-----------------------------------------------------------------------------------------|
-| Reference                           | [[https://cheatsheet.dennyzhang.com/category/vmware][VMware CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-ibm-A4][IBM CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-cloudfoundry-A4][Cloudfoundry CheatSheet]]                              |
+| Reference                           | [[https://cheatsheet.dennyzhang.com/cheatsheet-vmware-a4][VMware CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-ibm-A4][IBM CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-cloudfoundry-A4][Cloudfoundry CheatSheet]]                              |
 | Domains                             | SDDC, Hybrid Cloud Computing, End-User Computing(EUC)                                   |
 | SDDC(Software designed data center) | Compute, Storage and Availablity, Network and Security, Cloud Management and Automation |
 | [[https://www.vmware.com/products/vsphere/vmotion.html][VMware vMotion]]                      | Live Migration of Virtual Machines                                                      |
@@ -36,6 +36,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Hyper Converged Infrastructure      | all-in-one virtualization solutions that integrate compute and software-defined storage |
 | [[https://en.wikipedia.org/wiki/Air_gap_(networking)][Airgap deployment]]                   | Electrically disconnected (with a conceptual air gap) from all other networks           |
 | [[https://en.wiktionary.org/wiki/co-locate][Co-located]]                          | To locate or be located at the same env                                                 |
+| [[https://en.wikipedia.org/wiki/Separation_of_concerns][Separation of concerns]]              | Each section addresses a separate concern                                               |
 | Thin Provisioning                   |                                                                                         |
 | Static Provisioning                 |                                                                                         |
 | Turnkey Solution                    |                                                                                         |
@@ -45,6 +46,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Conformance and Compatibility       |                                                                                         |
 | Governance                          |                                                                                         |
 | Trial-and-error methods             |                                                                                         |
+| Feature toggle                      |                                                                                         |
 ** Operations Per Stages
 | Name      | Command                     |
 |-----------+-----------------------------|
@@ -56,12 +58,15 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 [[https://cheatsheet.dennyzhang.com/cheatsheet-infra-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-infra-A4/day2ops.png]]
 
 ** Common Thinking Workflow/Questions
-| Name                                                      | Command |
-|-----------------------------------------------------------+---------|
-| How often customers may bump into the issues/slowness?    |         |
-| Newly created clusters vs existing clusters?              |         |
-| I know the issue, but is now the good timing to solve it? |         |
-| What if XXX get compromised?                              |         |
+| Name                                                      | Command                                       |
+|-----------------------------------------------------------+-----------------------------------------------|
+| How often customers may bump into the issues/slowness?    |                                               |
+| Newly created clusters vs existing clusters?              |                                               |
+| I know the issue, but is now the good timing to solve it? |                                               |
+| What if XXX get compromised?                              |                                               |
+| When the errors happen?                                   | In provision; After provision; During upgrade |
+| Normal path works; Customization won't work               |                                               |
+| Whether customers are easy to maintain?                   |                                               |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
