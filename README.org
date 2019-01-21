@@ -427,3 +427,14 @@ ansible
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-operator-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-istio-A4 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO ubuntu cheatsheet: apt-get install iputils-ping             :noexport:
+* TODO Cheatsheet: Faillure Stories For IT Industry                :noexport:
+- serverless
+https://github.com/cristim/serverless-failure-stories
+
+- Amazon
+
+- kubernetes
+
+- OpenStack
