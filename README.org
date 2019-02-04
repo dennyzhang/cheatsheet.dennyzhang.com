@@ -167,14 +167,42 @@ Cheers!
    CLOSED: [2018-08-15 Wed 20:28]
 ** DONE blog post: list everything by category
    CLOSED: [2018-08-16 Thu 00:08]
-
+* [#A] Submit PR to related communities          :noexport:
+** DONE k8s cheatsheet: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#what-s-next
+   CLOSED: [2019-01-23 Wed 22:54]
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO om: https://github.com/pivotal-cf/om
+** TODO concourse: https://concourse-ci.org/exposing.html
+https://cheatsheet.dennyzhang.com/cheatsheet-concourse-a4
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO gcp: https://cheatsheet.dennyzhang.com/cheatsheet-gcp-A4
+** TODO docker: https://cheatsheet.dennyzhang.com/cheatsheet-docker-a4
+** TODO minikube
+** TODO minishift
+** TODO bosh
+** TODO harbor: https://cheatsheet.dennyzhang.com/cheatsheet-harbor-a4
+** TODO uaa: https://cheatsheet.dennyzhang.com/cheatsheet-uaa-a4
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO etcd: https://cheatsheet.dennyzhang.com/cheatsheet-etcd-a4
+** TODO tmux: https://cheatsheet.dennyzhang.com/cheatsheet-tmux-a4
+** TODO python: https://cheatsheet.dennyzhang.com/cheatsheet-python-a4
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO mongodb: https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-a4
+** TODO helm: https://cheatsheet.dennyzhang.com/cheatsheet-helm-a4
+** TODO rkt: https://cheatsheet.dennyzhang.com/cheatsheet-rkt-a4
+** TODO cri-o: https://cheatsheet.dennyzhang.com/cheatsheet-crio-a4
+** TODO openshift
+** TODO containerd: https://cheatsheet.dennyzhang.com/cheatsheet-containerd-a4
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO aws: https://cheatsheet.dennyzhang.com/cheatsheet-aws-a4
+** TODO golang: https://cheatsheet.dennyzhang.com/cheatsheet-golang-a4
+** TODO mongodb: https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-a4
+** TODO wavefront: https://cheatsheet.dennyzhang.com/cheatsheet-wavefront-a4
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] blog post: avoid open a new link             :noexport:IMPORTANT:
 * TODO convert page into github repos                              :noexport:
 ** https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
 ** https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4
-* [#A] Submit PR to related communities: docker/concourse          :noexport:
-https://concourse-ci.org/exposing.html
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] cheatsheet.dennyzhang.com                              :noexport:
 ** TODO align icon horizontally in blog: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
@@ -240,6 +268,8 @@ https://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
  #+END_EXAMPLE
 ** TODO generate A4 pdf: https://github.com/PrateekKumarSingh/CheatSheets :noexport:
 * TODO [#A] Role model                                             :noexport:
+** DONE https://github.com/JeffDeCola/my-cheat-sheets
+   CLOSED: [2019-01-23 Wed 22:43]
 ** https://github.com/detailyang/awesome-cheatsheet
 ** [#A] https://www.cheatography.com/language/en/
 ** http://cheatsheetworld.com/
@@ -438,3 +468,45 @@ https://github.com/cristim/serverless-failure-stories
 - kubernetes
 
 - OpenStack
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO doc: outlook cheatsheet: share the calender: Calendar -> Oragnize -> Permission :noexport:
+https://support.office.com/en-us/article/share-an-outlook-calendar-with-other-people-353ed2c1-3ec5-449d-8c73-6931a0adab88
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO doc: shield teammate from overhelming information and obligations :noexport:
+* TODO doc: need to think fast and suggest fast                    :noexport:
+* TODO doc: choose relatively non-critical issues from a list of blocking issues :noexport:
+* TODO [#A] doc: need to decide the direction and priority; learn to give up for more :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO doc: Name your favorite tech stack. What is your favorite thing about it and what is your least favorite thing about it? :noexport:
+https://news.ycombinator.com/item?id=18955731
+
+Senior hiring:
+- Why this question is good: any dev knows that every tech decision comes with good things and terrible things. I love Python, but GIL, circular imports, shitty deployment/package management, 2.x vs 3.x nonsense all suck. If you haven't been in the trenches, you can't answer this _specifically_... you can only answer it _broadly_. And it's very apparent right away to interviewer.
+
+* TODO Blog: cheatsheet Infra industry big incidence               :noexport:
+https://github.com/hjacobs/kubernetes-failure-stories
+* TODO doc: Don't be emotional                                     :noexport:
+* TODO Doc: don't think you know everything                        :noexport:
+* TODO Send PR to concourse: https://github.com/concourse/docs     :noexport:
+https://concourse-ci.org/community.html
+
+https://github.com/dennyzhang/docs
+* TODO doc: solve problems stage by stage, and one by one. Thus the team can get focused :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO terraform cheatsheet                                        :noexport:
+* TODO vagrant cheatsheet: https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/development/development-environments/vagrant-cheat-sheet :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Submit cheatsheet to websites                          :noexport:
+* TODO [#A] submit bosh, tile, concourse, golang cheatsheet to related community :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO latex cheatsheet                                            :noexport:
+https://www.latex-tutorial.com/tutorials/
+** HALF latex add a bullet point
+https://tex.stackexchange.com/questions/74279/how-to-add-bullets-to-description-lists
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** latex add image
+https://www.latex-tutorial.com/tutorials/figures/
+** add sub-section
+** add citation
+https://www.latex-tutorial.com/tutorials/bibtex/
+** latex add indent

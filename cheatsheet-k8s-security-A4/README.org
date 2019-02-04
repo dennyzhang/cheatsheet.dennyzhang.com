@@ -347,3 +347,4 @@ Kube-Bench: An Open Source Tool for Running Kubernetes CIS Benchmark Tests
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO k8s check admission controller                              :noexport:
 * TODO admission controller webhook                                :noexport:
+* TODO k8s oidc vs k8s service account                             :noexport:

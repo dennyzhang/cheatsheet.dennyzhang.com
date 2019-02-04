@@ -15730,3 +15730,48 @@ find . -name "mem*" | xargs grep -i error | grep mdm-master > /tmp/test.log
 find . -name "mem*" | xargs grep -iE "exception|error" > /tmp/error.log
 
 cat /tmp/error.log | grep -v couchstore_open_db | grep -v "Failed to fetch data"
+* HALF cb migration tool                                           :noexport:
+#+BEGIN_EXAMPLE
+root@aio:~# time java -jar /root/migrate-couchbase.jar -f localhost  -t 138.68.31.55  --password_from "" --password_to "" -d "8cd6e43115e9416eb23609486fa053e3"
+[18 May 2018;22:40:53.515] - [WARN ] [CoreEnvironment:149] - More than 1 Couchbase Environments found (2), this can have severe impact on performance and stability. Reuse environments!
+[18 May 2018;22:40:53.528] - [INFO ] [CouchbaseMigrationExecutor:83] - clusterIP = com.couchbase.client.java.CouchbaseCluster@6fe7aac8
+[18 May 2018;22:40:53.528] - [INFO ] [CouchbaseMigrationExecutor:84] - tenantId = 8cd6e43115e9416eb23609486fa053e3
+[18 May 2018;22:40:54.398] - [INFO ] [CouchbaseMigrationExecutor:159] - mdm-config - design doc (record_ids) exists? false
+[18 May 2018;22:40:54.398] - [INFO ] [CouchbaseMigrationExecutor:162] - mdm-config - create design doc record_ids
+[18 May 2018;22:40:54.486] - [INFO ] [CouchbaseMigrationExecutor:164] - mdm-config - record_ids has 1 views
+[18 May 2018;22:40:59.552] - [INFO ] [CouchbaseMigrationExecutor:176] - mdm-config - Waiting for view to emit documents... [true - 0]
+[18 May 2018;22:41:04.565] - [INFO ] [CouchbaseMigrationExecutor:176] - mdm-config - Waiting for view to emit documents... [true - 449]
+[18 May 2018;22:41:06.633] - [INFO ] [CouchbaseMigrationExecutor:207] - mdm-config - total number of records for tenant 8cd6e43115e9416eb23609486fa053e3 = 449
+[18 May 2018;22:41:06.738] - [INFO ] [CouchbaseMigrationExecutor:159] - mdm-staging - design doc (record_ids) exists? false
+[18 May 2018;22:41:06.738] - [INFO ] [CouchbaseMigrationExecutor:162] - mdm-staging - create design doc record_ids
+[18 May 2018;22:41:06.758] - [INFO ] [CouchbaseMigrationExecutor:164] - mdm-staging - record_ids has 1 views
+[18 May 2018;22:41:11.778] - [INFO ] [CouchbaseMigrationExecutor:176] - mdm-staging - Waiting for view to emit documents... [true - 0]
+[18 May 2018;22:41:16.787] - [INFO ] [CouchbaseMigrationExecutor:176] - mdm-staging - Waiting for view to emit documents... [true - 0]
+[18 May 2018;22:41:21.800] - [INFO ] [CouchbaseMigrationExecutor:176] - mdm-staging - Waiting for view to emit documents... [true - 1]
+[18 May 2018;22:41:21.816] - [INFO ] [CouchbaseMigrationExecutor:207] - mdm-staging - total number of records for tenant 8cd6e43115e9416eb23609486fa053e3 = 1
+[18 May 2018;22:41:21.925] - [INFO ] [CouchbaseMigrationExecutor:159] - mdm-master - design doc (record_ids) exists? false
+[18 May 2018;22:41:21.925] - [INFO ] [CouchbaseMigrationExecutor:162] - mdm-master - create design doc record_ids
+[18 May 2018;22:41:21.957] - [INFO ] [CouchbaseMigrationExecutor:164] - mdm-master - record_ids has 1 views
+[18 May 2018;22:41:26.971] - [INFO ] [CouchbaseMigrationExecutor:176] - mdm-master - Waiting for view to emit documents... [true - 209]
+[18 May 2018;22:41:27.968] - [INFO ] [CouchbaseMigrationExecutor:207] - mdm-master - total number of records for tenant 8cd6e43115e9416eb23609486fa053e3 = 209
+[18 May 2018;22:41:28.052] - [INFO ] [CouchbaseMigrationExecutor:159] - mdm-session - design doc (record_ids) exists? false
+[18 May 2018;22:41:28.052] - [INFO ] [CouchbaseMigrationExecutor:162] - mdm-session - create design doc record_ids
+[18 May 2018;22:41:28.068] - [INFO ] [CouchbaseMigrationExecutor:164] - mdm-session - record_ids has 1 views
+[18 May 2018;22:41:33.087] - [INFO ] [CouchbaseMigrationExecutor:176] - mdm-session - Waiting for view to emit documents... [true - 19]
+[18 May 2018;22:41:33.203] - [INFO ] [CouchbaseMigrationExecutor:207] - mdm-session - total number of records for tenant 8cd6e43115e9416eb23609486fa053e3 = 19
+
+real    0m44.991s
+user    0m8.367s
+sys     0m0.640s
+#+END_EXAMPLE
+
+* TODO [#A] couchbase alerts doesn't seem to send out emails correctly :noexport:IMPORTANT:
+contact@dennyzhang.com
+
+#+BEGIN_EXAMPLE
+来自 contact@dennyzhang.com 的邮件
+
+Couchbase Server alert: IP address changed
+IP address seems to have changed. Unable to listen on 'ns_1@45.33.61.162'. (Underlaying POSIX error code: 'nxdomain')
+#+END_EXAMPLE
+

@@ -57,23 +57,27 @@ File me [[https://github.com/dennyzhang/cheatsheet-apt-A4/issues][Issues]] or st
 | Offset limit                       | =select * from student limit 4 offset 9=                        |
 | Use replace function               | =UPDATE tb1 SET f1=REPLACE(f1, 'abc', 'def');=                  |
 | Use if function                    | select Db, IF(IFNULL(User, "")="", DB, User) from db;           |
-** PSQL
-| Name                   | Command                                                    |
-|------------------------+------------------------------------------------------------|
-| Connect postgresql     | =psql -U postgres=                                         |
-| Create user            | =CREATE USER tom WITH PASSWORD '';=                        |
-| Grant access           | =GRANT ALL PRIVILEGES ON DATABASE launchpad_empty to tom;= |
-| Postgres configuration | =/var/lib/pgsql/data/pg_hba.conf=                          |
-| Stop and start command | =service postgresql status=                                |
-| Promote to super admin | =ALTER USER myuser WITH SUPERUSER;=                        |
-| List datbases          | =\l=                                                       |
-| Change database        | =\connect launchpad_dev;=                                  |
-| Show tables            | =\ds=                                                      |
-| Copy databse           | =createdb -O root -T launchpad_dev launchpad_ustack_cn=    |
-| Drop database          | =drop database launchpad_ustack_cn;=                       |
-| Connect db             | =psql -h myhost -d mydb -U myuser -W=                      |
-| Create user            | =CREATE USER tom WITH PASSWORD 'myPassword';=              |
-| Create db              | =CREATE DATABASE jerry;=                                   |
+** PSQL/Postgres
+| Name                          | Command                                                                     |
+|-------------------------------+-----------------------------------------------------------------------------|
+| Install postgres in Ubuntu    | =apt-get install postgresql postgresql-client postgresql-contrib=           |
+| Install postgres in Mac OS    | =brew install postgres=                                                     |
+| Check postgres status         | =service postgresql status=                                                 |
+| Check version                 | =psql --version=                                                            |
+| Connect postgresql            | =psql -U postgres=                                                          |
+| Create user                   | =CREATE USER tom WITH PASSWORD '';=                                         |
+| Grant access                  | =GRANT ALL PRIVILEGES ON DATABASE launchpad_empty to tom;=                  |
+| Postgres configuration        | =/var/lib/pgsql/data/pg_hba.conf=, =/etc/postgresql/*/main/postgresql.conf= |
+| Promote to super admin        | =ALTER USER myuser WITH SUPERUSER;=                                         |
+| List datbases                 | =\l=                                                                        |
+| List all tables in a database | =\d=                                                                        |
+| Change database               | =\connect launchpad_dev;=                                                   |
+| Show tables                   | =\ds=                                                                       |
+| Copy databse                  | =createdb -O root -T launchpad_dev launchpad_ustack_cn=                     |
+| Drop database                 | =drop database launchpad_ustack_cn;=                                        |
+| Connect db                    | =psql -h myhost -d mydb -U myuser -W=                                       |
+| Create user                   | =CREATE USER tom WITH PASSWORD 'myPassword';=                               |
+| Create db                     | =CREATE DATABASE jerry;=                                                    |
 ** More Resources
 License: Code is licenmysql under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

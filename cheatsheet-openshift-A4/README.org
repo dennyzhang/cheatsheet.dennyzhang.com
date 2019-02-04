@@ -146,111 +146,6 @@ File me [[https://github.com/DennyZhang/cheatsheet-openshift-A4/issues][Issues]]
 | Stop a build that is in progress       | =oc cancel-build <build_name>=                                                           |
 | Import an external image               | =oc import-image <image_stream>=                                                         |
 | Tag an image                           | =oc tag <current_image> <image_stream>=                                                  |
-** All openshift resources: oc api-resources
-| NAME                                | SHORTNAMES   | APIGROUP                         | NAMESPACED  | KIND                               |
-|-------------------------------------+--------------+----------------------------------+-------------+------------------------------------|
-| bindings                            |              |                                  | true        | Binding                            |
-| componentstatuses                   | cs           |                                  | false       | ComponentStatus                    |
-| configmaps                          | cm           |                                  | true        | ConfigMap                          |
-| endpoints                           | ep           |                                  | true        | Endpoints                          |
-| events                              | ev           |                                  | true        | Event                              |
-| limitranges                         | limits       |                                  | true        | LimitRange                         |
-| namespaces                          | ns           |                                  | false       | Namespace                          |
-| nodes                               | no           |                                  | false       | Node                               |
-| persistentvolumeclaims              | pvc          |                                  | true        | PersistentVolumeClaim              |
-| persistentvolumes                   | pv           |                                  | false       | PersistentVolume                   |
-| pods                                | po           |                                  | true        | Pod                                |
-| podtemplates                        | true         |                                  | PodTemplate |                                    |
-| replicationcontrollers              | rc           |                                  | true        | ReplicationController              |
-| resourcequotas                      | quota        |                                  | true        | ResourceQuota                      |
-| secrets                             | true         |                                  | Secret      |                                    |
-| serviceaccounts                     | sa           |                                  | true        | ServiceAccount                     |
-| services                            | svc          |                                  | true        | Service                            |
-| mutatingwebhookconfigurations       |              | admissionregistration.k8s.io     | false       | MutatingWebhookConfiguration       |
-| validatingwebhookconfigurations     |              | admissionregistration.k8s.io     | false       | ValidatingWebhookConfiguration     |
-| customresourcedefinitions           | crd,crds     | apiextensions.k8s.io             | false       | CustomResourceDefinition           |
-| apiservices                         |              | apiregistration.k8s.io           | false       | APIService                         |
-| controllerrevisions                 |              | apps                             | true        | ControllerRevision                 |
-| daemonsets                          | ds           | apps                             | true        | DaemonSet                          |
-| deployments                         | deploy       | apps                             | true        | Deployment                         |
-| replicasets                         | rs           | apps                             | true        | ReplicaSet                         |
-| statefulsets                        | sts          | apps                             | true        | StatefulSet                        |
-| deploymentconfigs                   | dc           | apps.openshift.io                | true        | DeploymentConfig                   |
-| tokenreviews                        |              | authentication.k8s.io            | false       | TokenReview                        |
-| localsubjectaccessreviews           |              | authorization.k8s.io             | true        | LocalSubjectAccessReview           |
-| selfsubjectaccessreviews            |              | authorization.k8s.io             | false       | SelfSubjectAccessReview            |
-| selfsubjectrulesreviews             |              | authorization.k8s.io             | false       | SelfSubjectRulesReview             |
-| subjectaccessreviews                |              | authorization.k8s.io             | false       | SubjectAccessReview                |
-| clusterrolebindings                 |              | authorization.openshift.io       | false       | ClusterRoleBinding                 |
-| clusterroles                        |              | authorization.openshift.io       | false       | ClusterRole                        |
-| localresourceaccessreviews          |              | authorization.openshift.io       | true        | LocalResourceAccessReview          |
-| localsubjectaccessreviews           |              | authorization.openshift.io       | true        | LocalSubjectAccessReview           |
-| resourceaccessreviews               |              | authorization.openshift.io       | false       | ResourceAccessReview               |
-| rolebindingrestrictions             |              | authorization.openshift.io       | true        | RoleBindingRestriction             |
-| rolebindings                        |              | authorization.openshift.io       | true        | RoleBinding                        |
-| roles                               |              | authorization.openshift.io       | true        | Role                               |
-| selfsubjectrulesreviews             |              | authorization.openshift.io       | true        | SelfSubjectRulesReview             |
-| subjectaccessreviews                |              | authorization.openshift.io       | false       | SubjectAccessReview                |
-| subjectrulesreviews                 |              | authorization.openshift.io       | true        | SubjectRulesReview                 |
-| horizontalpodautoscalers            | hpa          | autoscaling                      | true        | HorizontalPodAutoscaler            |
-| cronjobs                            | cj           | batch                            | true        | CronJob                            |
-| jobs                                | batch        | true                             | Job         |                                    |
-| buildconfigs                        | bc           | build.openshift.io               | true        | BuildConfig                        |
-| builds                              |              | build.openshift.io               | true        | Build                              |
-| certificatesigningrequests          | csr          | certificates.k8s.io              | false       | CertificateSigningRequest          |
-| events                              | ev           | events.k8s.io                    | true        | Event                              |
-| daemonsets                          | ds           | extensions                       | true        | DaemonSet                          |
-| deployments                         | deploy       | extensions                       | true        | Deployment                         |
-| ingresses                           | ing          | extensions                       | true        | Ingress                            |
-| networkpolicies                     | netpol       | extensions                       | true        | NetworkPolicy                      |
-| podsecuritypolicies                 | psp          | extensions                       | false       | PodSecurityPolicy                  |
-| replicasets                         | rs           | extensions                       | true        | ReplicaSet                         |
-| images                              |              | image.openshift.io               | false       | Image                              |
-| imagesignatures                     |              | image.openshift.io               | false       | ImageSignature                     |
-| imagestreamimages                   | isimage      | image.openshift.io               | true        | ImageStreamImage                   |
-| imagestreamimports                  |              | image.openshift.io               | true        | ImageStreamImport                  |
-| imagestreammappings                 |              | image.openshift.io               | true        | ImageStreamMapping                 |
-| imagestreams                        | is           | image.openshift.io               | true        | ImageStream                        |
-| imagestreamtags                     | istag        | image.openshift.io               | true        | ImageStreamTag                     |
-| clusternetworks                     |              | network.openshift.io             | false       | ClusterNetwork                     |
-| egressnetworkpolicies               |              | network.openshift.io             | true        | EgressNetworkPolicy                |
-| hostsubnets                         |              | network.openshift.io             | false       | HostSubnet                         |
-| netnamespaces                       |              | network.openshift.io             | false       | NetNamespace                       |
-| networkpolicies                     | netpol       | networking.k8s.io                | true        | NetworkPolicy                      |
-| oauthaccesstokens                   |              | oauth.openshift.io               | false       | OAuthAccessToken                   |
-| oauthauthorizetokens                |              | oauth.openshift.io               | false       | OAuthAuthorizeToken                |
-| oauthclientauthorizations           |              | oauth.openshift.io               | false       | OAuthClientAuthorization           |
-| oauthclients                        |              | oauth.openshift.io               | false       | OAuthClient                        |
-| poddisruptionbudgets                | pdb          | policy                           | true        | PodDisruptionBudget                |
-| podsecuritypolicies                 | psp          | policy                           | false       | PodSecurityPolicy                  |
-| projectrequests                     |              | project.openshift.io             | false       | ProjectRequest                     |
-| projects                            |              | project.openshift.io             | false       | Project                            |
-| appliedclusterresourcequotas        |              | quota.openshift.io               | true        | AppliedClusterResourceQuota        |
-| clusterresourcequotas               | clusterquota | quota.openshift.io               | false       | ClusterResourceQuota               |
-| clusterrolebindings                 |              | rbac.authorization.k8s.io        | false       | ClusterRoleBinding                 |
-| clusterroles                        |              | rbac.authorization.k8s.io        | false       | ClusterRole                        |
-| rolebindings                        |              | rbac.authorization.k8s.io        | true        | RoleBinding                        |
-| roles                               |              | rbac.authorization.k8s.io        | true        | Role                               |
-| routes                              |              | route.openshift.io               | true        | Route                              |
-| podsecuritypolicyreviews            |              | security.openshift.io            | true        | PodSecurityPolicyReview            |
-| podsecuritypolicyselfsubjectreviews |              | security.openshift.io            | true        | PodSecurityPolicySelfSubjectReview |
-| podsecuritypolicysubjectreviews     |              | security.openshift.io            | true        | PodSecurityPolicySubjectReview     |
-| rangeallocations                    |              | security.openshift.io            | false       | RangeAllocation                    |
-| securitycontextconstraints          | scc          | security.openshift.io            | false       | SecurityContextConstraints         |
-| storageclasses                      | sc           | storage.k8s.io                   | false       | StorageClass                       |
-| volumeattachments                   |              | storage.k8s.io                   | false       | VolumeAttachment                   |
-| brokertemplateinstances             |              | template.openshift.io            | false       | BrokerTemplateInstance             |
-| processedtemplates                  |              | template.openshift.io            | true        | Template                           |
-| templateinstances                   |              | template.openshift.io            | true        | TemplateInstance                   |
-| templates                           |              | template.openshift.io            | true        | Template                           |
-| groups                              |              | user.openshift.io                | false       | Group                              |
-| identities                          |              | user.openshift.io                | false       | Identity                           |
-| useridentitymappings                |              | user.openshift.io                | false       | UserIdentityMapping                |
-| users                               |              | user.openshift.io                | false       | User                               |
-| openshiftwebconsoleconfigs          |              | webconsole.operator.openshift.io | false       | OpenShiftWebConsoleConfig          |
-#+BEGIN_HTML
-<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
-#+END_HTML
 ** OpenShift Source Code
 | Name                         | Command                             |
 |------------------------------+-------------------------------------|
@@ -790,3 +685,108 @@ This often requires customization by the users.
 3-4 Months Behind Latest Release
 OpenShift is often 3-4 months behind and has a number of proprietary extensions customers may not need.
 
+* All openshift resources: oc api-resources                        :noexport:
+| NAME                                | SHORTNAMES   | APIGROUP                         | NAMESPACED  | KIND                               |
+|-------------------------------------+--------------+----------------------------------+-------------+------------------------------------|
+| bindings                            |              |                                  | true        | Binding                            |
+| componentstatuses                   | cs           |                                  | false       | ComponentStatus                    |
+| configmaps                          | cm           |                                  | true        | ConfigMap                          |
+| endpoints                           | ep           |                                  | true        | Endpoints                          |
+| events                              | ev           |                                  | true        | Event                              |
+| limitranges                         | limits       |                                  | true        | LimitRange                         |
+| namespaces                          | ns           |                                  | false       | Namespace                          |
+| nodes                               | no           |                                  | false       | Node                               |
+| persistentvolumeclaims              | pvc          |                                  | true        | PersistentVolumeClaim              |
+| persistentvolumes                   | pv           |                                  | false       | PersistentVolume                   |
+| pods                                | po           |                                  | true        | Pod                                |
+| podtemplates                        | true         |                                  | PodTemplate |                                    |
+| replicationcontrollers              | rc           |                                  | true        | ReplicationController              |
+| resourcequotas                      | quota        |                                  | true        | ResourceQuota                      |
+| secrets                             | true         |                                  | Secret      |                                    |
+| serviceaccounts                     | sa           |                                  | true        | ServiceAccount                     |
+| services                            | svc          |                                  | true        | Service                            |
+| mutatingwebhookconfigurations       |              | admissionregistration.k8s.io     | false       | MutatingWebhookConfiguration       |
+| validatingwebhookconfigurations     |              | admissionregistration.k8s.io     | false       | ValidatingWebhookConfiguration     |
+| customresourcedefinitions           | crd,crds     | apiextensions.k8s.io             | false       | CustomResourceDefinition           |
+| apiservices                         |              | apiregistration.k8s.io           | false       | APIService                         |
+| controllerrevisions                 |              | apps                             | true        | ControllerRevision                 |
+| daemonsets                          | ds           | apps                             | true        | DaemonSet                          |
+| deployments                         | deploy       | apps                             | true        | Deployment                         |
+| replicasets                         | rs           | apps                             | true        | ReplicaSet                         |
+| statefulsets                        | sts          | apps                             | true        | StatefulSet                        |
+| deploymentconfigs                   | dc           | apps.openshift.io                | true        | DeploymentConfig                   |
+| tokenreviews                        |              | authentication.k8s.io            | false       | TokenReview                        |
+| localsubjectaccessreviews           |              | authorization.k8s.io             | true        | LocalSubjectAccessReview           |
+| selfsubjectaccessreviews            |              | authorization.k8s.io             | false       | SelfSubjectAccessReview            |
+| selfsubjectrulesreviews             |              | authorization.k8s.io             | false       | SelfSubjectRulesReview             |
+| subjectaccessreviews                |              | authorization.k8s.io             | false       | SubjectAccessReview                |
+| clusterrolebindings                 |              | authorization.openshift.io       | false       | ClusterRoleBinding                 |
+| clusterroles                        |              | authorization.openshift.io       | false       | ClusterRole                        |
+| localresourceaccessreviews          |              | authorization.openshift.io       | true        | LocalResourceAccessReview          |
+| localsubjectaccessreviews           |              | authorization.openshift.io       | true        | LocalSubjectAccessReview           |
+| resourceaccessreviews               |              | authorization.openshift.io       | false       | ResourceAccessReview               |
+| rolebindingrestrictions             |              | authorization.openshift.io       | true        | RoleBindingRestriction             |
+| rolebindings                        |              | authorization.openshift.io       | true        | RoleBinding                        |
+| roles                               |              | authorization.openshift.io       | true        | Role                               |
+| selfsubjectrulesreviews             |              | authorization.openshift.io       | true        | SelfSubjectRulesReview             |
+| subjectaccessreviews                |              | authorization.openshift.io       | false       | SubjectAccessReview                |
+| subjectrulesreviews                 |              | authorization.openshift.io       | true        | SubjectRulesReview                 |
+| horizontalpodautoscalers            | hpa          | autoscaling                      | true        | HorizontalPodAutoscaler            |
+| cronjobs                            | cj           | batch                            | true        | CronJob                            |
+| jobs                                | batch        | true                             | Job         |                                    |
+| buildconfigs                        | bc           | build.openshift.io               | true        | BuildConfig                        |
+| builds                              |              | build.openshift.io               | true        | Build                              |
+| certificatesigningrequests          | csr          | certificates.k8s.io              | false       | CertificateSigningRequest          |
+| events                              | ev           | events.k8s.io                    | true        | Event                              |
+| daemonsets                          | ds           | extensions                       | true        | DaemonSet                          |
+| deployments                         | deploy       | extensions                       | true        | Deployment                         |
+| ingresses                           | ing          | extensions                       | true        | Ingress                            |
+| networkpolicies                     | netpol       | extensions                       | true        | NetworkPolicy                      |
+| podsecuritypolicies                 | psp          | extensions                       | false       | PodSecurityPolicy                  |
+| replicasets                         | rs           | extensions                       | true        | ReplicaSet                         |
+| images                              |              | image.openshift.io               | false       | Image                              |
+| imagesignatures                     |              | image.openshift.io               | false       | ImageSignature                     |
+| imagestreamimages                   | isimage      | image.openshift.io               | true        | ImageStreamImage                   |
+| imagestreamimports                  |              | image.openshift.io               | true        | ImageStreamImport                  |
+| imagestreammappings                 |              | image.openshift.io               | true        | ImageStreamMapping                 |
+| imagestreams                        | is           | image.openshift.io               | true        | ImageStream                        |
+| imagestreamtags                     | istag        | image.openshift.io               | true        | ImageStreamTag                     |
+| clusternetworks                     |              | network.openshift.io             | false       | ClusterNetwork                     |
+| egressnetworkpolicies               |              | network.openshift.io             | true        | EgressNetworkPolicy                |
+| hostsubnets                         |              | network.openshift.io             | false       | HostSubnet                         |
+| netnamespaces                       |              | network.openshift.io             | false       | NetNamespace                       |
+| networkpolicies                     | netpol       | networking.k8s.io                | true        | NetworkPolicy                      |
+| oauthaccesstokens                   |              | oauth.openshift.io               | false       | OAuthAccessToken                   |
+| oauthauthorizetokens                |              | oauth.openshift.io               | false       | OAuthAuthorizeToken                |
+| oauthclientauthorizations           |              | oauth.openshift.io               | false       | OAuthClientAuthorization           |
+| oauthclients                        |              | oauth.openshift.io               | false       | OAuthClient                        |
+| poddisruptionbudgets                | pdb          | policy                           | true        | PodDisruptionBudget                |
+| podsecuritypolicies                 | psp          | policy                           | false       | PodSecurityPolicy                  |
+| projectrequests                     |              | project.openshift.io             | false       | ProjectRequest                     |
+| projects                            |              | project.openshift.io             | false       | Project                            |
+| appliedclusterresourcequotas        |              | quota.openshift.io               | true        | AppliedClusterResourceQuota        |
+| clusterresourcequotas               | clusterquota | quota.openshift.io               | false       | ClusterResourceQuota               |
+| clusterrolebindings                 |              | rbac.authorization.k8s.io        | false       | ClusterRoleBinding                 |
+| clusterroles                        |              | rbac.authorization.k8s.io        | false       | ClusterRole                        |
+| rolebindings                        |              | rbac.authorization.k8s.io        | true        | RoleBinding                        |
+| roles                               |              | rbac.authorization.k8s.io        | true        | Role                               |
+| routes                              |              | route.openshift.io               | true        | Route                              |
+| podsecuritypolicyreviews            |              | security.openshift.io            | true        | PodSecurityPolicyReview            |
+| podsecuritypolicyselfsubjectreviews |              | security.openshift.io            | true        | PodSecurityPolicySelfSubjectReview |
+| podsecuritypolicysubjectreviews     |              | security.openshift.io            | true        | PodSecurityPolicySubjectReview     |
+| rangeallocations                    |              | security.openshift.io            | false       | RangeAllocation                    |
+| securitycontextconstraints          | scc          | security.openshift.io            | false       | SecurityContextConstraints         |
+| storageclasses                      | sc           | storage.k8s.io                   | false       | StorageClass                       |
+| volumeattachments                   |              | storage.k8s.io                   | false       | VolumeAttachment                   |
+| brokertemplateinstances             |              | template.openshift.io            | false       | BrokerTemplateInstance             |
+| processedtemplates                  |              | template.openshift.io            | true        | Template                           |
+| templateinstances                   |              | template.openshift.io            | true        | TemplateInstance                   |
+| templates                           |              | template.openshift.io            | true        | Template                           |
+| groups                              |              | user.openshift.io                | false       | Group                              |
+| identities                          |              | user.openshift.io                | false       | Identity                           |
+| useridentitymappings                |              | user.openshift.io                | false       | UserIdentityMapping                |
+| users                               |              | user.openshift.io                | false       | User                               |
+| openshiftwebconsoleconfigs          |              | webconsole.operator.openshift.io | false       | OpenShiftWebConsoleConfig          |
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML

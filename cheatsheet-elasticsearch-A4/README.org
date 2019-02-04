@@ -4146,3 +4146,4 @@ Thanks, @mitu
 ** TODO cb node, es node -> bring prod env fail for some data, need manual intervine
 ** TODO update doc: When es node runs into single node, what to do?
 ** TODO [#A] elasticsearch: close indices and remove VMs with rebalancing, what if I want to re-open the indices?
+* TODO [#A] How to migrate ES2 to ES5 without data loss?           :noexport:

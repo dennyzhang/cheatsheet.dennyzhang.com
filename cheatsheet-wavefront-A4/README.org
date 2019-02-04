@@ -30,6 +30,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Wavefront kubernetes collector | [[https://github.com/wavefrontHQ/wavefront-kubernetes-collector][GitHub: wavefrontHQ/wavefront-kubernetes-collector]], [[https://hub.docker.com/r/wavefronthq/wavefront-kubernetes-collector/tags][docker hub image]]           |
 | Default Limits                 | ? alerts for each tenant; 10K point-per-seconds for each tenant                |
 | Whether need an agent          | [[https://docs.wavefront.com/direct_ingestion.html#comparing-proxy-and-direct-ingestion][Link: Comparing Proxy and Direct Ingestion]]                                     |
+| Integrations                   | [[https://docs.wavefront.com/pks.html][VMware PKS Integration]]                                                         |
 | Reference                      | https://try.wavefront.com/api-docs/ui/                                         |
 ** Wavefront Web UI
 | Name                      | Summary                                        |
@@ -37,6 +38,10 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Explore wavefront metrics | =Browse -> Metrics=                            |
 | Explore wavefront sources | =https://try.wavefront.com/source/<source-id>= |
 | Sample Link               | [[https://try.wavefront.com/chart#_v01(c:(cs:(type:line),id:chart,n:pks.kube.pod.status.ready.gauge,s:!((e:'',n:Query,q:'ts(%22pks.kube.pod.status.ready.gauge%22,%20condition=true%20and%20cluster=%22service-instance_d70cea14-53d5-478a-b82c-b36efa08ad0f%22)',qbe:!f,s:Y))),g:(c:off,d:86400,ls:!f,s:1544031356,w:'1d'),h:!(wavefront-proxy-55d6f89f9f-xpntn))][Wavefront sample link]]                          |
+** Wavefront API
+| Name                      | Summary                                        |
+|---------------------------+------------------------------------------------|
+| List all wavefront alerts
 ** Wavefront Chart
 | Name              | Summary                                           |
 |-------------------+---------------------------------------------------|
@@ -1629,29 +1634,259 @@ https://try.wavefront.com/chart#_v01(c:(cs:(type:line),id:chart,n:pks.kube.pod.s
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Wavefront list all metrics for one source              :noexport:
 * TODO [#A] wavefront floating window stick                        :noexport:
+* TODO wavefront collector token                                   :noexport:
+* TODO Conor Beverland
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO wavefront dashboard change                                  :noexport:
+* TODO blinking issue: middle Feb
 * TODO Missing metrics from heapster                               :noexport:
-** TODO [#B] No data: ts(pks.heapster.node.memory.cache, cluster="wf-deployment-0-10-0-dev-157")
 ** TODO [#B] No data: ts(pks.heapster.node.disk.io_read_bytes, cluster="wf-deployment-0-10-0-dev-157")
 ** TODO [#B] No data: ts(pks.heapster.node.disk.io_write_bytes, cluster="wf-deployment-0-10-0-dev-157")
-** TODO [#B] No data: ts(pks.heapster.pod.memory.cache, cluster="wf-deployment-0-10-0-dev-157")
-** TODO [#B] No data: ts(pks.heapster.pod_container.memory.cache, cluster="wf-deployment-0-10-0-dev-157")
 ** TODO [#B] No data: ts(pks.heapster.pod_container.disk.io_read_bytes, cluster="wf-deployment-0-10-0-dev-157")
 ** TODO [#B] No data: ts(pks.heapster.pod_container.disk.io_write_bytes, cluster="wf-deployment-0-10-0-dev-157")
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO [#B] No data: ts(pks.heapster.node.memory.cache, cluster="wf-deployment-0-10-0-dev-157")
+** TODO [#B] No data: ts(pks.heapster.pod.memory.cache, cluster="wf-deployment-0-10-0-dev-157")
+** TODO [#B] No data: ts(pks.heapster.pod_container.memory.cache, cluster="wf-deployment-0-10-0-dev-157")
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** TODO No data, now it has: ts(pks.heapster.node.memory.page_faults_rate, cluster="wf-deployment-0-10-0-dev-157")
 ts(pks.heapster.node.memory.usage, cluster="wf-deployment-0-10-0-dev-157")
-* TODO wavefront collector token                                   :noexport:
-* TODO wavefront kube-state-metrics                                :noexport:
-** TODO kube-state-metrics: sum(ts(pks.kube.pod.status.ready.gauge, condition=true and cluster="wf-deployment-0-10-0-dev-157")): duplicate
-sum(ts(kube.pod.status.ready.gauge, condition=true and cluster="wf-deployment-0-10-0-dev-157"))
-** TODO sum(ts(pks.kube.pod.container.status.running.gauge, cluster="wf-deployment-0-10-0-dev-157"))
-sum(ts(kube.pod.container.status.running.gauge, cluster="wf-deployment-0-10-0-dev-157"))
-** TODO sum(ts(pks.kube.node.status.condition.gauge, condition=Ready and status=true and cluster="wf-deployment-0-10-0-dev-157"))
-sum(ts(kube.node.status.condition.gauge, condition=Ready and status=true and cluster="wf-deployment-0-10-0-dev-157"))
-* TODO wavefront heapster change                                   :noexport:
-* TODO [#A] Wavefront inconsistency                                :noexport:
+* TODO Where and how to maintain the yaml template?                :noexport:
+** Vikram Raman                                                    :noexport:
+https://github.com/wavefrontHQ/wavefront-kubernetes-collector/tree/master/deploy
+** TODO Pierre Tessier: wavefront proxy                            :noexport:
+https://vmware.slack.com/archives/DC1BGHZRB/p1547595325007600
+
+https://github.com/puckpuck/charts/tree/wavefront/stable/wavefront
+
+#+BEGIN_EXAMPLE
+ Pierre Tessier [3:35 PM]
+ I”m building a helm chart to install Wavefront.  I think the idea here is we use much of the same configuration between PKS and what we would recommend as an initial configuration of Wavefront on Kubernetes.  Attached is the set of yaml manifests that will get deployed with the helm chart.  You will see how we configure the collector deployment (I think you may already be doing this the same way), but more importantly how the proxy gets configured with preprocessor rules, which also require a config map to contain the actual preprocessor rule.  In our case we only have 1 rule which is really used to drop a bunch of noisy k8s tags.  I think you will also specify JAVA_HEAP_USAGE and proxy container limits.  Our helm chart won’t do it by default, but we will allow you to do it via options if you need.
+ wavefront-helm.yaml 
+ ---
+ # Source: wavefront/templates/proxy-preprocessor-config.yaml
+​ 
+ apiVersion: v1
+ kind: ConfigMap
+ metadata:
+  labels:
+   app.kubernetes.io/name : wavefront
+   helm.sh/chart: "wavefront-0.2.0"
+   app.kubernetes.io/managed-by: "Tiller"
+   app.kubernetes.io.instance: "wavefront"
+   app.kubernetes.io/component: proxy
+  name: wavefront-proxy-preprocessor
+ data:
+  rules.yaml: |
+   '2878':
+    - rule  : drop-generated-label-tags
+     action : dropTag
+     tag   : label\.(controller-revision-hash|pod-template-.*|.*kubernetes\.io.*)
+ 
+ ---
+ # Source: wavefront/templates/collector-service-account.yaml
+​ 
+ apiVersion: v1
+ kind: ServiceAccount
+ metadata:
+  labels:
+   app.kubernetes.io/name : wavefront
+   helm.sh/chart: "wavefront-0.2.0"
+   app.kubernetes.io/managed-by: "Tiller"
+   app.kubernetes.io.instance: "wavefront"
+   app.kubernetes.io/component: collector
+  name: wavefront-collector
+  namespace: wavefront
+​ 
+ ---
+ # Source: wavefront/templates/collector-cluster-role.yaml
+​ 
+ apiVersion: rbac.authorization.k8s.io/v1
+ kind: ClusterRole
+ metadata:
+  labels:
+   app.kubernetes.io/name : wavefront
+   helm.sh/chart: "wavefront-0.2.0"
+   app.kubernetes.io/managed-by: "Tiller"
+   app.kubernetes.io.instance: "wavefront"
+   app.kubernetes.io/component: collector
+   kubernetes.io/bootstrapping: rbac-defaults
+  annotations:
+   rbac.authorization.kubernetes.io/autoupdate: "true"
+  name: wavefront-collector
+ rules:
+ - apiGroups:
+  - ""
+  resources:
+  - events
+  - namespaces
+  - nodes
+  - nodes/stats
+  - pods
+  - services
+  verbs:
+  - get
+  - list
+  - watch
+ - apiGroups:
+  - extensions
+  resources:
+  - deployments
+  verbs:
+  - get
+  - list
+  - watch
+​ 
+ ---
+ # Source: wavefront/templates/collector-rbac.yaml
+​ 
+ kind: ClusterRoleBinding
+ apiVersion: rbac.authorization.k8s.io/v1
+ metadata:
+  labels:
+   app.kubernetes.io/name : wavefront
+   helm.sh/chart: "wavefront-0.2.0"
+   app.kubernetes.io/managed-by: "Tiller"
+   app.kubernetes.io.instance: "wavefront"
+   app.kubernetes.io/component: collector
+  name: wavefront-collector
+ roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: wavefront-collector
+ subjects:
+ - kind: ServiceAccount
+  name: wavefront-collector
+  namespace: wavefront
+​ 
+ ---
+ # Source: wavefront/templates/proxy-service.yaml
+​ 
+ apiVersion: v1
+ kind: Service
+ metadata:
+  labels:
+   app.kubernetes.io/name : wavefront
+   helm.sh/chart: "wavefront-0.2.0"
+   app.kubernetes.io/managed-by: "Tiller"
+   app.kubernetes.io.instance: "wavefront"
+   app.kubernetes.io/component: proxy
+  name: wavefront-proxy
+ spec:
+  ports:
+  - name: wavefront
+   port: 2878
+   protocol: TCP
+  selector:
+   app.kubernetes.io/name : wavefront
+   app.kubernetes.io/component: proxy
+​ 
+ ---
+ # Source: wavefront/templates/collector-deployment.yaml
+​ 
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+  labels:
+   app.kubernetes.io/name : wavefront
+   helm.sh/chart: "wavefront-0.2.0"
+   app.kubernetes.io/managed-by: "Tiller"
+   app.kubernetes.io.instance: "wavefront"
+   app.kubernetes.io/component: collector
+  name: wavefront-collector
+ spec:
+  replicas: 1
+  selector:
+   matchLabels:
+    app.kubernetes.io/name : wavefront
+    app.kubernetes.io/component: collector
+  template:
+   metadata:
+    labels:
+     app.kubernetes.io/name : wavefront
+     app.kubernetes.io/component: collector
+   spec:
+    serviceAccountName: wavefront-collector
+    containers:
+    - name: wavefront-collector
+     image: wavefronthq/wavefront-kubernetes-collector:0.9.4
+     imagePullPolicy: IfNotPresent
+     command:
+     - /wavefront-collector
+     - --source=kubernetes.summary_api:''
+     - --sink=wavefront:?proxyAddress=wavefront-proxy:2878&clusterName=test-k8s&includeLabels=true&includeContainers=true&prefix=kubernetes.
+     - --enable-discovery=true
+     resources:
+      limits:
+       cpu: 200m
+       memory: 256Mi
+      requests:
+       cpu: 200m
+       memory: 256Mi
+     
+     volumeMounts:
+     - name: ssl-certs
+      mountPath: /etc/ssl/certs
+      readOnly: true
+    volumes:
+    - name: ssl-certs
+     hostPath:
+      path: /etc/ssl/certs
+​ 
+ ---
+ # Source: wavefront/templates/proxy-deployment.yaml
+​ 
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+  labels:
+   app.kubernetes.io/name : wavefront
+   helm.sh/chart: "wavefront-0.2.0"
+   app.kubernetes.io/managed-by: "Tiller"
+   app.kubernetes.io.instance: "wavefront"
+   app.kubernetes.io/component: proxy
+  name: wavefront-proxy 
+ spec:
+  replicas: 1
+  selector:
+   matchLabels:
+    app.kubernetes.io/name : wavefront
+    app.kubernetes.io/component: proxy
+  template:
+   metadata:
+    labels:
+     app.kubernetes.io/name : wavefront
+     app.kubernetes.io/component: proxy
+   spec:
+    containers:
+    - name: wavefront-proxy
+     image: wavefronthq/proxy:4.34
+     imagePullPolicy: IfNotPresent
+     env:
+     - name: WAVEFRONT_URL
+      value: https://try.wavefront.com/api
+     - name: WAVEFRONT_TOKEN
+      value: 7ce7b444-114f-42e6-87ec-5deb4f42250c
+     - name: WAVEFRONT_PROXY_ARGS
+      value: --preprocessorConfigFile /etc/wavefront/wavefront-proxy/preprocessor/rules.yaml
+     ports:
+     - containerPort: 2878
+      protocol: TCP
+     securityContext:
+      privileged: false
+     volumeMounts:
+     - name: preprocessor
+      mountPath: /etc/wavefront/wavefront-proxy/preprocessor
+    volumes:
+    - name: preprocessor
+     configMap:
+      name: wavefront-proxy-preprocessor
+​ 
+​ 
+ Collapse 
+ Also you don’t need to use all the `app.kubernetes.io/managed-by` and `app.kubernetes.io/instance` labels.  those are more specified for helm, though they do follow some guidelines i’m seeing being adopted by more people.  You can use whatever labels you feel are appropriate and fit within guidelines established by PKS.
+ #+END_EXAMPLE
+* TODO [#A] Wavefront inconsistency: show/no data                  :noexport:
 #+BEGIN_EXAMPLE
 Denny Zhang [10:44 AM]
 I’m seeing inconsistency in try.wavefront.com
@@ -1668,233 +1903,18 @@ https://try.wavefront.com/chart#_v01(c:(cs:(autoColumnTags:!f,customTags:!(),exp
 ts(pks.heapster.node.memory.working_set, cluster="wf-deployment-0-10-0-dev-158" and nodename="7a228e9f-4d55-446b-a600-7c6c40d994b3")```
 #+END_EXAMPLE
 
-* TODO wavefront proxy                                             :noexport:
-https://vmware.slack.com/archives/DC1BGHZRB/p1547595325007600
-#+BEGIN_EXAMPLE
-Pierre Tessier [3:35 PM]
-I”m building a helm chart to install Wavefront.  I think the idea here is we use much of the same configuration between PKS and what we would recommend as an initial configuration of Wavefront on Kubernetes.  Attached is the set of yaml manifests that will get deployed with the helm chart.  You will see how we configure the collector deployment (I think you may already be doing this the same way), but more importantly how the proxy gets configured with preprocessor rules, which also require a config map to contain the actual preprocessor rule.  In our case we only have 1 rule which is really used to drop a bunch of noisy k8s tags.  I think you will also specify JAVA_HEAP_USAGE and proxy container limits.  Our helm chart won’t do it by default, but we will allow you to do it via options if you need.
-wavefront-helm.yaml 
----
-# Source: wavefront/templates/proxy-preprocessor-config.yaml
-​
-apiVersion: v1
-kind: ConfigMap
-metadata:
- labels:
-  app.kubernetes.io/name : wavefront
-  helm.sh/chart: "wavefront-0.2.0"
-  app.kubernetes.io/managed-by: "Tiller"
-  app.kubernetes.io.instance: "wavefront"
-  app.kubernetes.io/component: proxy
- name: wavefront-proxy-preprocessor
-data:
- rules.yaml: |
-  '2878':
-   - rule  : drop-generated-label-tags
-    action : dropTag
-    tag   : label\.(controller-revision-hash|pod-template-.*|.*kubernetes\.io.*)
- 
----
-# Source: wavefront/templates/collector-service-account.yaml
-​
-apiVersion: v1
-kind: ServiceAccount
-metadata:
- labels:
-  app.kubernetes.io/name : wavefront
-  helm.sh/chart: "wavefront-0.2.0"
-  app.kubernetes.io/managed-by: "Tiller"
-  app.kubernetes.io.instance: "wavefront"
-  app.kubernetes.io/component: collector
- name: wavefront-collector
- namespace: wavefront
-​
----
-# Source: wavefront/templates/collector-cluster-role.yaml
-​
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
- labels:
-  app.kubernetes.io/name : wavefront
-  helm.sh/chart: "wavefront-0.2.0"
-  app.kubernetes.io/managed-by: "Tiller"
-  app.kubernetes.io.instance: "wavefront"
-  app.kubernetes.io/component: collector
-  kubernetes.io/bootstrapping: rbac-defaults
- annotations:
-  rbac.authorization.kubernetes.io/autoupdate: "true"
- name: wavefront-collector
-rules:
-- apiGroups:
- - ""
- resources:
- - events
- - namespaces
- - nodes
- - nodes/stats
- - pods
- - services
- verbs:
- - get
- - list
- - watch
-- apiGroups:
- - extensions
- resources:
- - deployments
- verbs:
- - get
- - list
- - watch
-​
----
-# Source: wavefront/templates/collector-rbac.yaml
-​
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
- labels:
-  app.kubernetes.io/name : wavefront
-  helm.sh/chart: "wavefront-0.2.0"
-  app.kubernetes.io/managed-by: "Tiller"
-  app.kubernetes.io.instance: "wavefront"
-  app.kubernetes.io/component: collector
- name: wavefront-collector
-roleRef:
- apiGroup: rbac.authorization.k8s.io
- kind: ClusterRole
- name: wavefront-collector
-subjects:
-- kind: ServiceAccount
- name: wavefront-collector
- namespace: wavefront
-​
----
-# Source: wavefront/templates/proxy-service.yaml
-​
-apiVersion: v1
-kind: Service
-metadata:
- labels:
-  app.kubernetes.io/name : wavefront
-  helm.sh/chart: "wavefront-0.2.0"
-  app.kubernetes.io/managed-by: "Tiller"
-  app.kubernetes.io.instance: "wavefront"
-  app.kubernetes.io/component: proxy
- name: wavefront-proxy
-spec:
- ports:
- - name: wavefront
-  port: 2878
-  protocol: TCP
- selector:
-  app.kubernetes.io/name : wavefront
-  app.kubernetes.io/component: proxy
-​
----
-# Source: wavefront/templates/collector-deployment.yaml
-​
-apiVersion: apps/v1
-kind: Deployment
-metadata:
- labels:
-  app.kubernetes.io/name : wavefront
-  helm.sh/chart: "wavefront-0.2.0"
-  app.kubernetes.io/managed-by: "Tiller"
-  app.kubernetes.io.instance: "wavefront"
-  app.kubernetes.io/component: collector
- name: wavefront-collector
-spec:
- replicas: 1
- selector:
-  matchLabels:
-   app.kubernetes.io/name : wavefront
-   app.kubernetes.io/component: collector
- template:
-  metadata:
-   labels:
-    app.kubernetes.io/name : wavefront
-    app.kubernetes.io/component: collector
-  spec:
-   serviceAccountName: wavefront-collector
-   containers:
-   - name: wavefront-collector
-    image: wavefronthq/wavefront-kubernetes-collector:0.9.4
-    imagePullPolicy: IfNotPresent
-    command:
-    - /wavefront-collector
-    - --source=kubernetes.summary_api:''
-    - --sink=wavefront:?proxyAddress=wavefront-proxy:2878&clusterName=test-k8s&includeLabels=true&includeContainers=true&prefix=kubernetes.
-    - --enable-discovery=true
-    resources:
-     limits:
-      cpu: 200m
-      memory: 256Mi
-     requests:
-      cpu: 200m
-      memory: 256Mi
-     
-    volumeMounts:
-    - name: ssl-certs
-     mountPath: /etc/ssl/certs
-     readOnly: true
-   volumes:
-   - name: ssl-certs
-    hostPath:
-     path: /etc/ssl/certs
-​
----
-# Source: wavefront/templates/proxy-deployment.yaml
-​
-apiVersion: apps/v1
-kind: Deployment
-metadata:
- labels:
-  app.kubernetes.io/name : wavefront
-  helm.sh/chart: "wavefront-0.2.0"
-  app.kubernetes.io/managed-by: "Tiller"
-  app.kubernetes.io.instance: "wavefront"
-  app.kubernetes.io/component: proxy
- name: wavefront-proxy 
-spec:
- replicas: 1
- selector:
-  matchLabels:
-   app.kubernetes.io/name : wavefront
-   app.kubernetes.io/component: proxy
- template:
-  metadata:
-   labels:
-    app.kubernetes.io/name : wavefront
-    app.kubernetes.io/component: proxy
-  spec:
-   containers:
-   - name: wavefront-proxy
-    image: wavefronthq/proxy:4.34
-    imagePullPolicy: IfNotPresent
-    env:
-    - name: WAVEFRONT_URL
-     value: https://try.wavefront.com/api
-    - name: WAVEFRONT_TOKEN
-     value: 7ce7b444-114f-42e6-87ec-5deb4f42250c
-    - name: WAVEFRONT_PROXY_ARGS
-     value: --preprocessorConfigFile /etc/wavefront/wavefront-proxy/preprocessor/rules.yaml
-    ports:
-    - containerPort: 2878
-     protocol: TCP
-    securityContext:
-     privileged: false
-    volumeMounts:
-    - name: preprocessor
-     mountPath: /etc/wavefront/wavefront-proxy/preprocessor
-   volumes:
-   - name: preprocessor
-    configMap:
-     name: wavefront-proxy-preprocessor
-​
-​
-Collapse 
-Also you don’t need to use all the `app.kubernetes.io/managed-by` and `app.kubernetes.io/instance` labels.  those are more specified for helm, though they do follow some guidelines i’m seeing being adopted by more people.  You can use whatever labels you feel are appropriate and fit within guidelines established by PKS.
-#+END_EXAMPLE
+* TODO [#A] Wavefront inconsistency: doesn't see the metrics after waiting 20 minutes :noexport:
+* TODO [#A] Wavefront inconsistency: see the metrics show in different zones :noexport:
+* TODO wavefrront two accounts: releng ci; dev testing             :noexport:
+* TODO wavefront kube-state-metrics                                :noexport:
+** TODO kube-state-metrics: sum(ts(pks.kube.pod.status.ready.gauge, condition=true and cluster="wf-deployment-0-10-0-dev-157")): duplicate
+sum(ts(kube.pod.status.ready.gauge, condition=true and cluster="wf-deployment-0-10-0-dev-157"))
+** TODO sum(ts(pks.kube.pod.container.status.running.gauge, cluster="wf-deployment-0-10-0-dev-157"))
+sum(ts(kube.pod.container.status.running.gauge, cluster="wf-deployment-0-10-0-dev-157"))
+** TODO sum(ts(pks.kube.node.status.condition.gauge, condition=Ready and status=true and cluster="wf-deployment-0-10-0-dev-157"))
+sum(ts(kube.node.status.condition.gauge, condition=Ready and status=true and cluster="wf-deployment-0-10-0-dev-157"))
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Design question: kube-state-metrics/wavefront-proxy/wavefront-collector :noexport:
+* TODO Design question: footprint of wavefront-proxy/wavefront-collector :noexport:
 * TODO wavefront collector query interval                          :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:

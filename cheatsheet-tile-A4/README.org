@@ -22,27 +22,31 @@
 
 File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-tile-A4][this repo]].
 ** om - Basic
-| Name                                  | Command                                                                                                 |
-|---------------------------------------+---------------------------------------------------------------------------------------------------------|
-| [[https://github.com/pivotal-cf/om][om]]                                    | A command-line API client for Pivotal Operations Manager                                                |
-| omcli                                 | export passwd='CHANGEME; alias omcli="om -t https://30.0.0.5 -u admin -p $password -k"                  |
-| Upload tile to opsmanager via cli     | =omcli upload-product -p </path/myproduct.pivotal>=                                                     |
-| Upload stemcell to opsmanager via cli | =omcli upload-stemcell -s </path/stemcell.tgz>=                                                         |
-| List all properties for a deployment  | =bosh deployments=, =omcli curl -p /api/v0/staged/products/${bosh_deployment}/properties -s=            |
-| Get uaa admin password                | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.uaa_admin_password= |
-| Get bosh connect credential           | =omcli curl -p /api/v0/deployed/director/credentials/bosh_commandline_credentials=                      |
-| List all installed tiles              | =omcli curl -p /api/v0/installations=                                                                   |
-| Show status of apply changes          | =omcli installation-log --id 2=, =omcli installation-log --id $installation_id=                         |
-| json output                           | =omcli -k --format=json staged-products=                                                                |
-| Reference                             | [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tile-A4][Tile CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4][UAA CheatSheet]]                                        |
-** Tile Challenges
-| Name                                         | Comment                                               |
-|----------------------------------------------+-------------------------------------------------------|
-| Tiles are big                                | It's usually GBs. Too big to distribute               |
-| In Opsmanager, can't cancel task             | Costly to make mistakes                               |
-| In Opsmanager, can't downgrade               | Inconvenient for development cycle                    |
-| In Opsmanager, =review changes= is confusing | The review feature should be more informative         |
-| Slow to apply changes                        | Usually it takes hours, while minutes in *kubernetes* |
+| Name                                  | Command                                                                                                           |
+|---------------------------------------+-------------------------------------------------------------------------------------------------------------------|
+| [[https://github.com/pivotal-cf/om][om]]                                    | A command-line API client for Pivotal Operations Manager                                                          |
+| omcli                                 | export passwd='CHANGEME'; alias omcli="om -t https://30.0.0.5 -u admin -p $password -k"                           |
+| Upload tile to opsmanager via cli     | =omcli upload-product -p </path/myproduct.pivotal>=                                                               |
+| Upload stemcell to opsmanager via cli | =omcli upload-stemcell -s </path/mystemcell.tgz>=                                                                 |
+| Use pivnet cli to download stemcell   | Once =pivnet login=, =pivnet download-product-files -p stemcells-ubuntu-xenial -r 170.15 -g '*vsphere*' -d /tmp/= |
+| Show status of apply changes          | =omcli installation-log --id 2=, =omcli installation-log --id $installation_id=                                   |
+| List all properties for a deployment  | =bosh deployments=, =omcli curl -p /api/v0/staged/products/${bosh_deployment}/properties -s=                      |
+| Get uaa admin password                | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.uaa_admin_password=           |
+| Get bosh connect credential           | =omcli curl -p /api/v0/deployed/director/credentials/bosh_commandline_credentials=                                |
+| List all installed tiles              | =omcli curl -p /api/v0/installations=                                                                             |
+| json output                           | =omcli -k --format=json staged-products=                                                                          |
+| Reference                             | [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tile-A4][Tile CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4][UAA CheatSheet]]                                                  |
+** Get bosh/pks tile credential from om
+| Name                                        | Summary                                                                                                                |
+|---------------------------------------------+------------------------------------------------------------------------------------------------------------------------|
+| bosh tile -> Bosh Commandline Credentials   | =omcli curl -p /api/v0/deployed/director/credentials/bosh2_commandline_credentials=                                    |
+| Get ops-manager ca cert                     | =omcli curl -p /api/v0/certificate_authorities=                                                                        |
+| pks tile -> Uaa Admin Password              | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.uaa_admin_password=                |
+| pks tile -> Pks Uaa Management Admin Client | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.pks_uaa_management_admin_client=   |
+| pks tile -> api server FQDN                 | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.pks_api_hostname=                  |
+| pks tile -> pks certificates                | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.pivotal-container-service.pks_tls=            |
+| pks tile -> whether wavefront is enabled    | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.wavefront=                         |
+| pks tile -> wavefront token                 | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.wavefront.enabled.wavefront_token= |
 ** om product
 | Name                        | Summary                                                                   |
 |-----------------------------+---------------------------------------------------------------------------|
@@ -58,21 +62,18 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | Name                     | Comment                                                                                     |
 |--------------------------+---------------------------------------------------------------------------------------------|
 | [[https://github.com/pivotal-cf/pivnet-cli][pivnet]]                   | CLI to interact with Pivotal Network. [[https://github.com/pivotal-cf/pivnet-cli/releases/][Install pivnet CLI]]                                    |
-| pivnet login             | =pivnet login --api-token <your_token>=                                                     |
+| pivnet login             | =pivnet login --api-token $your_token=                                                      |
 | pivnet download stemcell | =pivnet download-product-files -p stemcells-ubuntu-xenial -r 170.9 -g '*vsphere*' -d /tmp/= |
 | List all products        | =pivnet products=                                                                           |
 | Show product info        | =pivnet product -p pivotal-container-service=                                               |
-** Get bosh/pks tile credential from om
-| Name                                        | Summary                                                                                                                |
-|---------------------------------------------+------------------------------------------------------------------------------------------------------------------------|
-| bosh tile -> Bosh Commandline Credentials   | =omcli curl -p /api/v0/deployed/director/credentials/bosh2_commandline_credentials=                                    |
-| Get ops-manager ca cert                     | =omcli curl -p /api/v0/certificate_authorities=                                                                        |
-| pks tile -> Uaa Admin Password              | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.uaa_admin_password=                |
-| pks tile -> Pks Uaa Management Admin Client | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.pks_uaa_management_admin_client=   |
-| pks tile -> api server FQDN                 | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.pks_api_hostname=                  |
-| pks tile -> pks certificates                | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.pivotal-container-service.pks_tls=            |
-| pks tile -> whether wavefront is enabled    | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.wavefront=                         |
-| pks tile -> wavefront token                 | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.wavefront.enabled.wavefront_token= |
+** Tile Challenges
+| Name                                         | Comment                                               |
+|----------------------------------------------+-------------------------------------------------------|
+| Tiles are big                                | It's usually GBs. Too big to distribute               |
+| In Opsmanager, can't cancel task             | Costly to make mistakes                               |
+| In Opsmanager, can't downgrade               | Inconvenient for development cycle                    |
+| In Opsmanager, =review changes= is confusing | The review feature should be more informative         |
+| Slow to apply changes                        | Usually it takes hours, while minutes in *kubernetes* |
 ** Tile Reference
 | Name           | Command                                                                         |
 |----------------+---------------------------------------------------------------------------------|
@@ -87,7 +88,7 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | Name                | Command                                                                  |
 |---------------------+--------------------------------------------------------------------------|
 | Release folder      | =/var/tempest/releases=                                                  |
-| Restart Ops Manager | =service tempest-web stop/start=                                         |
+| Restart Ops Manager | =service tempest-web start=, =service tempest-web stop=                  |
 | Grant file access   | =chown tempest-web:tempest-web /var/tempest/releases/<your-release.tgz>= |
 | Tile entrance file  | =/var/tempest/workspaces/default/metadata/*.yml=                         |
 | Tile jobs folder    | =/var/vcap/jobs=                                                         |
@@ -493,3 +494,36 @@ X-Xss-Protection: 1; mode=block
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO k8s windows workload
 * TODO tile get deployment status                                  :noexport:
+* TODO tile om
+could not execute "configure-product": yaml: line 2: mapping values are not allowed in this context
+** HALF issue to enable telemetry
+#+BEGIN_EXAMPLE
+kubo@jumper:~$ cat enable-telemetry.yml
+ product-properties:
+     .properties.telemetry_selector:
+         value: enabled
+     .properties.telemetry_selector.enabled.telemetry_url:
+         value: https://vcsa.vmware.com/ph-stg
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+ om -k \
+   --username admin \
+   --password 'Admin!23' \
+   -t  https://30.0.0.5 \
+   configure-product \
+   -n \
+   pivotal-container-service \
+   -c enable-telemetry.yml
+
+kubo@jumper:~$  om -k \
+>    --username admin \
+>    --password 'Admin!23' \
+>    -t  https://30.0.0.5 \
+>    configure-product \
+>    -n \
+>    pivotal-container-service \
+>    -c enable-telemetry.yml
+configuring product...
+could not execute "configure-product": yaml: line 2: mapping values are not allowed in this context
+#+END_EXAMPLE
