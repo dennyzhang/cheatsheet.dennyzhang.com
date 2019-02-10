@@ -4,7 +4,7 @@
 :export_file_name: cheatsheet-file-A4.pdf
 :END:
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT HTML
 <a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-file-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -72,7 +72,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 | Create a copy for backup with timstamp as suffix | =cp myfile.txt{,."$(date +%Y%m%d-%H%M%S)"}=   |
 | Copy files by checking timestamp                 | =rsync -av $src_dir $dest_dir=                |
 | Copy files by comparing checksum                 | =rsync -avc $src_dir $dest_dir=               |
-#+BEGIN_HTML
+#+BEGIN_EXPORT HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
 ** Watch file
@@ -100,7 +100,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 ** More Resources
 License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>

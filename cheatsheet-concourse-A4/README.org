@@ -4,7 +4,7 @@
 :export_file_name: cheatsheet-concourse-A4.pdf
 :END:
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT HTML
 <a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -47,7 +47,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | [[https://github.com/concourse/docker-image-resource][docker-image-resource]]: docker image         |                                                        |
 | [[https://github.com/frodenas/gcs-resource][gcs-resource]]: google bucket                 |                                                        |
 | Reference                                   | [[https://github.com/pivotal-cf/pcf-pipelines/tree/v0.23.0][GitHub: pcf-pipelines]]                                  |
-
 ** Concourse Containers
 | Name                                       | Summary                                                       |
 |--------------------------------------------+---------------------------------------------------------------|
@@ -68,6 +67,12 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | Validate pipeline                 | =fly validate-pipeline -c pipeline.yml=                                            |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-sample.png]]
+** Concourse Resource
+| Name                                          | Summary                                                                                    |
+|-----------------------------------------------+--------------------------------------------------------------------------------------------|
+| github-release resource get the old tag       | =fly -t $target check-resource -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]          |
+| github release use a specific tag             | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concourse-A4/github-release-specific-tag.md][github-release-specific-tag.md]]                                                             |
+| bosh-io-stemcell resource get the old version | =fly -t $target check-resource -r $pipeline-name/ubuntu-xenial-stemcell -f version:170.25= |
 ** Concourse Security
 | Name                               | Summary                                                                          |
 |------------------------------------+----------------------------------------------------------------------------------|
@@ -89,18 +94,17 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | List all concourse containers | =fly -t $target containers= |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-design.png]]
-** Concourse Advanced                                              :noexport:
+** Concourse Opportunities                                         :noexport:
 | Name                                                 | Summary                                                                                        |
 |------------------------------------------------------+------------------------------------------------------------------------------------------------|
 | fly set-pipeline run into "error: forbidden"         | Need to logout from both +fly client+ (=fly logout --all=) and +Concourse GUI+. [[https://github.com/concourse/concourse/issues/2134][Link: GitHub]]   |
-| github-release resource cannot find old tag          | =fly -t $target cr -r $pipeline-name/$resource-name -f tag:$tag= [[https://stackoverflow.com/questions/41108427/concourse-github-release-resource-cannot-find-older-versions-or-tags][Link]]                          |
 | List team details for all targets                    | =fly -t $target teams -d=, =~/.flyrc=                                                          |
 | Concourse UI runs into a blank page                  | If pipeline has recursive dependencies, Concourse UI may have issue to run its javascript code |
 | Split one pipeline yaml into small *reusable* pieces | Not supported. An uncomfortable workaround: generating yaml with other tools. [[https://github.com/concourse/concourse/issues/1994][Link: GitHub]]     |
 | Add a readonly member to one team                    | Not supported. Concourse only support authentication control, but not authorization control    |
 | Does Concourse have REST API?                        | Not supported so far. [[https://github.com/concourse/concourse/issues/1122][Link: GitHub]], [[https://github.com/concourse/atc/blob/d8da97675ef4b8941ebf372dbd63f200d56da6cd/routes.go#L105-L197][Link: Concourse REST endpoints]]                             |
 | Reference                                            | [[https://github.com/starkandwayne/concourse-tutorial][concourse-tutorial]], [[https://github.com/pivotalservices/concourse-pipeline-samples][concourse-pipeline-samples]]                                                 |
-#+BEGIN_HTML
+#+BEGIN_EXPORT HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
 ** fly Online Usage
@@ -190,7 +194,7 @@ http://www.mikeball.info/blog/concourse-git-resource/
 https://concoursetutorial.com/
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
-#+BEGIN_HTML
+#+BEGIN_EXPORT HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
@@ -419,3 +423,652 @@ https://github.com/concourse/concourse/issues/293
 * TODO consolidate: https://www.altoros.com/concourse-fly-cli-cheat-sheet.html :noexport:
 * TODO consolidate https://www.altoros.com/blog/concourse-fly-cli-cheat-sheet/ :noexport:
 * TODO consolicdate: https://github.com/JeffDeCola/my-cheat-sheets :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* Concourse in section                                             :noexport:
+https://concourse-ci.org/implementing-resources.html#in
+
+https://github.com/concourse/bosh-io-stemcell-resource#behavior
+
+The in script is passed a destination directory as command line
+argument $1, and is given on stdin the configured source and a precise
+version of the resource to fetch.
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] bosh-io-stemcell use a dedicated version               :noexport:
+https://github.com/concourse/bosh-io-stemcell-resource
+
+version	250.4 -> 170.24
+** [#A] Bosh error: stemcell                                       :noexport:
+ https://github.com/cloudfoundry/bosh/issues/1620
+*** bosh deployment has failed
+ #+BEGIN_EXAMPLE
+
+ + tags: {}
+
+ Task 22
+
+ Task 22 | 06:58:59 | Preparing deployment: Preparing deployment (00:00:07)
+ Task 22 | 06:59:38 | Error: 
+ Can't use release 'bpm/1.0.0'. It references packages without source code and are not compiled against stemcell 'bosh-vsphere-esxi-ubuntu-xenial-go_agent/250.4':
+  - 'bpm/583e5f12a22750b2f2a3fb7da28f1671585d6632'
+  - 'bpm-runc/c0b41921c5063378870a7c8867c6dc1aa84e7d85'
+  - 'golang/e21357079e735270cf6354e6939c5c2b9a2f720f'
+  - 'test-server/f09be8f1bb19854024504f4abd74747760b9302c'
+ Can't use release 'cfcr-etcd/1.8.0'. It references packages without source code and are not compiled against stemcell 'bosh-vsphere-esxi-ubuntu-xenial-go_agent/250.4':
+  - 'acceptance/fa972ca0c5ee4b3b2eb7b5b6ca2c06b79b5914ad44c90fc1a28499a2a8cb2a77'
+  - 'etcd/ecd44062ba6171205f6eadb1aeaef05aaa5ca64b3c2203cfc8dd9b8f1a5e79b8'
+  - 'golang-1.11-linux/bb9ab510b4b82a163137540402017207b9fc7e06'
+ Can't use release 'docker/33.0.0'. It references packages without source code and are not compiled against stemcell 'bosh-vsphere-esxi-ubuntu-xenial-go_agent/250.4':
+  - 'bosh-helpers/a616966453683545eb0e28d88da5a951f5f110ae'
+  - 'ctop/e5f579167182e9a1587c2346f4e84bad2c445c2e'
+  - 'docker/3ec445ecf9197642a57e4564f0ca35b68c590c39'
+  - 'flannel/8d0657c328133f9800822819e2cdcb7eeada2158'
+  - 'golang-1.11-linux/bb9ab510b4b82a163137540402017207b9fc7e06'
+  - 'sanity-tests/dd5b1fddc1fd74e5bb1ec4f706d8e2522acf9246'
+  - 'swarm/863049fb31327a0fc6a2b9ec38b1935a2ad634d3'
+
+
+ Task 22 Started  Mon Feb  4 06:58:59 UTC 2019
+ Task 22 Finished Mon Feb  4 06:59:38 UTC 2019
+ Task 22 Duration 00:00:39
+ Task 22 error
+
+ Updating deployment:
+   Expected task '22' to succeed but state is 'error'
+
+ Exit code 1
+ ++ cleanup
+ ++ '[' -z false ']'
+ ++ '[' false = true ']'
+ #+END_EXAMPLE
+*** /tmp/build/4dc76c32/kubo-deployment/kubo-manifest.yml
+ #+BEGIN_EXAMPLE
+ addons:
+ - jobs:
+   - name: kubo-dns-aliases
+     release: kubo
+   name: bosh-dns-aliases
+ features:
+   use_dns_addresses: true
+ instance_groups:
+ - azs:
+   - az-1
+   instances: 1
+   jobs:
+   - consumes:
+       cloud-provider:
+         from: master-cloud-provider
+     name: apply-specs
+     properties:
+       addons:
+       - kube-dns
+       - metrics-server
+       - heapster
+       - kubernetes-dashboard
+       admin-password: ((kubo-admin-password))
+       admin-username: admin
+       api-token: ((kubelet-password))
+       tls:
+         heapster: ((tls-heapster))
+         influxdb: ((tls-influxdb))
+         kubernetes: ((tls-kubernetes))
+         kubernetes-dashboard: ((tls-kubernetes-dashboard))
+         metrics-server: ((tls-metrics-server))
+     release: kubo
+   - name: wavefront-proxy-errand
+     properties:
+       kubernetes-apiserver-port: 8443
+       wavefront-api-url: https://try.wavefront.com/api
+       wavefront-token: c41f0c3c-dc50-4843-bbdf-7f0885ad7082
+     release: wavefront-proxy
+   - name: wavefront-alert-creation
+     properties:
+       wavefront-alert-targets: user@example.com
+       wavefront-api-url: https://try.wavefront.com/api
+       wavefront-token: c41f0c3c-dc50-4843-bbdf-7f0885ad7082
+     release: wavefront-proxy
+   - name: wavefront-alert-deletion
+     properties:
+       wavefront-api-url: https://try.wavefront.com/api
+       wavefront-token: c41f0c3c-dc50-4843-bbdf-7f0885ad7082
+     release: wavefront-proxy
+   lifecycle: errand
+   name: apply-addons
+   networks:
+   - name: service-network
+   stemcell: default
+   vm_type: small
+ - azs:
+   - az-1
+   instances: 3
+   jobs:
+   - name: bpm
+     release: bpm
+   - name: flanneld
+     release: kubo
+   - consumes:
+       cloud-provider:
+         from: master-cloud-provider
+     name: kube-apiserver
+     properties:
+       admin-password: ((kubo-admin-password))
+       admin-username: admin
+       audit-policy:
+         apiVersion: audit.k8s.io/v1beta1
+         kind: Policy
+         rules:
+         - level: None
+           resources:
+           - group: ""
+             resources:
+             - endpoints
+             - services
+             - services/status
+           users:
+           - system:kube-proxy
+           verbs:
+           - watch
+         - level: None
+           resources:
+           - group: ""
+             resources:
+             - nodes
+             - nodes/status
+           users:
+           - kubelet
+           verbs:
+           - get
+         - level: None
+           resources:
+           - group: ""
+             resources:
+             - nodes
+             - nodes/status
+           userGroups:
+           - system:nodes
+           verbs:
+           - get
+         - level: None
+           namespaces:
+           - kube-system
+           resources:
+           - group: ""
+             resources:
+             - endpoints
+           users:
+           - system:kube-controller-manager
+           - system:kube-scheduler
+           - system:serviceaccount:kube-system:endpoint-controller
+           verbs:
+           - get
+           - update
+         - level: None
+           resources:
+           - group: ""
+             resources:
+             - namespaces
+             - namespaces/status
+             - namespaces/finalize
+           users:
+           - system:apiserver
+           verbs:
+           - get
+         - level: None
+           resources:
+           - group: metrics.k8s.io
+           users:
+           - system:kube-controller-manager
+           verbs:
+           - get
+           - list
+         - level: None
+           nonResourceURLs:
+           - /healthz*
+           - /version
+           - /swagger*
+         - level: None
+           resources:
+           - group: ""
+             resources:
+             - events
+         - level: Request
+           omitStages:
+           - RequestReceived
+           resources:
+           - group: ""
+             resources:
+             - nodes/status
+             - pods/status
+           userGroups:
+           - system:nodes
+           verbs:
+           - update
+           - patch
+         - level: Request
+           omitStages:
+           - RequestReceived
+           users:
+           - system:serviceaccount:kube-system:namespace-controller
+           verbs:
+           - deletecollection
+         - level: Metadata
+           omitStages:
+           - RequestReceived
+           resources:
+           - group: ""
+             resources:
+             - secrets
+             - configmaps
+           - group: authentication.k8s.io
+             resources:
+             - tokenreviews
+         - level: Request
+           omitStages:
+           - RequestReceived
+           resources:
+           - group: ""
+           - group: admissionregistration.k8s.io
+           - group: apiextensions.k8s.io
+           - group: apiregistration.k8s.io
+           - group: apps
+           - group: authentication.k8s.io
+           - group: authorization.k8s.io
+           - group: autoscaling
+           - group: batch
+           - group: certificates.k8s.io
+           - group: extensions
+           - group: metrics.k8s.io
+           - group: networking.k8s.io
+           - group: policy
+           - group: rbac.authorization.k8s.io
+           - group: settings.k8s.io
+           - group: storage.k8s.io
+           verbs:
+           - get
+           - list
+           - watch
+         - level: RequestResponse
+           omitStages:
+           - RequestReceived
+           resources:
+           - group: ""
+           - group: admissionregistration.k8s.io
+           - group: apiextensions.k8s.io
+           - group: apiregistration.k8s.io
+           - group: apps
+           - group: authentication.k8s.io
+           - group: authorization.k8s.io
+           - group: autoscaling
+           - group: batch
+           - group: certificates.k8s.io
+           - group: extensions
+           - group: metrics.k8s.io
+           - group: networking.k8s.io
+           - group: policy
+           - group: rbac.authorization.k8s.io
+           - group: settings.k8s.io
+           - group: storage.k8s.io
+         - level: Metadata
+           omitStages:
+           - RequestReceived
+       k8s-args:
+         allow-privileged: true
+         audit-log-maxage: 0
+         audit-log-maxbackup: 0
+         audit-log-maxsize: 10000000
+         audit-log-path: /var/vcap/sys/log/kube-apiserver/audit.log
+         audit-policy-file: /var/vcap/jobs/kube-apiserver/config/audit_policy.yml
+         authorization-mode: RBAC
+         client-ca-file: /var/vcap/jobs/kube-apiserver/config/kubernetes.pem
+         disable-admission-plugins: []
+         enable-admission-plugins: []
+         enable-aggregator-routing: true
+         enable-bootstrap-token-auth: true
+         enable-swagger-ui: true
+         etcd-cafile: /var/vcap/jobs/kube-apiserver/config/etcd-ca.crt
+         etcd-certfile: /var/vcap/jobs/kube-apiserver/config/etcd-client.crt
+         etcd-keyfile: /var/vcap/jobs/kube-apiserver/config/etcd-client.key
+         kubelet-client-certificate: /var/vcap/jobs/kube-apiserver/config/kubelet-client-cert.pem
+         kubelet-client-key: /var/vcap/jobs/kube-apiserver/config/kubelet-client-key.pem
+         proxy-client-cert-file: /var/vcap/jobs/kube-apiserver/config/kubernetes.pem
+         proxy-client-key-file: /var/vcap/jobs/kube-apiserver/config/kubernetes-key.pem
+         requestheader-allowed-names: aggregator
+         requestheader-client-ca-file: /var/vcap/jobs/kube-apiserver/config/kubernetes.pem
+         requestheader-extra-headers-prefix: X-Remote-Extra-
+         requestheader-group-headers: X-Remote-Group
+         requestheader-username-headers: X-Remote-User
+         runtime-config: api/v1
+         secure-port: 8443
+         service-account-key-file: /var/vcap/jobs/kube-apiserver/config/service-account-public-key.pem
+         service-cluster-ip-range: 10.100.200.0/24
+         storage-media-type: application/json
+         tls-cert-file: /var/vcap/jobs/kube-apiserver/config/kubernetes.pem
+         tls-private-key-file: /var/vcap/jobs/kube-apiserver/config/kubernetes-key.pem
+         token-auth-file: /var/vcap/jobs/kube-apiserver/config/tokens.csv
+         v: 2
+       kube-controller-manager-password: ((kube-controller-manager-password))
+       kube-proxy-password: ((kube-proxy-password))
+       kube-scheduler-password: ((kube-scheduler-password))
+       kubelet-drain-password: ((kubelet-drain-password))
+       kubelet-password: ((kubelet-password))
+       service-account-public-key: ((service-account-key.public_key))
+       tls:
+         kubelet-client: ((tls-kubelet-client))
+         kubernetes:
+           ca: ((tls-kubernetes.ca))
+           certificate: ((tls-kubernetes.certificate))
+           private_key: ((tls-kubernetes.private_key))
+     release: kubo
+   - consumes:
+       cloud-provider:
+         from: master-cloud-provider
+     name: kube-controller-manager
+     properties:
+       api-token: ((kube-controller-manager-password))
+       cluster-signing: ((kubo_ca))
+       k8s-args:
+         cluster-signing-cert-file: /var/vcap/jobs/kube-controller-manager/config/cluster-signing-ca.pem
+         cluster-signing-key-file: /var/vcap/jobs/kube-controller-manager/config/cluster-signing-key.pem
+         kubeconfig: /var/vcap/jobs/kube-controller-manager/config/kubeconfig
+         root-ca-file: /var/vcap/jobs/kube-controller-manager/config/ca.pem
+         service-account-private-key-file: /var/vcap/jobs/kube-controller-manager/config/service-account-private-key.pem
+         terminated-pod-gc-threshold: 100
+         tls-cert-file: /var/vcap/jobs/kube-controller-manager/config/kube-controller-manager-cert.pem
+         tls-private-key-file: /var/vcap/jobs/kube-controller-manager/config/kube-controller-manager-private-key.pem
+         use-service-account-credentials: true
+         v: 2
+       service-account-private-key: ((service-account-key.private_key))
+       tls:
+         kube-controller-manager: ((tls-kube-controller-manager))
+         kubernetes: ((tls-kubernetes))
+     release: kubo
+   - name: kube-scheduler
+     properties:
+       api-token: ((kube-scheduler-password))
+       kube-scheduler-configuration:
+         apiVersion: kubescheduler.config.k8s.io/v1alpha1
+         clientConnection:
+           kubeconfig: /var/vcap/jobs/kube-scheduler/config/kubeconfig
+         disablePreemption: false
+         kind: KubeSchedulerConfiguration
+       tls:
+         kubernetes: ((tls-kubernetes))
+     release: kubo
+   - consumes:
+       cloud-provider:
+         from: master-cloud-provider
+     name: kubernetes-roles
+     properties:
+       admin-password: ((kubo-admin-password))
+       admin-username: admin
+       tls:
+         kubernetes: ((tls-kubernetes))
+     release: kubo
+   - name: etcd
+     properties:
+       etcd:
+         dns_suffix: etcd.cfcr.internal
+       tls:
+         etcd:
+           ca: ((tls-etcd-v0-17-0.ca))
+           certificate: ((tls-etcd-v0-17-0.certificate))
+           private_key: ((tls-etcd-v0-17-0.private_key))
+         etcdctl:
+           ca: ((tls-etcdctl.ca))
+           certificate: ((tls-etcdctl.certificate))
+           private_key: ((tls-etcdctl.private_key))
+         peer:
+           ca: ((tls-etcd-v0-17-0.ca))
+           certificate: ((tls-etcd-v0-17-0.certificate))
+           private_key: ((tls-etcd-v0-17-0.private_key))
+     release: cfcr-etcd
+   - name: smoke-tests
+     release: kubo
+   - name: cloud-provider
+     properties:
+       cloud-config:
+         Disk:
+           scsicontrollertype: pvscsi
+         Global:
+           datacenter: kubo-dc
+           datastore: iscsi-ds-0
+           password: Admin!23
+           server: 192.168.111.21
+           user: administrator@vsphere.local
+           working-dir: /kubo-dc/vm/pcf_vms/456183f2-09e1-4800-ab10-a4ab628a86dd
+       cloud-provider:
+         type: vsphere
+     provides:
+       cloud-provider:
+         as: master-cloud-provider
+     release: kubo
+   name: master
+   networks:
+   - name: service-network
+   persistent_disk: 5120
+   stemcell: default
+   vm_type: small
+ - azs:
+   - az-1
+   instances: 2
+   jobs:
+   - name: flanneld
+     release: kubo
+   - name: docker
+     properties:
+       bridge: cni0
+       default_ulimits:
+       - nofile=65536
+       env: {}
+       flannel: true
+       ip_masq: false
+       iptables: false
+       live_restore: true
+       log_level: error
+       log_options:
+       - max-size=128m
+       - max-file=2
+       storage_driver: overlay2
+       store_dir: /var/vcap/data
+     release: docker
+   - name: kubernetes-dependencies
+     release: kubo
+   - name: kubelet
+     properties:
+       api-token: ((kubelet-password))
+       cloud-provider: vsphere
+       drain-api-token: ((kubelet-drain-password))
+       k8s-args:
+         cni-bin-dir: /var/vcap/jobs/kubelet/packages/cni/bin
+         container-runtime: docker
+         docker: unix:///var/vcap/sys/run/docker/docker.sock
+         docker-endpoint: unix:///var/vcap/sys/run/docker/docker.sock
+         kubeconfig: /var/vcap/jobs/kubelet/config/kubeconfig
+         network-plugin: cni
+       kubelet-configuration:
+         apiVersion: kubelet.config.k8s.io/v1beta1
+         authentication:
+           anonymous:
+             enabled: false
+           x509:
+             clientCAFile: /var/vcap/jobs/kubelet/config/kubelet-client-ca.pem
+         authorization:
+           mode: Webhook
+         clusterDNS:
+         - 10.100.200.10
+         clusterDomain: cluster.local
+         failSwapOn: false
+         kind: KubeletConfiguration
+         serializeImagePulls: false
+         tlsCertFile: /var/vcap/jobs/kubelet/config/kubelet.pem
+         tlsPrivateKeyFile: /var/vcap/jobs/kubelet/config/kubelet-key.pem
+       tls:
+         kubelet: ((tls-kubelet))
+         kubelet-client-ca:
+           certificate: ((tls-kubelet-client.ca))
+         kubernetes: ((tls-kubernetes))
+     release: kubo
+   - name: kube-proxy
+     properties:
+       api-token: ((kube-proxy-password))
+       cloud-provider: vsphere
+       kube-proxy-configuration:
+         apiVersion: kubeproxy.config.k8s.io/v1alpha1
+         clientConnection:
+           kubeconfig: /var/vcap/jobs/kube-proxy/config/kubeconfig
+         clusterCIDR: 10.200.0.0/16
+         iptables:
+           masqueradeAll: false
+           masqueradeBit: 14
+           minSyncPeriod: 0s
+           syncPeriod: 30s
+         kind: KubeProxyConfiguration
+         mode: iptables
+         portRange: ""
+       tls:
+         kubernetes: ((tls-kubernetes))
+     release: kubo
+   - name: wavefront-proxy-images
+     release: wavefront-proxy
+   name: worker
+   networks:
+   - name: service-network
+   stemcell: default
+   vm_type: small
+ name: wf-deployment-0-11-0-dev-31
+ releases:
+ - name: kubo
+   sha1: 5209bbe9152fa704bf10643e262a4a361115cde2
+   url: https://storage.googleapis.com/kubo-precompiled-releases/kubo-0.26.0-ubuntu-xenial-170.14-20181219-115018-826675828.tgz
+   version: 0.26.0
+ - name: cfcr-etcd
+   sha1: a66b5521b0fc034870811e2e26df93b3a1b9c174
+   url: https://storage.googleapis.com/kubo-precompiled-releases/cfcr-etcd-1.8.0-ubuntu-xenial-170.14-20181217-202529-027335282.tgz
+   version: 1.8.0
+ - name: docker
+   sha1: a97c316d23ced7fa0698e49aff27dc3c2fe927af
+   url: https://storage.googleapis.com/kubo-precompiled-releases/docker-33.0.0-ubuntu-xenial-170.14-20181217-202117-701759559.tgz
+   version: 33.0.0
+ - name: bpm
+   sha1: 25282503273bcd345f867b006cc4c77b670af063
+   url: https://storage.googleapis.com/kubo-precompiled-releases/bpm-1.0.0-ubuntu-xenial-170.14-20181217-202955-477555041.tgz
+   version: 1.0.0
+ - name: wavefront-proxy
+   version: 0.11.0-dev.31
+ stemcells:
+ - alias: default
+   os: ubuntu-xenial
+   version: "250.4"
+ update:
+   canaries: 1
+   canary_watch_time: 10000-300000
+   max_in_flight: 1
+   update_watch_time: 10000-300000
+ variables:
+ - name: kubo-admin-password
+   type: password
+ - name: kubelet-password
+   type: password
+ - name: kubelet-drain-password
+   type: password
+ - name: kube-proxy-password
+   type: password
+ - name: kube-controller-manager-password
+   type: password
+ - name: kube-scheduler-password
+   type: password
+ - name: kubo_ca
+   options:
+     common_name: ca
+     is_ca: true
+   type: certificate
+ - name: tls-kubelet
+   options:
+     alternative_names: []
+     ca: kubo_ca
+     common_name: kubelet.cfcr.internal
+     organization: system:nodes
+   type: certificate
+ - name: tls-kubelet-client
+   options:
+     ca: kubo_ca
+     common_name: kube-apiserver.cfcr.internal
+     extended_key_usage:
+     - client_auth
+     organization: system:masters
+   type: certificate
+ - name: tls-kubernetes
+   options:
+     alternative_names:
+     - 10.100.200.1
+     - kubernetes
+     - kubernetes.default
+     - kubernetes.default.svc
+     - kubernetes.default.svc.cluster.local
+     - master.cfcr.internal
+     - 192.168.150.102
+     ca: kubo_ca
+     common_name: 192.168.150.102
+     organization: system:masters
+   type: certificate
+ - name: service-account-key
+   type: rsa
+ - name: tls-kube-controller-manager
+   options:
+     alternative_names:
+     - localhost
+     - 127.0.0.1
+     ca: kubo_ca
+     common_name: kube-controller-manager
+     extended_key_usage:
+     - server_auth
+     key_usage:
+     - digital_signature
+     - key_encipherment
+   type: certificate
+ - name: tls-etcd-v0-17-0
+   options:
+     ca: kubo_ca
+     common_name: '*.etcd.cfcr.internal'
+     extended_key_usage:
+     - client_auth
+     - server_auth
+   type: certificate
+ - name: tls-etcdctl
+   options:
+     ca: kubo_ca
+     common_name: etcdClient
+     extended_key_usage:
+     - client_auth
+   type: certificate
+ - name: tls-metrics-server
+   options:
+     alternative_names:
+     - metrics-server.kube-system.svc
+     ca: kubo_ca
+     common_name: metrics-server
+   type: certificate
+ - name: tls-heapster
+   options:
+     alternative_names:
+     - heapster.kube-system.svc.cluster.local
+     ca: kubo_ca
+     common_name: heapster
+   type: certificate
+ - name: tls-influxdb
+   options:
+     alternative_names: []
+     ca: kubo_ca
+     common_name: monitoring-influxdb
+   type: certificate
+ - name: kubernetes-dashboard-ca
+   options:
+     common_name: ca
+     is_ca: true
+   type: certificate
+ - name: tls-kubernetes-dashboard
+   options:
+     alternative_names: []
+     ca: kubernetes-dashboard-ca
+     common_name: kubernetesdashboard.cfcr.internal
+   type: certificate
+ #+END_EXAMPLE

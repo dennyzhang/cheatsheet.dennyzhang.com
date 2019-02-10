@@ -995,3 +995,14 @@ https://github.com/jenkinsci/docker-workflow-plugin/tree/master/demo
 https://stackoverflow.com/questions/36088227/how-to-run-a-docker-command-in-jenkins-build-execute-shell
 https://stackoverflow.com/questions/42859443/execute-docker-commands-in-jenkins-in-docker-container
 ** TODO Use AWS S3 for my critical backup: Jenkins configurations
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE jenkins skip wizzard                                        :noexport:
+  CLOSED: [2019-02-07 Thu 00:35]
+https://stackoverflow.com/questions/35960883/how-to-unlock-jenkins
+-Djenkins.install.runSetupWizard=false 
+* DONE jenkins install seed jobs: /usr/share/jenkins/ref/jobs/     :noexport:
+  CLOSED: [2019-02-07 Thu 00:30]
+https://stackoverflow.com/questions/43691539/create-jenkins-docker-image-with-pre-configured-jobs
+* DONE [#A] jenkins upload jobs folder                             :noexport:
+  CLOSED: [2019-02-07 Thu 00:35]
+

@@ -406,8 +406,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO [#A] apparmor: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO asciiart: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO yum & rpm & rpm2cpio & urpm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* TODO convert: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO ifconfig & ip & iwconfig & route & ss & ntp & nmap & nc & ncat & netstat & dhclient: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO od: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO mount & udisksctl: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
@@ -418,7 +416,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO nkf: /Users/zdenny/cheat/cheat/cheatsheets/                 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-health-A4 :noexport:
-* TODO du & dd && df & lsblk & lvm & mdadm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO [#A] avoid underline: https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO html cheatsheet: https://jimmysong.io/cheatsheets/html      :noexport:
@@ -427,9 +424,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO cheatsheet link highlight: https://cheatsheet.dennyzhang.com/cheatsheet-gcp-a4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO linux networking: Send a PR request to https://github.com/trimstray/the-book-of-secret-knowledge :noexport:
-* TODO cheatsheet confluence: JIRA                                 :noexport:
-** JIRA search tickets resolved in the past one month
-* TODO vagrant cheatsheet: https://jimmysong.io/cheatsheets/vagrant :noexport:
 * TODO https://zeltser.com/security-incident-survey-cheat-sheet/   :noexport:
 * TODO cheatsheet: k8s deployment solution                         :noexport:
 kubepray
@@ -454,21 +448,10 @@ ansible
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-k8s-backup-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-linux-distro-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-opensource-A4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-operator-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-istio-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO ubuntu cheatsheet: apt-get install iputils-ping             :noexport:
-* TODO Cheatsheet: Faillure Stories For IT Industry                :noexport:
-- serverless
-https://github.com/cristim/serverless-failure-stories
-
-- Amazon
-
-- kubernetes
-
-- OpenStack
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO doc: outlook cheatsheet: share the calender: Calendar -> Oragnize -> Permission :noexport:
 https://support.office.com/en-us/article/share-an-outlook-calendar-with-other-people-353ed2c1-3ec5-449d-8c73-6931a0adab88
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -494,19 +477,14 @@ https://github.com/dennyzhang/docs
 * TODO doc: solve problems stage by stage, and one by one. Thus the team can get focused :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO terraform cheatsheet                                        :noexport:
-* TODO vagrant cheatsheet: https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/development/development-environments/vagrant-cheat-sheet :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Submit cheatsheet to websites                          :noexport:
 * TODO [#A] submit bosh, tile, concourse, golang cheatsheet to related community :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO latex cheatsheet                                            :noexport:
-https://www.latex-tutorial.com/tutorials/
-** HALF latex add a bullet point
-https://tex.stackexchange.com/questions/74279/how-to-add-bullets-to-description-lists
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** latex add image
-https://www.latex-tutorial.com/tutorials/figures/
-** add sub-section
-** add citation
-https://www.latex-tutorial.com/tutorials/bibtex/
-** latex add indent
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-latex-A4
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-disk-A4
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-vagrant-A4
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-confluence-A4
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-image-A4
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-failures-A4
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Cheatsheet: Buy a house in US
