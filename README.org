@@ -268,8 +268,9 @@ https://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
  #+END_EXAMPLE
 ** TODO generate A4 pdf: https://github.com/PrateekKumarSingh/CheatSheets :noexport:
 * TODO [#A] Role model                                             :noexport:
-** DONE https://github.com/JeffDeCola/my-cheat-sheets
-   CLOSED: [2019-01-23 Wed 22:43]
+** DONE https://jeffdecola.github.io/my-cheat-sheets/
+   CLOSED: [2019-02-09 Sat 22:50]
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** https://github.com/detailyang/awesome-cheatsheet
 ** [#A] https://www.cheatography.com/language/en/
 ** http://cheatsheetworld.com/
@@ -363,7 +364,7 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO [#A] Make it more useful                                    :noexport:
 ** TODO enable people to better search; https://devhints.io/       :noexport:
 ** TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
-* TODO [#B] Fail the pdf generating job when some lines are truncated :noexport:
+* TODO [#B] Should fail the pdf generating job when some lines are truncated :noexport:
 * TODO [#A] Build internal links                                   :noexport:
 * TODO Add guideline for how people to contribute                  :noexport:
 * TODO [#A] org-mode seperator use a different one                 :noexport:
@@ -408,14 +409,12 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO yum & rpm & rpm2cpio & urpm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO ifconfig & ip & iwconfig & route & ss & ntp & nmap & nc & ncat & netstat & dhclient: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO od: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
-* TODO mount & udisksctl: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO systemctl & systemd: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO asterisk: /Users/zdenny/cheat/cheat/cheatsheets/asterisk    :noexport:
 * TODO shred: /Users/zdenny/cheat/cheat/cheatsheets/shred          :noexport:
 * TODO ncdu: /Users/zdenny/cheat/cheat/cheatsheets/                :noexport:
 * TODO nkf: /Users/zdenny/cheat/cheat/cheatsheets/                 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-health-A4 :noexport:
+* TODO improve https://cheatsheet.dennyzhang.com/cheatsheet-health-A4 :noexport:
 * TODO [#A] avoid underline: https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO html cheatsheet: https://jimmysong.io/cheatsheets/html      :noexport:
@@ -441,7 +440,7 @@ ansible
 - Don't make a firm judgement, before you're 100% sure. It will make people uncomfortable
 - Don't show underestimation about value of low-value tasks or directions
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-harbor-A4 :noexport:
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-harbor-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-gke-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-iterm-A4 :noexport:
@@ -480,11 +479,10 @@ https://github.com/dennyzhang/docs
 * TODO [#A] Submit cheatsheet to websites                          :noexport:
 * TODO [#A] submit bosh, tile, concourse, golang cheatsheet to related community :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-latex-A4
-* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-disk-A4
-* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-vagrant-A4
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-confluence-A4
-* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-image-A4
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-failures-A4
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-latex-A4
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-image-A4
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-disk-A4
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Cheatsheet: Buy a house in US

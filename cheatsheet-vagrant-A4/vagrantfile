@@ -1,0 +1,14 @@
+##  @copyright 2018 DennyZhang.com
+## Licensed under MIT 
+##   https://www.dennyzhang.com/wp-content/mit_license.txt
+##
+## File: vagrantfile
+## Author : Denny <https://www.dennyzhang.com/contact>
+## Description :
+## --
+## Created : <2018-07-10>
+## Updated: Time-stamp: <2019-02-09 22:47:58>
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/trusty64"
+end

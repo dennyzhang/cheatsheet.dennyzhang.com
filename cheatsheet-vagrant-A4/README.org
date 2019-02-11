@@ -22,13 +22,89 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
 ** vagrant Basic
-| Name | Summary |
-|------+---------|
-|      |         |
+| Name                                   | Command                                                  |
+|----------------------------------------+----------------------------------------------------------|
+| Vagrant supported providers            | =VirtualBox, VMware, Docker, Hyper-V=                    |
+| Check version                          | =vagrant version=                                        |
+| Start vm from vagrantfile              | =vagrant up=. [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-vagrant-A4/vagrantfile][Sample vagrantfile]]                         |
+| Start vm with customization            | =vagrant up --debug=, =vagrant up --provider virtualbox= |
+| Destroy vagrant vm                     | =vagrant destory=                                        |
+| SSH to vagrant vm                      | =vagrant ssh=                                            |
+| lists all boxes installed into Vagrant | =vagrant box list=                                       |
+| Vagrant data folder                    | =~/.vagrant.d=                                           |
+| Reference                              | [[https://www.vagrantup.com/docs/cli/][Link: vagrant cli]], [[https://app.vagrantup.com/boxes/search][Link: Discover Vagrant Boxes]]          |
+** vagrant start vms
+| Name                | Command                                                           |
+|---------------------+-------------------------------------------------------------------|
+| ubuntu 14.04 64bits | =vagrant init ubuntu/trusty64=                                    |
+| ubuntu 12.04 32bits | =vagrant init hashicorp/precise32=                                |
+| ubuntu 12.04 64bits | =vagrant init hashicorp/precise64=                                |
+| CentOS 6.5          | =vagrant init chef/centos-6.5=                                    |
+| Start vm from image | =vagrant init precise64 http://files.vagrantup.com/precise64.box= |
+** vagrant advanced
+| Name                             | Command                                                    |
+|----------------------------------+------------------------------------------------------------|
+| Show Vagrant environments        | =vagrant global-status=                                    |
+| stops the vagrant machine        | =vagrant halt=                                             |
+| package virtualbox vm to boxfile | =vagrant package --base my-virtual-machine=                |
+| Get detail ssh configuration     | =vagrant ssh-config=                                       |
+| Start vm with                    | =vagrant up --debug=                                       |
+| Copy local files to vagrant vm   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-vagrant-A4/copy-to-vagrant.sh][copy-to-vagrant.sh]]                                         |
+| Update vagrant boxes             | =vagrant box update=, =vagrant box update --box $box_name= |
+| Destroy all old boxes            | =vagrant box destroy=                                      |
+| Vagrant add a secondary drive    |                                                            |
+| Vagrant resize disk              |                                                            |
+** Online Help Usage
+#+BEGIN_EXAMPLE
+> vagrant --help
+WARNING: This command has been deprecated in favor of `vagrant cloud auth login`
+Usage: vagrant [options] <command> [<args>]
 
+    -v, --version                    Print the version and exit.
+    -h, --help                       Print this help.
+
+Common commands:
+     box             manages boxes: installation, removal, etc.
+     cloud           manages everything related to Vagrant Cloud
+     destroy         stops and deletes all traces of the vagrant machine
+     global-status   outputs status Vagrant environments for this user
+     halt            stops the vagrant machine
+     help            shows the help for a subcommand
+     init            initializes a new Vagrant environment by creating a Vagrantfile
+     login
+     package         packages a running vagrant environment into a box
+     plugin          manages plugins: install, uninstall, update, etc.
+     port            displays information about guest port mappings
+     powershell      connects to machine via powershell remoting
+     provision       provisions the vagrant machine
+     push            deploys code in this environment to a configured destination
+     rdp             connects to machine via RDP
+     reload          restarts vagrant machine, loads new Vagrantfile configuration
+     resume          resume a suspended vagrant machine
+     snapshot        manages snapshots: saving, restoring, etc.
+     ssh             connects to machine via SSH
+     ssh-config      outputs OpenSSH valid configuration to connect to the machine
+     status          outputs status of the vagrant machine
+     suspend         suspends the machine
+     up              starts and provisions the vagrant environment
+     upload          upload to machine via communicator
+     validate        validates the Vagrantfile
+     version         prints current and latest Vagrant version
+     winrm           executes commands on a machine via WinRM
+     winrm-config    outputs WinRM configuration to connect to the machine
+
+For help on any individual command run `vagrant COMMAND -h`
+
+Additional subcommands are available, but are either more advanced
+or not commonly used. To see all subcommands, run the command
+`vagrant list-commands`.
+#+END_EXAMPLE
 ** More Resources
+https://www.vagrantup.com/docs/cli/
+
 https://github.com/vagrant/vagrant
 
+https://www.vagrantup.com/docs/provisioning/shell.html
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
 #+BEGIN_EXPORT HTML
@@ -61,5 +137,226 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
-* TODO vagrant cheatsheet: https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/development/development-environments/vagrant-cheat-sheet :noexport:
-** TODO vagrant cheatsheet: https://jimmysong.io/cheatsheets/vagrant :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Vagrant up: defensive coding                                :noexport:
+Bruno Volpato	 [5:53 AM]
+@denny.zhang - two data scientists @bernardo.aflalo and @donato are starting to use the Sandbox, but they are loading more data than usually we do, so we need to provide some flexibility to disk size
+
+[5:53]
+we noticed two things: the vm disk is created with 40g and as VMDK
+
+[5:55]
+if possible, can you change it to have a parameter in the Vagrantfile to delete the default disk and create one using VBoxManage? -- preferentially using .vdi, because it will allow resizing
+
+[5:56]
+and another thing that causing problem: running "vagrant up" two times messes up with the installation, causes problems in Couchbase. I advised them to just call "vagrant up" one time and if they reboot they go directly through virtualbox to start, but maybe we can prevent it from messing the environment.
+
+denny zhang	 [8:04 AM]
+For disk size, yes we can provide flexibility in vagrantfile.
+
+However, if people are loading too many data, should they running sandbox deployment in Linode, instead of local laptop?
+
+[8:04]
+For "vagrant up", let me put some defensive coding here.
+* TODO virtualbox vm close: "Save State", "ACPI Shutdown" and "Power Off" :noexport:
+http://superuser.com/questions/959567/virtualbox-windows-graceful-shutdown-of-guests-on-host-shutdown
+https://www.vmware.com/support/ws5/doc/ws_running_poweroff_vs_shutdown.html
+* TODO vagrant add a secondary drive                               :noexport:
+https://gist.github.com/leifg/4713995
+https://github.com/kusnier/vagrant-persistent-storage
+http://stackoverflow.com/questions/24644478/vagrant-base-box-with-multiple-disks
+http://everythingshouldbevirtual.com/vagrant-adding-a-second-hard-drive
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* [#A] vagrant/virtualbox                                :noexport:IMPORTANT:
+** DONE ssh to vagrant vm                                          :noexport:
+  CLOSED: [2015-03-01 Sun 17:50]
+ssh -p 2222 -i /Users/mac/backup/totvs_code/mdmdevops/image_template/.vagrant/machines/default/virtualbox/private_key vagrant@127.0.0.1
+ssh -p 2222 vagrant@127.0.0.1
+#+BEGIN_EXAMPLE
+macs-air:image_template mac$ vagrant ssh-config
+Host default
+  HostName 127.0.0.1
+  User vagrant
+  Port 2222
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile /Users/mac/backup/totvs_code/mdmdevops/image_template/.vagrant/machines/default/virtualbox/private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
+#+END_EXAMPLE
+** TODO [#A] Ubuntu headless vagrant
+http://stackoverflow.com/questions/19419563/vagrant-up-error-in-headless-ubuntu-the-guest-machine-entered-an-invalid-state
+- VT-x/AMD-V hardware acceleration was not activated on my system
+- I use vagrant under windows though, I solved this problem by simply kill all the VirtualBox process, and restart VirtualBox GUI, start the VM, then normally power off it.
+#+BEGIN_EXAMPLE
+root@denny-chef-ubuntu-10:~# vagrant up
+vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'hashicorp/precise32' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+==> default: Loading metadata for box 'hashicorp/precise32'
+    default: URL: https://atlas.hashicorp.com/hashicorp/precise32
+==> default: Adding box 'hashicorp/precise32' (v1.0.0) for provider: virtualbox
+    default: Downloading: https://atlas.hashicorp.com/hashicorp/boxes/precise32/versions/1.0.0/providers/virtualbox.box
+==> default: Successfully added box 'hashicorp/precise32' (v1.0.0) for 'virtualbox'!
+==> default: Importing base box 'hashicorp/precise32'...
+==> default: Matching MAC address for NAT networking...
+==> default: Checking if box 'hashicorp/precise32' is up to date...
+==> default: Setting the name of the VM: root_default_1423716577664_44371
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 22 => 2222 (adapter 1)
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+The guest machine entered an invalid state while waiting for it
+to boot. Valid states are 'starting, running'. The machine is in the
+'gurumeditation' state. Please verify everything is configured
+properly and try again.
+
+If the provider you're using has a GUI that comes with it,
+it is often helpful to open that and watch the machine, since the
+GUI often has more helpful error messages than Vagrant can retrieve.
+For example, if you're using VirtualBox, run `vagrant up` while the
+VirtualBox GUI is open.
+#+END_EXAMPLE
+** TODO [#A] vagrant fail to start virtualbox VM in digital ocean: blocks remote test of testkitchen + vagrant :IMPORTANT:
+** DONE vagrant synced folder is missing
+  CLOSED: [2016-11-04 Fri 19:06]
+https://github.com/mitchellh/vagrant/issues/1587
+
+http://stackoverflow.com/questions/33039545/vagrant-synced-folders-disappearing
+
+http://stackoverflow.com/questions/18528717/vagrant-shared-and-synced-folders
+
+https://groups.google.com/forum/#!topic/vagrant-up/LKlo2BT0YXo
+
+mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant` /vagrant /vagrant
+mount -t vboxsf -o uid=`id -u root`,gid=`id -g root` root_docker_mnt /root/docker/mnt
+
+Vagrant doesn't modify your '/etc/fstab', so if you reboot the VM it is up to you to remount it.
+
+mount -t vboxsf -o uid=`id -u vagrant`,gid=`getent group vagrant | cut -d: -f3` /vagrant /vagrant
+mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant` /vagrant /vagrant
+
+#+BEGIN_EXAMPLE
+denny zhang [4:24 PM]
+Kung, have you restarted the VM during your test?
+
+In my test, if I restarted the VM in the middle, synced folder would be gone. Then it falls back to VM's drive.
+
+Will try my best to fix by the end of this month. (edited)
+
+denny zhang [5:40 PM]
+The issue I reported has been fixed.
+
+https://github.com/TOTVS/mdm/commit/f671814bf14ce725e6f7d083b268a3a3f5d005d8
+
+To be simple, vagrant doesn't support this by design.
+
+Quoted from vagrant owner:
+```Vagrant doesn't modify your '/etc/fstab', so if you reboot the VM it is up to you to remount it. Vagrant includes reload for this reason, if you run reload it will gracefully reboot and remount folders.
+
+There has been some talk about adding a plumbing method to just mount folders. But for the time being, this is annoyingly "working as intended". But use reload if you need it remounted.
+```
+https://github.com/mitchellh/vagrant/issues/1587
+ GitHub
+NFS synced folders do not survive a reboot · Issue #1587 · mitchellh/vagrant · GitHub
+Vagrant 1.1.5 + vmware_fusion provider NFS synced folders appear to be configured ephemerally, so that if the VM reboots itself (e.g. after installing a new kernel) then the synced folder is lost. ...
+
+[5:44]
+Please note Vagrantfile has been changed.
+
+However I don't seem to reproduce your issue, @kungwang
+#+END_EXAMPLE
+
+https://www.vagrantup.com/docs/synced-folders/
+
+https://www.vagrantup.com/docs/synced-folders/basic_usage.html
+** DONE vagrant port forwarding does not work
+  CLOSED: [2018-01-03 Wed 15:10]
+https://www.vagrantup.com/docs/networking/private_network.html
+https://stackoverflow.com/questions/21126917/vagrant-port-forwarding-does-not-work
+https://superuser.com/questions/1224258/nat-port-forwarding-of-privileged-port-fails-when-using-vagrant-with-virtualbox
+config.vm.network "forwarded_port", guest: 8080, host: 8080
+config.vm.network "forwarded_port", guest: 3306, host: 3306
+* TODO file ticket: vagrant resize disk               :noexport:
+Kung Wang
+[12:10 PM]
+@denny.zhang , one question. if I like my local sandbox to have bigger disk size, should I just stop the sandbox and enlarge the space in the virtualbox? or should I modify something in the Vagrantfile?
+
+Denny Zhang
+[12:24 PM]
+The previous one will work.
+
+Kung Wang
+[12:27 PM]
+thank you Denny
+
+
+Kung Wang
+[6:24 PM]
+@denny.zhang , after recreate sandbox, I found there is no way to change the disk size. I think we may have to provide this open in the Vagrantfile
+
+Denny Zhang
+[6:26 PM]
+Let me try
+
+Kung Wang
+[6:26 PM]
+https://www.virtualbox.org/manual/ch08.html#vboxmanage-list
+
+Denny Zhang
+[6:28 PM]
+I can't neither from Virtualbox GUI.
+
+hmm, I remember I could. Maybe it's from vmware.
+
+[6:28]
+Is it urgent, Kung? Let me get back to this early next week.
+
+A little behind my schedule for my tasks.
+
+Kung Wang
+[6:29 PM]
+VBoxManage modifymedium  [disk|dvd|floppy]    <uuid|filename>
+                         [--type normal|writethrough|immutable|shareable|
+                                 readonly|multiattach]
+                         [--autoreset on|off]
+                         [--property <name=[value]>]
+                         [--compact]
+                         [--resize <megabytes>|--resizebyte <bytes>]
+                         [--move <full path to a new location>
+
+* TODO Blog: automate vagrant to create disk larger than 80GB      :noexport:
+for virtualbox, if the disk is not VDI, then is not easy to expand the disk.
+
+you should turn the guest off, clone the disk from vmdk to vdi, dettach
+vmdk, attach vdi, expand vdi, then turn the machine on, and expand the
+filesystem on the disk.
+** What's the problem?
+http://tuhrig.de/resizing-vagrant-box-disk-space/
+Vagrant doesn't provide any out-of-the-box option to configure or to change the disk size. The disk size of a VM totally depends on the base image used for the VM. There are base images with a 10 GB disk, some with a 20 GB disk and some other with a 40 GB disk. There is no Vagrant option to change this – and even worse: most Vagrant boxes use VMDK disks which cannot be resized!
+** Use other tools: create a new VM with the desired disk with packer and then use it in vagrant.
+https://github.com/chef/bento
+
+I think will be way easier create a new VM with the desired disk with packer and then use it in vagrant.
+** resize the disk
+** use Synced folder
+** attach a new disk
+** #  --8<-------------------------- separator ------------------------>8--
+Vagrant owner: Mitchell Hashimoto
+https://groups.google.com/forum/#!topic/vagrant-up/zP9LDkfa7KI
+** similar post
+http://stackoverflow.com/questions/21210248/how-to-automatically-resize-the-vagrant-disk-image-size-for-linux-guests
+http://askubuntu.com/questions/317338/how-can-i-increase-disk-size-on-a-vagrant-vm/404500#404500
+https://www.virtualbox.org/manual/ch08.html#vboxmanage-createvdi
+https://github.com/mitchellh/vagrant/issues/2339
+https://www.virtualbox.org/manual/ch08.html#vboxmanage-createvdi
+http://tuhrig.de/resizing-vagrant-box-disk-space/

@@ -21,7 +21,15 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-process-A4][CheatSheet: Linux Process]], [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][CheatSheet: Linux Networking]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-diff-A4][this repo]].
-** Check disk
+** df
+| Name           | Comment |
+|----------------+---------|
+| List all disks | =df -h= |
+** du
+| Name                               | Comment                           |
+|------------------------------------+-----------------------------------|
+| Show disk usage for a given folder | =du -h -d 2 /data/elasticsearch/= |
+** dd
 | Name | Comment |
 |------+---------|
 |      |         |
@@ -59,3 +67,4 @@ License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_lic
 #+LINK_UP:
 #+LINK_HOME:
 * TODO du & dd && df & lsblk & lvm & mdadm: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
+* TODO mount & udisksctl: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
