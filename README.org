@@ -171,6 +171,7 @@ Cheers!
 ** DONE k8s cheatsheet: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#what-s-next
    CLOSED: [2019-01-23 Wed 22:54]
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO openshift: https://github.com/openshift/openshift-docs
 ** TODO om: https://github.com/pivotal-cf/om
 ** TODO concourse: https://concourse-ci.org/exposing.html
 https://cheatsheet.dennyzhang.com/cheatsheet-concourse-a4
@@ -191,7 +192,6 @@ https://cheatsheet.dennyzhang.com/cheatsheet-concourse-a4
 ** TODO helm: https://cheatsheet.dennyzhang.com/cheatsheet-helm-a4
 ** TODO rkt: https://cheatsheet.dennyzhang.com/cheatsheet-rkt-a4
 ** TODO cri-o: https://cheatsheet.dennyzhang.com/cheatsheet-crio-a4
-** TODO openshift
 ** TODO containerd: https://cheatsheet.dennyzhang.com/cheatsheet-containerd-a4
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** TODO aws: https://cheatsheet.dennyzhang.com/cheatsheet-aws-a4
