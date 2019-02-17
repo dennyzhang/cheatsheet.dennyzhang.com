@@ -167,6 +167,9 @@ Cheers!
    CLOSED: [2018-08-15 Wed 20:28]
 ** DONE blog post: list everything by category
    CLOSED: [2018-08-16 Thu 00:08]
+* DONE Sample link: /Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-disk-A4/sort-disk-size.sh :noexport:
+  CLOSED: [2019-02-10 Sun 22:03]
+[[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-disk-A4/sort-disk-size.sh][sort-disk-size.sh
 * [#A] Submit PR to related communities          :noexport:
 ** DONE k8s cheatsheet: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#what-s-next
    CLOSED: [2019-01-23 Wed 22:54]
@@ -483,6 +486,18 @@ https://github.com/dennyzhang/docs
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-failures-A4
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-latex-A4
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-image-A4
-* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-disk-A4
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Cheatsheet: Buy a house in US
+* TODO Cheatsheet: single family house maintainance                :noexport:
+* TODO no icon: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-disk-A4 :noexport:
+https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-archive-A4/README.org
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO add more tooling: for linux cheatsheets                     :noexport:
+sar, lsof, cat, grep, sed, pkill, awk, ssh, iostat, nc
+
+In networking add ss as netstat is deprecated and has not been updated 10 years. ip is a very useful command for interface and routing information.  arp is very useful however ip can do the same thing.
+
+Storage: sysdisks, daedisks, blkid, df, fdisk, smartctl, xfschk, add nfs options and fuser to make it use s3 options for nfs to s3, dd to duplicate disk data example would be nice.
+
+A section on for loops is helpful to folks to learn variable command outputs.
+
+nc (netcat) is def missing :)

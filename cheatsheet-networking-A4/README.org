@@ -2499,3 +2499,4 @@ nexus.fluigdata.com (104.236.180.184)
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Why `nmap -O`? and not say `-sV`?                           :noexport:
 * TODO consolidate https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/development/operating-systems/linux/dns-cheat-sheet :noexport:
+* TODO add netcat                                                  :noexport:

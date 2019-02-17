@@ -64,3 +64,5 @@ https://github.com/trimstray/house-essentials
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
+* TODO tips to increase my credit history: lease contract, utility :noexport:
+* TODO To lower the maintainance effort, what I need to do?        :noexport:
