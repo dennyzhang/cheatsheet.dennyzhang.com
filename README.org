@@ -482,10 +482,10 @@ https://github.com/dennyzhang/docs
 * TODO [#A] Submit cheatsheet to websites                          :noexport:
 * TODO [#A] submit bosh, tile, concourse, golang cheatsheet to related community :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-confluence-A4
-* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-failures-A4
-* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-latex-A4
-* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-image-A4
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-confluence-A4 :noexport:
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-failures-A4 :noexport:
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-latex-A4 :noexport:
+* TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-image-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Cheatsheet: single family house maintainance                :noexport:
 * TODO no icon: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-disk-A4 :noexport:
