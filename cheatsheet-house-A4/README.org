@@ -39,10 +39,17 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Check leaks for all sinks                       |                                             |
 | Reference                                       | [[https://www.youtube.com/channel/UCqKBj1cg2agtDD-hiqy6lAg][YouTube: Jonny DIY]], [[https://www.youtube.com/channel/UCUtWNBWbFL9We-cdXkiAuJA][YouTube: This Old House]] |
 
+** Terminology For Buying A House
+| Name            | Summary |
+|-----------------+---------|
+| Home inspection |         |
+| disclosure      |         |
+
 ** Roof
-| Name        | Summary                               |
-|-------------+---------------------------------------|
-| Roof Gutter | [[https://www.youtube.com/watch?v=45LbnlaJvtI][YouTube: How to Repair a Leaky Gutter]] |
+| Name                               | Summary                               |
+|------------------------------------+---------------------------------------|
+| Roof Gutter                        | [[https://www.youtube.com/watch?v=45LbnlaJvtI][YouTube: How to Repair a Leaky Gutter]] |
+| Tree branches overhanging the roof |                                       |
 
 ** Floor
 | Name                   | Summary                                    |
@@ -71,10 +78,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Dryer               |         |
 | AC(air conditioner) |         |
 
-** Lighting Maintenance
-| Name                | Summary |
-|---------------------+---------|
-| =Lamp doesn't work= |         |
+** Lighting & Electric
+| Name                                      | Summary |
+|-------------------------------------------+---------|
+| =Lamp doesn't work=                       |         |
+| =GFCI= ([[https://www.osha.gov/SLTC/etools/construction/electrical_incidents/gfci.html][Ground Fault Circuit Interrupter]]) |         |
 
 ** Toilet
 | Name                    | Summary                                 |
@@ -137,3 +145,169 @@ https://www.todayshomeowner.com/
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO tips to increase my credit history: lease contract, utility :noexport:
 * TODO How to check Termites                                       :noexport:
+* TODO Preventative maintenance is a key element to saving money   :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Contact & Service                                           :noexport:
+** termites
+info@proventermitesolutions.com
+* CANCELED old notes                                               :noexport:
+  CLOSED: [2019-02-19 Tue 09:21]
+#+BEGIN_EXAMPLE
+看房🏠
+
+zip code: 
+
+https://cheatsheet.dennyzhang.com/cheatsheet-house-A4
+
+Sunnyvale:
+- 94086
+- 94087
+- 94089: not good
+
+
+Portoflio by Dec
+- Fidelity: 1.35
+- Robinhond: 0.91
+- Bitcoin: 0.06
+
+Maintenance (0.65):
+- monthly saving: 1
+- House cost: 0.6
+- Stock: 0.25
+
+13.3*12+
+
+340-264+10+10
+
+VMware: 3495 Deer Creek Rd, Palo Alto, CA 94304
+KPMG: 3975 Freedom Cir, Santa Clara, CA 95054
+
+
+1.5m: 每月7000
+即房子开支多出了4000
+每月孩子开支多出2000
+
+每月存4000,即每年4.8w
+奖金:2w,股票:2w
+
+即每年存8.8w
+---------------------------------------------
+Meadowood Apartments: 1555 W. Middlefield Rd #4, Mountain View, CA 94043
+
+----------------------------------------------
+
+Park Square Apartments: 1285 Montecito Ave, Mountain View, CA 94043 
+
+$2,495; 816 Sq Ft; 
+￼
+￼
+
+- MountainView
+| Name                 | Price | Size | Distance S, D |
+|----------------------+-------+------+---------------|
+| Village Lake         | 2,550 |  682 | (7, 7)        |
+| Highland Gardens     | 2,980 |  750 | (8, 9)        |
+| Avalon Mountain View | 2,895 |  701 |               |
+| Birch Creek          | 2,795 |  800 |               |
+| Americana Apartments | 2,750 |  740 |               |
+
+- Sunnyvale
+| Name                      | Price | Size | Distance S, D |
+|---------------------------+-------+------+---------------|
+| Mission Pointe by Windsor | 2,685 |  704 | (4, 15)       |
+
+
+** Village Lake: 777 W Middlefield Rd, Mountain View, CA 94043
+https://www.zillow.com/homes/for_rent/house,condo,apartment_duplex,mobile,townhouse_type/5XjLXT_bldg/37.403001,-122.076286_ll/1-_beds/0-752851_price/0-3000_mp/600-_size/37.409172,-122.063674,37.396388,-122.083844_rect/15_zm/
+
+** Highland Gardens: 234 Escuela Ave, Mountain View, CA 94040
+https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/2096379137_zpid/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.430603,-122.021327,37.379468,-122.131877_rect/13_zm/
+
+** Avalon Mountain View: 1600 Villa St, Mountain View, CA 94041
+https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/2095571415_zpid/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.430058,-122.044759,37.378513,-122.091794_rect/13_zm/
+
+** Birch Creek: 575 S Rengstorff Ave, Mountain View, CA 94040
+https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/5XjKKB_bldg/37.39725,-122.09952_ll/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.416834,-122.013173,37.365689,-122.123723_rect/13_zm/
+
+** Americana Apartments: 707 Continental Cir, Mountain View, CA 94040
+https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/5hGhMy_bldg/37.375162,-122.065018_ll/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.411653,-122.009912,37.360505,-122.120461_rect/13_zm/
+
+** Mission Pointe by Windsor: 1063 Morse Ave, Sunnyvale, CA 94089
+https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5XjPcj_bldg/37.400296,-122.0178_ll/54626_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.411176,-121.966052,37.360027,-122.076602_rect/13_zm/
+
+
+看房考虑因素:
+- view要好,有deck晒太阳
+- private drive way
+- 空调机会不会很吵
+- 一楼独立的suite
+- 采光好
+- HOA多少
+- 晚上去看一下:看停车
+
+中国的字画作装饰
+
+基本事实:
+- 到9-1总共存款:17万（10.8美元+0.8人民币+5六个月新增存款=16.6）
+- 45万房子,首付17万贷款28万15年,月供大概 $1953（不加维护费）
+- 房子维护费:房产税,HOA,insurance:1000
+- 稳定后开支:把sophia工资花掉,存着Denny工资.即每月花6000,存6000元
+- 无房贷的日用开支: $4500
+- 每年可以存7万,6年即42万.
+#+END_EXAMPLE
+* house                                                            :noexport:
+** 白蚁:2000
+** 淋浴的水龙头出水问题
+** gas meter有漏气的味道: 找PGE
+** Two kitchen drawers are not stable
+** 家里有灯泡坏了
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** 橙子树挡着roof和neighbor了
+** 厨房炉子的右上方burner不work了
+** water heater还有大概5年寿命
+** 地基里面有曾经出现过小动物的痕迹（老鼠/ 松鼠）
+** 有GFCI插座坏了
+** 地基有一条裂缝 不过看上去是正常的size
+** 厕所下面有曾经漏水的痕迹
+** Hallway bath 的sink 水压比较低
+** 空调用了13年
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** 办两张credit cards
+** 把电费转到我手里
+** 把车保险转到我这里
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** check list
+- 有白蚁,需要做帐篷杀白蚁fumigation, 价格按房屋面积算, 这个大小两千左右.
+- Sweet ave 烟囱上面有裂痕
+- 地基有一条裂缝 不过看上去是正常的size. 地基里面有曾经出现过小动物的痕迹（ 老鼠/ 松鼠）
+- 厕所下面有曾经漏水的痕迹,地基里面有曾经出现过小动物的痕迹（ 老鼠/ 松鼠）.
+- 屋外gas meter 有漏气的味道, 需要找PGE人去修,
+- water heater 用了大概快十年, 普通water heater 寿命是10-15 年, 更换新的需要一千块左右, 买房第一年坏掉的话 找home warranty 可以cover 修好或者换新的.
+- 有GFCI插座坏了. 家里有灯泡坏了.Hallway bath 的sink 水压比较低,厨房炉子的右上方burner不work了,
+- 空调用了13年
+*** One or more floor tiles in the hallway were noted to be cracked
+*** There were tree branches overhanging the roof at one or more areas. R-6
+*** No permit for remodeling
+*** low water pressure in the sink of hallway bathroom
+*** water stains in roof sheathing
+*** location of cooling system
+*** roof漏水
+*** 哪些家具是留下
+*** 地基平吗？你们厘米走一圈有什么异样吗？
+ Roofs are not water tested for leaks. The roof has been inspected at a
+ time when it was not raining. Since one of the purposes of the roof is
+ to repel water this could not be observed and verified as occurring in
+ all cases. Therefore the roof has not been tested under wet conditions
+ and how it performs in these conditions is unknown. No warranty is
+ made that it will not leak when it is under a wet condition. It is
+ important for all roofs to have regular maintenance, including
+ cleaning out the gutters and drainlines and ensuring all the
+ penetrations are properly sealed. Condition of the roofing
+ underlayment material is not verified/inspected.
+*** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+*** 注意细节,房子里面的天花板,漏雨有水迹的,包括closet的角落
+*** 浴室厨房有没有发霉？打开抽屉,柜子里面看看.他们都家具你不要动,留下给你的房子的一部分,你都打开看看.
+*** 基平吗？你们厘米走一圈有什么异样吗？地上各个房间慢慢走一圈,墙角上下都留意一下.屋顶瓦的整体情况外面就可以看.
+*** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+*** basic
+ - The home was built in 1957.

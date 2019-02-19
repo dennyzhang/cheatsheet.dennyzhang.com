@@ -25,6 +25,8 @@ File me [[https://github.com/dennyzhang/cheatsheet-curl-A4/issues][Issues]] or s
 ** SSL Basic
 | Name                           | Command                                                                           |
 |--------------------------------+-----------------------------------------------------------------------------------|
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-ssl-A4/master/ssl-certificate.png]]
 ** More Resources
 License: Code is licenssl under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

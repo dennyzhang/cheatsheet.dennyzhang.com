@@ -167,6 +167,7 @@ Cheers!
    CLOSED: [2018-08-15 Wed 20:28]
 ** DONE blog post: list everything by category
    CLOSED: [2018-08-16 Thu 00:08]
+* TODO Sample image: [[https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-ssl-A4/master/]
 * DONE Sample link: /Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-disk-A4/sort-disk-size.sh :noexport:
   CLOSED: [2019-02-10 Sun 22:03]
 [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-disk-A4/sort-disk-size.sh][sort-disk-size.sh
@@ -491,6 +492,10 @@ https://github.com/dennyzhang/docs
 * TODO no icon: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-disk-A4 :noexport:
 https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-archive-A4/README.org
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Blog: Linux CheatSheet                                      :noexport:
+* TODO ssl cheatsheet                                              :noexport:
+sslscan or openssl
+
 * TODO add more tooling: for linux cheatsheets                     :noexport:
 sar, lsof, cat, grep, sed, pkill, awk, ssh, iostat, nc
 
@@ -501,3 +506,17 @@ Storage: sysdisks, daedisks, blkid, df, fdisk, smartctl, xfschk, add nfs options
 A section on for loops is helpful to folks to learn variable command outputs.
 
 nc (netcat) is def missing :)
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Check cheatsheet examples                                   :noexport:
+- send PR: https://github.com/detailyang/awesome-cheatsheet
+- latex: https://github.com/duttashi/cheatsheets
+- Start a website: https://github.com/justjavac/cheatsheets
+- https://github.com/FavioVazquez/ds-cheatsheets
+- https://github.com/JREAM/cheatsheet-npm-yarn
+- https://github.com/herrbischoff/cheatsheets
+- https://github.com/xiumingzhang/cheatsheets
+- https://github.com/eon01/AWS-CheatSheet
+- https://github.com/yuriyzubarev/aws-cheatsheets
+- https://github.com/DmitriyLanchakov/cheatsheets.pdf
+- https://github.com/vaputa/awesome-cheatsheet
+* TODO change openshift from cheatsheet to git repo                :noexport:
