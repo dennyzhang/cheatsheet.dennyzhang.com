@@ -23,10 +23,11 @@
 File me [[https://github.com/dennyzhang/cheatsheet-curl-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-curl-A4][this repo]].
 
 ** SSL Basic
-| Name                           | Command                                                                           |
-|--------------------------------+-----------------------------------------------------------------------------------|
+| Name                               | Command                               |
+|------------------------------------+---------------------------------------|
+| Disable SSL Certificate Validation | [[https://stackoverflow.com/questions/47479974/fluentd-ssl-verify-false-option][Link: Fluentd ssl verify false option]] |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-ssl-A4/master/ssl-certificate.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-ssl-A4/ssl-certificate.png]]
 ** More Resources
 License: Code is licenssl under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

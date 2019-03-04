@@ -295,3 +295,12 @@ Please try again in 30 seconds.
 | Extra wrappers + poor documents confuse people       |                                                         |
 | You need to explain your value in their languages    | Sometimes the statement they believe may not make sense |
 * TODO within our scope vs out of our scope                        :noexport:
+* TODO Avoid arguing with non-important things                     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO What you should avoid doing as a team lead?                 :noexport:
+* TODO Think ahead for questions that different roles would ask    :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Questions May Not Be Clear                             :noexport:
+** Promotion depends on your deliverables?
+** 能战斗, 能抗事
+** 充分的信息沟通是不对的

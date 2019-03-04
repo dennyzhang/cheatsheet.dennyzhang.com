@@ -45,6 +45,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Home inspection |         |
 | disclosure      |         |
 
+** Mortage
+| Name                     | Summary       |
+|--------------------------+---------------|
+| US 30 Year Mortgage Rate | [[https://ycharts.com/indicators/30_year_mortgage_rate][Link: ycharts]] |
+
 ** Roof
 | Name                               | Summary                               |
 |------------------------------------+---------------------------------------|
@@ -143,13 +148,6 @@ https://www.todayshomeowner.com/
 #+LINK_UP:   
 #+LINK_HOME: 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO tips to increase my credit history: lease contract, utility :noexport:
-* TODO How to check Termites                                       :noexport:
-* TODO Preventative maintenance is a key element to saving money   :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Contact & Service                                           :noexport:
-** termites
-info@proventermitesolutions.com
 * CANCELED old notes                                               :noexport:
   CLOSED: [2019-02-19 Tue 09:21]
 #+BEGIN_EXAMPLE
@@ -255,6 +253,14 @@ https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5
 - 无房贷的日用开支: $4500
 - 每年可以存7万,6年即42万.
 #+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO tips to increase my credit history: lease contract, utility :noexport:
+* TODO How to check Termites                                       :noexport:
+* TODO Preventative maintenance is a key element to saving money   :noexport:
+* TODO Contact & Service                                           :noexport:
+** termites
+info@proventermitesolutions.com
+* TODO 1031 Tax Exchange                                           :noexport:
 * house                                                            :noexport:
 ** 白蚁:2000
 ** 淋浴的水龙头出水问题
@@ -311,3 +317,66 @@ https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5
 *** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 *** basic
  - The home was built in 1957.
+* Loan for housing                                                 :noexport:
+12W, 24W
+
+base: 13W, package: 13.5W
+
+需要贷80到110W
+
+小银行:
+- 能贷多少钱
+- 利率多出多少
+- 如果提高自己我credits的建议
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** 申请三张信用卡: 多申请两张
+** 工作满两年
+** Loan agent                                                      :noexport:
+*** Citi
+ Sunny
+*** BOA
+Anna
+
+ 510-552-7271
+*** David Guo
+ +1-408-891-2002
+ 信用短
+
+ 72W以内
+
+ exception
+
+ 工作历史，满两年
+
+ 信用历史
+
+ 三张信用卡
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** 不能有两个银行
+** single family会多一点
+** Single 贷款: 72.6W; 70W
+* TODO arm 7/1: 3.875%; 3.625%; 3.5%                               :noexport:
+Mortgage amount: 1,200,000
+Mortgage period (years): 30 years
+
+| Interest Rate (%) | Total cost of mortgage | Monthly payments | Offset from 3.875 |
+|-------------------+------------------------+------------------+-------------------|
+|               3.5 | $1,939,873             | $5,389           |              -254 |
+|             3.625 | $1,970,142             | $5,473           |              -170 |
+|               3.7 | $1,988,422             | $5,523           |              -120 |
+|             3.875 | $2,031,424             | $5,643           |                   |
+
+254*7 = 1778
+170*7 = 1190
+120*7 = 840
+* TODO 15 days won't impact your credit                            :noexport:
+rent
+
+Chinese credit card
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO renting contract                                            :noexport:
+https://eforms.com/
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO loan basic                                                  :noexport:
+** TODO loan lender credits
+https://www.consumerfinance.gov/ask-cfpb/what-are-discount-points-and-lender-credits-and-how-do-they-work-en-136/

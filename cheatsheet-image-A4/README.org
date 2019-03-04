@@ -26,6 +26,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 |--------------------------+--------------|
 | Remove background images |              |
 | SaaS photo tool          | [[https://www.photopea.com/][photopea.com]] |
+| Freemind tool            | [[https://sourceforge.net/projects/freemind/files/latest/download][freemind]]     |
 ** More Resources
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

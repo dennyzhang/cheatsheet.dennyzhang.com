@@ -22,16 +22,17 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
 ** Wavefront Summary
-| Name                           | Summary                                                                        |
-|--------------------------------+--------------------------------------------------------------------------------|
-| [[https://www.wavefront.com/][Wavefront]]                      | SaaS monitoring. [[https://www.youtube.com/watch?v=NAOUUSr9HDU&t=9s][YouTube: Pivotal Container Service (PKS) and VMware Wavefront]] |
-| wavefront trial portal         | https://try.wavefront.com/dashboard/tutorial-intro                             |
-| Wavefront PKS dashboard        | https://try.wavefront.com/dashboard/integration-pks                            |
-| Wavefront kubernetes collector | [[https://github.com/wavefrontHQ/wavefront-kubernetes-collector][GitHub: wavefrontHQ/wavefront-kubernetes-collector]], [[https://hub.docker.com/r/wavefronthq/wavefront-kubernetes-collector/tags][docker hub image]]           |
-| Default Limits                 | ? alerts for each tenant; 10K point-per-seconds for each tenant                |
-| Whether need an agent          | [[https://docs.wavefront.com/direct_ingestion.html#comparing-proxy-and-direct-ingestion][Link: Comparing Proxy and Direct Ingestion]]                                     |
-| Integrations                   | [[https://docs.wavefront.com/pks.html][VMware PKS Integration]]                                                         |
-| Reference                      | https://try.wavefront.com/api-docs/ui/                                         |
+| Name                               | Summary                                                                              |
+|------------------------------------+--------------------------------------------------------------------------------------|
+| [[https://www.wavefront.com/][Wavefront]]                          | SaaS monitoring. [[https://www.youtube.com/watch?v=NAOUUSr9HDU&t=9s][YouTube: Pivotal Container Service (PKS) and VMware Wavefront]]       |
+| wavefront trial portal             | https://try.wavefront.com/dashboard/tutorial-intro                                   |
+| Wavefront PKS dashboard            | https://try.wavefront.com/dashboard/integration-pks                                  |
+| Wavefront kubernetes collector     | [[https://github.com/wavefrontHQ/wavefront-kubernetes-collector][GitHub: wavefrontHQ/wavefront-kubernetes-collector]], [[https://hub.docker.com/r/wavefronthq/wavefront-kubernetes-collector/tags][docker hub image]]                 |
+| Default Limits                     | ? alerts for each tenant; 10K point-per-seconds for each tenant                      |
+| Whether need an agent              | [[https://docs.wavefront.com/direct_ingestion.html#comparing-proxy-and-direct-ingestion][Link: Comparing Proxy and Direct Ingestion]]                                           |
+| Integrations                       | [[https://docs.wavefront.com/pks.html][VMware PKS Integration]], [[https://docs.wavefront.com/kubernetes.html][Kubernetes Integration]], [[https://github.com/wavefrontHQ/wavefront-kubernetes/blob/master/wavefront-proxy/wavefront.yaml][wavefront-kubernetes/wavefront-proxy]] |
+| Add app metrics to wavefront proxy | [[https://docs.wavefront.com/wavefront_data_ingestion.html][Link: Getting Data into Wavefront]]                                                    |
+| Reference                          | https://try.wavefront.com/api-docs/ui/                                               |
 ** Wavefront Web UI
 | Name                      | Summary                                        |
 |---------------------------+------------------------------------------------|
@@ -1661,11 +1662,11 @@ https://github.com/puckpuck/charts/tree/wavefront/stable/wavefront
 
 #+BEGIN_EXAMPLE
  Pierre Tessier [3:35 PM]
- I”m building a helm chart to install Wavefront.  I think the idea here is we use much of the same configuration between PKS and what we would recommend as an initial configuration of Wavefront on Kubernetes.  Attached is the set of yaml manifests that will get deployed with the helm chart.  You will see how we configure the collector deployment (I think you may already be doing this the same way), but more importantly how the proxy gets configured with preprocessor rules, which also require a config map to contain the actual preprocessor rule.  In our case we only have 1 rule which is really used to drop a bunch of noisy k8s tags.  I think you will also specify JAVA_HEAP_USAGE and proxy container limits.  Our helm chart won’t do it by default, but we will allow you to do it via options if you need.
+ I"m building a helm chart to install Wavefront.  I think the idea here is we use much of the same configuration between PKS and what we would recommend as an initial configuration of Wavefront on Kubernetes.  Attached is the set of yaml manifests that will get deployed with the helm chart.  You will see how we configure the collector deployment (I think you may already be doing this the same way), but more importantly how the proxy gets configured with preprocessor rules, which also require a config map to contain the actual preprocessor rule.  In our case we only have 1 rule which is really used to drop a bunch of noisy k8s tags.  I think you will also specify JAVA_HEAP_USAGE and proxy container limits.  Our helm chart won't do it by default, but we will allow you to do it via options if you need.
  wavefront-helm.yaml 
  ---
  # Source: wavefront/templates/proxy-preprocessor-config.yaml
-​ 
+ 
  apiVersion: v1
  kind: ConfigMap
  metadata:
@@ -1685,7 +1686,7 @@ https://github.com/puckpuck/charts/tree/wavefront/stable/wavefront
  
  ---
  # Source: wavefront/templates/collector-service-account.yaml
-​ 
+ 
  apiVersion: v1
  kind: ServiceAccount
  metadata:
@@ -1697,10 +1698,10 @@ https://github.com/puckpuck/charts/tree/wavefront/stable/wavefront
    app.kubernetes.io/component: collector
   name: wavefront-collector
   namespace: wavefront
-​ 
+ 
  ---
  # Source: wavefront/templates/collector-cluster-role.yaml
-​ 
+ 
  apiVersion: rbac.authorization.k8s.io/v1
  kind: ClusterRole
  metadata:
@@ -1736,10 +1737,10 @@ https://github.com/puckpuck/charts/tree/wavefront/stable/wavefront
   - get
   - list
   - watch
-​ 
+ 
  ---
  # Source: wavefront/templates/collector-rbac.yaml
-​ 
+ 
  kind: ClusterRoleBinding
  apiVersion: rbac.authorization.k8s.io/v1
  metadata:
@@ -1758,10 +1759,10 @@ https://github.com/puckpuck/charts/tree/wavefront/stable/wavefront
  - kind: ServiceAccount
   name: wavefront-collector
   namespace: wavefront
-​ 
+ 
  ---
  # Source: wavefront/templates/proxy-service.yaml
-​ 
+ 
  apiVersion: v1
  kind: Service
  metadata:
@@ -1780,10 +1781,10 @@ https://github.com/puckpuck/charts/tree/wavefront/stable/wavefront
   selector:
    app.kubernetes.io/name : wavefront
    app.kubernetes.io/component: proxy
-​ 
+ 
  ---
  # Source: wavefront/templates/collector-deployment.yaml
-​ 
+ 
  apiVersion: apps/v1
  kind: Deployment
  metadata:
@@ -1832,10 +1833,10 @@ https://github.com/puckpuck/charts/tree/wavefront/stable/wavefront
     - name: ssl-certs
      hostPath:
       path: /etc/ssl/certs
-​ 
+ 
  ---
  # Source: wavefront/templates/proxy-deployment.yaml
-​ 
+ 
  apiVersion: apps/v1
  kind: Deployment
  metadata:
@@ -1881,15 +1882,15 @@ https://github.com/puckpuck/charts/tree/wavefront/stable/wavefront
     - name: preprocessor
      configMap:
       name: wavefront-proxy-preprocessor
-​ 
-​ 
+ 
+ 
  Collapse 
- Also you don’t need to use all the `app.kubernetes.io/managed-by` and `app.kubernetes.io/instance` labels.  those are more specified for helm, though they do follow some guidelines i’m seeing being adopted by more people.  You can use whatever labels you feel are appropriate and fit within guidelines established by PKS.
+ Also you don't need to use all the `app.kubernetes.io/managed-by` and `app.kubernetes.io/instance` labels.  those are more specified for helm, though they do follow some guidelines i'm seeing being adopted by more people.  You can use whatever labels you feel are appropriate and fit within guidelines established by PKS.
  #+END_EXAMPLE
 * TODO [#A] Wavefront inconsistency: show/no data                  :noexport:
 #+BEGIN_EXAMPLE
 Denny Zhang [10:44 AM]
-I’m seeing inconsistency in try.wavefront.com
+I'm seeing inconsistency in try.wavefront.com
 
 Keep checking one metric for the past 10 minutes.
 

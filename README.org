@@ -167,7 +167,7 @@ Cheers!
    CLOSED: [2018-08-15 Wed 20:28]
 ** DONE blog post: list everything by category
    CLOSED: [2018-08-16 Thu 00:08]
-* TODO Sample image: [[https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-ssl-A4/master/]
+* HALF Sample image: [[https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-ssl-A4/ssl-certificate.png
 * DONE Sample link: /Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-disk-A4/sort-disk-size.sh :noexport:
   CLOSED: [2019-02-10 Sun 22:03]
 [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-disk-A4/sort-disk-size.sh][sort-disk-size.sh
@@ -520,3 +520,4 @@ nc (netcat) is def missing :)
 - https://github.com/DmitriyLanchakov/cheatsheets.pdf
 - https://github.com/vaputa/awesome-cheatsheet
 * TODO change openshift from cheatsheet to git repo                :noexport:
+* TODO Create my own signature for cheatsheet.dennyzhang.com website :noexport:

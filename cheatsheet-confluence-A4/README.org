@@ -62,3 +62,8 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO confluence insert a list links for one section              :noexport:
+https://confluence.atlassian.com/doc/links-776656293.html
+
+https://confluence.eng.vmware.com/display/CNA/PKS+vRealize+Integration
