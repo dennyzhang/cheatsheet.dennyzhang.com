@@ -167,7 +167,7 @@ Cheers!
    CLOSED: [2018-08-15 Wed 20:28]
 ** DONE blog post: list everything by category
    CLOSED: [2018-08-16 Thu 00:08]
-* HALF Sample image: [[https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-ssl-A4/ssl-certificate.png
+* HALF Sample image: [[https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-ssl-A4/ssl-certificate.png :noexport:
 * DONE Sample link: /Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-disk-A4/sort-disk-size.sh :noexport:
   CLOSED: [2019-02-10 Sun 22:03]
 [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-disk-A4/sort-disk-size.sh][sort-disk-size.sh
@@ -275,6 +275,7 @@ https://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
 ** DONE https://jeffdecola.github.io/my-cheat-sheets/
    CLOSED: [2019-02-09 Sat 22:50]
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** https://github.com/LeCoupa/awesome-cheatsheets
 ** https://github.com/detailyang/awesome-cheatsheet
 ** [#A] https://www.cheatography.com/language/en/
 ** http://cheatsheetworld.com/

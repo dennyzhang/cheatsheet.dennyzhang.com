@@ -380,3 +380,5 @@ https://eforms.com/
 * TODO loan basic                                                  :noexport:
 ** TODO loan lender credits
 https://www.consumerfinance.gov/ask-cfpb/what-are-discount-points-and-lender-credits-and-how-do-they-work-en-136/
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO VOR, VOE                                                    :noexport:
