@@ -33,16 +33,17 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | [[https://concourse-ci.org/tasks.html][Tasks]]                 | The smallest configurable unit in a Concourse pipeline is a single task.     |
 | Reference             | [[https://concourse-ci.org/concepts.html][Link: Concourse Concepts]], [[https://concoursetutorial.com/][Link: concoursetutorial.com]]                        |
 ** Concourse Resources
-| Name                                        | Summary                                                          |
-|---------------------------------------------+------------------------------------------------------------------|
-| [[https://github.com/pivotalservices/file-downloader-resource][file-downloader-resource]]                    | enable downloading pivotal product files and stemcells           |
-| [[https://github.com/concourse/github-release-resource][github-release]]                              |                                                                  |
-| [[https://github.com/concourse/docker-image-resource][docker-image-resource]]: docker image         |                                                                  |
-| [[https://github.com/frodenas/gcs-resource][gcs-resource]]: google bucket                 |                                                                  |
-| [[https://github.com/concourse/pool-resource][pool-resource]]                               | Atomically manages external environments                         |
-| [[https://concourse-ci.org/tags-step-modifier.html][Step: tags]]                                  | Use tag to match workers                                         |
-| [[https://github.com/cloudfoundry/bosh-bootloader][bbl (bosh-bootloader)]]                       | Command line utility for standing up a BOSH director on any IAAS |
-| Reference                                   | [[https://github.com/pivotal-cf/pcf-pipelines/tree/v0.23.0][GitHub: pcf-pipelines]]                                            |
+| Name                                | Summary                                                          |
+|-------------------------------------+------------------------------------------------------------------|
+| [[https://github.com/pivotalservices/file-downloader-resource][file-downloader-resource]]            | enable downloading pivotal product files and stemcells           |
+| [[https://github.com/frodenas/gcs-resource][gcs-resource]]: google bucket         |                                                                  |
+| [[https://github.com/concourse/pool-resource][pool-resource]]                       | Atomically manages external environments                         |
+| [[https://github.com/concourse/github-release-resource][github-release]]                      |                                                                  |
+| [[https://github.com/concourse/git-resource][git-release]]                         | tracks commits in a branch of a Git repository                   |
+| [[https://github.com/concourse/docker-image-resource][docker-image-resource]]: docker image |                                                                  |
+| [[https://concourse-ci.org/tags-step-modifier.html][Step: tags]]                          | Use tag to match workers                                         |
+| [[https://github.com/cloudfoundry/bosh-bootloader][bbl (bosh-bootloader)]]               | Command line utility for standing up a BOSH director on any IAAS |
+| Reference                           | [[https://github.com/pivotal-cf/pcf-pipelines/tree/v0.23.0][GitHub: pcf-pipelines]]                                            |
 ** Concourse Examples
 | Name                                        | Summary                                                          |
 |---------------------------------------------+------------------------------------------------------------------|
@@ -1089,3 +1090,5 @@ https://github.com/concourse/concourse/issues/2582
   fly-dev -t pks-infra set-pipeline -p gear2-nimbus -c gear2-nimbus.yaml
 error: forbidden
 #+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO fly-dev -t gear2-ci check-resource -r gear2-nimbus/pool-git-gear2-nsx1 -f branch:gear2-ci :noexport:

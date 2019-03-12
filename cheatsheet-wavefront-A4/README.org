@@ -38,6 +38,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 |---------------------------+------------------------------------------------|
 | Explore wavefront metrics | =Browse -> Metrics=                            |
 | Explore wavefront sources | =https://try.wavefront.com/source/<source-id>= |
+| Wavefront query api       | [[https://try.wavefront.com/api-docs/ui/#!/Query/queryApi][Link: try.wavefront.com/api-docs]]               |
 | Sample Link               | [[https://try.wavefront.com/chart#_v01(c:(cs:(type:line),id:chart,n:pks.kube.pod.status.ready.gauge,s:!((e:'',n:Query,q:'ts(%22pks.kube.pod.status.ready.gauge%22,%20condition=true%20and%20cluster=%22service-instance_d70cea14-53d5-478a-b82c-b36efa08ad0f%22)',qbe:!f,s:Y))),g:(c:off,d:86400,ls:!f,s:1544031356,w:'1d'),h:!(wavefront-proxy-55d6f89f9f-xpntn))][Wavefront sample link]]                          |
 ** Wavefront API
 | Name                      | Summary                                        |

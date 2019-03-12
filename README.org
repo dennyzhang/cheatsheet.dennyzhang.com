@@ -522,3 +522,6 @@ nc (netcat) is def missing :)
 - https://github.com/vaputa/awesome-cheatsheet
 * TODO change openshift from cheatsheet to git repo                :noexport:
 * TODO Create my own signature for cheatsheet.dennyzhang.com website :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-doc-A4 :noexport:
+* TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-clusterapi-A4 :noexport:
