@@ -27,6 +27,44 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Reference    | [[https://github.com/kubernetes-sigs/cluster-api][GitHub: kubernetes-sigs/cluster-api]] |
 | [[https://kubernetes.io/blog/2018/05/17/gardener/][SAP gardener]] |                                     |
 
+** clusterctl cli Online Help
+#+BEGIN_EXAMPLE
+> go/src/sigs.k8s.io/cluster-api-provider-gcp > ./bin/clusterctl create cluster --help
+
+I0311 17:25:43.924329   50076 machineactuator.go:811] Using the default GCP client
+Create a kubernetes cluster with one command
+
+Usage:
+  clusterctl create cluster [flags]
+
+Flags:
+  -a, --addon-components string               A yaml file containing cluster addons to apply to the internal cluster
+      --bootstrap-cluster-cleanup             Whether to cleanup the bootstrap cluster after bootstrap. (default true)
+  -e, --bootstrap-cluster-kubeconfig string   Sets the bootstrap cluster to be an existing Kubernetes cluster.
+      --bootstrap-flags strings               Command line flags to be passed to the chosen bootstrapper
+      --bootstrap-type string                 The cluster bootstrapper to use. (default "none")
+  -c, --cluster string                        A yaml file containing cluster object definition. Required.
+  -h, --help                                  help for cluster
+      --kubeconfig-out string                 Where to output the kubeconfig for the provisioned cluster (default "kubeconfig")
+  -m, --machines string                       A yaml file containing machine object definition(s). Required.
+      --provider string                       Which provider deployment logic to use (google/vsphere/azure). Required.
+  -p, --provider-components string            A yaml file containing cluster api provider controllers and supporting objects. Required.
+
+Global Flags:
+      --alsologtostderr                  log to standard error as well as files
+      --kubeconfig string                Paths to a kubeconfig. Only required if out-of-cluster.
+      --log-flush-frequency duration     Maximum number of seconds between log flushes (default 5s)
+      --log_backtrace_at traceLocation   when logging hits line file:N, emit a stack trace (default :0)
+      --log_dir string                   If non-empty, write log files in this directory
+      --log_file string                  If non-empty, use this log file
+      --logtostderr                      log to standard error instead of files (default true)
+      --master string                    The address of the Kubernetes API server. Overrides any value in kubeconfig. Only required if out-of-cluster.
+      --skip_headers                     If true, avoid header prefixes in the log messages
+      --stderrthreshold severity         logs at or above this threshold go to stderr
+  -v, --v Level                          number for the log level verbosity
+      --vmodule moduleSpec               comma-separated list of pattern=N settings for file-filtered logging
+#+END_EXAMPLE
+
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -86,7 +124,391 @@ https://github.com/kubernetes/enhancements/blob/master/keps/sig-cluster-lifecycl
 
 https://github.com/kubernetes-sigs/cluster-api#provider-implementations
 ** TODO How Day-2 operation is done?
-* TODO cluster api with gcp
+
+
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] WCP slides                                             :noexport:
+** Goals & Values
+- Leverage ESXi and other VMware key technologies as solid foundations
+- A native pod runtime: run both VMs(CRD) and Pods as workloads on ESXi.
+- Align with community upstream practice: cluster API, supervisor cluster as k8s
+- Better isolation for the security of workload
+** Challenges
+- CNABU, CPBU? NSBU, SABU
+- Over design: Against community design
+- Mixed layer: VM as CRD? In the same level?
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** Key design differences between WCP vs ClusterAPI?
+- In WCP, the supervisor cluster is a long-running entity.
+** Concept: Supervisor cluster layer, Guest Cluster Layer
+** Concept: GCM(Guest cluster manager) namespace, VM API namespace, Cluster API namespace
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** [#A] Question: VMs as CRD? Integration as CRD?
+** Question: how easy to customize guest k8s clusters?
+** Question: The responsiblity of GCM?
+** Question: kubernetes distro: PKS
+** Question: Severless Pods
+** Question: Where pod-vm and DRS are?
+** Question: Supervisor cluster: Authentication & Authorization
+* TODO [#A] cluster api with gcp
 https://github.com/kubernetes-sigs/cluster-api-provider-gcp
 
+** ./generate-yaml.sh                                              :noexport:
+#+BEGIN_EXAMPLE
 
+   /Users/zdenny/go/src/sigs.k8s.io/cluster-api-provider-gcp/cmd/clusterctl/examples/google  ./generate-yaml.sh                                                                                                                                           master ✔  ✔ 0
+(unset)
+Generating machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com service account for machine controller
+Created service account [machine-controller-test1-ruj7c].
+bindings:
+- members:
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+etag: BwWD2oNF8Dc=
+version: 1
+bindings:
+- members:
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+etag: BwWD2oNja1Y=
+version: 1
+bindings:
+- members:
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountActor
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+etag: BwWD2oOBZxg=
+version: 1
+created key [865a87797e7015baaf8f59d6929a7a171e51260f] of type [json] as [out/machine-controller-serviceaccount.json] for [machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com]
+Generating loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com service account for loadbalancers
+Created service account [loadbalancer-test1-ruj7c].
+bindings:
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountActor
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+etag: BwWD2oPPK5o=
+version: 1
+bindings:
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.networkAdmin
+- members:
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountActor
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+etag: BwWD2oPqqhE=
+version: 1
+bindings:
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.networkAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountActor
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+etag: BwWD2oQJxEs=
+version: 1
+bindings:
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.networkAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountActor
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+etag: BwWD2oQoORI=
+version: 1
+created key [670b3f36673d742e718b43edf2f1e3563a9749e0] of type [json] as [out/loadbalancer-serviceaccount.json] for [loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com]
+Generating master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com service account for masters
+Created service account [master-test1-ruj7c].
+bindings:
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.networkAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountActor
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+etag: BwWD2oRxdC4=
+version: 1
+bindings:
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.networkAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountActor
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+etag: BwWD2oSTDek=
+version: 1
+bindings:
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.networkAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountActor
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+etag: BwWD2oSt7Jw=
+version: 1
+bindings:
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.networkAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.viewer
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountActor
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+etag: BwWD2oTOmeQ=
+version: 1
+bindings:
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.networkAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.viewer
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountActor
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountUser
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+etag: BwWD2oTrjdE=
+version: 1
+bindings:
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.networkAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.viewer
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountActor
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountUser
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/storage.admin
+etag: BwWD2oUFvPw=
+version: 1
+bindings:
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.instanceAdmin.v1
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.networkAdmin
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.securityAdmin
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/compute.viewer
+- members:
+  - serviceAccount:loadbalancer-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  - serviceAccount:machine-controller-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountActor
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountUser
+- members:
+  - user:filebat.Mark@gmail.com
+  role: roles/owner
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/storage.admin
+- members:
+  - serviceAccount:master-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com
+  role: roles/storage.objectViewer
+etag: BwWD2oUmG4c=
+version: 1
+Generating worker-test1-ruj7c@denny-gcp-test.iam.gserviceaccount.com service account for workers
+Created service account [worker-test1-ruj7c].
+Generate SSH key files fo machine controller
+Generating public/private rsa key pair.
+Your identification has been saved in out/machine-controller-key.
+Your public key has been saved in out/machine-controller-key.pub.
+The key fingerprint is:
+SHA256:tGgmSBT+pM6oPLFLmGXU0J1Usx9qulV1IYpgHdcMWfc clusterapi
+The key's randomart image is:
++---[RSA 2048]----+
+|  +o o+++.o*o o  |
+| o o..o..=..oo o |
+|  + o   + o . . E|
+| o =   o + o .   |
+|  = o + S o      |
+|.O   + o .       |
+|+.=   . .        |
+|+o     o         |
+|.oo   .          |
++----[SHA256]-----+
+#+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO kustomize: Error: json: unknown field "commands"            :noexport:
+   /Users/zdenny/go/src/sigs.k8s.io/cluster-api-provider-gcp  kustomize build config/default/                                                                                                                                                             master ✔  ✘ 1
+Error: json: unknown field "commands"
