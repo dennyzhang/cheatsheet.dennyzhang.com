@@ -4,7 +4,7 @@
 :export_file_name: cheatsheet-communication-A4.pdf
 :END:
 
-#+BEGIN_EXPORT HTML
+#+BEGIN_HTML
 <a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-communication-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -78,7 +78,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 | Avoid going to extreme                     | You will probably be wrong; and make people uncomfortable                      |
 | Learn how to interrupt politely            |                                                                                |
 | Ask questions with the format of yes/no    |                                                                                |
-#+BEGIN_EXPORT HTML
+#+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
 ** [#A] Scenario - Talk For Your Initiatives
@@ -139,7 +139,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 ** More Resources
 License: Code is licencommunication under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
-#+BEGIN_EXPORT HTML
+#+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
@@ -317,42 +317,47 @@ Please try again in 30 seconds.
 Recap
 
 Common
-1.	不要过度的相信老板的upper management能力。
-M.C. 理想的情况是，老板帮你在更高一个level上setup一个比较合理的预期，自己figure out相关的technical challenges。
-2.	在收集到足够的信息之前，不要武断专行。
-PKS-X, Denny’s CI/CD不与business alignment
+1.	不要过度的相信老板的upper management能力.
+M.C. 理想的情况是,老板帮你在更高一个level上setup一个比较合理的预期,自己figure out相关的technical challenges.
+2.	在收集到足够的信息之前,不要武断专行.
+PKS-X, Denny's CI/CD不与business alignment
 3.	Looking for a good career manager.
-4.	Don’t complain with direct reports
-5.	找到项目最关键的人，再争取最关键的人的trust
-6.	选择好的环境。Choose the right battle
-7.	用抽象的语言来概括总结问题，同时要用核心的supporting details
+4.	Don't complain with direct reports
+5.	找到项目最关键的人,再争取最关键的人的trust
+6.	选择好的环境.Choose the right battle
+7.	用抽象的语言来概括总结问题,同时要用核心的supporting details
 8.	Be positive when talking with your managers and your team
 Keep being sharp和always identify problems不见得是好事
 9.	
 
 XX
-1.	聊天时，要进行testing。不要assume谈话对方都懂你的意思
-2.	赢得所有人的trust，是一个不合理的需求/预期。应该针对关键人做定向工作
+1.	聊天时,要进行testing.不要assume谈话对方都懂你的意思
+2.	赢得所有人的trust,是一个不合理的需求/预期.应该针对关键人做定向工作
 3.	Choose the right battle
 4.	在bay area, 努力是default
 Michael晚上三点回去
-5.	在proposal时，挖一个小口子，然后慢慢扩大这个坑
-6.	说的Detail不准确，被人抓到了把柄。然后自己赶快认了，而不是自己去圆场
+5.	在proposal时,挖一个小口子,然后慢慢扩大这个坑
+6.	说的Detail不准确,被人抓到了把柄.然后自己赶快认了,而不是自己去圆场
 Bosh root privilege
-7.	在大方向上，能自圆其说
+7.	在大方向上,能自圆其说
 8.	耳根软
-9.	并不能从PM得到实质、有用的信息
+9.	并不能从PM得到实质`有用的信息
 10.	
 
 XX
-1.	与team一起合作，project manager, product manager, people manager.
+1.	与team一起合作,project manager, product manager, people manager.
 2.	不要有太多的complain, stay positive.
 3.	Manage both ends, up and down, not limited to the direct layer.
 
 * TODO pushing manager                                             :noexport:
 - Send out meeting notes and agreements: 防止manager的欲望上调
 - 《向上管理的艺术》
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * If you can't understand people                                   :noexport:
 * Junior people issues                                             :noexport:
 - Can't manage risks
-
+* Lessons learned: Don't ask unnecessary requirements              :noexport:
+* Need data to support decisions/trade-off you make                :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Puzzles: Is it a valid expectation: setup friendship with your reports :noexport:
+* TODO Puzzles: team management: bad tones                         :noexport:

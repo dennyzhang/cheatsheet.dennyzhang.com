@@ -21,12 +21,37 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Kubernetes Yaml]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
-** Cluster API
-| Name         | Summary                             |
-|--------------+-------------------------------------|
-| Reference    | [[https://github.com/kubernetes-sigs/cluster-api][GitHub: kubernetes-sigs/cluster-api]] |
-| [[https://kubernetes.io/blog/2018/05/17/gardener/][SAP gardener]] |                                     |
+** Cluster API - Basic
+| Name                          | Summary                                                                   |
+|-------------------------------+---------------------------------------------------------------------------|
+| [[https://github.com/kubernetes-sigs/cluster-api/milestones][Cluster API Project Milestone]] | v1alpha1(Due by 03/29/2019)                                               |
+| Key Initiatives               | Declarative infra; CRD design model; Resource LCM                         |
+| CAL (cloud abstraction layer) |                                                                           |
+| Boostrap cluster              | minikube by default                                                       |
+| Machine Object                | Machine CRD                                                               |
+| Cluster Object                |                                                                           |
+| clusterctl                    | [[https://github.com/kubernetes-sigs/cluster-api/tree/master/cmd/clusterctl][GitHub: cluster-api/cmd/clusterctl]], Might be merged into kubectl directly |
+| Demo                          | [[https://asciinema.org/a/215805][Video: vSphere Clsuter-API provider: self-service]]                         |
+** Components
+| Name                         | Summary                                               |
+|------------------------------+-------------------------------------------------------|
+| API Spec                     | [[https://github.com/kubernetes/enhancements/blob/master/keps/sig-cluster-lifecycle/0003-cluster-api.md][Link: Kubernetes Cluster Management API]]               |
+| provider-components.yaml     |                                                       |
+| cluster.yaml                 |                                                       |
+| machines.yaml                |                                                       |
+| addons.yaml                  |                                                       |
+| 2 pods in guest k8s clusters | =cluster api controller=, =cloud provider controller= |
+| Reference                    | [[https://github.com/kubernetes-sigs/cluster-api][GitHub: kubernetes-sigs/cluster-api]]                   |
+** Commands
+| Name                 | Summary                                                                                                                       |
+|----------------------+-------------------------------------------------------------------------------------------------------------------------------|
+| Deploy a k8s cluster | =clusterctl create cluster -p provider-components.yaml -c cluster.yaml -m machines.yaml --provider vsphere -e ~/.kube/config= |
 
+** Cluster API Related Works
+| Name                      | Summary                              |
+|---------------------------+--------------------------------------|
+| [[https://kubernetes.io/blog/2018/05/17/gardener/][SAP gardener]]              |                                      |
+| Gardener with cluster api | [[https://github.com/gardener/gardener/issues/231][GitHub Issue: Adopt Cluster API Spec]] |
 ** clusterctl cli Online Help
 #+BEGIN_EXAMPLE
 > go/src/sigs.k8s.io/cluster-api-provider-gcp > ./bin/clusterctl create cluster --help
@@ -99,60 +124,37 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+LINK_UP:
 #+LINK_HOME:
 
+* TODO [#A] Release schedule of cluster api project                :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Use cluster api to replace bosh                        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] gardener architecture: https://github.com/gardener/gardener :noexport:
 https://github.com/gardener/documentation/wiki/Architecture
 * TODO OIDC, cluster API; infra CI
-* TODO [#A] Play and contribute to cluster API
-https://github.com/kubernetes-sigs/cluster-api/tree/master/cmd/clusterctl
-
-** The value & capacity of cluster API
+* The value & capacity of cluster API                              :noexport:
 - declarative infrastructure: bootstrapping and managing a Kubernetes cluster in a declarative way
-** Current state & Road map
-** The history & small chat
+* Current state & Road map                                         :noexport:
+* The history & small chat                                         :noexport:
 - Who involved in cluster api community
 https://github.com/kubernetes-sigs/cluster-api/graphs/contributors
 
 Google
 
 Vince Prignano: VMware (MTS) -> Heptio
-** The overall idea & key design
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** HALF How provider machine actuator is implemented?
+* The overall idea & key design                                    :noexport:
+* HALF How provider machine actuator is implemented?
 https://github.com/kubernetes/enhancements/blob/master/keps/sig-cluster-lifecycle/0003-cluster-api.md
 
 https://github.com/kubernetes-sigs/cluster-api#provider-implementations
-** TODO How Day-2 operation is done?
-
+* TODO How Day-2 operation is done?                                :noexport:
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] WCP slides                                             :noexport:
-** Goals & Values
-- Leverage ESXi and other VMware key technologies as solid foundations
-- A native pod runtime: run both VMs(CRD) and Pods as workloads on ESXi.
-- Align with community upstream practice: cluster API, supervisor cluster as k8s
-- Better isolation for the security of workload
-** Challenges
-- CNABU, CPBU? NSBU, SABU
-- Over design: Against community design
-- Mixed layer: VM as CRD? In the same level?
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** Key design differences between WCP vs ClusterAPI?
-- In WCP, the supervisor cluster is a long-running entity.
-** Concept: Supervisor cluster layer, Guest Cluster Layer
-** Concept: GCM(Guest cluster manager) namespace, VM API namespace, Cluster API namespace
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** [#A] Question: VMs as CRD? Integration as CRD?
-** Question: how easy to customize guest k8s clusters?
-** Question: The responsiblity of GCM?
-** Question: kubernetes distro: PKS
-** Question: Severless Pods
-** Question: Where pod-vm and DRS are?
-** Question: Supervisor cluster: Authentication & Authorization
+* TODO Red flag area in cluster api?                               :noexport:
+** Why initial maintainers are leaving the open source project?
+** Why it makes slow progress?
+** How to customize gest k8s cluster provisioning and configuration?
 * TODO [#A] cluster api with gcp
 https://github.com/kubernetes-sigs/cluster-api-provider-gcp
-
 ** ./generate-yaml.sh                                              :noexport:
 #+BEGIN_EXAMPLE
 
@@ -509,6 +511,108 @@ The key's randomart image is:
 +----[SHA256]-----+
 #+END_EXAMPLE
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO kustomize: Error: json: unknown field "commands"            :noexport:
+* HALF kustomize: Error: json: unknown field "commands"            :noexport:
    /Users/zdenny/go/src/sigs.k8s.io/cluster-api-provider-gcp  kustomize build config/default/                                                                                                                                                             master ✔  ✘ 1
 Error: json: unknown field "commands"
+* HALF kubelet: unknown flag: --bootstrap-kubeconfig on old k8s versions :noexport:
+#+BEGIN_EXAMPLE
+
+   /Users/zdenny/go/src/sigs.k8s.io/cluster-api-provider-gcp  ./bin/clusterctl create cluster --provider google -c cmd/clusterctl/examples/google/out/cluster.yaml -m cmd/clusterctl/examples/google/out/machines.yaml -p cmd/clusterctl/examples/google/out/provider-components.yaml -a cmd/clusterctl/examples/google/out/addons.yaml
+I0311 17:54:46.380511   56746 machineactuator.go:811] Using the default GCP client
+F0311 17:54:46.391617   56746 create_cluster.go:60] no bootstrap provisioner specified, you can specify `--bootstrap-cluster-kubeconfig` to use an existing Kubernetes cluster or `--bootstrap-type` to use a built-in ephemeral cluster
+#+END_EXAMPLE
+* TODO clusterctl create cluster: error creating a machine object in namespace default :noexport:
+#+BEGIN_EXAMPLE
+   /Users/zdenny/go/src/sigs.k8s.io/cluster-api-provider-gcp  ./bin/clusterctl create cluster --provider google -c cmd/clusterctl/examples/google/out/cluster.yaml -m cmd/clusterctl/examples/google/out/machines.yaml -p cmd/clusterctl/examples/google/out/provider-components.yaml -a cmd/clusterctl/examples/google/out/addons.yaml --bootstrap-cluster-kubeconfig=/Users/zdenny/.kube/config
+I0311 17:58:05.615857   57445 machineactuator.go:811] Using the default GCP client
+I0311 17:58:05.623045   57445 createbootstrapcluster.go:27] Creating bootstrap cluster
+I0311 17:58:05.633349   57445 clusterdeployer.go:70] Applying Cluster API stack to bootstrap cluster
+I0311 17:58:05.633367   57445 applyclusterapicomponents.go:26] Applying Cluster API Provider Components
+I0311 17:58:06.788733   57445 clusterdeployer.go:75] Provisioning target cluster via bootstrap cluster
+I0311 17:58:06.802514   57445 applycluster.go:36] Creating cluster object test1-frbk5 in namespace "default"
+I0311 17:58:06.812276   57445 clusterdeployer.go:84] Creating control plane  in namespace "default"
+I0311 17:58:06.826306   57445 applymachines.go:36] Creating machines in namespace "default"
+I0311 17:58:06.832395   57445 createbootstrapcluster.go:36] Cleaning up bootstrap cluster.
+F0311 17:58:06.832415   57445 create_cluster.go:60] unable to create control plane machine: error creating a machine object in namespace default: Machine.cluster.k8s.io "gce-master-n66f6" is invalid: metadata.labels: Invalid value: "$CLUSTER_NAME": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+#+END_EXAMPLE
+* TODO hui code                                                    :noexport:
+https://github.com/kubernetes-sigs/cluster-api/tree/master/pkg/controller
+https://github.com/kubernetes-sigs/cluster-api/tree/master/pkg/provider/example
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] try vsphere cluster api demo                           :noexport:
+* TODO Does clusterapi use kubeadm to init and join k8s clusters?  :noexport:
+* TODO cluster api k8s worker vm auto healing                      :noexport:
+* TODO clusterapi: support most VMs requirement                    :noexport:
+take snapshot
+attach vm
+* TODO clusterapi: clusterctl customize k8s to be more powerful and more secure :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO clusterapi: different vendor 最小公约数                     :noexport:
+- create/delete VMs (vsphere?)
+- manage vm as typical pod
+* TODO clusterapi: support multiple vendor at the same             :noexport:
+* TODO clusterapi: take over all infra requirements                :noexport:
+Migrate vms
+provision ESXi
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO clusterapi: multi-tenancy                                   :noexport:
+* TODO clusterapi: vsphere provider vs wcp provider                :noexport:
+* TODO clusterapi: infra security                                  :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO WCP Meeting Notes                                           :noexport:
+https://docs.google.com/document/d/1WEMQZvUy_zKXMHvfEj_Erw0z83m7sxqodaO23uormDk/edit?usp=sharing
+* HALF [#A] WCP: virtual kubelet                                   :noexport:
+* WCP: cluster api (talk with go vomomi library)                   :noexport:
+- Guest CRD
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO WCP: storage passthrough: for security concern?             :noexport:
+* TODO [#A] WCP: Guest customer manager                            :noexport:
+* [#A] WCP VM operator project -- CPBU                             :noexport:
+VMSet
+* TODO [#A] Key design differences between WCP vs ClusterAPI?      :noexport:
+- In WCP, the supervisor cluster is a long-running entity.
+* TODO [#A] WCP slides                                             :noexport:
+** Goals & Values
+- Leverage ESXi and other VMware key technologies as solid foundations
+- A native pod runtime: run both VMs(CRD) and Pods as workloads on ESXi.
+- Align with community upstream practice: cluster API, supervisor cluster as k8s
+- Better isolation for the security of workload
+** Challenges
+- CNABU, CPBU? NSBU, SABU
+- Over design: Against community design
+- Mixed layer: VM as CRD? In the same level?
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** Concept: Supervisor cluster layer, Guest Cluster Layer
+** Concept: GCM(Guest cluster manager) namespace, VM API namespace, Cluster API namespace
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** [#A] Value: WCP enables people to run VM workload in a k8s native way. Especially for database
+** [#A] How WCP coordinate with cluster API? Do we really need GCM
+The supervisor layer does support the core kubernetes schema as well,
+however, because it runs directly on the hypervisor, it has some
+differences from Kubernetes on Linux. Also because it's a shared
+platform, it may move more slowly than open source kubernetes. For
+this reason, we require users to explicitly opt-in to acknowledge that
+they are using a special purpose kubernetes runtime that may differ
+from upstream.
+** TODO [#A] Red flag area in WCP?
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** Question: kubernetes distro: PKS
+With cluster API you can use any kubernetes distro or host OS you want.
+** If Cluster-API is too limiting for you, you can always use VMs to DIY your own kubernetes cluster solution.
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** [#A] Question: VMs as CRD? Integration as CRD?
+** Question: how easy to customize guest k8s clusters?
+** Question: The responsiblity of GCM?
+** Question: Severless Pods -> PodVM
+** Question: Where pod-vm and DRS are?
+** Question: Supervisor cluster: Authentication & Authorization
+* TODO WCP: workflow in end users                                  :noexport:
+* TODO WCP: supervisor k8s                                         :noexport:
+* TODO WCP: kubectl support all vsphere resource                   :noexport:
+* TODO WCP: suppoert day0 operation                                :noexport:
+* DONE wcp: why Cluster API Namespace is required                  :noexport:
+  CLOSED: [2019-03-13 Wed 15:31]
+Three typical use cases with new design:
+1. VM operators: Use declarative way to manage VM. Run stateful workload(DB) in k8s ecosystem
+2. Guest Cluster Manager (GCM): Purpose-built k8s clusters
+3. Cluster API: Open source upstream k8s clusters

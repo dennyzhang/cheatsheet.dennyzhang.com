@@ -1920,3 +1920,6 @@ sum(ts(kube.node.status.condition.gauge, condition=Ready and status=true and clu
 * TODO Design question: footprint of wavefront-proxy/wavefront-collector :noexport:
 * TODO wavefront collector query interval                          :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE wavefront create its own dashboard                          :noexport:
+  CLOSED: [2019-03-14 Thu 09:28]
+https://try.wavefront.com/dashboard/denny-mytest#_v01(g:(c:off,d:7200,ls:!f,s:1552573265,w:'2h'))

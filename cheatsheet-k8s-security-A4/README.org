@@ -349,3 +349,8 @@ Kube-Bench: An Open Source Tool for Running Kubernetes CIS Benchmark Tests
 * TODO admission controller webhook                                :noexport:
 * TODO k8s oidc vs k8s service account                             :noexport:
 * combine: https://github.com/imthenachoman/How-To-Secure-A-Linux-Server :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* OIDC: OpenID Connect (OIDC)                                      :noexport:
+JWT
+
+refresh token

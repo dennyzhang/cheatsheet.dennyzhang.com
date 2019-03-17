@@ -38,7 +38,6 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Check for the crack in the walls or foundations |                                             |
 | Check leaks for all sinks                       |                                             |
 | Reference                                       | [[https://www.youtube.com/channel/UCqKBj1cg2agtDD-hiqy6lAg][YouTube: Jonny DIY]], [[https://www.youtube.com/channel/UCUtWNBWbFL9We-cdXkiAuJA][YouTube: This Old House]] |
-
 ** Terminology For Buying A House
 | Name            | Summary |
 |-----------------+---------|
@@ -346,7 +345,7 @@ Anna
 
  exception
 
- 工作历史，满两年
+ 工作历史,满两年
 
  信用历史
 
@@ -382,3 +381,37 @@ https://eforms.com/
 https://www.consumerfinance.gov/ask-cfpb/what-are-discount-points-and-lender-credits-and-how-do-they-work-en-136/
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO VOR, VOE                                                    :noexport:
+* Contact                                                          :noexport:
+| Name                              | Contact                | Phone                                   | Website/Email/Notes                          |                                                                      |
+|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
+| Notify USCIS                      |                        |                                         | Bestbuy/HomeDepo coupon                      |                                                                      |
+|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
+| 换门锁 - electric locks           |                        | Locksmith,Lowes                         | Lowes Ebay 有coupon                          |                                                                      |
+| Utilities: elec/gas               | PG&E                   | (877)660-6789                           | https://www.pge.com/                         |                                                                      |
+| Water                             | San Jose Water Company | (408) 279-7900                          | https://www.sjwater.com/                     |                                                                      |
+| Garbage                           | GreenTeam of San Jose  | (408) 282-4400                          | https://www.greenteam.com/                   |                                                                      |
+| Internet                          | Xfinity                | (800) 934-6489                          | https://www.xfinity.com/                     |                                                                      |
+| Change Address                    |                        | USPS                                    | https://moversguide.usps.com/mgo/whos-moving |                                                                      |
+|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
+| Notify DMV                        |                        |                                         |                                              |                                                                      |
+| Change Bank address: debit/credit |                        |                                         |                                              |                                                                      |
+| Auto insurance                    |                        |                                         |                                              |                                                                      |
+| Medicare insurance                |                        |                                         |                                              |                                                                      |
+| Detal insurance                   |                        |                                         |                                              |                                                                      |
+| Update contact in VMware websites |                        |                                         |                                              |                                                                      |
+|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
+| Contractor                        | James(Licensed)        | (408)916-6465                           |                                              |                                                                      |
+| Contractor                        | 丁师傅                 | (408)828-9808                           |                                              |                                                                      |
+| Cleaning                          |                        | Crystal Carpet cleaning                 | (408)930-6225                                |                                                                      |
+| Cleaning & Handyman               |                        | Handy.com                               |                                              | 通常有coupon或者新用户 折扣                                          |
+| Property Tax                      |                        | https://payments.sccgov.org/propertytax | Tax due 4/10 and 12/10 each year             |                                                                      |
+| Moving                            |                        | 兄弟搬家                                | (510) 648-6546                               | 最好当天最早时间，否则 容易迟到，通常他们报价 包含小费，预约时先确定 |
+| HOA                               | N/A                    |                                         |                                              |                                                                      |
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Maintain a monthly check list                               :noexport:
+* Keyless door                                                     :noexport:
+https://www.youtube.com/watch?v=KmUOSgp9PKs
+
+$39.99
+https://www.amazon.com/TurboLock-Electronic-Automatic-Installation-Bluetooth/dp/B074F1QT96/ref=sr_1_12?keywords=door+lock&qid=1552609071&s=gateway&sr=8-12
+** When door is open, turn off the light

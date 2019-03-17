@@ -26,14 +26,14 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 |---------------------------------------+-------------------------------------------------------------------------------------------------------------------|
 | [[https://github.com/pivotal-cf/om][om]]                                    | A command-line API client for Pivotal Operations Manager                                                          |
 | omcli                                 | export passwd='CHANGEME'; alias omcli="om -t https://30.0.0.5 -u admin -p $password -k"                           |
+| Get uaa admin password                | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.uaa_admin_password=           |
+| Get bosh connect credential           | =omcli curl -p /api/v0/deployed/director/credentials/bosh_commandline_credentials=                                |
+| List all installed tiles              | =omcli curl -p /api/v0/installations=                                                                             |
 | Upload tile to opsmanager via cli     | =omcli upload-product -p </path/myproduct.pivotal>=                                                               |
 | Upload stemcell to opsmanager via cli | =omcli upload-stemcell -s </path/mystemcell.tgz>=                                                                 |
 | Use pivnet cli to download stemcell   | Once =pivnet login=, =pivnet download-product-files -p stemcells-ubuntu-xenial -r 170.15 -g '*vsphere*' -d /tmp/= |
 | Show status of apply changes          | =omcli installation-log --id 2=, =omcli installation-log --id $installation_id=                                   |
 | List all properties for a deployment  | =bosh deployments=, =omcli curl -p /api/v0/staged/products/${bosh_deployment}/properties -s=                      |
-| Get uaa admin password                | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.uaa_admin_password=           |
-| Get bosh connect credential           | =omcli curl -p /api/v0/deployed/director/credentials/bosh_commandline_credentials=                                |
-| List all installed tiles              | =omcli curl -p /api/v0/installations=                                                                             |
 | json output                           | =omcli -k --format=json staged-products=                                                                          |
 | Reference                             | [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tile-A4][Tile CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4][UAA CheatSheet]]                                                  |
 ** Get bosh/pks tile credential from om
