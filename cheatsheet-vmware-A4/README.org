@@ -282,8 +282,6 @@ https://www.vmware.com/support/pubs/log-insight-pubs.html
 * TODO try Pulse IoT Center                                        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] firecracker                                            :noexport:
-* TODO [#A] cloudhealth                                            :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO vke: VMware Kubernetes Engine                               :noexport:
 https://cloud.vmware.com/vmware-kubernetes-engine
 https://blogs.vmware.com/cloudnative/2018/11/06/try-vmware-cloud-pks-formerly-vke-today-and-the-first-150-is-on-us/
@@ -304,3 +302,6 @@ Create least privelege on compute stack
 - Intended state
 ** aqua appdefense
 * TODO VMware CMBU get 1 billion revenue?                          :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* Velocloud                                                        :noexport:
+* [#A] cloudhealth                                                 :noexport:

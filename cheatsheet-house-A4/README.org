@@ -22,15 +22,6 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-house-A4][this repo]].
 
-** Buy A House
-| Name                                | Summary                                                |
-|-------------------------------------+--------------------------------------------------------|
-| Check noises                        | =activities from public facilities=, =4 lane speedway= |
-| Check natural lights                | =Check the house in a rainy or cloudy days=            |
-| Check public school                 | =Good public schools secure your investment=           |
-| Check the neighborhood              | =Check nearby grocerstore, coffee shop=                |
-| Get Pre-approve letter for mortgage | =2 years' working experience=, =Need 3 credit lines=   |
-
 ** Checklist For Regular Maintenance
 | Name                                            | Summary                                     |
 |-------------------------------------------------+---------------------------------------------|
@@ -38,17 +29,14 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Check for the crack in the walls or foundations |                                             |
 | Check leaks for all sinks                       |                                             |
 | Reference                                       | [[https://www.youtube.com/channel/UCqKBj1cg2agtDD-hiqy6lAg][YouTube: Jonny DIY]], [[https://www.youtube.com/channel/UCUtWNBWbFL9We-cdXkiAuJA][YouTube: This Old House]] |
-** Terminology For Buying A House
-| Name            | Summary |
-|-----------------+---------|
-| Home inspection |         |
-| disclosure      |         |
 
-** Mortage
-| Name                     | Summary       |
-|--------------------------+---------------|
-| US 30 Year Mortgage Rate | [[https://ycharts.com/indicators/30_year_mortgage_rate][Link: ycharts]] |
-
+** Change Address After Closing The Deal
+| Name                                     | Summary                                                                                                                      |
+|------------------------------------------+------------------------------------------------------------------------------------------------------------------------------|
+| Change all credit/debit card address     |                                                                                                                              |
+| Change address in company HR system      |                                                                                                                              |
+| Change address for auto insurance policy |                                                                                                                              |
+| [[https://www.uscis.gov/addresschange][Form A-11]] for immigrants                 | Most non-U.S. citizens must report a change of address within 10 days of moving within the United States or its territories. |
 ** Roof
 | Name                               | Summary                               |
 |------------------------------------+---------------------------------------|
@@ -109,6 +97,22 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 |-----------+-------------------------|
 | Reference | [[https://www.youtube.com/watch?v=Wgq-DLrfKjU][YouTube: Repair a Crack]] |
 
+** Buy A House
+| Name                                | Summary                                                |
+|-------------------------------------+--------------------------------------------------------|
+| Check noises                        | =activities from public facilities=, =4 lane speedway= |
+| Check natural lights                | =Check the house in a rainy or cloudy days=            |
+| Check public school                 | =Good public schools secure your investment=           |
+| Check the neighborhood              | =Check nearby grocerstore, coffee shop=                |
+| Get Pre-approve letter for mortgage | =2 years' working experience=, =Need 3 credit lines=   |
+
+** Terminology For Buying A House
+| Name                             | Summary                                                                                    |
+|----------------------------------+--------------------------------------------------------------------------------------------|
+| Process                          | Pre-approval -> Home inspection -> Underwriting -> Closing Disclosure -> Escrow -> Funded  |
+| [[https://en.wikipedia.org/wiki/Verification_of_employment][Verification of employment]] (VOE) | Review the employment history of a borrower, to determine his/her job stability            |
+| [[https://gustancho.com/verification-of-rent][Verification of Rent]] (VOR)       | VOR with payment shock lower than 5% is considered a strong compensating factor by lenders |
+| US 30 Year Mortgage Rate         | [[https://ycharts.com/indicators/30_year_mortgage_rate][Link: ycharts]]                                                                              |
 ** More Resources
 License: Code is licenhouse under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -375,12 +379,9 @@ Chinese credit card
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO renting contract                                            :noexport:
 https://eforms.com/
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO loan basic                                                  :noexport:
 ** TODO loan lender credits
 https://www.consumerfinance.gov/ask-cfpb/what-are-discount-points-and-lender-credits-and-how-do-they-work-en-136/
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO VOR, VOE                                                    :noexport:
 * Contact                                                          :noexport:
 | Name                              | Contact                | Phone                                   | Website/Email/Notes                          |                                                                      |
 |-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
@@ -405,7 +406,7 @@ https://www.consumerfinance.gov/ask-cfpb/what-are-discount-points-and-lender-cre
 | Cleaning                          |                        | Crystal Carpet cleaning                 | (408)930-6225                                |                                                                      |
 | Cleaning & Handyman               |                        | Handy.com                               |                                              | 通常有coupon或者新用户 折扣                                          |
 | Property Tax                      |                        | https://payments.sccgov.org/propertytax | Tax due 4/10 and 12/10 each year             |                                                                      |
-| Moving                            |                        | 兄弟搬家                                | (510) 648-6546                               | 最好当天最早时间，否则 容易迟到，通常他们报价 包含小费，预约时先确定 |
+| Moving                            |                        | 兄弟搬家                                | (510) 648-6546                               | 最好当天最早时间,否则 容易迟到,通常他们报价 包含小费,预约时先确定 |
 | HOA                               | N/A                    |                                         |                                              |                                                                      |
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Maintain a monthly check list                               :noexport:
@@ -415,3 +416,47 @@ https://www.youtube.com/watch?v=KmUOSgp9PKs
 $39.99
 https://www.amazon.com/TurboLock-Electronic-Automatic-Installation-Bluetooth/dp/B074F1QT96/ref=sr_1_12?keywords=door+lock&qid=1552609071&s=gateway&sr=8-12
 ** When door is open, turn off the light
+* TODO Sign up for water online billing                            :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* Basketball Hoop for garage door                                  :noexport:
+https://www.youtube.com/watch?v=q0j7aA_c0CI
+https://www.youtube.com/watch?v=kKZY72AY9M0
+* HALF Fix a Crack in Concrete                                     :noexport:
+https://www.youtube.com/watch?v=mYz2tSILkGk
+https://www.youtube.com/watch?v=-ykTRshSlwU
+https://www.youtube.com/watch?v=y1rOtvvxRzY
+https://www.youtube.com/watch?v=WMESCf09vW4
+https://www.youtube.com/watch?v=euLQongteF4
+* TODO kitchen tile doesn't work                                   :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF Check monthly utility setup is good: xfinity, pge and water :noexport:
+* TODO Cancel old house facility: xfinity, pge and water           :noexport:
+* TODO AR-11                                                       :noexport:
+https://www.uscis.gov/addresschange
+
+* ikea                                                             :noexport:
+https://www.zhihu.com/question/27701927
+* TODO get a electric lawn mover from criaglist                    :noexport:
+freemont: $215
+https://sfbay.craigslist.org/eby/grd/d/newark-brand-new-electric-lawn-mower/6843218175.html
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cancel renter insurance                                     :noexport:
+https://portfolio.geico.com/dashboard/home
+* TODO update geico home address: increase $164                    :noexport:
+* HALF contact PG&E to turn on gas service                         :noexport:
+https://www.pge.com/en/mybusiness/account/sst/fumigation.page
+http://terms.naer.edu.tw/detail/1678626/?index=2
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO change DMV address                                          :noexport:
+https://www.dmv.ca.gov/portal/dmv/detail/online/coa/welcome
+http://vegas168.blogspot.com/2016/05/checklist.html
+* TODO change address: 家庭医生 儿科医生 牙科医生等                :noexport:
+http://vegas168.blogspot.com/2016/05/checklist.html
+* TODO 洗衣机内桶要定期清洗                                        :noexport:
+* TODO 洗碗机内桶要定期清洗                                        :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Hang pictures to the wall                                   :noexport:
+https://www.youtube.com/watch?v=F7_K_pqXRaw
+
+- amazon https://www.amazon.com/High-Mighty-515314-20-40LB-Hillman/dp/B075CHMVN9/ref=asc_df_B075CHMVN9/?tag=hyprod-20&linkCode=df0&hvadid=222720245886&hvpos=1o1&hvnetw=g&hvrand=2779787352100780098&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9031923&hvtargid=pla-390504852223&psc=1 
+* TODO How to use 百叶窗                                           :noexport:
