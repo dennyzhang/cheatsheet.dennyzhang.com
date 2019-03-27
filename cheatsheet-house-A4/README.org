@@ -21,15 +21,32 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][Cheatsheet: Driver License]], [[https://cheatsheet.dennyzhang.com/cheatsheet-travel][Cheatsheet Travel]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-house-A4][this repo]].
-
 ** Checklist For Regular Maintenance
+- Weekly
+| Name                           | Summary                                                             |
+|--------------------------------+---------------------------------------------------------------------|
+| Move garbage bin to the street | Garden/Recycle/Rubbish [[https://www.youtube.com/watch?v=umI415yrNZQ][YouTube: Household Waste Collection Services]] |
+
+- Bi-weekly
 | Name                                            | Summary                                     |
 |-------------------------------------------------+---------------------------------------------|
-| Spray home for pest control                     |                                             |
+| Refill paper tower, toliet paper, tissue paper  |                                             |
+| Lawn grass cleaning                             |                                             |
 | Check for the crack in the walls or foundations |                                             |
 | Check leaks for all sinks                       |                                             |
 | Reference                                       | [[https://www.youtube.com/channel/UCqKBj1cg2agtDD-hiqy6lAg][YouTube: Jonny DIY]], [[https://www.youtube.com/channel/UCUtWNBWbFL9We-cdXkiAuJA][YouTube: This Old House]] |
 
+- Monthly
+| Name                        | Summary |
+|-----------------------------+---------|
+| Mop the wooden floor        |         |
+| Decluttering the house      |         |
+| Spray home for pest control |         |
+** Recurring Shopping List
+| Name               | Summary                                                       |
+|--------------------+---------------------------------------------------------------|
+| Refrigerator water | [[https://amzn.to/2YDbDk6][Amazon: 4396710 Refrigerator Water]]                            |
+| Disinfecting wipes | [[https://amzn.to/2FB3rrR][Amazon: Clorox Disinfecting Wipes, Bleach Free Cleaning Wipes]] |
 ** Change Address After Closing The Deal
 | Name                                     | Summary                                                                                                                      |
 |------------------------------------------+------------------------------------------------------------------------------------------------------------------------------|
@@ -42,26 +59,22 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 |------------------------------------+---------------------------------------|
 | Roof Gutter                        | [[https://www.youtube.com/watch?v=45LbnlaJvtI][YouTube: How to Repair a Leaky Gutter]] |
 | Tree branches overhanging the roof |                                       |
-
 ** Floor
 | Name                   | Summary                                    |
 |------------------------+--------------------------------------------|
 | Wood Floors is squeaky | [[https://www.youtube.com/watch?v=3iAseVZZKlY][YouTube: Repair Squeaky Wood Floors]]        |
 | Wood Floor is chipped  | [[https://www.youtube.com/watch?v=DPGxCageub8][YouTube: How to Patch a Chipped Wood Floor]] |
-
 ** Pest control
 | Name                        | Summary                                     |
 |-----------------------------+---------------------------------------------|
 | Termites/white ants         | [[https://www.youtube.com/watch?v=ZvowhUYjqvQ][YouTube: Termites]]                           |
 | Spray Home for pest control | [[https://www.youtube.com/watch?v=OmWNoz3P1YM][YouTube: Spray Home Like A Pest Control Pro]] |
 | Reference                   | [[https://www.youtube.com/watch?v=l_MbJ_wMnjY][YouTube: How To Do Your Own Home Pest]]       |
-
 ** Kitchen
 | Name                    | Summary                                 |
 |-------------------------+-----------------------------------------|
 | Faucet is leaking       | [[https://www.youtube.com/watch?v=zMH61Yabdj0][YouTube: How to Repair a Leaking Faucet]] |
 | Kitchen sink is leaking |                                         |
-
 ** Machine Maintenance
 | Name                | Summary |
 |---------------------+---------|
@@ -69,34 +82,28 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Laundry             |         |
 | Dryer               |         |
 | AC(air conditioner) |         |
-
 ** Lighting & Electric
 | Name                                      | Summary |
 |-------------------------------------------+---------|
 | =Lamp doesn't work=                       |         |
 | =GFCI= ([[https://www.osha.gov/SLTC/etools/construction/electrical_incidents/gfci.html][Ground Fault Circuit Interrupter]]) |         |
-
 ** Toilet
 | Name                    | Summary                                 |
 |-------------------------+-----------------------------------------|
 | Toilet is leaking       | [[https://www.youtube.com/watch?v=OjSbQhXTdHI][YouTube: How to Repair a Leaking Toilet]] |
-
 ** Wall
 | Name                 | Summary                                   |
 |----------------------+-------------------------------------------|
 | Patch a Hole         | [[https://www.youtube.com/watch?v=sBJIgdFL5m8&ut=][YouTube: How to Patch a Hole in Wood Trim]] |
 | Side wall is leaking |                                           |
-
 ** Yard Maintenance
 | Name                   | Summary |
 |------------------------+---------|
 | Big trees in your yard |         |
-
 ** Foundation Crack
 | Name      | Summary                 |
 |-----------+-------------------------|
 | Reference | [[https://www.youtube.com/watch?v=Wgq-DLrfKjU][YouTube: Repair a Crack]] |
-
 ** Buy A House
 | Name                                | Summary                                                |
 |-------------------------------------+--------------------------------------------------------|
@@ -105,7 +112,12 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Check public school                 | =Good public schools secure your investment=           |
 | Check the neighborhood              | =Check nearby grocerstore, coffee shop=                |
 | Get Pre-approve letter for mortgage | =2 years' working experience=, =Need 3 credit lines=   |
-
+** Setup After Moving
+| Name                                        | Summary |
+|---------------------------------------------+---------|
+| Electric & Gas service setup online payment |         |
+| Garbage service setup online payment        |         |
+| Water service setup online payment          |         |
 ** Terminology For Buying A House
 | Name                             | Summary                                                                                    |
 |----------------------------------+--------------------------------------------------------------------------------------------|
@@ -127,8 +139,8 @@ https://www.todayshomeowner.com/
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
+#+DESCRIPTION:
+#+KEYWORDS:
 #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
 #+LaTeX_CLASS_OPTIONS: [8pt]
 #+LATEX_HEADER: \usepackage[english]{babel}
@@ -148,15 +160,14 @@ https://www.todayshomeowner.com/
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+EXPORT_EXCLUDE_TAGS: exclude noexport
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+#+LINK_UP:
+#+LINK_HOME:
 * CANCELED old notes                                               :noexport:
   CLOSED: [2019-02-19 Tue 09:21]
 #+BEGIN_EXAMPLE
 看房🏠
 
-zip code: 
+zip code:
 
 https://cheatsheet.dennyzhang.com/cheatsheet-house-A4
 
@@ -197,9 +208,9 @@ Meadowood Apartments: 1555 W. Middlefield Rd #4, Mountain View, CA 94043
 
 ----------------------------------------------
 
-Park Square Apartments: 1285 Montecito Ave, Mountain View, CA 94043 
+Park Square Apartments: 1285 Montecito Ave, Mountain View, CA 94043
 
-$2,495; 816 Sq Ft; 
+$2,495; 816 Sq Ft;
 ￼
 ￼
 
@@ -216,23 +227,16 @@ $2,495; 816 Sq Ft;
 | Name                      | Price | Size | Distance S, D |
 |---------------------------+-------+------+---------------|
 | Mission Pointe by Windsor | 2,685 |  704 | (4, 15)       |
-
-
 ** Village Lake: 777 W Middlefield Rd, Mountain View, CA 94043
 https://www.zillow.com/homes/for_rent/house,condo,apartment_duplex,mobile,townhouse_type/5XjLXT_bldg/37.403001,-122.076286_ll/1-_beds/0-752851_price/0-3000_mp/600-_size/37.409172,-122.063674,37.396388,-122.083844_rect/15_zm/
-
 ** Highland Gardens: 234 Escuela Ave, Mountain View, CA 94040
 https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/2096379137_zpid/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.430603,-122.021327,37.379468,-122.131877_rect/13_zm/
-
 ** Avalon Mountain View: 1600 Villa St, Mountain View, CA 94041
 https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/2095571415_zpid/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.430058,-122.044759,37.378513,-122.091794_rect/13_zm/
-
 ** Birch Creek: 575 S Rengstorff Ave, Mountain View, CA 94040
 https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/5XjKKB_bldg/37.39725,-122.09952_ll/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.416834,-122.013173,37.365689,-122.123723_rect/13_zm/
-
 ** Americana Apartments: 707 Continental Cir, Mountain View, CA 94040
 https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/5hGhMy_bldg/37.375162,-122.065018_ll/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.411653,-122.009912,37.360505,-122.120461_rect/13_zm/
-
 ** Mission Pointe by Windsor: 1063 Morse Ave, Sunnyvale, CA 94089
 https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5XjPcj_bldg/37.400296,-122.0178_ll/54626_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.411176,-121.966052,37.360027,-122.076602_rect/13_zm/
 
@@ -256,133 +260,26 @@ https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5
 - 无房贷的日用开支: $4500
 - 每年可以存7万,6年即42万.
 #+END_EXAMPLE
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO tips to increase my credit history: lease contract, utility :noexport:
-* TODO How to check Termites                                       :noexport:
-* TODO Preventative maintenance is a key element to saving money   :noexport:
-* TODO Contact & Service                                           :noexport:
-** termites
-info@proventermitesolutions.com
-* TODO 1031 Tax Exchange                                           :noexport:
-* house                                                            :noexport:
-** 白蚁:2000
-** 淋浴的水龙头出水问题
-** gas meter有漏气的味道: 找PGE
-** Two kitchen drawers are not stable
-** 家里有灯泡坏了
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** 橙子树挡着roof和neighbor了
-** 厨房炉子的右上方burner不work了
-** water heater还有大概5年寿命
-** 地基里面有曾经出现过小动物的痕迹（老鼠/ 松鼠）
-** 有GFCI插座坏了
-** 地基有一条裂缝 不过看上去是正常的size
-** 厕所下面有曾经漏水的痕迹
-** Hallway bath 的sink 水压比较低
-** 空调用了13年
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** 办两张credit cards
-** 把电费转到我手里
-** 把车保险转到我这里
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** check list
-- 有白蚁,需要做帐篷杀白蚁fumigation, 价格按房屋面积算, 这个大小两千左右.
-- Sweet ave 烟囱上面有裂痕
-- 地基有一条裂缝 不过看上去是正常的size. 地基里面有曾经出现过小动物的痕迹（ 老鼠/ 松鼠）
-- 厕所下面有曾经漏水的痕迹,地基里面有曾经出现过小动物的痕迹（ 老鼠/ 松鼠）.
-- 屋外gas meter 有漏气的味道, 需要找PGE人去修,
-- water heater 用了大概快十年, 普通water heater 寿命是10-15 年, 更换新的需要一千块左右, 买房第一年坏掉的话 找home warranty 可以cover 修好或者换新的.
-- 有GFCI插座坏了. 家里有灯泡坏了.Hallway bath 的sink 水压比较低,厨房炉子的右上方burner不work了,
-- 空调用了13年
-*** One or more floor tiles in the hallway were noted to be cracked
-*** There were tree branches overhanging the roof at one or more areas. R-6
-*** No permit for remodeling
-*** low water pressure in the sink of hallway bathroom
-*** water stains in roof sheathing
-*** location of cooling system
-*** roof漏水
-*** 哪些家具是留下
-*** 地基平吗？你们厘米走一圈有什么异样吗？
- Roofs are not water tested for leaks. The roof has been inspected at a
- time when it was not raining. Since one of the purposes of the roof is
- to repel water this could not be observed and verified as occurring in
- all cases. Therefore the roof has not been tested under wet conditions
- and how it performs in these conditions is unknown. No warranty is
- made that it will not leak when it is under a wet condition. It is
- important for all roofs to have regular maintenance, including
- cleaning out the gutters and drainlines and ensuring all the
- penetrations are properly sealed. Condition of the roofing
- underlayment material is not verified/inspected.
-*** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-*** 注意细节,房子里面的天花板,漏雨有水迹的,包括closet的角落
-*** 浴室厨房有没有发霉？打开抽屉,柜子里面看看.他们都家具你不要动,留下给你的房子的一部分,你都打开看看.
-*** 基平吗？你们厘米走一圈有什么异样吗？地上各个房间慢慢走一圈,墙角上下都留意一下.屋顶瓦的整体情况外面就可以看.
-*** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-*** basic
- - The home was built in 1957.
-* Loan for housing                                                 :noexport:
-12W, 24W
+* DONE                                                             :noexport:
+** DONE Hang pictures to the wall                                  :noexport:
+   CLOSED: [2019-03-25 Mon 09:07]
+ https://www.youtube.com/watch?v=F7_K_pqXRaw
+ - amazon https://www.amazon.com/High-Mighty-515314-20-40LB-Hillman/dp/B075CHMVN9/ref=asc_df_B075CHMVN9/?tag=hyprod-20&linkCode=df0&hvadid=222720245886&hvpos=1o1&hvnetw=g&hvrand=2779787352100780098&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9031923&hvtargid=pla-390504852223&psc=1 
+** DONE How to use 百叶窗                                          :noexport:
+   CLOSED: [2019-03-25 Mon 09:07]
+** DONE Keyless door                                               :noexport:
+   CLOSED: [2019-03-26 Tue 09:41]
+ https://www.youtube.com/watch?v=KmUOSgp9PKs
 
-base: 13W, package: 13.5W
-
-需要贷80到110W
-
-小银行:
-- 能贷多少钱
-- 利率多出多少
-- 如果提高自己我credits的建议
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** 申请三张信用卡: 多申请两张
-** 工作满两年
-** Loan agent                                                      :noexport:
-*** Citi
- Sunny
-*** BOA
-Anna
-
- 510-552-7271
-*** David Guo
- +1-408-891-2002
- 信用短
-
- 72W以内
-
- exception
-
- 工作历史,满两年
-
- 信用历史
-
- 三张信用卡
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** 不能有两个银行
-** single family会多一点
-** Single 贷款: 72.6W; 70W
-* TODO arm 7/1: 3.875%; 3.625%; 3.5%                               :noexport:
-Mortgage amount: 1,200,000
-Mortgage period (years): 30 years
-
-| Interest Rate (%) | Total cost of mortgage | Monthly payments | Offset from 3.875 |
-|-------------------+------------------------+------------------+-------------------|
-|               3.5 | $1,939,873             | $5,389           |              -254 |
-|             3.625 | $1,970,142             | $5,473           |              -170 |
-|               3.7 | $1,988,422             | $5,523           |              -120 |
-|             3.875 | $2,031,424             | $5,643           |                   |
-
-254*7 = 1778
-170*7 = 1190
-120*7 = 840
-* TODO 15 days won't impact your credit                            :noexport:
-rent
-
-Chinese credit card
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO renting contract                                            :noexport:
-https://eforms.com/
-* TODO loan basic                                                  :noexport:
-** TODO loan lender credits
-https://www.consumerfinance.gov/ask-cfpb/what-are-discount-points-and-lender-credits-and-how-do-they-work-en-136/
-* Contact                                                          :noexport:
+ $39.99
+ https://www.amazon.com/TurboLock-Electronic-Automatic-Installation-Bluetooth/dp/B074F1QT96/ref=sr_1_12?keywords=door+lock&qid=1552609071&s=gateway&sr=8-12
+*** When door is open, turn off the light
+** DONE termite 白蚁:2000                                          :noexport:
+   CLOSED: [2019-03-26 Tue 10:23]
+** DONE AR-11                                                      :noexport:
+   CLOSED: [2019-03-26 Tue 10:25]
+ https://www.uscis.gov/addresschange
+* [#A] Utility Contact                                             :noexport:
 | Name                              | Contact                | Phone                                   | Website/Email/Notes                          |                                                                      |
 |-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
 | Notify USCIS                      |                        |                                         | Bestbuy/HomeDepo coupon                      |                                                                      |
@@ -409,54 +306,123 @@ https://www.consumerfinance.gov/ask-cfpb/what-are-discount-points-and-lender-cre
 | Moving                            |                        | 兄弟搬家                                | (510) 648-6546                               | 最好当天最早时间,否则 容易迟到,通常他们报价 包含小费,预约时先确定 |
 | HOA                               | N/A                    |                                         |                                              |                                                                      |
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Maintain a monthly check list                               :noexport:
-* Keyless door                                                     :noexport:
-https://www.youtube.com/watch?v=KmUOSgp9PKs
-
-$39.99
-https://www.amazon.com/TurboLock-Electronic-Automatic-Installation-Bluetooth/dp/B074F1QT96/ref=sr_1_12?keywords=door+lock&qid=1552609071&s=gateway&sr=8-12
-** When door is open, turn off the light
-* TODO Sign up for water online billing                            :noexport:
+* TODO Learn skills: increase my credit history: lease contract, utility :noexport:
+* TODO Learn skills: How to check Termites                         :noexport:
+* TODO Learn skills: Preventative maintenance is a key element to saving money   :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* Basketball Hoop for garage door                                  :noexport:
+* TODO 1031 Tax Exchange                                           :noexport:
+* Two kitchen drawers are not stable                               :noexport:
+* 橙子树挡着roof和neighbor了                                       :noexport:
+* water heater还有大概5年寿命                                      :noexport:
+* 一键把所有的灯关了                                          :noexport:
+* 家里有灯泡坏了                                                   :noexport:
+* 厨房炉子的右上方burner不work了                                   :noexport:
+* 地基里面有曾经出现过小动物的痕迹（老鼠/ 松鼠）                   :noexport:
+* 有GFCI插座坏了                                                   :noexport:
+* 厕所下面有曾经漏水的痕迹                                         :noexport:
+* Hallway bath 的sink 水压比较低                                   :noexport:
+* 空调用了13年                                                     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Basketball Hoop for garage door                             :noexport:
 https://www.youtube.com/watch?v=q0j7aA_c0CI
 https://www.youtube.com/watch?v=kKZY72AY9M0
-* HALF Fix a Crack in Concrete                                     :noexport:
-https://www.youtube.com/watch?v=mYz2tSILkGk
-https://www.youtube.com/watch?v=-ykTRshSlwU
-https://www.youtube.com/watch?v=y1rOtvvxRzY
-https://www.youtube.com/watch?v=WMESCf09vW4
-https://www.youtube.com/watch?v=euLQongteF4
-* TODO kitchen tile doesn't work                                   :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * HALF Check monthly utility setup is good: xfinity, pge and water :noexport:
-* TODO Cancel old house facility: xfinity, pge and water           :noexport:
-* TODO AR-11                                                       :noexport:
-https://www.uscis.gov/addresschange
-
-* ikea                                                             :noexport:
-https://www.zhihu.com/question/27701927
 * TODO get a electric lawn mover from criaglist                    :noexport:
 freemont: $215
 https://sfbay.craigslist.org/eby/grd/d/newark-brand-new-electric-lawn-mower/6843218175.html
+* TODO Merge 401K                                                  :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO cancel renter insurance                                     :noexport:
+* TODO Cancel old house facility: xfinity, pge and water           :noexport:
+* TODO Cancel renter insurance                                     :noexport:
 https://portfolio.geico.com/dashboard/home
-* TODO update geico home address: increase $164                    :noexport:
-* HALF contact PG&E to turn on gas service                         :noexport:
-https://www.pge.com/en/mybusiness/account/sst/fumigation.page
-http://terms.naer.edu.tw/detail/1678626/?index=2
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO change DMV address                                          :noexport:
 https://www.dmv.ca.gov/portal/dmv/detail/online/coa/welcome
 http://vegas168.blogspot.com/2016/05/checklist.html
 * TODO change address: 家庭医生 儿科医生 牙科医生等                :noexport:
 http://vegas168.blogspot.com/2016/05/checklist.html
+* TODO 地基有一条裂缝 不过看上去是正常的size                       :noexport:
+* TODO water service: setup online payment                         :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO 洗衣机内桶要定期清洗                                        :noexport:
 * TODO 洗碗机内桶要定期清洗                                        :noexport:
+* TODO cancel Amazon prime service
+* TODO change heater滤芯                                           :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Hang pictures to the wall                                   :noexport:
-https://www.youtube.com/watch?v=F7_K_pqXRaw
+* TODO Learn skills to declutter your home                         :noexport:
+* TODO Learn skills for operating a lawnmover                      :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#C] hang pictures to rocky wall                            :noexport:
+* TODO [#C] kitchen tile is broken: 地板砖                         :noexport:
+* HALF [#C] Fix a Crack in Concrete                                :noexport:
+https://www.youtube.com/watch?v=mYz2tSILkGk
+https://www.youtube.com/watch?v=-ykTRshSlwU
+https://www.youtube.com/watch?v=y1rOtvvxRzY
+https://www.youtube.com/watch?v=WMESCf09vW4
+https://www.youtube.com/watch?v=euLQongteF4
+* TODO [#C] setup auto payment for the garbage service             :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#B] fix holes in wooden door                               :noexport:
+* TODO [#B] buy a second-hand lawnmover from criaglist
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#B] Sign up Kaiser account and doctor                      :noexport:
+* TODO [#B] Update geico home address: increase $164               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF [#A] Change Refrigerator Water Filter                       :noexport:
+Refrigerator Water Filter
+- Flush 4 gallons of water through water filter cartridge before use
+- Replace dispensable filter every 3-6 months to maximize contaminant reduction.
 
-- amazon https://www.amazon.com/High-Mighty-515314-20-40LB-Hillman/dp/B075CHMVN9/ref=asc_df_B075CHMVN9/?tag=hyprod-20&linkCode=df0&hvadid=222720245886&hvpos=1o1&hvnetw=g&hvrand=2779787352100780098&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9031923&hvtargid=pla-390504852223&psc=1 
-* TODO How to use 百叶窗                                           :noexport:
+https://www.youtube.com/watch?v=U-p62wMxfWU
+https://www.amazon.com/4396841-4396710-Refrigerator-Compatible-EDR3RXD1/dp/B07MYWTTM7/ref=sr_1_3?keywords=whirlpool+refrigerator+water+filter+4396710&qid=1553656434&s=hi&sr=1-3
+https://everydropwater.com/Assets/Doc/filterGuide.pdf
+* TODO [#A] Tear down the ikea shelf                               :noexport:
+* TODO [#A] apply two credit cards: costco and chase safari        :noexport:
+* TODO [#A] 淋浴的龙头                                             :noexport:
+* TODO [#A] setup waste service                                    :noexport:
+* HALF [#A] contact PG&E to turn on gas service                    :noexport:
+https://www.pge.com/en/mybusiness/account/sst/fumigation.page
+http://terms.naer.edu.tw/detail/1678626/?index=2
+* TODO [#A] apply two additional credit card to increase the credit score :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO 15 days won't impact your credit                            :noexport:
+rent
+
+Chinese credit card
+* TODO loan basic                                                  :noexport:
+** TODO loan lender credits
+https://www.consumerfinance.gov/ask-cfpb/what-are-discount-points-and-lender-credits-and-how-do-they-work-en-136/
+* TODO Loan for housing                                            :noexport:
+12W, 24W
+
+base: 13W, package: 13.5W
+
+需要贷80到110W
+
+小银行:
+- 能贷多少钱
+- 利率多出多少
+- 如果提高自己我credits的建议
+** Loan agent                                                      :noexport:
+*** Citi
+Sunny
+*** BOA
+Anna
+
+510-552-7271
+*** David Guo
++1-408-891-2002
+ 信用短
+
+ 72W以内
+
+ exception
+
+ 工作历史,满两年
+
+ 信用历史
+
+ 三张信用卡
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** 不能有两个银行
+** single family会多一点
+** Single 贷款: 72.6W; 70W

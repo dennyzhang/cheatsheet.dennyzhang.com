@@ -34,7 +34,6 @@ Checklist before travel by flights
 |                            | =helm status $=helm_name=                                |
 |                            | =helm delete $=helm_name=                                |
 |                            | =helm delete --purge $=helm_name=                        |
-
 ** Helm Component
 | Name    | Command                                                                  |
 |---------+--------------------------------------------------------------------------|
@@ -42,7 +41,6 @@ Checklist before travel by flights
 | tiller  | Server. Helm server manages releases (installations) of your charts.     |
 | Charts  | packages of pre-configured Kubernetes resources.                         |
 | Release | a collection of Kubernetes resources deployed to the cluster using Helm. |
-
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -348,4 +346,9 @@ do you know how to control the order when install a helm chart?
 
 Denny Zhang (Github . Blogger) [4:36 PM]
 Inside one chart?
+#+END_EXAMPLE
+* TODO Error: could not find tiller                                :noexport:
+#+BEGIN_EXAMPLE
+   /Users/zdenny/Downloads  helm install stable/concourse
+Error: could not find tiller
 #+END_EXAMPLE
