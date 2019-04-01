@@ -21,6 +21,11 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][Cheatsheet: Driver License]], [[https://cheatsheet.dennyzhang.com/cheatsheet-travel][Cheatsheet Travel]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-house-A4][this repo]].
+** YouTube Channels
+| Name                      | Summary                                                   |
+|---------------------------+-----------------------------------------------------------|
+| Organization or companies | [[https://www.youtube.com/channel/UCqd2hbtE2N9fb0D2nTrLT1w][YouTube: Lowe's Home Improvement]], [[https://www.youtube.com/channel/UCUtWNBWbFL9We-cdXkiAuJA][YouTube: This Old House]] |
+| Handy man                 | [[https://www.youtube.com/user/HomeRepairTutor][YouTube: Home Repair Tutor]], [[https://www.youtube.com/channel/UCeFTtiy2iWXHZxtq8018MFA][YouTube: How2Plumb]]            |
 ** Checklist For Regular Maintenance
 - Weekly
 | Name                           | Summary                                                             |
@@ -28,20 +33,28 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Move garbage bin to the street | Garden/Recycle/Rubbish [[https://www.youtube.com/watch?v=umI415yrNZQ][YouTube: Household Waste Collection Services]] |
 
 - Bi-weekly
-| Name                                            | Summary                                     |
-|-------------------------------------------------+---------------------------------------------|
-| Refill paper tower, toliet paper, tissue paper  |                                             |
-| Lawn grass cleaning                             |                                             |
-| Check for the crack in the walls or foundations |                                             |
-| Check leaks for all sinks                       |                                             |
-| Reference                                       | [[https://www.youtube.com/channel/UCqKBj1cg2agtDD-hiqy6lAg][YouTube: Jonny DIY]], [[https://www.youtube.com/channel/UCUtWNBWbFL9We-cdXkiAuJA][YouTube: This Old House]] |
+| Name                                           | Summary                                     |
+|------------------------------------------------+---------------------------------------------|
+| Yard & Garden Work                             |                                             |
+| Decluttering the house                         |                                             |
+| Refill paper tower, toliet paper, tissue paper |                                             |
+| Refill hand soap, oil to small bottles         |                                             |
+| Reference                                      | [[https://www.youtube.com/channel/UCqKBj1cg2agtDD-hiqy6lAg][YouTube: Jonny DIY]], [[https://www.youtube.com/channel/UCUtWNBWbFL9We-cdXkiAuJA][YouTube: This Old House]] |
 
 - Monthly
-| Name                        | Summary |
-|-----------------------------+---------|
-| Mop the wooden floor        |         |
-| Decluttering the house      |         |
-| Spray home for pest control |         |
+| Name                                            | Summary |
+|-------------------------------------------------+---------|
+| Check for the crack in the walls or foundations |         |
+| Check leaks for all sinks                       |         |
+| Mop the wooden floor                            |         |
+| Spray home for pest control                     |         |
+
+- Quarterly
+| Name                             | Summary |
+|----------------------------------+---------|
+| Change heater filter             |         |
+| Change refrigerator water filter |         |
+
 ** Recurring Shopping List
 | Name               | Summary                                                       |
 |--------------------+---------------------------------------------------------------|
@@ -279,6 +292,10 @@ https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5
 ** DONE AR-11                                                      :noexport:
    CLOSED: [2019-03-26 Tue 10:25]
  https://www.uscis.gov/addresschange
+** DONE wired all cables and lines                                 :noexport:
+   CLOSED: [2019-03-28 Thu 14:23]
+** DONE schedule irobot to run twice a week
+   CLOSED: [2019-03-28 Thu 14:28]
 * [#A] Utility Contact                                             :noexport:
 | Name                              | Contact                | Phone                                   | Website/Email/Notes                          |                                                                      |
 |-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
@@ -327,9 +344,6 @@ https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5
 https://www.youtube.com/watch?v=q0j7aA_c0CI
 https://www.youtube.com/watch?v=kKZY72AY9M0
 * HALF Check monthly utility setup is good: xfinity, pge and water :noexport:
-* TODO get a electric lawn mover from criaglist                    :noexport:
-freemont: $215
-https://sfbay.craigslist.org/eby/grd/d/newark-brand-new-electric-lawn-mower/6843218175.html
 * TODO Merge 401K                                                  :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Cancel old house facility: xfinity, pge and water           :noexport:
@@ -349,7 +363,6 @@ http://vegas168.blogspot.com/2016/05/checklist.html
 * TODO change heater滤芯                                           :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Learn skills to declutter your home                         :noexport:
-* TODO Learn skills for operating a lawnmover                      :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#C] hang pictures to rocky wall                            :noexport:
 * TODO [#C] kitchen tile is broken: 地板砖                         :noexport:
@@ -362,7 +375,6 @@ https://www.youtube.com/watch?v=euLQongteF4
 * TODO [#C] setup auto payment for the garbage service             :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#B] fix holes in wooden door                               :noexport:
-* TODO [#B] buy a second-hand lawnmover from criaglist
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#B] Sign up Kaiser account and doctor                      :noexport:
 * TODO [#B] Update geico home address: increase $164               :noexport:
@@ -383,6 +395,7 @@ https://everydropwater.com/Assets/Doc/filterGuide.pdf
 https://www.pge.com/en/mybusiness/account/sst/fumigation.page
 http://terms.naer.edu.tw/detail/1678626/?index=2
 * TODO [#A] apply two additional credit card to increase the credit score :noexport:
+* TODO [#A] change the heater filter                               :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO 15 days won't impact your credit                            :noexport:
 rent
@@ -426,3 +439,89 @@ Anna
 ** 不能有两个银行
 ** single family会多一点
 ** Single 贷款: 72.6W; 70W
+* TODO sync up contact into my cellphone                           :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO 洗碗机洗不干净                                              :noexport:
+* TODO change heater filter                                        :noexport:
+https://www.youtube.com/watch?v=Wv3_Dy97KoY
+
+https://www.serviceexperts.com/faq/how-often-should-i-change-my-air-filter-at-home
+How Often Should I Change My Air Filter At Home?
+* study website                                                    :noexport:
+https://www.homeadvisor.com/
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO get a electric lawn mover from criaglist                    :noexport:
+freemont: $215
+https://sfbay.craigslist.org/eby/grd/d/newark-brand-new-electric-lawn-mower/6843218175.html
+
+* TODO Learn skills for operating a lawnmover                      :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO toliet rolling sticker                                      :noexport:
+* TODO [#B] lawnmover                                              :noexport:
+https://gonglue.us/9713
+
+http://chineselikela.com/deals/appliance/16435/
+
+** Electric mower
+利:不用考虑加油,不用维护,不担心启动,噪音较小.
+
+弊:
+1`我的电动割草机有蓄电池,但要提前充电.常常是我想要割草的时候没有电,充好了电又没时间割草了.
+2`不到两年,我的电动割草机电池就坏了.蓄电池的寿命一般都不长,换一个并不便宜.
+3`电动的也可以扯线,因怕割到线,要多花时间.割草的时候,往往不能很规律的一排一排的走,有些地方割得不好,要再推回去割.
+4`电动的容易烧电机.虽然都很小心,还是免不了烧了.
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Unclog a Kitchen Sink                                  :noexport:
+plumbing
+
+drain
+
+sink
+
+garbage disposal
+
+* TODO bath tub spout is leaking                                   :noexport:
+https://www.youtube.com/watch?v=4OjrL09CXrQ
+https://www.youtube.com/watch?v=QcBdjH4Fdik
+https://www.youtube.com/watch?v=yq6FYfqKO0g
+* [#A] water heater pilot won't light                              :noexport:
+https://www.youtube.com/watch?v=fqVbgf2OtzM
+https://www.youtube.com/watch?v=b6quJTySjWA
+Bradford Water Heater Pilot Not Lighting
+
+984 sweet ave, 95129
+
+https://www.homeadvisor.com/myhomeadvisor/myprojects/137648540/
+
+Disccount: 5%
+** Benjamin Franklin Plumbing
+98 Verified Reviews
+Services Include: Water Heater - Repair or Service in San Jose, CA
+ 
+ Write a review
+ (408) 426-4593
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** Mike Counsil Plumbing, Inc.
+  4.3
+139 Verified Reviews
+Services Include: Water Heater - Repair or Service in San Jose, CA
+ 
+ (408) 512-1791
+ Send a Message
+ Write a review
+
+20 years
+
+$89: inspection
+
+- How old?
+- How many gallon water it holds?
+** CMS Plumbing
+108 Verified Reviews
+Services Include: Water Heater - Repair or Service in San Jose, CA
+ 
+ Write a review
+ (408) 828-6700
+* replace a water heater                                           :noexport:
+https://www.youtube.com/watch?v=pqKR1D9gkyg
+https://www.youtube.com/watch?v=hEBFk7S_Suk
