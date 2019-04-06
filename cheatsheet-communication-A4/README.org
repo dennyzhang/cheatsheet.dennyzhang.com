@@ -374,3 +374,4 @@ Speak with confidence
 * [#A] Question: Set the right goal, and avoid useless effort/arguments :noexport:
 * TODO Question: Set the timeline                                  :noexport:
 * doc: 责任不能分解或转移                                          :noexport:
+* TODO doc: set up to fail                                         :noexport:

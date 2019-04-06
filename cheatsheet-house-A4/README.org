@@ -296,6 +296,73 @@ https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5
    CLOSED: [2019-03-28 Thu 14:23]
 ** DONE schedule irobot to run twice a week
    CLOSED: [2019-03-28 Thu 14:28]
+** BYPASS [#A] water heater pilot won't light                      :noexport:
+   CLOSED: [2019-04-03 Wed 13:56]
+ https://www.youtube.com/watch?v=fqVbgf2OtzM
+ https://www.youtube.com/watch?v=b6quJTySjWA
+ Bradford Water Heater Pilot Not Lighting
+
+ 984 sweet ave, 95129
+
+ https://www.homeadvisor.com/myhomeadvisor/myprojects/137648540/
+
+ Disccount: 5%
+*** Benjamin Franklin Plumbing
+ 98 Verified Reviews
+ Services Include: Water Heater - Repair or Service in San Jose, CA
+ 
+  Write a review
+  (408) 426-4593
+*** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+*** Mike Counsil Plumbing, Inc.
+   4.3
+ 139 Verified Reviews
+ Services Include: Water Heater - Repair or Service in San Jose, CA
+ 
+  (408) 512-1791
+  Send a Message
+  Write a review
+
+ 20 years
+
+ $89: inspection
+
+ - How old?
+ - How many gallon water it holds?
+*** CMS Plumbing
+ 108 Verified Reviews
+ Services Include: Water Heater - Repair or Service in San Jose, CA
+ 
+  Write a review
+  (408) 828-6700
+** DONE replace a water heater                                     :noexport:
+   CLOSED: [2019-04-03 Wed 13:55]
+ https://www.youtube.com/watch?v=pqKR1D9gkyg
+ https://www.youtube.com/watch?v=hEBFk7S_Suk
+
+ $350 labor <2019-04-03 13:56 UTC +8>
+** DONE [#B] buy lawnmover                                         :noexport:
+   CLOSED: [2019-04-03 Wed 13:56]
+ https://gonglue.us/9713
+
+ http://chineselikela.com/deals/appliance/16435/
+
+*** Electric mower
+ 利:不用考虑加油,不用维护,不担心启动,噪音较小.
+
+ 弊:
+ 1`我的电动割草机有蓄电池,但要提前充电.常常是我想要割草的时候没有电,充好了电又没时间割草了.
+ 2`不到两年,我的电动割草机电池就坏了.蓄电池的寿命一般都不长,换一个并不便宜.
+ 3`电动的也可以扯线,因怕割到线,要多花时间.割草的时候,往往不能很规律的一排一排的走,有些地方割得不好,要再推回去割.
+ 4`电动的容易烧电机.虽然都很小心,还是免不了烧了.
+** DONE toliet rolling sticker                                     :noexport:
+   CLOSED: [2019-04-03 Wed 13:56]
+
+** CANCELED get a electric lawn mover from criaglist               :noexport:
+   CLOSED: [2019-04-03 Wed 13:56]
+ freemont: $215
+ https://sfbay.craigslist.org/eby/grd/d/newark-brand-new-electric-lawn-mower/6843218175.html
+
 * [#A] Utility Contact                                             :noexport:
 | Name                              | Contact                | Phone                                   | Website/Email/Notes                          |                                                                      |
 |-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
@@ -450,26 +517,7 @@ How Often Should I Change My Air Filter At Home?
 * study website                                                    :noexport:
 https://www.homeadvisor.com/
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO get a electric lawn mover from criaglist                    :noexport:
-freemont: $215
-https://sfbay.craigslist.org/eby/grd/d/newark-brand-new-electric-lawn-mower/6843218175.html
-
 * TODO Learn skills for operating a lawnmover                      :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO toliet rolling sticker                                      :noexport:
-* TODO [#B] lawnmover                                              :noexport:
-https://gonglue.us/9713
-
-http://chineselikela.com/deals/appliance/16435/
-
-** Electric mower
-利:不用考虑加油,不用维护,不担心启动,噪音较小.
-
-弊:
-1`我的电动割草机有蓄电池,但要提前充电.常常是我想要割草的时候没有电,充好了电又没时间割草了.
-2`不到两年,我的电动割草机电池就坏了.蓄电池的寿命一般都不长,换一个并不便宜.
-3`电动的也可以扯线,因怕割到线,要多花时间.割草的时候,往往不能很规律的一排一排的走,有些地方割得不好,要再推回去割.
-4`电动的容易烧电机.虽然都很小心,还是免不了烧了.
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Unclog a Kitchen Sink                                  :noexport:
 plumbing
@@ -484,44 +532,4 @@ garbage disposal
 https://www.youtube.com/watch?v=4OjrL09CXrQ
 https://www.youtube.com/watch?v=QcBdjH4Fdik
 https://www.youtube.com/watch?v=yq6FYfqKO0g
-* [#A] water heater pilot won't light                              :noexport:
-https://www.youtube.com/watch?v=fqVbgf2OtzM
-https://www.youtube.com/watch?v=b6quJTySjWA
-Bradford Water Heater Pilot Not Lighting
-
-984 sweet ave, 95129
-
-https://www.homeadvisor.com/myhomeadvisor/myprojects/137648540/
-
-Disccount: 5%
-** Benjamin Franklin Plumbing
-98 Verified Reviews
-Services Include: Water Heater - Repair or Service in San Jose, CA
- 
- Write a review
- (408) 426-4593
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** Mike Counsil Plumbing, Inc.
-  4.3
-139 Verified Reviews
-Services Include: Water Heater - Repair or Service in San Jose, CA
- 
- (408) 512-1791
- Send a Message
- Write a review
-
-20 years
-
-$89: inspection
-
-- How old?
-- How many gallon water it holds?
-** CMS Plumbing
-108 Verified Reviews
-Services Include: Water Heater - Repair or Service in San Jose, CA
- 
- Write a review
- (408) 828-6700
-* replace a water heater                                           :noexport:
-https://www.youtube.com/watch?v=pqKR1D9gkyg
-https://www.youtube.com/watch?v=hEBFk7S_Suk
+* TODO home protection: ADT                                        :noexport:

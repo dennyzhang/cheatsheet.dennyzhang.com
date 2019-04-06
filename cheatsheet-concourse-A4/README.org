@@ -59,17 +59,18 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | Run command without sudden exit            | =nohup SOMECOMMAND &=; =tail -f nohup.out=                    |
 | Hijack to containers with a successful run | By design when task has passed, the container will be deleted |
 ** Concourse Pipeline
-| Name                              | Summary                                                                            |
-|-----------------------------------+------------------------------------------------------------------------------------|
-| [[https://concourse-ci.org/fly.html#fly-targets][List all authenticated end points]] | =fly targets=                                                                      |
-| Get fly version                   | =fly --version=                                                                    |
-| fly login                         | =fly -t $target login -c $concourse_url -n $team_name=                             |
-| [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][Get pipeline definition]]           | =fly -t $target get-pipeline -p $job_name > job.yaml=                              |
-| Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name -c pipeline.yml -l credentials.yml= |
-| Update pipeline                   | =fly -t $target set-pipeline -p $pipeline_name -c pipeline.yml -v env1=var1=       |
-| Destroy pipeline                  | =fly -t $target destroy-pipeline -p $pipeline_name=                                |
-| Format pipeline                   | =fly format-pipeline -c pipeline.yml=                                              |
-| Validate pipeline                 | =fly validate-pipeline -c pipeline.yml=                                            |
+| Name                                  | Summary                                                                            |
+|---------------------------------------+------------------------------------------------------------------------------------|
+| [[https://concourse-ci.org/fly.html#fly-targets][List all authenticated end points]]     | =fly targets=                                                                      |
+| Get fly version                       | =fly --version=                                                                    |
+| fly login                             | =fly -t $target login -c $concourse_url -n $team_name=                             |
+| [[https://concourse-ci.org/managing-pipelines.html#fly-get-pipeline][Get pipeline definition]]               | =fly -t $target get-pipeline -p $job_name > job.yaml=                              |
+| Update pipeline                       | =fly -t $target set-pipeline -p $pipeline_name -c pipeline.yml -l credentials.yml= |
+| Update pipeline                       | =fly -t $target set-pipeline -p $pipeline_name -c pipeline.yml -v env1=var1=       |
+| Destroy pipeline                      | =fly -t $target destroy-pipeline -p $pipeline_name=                                |
+| Destroy pipeline without confirmation | =fly -t $target destroy-pipeline -p $pipeline_name -n=                             |
+| Format pipeline                       | =fly format-pipeline -c pipeline.yml=                                              |
+| Validate pipeline                     | =fly validate-pipeline -c pipeline.yml=                                            |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-concourse-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-concourse-A4/concourse-sample.png]]
 ** Concourse Resource
