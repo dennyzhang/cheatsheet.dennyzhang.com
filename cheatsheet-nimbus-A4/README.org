@@ -41,21 +41,19 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | List ip of all VMs          | =/mts/git/bin/nimbus-ctl ip=                                                               |
 | Take VM snapshot            | =NIMBUS=sc-prd-vc012 /mts/git/bin/nimbus-ctl --outputPath=$HOME screenshot denny-snapshot= |
 | Reference                   | [[https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4][CheatSheet: VMware Govmomi]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4][CheatSheet: VMware Nimbus]]                                      |
-** Nimbus testbed spec
+** Deploy Workload In Nimbus
 | Name                           | Summary                                                                                              |
 |--------------------------------+------------------------------------------------------------------------------------------------------|
 | Nimbus testbed spec file       | A json/ruby spec file to setup on-demand nimbus testbed.                                             |
-| Sample: 1 vcva, 2 ESX, 2 iscsi | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nimbus-A4/testbed_iscsi.rb][Sample: testbed_iscsi.rb]]                                                                             |
 | Deploy with a spec file        | =/mts/git/bin/nimbus-testbeddeploy --testbedSpecRubyFile testbed_iscsi.rb --runName testbed-example= |
+| List Supported VM Templates    | =/mts/git/bin/nimbus-genericdeploy --list=                                                           |
+| Deploy: 1 vcva, 2 ESX, 2 iscsi | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nimbus-A4/testbed_iscsi.rb][Sample: testbed_iscsi.rb]]                                                                             |
+| Deploy Concourse               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nimbus-A4/nimbus-testbeddeploy.md][Sample: Deploy a Concourse Instance on Nimbus]]                                                        |
+| Deploy NSX Manager             | =/mts/git/bin/nimbus-nsxmdeploy --lease 7 --nsxBuild ob-7946221 nsxm-ob-7946221-0312=                |
+| Deploy NSX Controller          | =/mts/git/bin/nimbus-nsxcdeploy --lease 7 --nsxBuild ob-7946221 nsxc-ob-7946221-0312=                |
+| Deploy NFS with 1 mount point  | =/mts/git/bin/nimbus-nfsdeploy --disk 134217728 --mountPoint /storage-1 cbrc-nfs-128g-0502=          |
 | Reference                      | [[https://confluence.eng.vmware.com/display/DevToolsDocKB/TestbedSpec][Link: TestbedSpec]],  [[https://confluence.eng.vmware.com/display/NIMBUS/Deploy+Your+First+Nimbus+Testbed][Demo: Deploy Your First Nimbus Testbed]]                                           |
 | Reference                      | [[https://confluence.eng.vmware.com/display/AP/Logic+of+part+of+Nimbus-testbeddeploy+code][Link: Logic of part of Nimbus-testbeddeploy code]]                                                     |
-** Deploy Workload In Nimbus
-| Name                          | Summary                                                                                     |
-|-------------------------------+---------------------------------------------------------------------------------------------|
-| List Supported VM Templates   | =/mts/git/bin/nimbus-genericdeploy --list=                                                  |
-| Deploy NSX Manager            | =/mts/git/bin/nimbus-nsxmdeploy --lease 7 --nsxBuild ob-7946221 nsxm-ob-7946221-0312=       |
-| Deploy NSX Controller         | =/mts/git/bin/nimbus-nsxcdeploy --lease 7 --nsxBuild ob-7946221 nsxc-ob-7946221-0312=       |
-| Deploy NFS with 1 mount point | =/mts/git/bin/nimbus-nfsdeploy --disk 134217728 --mountPoint /storage-1 cbrc-nfs-128g-0502= |
 ** nimbus tools
 #+BEGIN_EXAMPLE
 -bash-4.1$ ls  -lt /mts/git/bin/nimbus*
