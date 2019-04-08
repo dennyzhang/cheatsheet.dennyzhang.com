@@ -18,7 +18,7 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-vrops-A4/cheatsheet-vrops-A4.pdf][cheatsheet-vrops-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/vmware/][VMware]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-vrops-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][Prometheus CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4][Nagios CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-wavefront-A4][CheatSheet: VMware Wavefront]], [[https://cheatsheet.dennyzhang.com/cheatsheet-vrops-A4][CheatSheet: VMware VROPS]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
 ** VROPS Web UI
@@ -29,6 +29,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Get Container adapter ID            | Administrator->Configuration->Inventory Explorer->Adapter Instances->Kubernetes Adapter Instance->Internal ID |
 | Check container adapter log files   | Administrator -> Support -> Logs -> MASTER -> collector -> adapters -> KubernetesAdapter                      |
 | Container and vCenter mapping       | Environment -> Container Monitoring -> vSphere Host containing Kubernetes Node View                           |
+| Reference                           | [[https://cheatsheet.dennyzhang.com/cheatsheet-wavefront-A4][CheatSheet: VMware Wavefront]], [[https://cheatsheet.dennyzhang.com/cheatsheet-vrops-A4][CheatSheet: VMware VROPS]], [[https://cheatsheet.dennyzhang.com/cheatsheet-vrli-A4][CheatSheet: vRealize Log Insight]]                      |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-vrops-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-vrops-A4/vrops-component.png]]
 ** VROPS Summary

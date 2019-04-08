@@ -365,7 +365,7 @@ https://www.todayshomeowner.com/
  - 无房贷的日用开支: $4500
  - 每年可以存7万,6年即42万.
  #+END_EXAMPLE
-** DONE Shopping: 大篓子放枕头
+** DONE Shopping: 大篓子放枕头                                     :noexport:
    CLOSED: [2019-04-06 Sat 22:29]
 ** DONE [#A] Change Refrigerator Water Filter                      :noexport:
    CLOSED: [2019-04-07 Sun 08:39]
@@ -409,7 +409,10 @@ https://www.todayshomeowner.com/
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Learn skills: increase my credit history: lease contract, utility :noexport:
 * TODO Learn skills: How to check Termites                         :noexport:
+
 * TODO Learn skills: Preventative maintenance is a key element to saving money   :noexport:
+* TODO learn skills from chinese community                         :noexport:
+https://zhuanlan.zhihu.com/p/32033320
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO 1031 Tax Exchange                                           :noexport:
 * Two kitchen drawers are not stable                               :noexport:
@@ -428,7 +431,6 @@ https://www.youtube.com/watch?v=q0j7aA_c0CI
 https://www.youtube.com/watch?v=kKZY72AY9M0
 * HALF Check monthly utility setup is good: xfinity, pge and water :noexport:
 * TODO Merge 401K                                                  :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Cancel old house facility: xfinity, pge and water           :noexport:
 * TODO Cancel renter insurance                                     :noexport:
 https://portfolio.geico.com/dashboard/home
@@ -439,7 +441,6 @@ http://vegas168.blogspot.com/2016/05/checklist.html
 http://vegas168.blogspot.com/2016/05/checklist.html
 * TODO 地基有一条裂缝 不过看上去是正常的size                       :noexport:
 * TODO water service: setup online payment                         :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO 洗衣机内桶要定期清洗                                        :noexport:
 * TODO 洗碗机内桶要定期清洗                                        :noexport:
 * TODO Learn skills to declutter your home                         :noexport:
@@ -562,6 +563,13 @@ https://www.youtube.com/watch?v=HzX22sAF_NE
 https://www.youtube.com/watch?v=z7ad-4RKQp4
 https://www.amazon.com/Jiayi-Hardware-Adjustable-Invisible-Cupboard/dp/B07NSTKLV7/ref=sr_1_1_sspa?keywords=closet+door+Springs&qid=1554596391&s=gateway&sr=8-1-spons&psc=1
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] 水管堵塞是否要买home warranty                          :noexport:
+https://zhuanlan.zhihu.com/p/32033320
+plumber.前段时间水管堵塞,找了handyman都没有用,只能找plumber公司,幸好有warranty,所以大部分都保险报销了,要不估计要大出血.handyman和我说看你的严重程度了,如果就是一般的堵塞,估计400,500刀.要是major pipe有问题,找市政厅来,几千刀也是少的.
+* TODO 如果夏天很少開冷氣,或是家裡根本沒有冷氣的話,那麼改成E-6-smart或是E-9絕對是划算的 :noexport:
+http://chengyun-travel.blogspot.com/2013/02/pg.html
+https://www.pge.com/en_US/residential/rate-plans/how-rates-work/find-my-best-rate-plan.page
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] bath room: Vertical Shower Door Seal                   :noexport:
 silicone seal
 
@@ -573,3 +581,4 @@ https://www.youtube.com/watch?v=PTADQAyDztI
 https://www.youtube.com/watch?v=ECdXEAAIBFI
 https://www.youtube.com/watch?v=x56o59oTgx0
 https://www.youtube.com/watch?v=lyWC4DFAF1w
+* TODO Learn: http://chengyun-travel.blogspot.com/                 :noexport:

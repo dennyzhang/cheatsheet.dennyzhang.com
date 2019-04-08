@@ -22,18 +22,19 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
 ** Wavefront Summary
-| Name                               | Summary                                                                              |
-|------------------------------------+--------------------------------------------------------------------------------------|
-| [[https://www.wavefront.com/][Wavefront]]                          | SaaS monitoring. [[https://www.youtube.com/watch?v=NAOUUSr9HDU&t=9s][YouTube: Pivotal Container Service (PKS) and VMware Wavefront]]       |
-| wavefront trial portal             | https://try.wavefront.com/dashboard/tutorial-intro                                   |
-| Wavefront PKS dashboard            | https://try.wavefront.com/dashboard/integration-pks                                  |
-| Wavefront kubernetes collector     | [[https://github.com/wavefrontHQ/wavefront-kubernetes-collector][GitHub: wavefrontHQ/wavefront-kubernetes-collector]], [[https://hub.docker.com/r/wavefronthq/wavefront-kubernetes-collector/tags][docker hub image]]                 |
-| Default Limits                     | ? alerts for each tenant; 10K point-per-seconds for each tenant                      |
-| Whether need an agent              | [[https://docs.wavefront.com/direct_ingestion.html#comparing-proxy-and-direct-ingestion][Link: Comparing Proxy and Direct Ingestion]]                                           |
-| Integrations                       | [[https://docs.wavefront.com/pks.html][VMware PKS Integration]], [[https://docs.wavefront.com/kubernetes.html][Kubernetes Integration]], [[https://github.com/wavefrontHQ/wavefront-kubernetes/blob/master/wavefront-proxy/wavefront.yaml][wavefront-kubernetes/wavefront-proxy]] |
-| Add app metrics to wavefront proxy | [[https://docs.wavefront.com/wavefront_data_ingestion.html][Link: Getting Data into Wavefront]]                                                    |
-| Wavefront alert                    | [[https://docs.wavefront.com/webhooks_alert_notification.html][Link: Wavefront Alert Target ID]]                                                      |
-| Reference                          | https://try.wavefront.com/api-docs/ui/                                               |
+| Name                               | Summary                                                                                  |
+|------------------------------------+------------------------------------------------------------------------------------------|
+| [[https://www.wavefront.com/][Wavefront]]                          | SaaS monitoring. [[https://www.youtube.com/watch?v=NAOUUSr9HDU&t=9s][YouTube: Pivotal Container Service (PKS) and VMware Wavefront]]           |
+| wavefront trial portal             | https://try.wavefront.com/dashboard/tutorial-intro                                       |
+| Wavefront PKS dashboard            | https://try.wavefront.com/dashboard/integration-pks                                      |
+| Wavefront kubernetes collector     | [[https://github.com/wavefrontHQ/wavefront-kubernetes-collector][GitHub: wavefrontHQ/wavefront-kubernetes-collector]], [[https://hub.docker.com/r/wavefronthq/wavefront-kubernetes-collector/tags][docker hub image]]                     |
+| Default Limits                     | ? alerts for each tenant; 10K point-per-seconds for each tenant                          |
+| Whether need an agent              | [[https://docs.wavefront.com/direct_ingestion.html#comparing-proxy-and-direct-ingestion][Link: Comparing Proxy and Direct Ingestion]]                                               |
+| Integrations                       | [[https://docs.wavefront.com/pks.html][VMware PKS Integration]], [[https://docs.wavefront.com/kubernetes.html][Kubernetes Integration]], [[https://github.com/wavefrontHQ/wavefront-kubernetes/blob/master/wavefront-proxy/wavefront.yaml][wavefront-kubernetes/wavefront-proxy]]     |
+| Add app metrics to wavefront proxy | [[https://docs.wavefront.com/wavefront_data_ingestion.html][Link: Getting Data into Wavefront]]                                                        |
+| Wavefront alert                    | [[https://docs.wavefront.com/webhooks_alert_notification.html][Link: Wavefront Alert Target ID]]                                                          |
+| Reference                          | [[https://cheatsheet.dennyzhang.com/cheatsheet-wavefront-A4][CheatSheet: VMware Wavefront]], [[https://cheatsheet.dennyzhang.com/cheatsheet-vrops-A4][CheatSheet: VMware VROPS]], [[https://cheatsheet.dennyzhang.com/cheatsheet-vrli-A4][CheatSheet: vRealize Log Insight]] |
+| Reference                          | https://try.wavefront.com/api-docs/ui/                                                   |
 ** Wavefront Web UI
 | Name                      | Summary                                        |
 |---------------------------+------------------------------------------------|

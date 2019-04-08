@@ -1,0 +1,177 @@
+* CheatSheet: VMware Nimbus                                          :VMware:
+:PROPERTIES:
+:type:     vmware, monitoring
+:export_file_name: cheatsheet-nimbus-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-nimbus-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nimbus-A4/cheatsheet-nimbus-A4.pdf][cheatsheet-nimbus-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/vmware/][VMware]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][Prometheus CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4][Nagios CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
+** Nimbus Concepts
+| Name                      | Summary                                                     |
+|---------------------------+-------------------------------------------------------------|
+| [[https://devhub.eng.vmware.com][VMware devhub]]             |                                                             |
+| nimbus-ctl                | Ruby SDK binding for vmomi client                           |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-nimbus-A4/nimbus.png]]
+** Nimbus CLI
+| Name                      | Summary                                                                  |
+|---------------------------+--------------------------------------------------------------------------|
+| List Testbed              | =/mts/git/bin/nimbus-ctl --testbed list=                                 |
+| Destroy a testbed/VM      | =/mts/git/bin/nimbus-ctl --testbed kill $testbed_name=                   |
+| Extend lease of a testbed | =/mts/git/bin/nimbus-ctl --lease 5 --testbed extend-lease $testbed_name= |
+| List ip of all VMs        | =/mts/git/bin/nimbus-ctl ip=                                             |
+| Reference                 | [[https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4][CheatSheet: VMware Govmomi]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4][CheatSheet: VMware Nimbus]]                    |
+** nimbus-ctl CLI Online Help
+#+BEGIN_EXAMPLE
+-bash-4.1$  /mts/git/bin/nimbus-ctl --help
+Control VMs in the Nimbus cloud.
+
+Usage:
+nimbus-ctl [options] cmd <vm-names|testbed-name>
+
+Commands: list tools_status tools-status host_name host-name on off kill reset destroy suspend is_on is-on ip extend_lease extend-lease annotatekeepvms set_reservation set-reservation clear_reservation clear-reservation markpsod
+screenshot console vc_supportbundle vc-supportbundle esx_supportbundle esx-supportbundle hostdsim_supportbundle hostdsim-supportbundle mobilityagent_supportbundle mobilityagent-supportbundle vcg_supportbundle vcg-supportbundle
+genericvm_supportbundle genericvm-supportbundle workervm_supportbundle workervm-supportbundle samplevp_supportbundle samplevp-supportbundle xvp_supportbundle xvp-supportbundle netappvp_supportbundle netappvp-supportbundle
+vcdb_errorlogbundle vcdb-errorlogbundle vcdb_dbcopy vcdb-dbcopy vcdb_dbdump vcdb-dbdump dumpstats associated_files associated-files download_snapshots download-snapshots iscsivm_supportbundle iscsivm-supportbundle nfsvm_supportbundle
+nfsvm-supportbundle create_snapshot create-snapshot list_snapshot list-snapshot revert_snapshot revert-snapshot delete_snapshot delete-snapshot vm_taskevent vm-taskevent download_ovf download-ovf mac trunk_cfg trunk-cfg get_extra_cfg
+get-extra-cfg set_ovf_params set-ovf-params shutdown rename vropsvm_supportbundle vropsvm-supportbundle tag ssh set_bootorder set-bootorder add_disk add-disk view_hardware view-hardware transfer
+
+VMs could be:
+
+1. One or multiple vm names, for example:
+
+   nimbus-ctl kill vm1       # to kill vm1
+   nimbus-ctl kill vm1 vm2   # to kill vm1 and vm2
+
+2. Wildcards vm name, for example:
+
+   nimbus-ctl kill '*'       # to kill all VMs
+   nimbus-ctl kill '*esx*'   # to kill all VMs whose name contain 'esx'
+
+   To control a testbed:
+
+     1. List all testbeds
+
+        nimbus-ctl --testbed list
+
+     2. Destroy a testbed
+
+        nimbus-ctl --testbed kill testbed-name
+
+     3. Extend lease of a testbed
+
+        nimbus-ctl --lease 5 --testbed extend-lease testbed-name
+
+     Other options:
+  -d, --debug                    Log SOAP messages
+  -o, --outputPath=<s>           Path to put stuff in
+  -p, --path=<s>                 Folder Path to search the VM
+  -f, --filename=<s>             Name of the file generated (applicable to support bundles)
+  -i, --file-prefix=<s>          Name of the file generated without the extension (applicable to support bundles)
+  -l, --lease=<f>                Days to extend the lease by
+  -u, --username=<s>             Authentication info for VM operations
+  -a, --password=<s>             Authentication info for VM operations
+  --vimUsername=<s>              Since VC6.0, VIM uses different credantial from VM guest, this option is used to specify VIM credential.
+  --vimPassword=<s>              Since VC6.0, VIM uses different credantial from VM guest, this option is used to specify VIM credential.
+  -b, --bora=<s>
+  -T, --dbType=<s>               This option is used to specify the DB type for the commands vcdb-logbundle and vcdb-dbdump
+  -m, --nimbus=<s>               nimbus pod name
+  -e, --excludedPod=<s>          exclusion pod for operation
+  -c, --context=<s>              nimbus pod context
+  -s, --nimbusConfigFile=<s>     nimbus pod config json file
+  -h, --snapshot=<s>             Name of snapshot
+  -I, --snapshotIncludeMemory    Whether to include memory dump in snapshot. This option only works with create-snapshot command.
+  -t, --testbed                  Control testbeds instead of VMs
+  -n, --nsx                      Control NSX networks
+  -v, --vxlanDetail              Show vxlan parameters
+  -r, --hoursToKeepVM=<i>        Number of hours to keep the VM after test fails. (Default: 12)
+  -w, --allowShorten             Allow hoursToKeepVM is less than lease time
+  -K, --autoKeptOnly             Only kill auto-kept CAT testbed.
+  --hoststats                    Dump physical host stats alongwith VM stats
+  --startTime=<s>                Start time of task or event: mm/dd/yyyy hh:mm:ss
+  --endTime=<s>                  End time of task or event: mm/dd/yyyy hh:mm:ss
+  --nestedVmIp=<s>               Nested VM IP address. This option could be used to collect support bundle directly via IP address.
+  --osFamily=<s>                 This option only works with --nestedVmIp.When a VM IP is specified, this option can be used to specify the VM's guest OS type, for example 'linux', 'windows'.
+  --console-option=<s>           Operations for 'console' command. Possible options: vnc_view, web_view, remote_console_url, vnc_off. Default options : vnc_view, web_view, remote_console_url
+  -F, --outputFormat=<s>         Specify results format for output.  Supported Formats: text,json,yaml (default: text)
+  -N, --templateName=<s>         Template name. It's same as VM name if not specified
+  -P, --templatePath=<s>         Folder Path to save the template (default: /templates)
+  --newName=<s>                  New vm name
+  -g, --add-tag=<s>              Tag to be added to the VM
+  --remove-tag=<s>               Tag to be removed from the VM
+  --tag=<s>                      Tag to filter VMs
+  -k, --universalNetwork         Control Cross-vCenter vxLAN. This option only works with --nsx.
+  -R, --cpuReservation=<i>       CPU reservation in MHz. This option only works with --set-reservation.
+  -y, --memoryReservation=<i>    Memory reservation in MB. This option only works with --set-reservation.
+  -M, --clearMemReservation      Clear memory reservation. This option only works with --clear-reservation.
+  -C, --clearCpuReservation      Clear CPU reservation. This option only works with --clear-reservation.
+  -x, --vnicIndex=<i>            The 1-based vnic index to operate on
+  --vxlans=<s>                   Comma separated list of vxlan-backed networks
+  -O, --trunkOp=<s>              trunk operation
+  -L, --nimbusLocation=<s>       Run Nimbus on specified datacenter, available datacenters are ["sc", "wdc", "wdr"]
+  --silentObjectNotFoundError    No exception will be raised if no vm found, will only print a log
+  --bootOrder=<s>                Comma separated list of boot devices (e.g. 'hdd,eth')
+  --disk=<i>                     Additional disk size in KB. Repeat this option for as many disks you want to add
+  -D, --pvscsiDisk=<i>           Additional pvscsi disk size in KB. Repeat this option for as many disks you want to add
+  --user=<s>                     User to which VM should be transferred
+  --help                         Show this message
+#+END_EXAMPLE
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-nimbus-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-nimbus-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* useful link                                                      :noexport:
+https://confluence.eng.vmware.com/display/NIMBUS/Nimbus+Solution+Basic+Workflow+with+Mockups
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF How get PKS jumpbox ip                                      :noexport:
+#+BEGIN_EXAMPLE
+-bash-4.1$ /mts/git/bin/nimbus-ctl ip | grep ovfVm.0
+sc-prd-vc013: zdenny-denny-anubis.ovfVm.0              : 10.160.195.68
+#+END_EXAMPLE
+* TODO [#A] "/mts/git/bin/nimbus-ctl ip" vs "Devhub Address"       :noexport:
+* TODO "nimbus destroy" vs "nimbus kill"                           :noexport:
+* TODO build a docker image to run nimbus operation                :noexport:

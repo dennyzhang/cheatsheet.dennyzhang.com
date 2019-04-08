@@ -146,8 +146,8 @@ License: Code is licencommunication under [[https://www.dennyzhang.com/wp-conten
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
+#+DESCRIPTION:
+#+KEYWORDS:
 #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
 #+LaTeX_CLASS_OPTIONS: [8pt]
 #+LATEX_HEADER: \usepackage[english]{babel}
@@ -167,8 +167,8 @@ License: Code is licencommunication under [[https://www.dennyzhang.com/wp-conten
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+EXPORT_EXCLUDE_TAGS: exclude noexport
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
+#+LINK_UP:
+#+LINK_HOME:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Scenario: sshd common function                              :noexport:
 https://github.com/vmware/pks-ci/pull/440
@@ -328,7 +328,7 @@ PKS-X, Denny's CI/CD不与business alignment
 7.	用抽象的语言来概括总结问题,同时要用核心的supporting details
 8.	Be positive when talking with your managers and your team
 Keep being sharp和always identify problems不见得是好事
-9.	
+9.
 
 XX
 1.	聊天时,要进行testing.不要assume谈话对方都懂你的意思
@@ -342,13 +342,12 @@ Bosh root privilege
 7.	在大方向上,能自圆其说
 8.	耳根软
 9.	并不能从PM得到实质`有用的信息
-10.	
+10.
 
 XX
 1.	与team一起合作,project manager, product manager, people manager.
 2.	不要有太多的complain, stay positive.
 3.	Manage both ends, up and down, not limited to the direct layer.
-
 * TODO pushing manager                                             :noexport:
 - Send out meeting notes and agreements: 防止manager的欲望上调
 - 《向上管理的艺术》
@@ -366,7 +365,7 @@ XX
 不要被人tag
 
 别向任何人,就算是你最要好的朋友抱怨有关你的职位或薪资
-Speak with confidence 
+Speak with confidence
 
 耳根软
 不敢做major decision
@@ -375,3 +374,15 @@ Speak with confidence
 * TODO Question: Set the timeline                                  :noexport:
 * doc: 责任不能分解或转移                                          :noexport:
 * TODO doc: set up to fail                                         :noexport:
+* TODO doc: team management                                        :noexport:
+- 与新的team member合作, 需要观察和磨合
+- 前一段时间, 某个team member太拼.他可能想slow down一下
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO doc: Communication and provide env                          :noexport:
+- Need PKS api team's support:
+  Provide APIs to discover K8S clusters with required attributes
+  Expose the operation as an API for the Management Pack to call.
+- Need to provide testbed for vrops team
+- Need to coordinate in between vrops and pks core team
+
+* TODO Lesson learned: Need to be time sensitive                   :noexport:
