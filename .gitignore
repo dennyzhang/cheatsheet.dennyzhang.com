@@ -1,3 +1,4 @@
 *.tex
 README.pdf
+testbed-pks-nsxt.rb
 .DS_Store

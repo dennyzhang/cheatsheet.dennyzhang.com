@@ -60,3 +60,9 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* useful link                                                      :noexport:
+There is already a content pack for BOSH and PCF - https://marketplace.vmware.com/vsx/solutions/content-pack-for-pivotal-cloud-foundry?ref=related#summary
+
+For all the information you need to know about content pack creation, please see - https://code.vmware.com/web/loginsight/home
+
+Reference Guide vRealize Log Insight Content Pack Publisher

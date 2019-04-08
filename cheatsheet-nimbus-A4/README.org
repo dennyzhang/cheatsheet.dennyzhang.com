@@ -21,21 +21,148 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][Prometheus CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4][Nagios CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
-** Nimbus Concepts
-| Name                      | Summary                                                     |
-|---------------------------+-------------------------------------------------------------|
-| [[https://devhub.eng.vmware.com][VMware devhub]]             |                                                             |
-| nimbus-ctl                | Ruby SDK binding for vmomi client                           |
+** Nimbus Basic
+| Name                  | Summary                                                                                         |
+|-----------------------+-------------------------------------------------------------------------------------------------|
+| Nimbus                | VMware's internal vSphere based cloud written in Ruby                                           |
+| Nimbus cloud          | Nimbus cloud contains a lot of ESX hosts. Nimbus Pods can seen as data centers.                 |
+| Nimbus Pod            | It is created during a vSphere setup, after setup, it contains one VC and associated ESX hosts. |
+| Nimbus Site           | Each site is a separate Nimbus cloud with all of its peripherals. Currently we have: SC and WDC |
+| nimbus-ctl            | Ruby CLI for vmomi client                                                                       |
+| All nimbus facilities | =/mts/git/bin/nimbus*=                                                                          |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-nimbus-A4/nimbus.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-nimbus-A4/nimbus.png]]
 ** Nimbus CLI
-| Name                      | Summary                                                                  |
-|---------------------------+--------------------------------------------------------------------------|
-| List Testbed              | =/mts/git/bin/nimbus-ctl --testbed list=                                 |
-| Destroy a testbed/VM      | =/mts/git/bin/nimbus-ctl --testbed kill $testbed_name=                   |
-| Extend lease of a testbed | =/mts/git/bin/nimbus-ctl --lease 5 --testbed extend-lease $testbed_name= |
-| List ip of all VMs        | =/mts/git/bin/nimbus-ctl ip=                                             |
-| Reference                 | [[https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4][CheatSheet: VMware Govmomi]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4][CheatSheet: VMware Nimbus]]                    |
+| Name                        | Summary                                                                                    |
+|-----------------------------+--------------------------------------------------------------------------------------------|
+| List Testbed                | =/mts/git/bin/nimbus-ctl --testbed list=                                                   |
+| Destroy a testbed/VM        | =/mts/git/bin/nimbus-ctl --testbed kill $testbed_name=                                     |
+| Extend lease of a testbed   | =/mts/git/bin/nimbus-ctl --lease 5 --testbed extend-lease $testbed_name=                   |
+| List ip of all VMs          | =/mts/git/bin/nimbus-ctl ip=                                                               |
+| Take VM snapshot            | =NIMBUS=sc-prd-vc012 /mts/git/bin/nimbus-ctl --outputPath=$HOME screenshot denny-snapshot= |
+| Reference                   | [[https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4][CheatSheet: VMware Govmomi]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4][CheatSheet: VMware Nimbus]]                                      |
+** Nimbus testbed spec
+| Name                           | Summary                                                                                              |
+|--------------------------------+------------------------------------------------------------------------------------------------------|
+| Nimbus testbed spec file       | A json/ruby spec file to setup on-demand nimbus testbed.                                             |
+| Sample: 1 vcva, 2 ESX, 2 iscsi | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nimbus-A4/testbed_iscsi.rb][Sample: testbed_iscsi.rb]]                                                                             |
+| Deploy with a spec file        | =/mts/git/bin/nimbus-testbeddeploy --testbedSpecRubyFile testbed_iscsi.rb --runName testbed-example= |
+| Reference                      | [[https://confluence.eng.vmware.com/display/DevToolsDocKB/TestbedSpec][Link: TestbedSpec]],  [[https://confluence.eng.vmware.com/display/NIMBUS/Deploy+Your+First+Nimbus+Testbed][Demo: Deploy Your First Nimbus Testbed]]                                           |
+| Reference                      | [[https://confluence.eng.vmware.com/display/AP/Logic+of+part+of+Nimbus-testbeddeploy+code][Link: Logic of part of Nimbus-testbeddeploy code]]                                                     |
+** Deploy Workload In Nimbus
+| Name                          | Summary                                                                                     |
+|-------------------------------+---------------------------------------------------------------------------------------------|
+| List Supported VM Templates   | =/mts/git/bin/nimbus-genericdeploy --list=                                                  |
+| Deploy NSX Manager            | =/mts/git/bin/nimbus-nsxmdeploy --lease 7 --nsxBuild ob-7946221 nsxm-ob-7946221-0312=       |
+| Deploy NSX Controller         | =/mts/git/bin/nimbus-nsxcdeploy --lease 7 --nsxBuild ob-7946221 nsxc-ob-7946221-0312=       |
+| Deploy NFS with 1 mount point | =/mts/git/bin/nimbus-nfsdeploy --disk 134217728 --mountPoint /storage-1 cbrc-nfs-128g-0502= |
+** nimbus tools
+#+BEGIN_EXAMPLE
+-bash-4.1$ ls  -lt /mts/git/bin/nimbus*
+-rwxr-xr-x 1 syncer mts      137 Dec 10 17:27 /mts/git/bin/nimbus-nsx-auto-edge-deploy
+-rwxr-xr-x 1 syncer mts      133 Nov 19 22:32 /mts/git/bin/nimbus-nsxTsrm-deploy
+-rwxr-xr-x 1 syncer mts      129 Nov 19 22:32 /mts/git/bin/nimbus-vmip-retrive
+-rwxr-xr-x 1 syncer mts      129 Sep 29  2018 /mts/git/bin/nimbus-tbspec-search
+-rwxr-xr-x 1 syncer mts      134 Aug 16  2018 /mts/git/bin/nimbus-srmphoton-deploy
+-rwxr-xr-x 1 syncer mts      125 Jul 20  2018 /mts/git/bin/nimbus-racetrack
+-rwxr-xr-x 1 syncer mts      134 Jun 13  2018 /mts/git/bin/nimbus-srm-vr-jenkin-job
+-rwxr-xr-x 1 syncer mts      127 Jun 13  2018 /mts/git/bin/nimbus-vr-deploy
+-rwxr-xr-x 1 syncer mts      133 Jan  4  2018 /mts/git/bin/nimbus-post-deployer-def
+-rwxr-xr-x 1 syncer mts      128 Dec 20  2017 /mts/git/bin/nimbus-ldap-dump-pg
+-rwxr-xr-x 1 syncer mts      144 Nov 20  2017 /mts/git/bin/nimbus-ucp-deploy
+-rwxr-xr-x 1 syncer mts      609 Aug 20  2017 /mts/git/bin/nimbusvc-base
+-rwxr-xr-x 1 syncer mts      139 Aug 17  2017 /mts/git/bin/nimbus-setup-master
+-rwxr-xr-x 1 syncer mts      192 Jul  3  2017 /mts/git/bin/nimbus-testbed-clone
+-rwxr-xr-x 1 syncer mts      141 Jul  3  2017 /mts/git/bin/nimbus-vca-wanopt-deploy
+-rwxr-xr-x 1 syncer mts      144 Jun 12  2017 /mts/git/bin/nimbus-worker-deploy
+-rwxr-xr-x 1 syncer mts 33791680 Jan 30  2017 /mts/git/bin/nimbus_recommend
+-rwxr-xr-x 1 syncer mts     3394 Dec 16  2016 /mts/git/bin/nimbus-vropsloginsight-test-launcher
+-rwxr-xr-x 1 syncer mts      205 Oct 31  2016 /mts/git/bin/nimbus
+-rwxr-xr-x 1 syncer mts      185 Oct 31  2016 /mts/git/bin/nimbus-testbeddeploy
+-rwxr-xr-x 1 syncer mts      185 Oct 31  2016 /mts/git/bin/nimbus-test-launcher
+-rwxr-xr-x 1 syncer mts      185 Oct 31  2016 /mts/git/bin/nimbus-vcqa-launcher
+-rwxr-xr-x 1 syncer mts      125 Oct 30  2016 /mts/git/bin/nimbus-ldap-dump
+-rwxr-xr-x 1 syncer mts      135 Sep 27  2016 /mts/git/bin/nimbus-failure-investigate
+-rwxr-xr-x 1 syncer mts      145 Aug 31  2016 /mts/git/bin/nimbus-fiaasco-deploy
+-rwxr-xr-x 1 syncer mts      127 Jun  8  2016 /mts/git/bin/nimbus-srm-install
+-rwxr-xr-x 1 syncer mts      134 Jun  8  2016 /mts/git/bin/nimbus-srmtestbed-deploy
+-rwxr-xr-x 1 syncer mts      138 Jun  7  2016 /mts/git/bin/nimbus-vca-cgw-deploy
+-rwxr-xr-x 1 syncer mts      134 May 13  2016 /mts/git/bin/nimbus-vcsa-inbox-upgrade
+-rwxr-xr-x 1 syncer mts      148 May  4  2016 /mts/git/bin/nimbus-one-cloud-esxdeploy
+-rwxr-xr-x 1 syncer mts      148 May  4  2016 /mts/git/bin/nimbus-one-cloud-vcvadeploy
+-rwxr-xr-x 1 syncer mts      132 Mar 31  2016 /mts/git/bin/nimbus-post-config-hdrs
+-rwxr-xr-x 1 syncer mts      127 Mar  2  2016 /mts/git/bin/nimbus-vum-install
+-rwxr-xr-x 1 syncer mts      131 Feb  2  2016 /mts/git/bin/nimbus-quick-pod-setup
+-rwxr-xr-x 1 syncer mts      130 Jan 28  2016 /mts/git/bin/nimbus-upgrade-ciswin
+-rwxr-xr-x 1 syncer mts      136 Jan 22  2016 /mts/git/bin/nimbus-vrdeploy
+-rwxr-xr-x 1 syncer mts      142 Dec 23  2015 /mts/git/bin/nimbus-vcopsdeploy
+-rwxr-xr-x 1 syncer mts      138 Dec 23  2015 /mts/git/bin/nimbus-vcg-deploy
+-rwxr-xr-x 1 syncer mts      127 Dec  9  2015 /mts/git/bin/nimbus-post-config
+-rwxr-xr-x 1 syncer mts      155 Nov 21  2015 /mts/git/bin/nimbus-hostdsim-deploy
+-rwxr-xr-x 1 syncer mts      149 Nov  9  2015 /mts/git/bin/nimbus-vrops-deploy
+-rwxr-xr-x 1 syncer mts      145 Nov  3  2015 /mts/git/bin/nimbus-nsxcdeploy
+-rwxr-xr-x 1 syncer mts      142 Nov  3  2015 /mts/git/bin/nimbus-nsxmdeploy
+-rwxr-xr-x 1 syncer mts      146 Oct 26  2015 /mts/git/bin/nimbus-vnimbus-deploy
+-rwxr-xr-x 1 syncer mts      125 Sep  8  2015 /mts/git/bin/nimbus-debug-esx
+-rwxr-xr-x 1 syncer mts      144 Aug  2  2015 /mts/git/bin/nimbus-sampledeploy
+-rwxr-xr-x 1 syncer mts      129 May 12  2015 /mts/git/bin/nimbus-testesxdeploy
+-rwxr-xr-x 1 syncer mts      138 May 12  2015 /mts/git/bin/nimbus-testesxdeploy-launcher
+-rwxr-xr-x 1 syncer mts      155 Apr 24  2015 /mts/git/bin/nimbus-powercli-install
+-rwxr-xr-x 1 syncer mts      146 Apr 23  2015 /mts/git/bin/nimbus-network-deploy
+-rwxr-xr-x 1 syncer mts      142 Apr  8  2015 /mts/git/bin/nimbus-uiplatform-vamiui-test-run
+-rwxr-xr-x 1 syncer mts      714 Mar 24  2015 /mts/git/bin/nimbus-rvc
+-rwxr-xr-x 1 syncer mts      148 Mar 16  2015 /mts/git/bin/nimbus-mobagent-deploy
+-rwxr-xr-x 1 syncer mts      142 Mar 16  2015 /mts/git/bin/nimbus-fakepmdeploy
+-rwxr-xr-x 1 syncer mts      146 Feb 18  2015 /mts/git/bin/nimbus-vra-deploy
+-rwxr-xr-x 1 syncer mts      138 Feb  2  2015 /mts/git/bin/nimbus-vcddeploy
+-rwxr-xr-x 1 syncer mts      138 Jan 28  2015 /mts/git/bin/nimbus-vsmdeploy
+-rwxr-xr-x 1 syncer mts      140 Jan 28  2015 /mts/git/bin/nimbus-vcdeploy-cat
+-rwxr-xr-x 1 syncer mts      138 Jan 28  2015 /mts/git/bin/nimbus-vcvadeploy
+-rwxr-xr-x 1 syncer mts      138 Jan 28  2015 /mts/git/bin/nimbus-psadeploy
+-rwxr-xr-x 1 syncer mts      141 Jan 28  2015 /mts/git/bin/nimbus-vcbench-deploy
+-rwxr-xr-x 1 syncer mts      138 Jan 28  2015 /mts/git/bin/nimbus-pdp-deploy
+-rwxr-xr-x 1 syncer mts      147 Jan 28  2015 /mts/git/bin/nimbus-physical-esxdeploy
+-rwxr-xr-x 1 syncer mts      152 Jan 28  2015 /mts/git/bin/nimbus-loginsightdeploy
+-rwxr-xr-x 1 syncer mts      136 Jan 28  2015 /mts/git/bin/nimbus-fsdeploy
+-rwxr-xr-x 1 syncer mts      138 Jan 20  2015 /mts/git/bin/nimbus-ovfdeploy
+-rwxr-xr-x 1 syncer mts      142 Jan 20  2015 /mts/git/bin/nimbus-iscsideploy
+-rwxr-xr-x 1 syncer mts      168 Jan 12  2015 /mts/git/bin/nimbus-esxdeploy-ob
+-rwxr-xr-x 1 syncer mts      146 Jan  6  2015 /mts/git/bin/nimbus-genericdeploy
+-rwxr-xr-x 1 syncer mts      138 Jan  6  2015 /mts/git/bin/nimbus-esxdeploy
+-rwxr-xr-x 1 syncer mts      138 Dec 29  2014 /mts/git/bin/nimbus-nfsdeploy
+-rwxr-xr-x 1 syncer mts      130 Aug  6  2014 /mts/git/bin/nimbus-ovftool-deploy
+-rwxr-xr-x 1 syncer mts      132 Aug  4  2014 /mts/git/bin/nimbus-docker-ovfdeploy
+-rwxr-xr-x 1 syncer mts      140 Jul 30  2014 /mts/git/bin/nimbus-uiplatform-icui-test-run
+-rwxr-xr-x 1 syncer mts      139 Jul 30  2014 /mts/git/bin/nimbus-uiplatform-vui-test-run
+-rwxr-xr-x 1 syncer mts      119 Jul 19  2014 /mts/git/bin/nimbus-ctl
+-rwxr-xr-x 1 syncer mts      129 Jul 19  2014 /mts/git/bin/nimbus-hostdsim-kill
+-rwxr-xr-x 1 syncer mts      127 Jul 19  2014 /mts/git/bin/nimbus-nimbussetup
+-rwxr-xr-x 1 syncer mts      121 Jul 19  2014 /mts/git/bin/nimbus-touch
+-rwxr-xr-x 1 syncer mts      132 Jul 18  2014 /mts/git/bin/nimbus-hostdsim-prepare
+-rwxr-xr-x 1 syncer mts      124 Jul 18  2014 /mts/git/bin/nimbus-test-esx
+-rwxr-xr-x 1 syncer mts      127 Jul 17  2014 /mts/git/bin/nimbus-config-util
+-rwxr-xr-x 1 syncer mts      121 Jul  3  2014 /mts/git/bin/nimbus-vmserial
+-rwxr-xr-x 1 syncer mts      135 Jun 19  2014 /mts/git/bin/nimbus-vc-upgrade-and-test
+-rwxr-xr-x 1 syncer mts      129 May 29  2014 /mts/git/bin/nimbus-h5-run-testng
+-rwxr-xr-x 1 syncer mts      133 May 29  2014 /mts/git/bin/nimbus-hostclient-deploy
+-rwxr-xr-x 1 syncer mts      130 May 29  2014 /mts/git/bin/nimbus-ngc-run-testng
+-rwxr-xr-x 1 syncer mts      137 May 29  2014 /mts/git/bin/nimbus-uiplatform-run-testng
+-rwxr-xr-x 1 syncer mts      133 May 29  2014 /mts/git/bin/nimbus-vcd-supportbundle
+-rw-r--r-- 1 syncer mts      128 May 29  2014 /mts/git/bin/nimbus-vcva-upgrade
+-rwxr-xr-x 1 syncer mts      133 May 29  2014 /mts/git/bin/nimbus-vc-windows-deploy
+-rwxr-xr-x 1 syncer mts      133 May 29  2014 /mts/git/bin/nimbus-vsm-supportbundle
+-rwxr-xr-x 1 syncer mts      137 May 19  2014 /mts/git/bin/nimbus-analyze-supportbundle
+-rwxr-xr-x 1 syncer mts      128 May 14  2014 /mts/git/bin/nimbus-physical-ctl
+-rwxr-xr-x 1 syncer mts      134 Aug 14  2013 /mts/git/bin/nimbus-autoinstalls
+-rwxr-xr-x 1 syncer mts      202 Apr 22  2013 /mts/git/bin/nimbus-legacy-rvc
+-rwxr-xr-x 1 syncer mts      155 Apr 21  2011 /mts/git/bin/nimbus-vim-cat-launcher
+-rwxr-xr-x 1 syncer mts      130 Feb 18  2011 /mts/git/bin/nimbus-clui
+-rwxr-xr-x 1 syncer mts      147 Feb 18  2011 /mts/git/bin/nimbus-ddt-esx
+-rwxr-xr-x 1 syncer mts      107 Feb 18  2011 /mts/git/bin/nimbus-rlui
+-rwxr-xr-x 1 syncer mts      143 Feb 18  2011 /mts/git/bin/nimbus-vc
+-rwxr-xr-x 1 syncer mts      130 Jan 11  2011 /mts/git/bin/nimbusvc-clui
+-rwxr-xr-x 1 syncer mts      127 Jan 11  2011 /mts/git/bin/nimbusvc-vcdeploy
+#+END_EXAMPLE
 ** nimbus-ctl CLI Online Help
 #+BEGIN_EXAMPLE
 -bash-4.1$  /mts/git/bin/nimbus-ctl --help
@@ -131,6 +258,286 @@ VMs could be:
   --user=<s>                     User to which VM should be transferred
   --help                         Show this message
 #+END_EXAMPLE
+** nimbus-testbeddeploy CLI Online Help
+#+BEGIN_EXAMPLE
+-bash-4.1$ /mts/git/bin/nimbus-testbeddeploy --help
+Allocate testbeds in the Nimbus cloud.
+
+Usage:
+    nimbus-testbeddeploy [options]
+
+Notes:
+1) The whole options for the command are not listed here, as they are specific to underlying deploy commands, such as nimbus-esxdeploy and nimbus-vcvadeploy.
+2) It depends on a testbed spec that which options are required. For example, if a vcva is specified in a spec, then a --vcvaBuild option is required from the command line.
+
+Test Run Related Options:
+=========================
+  --deployedDynamicWorkerName    Name of the deployed dynamic worker
+  --psodurl                      Url to monitor psod status
+  --resultsDir                   Directory to put results into (default: random in /tmp)
+  --resultsurl                   Target url to update the running result
+  --test                         Specify which test to run by name
+  --testrunid                    Run id of the test
+  --updateurl                    Upstream site's url to update running status
+
+Testbed Deployment Options:
+===========================
+  --arg                          Additional arguments
+  --customizeTestbed             This option can be used to modify testbed spec in a very generic way. You can pass a path to testbed node and then add/modify any option there. e.g.
+                                  '/esx cpuReservation=2048 memoryReservation=4096' will set reservation for all esx vms, general format is '/path/to/node opt1=val1 opt2=val2'
+                                  Nodes can be selected multiple ways e.g. '/*' will select all nodes in testbed '/esx:0' will select first esx node, '/esx:style=pxeBoot' will select esx vms with pxeBoot style
+  --customizeWorker              This option can be used to customize dynamic worker in a generic way, e.g. 'cpuReservation=2048' will set dynamic worker's cpu reservation to be 2028. If you need to set multiple worker options, just
+                                 use this option as many times as you need
+  --disableNatAfterPostboot      Disable NAT on gateway VM. It only works with --isolated-testbed option.
+  --enablePingVm                 Enable ping vms within the testbed
+  --excludePlugin                Specify a test framework plugin to not load. This provide a way to avoid loading all plugins
+  --existingTestbed              Existing testbed to use
+  --failureTypeToKeepVMs         Type of test fails when VMs need to be kept. Valid types are FAIL, INVALID, PSOD and TIMEOUT.
+  --fake                         Fake run, won't actually deploy vms
+  --forceCleanTestbed            If set, testbed will be destroyed. This option will override --keepVMsOnFailure
+  --gateway                      Specify public IP of gateway VM. This option only works with --vxlan option.
+  --gencov                       VC or ESX code coverage flag. E,g. --gencov esx --gencov vc will do code coveragefor both VC and ESX.
+  --gencovConfigFile             Specify the VC/ESX code coverage config file.Currently only needed when do ESX code coverage.The file must be a YAML format.
+  --hoursToKeepVMs               Number of hours to keep VMs after test fails. Maximum to keep VMs for 24 hours. (default: 12)
+  --isolated-testbed             Deploy the testbed in vxlan that is created on the fly.
+  --keepVMsOnFailure             If set, VMs will be kept if the test fails
+  --list                         List all testbeds
+  --nimbusResourcePool           Use a specific resource pool
+  --noPreparedTemplates          Do not use prepared templates to speed up deployment
+  --noStatsDump                  Do not dump testbed stats no matter deployment success or fail
+  --plugin                       Specify a test framework plugin to load. This provide a way to avoid loading all plugins
+  --pluginsLocation              Specify a location where test framework plugin are located at.This way user plugins can be loaded from somewhere other than standard nimbus location (default: /mts/git/nimbus/lib/testframeworks)
+  --runName                      A prefix adding to the names of vms deployed. It is required unless --list option is specified.
+  --testbedName                  Specify the name of the testbed to deploy
+  --testbedParams                Additional parameters accessible in testbed's postBoot block
+  --testbedSpecJsonFile          Specify a json testbed spec file
+  --testbedSpecRubyFile          Specify a ruby testbed spec file
+  --viewSpecOnly                 View testbed spec definition only. Do not really deploy a testbed
+  --vxlan                        Specify a vxlan to deploy the testbed on it. The vxlan will replace public network.
+  --xvcTestbed                   Distribute testbed to different pods
+
+VM Deployment Options:
+======================
+  --affinitizeTestbed            Affinitize all (expect VC) VMs of the testbed to locate on same host. Be careful to use this option. It might cause the testbed to fail to boot. Only use this option when a testbed is small and high
+                                 throughput among VMs are required.
+  --annotation                   Specify annotation for the VMs
+  --bootTimeout                  Boot time (in sec) after which to give up if the deployed VM didn't come up.
+  --catMachine                   The value should be either a CAT Machine (integer), the CAT Machine name or a URI that points to the machine spec in json format, JSON should be as below:
+                                 {
+                                   "id": "any id",
+                                   "macaddrs":["e8:39:35:ae:6a:68", "e8:39:35:ae:6a:69"],
+                                   "hostname": "hostname-allocated-by-techops"
+                                   "childmodel": {
+                                     "ilo_hostname":"10.20.96.109",
+                                     "ilo_username":"vmware",
+                                     "ilo_password":"vmware123",
+                                     "suite_location":"PromC"
+                                   }
+                                 }
+  --ciswinSettingsJsonFile       File path for ciswin settings
+  --cleanPxeDir                  Clean image in pxe dir
+  --context                      Nimbus pod context
+  --disableFirewall              Sends commands to disable the firewall in the VM
+  --disableTCPOffload            Sends commands to change the TCP Offload in the windows VM
+  --domainLocator                A locator for the domain, in the format of domain://<User>:<Password>@<DomainControllerIP>?domain=<DomainName>, This is only for cloudvm. Currently only DomainName is parsed and used to construct pnid
+  --dynamicWorkerTemplate        Template of dynamic worker and worker-template by default
+  --enableFirewall               Sends commands to enable the firewall in the VM
+  --enableIPV6                   Enable IPv6
+  --esx:force                    Use The --force
+  --esx:hostprofilePath          Host profile path for stateless ESX
+  --esx:hostprofileVMLocation    Host profile VM location for stateless ESX
+  --esx:scriptBundle             Startup scripts tgz file path for stateless ESX
+  --esx:systemRescue             PXE Boot the host with Linux System Resuce CD. May be used in conjunction with --wipeVsanDisks and --wipeAllDisks to do the disk wiping in Linux instead of ESX.  Recommended pxeDir:
+                                 /dbc/pa-dbc1106/mfurman/public_html/sysrescue
+  --esx:wipeAllDisks             Wipes ALL partitions on ALL disks. Requires --force.  USE WITH CAUTION
+  --esx:wipeAndDeploy            Wipe the host before deploying.  Parameter is the pxeDir that will be used for wiping.  See Also: --systemRescue
+  --esx:wipeVsanDisks            Wipes VSAN disks. USE WITH CAUTION
+  --esxCount                     Number of ESX
+  --existingIsolatedNetwork      Full path of an existing isolated network's JSON result file. This allows to deploy a testbed to same vxlan of an existing testbed. It only works with --isolated-testbed option.
+  --existingUniversalNetwork     JSON file which has existing universal vxlan spec for deploying testbed
+  --forceAutoVC                  Force automatic determination of the VC product
+  --hostdsim:noNfs               Do not deploy NFS VM for Host Simulator
+  --hwVer                        Virtual hardware version, specified as an integer (e.g. 8). Value 0 implies upgrading to the most current virtual hardware
+  --hwimMachine                  The value should be either a Hwim Machine ID/UUID (format: 8-4-4-4-12), the Hwim Machine system name or a URI that points to the machine spec in json format, JSON should be as below:
+                                 {
+                                   "id": "any id",
+                                   "macaddrs":["e8:39:35:ae:6a:68", "e8:39:35:ae:6a:69"],
+                                   "hostname": "hostname-allocated-by-techops"
+                                   "childmodel": {
+                                     "ilo_hostname":"10.20.96.109",
+                                     "ilo_username":"vmware",
+                                     "ilo_password":"vmware123",
+                                     "suite_location":"PromC"
+                                   }
+                                 }
+  --ip6AddressType               Type of ipv6 address (static_no_dns, static_with_dns, slaac, link_local)
+  --job-delay-mins               Waiting time in minute to schedule this job.
+  --job-schedule-at              When to schedule this job, like 2016-11-01 12:34
+  --lease                        Lease in days
+  --loginsight_ovfdesc           Destination Loginsight OVF url
+  --maxRuntimeHint               How long the user is willing to wait (in minutes) (default: 1.5h)
+  --mergeLdu                     Whether merging ldu
+  --network                      Names of networks to use
+  --nicType                      Type of NIC (e1000, e1000e, vmxnet3)
+  --nics                         Number of NICs
+  --nimbus                       Specify which Nimbus pod to use by name
+  --nimbusConfigFile             Specify the path of config file
+  --nimbusLocation               Run Nimbus on specified datacenter, available datacenters are ["sc", "wdc", "wdr"]
+  --noSchedulerNotification      Whether to send email after scheduler job finishes.
+  --oneCloud                     Deploy the testbed to OneCloud.
+  --powershellVCInstall          Indicates that the powershell installer should be used
+  --product                      Build product
+  --pxe-base-dir                 Shared folder to save pxe image instead of user home dir
+  --queue                        Schedule this job.
+  --queue-ttl                    Scheduler job TTL (in hour). (default: 1.0)
+  --remote-nimbus-root           Specify Nimbus root for remote execution (e.g. execution inside dynamic worker, container, etc.)
+  --scheduler-job-id             Scheduler job ID.
+  --scheduler-job-launched-url    Url for updating scheduler job 'launched' state.
+  --scheduler-job-reason         The reason for scheduling a job, such as final result(INVALID, TIMEOUT) or exception class and message. (default: ["NimbusExceptionExceedQuota", "NimbusExceptionNoPod"])
+  --scheduler-job-result-url     Url for reporting scheduler job error.
+  --settingsJsonFile             Used to specify a json file for installation parameters
+  --standaloneVCInstall          Indicates that the standalone installer should be used (default)
+  --stress                       used to set the stress options for the ciswin firstboot
+  --stressMaxRange               used to set the maximum delay range for the stress ciswin firstboot (seconds)
+  --templateName                 Specify the VM template to use
+  --timeout                      Time (in seconds) after which to give up the deployment
+  --universalNetwork             Deploy the testbed in Cross-vCenter vxlan. This option only works with --isolated-testbed option
+  --useWinVersion                Specifies the base windows VM among win2008r2, win2008, win2012, win2012r2 to be used. Default is win2008r2
+  --vcCount                      Number of VC
+  --vcvaSettingsJsonFile         File path for vcva settings
+  --windowsDomainLocator         A locator for the domain, in the format of domain://<User>:<Password>@<DomainControllerIP>?domain=<DomainName>, VC will be installed on a domain joined machine
+
+Build Options:
+==============
+  --autodeployServerBuild        Build number for autodeployServer
+  --build                        Build number
+  --cis_blddir                   Build dir for cis
+  --ciswinBuild                  Build number for ciswin
+  --ciswin_blddir                Build dir for ciswin
+  --ciswindevngcBuild            Build number for ciswindevngc
+  --cloudvmBuild                 Build number for cloudvm
+  --cloudvm_blddir               Build dir for cloudvm
+  --cloudvmdevngcBuild           Build number for cloudvmdevngc
+  --cloudvmngcBuild              Build number for cloudvmngc
+  --cloudvmssoBuild              Build number for cloudvmsso
+  --cloudvmvcopsBuild            Build number for cloudvmvcops
+  --cloudvmvimBuild              Build number for cloudvmvim
+  --esxBoraDir                   Bora dir of ESX
+  --esxBoraHost                  Bora Host for ESX
+  --esxBuild                     Build number for esx
+  --esxPxeDir                    Location of the dir for pxe config
+  --esx_vmtree                   vmtree for esx
+  --hbr_blddir                   Build dir for hbr
+  --hbrsrvBuild                  Build number for hbrsrv
+  --ic-clientBuild               Build number for ic-client
+  --licensing_blddir             Build dir for licensing
+  --logInsightBuild              Build number for logInsight
+  --mobilityagentBuild           Build number for mobilityagent
+  --ngc_blddir                   Build dir for ngc
+  --ngcinstallerBuild            Build number for ngcinstaller
+  --nsx-transformersBuild        Build number for nsx-transformers
+  --nsx_blddir                   Build dir for nsx
+  --phservices_blddir            Build dir for phservices
+  --platform-services-controllerBuild    Build number for platform-services-controller
+  --sampleBuild                  Build number for sample
+  --serverBuild                  Build number of server product
+  --sso_blddir                   Build dir for sso
+  --suite-uiBuild                Build number for suite-ui
+  --testware_blddir              Build dir for testware
+  --uiplatform_blddir            Build dir for uiplatform
+  --vcBuild                      Build number for vc
+  --vcde_blddir                  Build dir for vcde
+  --vcenter-allBuild             Build number for vcenter-all
+  --vcenter-asanBuild            Build number for vcenter-asan
+  --vcenter-gcc6Build            Build number for vcenter-gcc6
+  --vcenter-python3Build         Build number for vcenter-python3
+  --vcenterBuild                 Build number for vcenter
+  --vcenterphotonBuild           Build number for vcenterphoton
+  --vcentersles12Build           Build number for vcentersles12
+  --vcenterwindowsBuild          Build number for vcenterwindows
+  --vcenterwindows_blddir        Build dir for vcenterwindows
+  --vcenterwindowsdevngcBuild    Build number for vcenterwindowsdevngc
+  --vcloudBuild                  Build number for vcloud
+  --vcloud_blddir                Build dir for vcloud
+  --vcops_blddir                 Build dir for vcops
+  --vcqadistBuild                Build of vcqadist
+  --vcqetestwarezipBuild         Build number for vcqetestwarezip
+  --vcvaBuild                    Build number for vcva
+  --vcvaBuildDir                 Build tree to find cloudvm OVF. e.g. ~bora/build/. Must use with --vcvaBuildType
+  --vcvaBuildType                Build type (obj/release/beta). Must use with --vcvaBuildDir
+  --vddkBuild                    Build number for vddk
+  --vimclients-h5clientBuild     Build number for vimclients-h5client
+  --vimclients-platformBuild     Build number for vimclients-platform
+  --vimclients-qaBuild           Build number for vimclients-qa
+  --vm2c_blddir                  Build dir for vm2c
+  --vmc-gatewayBuild             Build number for vmc-gateway
+  --vmc-gateway_blddir           Build dir for vmc-gateway
+  --vpxBuild                     Build number for vpx
+  --vpx_blddir                   Build dir for vpx
+  --vpxd-comptests-covBuild      Build number for vpxd-comptests-cov
+  --vpxd-comptestsBuild          Build number for vpxd-comptests
+  --vpxdBuild                    Build number for vpxd
+  --vpxd_blddir                  Build dir for vpxd
+  --vraCafeBuild                 Build number for vraCafe
+  --vraSsoBuild                  Build number for vraSso
+  --vropsBuild                   Build number for vrops
+  --vsmBuild                     Build number for vsm
+  --vui-componentsBuild          Build number for vui-components
+  --wsBuild                      Build number for ws
+  --ws_blddir                    Build dir for ws
+
+Other Options:
+==============
+  --andyPrefix                   Andy's Prefix
+  --andyProducts                 Andy's Products
+  --featureStates                Feature states
+  --logTriggerFile               Log Trigger files
+  --logTriggersMode              Possible values are 'off', 'always' or 'onerror'
+  --nimbusBreakpoint             Enable a named breakpoint in the nimbus code.
+  --noDefaultLogTriggers         No default Log Triggers
+  --noSupportBundles             Do not collect support bundles
+  --pxeBootOption                VMKernel boot option passed to nested ESXi
+  --umask                        Set the umask for having desired permissions on file
+
+Deprecated Options:
+===================
+  --blddir                       Build dir of a product
+  --cis_vmtree                   vmtree for cis
+  --ciswin_vmtree                vmtree for ciswin
+  --cloudvm_vmtree               vmtree for cloudvm
+  --esx_blddir                   Build dir for esx
+  --esxallBuild                  Build number of esxall product
+  --hbr_vmtree                   vmtree for hbr
+  --licensing_vmtree             vmtree for licensing
+  --location                     Build location
+  --macaddrs                     MAC addresses
+  --ngc_vmtree                   vmtree for ngc
+  --nsx_vmtree                   vmtree for nsx
+  --phservices_vmtree            vmtree for phservices
+  --sso_vmtree                   vmtree for sso
+  --testware_vmtree              vmtree for testware
+  --uiplatform_vmtree            vmtree for uiplatform
+  --vcenterwindows_vmtree        vmtree for vcenterwindows
+  --vcloud_vmtree                vmtree for vcloud
+  --vcops_vmtree                 vmtree for vcops
+  --vm2c_vmtree                  vmtree for vm2c
+  --vmc-gateway_vmtree           vmtree for vmc-gateway
+  --vpx_vmtree                   vmtree for vpx
+  --vpxd_vmtree                  vmtree for vpxd
+  --ws_vmtree                    vmtree for ws
+#+END_EXAMPLE
+** nimbus CLI Online Help
+#+BEGIN_EXAMPLE
+-bash-4.1$ /mts/git/bin/nimbus --help
+Nimbus root command
+  -a, --help-all    Recursively get help for all commands
+  -h, --help        Show this message
+
+Available subcommands:
+    deploy : Deploy various vms
+    ctl : Nimbus-ctl commands to control vms
+    scheduler : nimbus-scheduler commands to control scheduler jobs
+#+END_EXAMPLE
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -164,14 +571,60 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
-* useful link                                                      :noexport:
-https://confluence.eng.vmware.com/display/NIMBUS/Nimbus+Solution+Basic+Workflow+with+Mockups
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* HALF How get PKS jumpbox ip                                      :noexport:
+* DONE How get PKS jumpbox ip                                      :noexport:
+  CLOSED: [2019-04-08 Mon 11:44]
 #+BEGIN_EXAMPLE
 -bash-4.1$ /mts/git/bin/nimbus-ctl ip | grep ovfVm.0
 sc-prd-vc013: zdenny-denny-anubis.ovfVm.0              : 10.160.195.68
 #+END_EXAMPLE
+* DONE useful link                                                 :noexport:
+  CLOSED: [2019-04-08 Mon 11:56]
+https://confluence.eng.vmware.com/display/DevToolsDocKB/2.+General+Concepts+in+Nimbus
+https://confluence.eng.vmware.com/display/NIMBUS/Nimbus+Solution+Basic+Workflow+with+Mockups
+https://confluence.eng.vmware.com/display/DevToolsDocKB/2.+General+Concepts+in+Nimbus
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] "/mts/git/bin/nimbus-ctl ip" vs "Devhub Address"       :noexport:
 * TODO "nimbus destroy" vs "nimbus kill"                           :noexport:
 * TODO build a docker image to run nimbus operation                :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* [#A] How to use nimbus cost-effectively                          :noexport:
+* TODO "/mts/git/bin/nimbus" vs "/mts/git/bin/nimbus-ctl"          :noexport:
+* TODO Why nimbus doesn't have an internal storage/artifact repo server :noexport:
+https://confluence.eng.vmware.com/display/NIMBUS/Nimbus+New+Ideas+and+Projects
+* TODO [#A] Nimbus: Testbed spec library                           :noexport:
+https://confluence.eng.vmware.com/display/NIMBUS/Testbed+spec+library
+* TODO Nimbus API endpoints                                        :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO nimbus list all pods                                        :noexport:
+* TODO [#A] Fail to get VM's serial output                         :noexport:
+https://confluence.eng.vmware.com/display/~kaiyuanli/Nimbus
+
+Get Serial output	NIMBUS=sc-prd-vc034 /mts/git/bin/nimbus-vmserial kaiyuanli-kaiyuan-santity-test-05
+
+Open VM's console	/mts/git/bin/nimbus-ctl --console-option=remote_console_url console  kaiyuanli-Layer1-L15-68G-CLN5080722-20170427.esx.9
+
+#+BEGIN_EXAMPLE
+-bash-4.1$ NIMBUS=sc-prd-vc013 /mts/git/bin/nimbus-vmserial zdenny-denny-anubis.ovfVm.0
+listening for VMX on proxy 10.165.103.16:43832
+configuring VM...
+/mts/git/bin/../rbvmomi-utils/bin/vmserial:113:in `vmserial': serial device not found (RuntimeError)
+	from /mts/git/bin/../rbvmomi-utils/bin/vmserial:194:in `<main>'
+#+END_EXAMPLE
+* TODO Create a Ubuntu/CentOS VM                                   :noexport:
+https://confluence.eng.vmware.com/display/~kaiyuanli/Nimbus
+#+BEGIN_EXAMPLE
+Create a Ubuntu VM
+/mts/git/bin/nimbus-genericdeploy --type admiral-ubuntu-worker --lease 7 --result /dbc/pa-dbc1102/kaiyuanli/tmp ubuntu-vm-20161209
+
+Create a VMC CentOS	
+/mts/git/bin/nimbus-genericdeploy --type vmc-centos --lease 7 --result /dbc/pa-dbc1102/kaiyuanli/tmp vmc-centos-20171118
+#+END_EXAMPLE
+* TODO What vmware devhub is?                                      :noexport:
+[[https://devhub.eng.vmware.com][VMware devhub]]
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Use pure nimbus spec file to deploy PKS flanel env          :noexport:
+/mts/git/bin/nimbus-testbeddeploy --runName "vrops-vrops1-1553506116" --testbedSpecRubyFile "testbed_pks_nsxt.rb" \
+   --resultsDir "/dbc/sc-dbc1216/zdenny/vcpi-nimbus/vrops-test" --umask "0" --isolated-testbed --keepVMsOnFailure --noStatsDump \
+   --noSupportBundles --esxBuild "10302608" --vcvaBuild "ob-11726888" --nsx-transformersBuild "ob-11353925" \
+   --context "general:nsx" --lease "7" --nimbusLocation "wdc" --arg "size_profile:medium" --arg "num-edges:4"
