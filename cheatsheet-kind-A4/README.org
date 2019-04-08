@@ -30,7 +30,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 |---------------------+--------------------------------------------------------------|
 | [[https://github.com/kubernetes-sigs/kind][Kind]]                | Kubernetes IN Docker - local clusters for testing Kubernetes |
 | [[https://kind.sigs.k8s.io/][Install kind]]        | Install go and docker, then =go get -u sigs.k8s.io/kind=     |
-| Check kind          | =which kind=, =kind version=                                 |
+| Check kind cli      | =which kind=, =kind version=                                 |
 | Create kind clusrer | =kind create cluster --name clusterapi=                      |
 | Reference           | [[https://cheatsheet.dennyzhang.com/cheatsheet-minikube-A4][Minikube CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kind-A4][Kubernetes kind CheatSheet]]              |
 | Reference           | [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]],  [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Kubernetes Yaml]]                         |

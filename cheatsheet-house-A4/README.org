@@ -175,104 +175,6 @@ https://www.todayshomeowner.com/
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
-* CANCELED old notes                                               :noexport:
-  CLOSED: [2019-02-19 Tue 09:21]
-#+BEGIN_EXAMPLE
-看房🏠
-
-zip code:
-
-https://cheatsheet.dennyzhang.com/cheatsheet-house-A4
-
-Sunnyvale:
-- 94086
-- 94087
-- 94089: not good
-
-
-Portoflio by Dec
-- Fidelity: 1.35
-- Robinhond: 0.91
-- Bitcoin: 0.06
-
-Maintenance (0.65):
-- monthly saving: 1
-- House cost: 0.6
-- Stock: 0.25
-
-13.3*12+
-
-340-264+10+10
-
-VMware: 3495 Deer Creek Rd, Palo Alto, CA 94304
-KPMG: 3975 Freedom Cir, Santa Clara, CA 95054
-
-
-1.5m: 每月7000
-即房子开支多出了4000
-每月孩子开支多出2000
-
-每月存4000,即每年4.8w
-奖金:2w,股票:2w
-
-即每年存8.8w
----------------------------------------------
-Meadowood Apartments: 1555 W. Middlefield Rd #4, Mountain View, CA 94043
-
-----------------------------------------------
-
-Park Square Apartments: 1285 Montecito Ave, Mountain View, CA 94043
-
-$2,495; 816 Sq Ft;
-￼
-￼
-
-- MountainView
-| Name                 | Price | Size | Distance S, D |
-|----------------------+-------+------+---------------|
-| Village Lake         | 2,550 |  682 | (7, 7)        |
-| Highland Gardens     | 2,980 |  750 | (8, 9)        |
-| Avalon Mountain View | 2,895 |  701 |               |
-| Birch Creek          | 2,795 |  800 |               |
-| Americana Apartments | 2,750 |  740 |               |
-
-- Sunnyvale
-| Name                      | Price | Size | Distance S, D |
-|---------------------------+-------+------+---------------|
-| Mission Pointe by Windsor | 2,685 |  704 | (4, 15)       |
-** Village Lake: 777 W Middlefield Rd, Mountain View, CA 94043
-https://www.zillow.com/homes/for_rent/house,condo,apartment_duplex,mobile,townhouse_type/5XjLXT_bldg/37.403001,-122.076286_ll/1-_beds/0-752851_price/0-3000_mp/600-_size/37.409172,-122.063674,37.396388,-122.083844_rect/15_zm/
-** Highland Gardens: 234 Escuela Ave, Mountain View, CA 94040
-https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/2096379137_zpid/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.430603,-122.021327,37.379468,-122.131877_rect/13_zm/
-** Avalon Mountain View: 1600 Villa St, Mountain View, CA 94041
-https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/2095571415_zpid/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.430058,-122.044759,37.378513,-122.091794_rect/13_zm/
-** Birch Creek: 575 S Rengstorff Ave, Mountain View, CA 94040
-https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/5XjKKB_bldg/37.39725,-122.09952_ll/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.416834,-122.013173,37.365689,-122.123723_rect/13_zm/
-** Americana Apartments: 707 Continental Cir, Mountain View, CA 94040
-https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/5hGhMy_bldg/37.375162,-122.065018_ll/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.411653,-122.009912,37.360505,-122.120461_rect/13_zm/
-** Mission Pointe by Windsor: 1063 Morse Ave, Sunnyvale, CA 94089
-https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5XjPcj_bldg/37.400296,-122.0178_ll/54626_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.411176,-121.966052,37.360027,-122.076602_rect/13_zm/
-
-
-看房考虑因素:
-- view要好,有deck晒太阳
-- private drive way
-- 空调机会不会很吵
-- 一楼独立的suite
-- 采光好
-- HOA多少
-- 晚上去看一下:看停车
-
-中国的字画作装饰
-
-基本事实:
-- 到9-1总共存款:17万（10.8美元+0.8人民币+5六个月新增存款=16.6）
-- 45万房子,首付17万贷款28万15年,月供大概 $1953（不加维护费）
-- 房子维护费:房产税,HOA,insurance:1000
-- 稳定后开支:把sophia工资花掉,存着Denny工资.即每月花6000,存6000元
-- 无房贷的日用开支: $4500
-- 每年可以存7万,6年即42万.
-#+END_EXAMPLE
 * DONE                                                             :noexport:
 ** DONE Hang pictures to the wall                                  :noexport:
    CLOSED: [2019-03-25 Mon 09:07]
@@ -363,6 +265,121 @@ https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5
  freemont: $215
  https://sfbay.craigslist.org/eby/grd/d/newark-brand-new-electric-lawn-mower/6843218175.html
 
+** DONE change air heater filter                                   :noexport:
+   CLOSED: [2019-04-06 Sat 17:27]
+** CANCELED old notes                                              :noexport:
+   CLOSED: [2019-02-19 Tue 09:21]
+ #+BEGIN_EXAMPLE
+ 看房🏠
+
+ zip code:
+
+ https://cheatsheet.dennyzhang.com/cheatsheet-house-A4
+
+ Sunnyvale:
+ - 94086
+ - 94087
+ - 94089: not good
+
+
+ Portoflio by Dec
+ - Fidelity: 1.35
+ - Robinhond: 0.91
+ - Bitcoin: 0.06
+
+ Maintenance (0.65):
+ - monthly saving: 1
+ - House cost: 0.6
+ - Stock: 0.25
+
+ 13.3*12+
+
+ 340-264+10+10
+
+ VMware: 3495 Deer Creek Rd, Palo Alto, CA 94304
+ KPMG: 3975 Freedom Cir, Santa Clara, CA 95054
+
+
+ 1.5m: 每月7000
+ 即房子开支多出了4000
+ 每月孩子开支多出2000
+
+ 每月存4000,即每年4.8w
+ 奖金:2w,股票:2w
+
+ 即每年存8.8w
+ ---------------------------------------------
+ Meadowood Apartments: 1555 W. Middlefield Rd #4, Mountain View, CA 94043
+
+ ----------------------------------------------
+
+ Park Square Apartments: 1285 Montecito Ave, Mountain View, CA 94043
+
+ $2,495; 816 Sq Ft;
+ ￼
+ ￼
+
+ - MountainView
+ | Name                 | Price | Size | Distance S, D |
+ |----------------------+-------+------+---------------|
+ | Village Lake         | 2,550 |  682 | (7, 7)        |
+ | Highland Gardens     | 2,980 |  750 | (8, 9)        |
+ | Avalon Mountain View | 2,895 |  701 |               |
+ | Birch Creek          | 2,795 |  800 |               |
+ | Americana Apartments | 2,750 |  740 |               |
+
+ - Sunnyvale
+ | Name                      | Price | Size | Distance S, D |
+ |---------------------------+-------+------+---------------|
+ | Mission Pointe by Windsor | 2,685 |  704 | (4, 15)       |
+*** Village Lake: 777 W Middlefield Rd, Mountain View, CA 94043
+ https://www.zillow.com/homes/for_rent/house,condo,apartment_duplex,mobile,townhouse_type/5XjLXT_bldg/37.403001,-122.076286_ll/1-_beds/0-752851_price/0-3000_mp/600-_size/37.409172,-122.063674,37.396388,-122.083844_rect/15_zm/
+*** Highland Gardens: 234 Escuela Ave, Mountain View, CA 94040
+ https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/2096379137_zpid/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.430603,-122.021327,37.379468,-122.131877_rect/13_zm/
+*** Avalon Mountain View: 1600 Villa St, Mountain View, CA 94041
+ https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/2095571415_zpid/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.430058,-122.044759,37.378513,-122.091794_rect/13_zm/
+*** Birch Creek: 575 S Rengstorff Ave, Mountain View, CA 94040
+ https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/5XjKKB_bldg/37.39725,-122.09952_ll/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.416834,-122.013173,37.365689,-122.123723_rect/13_zm/
+*** Americana Apartments: 707 Continental Cir, Mountain View, CA 94040
+ https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/5hGhMy_bldg/37.375162,-122.065018_ll/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.411653,-122.009912,37.360505,-122.120461_rect/13_zm/
+*** Mission Pointe by Windsor: 1063 Morse Ave, Sunnyvale, CA 94089
+ https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5XjPcj_bldg/37.400296,-122.0178_ll/54626_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.411176,-121.966052,37.360027,-122.076602_rect/13_zm/
+
+
+ 看房考虑因素:
+ - view要好,有deck晒太阳
+ - private drive way
+ - 空调机会不会很吵
+ - 一楼独立的suite
+ - 采光好
+ - HOA多少
+ - 晚上去看一下:看停车
+
+ 中国的字画作装饰
+
+ 基本事实:
+ - 到9-1总共存款:17万（10.8美元+0.8人民币+5六个月新增存款=16.6）
+ - 45万房子,首付17万贷款28万15年,月供大概 $1953（不加维护费）
+ - 房子维护费:房产税,HOA,insurance:1000
+ - 稳定后开支:把sophia工资花掉,存着Denny工资.即每月花6000,存6000元
+ - 无房贷的日用开支: $4500
+ - 每年可以存7万,6年即42万.
+ #+END_EXAMPLE
+** DONE Shopping: 大篓子放枕头
+   CLOSED: [2019-04-06 Sat 22:29]
+** DONE [#A] Change Refrigerator Water Filter                      :noexport:
+   CLOSED: [2019-04-07 Sun 08:39]
+ Refrigerator Water Filter
+ - Flush 4 gallons of water through water filter cartridge before use
+ - Replace dispensable filter every 3-6 months to maximize contaminant reduction.
+
+ https://www.youtube.com/watch?v=U-p62wMxfWU
+ https://www.amazon.com/4396841-4396710-Refrigerator-Compatible-EDR3RXD1/dp/B07MYWTTM7/ref=sr_1_3?keywords=whirlpool+refrigerator+water+filter+4396710&qid=1553656434&s=hi&sr=1-3
+ https://everydropwater.com/Assets/Doc/filterGuide.pdf
+** DONE [#A] Tear down the ikea shelf                              :noexport:
+   CLOSED: [2019-04-07 Sun 08:40]
+** DONE [#A] apply two credit cards: costco and chase safari       :noexport:
+   CLOSED: [2019-04-07 Sun 08:40]
 * [#A] Utility Contact                                             :noexport:
 | Name                              | Contact                | Phone                                   | Website/Email/Notes                          |                                                                      |
 |-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
@@ -400,7 +417,6 @@ https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5
 * water heater还有大概5年寿命                                      :noexport:
 * 一键把所有的灯关了                                          :noexport:
 * 家里有灯泡坏了                                                   :noexport:
-* 厨房炉子的右上方burner不work了                                   :noexport:
 * 地基里面有曾经出现过小动物的痕迹（老鼠/ 松鼠）                   :noexport:
 * 有GFCI插座坏了                                                   :noexport:
 * 厕所下面有曾经漏水的痕迹                                         :noexport:
@@ -426,9 +442,6 @@ http://vegas168.blogspot.com/2016/05/checklist.html
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO 洗衣机内桶要定期清洗                                        :noexport:
 * TODO 洗碗机内桶要定期清洗                                        :noexport:
-* TODO cancel Amazon prime service
-* TODO change heater滤芯                                           :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Learn skills to declutter your home                         :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#C] hang pictures to rocky wall                            :noexport:
@@ -441,21 +454,10 @@ https://www.youtube.com/watch?v=WMESCf09vW4
 https://www.youtube.com/watch?v=euLQongteF4
 * TODO [#C] setup auto payment for the garbage service             :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#B] fix holes in wooden door                               :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#B] Sign up Kaiser account and doctor                      :noexport:
 * TODO [#B] Update geico home address: increase $164               :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* HALF [#A] Change Refrigerator Water Filter                       :noexport:
-Refrigerator Water Filter
-- Flush 4 gallons of water through water filter cartridge before use
-- Replace dispensable filter every 3-6 months to maximize contaminant reduction.
-
-https://www.youtube.com/watch?v=U-p62wMxfWU
-https://www.amazon.com/4396841-4396710-Refrigerator-Compatible-EDR3RXD1/dp/B07MYWTTM7/ref=sr_1_3?keywords=whirlpool+refrigerator+water+filter+4396710&qid=1553656434&s=hi&sr=1-3
-https://everydropwater.com/Assets/Doc/filterGuide.pdf
-* TODO [#A] Tear down the ikea shelf                               :noexport:
-* TODO [#A] apply two credit cards: costco and chase safari        :noexport:
+* [#A] 厨房炉子的右上方burner不work了                              :noexport:
 * TODO [#A] 淋浴的龙头                                             :noexport:
 * TODO [#A] setup waste service                                    :noexport:
 * HALF [#A] contact PG&E to turn on gas service                    :noexport:
@@ -468,10 +470,46 @@ http://terms.naer.edu.tw/detail/1678626/?index=2
 rent
 
 Chinese credit card
-* TODO loan basic                                                  :noexport:
+* TODO sync up contact into my cellphone                           :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO 洗碗机洗不干净                                              :noexport:
+* TODO change heater filter                                        :noexport:
+https://www.youtube.com/watch?v=Wv3_Dy97KoY
+
+https://www.serviceexperts.com/faq/how-often-should-i-change-my-air-filter-at-home
+How Often Should I Change My Air Filter At Home?
+* study website                                                    :noexport:
+https://www.homeadvisor.com/
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Learn skills for operating a lawnmover                      :noexport:
+* TODO [#A] Unclog a Kitchen Sink                                  :noexport:
+plumbing
+
+drain
+
+sink
+
+garbage disposal
+
+* TODO bath tub spout is leaking                                   :noexport:
+https://www.youtube.com/watch?v=4OjrL09CXrQ
+https://www.youtube.com/watch?v=QcBdjH4Fdik
+https://www.youtube.com/watch?v=yq6FYfqKO0g
+* TODO home protection: ADT                                        :noexport:
+https://www.amazon.com/dp/B07D7Q6CHB/ref=cm_sw_r_cp_api_i_ylcQCb46CTVTT
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* [#A] Start a website for american house maintainance             :noexport:
+Both Chinese and English
+* TODO [#A] bath room is leaking: Seal Around A Tub Or Shower      :noexport:
+https://www.youtube.com/watch?v=F7Y6XQ9MoHE
+* TODO Door Slam                                                   :noexport:
+https://www.amazon.com/Latchy-Catchy-Never-Again-Goldie/dp/B01N8SYYG2/ref=sr_1_24?keywords=squeaky+door&qid=1554606593&s=hi&sr=1-24
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF [#B] fix holes in wooden door                               :noexport:
+* HALF loan basic                                                  :noexport:
 ** TODO loan lender credits
 https://www.consumerfinance.gov/ask-cfpb/what-are-discount-points-and-lender-credits-and-how-do-they-work-en-136/
-* TODO Loan for housing                                            :noexport:
+* HALF Loan for housing                                            :noexport:
 12W, 24W
 
 base: 13W, package: 13.5W
@@ -506,30 +544,32 @@ Anna
 ** 不能有两个银行
 ** single family会多一点
 ** Single 贷款: 72.6W; 70W
-* TODO sync up contact into my cellphone                           :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO 洗碗机洗不干净                                              :noexport:
-* TODO change heater filter                                        :noexport:
-https://www.youtube.com/watch?v=Wv3_Dy97KoY
-
-https://www.serviceexperts.com/faq/how-often-should-i-change-my-air-filter-at-home
-How Often Should I Change My Air Filter At Home?
-* study website                                                    :noexport:
-https://www.homeadvisor.com/
+* TODO rest room door noise                                        :noexport:
+https://www.amazon.com/Prime-Line-4540-Wall-Stop-Stainless/dp/B000NCWUVC/ref=pd_sim_0_4/144-9710788-0674101?_encoding=UTF8&pd_rd_i=B000NCWUVC&pd_rd_r=c715a328-58cb-11e9-ae93-bfc8ab14b226&pd_rd_w=nHaXz&pd_rd_wg=GVg1p&pf_rd_p=90485860-83e9-4fd9-b838-b28a9b7fda30&pf_rd_r=H88CN48PDGT12SQ251XZ&psc=1&refRID=H88CN48PDGT12SQ251XZ
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Learn skills for operating a lawnmover                      :noexport:
+* TODO 后院没有自动喷水                                            :noexport:
+* TODO Stop Squeaky Door Hinges                                    :noexport:
+https://www.wikihow.life/Stop-Squeaky-Door-Hinges
+
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] Unclog a Kitchen Sink                                  :noexport:
-plumbing
+* HALF door hole cover plate                                       :noexport:
+https://www.amazon.com/s?k=door+hole+cover+plate&crid=11FTB3BCITW4D&sprefix=door+hole+%2Caps%2C191&ref=nb_sb_ss_i_1_10
+https://www.amazon.com/Sumnacon-220-degree-Peephole-Rotating-Privacy/dp/B078G71XWD/ref=sr_1_22?keywords=door+Hole+Cover&qid=1554596208&s=gateway&sr=8-22
+https://www.amazon.com/dp/B00XQBBPGS/ref=psdc_511316_t1_B00D2K33P4
+* HALF Ball Catch on a Door                                    :noexport:
+https://www.youtube.com/watch?v=HzX22sAF_NE
+https://www.youtube.com/watch?v=z7ad-4RKQp4
+https://www.amazon.com/Jiayi-Hardware-Adjustable-Invisible-Cupboard/dp/B07NSTKLV7/ref=sr_1_1_sspa?keywords=closet+door+Springs&qid=1554596391&s=gateway&sr=8-1-spons&psc=1
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] bath room: Vertical Shower Door Seal                   :noexport:
+silicone seal
 
-drain
+https://www.amazon.com/Zengest-Strip-Bottom-Shower-Transparent/dp/B07MPNYBBJ/ref=sr_1_2_sspa?keywords=Vertical%2BShower%2BDoor%2BSeal&qid=1554620898&s=gateway&sr=8-2-spons&th=1
 
-sink
+https://www.amazon.com/s?k=Vertical+Shower+Door+Seal&ref=nb_sb_noss
 
-garbage disposal
-
-* TODO bath tub spout is leaking                                   :noexport:
-https://www.youtube.com/watch?v=4OjrL09CXrQ
-https://www.youtube.com/watch?v=QcBdjH4Fdik
-https://www.youtube.com/watch?v=yq6FYfqKO0g
-* TODO home protection: ADT                                        :noexport:
+https://www.youtube.com/watch?v=PTADQAyDztI
+https://www.youtube.com/watch?v=ECdXEAAIBFI
+https://www.youtube.com/watch?v=x56o59oTgx0
+https://www.youtube.com/watch?v=lyWC4DFAF1w
