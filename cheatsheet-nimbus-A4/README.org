@@ -22,14 +22,14 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
 ** Nimbus Basic
-| Name                  | Summary                                                                                         |
-|-----------------------+-------------------------------------------------------------------------------------------------|
-| Nimbus                | VMware's internal vSphere based cloud written in Ruby                                           |
-| Nimbus cloud          | Nimbus cloud contains a lot of ESX hosts. Nimbus Pods can seen as data centers.                 |
-| Nimbus Pod            | It is created during a vSphere setup, after setup, it contains one VC and associated ESX hosts. |
-| Nimbus Site           | Each site is a separate Nimbus cloud with all of its peripherals. Currently we have: SC and WDC |
-| nimbus-ctl            | Ruby CLI for vmomi client                                                                       |
-| All nimbus facilities | =/mts/git/bin/nimbus*=                                                                          |
+| Name             | Summary                                                                                         |
+|------------------+-------------------------------------------------------------------------------------------------|
+| Nimbus           | VMware's internal vSphere based cloud written in Ruby                                           |
+| Nimbus cloud     | Nimbus cloud contains a lot of ESX hosts. Nimbus Pods can seen as data centers.                 |
+| Nimbus Pod       | It is created during a vSphere setup, after setup, it contains one VC and associated ESX hosts. |
+| Nimbus Site      | Each site is a separate Nimbus cloud with all of its peripherals. Currently we have: SC and WDC |
+| nimbus-ctl       | Ruby CLI for vmomi client                                                                       |
+| All nimbus tools | =/mts/git/bin/nimbus*=                                                                          |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-nimbus-A4/nimbus.png]]
 ** Nimbus CLI
@@ -623,8 +623,7 @@ Create a VMC CentOS
 * TODO How nimbus quota works                                      :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Use pure nimbus spec file to deploy PKS flanel env     :noexport:
-/mts/git/bin/nimbus-testbeddeploy --runName "vrops-vrops1-1553506116" --testbedSpecRubyFile "testbed_pks_nsxt.rb" \
+/mts/git/bin/nimbus-testbeddeploy --runName "vrops-vrops1-1553506116" --testbedSpecRubyFile "/dbc/sc-dbc1216/zdenny/testbed_pks_nsxt.rb" \
    --resultsDir "/dbc/sc-dbc1216/zdenny/vcpi-nimbus/vrops-test" --umask "0" --isolated-testbed --keepVMsOnFailure --noStatsDump \
    --noSupportBundles --esxBuild "10302608" --vcvaBuild "ob-11726888" --nsx-transformersBuild "ob-11353925" \
    --context "general:nsx" --lease "7" --nimbusLocation "wdc" --arg "size_profile:medium" --arg "num-edges:4"
-
