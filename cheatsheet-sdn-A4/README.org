@@ -202,3 +202,4 @@ NSX-T (NSX "Transformers") is designed to address many of the use cases that NSX
 ** TODO linux vlan tagging
 ** TODO nic混杂模式
 ** TODO linux SDN in one host
+* TODO https://www.techrepublic.com/article/vmware-nsx-the-smart-persons-guide/ :noexport:

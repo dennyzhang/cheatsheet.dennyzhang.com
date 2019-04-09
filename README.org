@@ -525,3 +525,6 @@ nc (netcat) is def missing :)
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-doc-A4 :noexport:
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-clusterapi-A4 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Improve govmomi cheatsheet: https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4 :noexport:
+* HALF Improve k8s kind: https://cheatsheet.dennyzhang.com/cheatsheet-kind-A4 :noexport:

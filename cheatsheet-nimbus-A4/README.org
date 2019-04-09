@@ -580,7 +580,8 @@ sc-prd-vc013: zdenny-denny-anubis.ovfVm.0              : 10.160.195.68
   CLOSED: [2019-04-08 Mon 11:56]
 https://confluence.eng.vmware.com/display/DevToolsDocKB/2.+General+Concepts+in+Nimbus
 https://confluence.eng.vmware.com/display/NIMBUS/Nimbus+Solution+Basic+Workflow+with+Mockups
-https://confluence.eng.vmware.com/display/DevToolsDocKB/2.+General+Concepts+in+Nimbus
+https://confluence.eng.vmware.com/display/CSQ/Nimbus+commands+for+Testbed+deployment
+https://confluence.eng.vmware.com/display/FRAC/Create+Nimbus+Testbed+Using+Jenkins
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] "/mts/git/bin/nimbus-ctl ip" vs "Devhub Address"       :noexport:
 * TODO "nimbus destroy" vs "nimbus kill"                           :noexport:
@@ -621,6 +622,11 @@ Create a VMC CentOS
 * TODO What vmware devhub is?                                      :noexport:
 [[https://devhub.eng.vmware.com][VMware devhub]]
 * TODO How nimbus quota works                                      :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO start a local dbc                                           :noexport:
+https://gitlab.eng.vmware.com/junlongg/vdfs-build-toolchain/blob/master/ovf/setup-ubuntu.sh
+* TODO Deploy LI + vROPs to Nimbus                                 :noexport:
+https://confluence.eng.vmware.com/pages/viewpage.action?pageId=159552003
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Use pure nimbus spec file to deploy PKS flanel env     :noexport:
 /mts/git/bin/nimbus-testbeddeploy --runName "vrops-vrops1-1553506116" --testbedSpecRubyFile "/dbc/sc-dbc1216/zdenny/testbed_pks_nsxt.rb" \

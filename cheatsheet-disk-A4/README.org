@@ -51,7 +51,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or s
 | Mount an ISO to a folder                    | =mount -o loop my-disk.iso /mnt/disk=            |
 | Mount NFS                                   | =mount -t nfs 192.168.1.1:/usr/share /mnt/share= |
 | Remount rootfs as read-write in repair mode | =mount -o remount,rw /=                          |
-** dd
+** lsblk
 | Name                                    | Comment          |
 |-----------------------------------------+------------------|
 | List all available block devices        | =lsblk=          |
