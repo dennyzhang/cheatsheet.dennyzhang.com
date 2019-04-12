@@ -25,33 +25,48 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Name             | Summary                                                                                         |
 |------------------+-------------------------------------------------------------------------------------------------|
 | Nimbus           | VMware's internal vSphere based cloud written in Ruby                                           |
-| Nimbus cloud     | Nimbus cloud contains a lot of ESX hosts. Nimbus Pods can seen as data centers.                 |
+| Nimbus Cloud     | Nimbus cloud contains a lot of ESX hosts. Nimbus Pods can seen as data centers.                 |
 | Nimbus Pod       | It is created during a vSphere setup, after setup, it contains one VC and associated ESX hosts. |
 | Nimbus Site      | Each site is a separate Nimbus cloud with all of its peripherals. Currently we have: SC and WDC |
 | nimbus-ctl       | Ruby CLI for vmomi client                                                                       |
 | All nimbus tools | =/mts/git/bin/nimbus*=                                                                          |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-nimbus-A4/nimbus.png]]
+** vsphere resource
+| Name          | Summary |
+|---------------+---------|
+| Data center   |         |
+| Resource pool |         |
+| VM folder     |         |
+| Host group    |         |
+| vcs           |         |
+| dvs           |         |
 ** Nimbus CLI
-| Name                        | Summary                                                                                    |
-|-----------------------------+--------------------------------------------------------------------------------------------|
-| List Testbed                | =/mts/git/bin/nimbus-ctl --testbed list=                                                   |
-| Destroy a testbed/VM        | =/mts/git/bin/nimbus-ctl --testbed kill $testbed_name=                                     |
-| Extend lease of a testbed   | =/mts/git/bin/nimbus-ctl --lease 5 --testbed extend-lease $testbed_name=                   |
-| List ip of all VMs          | =/mts/git/bin/nimbus-ctl ip=                                                               |
-| Take VM snapshot            | =NIMBUS=sc-prd-vc012 /mts/git/bin/nimbus-ctl --outputPath=$HOME screenshot denny-snapshot= |
-| Reference                   | [[https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4][CheatSheet: VMware Govmomi]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4][CheatSheet: VMware Nimbus]]                                      |
+| Name                        | Summary                                                                                                                       |
+|-----------------------------+-------------------------------------------------------------------------------------------------------------------------------|
+| List Testbed                | =/mts/git/bin/nimbus-ctl --testbed list=                                                                                      |
+| Destroy a testbed/VM        | =/mts/git/bin/nimbus-ctl --testbed kill $testbed_name=                                                                        |
+| Extend lease of a testbed   | =/mts/git/bin/nimbus-ctl --lease 5 --testbed extend-lease $testbed_name=                                                      |
+| List ip of all VMs          | =/mts/git/bin/nimbus-ctl ip=                                                                                                  |
+| Choose nimbus location      | NIMBUS_LOCATION=wdc /mts/git/bin/nimbus-ctl ip                                                                                |
+| List all snapshot           | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --testbed list-snapshot                                                                 |
+| Take snapshot for a testbed | NIMBUS=sc-prd-vc012 /mts/git/bin/nimbus-ctl --outputPath=$HOME screenshot denny-snapshot                                      |
+| Take snapshot for a testbed | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --testbed --snapshotIncludeMemory --snapshot $snapshotname create-snapshot $testbedname |
+| Revert all snapshot         | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --testbed --snapshot $snapshotname revert-snapshot $testbedname                         |
+| Reference                   | [[https://gitlab.eng.vmware.com/devtools/nimbus/nimbus][Gitlab: nimbus]]                                                                                                                |
+| Reference                   | [[https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4][CheatSheet: VMware Govmomi]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4][CheatSheet: VMware Nimbus]]                                                                         |
 ** Deploy Workload In Nimbus
 | Name                           | Summary                                                                                              |
 |--------------------------------+------------------------------------------------------------------------------------------------------|
 | Nimbus testbed spec file       | A json/ruby spec file to setup on-demand nimbus testbed.                                             |
 | List Supported VM Templates    | =/mts/git/bin/nimbus-genericdeploy --list=                                                           |
-| Deploy: 1 vcva, 2 ESX, 2 iscsi | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nimbus-A4/testbed-iscsi.rb][Sample: testbed-iscsi.rb]]                                                                             |
-| Deploy Concourse               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nimbus-A4/nimbus-testbeddeploy.md#deploy-a-concourse-instance-on-nimbus][Sample: Deploy a Concourse Instance on Nimbus]]                                                        |
 | Deploy with a spec file        | =/mts/git/bin/nimbus-testbeddeploy --testbedSpecRubyFile testbed_iscsi.rb --runName testbed-example= |
 | Deploy NSX Manager             | =/mts/git/bin/nimbus-nsxmdeploy --lease 7 --nsxBuild ob-7946221 nsxm-ob-7946221-0312=                |
 | Deploy NSX Controller          | =/mts/git/bin/nimbus-nsxcdeploy --lease 7 --nsxBuild ob-7946221 nsxc-ob-7946221-0312=                |
 | Deploy NFS with 1 mount point  | =/mts/git/bin/nimbus-nfsdeploy --disk 134217728 --mountPoint /storage-1 cbrc-nfs-128g-0502=          |
+| Deploy: 1 vcva, 2 ESX, 2 iscsi | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nimbus-A4/testbed-iscsi.rb][Sample: testbed-iscsi.rb]]                                                                             |
+| Deploy: 1 vsan                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nimbus-A4/testbed-vsan.rb][Sample: testbed-vsan.rb]]                                                                              |
+| Deploy Concourse               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nimbus-A4/nimbus-testbeddeploy.md#deploy-a-concourse-instance-on-nimbus][Sample: Deploy a Concourse Instance on Nimbus]]                                                        |
 | Reference                      | [[https://confluence.eng.vmware.com/display/DevToolsDocKB/TestbedSpec][Link: TestbedSpec]],  [[https://confluence.eng.vmware.com/display/NIMBUS/Deploy+Your+First+Nimbus+Testbed][Demo: Deploy Your First Nimbus Testbed]]                                           |
 | Reference                      | [[https://confluence.eng.vmware.com/display/AP/Logic+of+part+of+Nimbus-testbeddeploy+code][Link: Logic of part of Nimbus-testbeddeploy code]]                                                     |
 ** nimbus tools
@@ -628,8 +643,145 @@ https://gitlab.eng.vmware.com/junlongg/vdfs-build-toolchain/blob/master/ovf/setu
 * TODO Deploy LI + vROPs to Nimbus                                 :noexport:
 https://confluence.eng.vmware.com/pages/viewpage.action?pageId=159552003
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Where ./pks-dev-with-nsx-t/postboot gets executed?     :noexport:
 * TODO [#A] Use pure nimbus spec file to deploy PKS flanel env     :noexport:
+** nimbus
 /mts/git/bin/nimbus-testbeddeploy --runName "vrops-vrops1-1553506116" --testbedSpecRubyFile "/dbc/sc-dbc1216/zdenny/testbed_pks_nsxt.rb" \
    --resultsDir "/dbc/sc-dbc1216/zdenny/vcpi-nimbus/vrops-test" --umask "0" --isolated-testbed --keepVMsOnFailure --noStatsDump \
    --noSupportBundles --esxBuild "10302608" --vcvaBuild "ob-11726888" --nsx-transformersBuild "ob-11353925" \
    --context "general:nsx" --lease "7" --nimbusLocation "wdc" --arg "size_profile:medium" --arg "num-edges:4"
+** copy /dbc/sc-dbc1216/zdenny/vcpi-nimbus/vrops-test/testbedInfo.json
+** scp scripts
+** ./postboot --vrli --vrops --vrops-management --wavefront-api-url https://try.wavefront.com/api --wavefront-token c41f0c3c-dc50-4843-bbdf-7f0885ad7082 --wavefront-alert-targets user@example.com testbedInfo.json
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** ssh to jumpbox
+/mts/git/bin/nimbus-ctl ip | grep .ovfVm.0
+
+sshpass -p 'Ponies!23' ssh -o StrictHostKeyChecking=no kubo@10.161.117.177
+** TODO Understand Nimbus vms
+$testbed = proc do |*args|
+  use_vsan = false
+  use_nsx = true
+  num_edges = 1
+  size_profile = 'small'
+** TODO python issue: configure_testbed.py
+#+BEGIN_EXAMPLE
+bash-3.2$ python -m py_compile ./nsx/configure_testbed.py
+  File "./nsx/configure_testbed.py", line 256
+    name=f"{node_block.name}-deployment-no-snat",
+                                               ^
+SyntaxError: invalid syntax
+
+bash-3.2$ python3 -m py_compile ./nsx/configure_testbed.py
+bash-3.2$ echo $?
+0
+bash-3.2$ 
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+bash-3.2$ python3 --version
+Python 3.7.0
+#+END_EXAMPLE
+** TODO python issue: ImportError: No module named 'com'
+#+BEGIN_EXAMPLE
++ python3 configure_testbed.py
+Traceback (most recent call last):
+  File "configure_testbed.py", line 8, in <module>
+    from com.vmware.nsx.model_client import *
+ImportError: No module named 'com'
+#+END_EXAMPLE
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO Run postpoot manually
+** TODO In jumpbox, where /home/kubo/govc.gz gets created
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** ./pks-dev-with-nsx-t/postboot
+function setup_kubo() {
+  upload_testbedInfo 1>&2
+
+  [ -z "${DEPLOY_NSX}" ] || setup_nsx 1>&2
+  setup_gw 1>&2
+
+  download_testbed_yml 1>&2
+
+  # should be the last step
+  echo "Finished testbed deploy..." >&2
+  cat "$KUBO_HOME/testbed.yml"
+}
+
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** setup_kubo
+** setup_nsx
+** write_govc_env_file
+** write_static_env_file
+** upload_govc_scripts_gw_vm
+** upload_file 10.92.225.33 kubo 'Ponies!23' /tmp/build/f7c91fef/recipe/pks-dev-with-nsx-t/govc_env.sh /home/kubo/
+** echo 'Uploading file /tmp/build/f7c91fef/recipe/pks-dev-with-nsx-t/govc_env.sh to 10.92.225.33:/home/kubo/'
+** write_nsx_env_file
+** python3 configure_testbed.py
+** setup_gw
+** write_govc_env_file
+** write_static_env_file
+** upload_govc_scripts_gw_vm
+** upload_gw_scripts
+** sshpass -p 'Ponies!23' scp -r -o StrictHostKeyChecking=no /tmp/build/f7c91fef/recipe/pks-dev-with-nsx-t/gw/scripts kubo@10.92.225.33:/home/kubo/gw_scripts
+** upload_file 10.92.225.33 kubo 'Ponies!23' /tmp/build/f7c91fef/recipe/pks-dev-with-nsx-t/gw/static_env.sh /home/kubo/gw_scripts/static_env.sh
+** sshpass -p 'Ponies!23' scp -r -o StrictHostKeyChecking=no /tmp/build/f7c91fef/recipe/pks-dev-with-nsx-t/gw/static_env.sh kubo@10.92.225.33:/home/kubo/gw_scripts/static_env.sh
+** execute_remote_command 10.92.225.33 kubo 'Ponies!23' 'rm -rf /home/kubo/gw_scripts/nsx_env.sh'
+** execute_gw_scripts
+** execute_remote_command 10.92.225.33 kubo 'Ponies!23' 'bash /home/kubo/gw_scripts/setup.sh'
+** echo 'SETUP ENV'
+** prepare_gw
+** nsx_env_setup
+** echo PRE-INSTALL
+** download_pks_cli
+** download_uaac
+** download_bosh_cli
+** download_kubectl
+** echo INSTALL
+** echo 'Deploy Director...'
+** om -k -t 30.0.0.5 -u admin -p 'Admin!23' apply-changes --ignore-warnings
+** echo DESCRIBE
+** tee post-install.log
+** echo DONE
+* Understand Nimbus for PKS testbed                                :noexport:
+** TODO How to coordinate vms in testbed spec with nimbus vms
+| VM                                  | Summary                                                              |
+|-------------------------------------+----------------------------------------------------------------------|
+| jumper                              | http://sc-dbc1221.eng.vmware.com/nishadm/kubo-jumper/kubo-jumper.ovf |
+| nsx-controller                      |                                                                      |
+| nsx-manager                         |                                                                      |
+| nsxt edge nodes                     |                                                                      |
+|-------------------------------------+----------------------------------------------------------------------|
+| perform_postboot -> create_clusters |                                                                      |
+** nimbus vm list
+#+BEGIN_EXAMPLE
+sc-prd-vc013: zdenny-denny-anubis.esx.2                : 192.168.111.78
+sc-prd-vc013: zdenny-denny-anubis.esx.1                : 192.168.111.67
+sc-prd-vc013: zdenny-denny-anubis.esx.0                : 192.168.111.20
+sc-prd-vc013: zdenny-denny-anubis.vc.0                 : 192.168.111.79
+sc-prd-vc013: zdenny-denny-anubis.esx.3                : 192.168.111.7
+sc-prd-vc013: zdenny-denny-anubis.ovfVm.1              : 192.168.111.62
+sc-prd-vc013: zdenny-denny-anubis.ovfVm.0              : 10.160.194.71
+sc-prd-vc013: zdenny-denny-anubis.ovfVm.2              : 192.168.111.55
+sc-prd-vc013: zdenny-denny-anubis.ovfVm.3              : 192.168.111.171
+sc-prd-vc013: zdenny-denny-anubis.iscsi.0              : 192.168.111.17
+sc-prd-vc013: zdenny-vxlan-standalone-a63013526-gw     : 10.160.194.176
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.esx.0     : 192.168.111.81
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.esx.1     : 192.168.111.103
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.esx.2     : 192.168.111.80
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.esx.3     : 192.168.111.72
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.iscsi.0   : 192.168.111.125
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.ovfVm.0   : 10.161.117.177
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.ovfVm.1   : 192.168.111.56
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.ovfVm.2   : 192.168.111.19
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.ovfVm.3   : 192.168.111.171
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.ovfVm.4   : 192.168.111.172
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.ovfVm.5   : 192.168.111.173
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.ovfVm.6   : 192.168.111.174
+sc-prd-vc067: zdenny-vrops-vrops1-1553506116.vc.0      : 192.168.111.26
+sc-prd-vc067: zdenny-vxlan-standalone-30b986a24-gw     : 10.161.101.157
+#+END_EXAMPLE
+* How to check nimbus pod name and nimbus testbed name             :noexport:
