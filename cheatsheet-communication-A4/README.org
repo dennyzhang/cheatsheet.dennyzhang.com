@@ -388,3 +388,4 @@ Speak with confidence
 * TODO Lesson learned: Need to be time sensitive                   :noexport:
 * doc: ask questions in tech meeting                               :noexport:
 - Too general technical questions
+* doc: setup to fail                                               :noexport:

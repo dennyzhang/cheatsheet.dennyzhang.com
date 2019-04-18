@@ -385,6 +385,11 @@ https://www.todayshomeowner.com/
  https://www.amazon.com/s?k=door+hole+cover+plate&crid=11FTB3BCITW4D&sprefix=door+hole+%2Caps%2C191&ref=nb_sb_ss_i_1_10
  https://www.amazon.com/Sumnacon-220-degree-Peephole-Rotating-Privacy/dp/B078G71XWD/ref=sr_1_22?keywords=door+Hole+Cover&qid=1554596208&s=gateway&sr=8-22
  https://www.amazon.com/dp/B00XQBBPGS/ref=psdc_511316_t1_B00D2K33P4
+** DONE Ball Catch on a Door                                       :noexport:
+   CLOSED: [2019-04-16 Tue 10:18]
+ https://www.youtube.com/watch?v=HzX22sAF_NE
+ https://www.youtube.com/watch?v=z7ad-4RKQp4
+ https://www.amazon.com/Jiayi-Hardware-Adjustable-Invisible-Cupboard/dp/B07NSTKLV7/ref=sr_1_1_sspa?keywords=closet+door+Springs&qid=1554596391&s=gateway&sr=8-1-spons&psc=1
 * [#A] Utility Contact                                             :noexport:
 | Name                              | Contact                | Phone                                   | Website/Email/Notes                          |                                                                      |
 |-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
@@ -463,7 +468,6 @@ https://www.youtube.com/watch?v=euLQongteF4
 * TODO [#B] Sign up Kaiser account and doctor                      :noexport:
 * TODO [#B] Update geico home address: increase $164               :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* [#A] 厨房炉子的右上方burner不work了                              :noexport:
 * TODO [#A] 淋浴的龙头                                             :noexport:
 * TODO [#A] setup waste service                                    :noexport:
 * HALF [#A] contact PG&E to turn on gas service                    :noexport:
@@ -547,16 +551,11 @@ Anna
 ** 不能有两个银行
 ** single family会多一点
 ** Single 贷款: 72.6W; 70W
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO rest room door noise                                        :noexport:
 https://www.amazon.com/Prime-Line-4540-Wall-Stop-Stainless/dp/B000NCWUVC/ref=pd_sim_0_4/144-9710788-0674101?_encoding=UTF8&pd_rd_i=B000NCWUVC&pd_rd_r=c715a328-58cb-11e9-ae93-bfc8ab14b226&pd_rd_w=nHaXz&pd_rd_wg=GVg1p&pf_rd_p=90485860-83e9-4fd9-b838-b28a9b7fda30&pf_rd_r=H88CN48PDGT12SQ251XZ&psc=1&refRID=H88CN48PDGT12SQ251XZ
 * TODO Stop Squeaky Door Hinges                                    :noexport:
 https://www.wikihow.life/Stop-Squeaky-Door-Hinges
 
-* HALF Ball Catch on a Door                                    :noexport:
-https://www.youtube.com/watch?v=HzX22sAF_NE
-https://www.youtube.com/watch?v=z7ad-4RKQp4
-https://www.amazon.com/Jiayi-Hardware-Adjustable-Invisible-Cupboard/dp/B07NSTKLV7/ref=sr_1_1_sspa?keywords=closet+door+Springs&qid=1554596391&s=gateway&sr=8-1-spons&psc=1
 * TODO [#A] 水管堵塞是否要买home warranty                          :noexport:
 https://zhuanlan.zhihu.com/p/32033320
 plumber.前段时间水管堵塞,找了handyman都没有用,只能找plumber公司,幸好有warranty,所以大部分都保险报销了,要不估计要大出血.handyman和我说看你的严重程度了,如果就是一般的堵塞,估计400,500刀.要是major pipe有问题,找市政厅来,几千刀也是少的.
@@ -575,10 +574,12 @@ https://www.youtube.com/watch?v=PTADQAyDztI
 https://www.youtube.com/watch?v=ECdXEAAIBFI
 https://www.youtube.com/watch?v=x56o59oTgx0
 https://www.youtube.com/watch?v=lyWC4DFAF1w
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Learn: http://chengyun-travel.blogspot.com/                 :noexport:
 * TODO 后院没有自动喷水                                            :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO home protection: ADT                                        :noexport:
 https://www.amazon.com/dp/B07D7Q6CHB/ref=cm_sw_r_cp_api_i_ylcQCb46CTVTT
-
+* TODO Change pg&e energy tier?                                    :noexport:
+* TODO Title of our toyota corolla                                 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* [#A] 厨房炉子的右上方burner不work了                              :noexport:

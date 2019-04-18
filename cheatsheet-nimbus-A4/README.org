@@ -1,6 +1,6 @@
 * CheatSheet: VMware Nimbus                                          :VMware:
 :PROPERTIES:
-:type:     vmware, monitoring
+:type:     vmware
 :export_file_name: cheatsheet-nimbus-A4.pdf
 :END:
 
@@ -48,7 +48,8 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Destroy a testbed/VM        | =/mts/git/bin/nimbus-ctl --testbed kill $testbed_name=                                                                        |
 | Extend lease of a testbed   | =/mts/git/bin/nimbus-ctl --lease 5 --testbed extend-lease $testbed_name=                                                      |
 | List ip of all VMs          | =/mts/git/bin/nimbus-ctl ip=                                                                                                  |
-| Choose nimbus location      | NIMBUS_LOCATION=wdc /mts/git/bin/nimbus-ctl ip                                                                                |
+| Choose nimbus location      | =NIMBUS_LOCATION=wdc /mts/git/bin/nimbus-ctl ip=                                                                              |
+| Specify userid              | USER=someusername /mts/git/bin/nimbus-ctl list                                                                                |
 | List all snapshot           | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --testbed list-snapshot                                                                 |
 | Take snapshot for a testbed | NIMBUS=sc-prd-vc012 /mts/git/bin/nimbus-ctl --outputPath=$HOME screenshot denny-snapshot                                      |
 | Take snapshot for a testbed | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --testbed --snapshotIncludeMemory --snapshot $snapshotname create-snapshot $testbedname |

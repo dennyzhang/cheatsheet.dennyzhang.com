@@ -236,3 +236,13 @@ Any vehicle with 3 or more axles or weighing more than 4,000 pounds.
 https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en
 #+END_EXAMPLE
 As Of: 9/10/2018
+* renew vehicle                                                    :noexport:
+https://www.dmv.ca.gov/portal/dmv/detail/online/vrir/vr_top2
+** When I need smoke test?
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Failed to register an account in dmv website                :noexport:
+https://www.dmv.ca.gov/portal/dmv
+* Go to DMV and change address                                     :noexport:
+https://www.dmv.ca.gov/portal/dmv/detail/online/coa/welcome
+* apply for real ID                                                :noexport:
+https://www.dmv.ca.gov/portal/dmv/detail/realid
