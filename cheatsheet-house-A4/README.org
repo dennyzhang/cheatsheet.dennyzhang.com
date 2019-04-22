@@ -18,7 +18,7 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-house-A4/cheatsheet-house-A4.pdf][cheatsheet-house-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/linux/][linux]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-house-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][Cheatsheet: Driver License]], [[https://cheatsheet.dennyzhang.com/cheatsheet-travel][Cheatsheet Travel]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-garden-A4][CheatSheet: Backyard Gardening]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-house-A4][this repo]].
 ** YouTube Channels

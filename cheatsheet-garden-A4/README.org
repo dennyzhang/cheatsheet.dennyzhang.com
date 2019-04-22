@@ -1,0 +1,121 @@
+* CheatSheet: Backyard Gardening                                       :Life:
+:PROPERTIES:
+:type:     garden
+:export_file_name: cheatsheet-garden-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-garden-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-garden-A4/cheatsheet-garden-A4.pdf][cheatsheet-garden-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-garden-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-house-A4][CheatSheet: Maintain A House In US]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-house-A4][this repo]].
+** YouTube Channels
+| Name      | Summary                                            |
+|-----------+----------------------------------------------------|
+| Reference | [[https://www.youtube.com/channel/UCfJl4Yf0MrI2RIkqnoHe8rA][YouTube: California Gardening]], [[https://www.youtube.com/channel/UCVGVbOl6F5rGF4wSYS6Y5yQ][YouTube: MIgardener]] |
+** Common Sense
+| Name              | Summary |
+|-------------------+---------|
+| Leafminer problem |         |
+** Dwarf fruit Trees
+| Name             | Summary |
+|------------------+---------|
+| Grow citrus tree |         |
+** Vegetables
+| Name        | Summary                               |
+|-------------+---------------------------------------|
+| Grow celery | Celery doesn't like too much sunshine |
+| Grow garlic |                                       |
+| Grow pepper |                                       |
+| Grow tomato |                                       |
+** More Resources
+License: Code is licenhouse under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+https://www.homeadvisor.com/
+
+https://www.todayshomeowner.com/
+
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-garden-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-garden-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-garden-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* DONE                                                             :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO garlic leaves                                               :noexport:
+https://www.youtube.com/watch?v=mL4OHN1-M3k
+* TODO Grow celery from root                                       :noexport:
+https://www.youtube.com/watch?v=H-CfJVidG7o
+https://www.youtube.com/watch?v=UkY5y63fSV8
+
+celery: don't like too much sunshine
+* TODO Grow Garlic                                                 :noexport:
+https://www.youtube.com/watch?v=9wyj1A5ZD-s
+https://www.youtube.com/watch?v=D06y-i4Pvf4
+https://www.youtube.com/watch?v=rlsnAwoltBM
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Grow Gingre                                                 :noexport:
+* TODO Grow Pineapples                                             :noexport:
+* TODO Grow Avocado from Seed                                      :noexport:
+https://www.youtube.com/watch?v=4GcF-A0zVzg
+https://www.youtube.com/watch?v=W_Vx86SCX4w
+https://www.youtube.com/watch?v=q38tw-ZQPFk
+https://www.youtube.com/watch?v=CTR1oZimeAM
+https://www.youtube.com/watch?v=VAiQ5BPMF5g
+* TODO [#A] Grow Lettuce                                           :noexport:
+https://www.youtube.com/watch?v=PTsSVQYezeM
+https://www.youtube.com/watch?v=1ywUM7Zx_MA
+
+Lettuce don't like too much heat
+* TODO Grow a Mango Tree from Seed                                 :noexport:
+https://www.youtube.com/watch?v=OoqzxjgovUg
+* TODO [#A] Grow citrus tree                                       :noexport:
+https://www.youtube.com/watch?v=aimiaZZqrQM
+https://www.youtube.com/watch?v=9PO-EnDjEfs
+
+https://homeguides.sfgate.com/long-baby-citrus-tree-produce-fruit-92698.html
+How Long Does a Baby Citrus Tree Take to Produce Fruit?
+
+Young citrus trees begin producing fruit within five years of being grafted or budded.
+
+https://www.almanac.com/plant/lemons-oranges
+
+https://www.wikihow.com/Grow-Citrus-Fruits
+* TODO Dwarf fruit Trees                                           :noexport:
