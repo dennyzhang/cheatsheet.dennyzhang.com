@@ -386,6 +386,10 @@ Speak with confidence
 - Need to coordinate in between vrops and pks core team
 
 * TODO Lesson learned: Need to be time sensitive                   :noexport:
-* doc: ask questions in tech meeting                               :noexport:
-- Too general technical questions
 * doc: setup to fail                                               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] doc: ask questions in tech meeting                     :noexport:
+- Too general technical questions
+* TODO [#A] doc: Constantly check with people, and sync up with projects and ideas they are working on :noexport:
+* DONE Please watch it at your earliest convenience.               :noexport:
+  CLOSED: [2019-04-24 Wed 10:48]

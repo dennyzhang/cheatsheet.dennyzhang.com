@@ -22,11 +22,12 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-apt-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-apt-A4][this repo]].
 ** Install packages in Debian/Ubuntu
-| Name            | Command                                               |
-|-----------------+-------------------------------------------------------|
-| Install ps      | =apt-get update= && =apt-get install -y procps=       |
-| Install ping    | =apt-get update= && =apt-get install -y iputils-ping= |
-| Install ssh/scp | =apt-get install openssh-client=                      |
+| Name                       | Command                                               |
+|----------------------------+-------------------------------------------------------|
+| Install apt-add-repository | =apt-get install software-properties-common=          |
+| Install ps                 | =apt-get update= && =apt-get install -y procps=       |
+| Install ping               | =apt-get update= && =apt-get install -y iputils-ping= |
+| Install ssh/scp            | =apt-get install openssh-client=                      |
 ** Basic
 | Name                                    | Command                                                                            |
 |-----------------------------------------+------------------------------------------------------------------------------------|
@@ -46,7 +47,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-apt-A4/issues][Issues]] or st
 ** Apt
 | Name                          | Command                                             |
 |-------------------------------+-----------------------------------------------------|
-| Update packages               | =apt update=                                        |
+| Update packages               | =apt update=, =apt update -y=                       |
 | Upgrade all existing packages | =apt upgrade=                                       |
 | Install/remove package        | =apt install curl=, =which curl=, =apt remove curl= |
 | Search package                | =apt search curl=                                   |
@@ -161,10 +162,6 @@ aptitude autoclean
 ** TODO apt-get install -f
 ** TODO dpkg -I: # List all installed packages with versions and details
 * Ubuntu apt                                                       :noexport:
-** DONE bash: apt-add-repository: command not found
-  CLOSED: [2016-05-18 Wed 15:20]
-apt-get install software-properties-common python-software-properties
-http://lifeonubuntu.com/ubuntu-missing-add-apt-repository-command/
 ** DONE sudo: add-apt-repository: command not found: sudo apt-get install software-properties-common
   CLOSED: [2015-06-07 Sun 15:23]
 https://ostechnix.wordpress.com/2013/04/29/resolve-the-error-add-apt-repository-command-not-found-in-ubuntu-12-10/

@@ -563,6 +563,8 @@ plumber.前段时间水管堵塞,找了handyman都没有用,只能找plumber公�
 http://chengyun-travel.blogspot.com/2013/02/pg.html
 https://www.pge.com/en_US/residential/rate-plans/how-rates-work/find-my-best-rate-plan.page
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Learn: http://chengyun-travel.blogspot.com/                 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] bath room: Vertical Shower Door Seal                   :noexport:
 silicone seal
 
@@ -574,12 +576,12 @@ https://www.youtube.com/watch?v=PTADQAyDztI
 https://www.youtube.com/watch?v=ECdXEAAIBFI
 https://www.youtube.com/watch?v=x56o59oTgx0
 https://www.youtube.com/watch?v=lyWC4DFAF1w
-* TODO Learn: http://chengyun-travel.blogspot.com/                 :noexport:
-* TODO 后院没有自动喷水                                            :noexport:
+* TODO Change pg&e energy tier?                                    :noexport:
+* TODO Get the Title of our toyota corolla                         :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO 厕所的水压不够
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO home protection: ADT                                        :noexport:
 https://www.amazon.com/dp/B07D7Q6CHB/ref=cm_sw_r_cp_api_i_ylcQCb46CTVTT
-* TODO Change pg&e energy tier?                                    :noexport:
-* TODO Title of our toyota corolla                                 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * [#A] 厨房炉子的右上方burner不work了                              :noexport:
+* TODO [#A] 后院没有自动喷水                                       :noexport:

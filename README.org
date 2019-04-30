@@ -392,14 +392,12 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-wordpress-A4 :noexport:
-* TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-vrops-A4 :noexport:
-* TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-wordpress-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-linux-capabilities-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-cloud-provision-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-helm-A4 :noexport:
 * TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4 :noexport:
+* TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-wordpress-A4 :noexport:
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-ibm-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-rkt-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-containerd-A4 :noexport:
@@ -528,3 +526,5 @@ nc (netcat) is def missing :)
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve govmomi cheatsheet: https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4 :noexport:
 * HALF Improve k8s kind: https://cheatsheet.dennyzhang.com/cheatsheet-kind-A4 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cheatsheet: small chat                                      :noexport:

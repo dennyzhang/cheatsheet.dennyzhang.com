@@ -26,13 +26,10 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 |-----------+----------------------------------------------------|
 | Reference | [[https://www.youtube.com/channel/UCfJl4Yf0MrI2RIkqnoHe8rA][YouTube: California Gardening]], [[https://www.youtube.com/channel/UCVGVbOl6F5rGF4wSYS6Y5yQ][YouTube: MIgardener]] |
 ** Common Sense
-| Name              | Summary |
-|-------------------+---------|
-| Leafminer problem |         |
-** Dwarf fruit Trees
-| Name             | Summary |
-|------------------+---------|
-| Grow citrus tree |         |
+| Name                | Summary |
+|---------------------+---------|
+| Watering the plants |         |
+| [[https://www.orkin.com/other/leaf-miner][Leafminer problem]]   |         |
 ** Vegetables
 | Name        | Summary                               |
 |-------------+---------------------------------------|
@@ -40,12 +37,12 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Grow garlic |                                       |
 | Grow pepper |                                       |
 | Grow tomato |                                       |
+** Dwarf fruit Trees
+| Name             | Summary |
+|------------------+---------|
+| Grow citrus tree |         |
 ** More Resources
 License: Code is licenhouse under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
-
-https://www.homeadvisor.com/
-
-https://www.todayshomeowner.com/
 
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
@@ -77,7 +74,8 @@ https://www.todayshomeowner.com/
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
-* DONE                                                             :noexport:
+* DONE note                                                        :noexport:
+  CLOSED: [2019-04-22 Mon 07:59]
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO garlic leaves                                               :noexport:
 https://www.youtube.com/watch?v=mL4OHN1-M3k
@@ -118,4 +116,16 @@ Young citrus trees begin producing fruit within five years of being grafted or b
 https://www.almanac.com/plant/lemons-oranges
 
 https://www.wikihow.com/Grow-Citrus-Fruits
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO garden cheatsheet                                           :noexport:
+https://www.youtube.com/channel/UC-PaPywUKo7dSn800KRYqDg
+
+When to plant?
+How much sun it needs?
+Special thing?
+
+How long to grow and harvest?
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Dwarf fruit Trees                                           :noexport:
+* TODO dwarf Citrus                                                :noexport:
+* dwarf tangelo minneola                                           :noexport:
