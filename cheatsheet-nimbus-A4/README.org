@@ -45,6 +45,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Name                        | Summary                                                                                                                       |
 |-----------------------------+-------------------------------------------------------------------------------------------------------------------------------|
 | List Testbed                | =/mts/git/bin/nimbus-ctl --testbed list=                                                                                      |
+| List all VMs of one testbed | =/mts/git/bin/nimbus-ctl --testbed list $testbed_name=                                                                        |
 | Destroy a testbed/VM        | =/mts/git/bin/nimbus-ctl --testbed kill $testbed_name=                                                                        |
 | Extend lease of a testbed   | =/mts/git/bin/nimbus-ctl --lease 5 --testbed extend-lease $testbed_name=                                                      |
 | List ip of all VMs          | =/mts/git/bin/nimbus-ctl ip=                                                                                                  |
@@ -53,6 +54,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | List all snapshot           | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --testbed list-snapshot                                                                 |
 | Take snapshot for a testbed | NIMBUS=sc-prd-vc012 /mts/git/bin/nimbus-ctl --outputPath=$HOME screenshot denny-snapshot                                      |
 | Take snapshot for a testbed | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --testbed --snapshotIncludeMemory --snapshot $snapshotname create-snapshot $testbedname |
+| Take snapshot for a vm      | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --snapshotIncludeMemory --snapshot $snapshotname create-snapshot $vmname                |
 | Revert all snapshot         | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --testbed --snapshot $snapshotname revert-snapshot $testbedname                         |
 | Reference                   | [[https://gitlab.eng.vmware.com/devtools/nimbus/nimbus][Gitlab: nimbus]]                                                                                                                |
 | Reference                   | [[https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4][CheatSheet: VMware Govmomi]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4][CheatSheet: VMware Nimbus]]                                                                         |
@@ -786,3 +788,4 @@ sc-prd-vc067: zdenny-vrops-vrops1-1553506116.vc.0      : 192.168.111.26
 sc-prd-vc067: zdenny-vxlan-standalone-30b986a24-gw     : 10.161.101.157
 #+END_EXAMPLE
 * How to check nimbus pod name and nimbus testbed name             :noexport:
+* nimbus templates: http://sc-prd-rdops-templates.eng.vmware.com/nimbus-templates/ :noexport:
