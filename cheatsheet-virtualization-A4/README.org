@@ -138,3 +138,4 @@ VMware cloud on AWS
 vSphere
 vRealize
 * TODO https://communities.vmware.com/docs/DOC-13190               :noexport:
+* TODO vCenter: "Remove from Inventory", "Delete from Disk"        :noexport:

@@ -527,4 +527,6 @@ nc (netcat) is def missing :)
 * TODO Improve govmomi cheatsheet: https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4 :noexport:
 * HALF Improve k8s kind: https://cheatsheet.dennyzhang.com/cheatsheet-kind-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO cheatsheet: small chat                                      :noexport:
+* TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-linux-security-A4 :noexport:
+* TODO [#A] cheatsheet: small chat                                 :noexport:
+* TODO [#A] Talk with people: https://cheatsheet.dennyzhang.com/cheatsheet-infra-A4 :noexport:

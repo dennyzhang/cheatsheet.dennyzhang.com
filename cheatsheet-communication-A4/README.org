@@ -393,3 +393,10 @@ Speak with confidence
 * TODO [#A] doc: Constantly check with people, and sync up with projects and ideas they are working on :noexport:
 * DONE Please watch it at your earliest convenience.               :noexport:
   CLOSED: [2019-04-24 Wed 10:48]
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO doc: avoid being negative thinking and talking              :noexport:
+* TODO doc: local notes                                            :noexport:
+** TODO doc: Listen the missing points
+** Argument to protect myself
+** Invalid discussion
+

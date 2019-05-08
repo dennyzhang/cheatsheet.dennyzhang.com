@@ -390,6 +390,8 @@ https://www.todayshomeowner.com/
  https://www.youtube.com/watch?v=HzX22sAF_NE
  https://www.youtube.com/watch?v=z7ad-4RKQp4
  https://www.amazon.com/Jiayi-Hardware-Adjustable-Invisible-Cupboard/dp/B07NSTKLV7/ref=sr_1_1_sspa?keywords=closet+door+Springs&qid=1554596391&s=gateway&sr=8-1-spons&psc=1
+** DONE water heater还有大概5年寿命                                :noexport:
+   CLOSED: [2019-05-06 Mon 09:45]
 * [#A] Utility Contact                                             :noexport:
 | Name                              | Contact                | Phone                                   | Website/Email/Notes                          |                                                                      |
 |-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
@@ -427,7 +429,6 @@ https://zhuanlan.zhihu.com/p/32033320
 * TODO 1031 Tax Exchange                                           :noexport:
 * Two kitchen drawers are not stable                               :noexport:
 * 橙子树挡着roof和neighbor了                                       :noexport:
-* water heater还有大概5年寿命                                      :noexport:
 * 一键把所有的灯关了                                          :noexport:
 * 家里有灯泡坏了                                                   :noexport:
 * 地基里面有曾经出现过小动物的痕迹（老鼠/ 松鼠）                   :noexport:
@@ -579,6 +580,7 @@ https://www.youtube.com/watch?v=lyWC4DFAF1w
 * TODO Change pg&e energy tier?                                    :noexport:
 * TODO Get the Title of our toyota corolla                         :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO toilet door is too loud
 * TODO 厕所的水压不够
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO home protection: ADT                                        :noexport:

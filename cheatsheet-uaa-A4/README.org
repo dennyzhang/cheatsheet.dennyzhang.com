@@ -21,7 +21,6 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-uaac-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-uaac-A4][this repo]].
-
 ** uaac
 | Name                          | Command                                                                                       |
 |-------------------------------+-----------------------------------------------------------------------------------------------|
@@ -36,7 +35,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-uaac-A4/issues][Issues]] or s
 | Get specific user account     | =uaac user get alana=                                                                         |
 | Get user                      | =uaac user get pks-admin=                                                                     |
 | Reference                     | [[https://cheatsheet.dennyzhang.com/cheatsheet-bosh-A4][Bosh CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tile-A4][Tile CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-uaac-A4][UAA CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-pks-A4][PKS CheatSheet]]                              |
-** UAA Concept 
+** UAA Concept
 | Name     | Command |
 |----------+---------|
 | target   |         |
@@ -278,3 +277,6 @@ curl "https://OPS-MAN-FQDN/download_root_ca_cert \
 * TODO uaac change password                                        :noexport:
 https://stackoverflow.com/questions/37225899/password-change-using-the-uaa-rest-api
 * TODO uaa workflow in pks: https://docs.vmware.com/en/VMware-Pivotal-Container-Service/1.0/vmware-pks-10/GUID-PKS10-manage-users.html :noexport:
+* TODO credhub vs UAA                                              :noexport:
+https://docs.cloudfoundry.org/credhub/
+* TODO uaa_admin_passwd expiration                                 :noexport:

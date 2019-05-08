@@ -306,3 +306,4 @@ Create least privelege on compute stack
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * Velocloud                                                        :noexport:
 * [#A] cloudhealth                                                 :noexport:
+* EULA: end user license agreement                                 :noexport:
