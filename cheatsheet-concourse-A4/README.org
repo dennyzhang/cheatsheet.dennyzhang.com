@@ -111,7 +111,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.hcom/issues][Issue
 | Does Concourse have REST API?                        | Not supported so far. [[https://github.com/concourse/concourse/issues/1122][Link: GitHub]], [[https://github.com/concourse/atc/blob/d8da97675ef4b8941ebf372dbd63f200d56da6cd/routes.go#L105-L197][Link: Concourse REST endpoints]]                             |
 | Reference                                            | [[https://github.com/starkandwayne/concourse-tutorial][concourse-tutorial]], [[https://github.com/pivotalservices/concourse-pipeline-samples][concourse-pipeline-samples]]                                                 |
 #+BEGIN_HTML
-<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
 ** fly Online Usage
 #+BEGIN_EXAMPLE
@@ -201,8 +201,8 @@ https://concoursetutorial.com/
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
-<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
-<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
 <a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
 <a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>

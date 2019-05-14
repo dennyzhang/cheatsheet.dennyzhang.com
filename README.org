@@ -27,8 +27,8 @@ See more cheatsheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 ** More Resources
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
- <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
- <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+ <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+ <a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
  <a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
  <a href="https://github.com/DennyZhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
@@ -66,7 +66,7 @@ Check it out and discuss with me. [[color:#c7254e][Remember: We Two Is Just One 
 [[github:DennyZhang][Github]]
 More Reading:
 - [[https://code.dennyzhang.com/category/life/][Category: Life]]
-* Contact CheatSheets                                         :BLOG:
+* Contact CheatSheets                                                  :BLOG:
 :PROPERTIES:
 :type:     life
 :END:
@@ -307,8 +307,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
  It's different from this:
  https://cheatsheet.dennyzhang.com/cheatsheet-find
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** TODO [#A] org-mode two talbes horizontally: https://devhints.io/bash :noexport:
- https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4
 ** TODO support emoji usage                                        :noexport:
 ** TODO ssl certificate warning: https://cheatsheet.dennyzhang.com/cheatsheet-emacs :noexport:
 ** Add most popular cheatsheet to github readme
@@ -374,6 +372,8 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO Add guideline for how people to contribute                  :noexport:
 * TODO [#A] org-mode seperator use a different one                 :noexport:
 * TODO Automatically generate picture from text                    :noexport:
+* TODO [#A] org-mode two talbes horizontally: https://devhints.io/bash :noexport:
+https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO github markdown format: https://github.com/dennyzhang/cheatsheet-knative-A4/blob/master/README.md :noexport:
 * TODO [#A] github markdown = = don't quite ": https://github.com/dennyzhang/cheatsheet-shell-A4#11-basic :noexport:
@@ -384,7 +384,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO [#A] github org-ruby fails to generate TOC: https://github.com/dennyzhang/challenges-k8s-istio :noexport:
 * TODO [#A] cheatsheet column: set the minimium width: https://github.com/dennyzhang/cheatsheet-kubernetes-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-jq-A4  :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4 :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4 :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-cron-A4 :noexport:
@@ -396,7 +395,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-linux-capabilities-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-cloud-provision-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-helm-A4 :noexport:
-* TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4 :noexport:
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-wordpress-A4 :noexport:
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-ibm-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-rkt-A4 :noexport:
@@ -427,13 +425,6 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO linux networking: Send a PR request to https://github.com/trimstray/the-book-of-secret-knowledge :noexport:
 * TODO https://zeltser.com/security-incident-survey-cheat-sheet/   :noexport:
-* TODO cheatsheet: k8s deployment solution                         :noexport:
-kubepray
-kops
-kubeadm
-terraform
-ansible
-
 * TODO publish cheatsheet: azure                                   :noexport:
 * TODO publish cheatsheet: digitalocean                            :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -452,31 +443,8 @@ ansible
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-opensource-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-operator-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-istio-A4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO ubuntu cheatsheet: apt-get install iputils-ping             :noexport:
-* TODO doc: outlook cheatsheet: share the calender: Calendar -> Oragnize -> Permission :noexport:
-https://support.office.com/en-us/article/share-an-outlook-calendar-with-other-people-353ed2c1-3ec5-449d-8c73-6931a0adab88
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO doc: shield teammate from overhelming information and obligations :noexport:
-* TODO doc: need to think fast and suggest fast                    :noexport:
-* TODO doc: choose relatively non-critical issues from a list of blocking issues :noexport:
-* TODO [#A] doc: need to decide the direction and priority; learn to give up for more :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO doc: Name your favorite tech stack. What is your favorite thing about it and what is your least favorite thing about it? :noexport:
-https://news.ycombinator.com/item?id=18955731
-
-Senior hiring:
-- Why this question is good: any dev knows that every tech decision comes with good things and terrible things. I love Python, but GIL, circular imports, shitty deployment/package management, 2.x vs 3.x nonsense all suck. If you haven't been in the trenches, you can't answer this _specifically_... you can only answer it _broadly_. And it's very apparent right away to interviewer.
-
 * TODO Blog: cheatsheet Infra industry big incidence               :noexport:
 https://github.com/hjacobs/kubernetes-failure-stories
-* TODO doc: Don't be emotional                                     :noexport:
-* TODO Doc: don't think you know everything                        :noexport:
-* TODO Send PR to concourse: https://github.com/concourse/docs     :noexport:
-https://concourse-ci.org/community.html
-
-https://github.com/dennyzhang/docs
-* TODO doc: solve problems stage by stage, and one by one. Thus the team can get focused :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO terraform cheatsheet                                        :noexport:
 * TODO [#A] Submit cheatsheet to websites                          :noexport:
@@ -486,10 +454,6 @@ https://github.com/dennyzhang/docs
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-failures-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-latex-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-image-A4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Cheatsheet: single family house maintainance                :noexport:
-* TODO no icon: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-disk-A4 :noexport:
-https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-archive-A4/README.org
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Blog: Linux CheatSheet                                      :noexport:
 * TODO ssl cheatsheet                                              :noexport:
@@ -505,8 +469,7 @@ Storage: sysdisks, daedisks, blkid, df, fdisk, smartctl, xfschk, add nfs options
 A section on for loops is helpful to folks to learn variable command outputs.
 
 nc (netcat) is def missing :)
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Check cheatsheet examples                                   :noexport:
+* TODO Role model: Check cheatsheet examples                       :noexport:
 - send PR: https://github.com/detailyang/awesome-cheatsheet
 - latex: https://github.com/duttashi/cheatsheets
 - Start a website: https://github.com/justjavac/cheatsheets
@@ -518,8 +481,6 @@ nc (netcat) is def missing :)
 - https://github.com/yuriyzubarev/aws-cheatsheets
 - https://github.com/DmitriyLanchakov/cheatsheets.pdf
 - https://github.com/vaputa/awesome-cheatsheet
-* TODO change openshift from cheatsheet to git repo                :noexport:
-* TODO Create my own signature for cheatsheet.dennyzhang.com website :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-doc-A4 :noexport:
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-clusterapi-A4 :noexport:
@@ -528,5 +489,44 @@ nc (netcat) is def missing :)
 * HALF Improve k8s kind: https://cheatsheet.dennyzhang.com/cheatsheet-kind-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-linux-security-A4 :noexport:
-* TODO [#A] cheatsheet: small chat                                 :noexport:
 * TODO [#A] Talk with people: https://cheatsheet.dennyzhang.com/cheatsheet-infra-A4 :noexport:
+* TODO Add https://cheatsheet.dennyzhang.com/cheatsheet-portworx-A4 :noexport:
+* TODO [#A] cheatsheet: small chat                                 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Send PR to PKS                                              :noexport:
+* TODO Send PR to bosh                                             :noexport:
+* TODO Send PR to concourse: https://github.com/concourse/docs     :noexport:
+https://concourse-ci.org/community.html
+
+https://github.com/dennyzhang/docs
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4 :noexport:
+* HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-jq-A4  :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cheatsheet use case: Support Validation                     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO change openshift from cheatsheet to git repo                :noexport:
+* TODO Create my own signature for cheatsheet.dennyzhang.com website :noexport:
+* TODO [#A] Add icon for cheatsheet.dennyzhang.com                 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cheatsheet: k8s deployment solution                         :noexport:
+kubepray
+kops
+kubeadm
+terraform
+ansible
+
+* TODO doc: outlook cheatsheet: share the calender: Calendar -> Oragnize -> Permission :noexport:
+https://support.office.com/en-us/article/share-an-outlook-calendar-with-other-people-353ed2c1-3ec5-449d-8c73-6931a0adab88
+* TODO doc: choose relatively non-critical issues from a list of blocking issues :noexport:
+* TODO doc: Name your favorite tech stack. What is your favorite thing about it and what is your least favorite thing about it? :noexport:
+https://news.ycombinator.com/item?id=18955731
+
+Senior hiring:
+- Why this question is good: any dev knows that every tech decision comes with good things and terrible things. I love Python, but GIL, circular imports, shitty deployment/package management, 2.x vs 3.x nonsense all suck. If you haven't been in the trenches, you can't answer this _specifically_... you can only answer it _broadly_. And it's very apparent right away to interviewer.
+
+* TODO doc: solve problems stage by stage, and one by one. Thus the team can get focused :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO doc: shield teammate from overhelming information and obligations :noexport:
+* TODO doc: need to think fast and suggest fast                    :noexport:
+* TODO [#A] doc: need to decide the direction and priority; learn to give up for more :noexport:

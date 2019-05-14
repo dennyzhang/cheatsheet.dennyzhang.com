@@ -25,11 +25,13 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Name      | Summary                                            |
 |-----------+----------------------------------------------------|
 | Reference | [[https://www.youtube.com/channel/UCfJl4Yf0MrI2RIkqnoHe8rA][YouTube: California Gardening]], [[https://www.youtube.com/channel/UCVGVbOl6F5rGF4wSYS6Y5yQ][YouTube: MIgardener]] |
-** Common Sense
-| Name                | Summary |
-|---------------------+---------|
-| Watering the plants |         |
-| [[https://www.orkin.com/other/leaf-miner][Leafminer problem]]   |         |
+** Dwarf Fruit Trees
+| Name                   | Summary |
+|------------------------+---------|
+| [[https://www.youtube.com/watch?v=aimiaZZqrQM][Citrus tree]]            |         |
+| [[https://www.youtube.com/watch?v=j_h_OwYLJgo][dwarf tangelo minneola]] |         |
+| [[https://www.youtube.com/watch?v=y89vNwbb_Nk][Kadota fig tree]]        |         |
+| [[https://www.youtube.com/watch?v=8YZtcvNQylI][Loquat]]                 |         |
 ** Vegetables
 | Name        | Summary                               |
 |-------------+---------------------------------------|
@@ -37,17 +39,21 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Grow garlic |                                       |
 | Grow pepper |                                       |
 | Grow tomato |                                       |
-** Dwarf fruit Trees
-| Name             | Summary |
-|------------------+---------|
-| Grow citrus tree |         |
+** Common Sense
+| Name                         | Summary |
+|------------------------------+---------|
+| Watering the plants          |         |
+| [[https://www.orkin.com/other/leaf-miner][Leafminer problem]]            |         |
+| When to plant                |         |
+| How much sun it needs        |         |
+| How long to grow and harvest |         |
 ** More Resources
 License: Code is licenhouse under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
 #+BEGIN_HTML
-<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
-<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
@@ -125,7 +131,9 @@ How much sun it needs?
 Special thing?
 
 How long to grow and harvest?
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Dwarf fruit Trees                                           :noexport:
-* TODO dwarf Citrus                                                :noexport:
-* dwarf tangelo minneola                                           :noexport:
+* TODO Kadota fig                                                  :noexport:
+Higo de Kadota
+
+Don't need a pollinator
+
+Keep moist first year, 2 x per week after
