@@ -226,79 +226,8 @@ The server encountered a temporary error and could not complete your request.
 Please try again in 30 seconds.
 #+END_EXAMPLE
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* Local Notes                                                   :noexport:
-** Mindset
-| Name                                     | Rational |
-|------------------------------------------+----------|
-| Work on the first priority things! Now!! |          |
-| Don't set the limits for yourself        |          |
-| Don't set the limits for your teammates  |          |
-** [#A] Mistakes                                                   :noexport:
-| Name                                                     | Rational                                                  |
-|----------------------------------------------------------+-----------------------------------------------------------|
-| Avoid strong negative statement directly                 | People may get offended or hurt                           |
-| Don't get people false answers, when not sure            | It damages your authority                                 |
-| Share the exact match answer. Pause, then add more       | Bring instant value and avoid confusing people            |
-| Do you really understand what the audience already know? | People may have the same thinking with slight differences |
-| Don't expect people admire your tech hobbies             | People are busy and result-driven                         |
-| Addres problems which can be easily solved later         |                                                           |
-** TODO Avoid confuse people                                       :noexport:
- #+BEGIN_EXAMPLE
- Lakshmi Gayatri [32 minutes ago]
- Pasted image at 2019-01-11, 11:31 PM
-
- Denny Zhang [11 minutes ago]
- I have in recent 1.3
-
-
- Lakshmi Gayatri [4 minutes ago]
- Thanks @Denny Zhang . I filed a bug for this. Could you fix it? I had to deploy
-
-
- Denny Zhang [3 minutes ago]
- I'm not working on this part.
-
- I just happened to notice the similar error
-
-
- Lakshmi Gayatri [3 minutes ago]
- Ok.
- #+END_EXAMPLE
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** Justify Your Value In Dicussions - Defensive
-| Name                                                         | Rational |
-|--------------------------------------------------------------+----------|
-| Add key observations people have overlooked                  |          |
-| Ask good questions to drive conversation to the deeper level |          |
-** Lead an engineering team
-| Name                                              | Summary                                                             |
-|---------------------------------------------------+---------------------------------------------------------------------|
-| Trust people                                      |                                                                     |
-| Coach junior members for the overview tasks       |                                                                     |
-|---------------------------------------------------+---------------------------------------------------------------------|
-| Be resonable                                      | You can't be too greedy; Ask people for impossible missions         |
-| Be open                                           | Avoid misunderstanding and false guessings                          |
-| Wrong goal: clear goal                            | hurt people, and won't benefit you                                  |
-| Avoid being greedy                                |                                                                     |
-|---------------------------------------------------+---------------------------------------------------------------------|
-| Instead of giving instructions, show problems     | Need people to think and understand, or even bring better solutions |
-|---------------------------------------------------+---------------------------------------------------------------------|
-| Don't buddy co-workers                            | Set the boundary for future tough conversations                     |
-| Avoid being blocked by other teams                | Need to identify the alternatives                                   |
-| Avoid last minute changes                         |                                                                     |
-| Risk management: always has a plan B              |                                                                     |
-| Avoid your engineering following useless workflow |                                                                     |
-** [#A] Common Dilemas                                             :noexport:
-| Name                                                 | Summary                                                 |
-|------------------------------------------------------+---------------------------------------------------------|
-| I don't want to write down very clear tech documents |                                                         |
-| I don't want to give earlier feedback loop           |                                                         |
-| People may not know the truth at a deep level        |                                                         |
-| Extra wrappers + poor documents confuse people       |                                                         |
-| You need to explain your value in their languages    | Sometimes the statement they believe may not make sense |
 * TODO within our scope vs out of our scope                        :noexport:
 * TODO Avoid arguing with non-important things                     :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO What you should avoid doing as a team lead?                 :noexport:
 * TODO Think ahead for questions that different roles would ask    :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -391,8 +320,7 @@ Speak with confidence
 - Too general technical questions
 * TODO [#A] doc: Constantly check with people, and sync up with projects and ideas they are working on :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO doc: avoid being negative thinking and talking              :noexport:
-* TODO doc: local notes                                            :noexport:
+* TODO [#A] doc: local notes                                       :noexport:
 ** TODO doc: Listen the missing points
 ** Argument to protect myself
 ** Invalid discussion
@@ -418,12 +346,95 @@ Speak with confidence
 
 - 不要在一些无关紧要的地方去为难别人或队友
 - 错位生长：团队不同role要有自己的成长空间
-* TODO Give constant status update                                 :noexport:
-* TODO Try something ahead, then discussing                        :noexport:
-* TODO doc: add technical complication for the problems            :noexport:
-* TODO doc: cross-team communication                               :noexport:
-** Do we really need bi-weelky status meeting?
-** file tickets to track status
-** check status: vrops?
-* TODO doc: Don't be emotional                                     :noexport:
-* TODO Doc: don't think you know everything                        :noexport:
+** TODO doc: avoid being negative thinking and talking              :noexport:
+** TODO Give constant status update                                 :noexport:
+** TODO Try something ahead, then discussing                        :noexport:
+** TODO doc: add technical complication for the problems            :noexport:
+** TODO doc: cross-team communication                               :noexport:
+*** Do we really need bi-weelky status meeting?
+*** file tickets to track status
+*** check status: vrops?
+** TODO doc: Don't be emotional                                     :noexport:
+** TODO Doc: don't think you know everything                        :noexport:
+** TODO doc: shield teammate from overhelming information and obligations :noexport:
+** TODO doc: need to think fast and suggest fast                    :noexport:
+** TODO [#A] doc: need to decide the direction and priority; learn to give up for more :noexport:
+** TODO doc: outlook cheatsheet: share the calender: Calendar -> Oragnize -> Permission :noexport:
+https://support.office.com/en-us/article/share-an-outlook-calendar-with-other-people-353ed2c1-3ec5-449d-8c73-6931a0adab88
+** TODO doc: choose relatively non-critical issues from a list of blocking issues :noexport:
+** TODO doc: Name your favorite tech stack. What is your favorite thing about it and what is your least favorite thing about it? :noexport:
+https://news.ycombinator.com/item?id=18955731
+
+Senior hiring:
+- Why this question is good: any dev knows that every tech decision comes with good things and terrible things. I love Python, but GIL, circular imports, shitty deployment/package management, 2.x vs 3.x nonsense all suck. If you haven't been in the trenches, you can't answer this _specifically_... you can only answer it _broadly_. And it's very apparent right away to interviewer.
+
+** TODO doc: solve problems stage by stage, and one by one. Thus the team can get focused :noexport:
+** Mindset
+| Name                                     | Rational |
+|------------------------------------------+----------|
+| Work on the first priority things! Now!! |          |
+| Don't set the limits for yourself        |          |
+| Don't set the limits for your teammates  |          |
+** [#A] Mistakes                                                   :noexport:
+| Name                                                     | Rational                                                  |
+|----------------------------------------------------------+-----------------------------------------------------------|
+| Avoid strong negative statement directly                 | People may get offended or hurt                           |
+| Don't get people false answers, when not sure            | It damages your authority                                 |
+| Share the exact match answer. Pause, then add more       | Bring instant value and avoid confusing people            |
+| Do you really understand what the audience already know? | People may have the same thinking with slight differences |
+| Don't expect people admire your tech hobbies             | People are busy and result-driven                         |
+| Addres problems which can be easily solved later         |                                                           |
+** TODO Avoid confuse people                                       :noexport:
+ #+BEGIN_EXAMPLE
+ Lakshmi Gayatri [32 minutes ago]
+ Pasted image at 2019-01-11, 11:31 PM
+
+ Denny Zhang [11 minutes ago]
+ I have in recent 1.3
+
+
+ Lakshmi Gayatri [4 minutes ago]
+ Thanks @Denny Zhang . I filed a bug for this. Could you fix it? I had to deploy
+
+
+ Denny Zhang [3 minutes ago]
+ I'm not working on this part.
+
+ I just happened to notice the similar error
+
+
+ Lakshmi Gayatri [3 minutes ago]
+ Ok.
+ #+END_EXAMPLE
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** Justify Your Value In Dicussions - Defensive
+| Name                                                         | Rational |
+|--------------------------------------------------------------+----------|
+| Add key observations people have overlooked                  |          |
+| Ask good questions to drive conversation to the deeper level |          |
+** Lead an engineering team
+| Name                                              | Summary                                                             |
+|---------------------------------------------------+---------------------------------------------------------------------|
+| Trust people                                      |                                                                     |
+| Coach junior members for the overview tasks       |                                                                     |
+|---------------------------------------------------+---------------------------------------------------------------------|
+| Be resonable                                      | You can't be too greedy; Ask people for impossible missions         |
+| Be open                                           | Avoid misunderstanding and false guessings                          |
+| Wrong goal: clear goal                            | hurt people, and won't benefit you                                  |
+| Avoid being greedy                                |                                                                     |
+|---------------------------------------------------+---------------------------------------------------------------------|
+| Instead of giving instructions, show problems     | Need people to think and understand, or even bring better solutions |
+|---------------------------------------------------+---------------------------------------------------------------------|
+| Don't buddy co-workers                            | Set the boundary for future tough conversations                     |
+| Avoid being blocked by other teams                | Need to identify the alternatives                                   |
+| Avoid last minute changes                         |                                                                     |
+| Risk management: always has a plan B              |                                                                     |
+| Avoid your engineering following useless workflow |                                                                     |
+** [#A] Common Dilemas                                             :noexport:
+| Name                                                 | Summary                                                 |
+|------------------------------------------------------+---------------------------------------------------------|
+| I don't want to write down very clear tech documents |                                                         |
+| I don't want to give earlier feedback loop           |                                                         |
+| People may not know the truth at a deep level        |                                                         |
+| Extra wrappers + poor documents confuse people       |                                                         |
+| You need to explain your value in their languages    | Sometimes the statement they believe may not make sense |

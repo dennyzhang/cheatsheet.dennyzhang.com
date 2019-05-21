@@ -203,29 +203,6 @@ https://cheatsheet.dennyzhang.com/cheatsheet-concourse-a4
 ** TODO mongodb: https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-a4
 ** TODO wavefront: https://cheatsheet.dennyzhang.com/cheatsheet-wavefront-a4
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] blog post: avoid open a new link             :noexport:IMPORTANT:
-* TODO convert page into github repos                              :noexport:
-** https://cheatsheet.dennyzhang.com/cheatsheet-sed-A4
-** https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] cheatsheet.dennyzhang.com                              :noexport:
-** TODO align icon horizontally in blog: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
-https://cheatsheet.dennyzhang.com/contact
-https://code.dennyzhang.com/contact
-** TODO featured image: the same height
-** [#A] similar websites: dash                                    :IMPORTANT:
-https://kapeli.com/cheatsheets
-** similar websites: 
-https://www.cheatsheet.com/
-https://www.mediaatelier.com/CheatSheet/
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** TODO cheatsheet: tail the sns: http://cheatsheet.dennyzhang.com/cheatsheet-knative/
-** TODO link back to original website, instead of a common website
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** HALF file link doesn't look nice: http://cheatsheet.dennyzhang.com/cheatsheet-golang/
-** TODO How people can contribute?
-** Discussion
-*** TODO make the font bigger
 * HALF [#A] Generate cheatsheet PDF A4                             :noexport:
 ** TODO [#A] Line too long: line wrap, without truncation
 ** Add site url, version, logo
@@ -271,6 +248,25 @@ https://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
    command-execute(org-export-dispatch)
  #+END_EXAMPLE
 ** TODO generate A4 pdf: https://github.com/PrateekKumarSingh/CheatSheets :noexport:
+* TODO [#A] blog post: avoid open a new link             :noexport:IMPORTANT:
+* TODO [#A] cheatsheet.dennyzhang.com                              :noexport:
+** TODO align icon horizontally in blog: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
+https://cheatsheet.dennyzhang.com/contact
+https://code.dennyzhang.com/contact
+** TODO featured image: the same height
+** [#A] similar websites: dash                                    :IMPORTANT:
+https://kapeli.com/cheatsheets
+** similar websites: 
+https://www.cheatsheet.com/
+https://www.mediaatelier.com/CheatSheet/
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO cheatsheet: tail the sns: http://cheatsheet.dennyzhang.com/cheatsheet-knative/
+** TODO link back to original website, instead of a common website
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** HALF file link doesn't look nice: http://cheatsheet.dennyzhang.com/cheatsheet-golang/
+** TODO How people can contribute?
+** Discussion
+*** TODO make the font bigger
 * TODO [#A] Role model                                             :noexport:
 ** DONE https://jeffdecola.github.io/my-cheat-sheets/
    CLOSED: [2019-02-09 Sat 22:50]
@@ -369,20 +365,21 @@ https://github.com/WebpageFX/emoji-cheat-sheet.com
 ** TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
 * TODO [#B] Should fail the pdf generating job when some lines are truncated :noexport:
 * TODO [#A] Build internal links                                   :noexport:
-* TODO Add guideline for how people to contribute                  :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] org-mode seperator use a different one                 :noexport:
-* TODO Automatically generate picture from text                    :noexport:
 * TODO [#A] org-mode two talbes horizontally: https://devhints.io/bash :noexport:
 https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO github markdown format: https://github.com/dennyzhang/cheatsheet-knative-A4/blob/master/README.md :noexport:
 * TODO [#A] github markdown = = don't quite ": https://github.com/dennyzhang/cheatsheet-shell-A4#11-basic :noexport:
 * TODO [#A] blog link: avoid going to an external link: [[url-external: doesn't work for org-ruby: https://cheatsheet.dennyzhang.com/cheatsheet-git :noexport:
 
 * TODO [#A] generate TOC: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-a4 :noexport:
-* TODO github: try to fold things: https://github.com/LeCoupa/awesome-cheatsheets :noexport:
 * TODO [#A] github org-ruby fails to generate TOC: https://github.com/dennyzhang/challenges-k8s-istio :noexport:
 * TODO [#A] cheatsheet column: set the minimium width: https://github.com/dennyzhang/cheatsheet-kubernetes-A4 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Add guideline for how people to contribute                  :noexport:
+* TODO Automatically generate picture from text                    :noexport:
+* TODO github markdown format: https://github.com/dennyzhang/cheatsheet-knative-A4/blob/master/README.md :noexport:
+* TODO github: try to fold things: https://github.com/LeCoupa/awesome-cheatsheets :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-pack-A4 :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4 :noexport:
@@ -390,7 +387,6 @@ https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-apt-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-visa-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-iptables-A4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-linux-capabilities-A4 :noexport:
 * TODO Improve https://cheatsheet.dennyzhang.com/cheatsheet-cloud-provision-A4 :noexport:
@@ -400,10 +396,7 @@ https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-rkt-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-containerd-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] Create my own cheatsheet.dennyzhang.com link, instead of the general one :noexport:
-
 * TODO [#A] Improve: update health cheatsheet: /Users/mac/Dropbox/org_data/life/life.org :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO markdown: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO [#A] apparmor: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
 * TODO asciiart: /Users/zdenny/git_code/kubernets_community/cheat/cheat/cheatsheets/ :noexport:
@@ -455,7 +448,6 @@ https://github.com/hjacobs/kubernetes-failure-stories
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-latex-A4 :noexport:
 * TODO improve: https://cheatsheet.dennyzhang.com/cheatsheet-image-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Blog: Linux CheatSheet                                      :noexport:
 * TODO ssl cheatsheet                                              :noexport:
 sslscan or openssl
 
@@ -484,29 +476,17 @@ nc (netcat) is def missing :)
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-doc-A4 :noexport:
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-clusterapi-A4 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve govmomi cheatsheet: https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4 :noexport:
 * HALF Improve k8s kind: https://cheatsheet.dennyzhang.com/cheatsheet-kind-A4 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Improve: https://cheatsheet.dennyzhang.com/cheatsheet-linux-security-A4 :noexport:
 * TODO [#A] Talk with people: https://cheatsheet.dennyzhang.com/cheatsheet-infra-A4 :noexport:
 * TODO Add https://cheatsheet.dennyzhang.com/cheatsheet-portworx-A4 :noexport:
-* TODO [#A] cheatsheet: small chat                                 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Send PR to PKS                                              :noexport:
-* TODO Send PR to bosh                                             :noexport:
-* TODO Send PR to concourse: https://github.com/concourse/docs     :noexport:
-https://concourse-ci.org/community.html
-
-https://github.com/dennyzhang/docs
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Improve https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4 :noexport:
 * HALF Improve https://cheatsheet.dennyzhang.com/cheatsheet-jq-A4  :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO cheatsheet use case: Support Validation                     :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO change openshift from cheatsheet to git repo                :noexport:
-* TODO Create my own signature for cheatsheet.dennyzhang.com website :noexport:
 * TODO [#A] Add icon for cheatsheet.dennyzhang.com                 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO cheatsheet: k8s deployment solution                         :noexport:
@@ -516,17 +496,31 @@ kubeadm
 terraform
 ansible
 
-* TODO doc: outlook cheatsheet: share the calender: Calendar -> Oragnize -> Permission :noexport:
-https://support.office.com/en-us/article/share-an-outlook-calendar-with-other-people-353ed2c1-3ec5-449d-8c73-6931a0adab88
-* TODO doc: choose relatively non-critical issues from a list of blocking issues :noexport:
-* TODO doc: Name your favorite tech stack. What is your favorite thing about it and what is your least favorite thing about it? :noexport:
-https://news.ycombinator.com/item?id=18955731
-
-Senior hiring:
-- Why this question is good: any dev knows that every tech decision comes with good things and terrible things. I love Python, but GIL, circular imports, shitty deployment/package management, 2.x vs 3.x nonsense all suck. If you haven't been in the trenches, you can't answer this _specifically_... you can only answer it _broadly_. And it's very apparent right away to interviewer.
-
-* TODO doc: solve problems stage by stage, and one by one. Thus the team can get focused :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO doc: shield teammate from overhelming information and obligations :noexport:
-* TODO doc: need to think fast and suggest fast                    :noexport:
-* TODO [#A] doc: need to decide the direction and priority; learn to give up for more :noexport:
+* TODO Send PR to PKS                                              :noexport:
+* TODO Send PR to bosh                                             :noexport:
+* TODO Send PR to concourse: https://github.com/concourse/docs     :noexport:
+https://concourse-ci.org/community.html
+
+https://github.com/dennyzhang/docs
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Recommend books for each cheatsheet                    :noexport:
+* TODO Blog: Linux CheatSheet                                      :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Create my own signature for cheatsheet.dennyzhang.com website :noexport:
+* TODO [#A] Create my own cheatsheet.dennyzhang.com link, instead of the general one :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Cheatsheet: regrexp                                         :noexport:
+https://regexr.com/
+* TODO Infra unicorn startup                                       :noexport:
+https://en.wikipedia.org/wiki/List_of_unicorn_startup_companies
+https://www.cbinsights.com/research-unicorn-companies
+https://www.gfmag.com/global-data/economic-data/largest-companies
+** TODO https://www.cbinsights.com/company/stripe
+** TODO https://www.cbinsights.com/company/juul-labs
+* TODO [#A] cheatsheet: small chat                                 :noexport:
+* TODO Cheatsheet: to be a good tech lead                          :noexport:
+* TODO Cheatsheet: IT project owner                                :noexport:
+* TODO website link: don't link to untrusted external websites     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Cheatsheet: yaml                                            :noexport:

@@ -25,13 +25,25 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Name      | Summary                                            |
 |-----------+----------------------------------------------------|
 | Reference | [[https://www.youtube.com/channel/UCfJl4Yf0MrI2RIkqnoHe8rA][YouTube: California Gardening]], [[https://www.youtube.com/channel/UCVGVbOl6F5rGF4wSYS6Y5yQ][YouTube: MIgardener]] |
+| Reference | [[https://www.youtube.com/channel/UC-PaPywUKo7dSn800KRYqDg][YouTube: DIY Home and Garden]]                       |
+** Common Sense
+| Name                         | Summary                                       |
+|------------------------------+-----------------------------------------------|
+| Cold and heat zones          | [[https://www.gardengatemagazine.com/articles/flowers-plants/all/cold-and-heat-zones/][Link: Garden Gate]], [[https://garden.org/nga/zipzone/index.php][USDA Hardiness Zone Finder]] |
+| When to plan                 | [[https://www.burpee.com/][Link: Burpee]]                                  |
+| Watering the plants          |                                               |
+| [[https://www.orkin.com/other/leaf-miner][Leafminer problem]]            |                                               |
+| When to plant                |                                               |
+| How much sun it needs        |                                               |
+| How long to grow and harvest |                                               |
 ** Dwarf Fruit Trees
-| Name                   | Summary |
-|------------------------+---------|
-| [[https://www.youtube.com/watch?v=aimiaZZqrQM][Citrus tree]]            |         |
-| [[https://www.youtube.com/watch?v=j_h_OwYLJgo][dwarf tangelo minneola]] |         |
-| [[https://www.youtube.com/watch?v=y89vNwbb_Nk][Kadota fig tree]]        |         |
-| [[https://www.youtube.com/watch?v=8YZtcvNQylI][Loquat]]                 |         |
+| Name                   | Ripen         | When to plan | Sunshine requirement | Summary |
+|------------------------+---------------+--------------+----------------------+---------|
+| [[https://www.youtube.com/watch?v=aimiaZZqrQM][Citrus tree]]            |               |              |                      |         |
+| [[https://www.youtube.com/watch?v=j_h_OwYLJgo][dwarf tangelo minneola]] |               |              |                      |         |
+| [[https://www.youtube.com/watch?v=y89vNwbb_Nk][Kadota fig tree]]        |               |              |                      |         |
+| [[https://www.youtube.com/watch?v=8YZtcvNQylI][Loquat - Big Jim]]       | March - April |              |                      |         |
+| Asian Pear             |               |              |                      |         |
 ** Vegetables
 | Name        | Summary                               |
 |-------------+---------------------------------------|
@@ -39,14 +51,6 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Grow garlic |                                       |
 | Grow pepper |                                       |
 | Grow tomato |                                       |
-** Common Sense
-| Name                         | Summary |
-|------------------------------+---------|
-| Watering the plants          |         |
-| [[https://www.orkin.com/other/leaf-miner][Leafminer problem]]            |         |
-| When to plant                |         |
-| How much sun it needs        |         |
-| How long to grow and harvest |         |
 ** More Resources
 License: Code is licenhouse under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -80,21 +84,30 @@ License: Code is licenhouse under [[https://www.dennyzhang.com/wp-content/mit_li
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
-* DONE note                                                        :noexport:
-  CLOSED: [2019-04-22 Mon 07:59]
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO garlic leaves                                               :noexport:
+* TODO Grow Garlic                                                 :noexport:
+https://www.youtube.com/watch?v=9wyj1A5ZD-s
+https://www.youtube.com/watch?v=D06y-i4Pvf4
+https://www.youtube.com/watch?v=rlsnAwoltBM
 https://www.youtube.com/watch?v=mL4OHN1-M3k
 * TODO Grow celery from root                                       :noexport:
 https://www.youtube.com/watch?v=H-CfJVidG7o
 https://www.youtube.com/watch?v=UkY5y63fSV8
 
 celery: don't like too much sunshine
-* TODO Grow Garlic                                                 :noexport:
-https://www.youtube.com/watch?v=9wyj1A5ZD-s
-https://www.youtube.com/watch?v=D06y-i4Pvf4
-https://www.youtube.com/watch?v=rlsnAwoltBM
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Grow citrus tree                                       :noexport:
+https://www.youtube.com/watch?v=aimiaZZqrQM
+https://www.youtube.com/watch?v=9PO-EnDjEfs
+
+https://homeguides.sfgate.com/long-baby-citrus-tree-produce-fruit-92698.html
+How Long Does a Baby Citrus Tree Take to Produce Fruit?
+
+Young citrus trees begin producing fruit within five years of being grafted or budded.
+
+https://www.almanac.com/plant/lemons-oranges
+
+https://www.wikihow.com/Grow-Citrus-Fruits
 * TODO Grow Gingre                                                 :noexport:
 * TODO Grow Pineapples                                             :noexport:
 * TODO Grow Avocado from Seed                                      :noexport:
@@ -110,30 +123,125 @@ https://www.youtube.com/watch?v=1ywUM7Zx_MA
 Lettuce don't like too much heat
 * TODO Grow a Mango Tree from Seed                                 :noexport:
 https://www.youtube.com/watch?v=OoqzxjgovUg
-* TODO [#A] Grow citrus tree                                       :noexport:
-https://www.youtube.com/watch?v=aimiaZZqrQM
-https://www.youtube.com/watch?v=9PO-EnDjEfs
-
-https://homeguides.sfgate.com/long-baby-citrus-tree-produce-fruit-92698.html
-How Long Does a Baby Citrus Tree Take to Produce Fruit?
-
-Young citrus trees begin producing fruit within five years of being grafted or budded.
-
-https://www.almanac.com/plant/lemons-oranges
-
-https://www.wikihow.com/Grow-Citrus-Fruits
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO garden cheatsheet                                           :noexport:
-https://www.youtube.com/channel/UC-PaPywUKo7dSn800KRYqDg
+* TODO websites: mitbbs 拈花惹草: https://www.mitbbs.com/bbsdoc/gardening.html :noexport:
+* TODO websites: https://www.gardengatemagazine.com/               :noexport:
+* TODO websites: https://www.burpee.com/                           :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Kadota fig: 盆栽黄无花果                                    :noexport:
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280055542j0/M.1426970346_2.d0/%5B%E5%90%88%E9%9B%86%5D+%E3%80%90%E5%B0%8F%E6%9E%9C%E6%A0%91%E3%80%91+%E6%88%91%E7%9A%84%E6%97%A0%E8%8A%B1%E6%9E%9C%E6%A0%91%2C+%E5%92%8C%E4%BD%A0%E7%9A%84
 
-When to plant?
-How much sun it needs?
-Special thing?
-
-How long to grow and harvest?
-* TODO Kadota fig                                                  :noexport:
 Higo de Kadota
 
 Don't need a pollinator
 
 Keep moist first year, 2 x per week after
+
+* TODO asian pear                                                  :noexport:
+Nijisseiki, Apple Pear
+
+juicy, sweet, mild flavored fruit is crisp like apple. Early to mid-st in Central CA.
+
+Easy to grow, heavy bearing small tree. 300-400 hours. Self-fruitful or pollenized by Shinseiki, Bartlett, or other
+
+Heavy-bearing tree is relatively small (15-20 ft). Fro easy care and harvest, it may be kept under 10 ft by summer pruning
+* TODO Big Jim Loquat                                              :noexport:
+
+plant in full sun. The average size of this tree is approximately 15' with a spread of 10'.
+
+www.davewilson.com
+* TODO jujube                                                      :noexport:
+* TODO 台湾芭乐                                                    :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] common sense                                           :noexport:
+种果树两大要诀:  1. 慎选品种, 2. 控制树高
+
+每年1月下旬到2月上旬是湾区果树剪枝的最佳季节。
+
+可加2-3寸的mulch保湿
+
+第一年对树来讲最关键的是“保命”。来日方长 -- “有树不愁长”。
+但是为什么种深了就不好呢？ 估计是树没法“呼吸”了。树的根部也要氧气的，所以不能老泡水里面。
+
+Plant 'em high, they'll never die. Plant 'em low, they'll never grow
+
+盆子不一定要大，比树根球大一圈就行吧。我买的树苗说明书上说盆太大了树根反而容易生病。
+
+一个基本原理是:不追求开花结果的菜在阳光不足的情况下都能长,能有收获,但是绝大多数蔬菜都是在阳光下长得更好. （间言之,喜光耐荫）.
+
+种子发芽的必需条件是水,空气和温度(在种子里储存的养分足够发芽用),所以湿纸巾催芽的时候不能泡在水里(没有空气),也不能让纸巾干,不同的种子发芽的最适宜温度不同,可以降温或增温促进发芽.
+
+新农,最想知道什么季节下什么种子？并希望老农提醒我们:哪些是比较难伺候的,新农绕道.
+
+我最最关心的就是务农时间的问题.什么时候育苗,什么时候移栽,什么时候施肥,什么时候管理...
+
+怎么样育苗？什么时间适合于什么苗？这个跟时区相关,跟不同的苗也细细相关
+
+新农有问题:如何让土地肥沃？
+
+话说农民种地都要起陇.有的菜种在陇上,有的种在陇沟.还有的菜就平铺在地里一大片.问题是什么样的菜种陇上 ,什么种陇沟,什么适合一大片? 还有就是种陇上的浇水是浇在陇沟里还是直接浇在植物上?
+* TODO vegeatable: https://www.mitbbs.com/bbsdoc3/entertainment.faq/gardening/D1304566212230/5 :noexport:
+* TODO idiotoms                                                    :noexport:
+raised bed
+compost根本不是土,就是垃圾堆的:(不能种菜)
+direct sow: 直接埋土里直播
+indoor sow: 室内育苗
+transplant:从苗移植
+
+drip irrigation system
+grub worm
+* TODO 买菜或树苗的网站                                            :noexport:
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13305303912T0/M.1340393195_2.w0/%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%E4%B9%B0%E8%8F%9C%E7%B1%BD%E3%80%81%E8%8B%97%E6%9C%A8%E7%9A%84%E7%BD%91%E7%AB%99%2A%2A%2A%2A%2A%2A%2A%2A
+https://www.logees.com/
+* TODO 土地肥料: https://www.mitbbs.com/bbsdoc3/entertainment.faq/gardening/D1320956508210/5 :noexport:
+* TODO [#A] 果树综合: https://www.mitbbs.com/bbsdoc3/entertainment.faq/gardening/D13045662422S0/5 :noexport:
+* TODO Burgundy Plum                                               :noexport:
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280055542j0/M.1426969489_2.d0/%5B%E5%90%88%E9%9B%86%5D+%E3%80%90%E5%B0%8F%E6%9E%9C%E6%A0%91%E3%80%91+%E9%AB%98%E4%BA%A7%E7%9A%84%E6%9D%8E%E5%AD%90
+* TODO 如何打理盆栽水果 fruit                                      :noexport:
+李子是挺能结的，而且松鼠不爱吃！
+* TODO buy fruit trees                                             :noexport:
+http://ediblelandscaping.com/products/trees/PersimmonAsian/
+https://www.treesofantiquity.com/index.php?main_page=index&cPath=51
+* TODO 柿子 - Ichi Ki Kei Jiro                                     :noexport:
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1458692521_2.90/%5B%E5%90%88%E9%9B%86%EF%BC%BD%E9%BA%BB%E7%83%A6%E7%9C%8B%E7%9C%8B6B%E5%8C%BA%E4%BB%8A%E5%B9%B4%E7%9A%84%E6%9E%9C%E6%A0%91%E9%80%89%E6%8B%A9
+* TODO running bamboo                                              :noexport:
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1427315716_2.H0/%5B%E5%90%88%E9%9B%86%5D+%E6%B1%82%E6%8E%A8%E8%8D%90%E6%A1%83%E6%A0%91%E5%92%8C%E7%AB%B9%E5%AD%90
+
+竹子需要多浇水，你先把灌溉系统弄好了。
+
+话说加州大旱，我家竹子两年没有疯长新芽了。
+浇水只能维持着而已，眼看竹子越来越老，越来越稀疏。
+* TODO 白油桃                                                      :noexport:
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1427315716_2.H0/%5B%E5%90%88%E9%9B%86%5D+%E6%B1%82%E6%8E%A8%E8%8D%90%E6%A1%83%E6%A0%91%E5%92%8C%E7%AB%B9%E5%AD%90
+
+跟白桃/蟠桃一个味，还还不用削皮，盐水泡泡冲洗后就吃。皮也有种特别的美味。
+
+https://www.starkbros.com/products/fruit-trees/peach-trees/champion-white-peach
+* TODO jujubi                                                      :noexport:
+钻石枣
+* TODO 比较阴的后院，种什么果树比较好                              :noexport:
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1315019818_2.w0/%5B%E5%90%88%E9%9B%86%5D+%E6%AF%94%E8%BE%83%E9%98%B4%E7%9A%84%E5%90%8E%E9%99%A2%EF%BC%8C%E7%A7%8D%E4%BB%80%E4%B9%88%E6%9E%9C%E6%A0%91%E6%AF%94%E8%BE%83%E5%A5%BD
+* TODO website: https://www.grpg.org/                              :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO 香椿                                                        :noexport:
+* TODO 桂花枝                                                      :noexport:
+* TODO 移树                                                        :noexport:
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280046022W0/M.1319616119_2.A0/%E4%BA%BA%E6%8C%AA%E6%B4%BB%EF%BC%8C%E6%A0%91%E6%8C%AA%E6%AD%BB+%3F
+
+移种时间:
+若是常绿树, 最好在春秋天气凉快, 湿度高时移种, 傍晚为佳. 而落叶树则在冬眠时移
+种.  当然了, 高手就不在此限了.
+
+移种步骤:
+1. 移种之前三天左右浇透要移的树. 移种时以土壤微干, 根球土壤不易松裂为准.
+2. 先把新地点的洞挖好, 并混好compost, 加一点Superthrive混均匀. 不放肥料.
+3. 决定好要移种的树的根球大小. 越大越好, 以人力能handle根球及树干的重量为准.
+4. 根据所留根球的比例, 把树枝及树叶剪掉1/3 到2/3.
+5. 使用”锐利”的圆锹在树干周围切下. 如遇粗根则用利剪剪断. 尽量不要摇动树干
+或拉扯树根.
+6. 所有树根剪断後, 挖起果树. 如需长距离移运, 用布包紧根球并保湿.
+7. 到新地点後, 加土或减土, 确定种植深度正确. 把断裂树根剪掉, 种下,填土, 
+并做一小圈蓄水池.
+8. 浇水浇透, 并盖上厚mulch. 钉木棒固定主干. 常绿树的话, 前几个礼拜也可加上
+遮阳棚遮荫.
+9. 注意浇水及土壤湿度的控制.

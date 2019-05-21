@@ -66,3 +66,9 @@ There is already a content pack for BOSH and PCF - https://marketplace.vmware.co
 For all the information you need to know about content pack creation, please see - https://code.vmware.com/web/loginsight/home
 
 Reference Guide vRealize Log Insight Content Pack Publisher
+* Query VRLI with http get request                                 :noexport:
+#+BEGIN_EXAMPLE
+curl -k --header "Accept: application/json" --header "Content-Type: application/json" \
+     --header "Authorization: Bearer nVuRTW7uWxErKu8VgkBAFF2h5e4fX8ovUJ9pxANzMyK//mJGDSvP5zziAr5H5pA/7mlFcDlE2yTQEc3X4mzuysZEpynE0lI8wIp0uw2Sp+mtBxySaK1IRO2Rpmjw7lO8eA5XiJVwhx5vL6tjgC4UMBBg4Rck3aTPZ/S1axMAJhzJJrIk4lngyTH3pYdI5QkRRfUONB99YdFi1Q0rBmOQGGiIz+GR3VQnOQYyWmhU1g7U9NRYaigFDk3vNC8Tc3cYZOJwgPsAeeMpdTsp3i81fA==" \
+     "https://10.160.215.16:9543/api/v1/events/job_name/bosh-dns/bosh_deployment/service-instance_75e91626-0579-45a1-b15e-f074b7b9d2c7/timestamp/%3E0/text/CONTAINS+handlers.DiscoveryHandler+Request+%5C%5B1%5C%5D+%5C%5Bmaster-1.etcd.cfcr.internal.%5C%5D+0+250000ns"
+#+END_EXAMPLE

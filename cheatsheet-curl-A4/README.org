@@ -22,29 +22,34 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-curl-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-curl-A4][this repo]].
 
-** Curl Basic
-| Name                           | Command                                                                           |
-|--------------------------------+-----------------------------------------------------------------------------------|
-| Curl head request              | =curl -I https://www.google.com=                                                  |
-| Curl head request with verbose | =curl -v -I https://www.google.com=                                               |
-| Curl with explicit http method | =curl -X GET https://www.google.com=                                              |
-| Curl post request              | =curl -d "name=username&password=123456" <URL>=                                   |
-| Curl get request and headers   | =curl -k -v https://www.google.com=                                               |
-| Curl has no timeout by default | =curl --connect-timeout 10 -I -k https://www.google.com=                          |
-| Curl add header                | =curl --verbose --header "Host: www.mytest.com:8182" http://104.131.129.100:8080= |
-| Curl without http proxy        | =curl --noproxy 127.0.0.1 http://www.stackoverflow.com=                           |
-| Curl with credential           | =curl -u $username:$password http://repo.dennyzhang.com/README.txt=               |
-| Curl upload                    | =curl -v -F key1=value1 -F upload=@localfilename <URL>=                           |
-| Curl post send json            | =curl <URL> -H "content-type: application/json" -d "{ \"woof\": \"bark\"}"=       |
-| Get my public ip               | =curl -L -s http://ipecho.net/plain=, =curl -L -s http://whatismijnip.nl=         |
+** Curl Get/Head
+| Name                           | Command                                                              |
+|--------------------------------+----------------------------------------------------------------------|
+| Curl head request              | =curl -I https://www.google.com=                                     |
+| Curl head request with verbose | =curl -v -I https://www.google.com=                                  |
+| Curl with explicit http method | =curl -X GET https://www.google.com=                                 |
+| Curl without http proxy        | =curl --noproxy 127.0.0.1 http://www.stackoverflow.com=              |
+| Curl has no timeout by default | =curl --connect-timeout 10 -I -k https://www.google.com=             |
+| [[https://stackoverflow.com/questions/356705/how-to-send-a-header-using-a-http-request-through-a-curl-call][Curl get with extra headers]]    | =curl --verbose --header "Host: www.mytest.com:8182" www.google.com= |
+| Curl get response with headers | =curl -k -v https://www.google.com=                                  |
+
+** Curl POST
+| Name                | Command                                                                     |
+|---------------------+-----------------------------------------------------------------------------|
+| Curl post request   | =curl -d "name=username&password=123456" <URL>=                             |
+| Curl post send json | =curl <URL> -H "content-type: application/json" -d "{ \"woof\": \"bark\"}"= |
+
 ** Curl Advanced
 | Name                         | Command                                                                                     |
 |------------------------------+---------------------------------------------------------------------------------------------|
+| Get my public ip             | =curl -L -s http://ipecho.net/plain=, =curl -L -s http://whatismijnip.nl=                   |
+| Curl with credential         | =curl -u $username:$password http://repo.dennyzhang.com/README.txt=                         |
+| Curl upload                  | =curl -v -F key1=value1 -F upload=@localfilename <URL>=                                     |
 | Install curl in alpine linux | =apk add --update curl=                                                                     |
-| Curl upload with credential  | =curl -v -u admin:admin123 --upload-file package1.zip http://mysever:8081/dir/package1.zip= |
 | Curl with http2              | =curl -k -v --http2 https://www.google.com/=                                                |
 | Curl ftp upload              | =curl -T cryptopp552.zip -u test:test ftp://10.32.99.187/=                                  |
 | Curl ftp download            | =curl -u test:test ftp://10.32.99.187/cryptopp552.zip -o cryptopp552.zip=                   |
+| Curl upload with credential  | =curl -v -u admin:admin123 --upload-file package1.zip http://mysever:8081/dir/package1.zip= |
 ** Curl Script
 | Name                                   | Command                 |
 |----------------------------------------+-------------------------|

@@ -337,7 +337,6 @@ error: websocket: bad handshake
 ** TODO More parallel: Performs the given steps in parallel.
 https://concourse-ci.org/jobs.html
 * TODO [#A] Concourse significant delay across steps               :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Concourse pipeline use multiple file instead of one yaml file :noexport:
 https://github.com/concourse/concourse/issues/1994
 * TODO Concourse manage the layout                                 :noexport:
@@ -424,7 +423,6 @@ https://github.com/concourse/concourse/issues/293
 "Insufficient subnets" is akin to "out of memory" or "out of disk"
 * TODO Concourse container guardian                                :noexport:
 * TODO Concourse different colors: https://ci.vcna.io/teams/oratos-vmware/pipelines/pks-vrli-install-tile/jobs/test-tile-deployment/builds/11 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Add back: Concourse Advanced                                :noexport:
 * TODO consolidate: https://www.altoros.com/concourse-fly-cli-cheat-sheet.html :noexport:
 * TODO consolidate https://www.altoros.com/blog/concourse-fly-cli-cheat-sheet/ :noexport:
@@ -438,7 +436,6 @@ https://github.com/concourse/bosh-io-stemcell-resource#behavior
 The in script is passed a destination directory as command line
 argument $1, and is given on stdin the configured source and a precise
 version of the resource to fetch.
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] bosh-io-stemcell use a dedicated version               :noexport:
 https://github.com/concourse/bosh-io-stemcell-resource
 
@@ -1091,5 +1088,6 @@ https://github.com/concourse/concourse/issues/2582
   fly-dev -t pks-infra set-pipeline -p gear2-nimbus -c gear2-nimbus.yaml
 error: forbidden
 #+END_EXAMPLE
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO fly-dev -t gear2-ci check-resource -r gear2-nimbus/pool-git-gear2-nsx1 -f branch:gear2-ci :noexport:
+* TODO concourse enable daily testing                              :noexport:
+https://github.com/pivotalservices/concourse-pipeline-samples/tree/master/concourse-pipeline-patterns/time-triggered-pipelines/01-single-time-trigger

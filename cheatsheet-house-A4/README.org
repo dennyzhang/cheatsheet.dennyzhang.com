@@ -586,3 +586,4 @@ https://www.youtube.com/watch?v=lyWC4DFAF1w
 * TODO Get the Title of our toyota corolla                         :noexport:
 * TODO home protection: ADT                                        :noexport:
 https://www.amazon.com/dp/B07D7Q6CHB/ref=cm_sw_r_cp_api_i_ylcQCb46CTVTT
+* TODO Dime the light in the bedroom                               :noexport:

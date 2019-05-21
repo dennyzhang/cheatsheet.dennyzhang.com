@@ -527,3 +527,4 @@ kubo@jumper:~$  om -k \
 configuring product...
 could not execute "configure-product": yaml: line 2: mapping values are not allowed in this context
 #+END_EXAMPLE
+* HALF ops yaml file add |                                         :noexport:
