@@ -28,7 +28,7 @@ See more cheatsheets from Denny: [[https://github.com/topics/denny-cheatsheets][
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
  <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
- <a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+ <a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 
  <a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
  <a href="https://github.com/DennyZhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
@@ -167,6 +167,8 @@ Cheers!
    CLOSED: [2018-08-15 Wed 20:28]
 ** DONE blog post: list everything by category
    CLOSED: [2018-08-16 Thu 00:08]
+** DONE [#A] Add icon for cheatsheet.dennyzhang.com                :noexport:
+   CLOSED: [2019-05-21 Tue 13:56]
 * HALF Sample image: [[https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-ssl-A4/ssl-certificate.png :noexport:
 * DONE Sample link: /Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-disk-A4/sort-disk-size.sh :noexport:
   CLOSED: [2019-02-10 Sun 22:03]
@@ -487,7 +489,6 @@ nc (netcat) is def missing :)
 * TODO cheatsheet use case: Support Validation                     :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO change openshift from cheatsheet to git repo                :noexport:
-* TODO [#A] Add icon for cheatsheet.dennyzhang.com                 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO cheatsheet: k8s deployment solution                         :noexport:
 kubepray

@@ -82,7 +82,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | [[http://www.velocloud.com/][Velocloud Networks]]       | Enables enterprises and service providers to deploy flexible and secure WAN connectivity.               |
 | VMware vCloud NFV        | A fully integrated, modular, multi-tenant network functions virtualization ("NFV") platform             |
 #+BEGIN_HTML
-<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
 ** Cloud Management
 | Name                               | Summary                                                                          |
@@ -129,7 +129,7 @@ http://www.elasticsky.co.uk/mind-maps/
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
-<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
