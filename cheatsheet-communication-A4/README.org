@@ -438,3 +438,5 @@ Senior hiring:
 | People may not know the truth at a deep level        |                                                         |
 | Extra wrappers + poor documents confuse people       |                                                         |
 | You need to explain your value in their languages    | Sometimes the statement they believe may not make sense |
+* small talk                                                       :noexport:
+https://www.youtube.com/watch?v=R1vskiVDwl4
