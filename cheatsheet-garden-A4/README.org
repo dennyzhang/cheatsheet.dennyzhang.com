@@ -29,6 +29,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 ** Common Sense
 | Name                         | Summary                                       |
 |------------------------------+-----------------------------------------------|
+| Plants                       | tree, shrub, plant                            |
 | Cold and heat zones          | [[https://www.gardengatemagazine.com/articles/flowers-plants/all/cold-and-heat-zones/][Link: Garden Gate]], [[https://garden.org/nga/zipzone/index.php][USDA Hardiness Zone Finder]] |
 | When to plan                 | [[https://www.burpee.com/][Link: Burpee]]                                  |
 | Watering the plants          |                                               |
@@ -36,6 +37,16 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | When to plant                |                                               |
 | How much sun it needs        |                                               |
 | How long to grow and harvest |                                               |
+** Prune
+| Name                      | Summary                    |
+|---------------------------+----------------------------|
+| Common pruning Activities | Trimming, Topping, Shaping |
+** Lawn
+| Name                   | Summary                                                               |
+|------------------------+-----------------------------------------------------------------------|
+| Common Lawn Activities | Mowing, Edging, Weeding, Fertilizing, Aeration, Renovation, Haul away |
+| Lawn related           | seed, sod, stumps, rataining wall, bender board                       |
+| Sprinkler system       |                                                                       |
 ** Dwarf Fruit Trees
 | Name                   | Ripen         | When to plan | Sunshine requirement | Summary |
 |------------------------+---------------+--------------+----------------------+---------|
@@ -158,16 +169,16 @@ www.davewilson.com
 
 果园冬天最重要的两件事情就是剪枝和施农家肥
 
-每年1月下旬到2月上旬是湾区果树剪枝的最佳季节。
+每年1月下旬到2月上旬是湾区果树剪枝的最佳季节.
 
 可加2-3寸的mulch保湿
 
-第一年对树来讲最关键的是“保命”。来日方长 -- “有树不愁长”。
-但是为什么种深了就不好呢？ 估计是树没法“呼吸”了。树的根部也要氧气的，所以不能老泡水里面。
+第一年对树来讲最关键的是"保命".来日方长 -- "有树不愁长".
+但是为什么种深了就不好呢？ 估计是树没法"呼吸"了.树的根部也要氧气的,所以不能老泡水里面.
 
 Plant 'em high, they'll never die. Plant 'em low, they'll never grow
 
-盆子不一定要大，比树根球大一圈就行吧。我买的树苗说明书上说盆太大了树根反而容易生病。
+盆子不一定要大,比树根球大一圈就行吧.我买的树苗说明书上说盆太大了树根反而容易生病.
 
 一个基本原理是:不追求开花结果的菜在阳光不足的情况下都能长,能有收获,但是绝大多数蔬菜都是在阳光下长得更好. （间言之,喜光耐荫）.
 
@@ -200,7 +211,7 @@ https://www.logees.com/
 * TODO Burgundy Plum                                               :noexport:
 https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280055542j0/M.1426969489_2.d0/%5B%E5%90%88%E9%9B%86%5D+%E3%80%90%E5%B0%8F%E6%9E%9C%E6%A0%91%E3%80%91+%E9%AB%98%E4%BA%A7%E7%9A%84%E6%9D%8E%E5%AD%90
 * TODO 如何打理盆栽水果 fruit                                      :noexport:
-李子是挺能结的，而且松鼠不爱吃！
+李子是挺能结的,而且松鼠不爱吃！
 * TODO buy fruit trees                                             :noexport:
 http://ediblelandscaping.com/products/trees/PersimmonAsian/
 https://www.treesofantiquity.com/index.php?main_page=index&cPath=51
@@ -209,19 +220,19 @@ https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D13209
 * TODO running bamboo                                              :noexport:
 https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1427315716_2.H0/%5B%E5%90%88%E9%9B%86%5D+%E6%B1%82%E6%8E%A8%E8%8D%90%E6%A1%83%E6%A0%91%E5%92%8C%E7%AB%B9%E5%AD%90
 
-竹子需要多浇水，你先把灌溉系统弄好了。
+竹子需要多浇水,你先把灌溉系统弄好了.
 
-话说加州大旱，我家竹子两年没有疯长新芽了。
-浇水只能维持着而已，眼看竹子越来越老，越来越稀疏。
+话说加州大旱,我家竹子两年没有疯长新芽了.
+浇水只能维持着而已,眼看竹子越来越老,越来越稀疏.
 * TODO 白油桃                                                      :noexport:
 https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1427315716_2.H0/%5B%E5%90%88%E9%9B%86%5D+%E6%B1%82%E6%8E%A8%E8%8D%90%E6%A1%83%E6%A0%91%E5%92%8C%E7%AB%B9%E5%AD%90
 
-跟白桃/蟠桃一个味，还还不用削皮，盐水泡泡冲洗后就吃。皮也有种特别的美味。
+跟白桃/蟠桃一个味,还还不用削皮,盐水泡泡冲洗后就吃.皮也有种特别的美味.
 
 https://www.starkbros.com/products/fruit-trees/peach-trees/champion-white-peach
 * TODO jujubi                                                      :noexport:
 钻石枣
-* TODO 比较阴的后院，种什么果树比较好                              :noexport:
+* TODO 比较阴的后院,种什么果树比较好                              :noexport:
 https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1315019818_2.w0/%5B%E5%90%88%E9%9B%86%5D+%E6%AF%94%E8%BE%83%E9%98%B4%E7%9A%84%E5%90%8E%E9%99%A2%EF%BC%8C%E7%A7%8D%E4%BB%80%E4%B9%88%E6%9E%9C%E6%A0%91%E6%AF%94%E8%BE%83%E5%A5%BD
 * TODO website: https://www.grpg.org/                              :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -239,7 +250,7 @@ https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D13209
 2. 先把新地点的洞挖好, 并混好compost, 加一点Superthrive混均匀. 不放肥料.
 3. 决定好要移种的树的根球大小. 越大越好, 以人力能handle根球及树干的重量为准.
 4. 根据所留根球的比例, 把树枝及树叶剪掉1/3 到2/3.
-5. 使用”锐利”的圆锹在树干周围切下. 如遇粗根则用利剪剪断. 尽量不要摇动树干
+5. 使用"锐利"的圆锹在树干周围切下. 如遇粗根则用利剪剪断. 尽量不要摇动树干
 或拉扯树根.
 6. 所有树根剪断後, 挖起果树. 如需长距离移运, 用布包紧根球并保湿.
 7. 到新地点後, 加土或减土, 确定种植深度正确. 把断裂树根剪掉, 种下,填土, 

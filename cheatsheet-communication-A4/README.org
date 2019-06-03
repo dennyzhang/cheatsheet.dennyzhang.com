@@ -440,3 +440,5 @@ Senior hiring:
 | You need to explain your value in their languages    | Sometimes the statement they believe may not make sense |
 * small talk                                                       :noexport:
 https://www.youtube.com/watch?v=R1vskiVDwl4
+* notes                                                            :noexport:
+** how it worked before?

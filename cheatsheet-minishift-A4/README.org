@@ -35,22 +35,22 @@ File me [[https://github.com/DennyZhang/cheatsheet-minishift-A4/issues][Issues]]
 | Apply addon                      | =minishift addons apply admin-user=                                              |
 | OC login and change kube context | =oc login -u system:admin=, =kubectl get nodes=                                  |
 ** Minishift Footprint
-| Process                              | Command                                                                                         |
-|--------------------------------------+-------------------------------------------------------------------------------------------------|
-| etcd                                 | =openshift start etcd --config=/etc/origin/master/master-config.yaml=                           |
-| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] openshift-kube-apiserver   | =hypershift openshift-kube-apiserver --config=/etc/origin/master/master-config.yaml=            |
-| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] openshift-apiserver        | =hypershift openshift-apiserver --config=/etc/origin/master/master-config.yaml -v=0=            |
-| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] kubelet                    |                                                                                                 |
-| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] kubelet-scheduler          |                                                                                                 |
-| [[https://stackoverflow.com/questions/33953254/what-is-hyperkube][hyperkube]] kubelet-controller-manager |                                                                                                 |
-| network proxy                        | =openshift start network --enable=proxy --config=/etc/origin/node/node-config.yaml ...=         |
-| network dns                          | =openshift start network --enable=dns --config=/etc/origin/node/node-config.yaml=               |
-| origin-web-console                   | =/usr/bin/origin-web-console --audit-log-path... --config=/.../webconsole-config.yaml=          |
-| openshift-webconsole-operator        | =hypershift experimental openshift-webconsole-operator --config=/.../operator-config.yaml -v=0= |
-| dockerregistry                       | =/usr/bin/dockerregistry /config.yml=                                                           |
-| openshift-router                     |                                                                                                 |
-| dockerd                              |                                                                                                 |
-| haproxy                              |                                                                                                 |
+| Process                       | Command                                                                                         |
+|-------------------------------+-------------------------------------------------------------------------------------------------|
+| etcd                          | =openshift start etcd --config=/etc/origin/master/master-config.yaml=                           |
+| openshift-kube-apiserver      | =hypershift openshift-kube-apiserver --config=/etc/origin/master/master-config.yaml=            |
+| openshift-apiserver           | =hypershift openshift-apiserver --config=/etc/origin/master/master-config.yaml -v=0=            |
+| kubelet                       |                                                                                                 |
+| kubelet-scheduler             |                                                                                                 |
+| kubelet-controller-manager    |                                                                                                 |
+| network proxy                 | =openshift start network --enable=proxy --config=/etc/origin/node/node-config.yaml ...=         |
+| network dns                   | =openshift start network --enable=dns --config=/etc/origin/node/node-config.yaml=               |
+| origin-web-console            | =/usr/bin/origin-web-console --audit-log-path... --config=/.../webconsole-config.yaml=          |
+| openshift-webconsole-operator | =hypershift experimental openshift-webconsole-operator --config=/.../operator-config.yaml -v=0= |
+| dockerregistry                | =/usr/bin/dockerregistry /config.yml=                                                           |
+| openshift-router              |                                                                                                 |
+| dockerd                       |                                                                                                 |
+| haproxy                       |                                                                                                 |
 ** Minishift CLI Help
 #+BEGIN_EXAMPLE
 Denny > minishift --help
