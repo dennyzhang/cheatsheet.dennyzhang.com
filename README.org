@@ -173,6 +173,15 @@ Cheers!
 * DONE Sample link: /Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-disk-A4/sort-disk-size.sh :noexport:
   CLOSED: [2019-02-10 Sun 22:03]
 [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-disk-A4/sort-disk-size.sh][sort-disk-size.sh
+* [#A] cheatsheet recommend products, books, etc                   :noexport:
+Search /ws-na.amazon-adsystem.com
+- Health: Wooden comb
+- Communication: <<Corporate Confidential>>
+- House: ring alarm
+- House: philips hue
+- Backyard: Magnetic Knife Block Holder
+- Backyard: Clorox Cleaning Wipes
+- Alexa: Alexa Echo
 * [#A] Submit PR to related communities          :noexport:
 ** DONE k8s cheatsheet: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#what-s-next
    CLOSED: [2019-01-23 Wed 22:54]
@@ -272,6 +281,7 @@ https://www.mediaatelier.com/CheatSheet/
 * TODO [#A] Role model                                             :noexport:
 ** DONE https://jeffdecola.github.io/my-cheat-sheets/
    CLOSED: [2019-02-09 Sat 22:50]
+** [#A] http://bigocheatsheet.com/
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** https://github.com/LeCoupa/awesome-cheatsheets
 ** https://github.com/detailyang/awesome-cheatsheet
@@ -525,3 +535,4 @@ https://www.gfmag.com/global-data/economic-data/largest-companies
 * TODO website link: don't link to untrusted external websites     :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Cheatsheet: yaml                                            :noexport:
+* TODO Makes two tables in one row                                 :noexport:

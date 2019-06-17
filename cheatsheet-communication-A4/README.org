@@ -35,6 +35,10 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 | Communication is not actionable          | Keep talking fancy tech, but few impressive highlights or actionable items       |
 | Do everything in a hard way              | Intellectual challenges may not be cost effective; you can't do everything       |
 | Reference                                | [[https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4][CheatSheet: IT Career Path]], [[https://cheatsheet.dennyzhang.com/cheatsheet-communication-A4][Cheatsheet: IT Communication]], [[https://cheatsheet.dennyzhang.com/cheatsheet-opensource-A4][Cheatsheet: Opensource]] |
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=0312337361&asins=0312337361&linkId=2942aaa206d4200e314c854716b4d6ef&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
 ** Reference
 | Name          | Summary                                    |
 |---------------+--------------------------------------------|
@@ -345,7 +349,7 @@ Speak with confidence
  Think from different angles. you mean? (edited)
 
 - 不要在一些无关紧要的地方去为难别人或队友
-- 错位生长：团队不同role要有自己的成长空间
+- 错位生长:团队不同role要有自己的成长空间
 ** TODO doc: avoid being negative thinking and talking              :noexport:
 ** TODO Give constant status update                                 :noexport:
 ** TODO Try something ahead, then discussing                        :noexport:
@@ -442,3 +446,18 @@ Senior hiring:
 https://www.youtube.com/watch?v=R1vskiVDwl4
 * notes                                                            :noexport:
 ** how it worked before?
+** [#A] 闲聊中学习                                                 :noexport:
+* 技术有实力 ！= 有能力把事情做好                                  :noexport:
+FZ case
+* outcome matters                                                  :noexport:
+** Status reports should be outcome based and not activity based.
+* TODO [#A] ask questions                                          :noexport:
+* TODO [#A] discuss in a colabaration                              :noexport:
+* start the conversations                                          :noexport:
+** Let's starts with no-no                                         :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* For technical problems, if you don't tell, people may not see    :noexport:
+* People may not deliver what they claims                          :noexport:
+* Messages(slack, emails) may not be read deliberately or unconciously :noexport:
+* Common sense might be missing quite often                   :noexport:
+- No e2e tests, before PR

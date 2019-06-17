@@ -26,20 +26,33 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 |---------------------------+-----------------------------------------------------------|
 | Organization or companies | [[https://www.youtube.com/channel/UCqd2hbtE2N9fb0D2nTrLT1w][YouTube: Lowe's Home Improvement]], [[https://www.youtube.com/channel/UCUtWNBWbFL9We-cdXkiAuJA][YouTube: This Old House]] |
 | Handy man                 | [[https://www.youtube.com/user/HomeRepairTutor][YouTube: Home Repair Tutor]], [[https://www.youtube.com/channel/UCeFTtiy2iWXHZxtq8018MFA][YouTube: How2Plumb]]            |
+** Smart Home
+| Name                       | Summary                                                               |
+|----------------------------+-----------------------------------------------------------------------|
+| [[https://www.meethue.com/getstarted][Philips Hue]]                |                                                                       |
+| [[https://www.youtube.com/watch?v=e9pIMjGm_n0][Amazon Echo 3rd generation]] |                                                                       |
+| [[https://www.youtube.com/watch?v=iP82FMNS0GA][Ring Alarm]]                 | Base station, keypad, motion detector, contact sensor, range extender |
+| [[https://www.youtube.com/watch?v=lJw2zebq6KY][Ring Alarm Motion Sensor]]   |                                                                       |
+| [[https://www.youtube.com/watch?v=97i3VQmHWVo][Ring Alarm range extender]]  | Help to make sure devices communicate well with base station          |
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B07D7Q6CHB&asins=B07D7Q6CHB&linkId=fb8b8f93c432332a3f582ff16f63fead&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
+
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B01M9AU8MB&asins=B01M9AU8MB&linkId=baca79d8c4d3e71b3dd88077a542ee68&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
 ** Checklist For Regular Maintenance
 - Weekly
-| Name                           | Summary                                                             |
-|--------------------------------+---------------------------------------------------------------------|
-| Move garbage bin to the street | Garden/Recycle/Rubbish [[https://www.youtube.com/watch?v=umI415yrNZQ][YouTube: Household Waste Collection Services]] |
-
-- Bi-weekly
-| Name                                           | Summary                                     |
-|------------------------------------------------+---------------------------------------------|
-| Yard & Garden Work                             |                                             |
-| Decluttering the house                         |                                             |
-| Refill paper tower, toliet paper, tissue paper |                                             |
-| Refill hand soap, oil to small bottles         |                                             |
-| Reference                                      | [[https://www.youtube.com/channel/UCqKBj1cg2agtDD-hiqy6lAg][YouTube: Jonny DIY]], [[https://www.youtube.com/channel/UCUtWNBWbFL9We-cdXkiAuJA][YouTube: This Old House]] |
+| Name                                           | Summary                                      |
+|------------------------------------------------+----------------------------------------------|
+| Move garbage bin to the street                 | [[https://www.youtube.com/watch?v=umI415yrNZQ][YouTube: Household Waste Collection Services]] |
+| Yard & Garden Work                             |                                              |
+| Decluttering the house                         |                                              |
+| Refill paper tower, toliet paper, tissue paper |                                              |
+| Refill hand soap, oil to small bottles         |                                              |
+| Reference                                      | [[https://www.youtube.com/channel/UCqKBj1cg2agtDD-hiqy6lAg][YouTube: Jonny DIY]], [[https://www.youtube.com/channel/UCUtWNBWbFL9We-cdXkiAuJA][YouTube: This Old House]]  |
 
 - Monthly
 | Name                                            | Summary |
@@ -54,19 +67,18 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 |----------------------------------+---------|
 | Change heater filter             |         |
 | Change refrigerator water filter |         |
-
 ** Recurring Shopping List
 | Name               | Summary                                                       |
 |--------------------+---------------------------------------------------------------|
 | Refrigerator water | [[https://amzn.to/2YDbDk6][Amazon: 4396710 Refrigerator Water]]                            |
 | Disinfecting wipes | [[https://amzn.to/2FB3rrR][Amazon: Clorox Disinfecting Wipes, Bleach Free Cleaning Wipes]] |
 ** Change Address After Closing The Deal
-| Name                                     | Summary                                                                                                                      |
-|------------------------------------------+------------------------------------------------------------------------------------------------------------------------------|
-| Change all credit/debit card address     |                                                                                                                              |
-| Change address in company HR system      |                                                                                                                              |
-| Change address for auto insurance policy |                                                                                                                              |
-| [[https://www.uscis.gov/addresschange][Form A-11]] for immigrants                 | Most non-U.S. citizens must report a change of address within 10 days of moving within the United States or its territories. |
+| Name                                     | Summary                                                           |
+|------------------------------------------+-------------------------------------------------------------------|
+| Change all credit/debit card address     |                                                                   |
+| Change address in company HR system      |                                                                   |
+| Change address for auto insurance policy |                                                                   |
+| [[https://www.uscis.gov/addresschange][Form A-11]] for immigrants                 | Most non-U.S. report a change of address within 10 days of moving |
 ** Roof
 | Name                               | Summary                               |
 |------------------------------------+---------------------------------------|
@@ -175,7 +187,34 @@ https://www.todayshomeowner.com/
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
-* DONE                                                             :noexport:
+* [#A] Utility Contact                                             :noexport:
+| Name                              | Contact                | Phone                                   | Website/Email/Notes                          |                                                                      |
+|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
+| Notify USCIS                      |                        |                                         | Bestbuy/HomeDepo coupon                      |                                                                      |
+|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
+| 换门锁 - electric locks           |                        | Locksmith,Lowes                         | Lowes Ebay 有coupon                          |                                                                      |
+| Utilities: elec/gas               | PG&E                   | (877)660-6789                           | https://www.pge.com/                         |                                                                      |
+| Water                             | San Jose Water Company | (408) 279-7900                          | https://www.sjwater.com/                     |                                                                      |
+| Garbage                           | GreenTeam of San Jose  | (408) 282-4400                          | https://www.greenteam.com/                   |                                                                      |
+| Internet                          | Xfinity                | (800) 934-6489                          | https://www.xfinity.com/                     |                                                                      |
+| Change Address                    |                        | USPS                                    | https://moversguide.usps.com/mgo/whos-moving |                                                                      |
+|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
+| Notify DMV                        |                        |                                         |                                              |                                                                      |
+| Change Bank address: debit/credit |                        |                                         |                                              |                                                                      |
+| Auto insurance                    |                        |                                         |                                              |                                                                      |
+| Medicare insurance                |                        |                                         |                                              |                                                                      |
+| Detal insurance                   |                        |                                         |                                              |                                                                      |
+| Update contact in VMware websites |                        |                                         |                                              |                                                                      |
+|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
+| Contractor                        | James(Licensed)        | (408)916-6465                           |                                              |                                                                      |
+| Contractor                        | 丁师傅                 | (408)828-9808                           |                                              |                                                                      |
+| Cleaning                          |                        | Crystal Carpet cleaning                 | (408)930-6225                                |                                                                      |
+| Cleaning & Handyman               |                        | Handy.com                               |                                              | 通常有coupon或者新用户 折扣                                          |
+| Property Tax                      |                        | https://payments.sccgov.org/propertytax | Tax due 4/10 and 12/10 each year             |                                                                      |
+| Moving                            |                        | 兄弟搬家                                | (510) 648-6546                               | 最好当天最早时间,否则 容易迟到,通常他们报价 包含小费,预约时先确定 |
+| HOA                               | N/A                    |                                         |                                              |                                                                      |
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE local notes                                                 :noexport:
 ** DONE Hang pictures to the wall                                  :noexport:
    CLOSED: [2019-03-25 Mon 09:07]
  https://www.youtube.com/watch?v=F7_K_pqXRaw
@@ -196,7 +235,7 @@ https://www.todayshomeowner.com/
  https://www.uscis.gov/addresschange
 ** DONE wired all cables and lines                                 :noexport:
    CLOSED: [2019-03-28 Thu 14:23]
-** DONE schedule irobot to run twice a week
+** DONE schedule irobot to run twice a week                        :noexport:
    CLOSED: [2019-03-28 Thu 14:28]
 ** BYPASS [#A] water heater pilot won't light                      :noexport:
    CLOSED: [2019-04-03 Wed 13:56]
@@ -212,7 +251,7 @@ https://www.todayshomeowner.com/
 *** Benjamin Franklin Plumbing
  98 Verified Reviews
  Services Include: Water Heater - Repair or Service in San Jose, CA
- 
+
   Write a review
   (408) 426-4593
 *** #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -220,7 +259,7 @@ https://www.todayshomeowner.com/
    4.3
  139 Verified Reviews
  Services Include: Water Heater - Repair or Service in San Jose, CA
- 
+
   (408) 512-1791
   Send a Message
   Write a review
@@ -234,7 +273,7 @@ https://www.todayshomeowner.com/
 *** CMS Plumbing
  108 Verified Reviews
  Services Include: Water Heater - Repair or Service in San Jose, CA
- 
+
   Write a review
   (408) 828-6700
 ** DONE replace a water heater                                     :noexport:
@@ -248,7 +287,6 @@ https://www.todayshomeowner.com/
  https://gonglue.us/9713
 
  http://chineselikela.com/deals/appliance/16435/
-
 *** Electric mower
  利:不用考虑加油,不用维护,不担心启动,噪音较小.
 
@@ -259,12 +297,10 @@ https://www.todayshomeowner.com/
  4`电动的容易烧电机.虽然都很小心,还是免不了烧了.
 ** DONE toliet rolling sticker                                     :noexport:
    CLOSED: [2019-04-03 Wed 13:56]
-
 ** CANCELED get a electric lawn mover from criaglist               :noexport:
    CLOSED: [2019-04-03 Wed 13:56]
  freemont: $215
  https://sfbay.craigslist.org/eby/grd/d/newark-brand-new-electric-lawn-mower/6843218175.html
-
 ** DONE change air heater filter                                   :noexport:
    CLOSED: [2019-04-06 Sat 17:27]
 ** CANCELED old notes                                              :noexport:
@@ -392,36 +428,72 @@ https://www.todayshomeowner.com/
  https://www.amazon.com/Jiayi-Hardware-Adjustable-Invisible-Cupboard/dp/B07NSTKLV7/ref=sr_1_1_sspa?keywords=closet+door+Springs&qid=1554596391&s=gateway&sr=8-1-spons&psc=1
 ** DONE water heater还有大概5年寿命                                :noexport:
    CLOSED: [2019-05-06 Mon 09:45]
-* [#A] Utility Contact                                             :noexport:
-| Name                              | Contact                | Phone                                   | Website/Email/Notes                          |                                                                      |
-|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
-| Notify USCIS                      |                        |                                         | Bestbuy/HomeDepo coupon                      |                                                                      |
-|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
-| 换门锁 - electric locks           |                        | Locksmith,Lowes                         | Lowes Ebay 有coupon                          |                                                                      |
-| Utilities: elec/gas               | PG&E                   | (877)660-6789                           | https://www.pge.com/                         |                                                                      |
-| Water                             | San Jose Water Company | (408) 279-7900                          | https://www.sjwater.com/                     |                                                                      |
-| Garbage                           | GreenTeam of San Jose  | (408) 282-4400                          | https://www.greenteam.com/                   |                                                                      |
-| Internet                          | Xfinity                | (800) 934-6489                          | https://www.xfinity.com/                     |                                                                      |
-| Change Address                    |                        | USPS                                    | https://moversguide.usps.com/mgo/whos-moving |                                                                      |
-|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
-| Notify DMV                        |                        |                                         |                                              |                                                                      |
-| Change Bank address: debit/credit |                        |                                         |                                              |                                                                      |
-| Auto insurance                    |                        |                                         |                                              |                                                                      |
-| Medicare insurance                |                        |                                         |                                              |                                                                      |
-| Detal insurance                   |                        |                                         |                                              |                                                                      |
-| Update contact in VMware websites |                        |                                         |                                              |                                                                      |
-|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
-| Contractor                        | James(Licensed)        | (408)916-6465                           |                                              |                                                                      |
-| Contractor                        | 丁师傅                 | (408)828-9808                           |                                              |                                                                      |
-| Cleaning                          |                        | Crystal Carpet cleaning                 | (408)930-6225                                |                                                                      |
-| Cleaning & Handyman               |                        | Handy.com                               |                                              | 通常有coupon或者新用户 折扣                                          |
-| Property Tax                      |                        | https://payments.sccgov.org/propertytax | Tax due 4/10 and 12/10 each year             |                                                                      |
-| Moving                            |                        | 兄弟搬家                                | (510) 648-6546                               | 最好当天最早时间,否则 容易迟到,通常他们报价 包含小费,预约时先确定 |
-| HOA                               | N/A                    |                                         |                                              |                                                                      |
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** DONE home protection: ADT                                       :noexport:
+   CLOSED: [2019-06-16 Sun 08:24]
+ https://www.amazon.com/dp/B07D7Q6CHB/ref=cm_sw_r_cp_api_i_ylcQCb46CTVTT
+** DONE Dime the light in the bedroom                              :noexport:
+   CLOSED: [2019-06-16 Sun 08:24]
+** DONE change heater filter                                       :noexport:
+   CLOSED: [2019-05-09 Thu 09:19]
+ https://www.youtube.com/watch?v=Wv3_Dy97KoY
+
+ https://www.serviceexperts.com/faq/how-often-should-i-change-my-air-filter-at-home
+ How Often Should I Change My Air Filter At Home?
+** DONE loan basic                                                 :noexport:
+   CLOSED: [2019-06-16 Sun 08:28]
+*** TODO loan lender credits
+ https://www.consumerfinance.gov/ask-cfpb/what-are-discount-points-and-lender-credits-and-how-do-they-work-en-136/
+** DONE Loan for housing                                           :noexport:
+   CLOSED: [2019-06-16 Sun 08:28]
+ 12W, 24W
+
+ base: 13W, package: 13.5W
+
+ 需要贷80到110W
+
+ 小银行:
+ - 能贷多少钱
+ - 利率多出多少
+ - 如果提高自己我credits的建议
+*** Loan agent                                                     :noexport:
+**** Citi
+ Sunny
+**** BOA
+ Anna
+
+ 510-552-7271
+**** David Guo
+ +1-408-891-2002
+  信用短
+
+  72W以内
+
+  exception
+
+  工作历史,满两年
+
+  信用历史
+
+  三张信用卡
+*** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+*** 不能有两个银行
+*** single family会多一点
+*** Single 贷款: 72.6W; 70W
+** CANCELED [#A] Start a website for american house maintainance   :noexport:
+   CLOSED: [2019-06-16 Sun 08:29]
+** CANCELED Basketball Hoop for garage door                        :noexport:
+   CLOSED: [2019-06-16 Sun 08:29]
+ https://www.youtube.com/watch?v=q0j7aA_c0CI
+ https://www.youtube.com/watch?v=kKZY72AY9M0
+** DONE Cancel old house facility: xfinity, pge and water          :noexport:
+   CLOSED: [2019-06-16 Sun 08:29]
+** DONE Cancel renter insurance                                    :noexport:
+   CLOSED: [2019-06-16 Sun 08:30]
+ https://portfolio.geico.com/dashboard/home
+** CANCELED 一键把所有的灯关了                                     :noexport:
+   CLOSED: [2019-06-16 Sun 08:31]
 * TODO Learn skills: increase my credit history: lease contract, utility :noexport:
 * TODO Learn skills: How to check Termites                         :noexport:
-
 * TODO Learn skills: Preventative maintenance is a key element to saving money   :noexport:
 * TODO learn skills from chinese community                         :noexport:
 https://zhuanlan.zhihu.com/p/32033320
@@ -429,7 +501,6 @@ https://zhuanlan.zhihu.com/p/32033320
 * TODO 1031 Tax Exchange                                           :noexport:
 * Two kitchen drawers are not stable                               :noexport:
 * 橙子树挡着roof和neighbor了                                       :noexport:
-* 一键把所有的灯关了                                          :noexport:
 * 家里有灯泡坏了                                                   :noexport:
 * 地基里面有曾经出现过小动物的痕迹（老鼠/ 松鼠）                   :noexport:
 * 有GFCI插座坏了                                                   :noexport:
@@ -437,21 +508,11 @@ https://zhuanlan.zhihu.com/p/32033320
 * Hallway bath 的sink 水压比较低                                   :noexport:
 * 空调用了13年                                                     :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Basketball Hoop for garage door                             :noexport:
-https://www.youtube.com/watch?v=q0j7aA_c0CI
-https://www.youtube.com/watch?v=kKZY72AY9M0
 * HALF Check monthly utility setup is good: xfinity, pge and water :noexport:
 * TODO Merge 401K                                                  :noexport:
-* TODO Cancel old house facility: xfinity, pge and water           :noexport:
-* TODO Cancel renter insurance                                     :noexport:
-https://portfolio.geico.com/dashboard/home
-* TODO change DMV address                                          :noexport:
-https://www.dmv.ca.gov/portal/dmv/detail/online/coa/welcome
-http://vegas168.blogspot.com/2016/05/checklist.html
 * TODO change address: 家庭医生 儿科医生 牙科医生等                :noexport:
 http://vegas168.blogspot.com/2016/05/checklist.html
 * TODO 地基有一条裂缝 不过看上去是正常的size                       :noexport:
-* TODO water service: setup online payment                         :noexport:
 * TODO 洗衣机内桶要定期清洗                                        :noexport:
 * TODO 洗碗机内桶要定期清洗                                        :noexport:
 * TODO Learn skills to declutter your home                         :noexport:
@@ -483,12 +544,6 @@ rent
 Chinese credit card
 * TODO sync up contact into my cellphone                           :noexport:
 * TODO 洗碗机洗不干净                                              :noexport:
-* DONE change heater filter                                        :noexport:
-  CLOSED: [2019-05-09 Thu 09:19]
-https://www.youtube.com/watch?v=Wv3_Dy97KoY
-
-https://www.serviceexperts.com/faq/how-often-should-i-change-my-air-filter-at-home
-How Often Should I Change My Air Filter At Home?
 * TODO [#A] study website                                          :noexport:
 https://www.homeadvisor.com/
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -501,62 +556,18 @@ drain
 sink
 
 garbage disposal
-
 * TODO bath tub spout is leaking                                   :noexport:
 https://www.youtube.com/watch?v=4OjrL09CXrQ
 https://www.youtube.com/watch?v=QcBdjH4Fdik
 https://www.youtube.com/watch?v=yq6FYfqKO0g
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* [#A] Start a website for american house maintainance             :noexport:
-Both Chinese and English
 * TODO [#A] bath room is leaking: Seal Around A Tub Or Shower      :noexport:
 https://www.youtube.com/watch?v=F7Y6XQ9MoHE
 * TODO Door Slam                                                   :noexport:
 https://www.amazon.com/Latchy-Catchy-Never-Again-Goldie/dp/B01N8SYYG2/ref=sr_1_24?keywords=squeaky+door&qid=1554606593&s=hi&sr=1-24
 * HALF [#B] fix holes in wooden door                               :noexport:
-* HALF loan basic                                                  :noexport:
-** TODO loan lender credits
-https://www.consumerfinance.gov/ask-cfpb/what-are-discount-points-and-lender-credits-and-how-do-they-work-en-136/
-* HALF Loan for housing                                            :noexport:
-12W, 24W
-
-base: 13W, package: 13.5W
-
-需要贷80到110W
-
-小银行:
-- 能贷多少钱
-- 利率多出多少
-- 如果提高自己我credits的建议
-** Loan agent                                                      :noexport:
-*** Citi
-Sunny
-*** BOA
-Anna
-
-510-552-7271
-*** David Guo
-+1-408-891-2002
- 信用短
-
- 72W以内
-
- exception
-
- 工作历史,满两年
-
- 信用历史
-
- 三张信用卡
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** 不能有两个银行
-** single family会多一点
-** Single 贷款: 72.6W; 70W
-* TODO rest room door noise                                        :noexport:
-https://www.amazon.com/Prime-Line-4540-Wall-Stop-Stainless/dp/B000NCWUVC/ref=pd_sim_0_4/144-9710788-0674101?_encoding=UTF8&pd_rd_i=B000NCWUVC&pd_rd_r=c715a328-58cb-11e9-ae93-bfc8ab14b226&pd_rd_w=nHaXz&pd_rd_wg=GVg1p&pf_rd_p=90485860-83e9-4fd9-b838-b28a9b7fda30&pf_rd_r=H88CN48PDGT12SQ251XZ&psc=1&refRID=H88CN48PDGT12SQ251XZ
 * TODO Stop Squeaky Door Hinges                                    :noexport:
 https://www.wikihow.life/Stop-Squeaky-Door-Hinges
-
 * TODO [#A] 水管堵塞是否要买home warranty                          :noexport:
 https://zhuanlan.zhihu.com/p/32033320
 plumber.前段时间水管堵塞,找了handyman都没有用,只能找plumber公司,幸好有warranty,所以大部分都保险报销了,要不估计要大出血.handyman和我说看你的严重程度了,如果就是一般的堵塞,估计400,500刀.要是major pipe有问题,找市政厅来,几千刀也是少的.
@@ -565,6 +576,10 @@ http://chengyun-travel.blogspot.com/2013/02/pg.html
 https://www.pge.com/en_US/residential/rate-plans/how-rates-work/find-my-best-rate-plan.page
 * TODO Learn: http://chengyun-travel.blogspot.com/                 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Change pg&e energy tier?                                    :noexport:
+* TODO toilet door is too loud
+https://www.amazon.com/Prime-Line-4540-Wall-Stop-Stainless/dp/B000NCWUVC/ref=pd_sim_0_4/144-9710788-0674101?_encoding=UTF8&pd_rd_i=B000NCWUVC&pd_rd_r=c715a328-58cb-11e9-ae93-bfc8ab14b226&pd_rd_w=nHaXz&pd_rd_wg=GVg1p&pf_rd_p=90485860-83e9-4fd9-b838-b28a9b7fda30&pf_rd_r=H88CN48PDGT12SQ251XZ&psc=1&refRID=H88CN48PDGT12SQ251XZ
+* TODO 厕所的水压不够
 * TODO [#A] bath room: Vertical Shower Door Seal                   :noexport:
 silicone seal
 
@@ -576,14 +591,13 @@ https://www.youtube.com/watch?v=PTADQAyDztI
 https://www.youtube.com/watch?v=ECdXEAAIBFI
 https://www.youtube.com/watch?v=x56o59oTgx0
 https://www.youtube.com/watch?v=lyWC4DFAF1w
-* TODO Change pg&e energy tier?                                    :noexport:
-* TODO toilet door is too loud
-* TODO 厕所的水压不够
+* TODO Alexa works with Ring                                       :noexport:
+https://www.amazon.com/Ring/dp/B01JTL2PYE/ref=sr_1_39?keywords=ring+alarm&qid=1560698689&s=gateway&sr=8-39
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Join local community                                        :noexport:
 * [#A] 厨房炉子的右上方burner不work了                              :noexport:
 * TODO [#A] 后院没有自动喷水                                       :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Get the Title of our toyota corolla                         :noexport:
-* TODO home protection: ADT                                        :noexport:
-https://www.amazon.com/dp/B07D7Q6CHB/ref=cm_sw_r_cp_api_i_ylcQCb46CTVTT
-* TODO Dime the light in the bedroom                               :noexport:
+* TODO One bulb in the family room doens't work                    :noexport:
+* TODO water service: setup online payment                         :noexport:
+* TODO Split this cheatsheet: buy a house & maintain ahouse        :noexport:

@@ -21,16 +21,22 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][Cheatsheet: Driver License]], [[https://cheatsheet.dennyzhang.com/cheatsheet-travel][Cheatsheet Travel]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-health-A4][this repo]].
-** Health - Hardware
-| Name              | Command                                         |
-|-------------------+-------------------------------------------------|
-| Keyboard          | Instead of laptop keyboard, use an external one |
-| Standing desk     |                                                 |
-| Comfortable Chair |                                                 |
-
-** Health - Habit
+** Hair/Bald: Fight Against Hair Lost
+| Name                      | Command                        |
+|---------------------------+--------------------------------|
+| Use a wooden comb         |                                |
+| [[https://www.youtube.com/watch?v=q6RRxSXBAb8][Foods to reduce hair loss]] | Salmon, Spinach, eggs, almonds |
+| YouTube                   | [[https://www.youtube.com/watch?v=ucsuBI9Vheo][Going Bald Early Advice]]        |
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06W9MZYFB&asins=B06W9MZYFB&linkId=b7848b1f101ddd6618ebec118277cbb4&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
+** When Near Keybaords
 | Name               | Command                                                           |
 |--------------------+-------------------------------------------------------------------|
+| Keyboard           | Instead of laptop keyboard, use an external one                   |
+| Standing desk      |                                                                   |
+| Comfortable Chair  |                                                                   |
 | Take regular break | Takes breaks once every 45 minutes                                |
 | Use mouse          | Relax your fingers on the mouse buttons                           |
 | Use mouse          | Keep your mouse close so you are not extending your arm to use it |

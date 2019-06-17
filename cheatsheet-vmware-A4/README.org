@@ -307,3 +307,13 @@ Create least privelege on compute stack
 * Velocloud                                                        :noexport:
 * [#A] cloudhealth                                                 :noexport:
 * EULA: end user license agreement                                 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO GTM investments                                             :noexport:
+* TODO PMM, TMM                                                    :noexport:
+https://confluence.eng.vmware.com/pages/viewpage.action?pageId=378590946
+
+https://confluence.eng.vmware.com/pages/viewpage.action?pageId=214347279
+
+PMM belongs to product manager, it's out facing to customers
+
+TMM is technical marketing, belongs to marketing for technical support of pre-sale etc

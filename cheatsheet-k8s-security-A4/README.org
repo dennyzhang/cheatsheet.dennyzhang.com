@@ -34,6 +34,28 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | [[https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-authentication-authorization/][Kubelet authentication/authorization]] |                                                                                     |
 | [[https://kubernetes.io/docs/tutorials/clusters/apparmor/][AppArmor]]                             | a Linux kernel security module: reduce application attack surface                   |
 | Sandboxed Pods & gVisor              |                                                                                     |
+** Regulations
+| Name    | Summary                                      |
+|---------+----------------------------------------------|
+| GDPR    | EU General Data Protection Regulation        |
+| PCI DSS | Payment Card Industry Data Security Standard |
+** Basic Concepts
+| Name                        | Summary                                                                                       |
+|-----------------------------+-----------------------------------------------------------------------------------------------|
+| IdM                         | Identity Management                                                                           |
+| [[https://www.cloudave.com/472/authn-authz-and-gluecon/][AuthN vs AuthZ]]              | Authentication vs Authorization                                                               |
+| [[https://www.cloudave.com/472/authn-authz-and-gluecon/][OAuth vs OpenID]]             | OAuth: Open Authorization; OpenID: an authentication mechanism                                |
+| OAuth vs OAuth2             |                                                                                               |
+| SAML                        |                                                                                               |
+| Malware                     | short for "malicious software"                                                                |
+| virus                       | Infects other programs, caryying out malicious missions                                       |
+| worm                        | It doens't need to infect another program. It performs and replicates by itself automatically |
+| trojan horse                | A program that contains malware like a virus or worm                                          |
+| ransomware                  | A link of attachment executes a malware to encrypt your system and demand a ransom            |
+| vishing                     | A common type of social engineering that is done over the phone                               |
+| phishing                    | A common type of social engineering that fools you to respond to a malicious email            |
+| Data classifications levels | Restricted, Private/Protected, Confidential, Public                                           |
+| PII                         | Personally identifiable information                                                           |
 ** Security - PodSecurityPolicy
 - A PodSecurityPolicy is a cluster-level resource that controls security sensitive aspects of the pod specification.
 | Yaml                                    | Summary                                                         |

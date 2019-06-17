@@ -138,52 +138,49 @@ https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl07
 #+LINK_UP:
 #+LINK_HOME:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* Move from another state to CA: update your vehicle information   :noexport:
-https://www.dmv.ca.gov/portal/dmv/dmv/vr/
+* DONE                                                             :noexport:
+** DONE DMV 14 Change of Address                                   :noexport:
+   CLOSED: [2019-06-15 Sat 18:47]
+ https://www.dmv.ca.gov/portal/dmv/detail/forms/dmv/dmv14
+ https://www.dmv.ca.gov/portal/dmv/detail/online/coa/welcome
+ https://www.guruin.com/articles/1857
+ https://www.chineseinla.com/f/page_viewtopic/t_684659.html
+** DONE Move from another state to CA: update your vehicle information :noexport:
+   CLOSED: [2019-06-15 Sat 18:48]
+ https://www.dmv.ca.gov/portal/dmv/dmv/vr/
 
-https://www.dmv.ca.gov/portal/dmv/detail/online/vrir/vr_sb1500anu
+ https://www.dmv.ca.gov/portal/dmv/detail/online/vrir/vr_sb1500anu
 
-** Register Your Vehicle in California
-*A nonresident vehicle* is a vehicle last registered in another state or country.
+*** Register Your Vehicle in California
+ *A nonresident vehicle* is a vehicle last registered in another state or country.
 
-| Form                                                       | Summary                 |
-|------------------------------------------------------------+-------------------------|
-| reg343 form: [[https://www.dmv.ca.gov/portal/dmv/detail/forms/reg/reg343][Application for Title or Registration REG 343]] |                         |
-| reg31 form: [[https://www.dmv.ca.gov/portal/dmv/detail/forms/reg/reg31][Verification of Vehicle (REG 31) form]]          | Need to be filed by DMV |
+ | Form                                                       | Summary                 |
+ |------------------------------------------------------------+-------------------------|
+ | reg343 form: [[https://www.dmv.ca.gov/portal/dmv/detail/forms/reg/reg343][Application for Title or Registration REG 343]] |                         |
+ | reg31 form: [[https://www.dmv.ca.gov/portal/dmv/detail/forms/reg/reg31][Verification of Vehicle (REG 31) form]]          | Need to be filed by DMV |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/register_vehicle.png]]
+ [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/register_vehicle.png]]
 
-#+BEGIN_EXAMPLE
-https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/howto/htvr09#feesdue
+ #+BEGIN_EXAMPLE
+ https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/howto/htvr09#feesdue
 
-https://www.dmv.org/ca-california/car-registration.php
+ https://www.dmv.org/ca-california/car-registration.php
 
-https://www.dmv.org/ca-california/new-to-california.php
-#+END_EXAMPLE
+ https://www.dmv.org/ca-california/new-to-california.php
+ #+END_EXAMPLE
 
-** Get a new license plate
-https://www.dmv.ca.gov/portal/dmv/detail/vr/vr_info
+*** Get a new license plate
+ https://www.dmv.ca.gov/portal/dmv/detail/vr/vr_info
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/substitute-plates.png]]
+ [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/substitute-plates.png]]
 
-** Report a change of address to DMV within 10 days of the change
-https://www.dmv.ca.gov/portal/dmv/detail/vr/vr_info
+*** Report a change of address to DMV within 10 days of the change
+ https://www.dmv.ca.gov/portal/dmv/detail/vr/vr_info
 
-* Replacing a Lost Title in Texas                                  :noexport:
-https://www.txdmv.gov/motorists/buying-or-selling-a-vehicle/get-a-copy-of-your-title
-#+BEGIN_EXAMPLE
-Here are the steps to applying for a certified copy of title by mail:
-
-Complete Form VTR-34, Application for a Certified Copy of Title.
-VTR-34 Application for a Certified Copy of Title
-
-Enclose a copy of the owner's valid photo ID and $2 mail-in fee by check, cashier's check or money order payable to the Texas Department of Motor Vehicles. An agent of the owner or lienholder must also provide a letter of signature authority on original letterhead, a business card or a copy of the agent's employee ID.
-
-Mail the application to:
-TxDMV
-1601 Southwest Parkway, Suite A
-Wichita Falls, TX 76302
-#+END_EXAMPLE
+** DONE change DMV address                                         :noexport:
+   CLOSED: [2019-06-16 Sun 08:29]
+ https://www.dmv.ca.gov/portal/dmv/detail/online/coa/welcome
+ http://vegas168.blogspot.com/2016/05/checklist.html
 
 * Interesting Questions                                            :noexport:
 #+BEGIN_EXAMPLE
@@ -240,9 +237,23 @@ As Of: 9/10/2018
 https://www.dmv.ca.gov/portal/dmv/detail/online/vrir/vr_top2
 ** When I need smoke test?
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* Replacing a Lost Title in Texas                                  :noexport:
+https://www.txdmv.gov/motorists/buying-or-selling-a-vehicle/get-a-copy-of-your-title
+#+BEGIN_EXAMPLE
+Here are the steps to applying for a certified copy of title by mail:
+
+Complete Form VTR-34, Application for a Certified Copy of Title.
+VTR-34 Application for a Certified Copy of Title
+
+Enclose a copy of the owner's valid photo ID and $2 mail-in fee by check, cashier's check or money order payable to the Texas Department of Motor Vehicles. An agent of the owner or lienholder must also provide a letter of signature authority on original letterhead, a business card or a copy of the agent's employee ID.
+
+Mail the application to:
+TxDMV
+1601 Southwest Parkway, Suite A
+Wichita Falls, TX 76302
+#+END_EXAMPLE
+
 * TODO Failed to register an account in dmv website                :noexport:
 https://www.dmv.ca.gov/portal/dmv
-* Go to DMV and change address                                     :noexport:
-https://www.dmv.ca.gov/portal/dmv/detail/online/coa/welcome
 * apply for real ID                                                :noexport:
 https://www.dmv.ca.gov/portal/dmv/detail/realid

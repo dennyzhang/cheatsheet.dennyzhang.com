@@ -30,6 +30,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Name                         | Summary                                       |
 |------------------------------+-----------------------------------------------|
 | Plants                       | tree, shrub, plant                            |
+| Where to buy supplies        | [[https://www.google.com.hk/search?q=nursery][Local nursery shops]], [[https://www.homedepot.com/][Home Depo]], [[https://www.lowes.com/][Lowe's]]        |
 | Cold and heat zones          | [[https://www.gardengatemagazine.com/articles/flowers-plants/all/cold-and-heat-zones/][Link: Garden Gate]], [[https://garden.org/nga/zipzone/index.php][USDA Hardiness Zone Finder]] |
 | When to plan                 | [[https://www.burpee.com/][Link: Burpee]]                                  |
 | Watering the plants          |                                               |
@@ -37,6 +38,16 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | When to plant                |                                               |
 | How much sun it needs        |                                               |
 | How long to grow and harvest |                                               |
+
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B01DTC62RK&asins=B01DTC62RK&linkId=718c7fe96a54e52c2e6db63061733d71&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
+
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B00P2ZJ6DU&asins=B00P2ZJ6DU&linkId=7f2fd46565e002a688502989e5841f04&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
 ** Prune
 | Name                      | Summary                    |
 |---------------------------+----------------------------|

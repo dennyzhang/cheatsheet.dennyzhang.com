@@ -25,6 +25,7 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | Name                                  | Command                                                                                                           |
 |---------------------------------------+-------------------------------------------------------------------------------------------------------------------|
 | [[https://github.com/pivotal-cf/om][om]]                                    | A command-line API client for Pivotal Operations Manager                                                          |
+| Download PCF vsphpere Opsmanager OVA  | https://network.pivotal.io/products/ops-manager                                                                   |
 | omcli                                 | export passwd='CHANGEME'; alias omcli="om -t https://30.0.0.5 -u admin -p $password -k"                           |
 | Get uaa admin password                | =omcli curl -p /api/v0/deployed/products/${bosh_deployment}/credentials/.properties.uaa_admin_password=           |
 | Get bosh connect credential           | =omcli curl -p /api/v0/deployed/director/credentials/bosh_commandline_credentials=                                |
