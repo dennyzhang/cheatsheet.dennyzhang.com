@@ -536,3 +536,5 @@ https://www.gfmag.com/global-data/economic-data/largest-companies
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Cheatsheet: yaml                                            :noexport:
 * TODO Makes two tables in one row                                 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] GitHub link should have Amazon affiliate links: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-house-A4 :noexport:
