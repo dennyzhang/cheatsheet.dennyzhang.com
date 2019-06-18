@@ -24,7 +24,6 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 ** Basic
 | Name                    | Command                 |
 |-------------------------+-------------------------|
-| Alexa For Playing music |                         |
 | Alexa For Task Reminds  |                         |
 | Alexa For iRobot        |                         |
 | YouTube                 | [[https://www.youtube.com/watch?v=WgWlfckLc-Q][8 Everyday Alexa Skills]] |
@@ -32,7 +31,18 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B0792KTHKJ&asins=B0792KTHKJ&linkId=01b2c156617dbd40bc342a3f195df4c7&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
 #+END_HTML
-
+** Alexa Play Music
+| Name           | Command                             |
+|----------------+-------------------------------------|
+|                | =Alexa, play a music for road trip= |
+|                | =Alexa, play a soft music=          |
+| Sas music      | =Alexa, play a sasa music=          |
+| Play next song | =Alexa, next=                       |
+| Reference      | [[https://www.cnet.com/how-to/alexa-tips-for-music-lovers/][Link: 9 Alexa tips for music lovers]] |
+** Alexa Set Reminders
+| Name                        | Command                                       |
+|-----------------------------+-----------------------------------------------|
+| Set a reminder in 5 minutes | =Alexa, remind me to do laundry in 5 minutes= |
 ** More Resources
 License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

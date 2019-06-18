@@ -169,10 +169,10 @@ Cheers!
    CLOSED: [2018-08-16 Thu 00:08]
 ** DONE [#A] Add icon for cheatsheet.dennyzhang.com                :noexport:
    CLOSED: [2019-05-21 Tue 13:56]
-* HALF Sample image: [[https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-ssl-A4/ssl-certificate.png :noexport:
 * DONE Sample link: /Users/zdenny/Dropbox/git_code/cheatsheet.dennyzhang.com/cheatsheet-disk-A4/sort-disk-size.sh :noexport:
   CLOSED: [2019-02-10 Sun 22:03]
 [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-disk-A4/sort-disk-size.sh][sort-disk-size.sh
+* HALF Sample image: [[https://cheatsheet.dennyzhang.com/cheatsheet-ssl-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-ssl-A4/ssl-certificate.png :noexport:
 * [#A] cheatsheet recommend products, books, etc                   :noexport:
 Search /ws-na.amazon-adsystem.com
 - Health: Wooden comb
