@@ -257,3 +257,36 @@ Wichita Falls, TX 76302
 https://www.dmv.ca.gov/portal/dmv
 * apply for real ID                                                :noexport:
 https://www.dmv.ca.gov/portal/dmv/detail/realid
+* TODO [#A] Traffic & Ticket Basics                                :noexport:
+https://www.courts.ca.gov/8452.htm
+
+“Notice to Appear
+
+- Stucked for 15 minutes in I280 a traffic jam
+- Run out of gas
+
+Right turn signal
+
+Looked in the rear miror and look behind
+
+Expecting the following traffic to slow down a little bit
+
+busy hour
+* TODO traffic ticket                                              :noexport:
+https://blog.yamibuy.com/?p=6814
+
+https://www.guruin.com/articles/2639
+
+勾选Trial By Written Declaration后，也别忘了要附上一张罚单金额的支票作为保释金
+
+勾选Trial By Written Declaration后，除了附上保释金支票，你还得要附上一份书面申请去索取TR-205表格
+
+https://www.mitbbs.com/article_t/SanFrancisco/34625653.html
+你收到courtesy notice就知道罚款是多少了。ticket输入系统很慢，有时候几个月才
+输入系统，所以你不用急。如果你输了，会有1 point，会影响保险，除非你上traffic
+school把point藏起来
+
+* TODO Write ticket about the traffic ticket                       :noexport:
+* TODO Update SSN Address                                          :noexport:
+https://faq.ssa.gov/en-us/Topic/article/KA-01711
+https://secure.ssa.gov/RIR/CatsView.action

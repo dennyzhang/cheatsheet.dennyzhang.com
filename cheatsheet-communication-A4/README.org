@@ -446,7 +446,13 @@ Senior hiring:
 https://www.youtube.com/watch?v=R1vskiVDwl4
 * notes                                                            :noexport:
 ** how it worked before?
+** “讲道理”和“问问题”是聊天的两个基本组成部分
+** 精致的利己主义，没有人格魅力
+** 讲的故事要生动
 ** [#A] 闲聊中学习                                                 :noexport:
+** - 自己给自己园话，然后再讨论建议
+** - 自己给自己打好label，然后告诉别人
+Labels: Container expert/Technical selling
 * 技术有实力 ！= 有能力把事情做好                                  :noexport:
 FZ case
 * outcome matters                                                  :noexport:
@@ -461,3 +467,4 @@ FZ case
 * Messages(slack, emails) may not be read deliberately or unconciously :noexport:
 * Common sense might be missing quite often                   :noexport:
 - No e2e tests, before PR
+* Simon Sinek - YouTube: Why leaders make you safe                 :noexport:
