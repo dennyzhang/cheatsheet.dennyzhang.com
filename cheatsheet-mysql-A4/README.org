@@ -111,3 +111,6 @@ License: Code is licenmysql under [[https://www.dennyzhang.com/wp-content/mit_li
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
+* HALF doc: datediff('2019-06-23',available_from): https://leetcode.com/problems/unpopular-books/discuss/324747/MySQL-case-statement-in-having :noexport:
+* HALF doc: In SQL, how to select the top 2 rows for each group    :noexport:
+https://stackoverflow.com/questions/15969614/in-sql-how-to-select-the-top-2-rows-for-each-group

@@ -30,23 +30,28 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | FREE DMV Practice Test for California Permit 2018    | [[https://driving-tests.org/california/dmv-practice-test/][Link: driving-tests.org]]           |
 | California DMV Marathon Practice Test(150 Questions) | [[https://driving-tests.org/california/california-marathon-practice-test/][Link: driving-tests.org]]           |
 | California Driver Handbook                           | [[https://www.dmv.ca.gov/web/eng_pdf/dl600.pdf][Link: dmv pdf]]                     |
-
-** Limits & Fining
+| Chinese simulated tests                              | [[https://pass-dmv-test.com/quiz-1-zh.html][Link: quiz]]                        |
+** Limits
 | Name                     | Summary                                                                                      |
 |--------------------------+----------------------------------------------------------------------------------------------|
-| The fine of litering     | $1,000, in addition, you may be required to pick up what littered                            |
-| Change lanes on freeway  | You should signal for at least 5 seconds                                                     |
-| Tailgating               | To avoid tailgating, leave 3 second of space between you and the vehicle in front of you     |
-| Enter school zones       | Within 500-1000 feet of a school, the speed limit is 25 mph while children are outside       |
-| Make changes             | To avoid last-minute moves, look down the road 10-15 seconds                                 |
-| park near fire hydrant   | You can't part within 15 feet of a fire hydrant                                              |
+| Drive close to cicyclist | You must ensure there is more than 3 feet width for cyclist                                  |
 | Park near railroad track | You must not park within 7.5 feet of a railroad track                                        |
-| drive close to cicyclist | You must ensure there is more than 3 feet width for cyclist                                  |
+| Park near fire hydrant   | You can't part within 15 feet of a fire hydrant                                              |
+| Enter school zones       | Within 500-1000 feet of a school, the speed limit is 25 mph while children are outside       |
 | Turn a corner            | You should signal for at least 100 feet.                                                     |
 | Follow emergency vehcile | You must not follow within 400 feet of any emergency vehcile with a siren or flashing lights |
 | Use center lane          | While driving in a center left-turn lane, you may only drive for 200 feet.                   |
-
-** Parking at colored curbs
+** Time
+| Name                    | Summary                                                                                  |
+|-------------------------+------------------------------------------------------------------------------------------|
+| Change lanes on freeway | You should signal for at least 5 seconds                                                 |
+| Tailgating              | To avoid tailgating, leave 3 second of space between you and the vehicle in front of you |
+| Make changes            | To avoid last-minute moves, look down the road 10-15 seconds                             |
+** Fining
+| Name                 | Summary                                                           |
+|----------------------+-------------------------------------------------------------------|
+| The fine of litering | $1,000, in addition, you may be required to pick up what littered |
+** Colored curbs
 | Name       | Summary                                                                                 |
 |------------+-----------------------------------------------------------------------------------------|
 | White curb | Stop only long enough to pick up or drop off passengers or mail.                        |
@@ -54,7 +59,9 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Yellow     | Stop no longer than the time posted to load or unload passengers or freight.            |
 | Red        | No stopping, standing, or parking. (Buses may stop at a red zone marked for buses.)     |
 | Blue       | Parking for disabled people only                                                        |
-
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
 ** Terminology
 | Name                             | Summary                                                                                            |
 |----------------------------------+----------------------------------------------------------------------------------------------------|
@@ -71,13 +78,12 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | NEV                              | neighborhood electric vehicles                                                                     |
 | LSV                              | Low speed vehicles                                                                                 |
 | HOV lane(High-Occupancy Vehicle) | Designed for buses, motorcycles, certain low-emission vehicles and 2+ passengers                   |
-
-** Misc
+** General
 | Name                       | Summary                                                         |
 |----------------------------+-----------------------------------------------------------------|
 | Traffic lights not working | You need to come to a complete stop first                       |
 | Use horn                   | You may tap horn to try to make eye contact with another driver |
-
+** Pictures
 hand-over-hand-steering:
 [[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/hand-over-hand-steering.jpg]]
 
@@ -93,6 +99,7 @@ cone-zone:
 signal-hands:
 [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/signal-hands.png]]
 
+[[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-driver-license-A4/road_split.png]]
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -138,7 +145,98 @@ https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl07
 #+LINK_UP:
 #+LINK_HOME:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* DONE                                                             :noexport:
+* DMV Questions                                                    :noexport:
+** You have been involved in a minor traffic collision with a parked vehicle and you can't find the owner. You must:
+#+BEGIN_EXAMPLE
+3. You have been involved in a minor traffic collision with a parked vehicle and you can't find the owner. You must:
+
+Leave a note on the vehicle.
+Report the accident without delay to the city police or, in unincorporated areas, to the CHP.
+Both of the above.
+
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc3written?lang=en
+#+END_EXAMPLE
+** You must notify the DMV within 5 days if you:
+#+BEGIN_EXAMPLE
+2. You must notify the DMV within 5 days if you:
+
+Sell or transfer your vehicle.
+Fail a smog test for your vehicle.
+Get a new prescription for lenses or contacts.
+
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en
+#+END_EXAMPLE
+** It is illegal to park your vehicle:
+#+BEGIN_EXAMPLE
+6. It is illegal to park your vehicle:
+
+In an unmarked crosswalk.
+Within three feet of a private driveway.
+In a bicycle lane.
+
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en
+#+END_EXAMPLE
+** Which of these vehicles must always stop before crossing railroad tracks?
+#+BEGIN_EXAMPLE
+5. Which of these vehicles must always stop before crossing railroad tracks?
+
+Tank trucks marked with hazardous materials placards.
+Motor homes or pickup trucks towing a boat trailer.
+Any vehicle with 3 or more axles or weighing more than 4,000 pounds.
+
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en
+#+END_EXAMPLE
+** You are driving on a freeway posted for 65 mph. Most of the other vehicles are driving 70 mph or faster. You may legally drive:
+C
+#+BEGIN_EXAMPLE
+3. You are driving on a freeway posted for 65 mph. Most of the other vehicles are driving 70 mph or faster. You may legally drive:
+
+70 mph or faster to keep up with the speed of traffic.
+Between 65 mph and 70 mph.
+No faster than 65 mph.
+
+https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en
+#+END_EXAMPLE
+** 根據加州法律規定,下列哪種情況下你不能將6歲以下（含6歲）兒童留在汽車內:
+https://pass-dmv-test.com/quiz-28-zh.html
+除了該名兒童外,車內還有其他12歲以上的哥哥或姐姐.
+車鑰匙沒有取下來.  正确
+車外氣候寒冷且所有車窗都處於關閉狀態.
+夜間的停車場上.
+** 在下列何種情況下,你應該與前面的車輛保持更大的距離:
+https://pass-dmv-test.com/quiz-26-zh.html
+前面的車是小型機動車.
+後面有一輛車緊跟著你.  正确
+前面的車行駛的很慢.
+前面的車是大型貨車.
+** 如果你駕車時經過一片施工區域,應該怎麼做才對？
+   CLOSED: [2019-07-12 Fri 21:52]
+ https://pass-dmv-test.com/quiz-1-zh.html
+
+ 如果你駕車時經過一片施工區域,應該怎麼做才對？
+ A 減速,小心路上的工人.
+ B 鳴笛,引起周圍行人和車輛的注意.
+ C 集中精神,小心駕駛即可.  正确
+ D 加速通過,以免影響工人施工.
+** 根據加州的法律,如果你遭遇車禍且有人受傷,則必須向下列中的哪一方提交有關車禍的書面報告？
+管轄事發路段的警察局
+加州公路巡邏隊 (CHP)
+加州機動車輛管理局 (DMV)  正确
+你的保險公司
+** 什麼情況下你才可以在住宅區的車道上調頭？
+   CLOSED: [2019-07-12 Fri 22:04]
+https://pass-dmv-test.com/quiz-13-zh.html
+
+ 什麼情況下你才可以在住宅區的車道上調頭？
+
+ 任何時候都不能再住宅區調頭.
+ 只能在單行道上調頭.
+ 只要附近沒有其它車輛時就可以調頭  正确
+ 只能在路面上畫有兩條黃色實線時才可以調頭.
+* renew vehicle                                                    :noexport:
+https://www.dmv.ca.gov/portal/dmv/detail/online/vrir/vr_top2
+** When I need smoke test?
+* DONE local notes                                                 :noexport:
 ** DONE DMV 14 Change of Address                                   :noexport:
    CLOSED: [2019-06-15 Sat 18:47]
  https://www.dmv.ca.gov/portal/dmv/detail/forms/dmv/dmv14
@@ -181,62 +279,43 @@ https://www.dmv.ca.gov/portal/dmv/detail/pubs/brochures/fast_facts/ffdl07
    CLOSED: [2019-06-16 Sun 08:29]
  https://www.dmv.ca.gov/portal/dmv/detail/online/coa/welcome
  http://vegas168.blogspot.com/2016/05/checklist.html
-
-* Interesting Questions                                            :noexport:
-#+BEGIN_EXAMPLE
-3. You have been involved in a minor traffic collision with a parked vehicle and you can't find the owner. You must:
-
-Leave a note on the vehicle.
-Report the accident without delay to the city police or, in unincorporated areas, to the CHP.
-Both of the above.
-
-https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc3written?lang=en
-#+END_EXAMPLE
-
-#+BEGIN_EXAMPLE
-2. You must notify the DMV within 5 days if you:
-
-Sell or transfer your vehicle.
-Fail a smog test for your vehicle.
-Get a new prescription for lenses or contacts.
-
-https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en
-#+END_EXAMPLE
-
-#+BEGIN_EXAMPLE
-6. It is illegal to park your vehicle:
-
-In an unmarked crosswalk.
-Within three feet of a private driveway.
-In a bicycle lane.
-
-https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en
-#+END_EXAMPLE
-
-#+BEGIN_EXAMPLE
-3. You are driving on a freeway posted for 65 mph. Most of the other vehicles are driving 70 mph or faster. You may legally drive:
-
-70 mph or faster to keep up with the speed of traffic.
-Between 65 mph and 70 mph.
-No faster than 65 mph.
-
-https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en
-#+END_EXAMPLE
-
-#+BEGIN_EXAMPLE
-5. Which of these vehicles must always stop before crossing railroad tracks?
-
-Tank trucks marked with hazardous materials placards.
-Motor homes or pickup trucks towing a boat trailer.
-Any vehicle with 3 or more axles or weighing more than 4,000 pounds.
-
-https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en
-#+END_EXAMPLE
-As Of: 9/10/2018
-* renew vehicle                                                    :noexport:
-https://www.dmv.ca.gov/portal/dmv/detail/online/vrir/vr_top2
-** When I need smoke test?
+* apply for real ID                                                :noexport:
+https://www.dmv.ca.gov/portal/dmv/detail/realid
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Traffic & Ticket Basics                                :noexport:
+https://www.courts.ca.gov/8452.htm
+
+"Notice to Appear
+
+- Stucked for 15 minutes in I280 a traffic jam
+- Run out of gas
+
+Right turn signal
+
+Looked in the rear miror and look behind
+
+Expecting the following traffic to slow down a little bit
+
+busy hour
+* TODO Failed to register an account in dmv website                :noexport:
+https://www.dmv.ca.gov/portal/dmv
+* TODO traffic ticket                                              :noexport:
+https://blog.yamibuy.com/?p=6814
+
+https://www.guruin.com/articles/2639
+
+勾选Trial By Written Declaration后,也别忘了要附上一张罚单金额的支票作为保释金
+
+勾选Trial By Written Declaration后,除了附上保释金支票,你还得要附上一份书面申请去索取TR-205表格
+
+https://www.mitbbs.com/article_t/SanFrancisco/34625653.html
+你收到courtesy notice就知道罚款是多少了.ticket输入系统很慢,有时候几个月才
+输入系统,所以你不用急.如果你输了,会有1 point,会影响保险,除非你上traffic
+school把point藏起来
+* TODO Write ticket about the traffic ticket                       :noexport:
+* TODO Update SSN Address                                          :noexport:
+https://faq.ssa.gov/en-us/Topic/article/KA-01711
+https://secure.ssa.gov/RIR/CatsView.action
 * Replacing a Lost Title in Texas                                  :noexport:
 https://www.txdmv.gov/motorists/buying-or-selling-a-vehicle/get-a-copy-of-your-title
 #+BEGIN_EXAMPLE
@@ -252,41 +331,3 @@ TxDMV
 1601 Southwest Parkway, Suite A
 Wichita Falls, TX 76302
 #+END_EXAMPLE
-
-* TODO Failed to register an account in dmv website                :noexport:
-https://www.dmv.ca.gov/portal/dmv
-* apply for real ID                                                :noexport:
-https://www.dmv.ca.gov/portal/dmv/detail/realid
-* TODO [#A] Traffic & Ticket Basics                                :noexport:
-https://www.courts.ca.gov/8452.htm
-
-“Notice to Appear
-
-- Stucked for 15 minutes in I280 a traffic jam
-- Run out of gas
-
-Right turn signal
-
-Looked in the rear miror and look behind
-
-Expecting the following traffic to slow down a little bit
-
-busy hour
-* TODO traffic ticket                                              :noexport:
-https://blog.yamibuy.com/?p=6814
-
-https://www.guruin.com/articles/2639
-
-勾选Trial By Written Declaration后，也别忘了要附上一张罚单金额的支票作为保释金
-
-勾选Trial By Written Declaration后，除了附上保释金支票，你还得要附上一份书面申请去索取TR-205表格
-
-https://www.mitbbs.com/article_t/SanFrancisco/34625653.html
-你收到courtesy notice就知道罚款是多少了。ticket输入系统很慢，有时候几个月才
-输入系统，所以你不用急。如果你输了，会有1 point，会影响保险，除非你上traffic
-school把point藏起来
-
-* TODO Write ticket about the traffic ticket                       :noexport:
-* TODO Update SSN Address                                          :noexport:
-https://faq.ssa.gov/en-us/Topic/article/KA-01711
-https://secure.ssa.gov/RIR/CatsView.action

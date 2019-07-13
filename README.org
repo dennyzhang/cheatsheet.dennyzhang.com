@@ -540,3 +540,16 @@ https://www.gfmag.com/global-data/economic-data/largest-companies
 * TODO [#A] GitHub link should have Amazon affiliate links: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-house-A4 :noexport:
 * TODO github unicode issue: https://github.com/dennyzhang/cheatsheet-python-A4/issues/1 :noexport:
 * TODO sql cheatsheet: from sql leetcode                           :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO markdown cheatsheet: https://devops.datenkollektiv.de/devops-markdown-cheat-sheet.html :noexport:
+* TODO Cheatsheet: Consuming Docker Images Without Legal Issue     :noexport:
+** Binaries, including container base images, must be created from known good sources
+under a source control system, by our tools team and provided through an internal repository (including all the tracking that goes with this).
+** Pulling container images from docker.io is not consistent with our compliance and security policies.
+** Docker file: apt-get
+Docker files with open ended “apt get” or sync’s with upstream repos (potential release blocker)
+** Ubuntu docker images are they open source?
+If open source did we remove the canonical trade marks from them?
+** Can we rebuild identical container images we ship in our product at a later date?
+* TODO Cheatsheet enforce flyspell check automatically             :noexport:
+* TODO sql cheatsheet: from leetcode problems                      :noexport:

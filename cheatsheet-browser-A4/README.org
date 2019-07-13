@@ -25,7 +25,11 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | Name                        | Comment                                      |
 |-----------------------------+----------------------------------------------|
 | Chrome open a new tab       | =Command + T=                                |
+| Chrome open a new window    | =Command + N=                                |
+| Reload page                 | =Command + R=                                |
 | Chrome undo closed tab      | =Command + Shift + T=                        |
+| Enter/Exit full screen      | =Command + Control + F=                      |
+| Open developer tool         | =Command + Option + I=                       |
 | Chrome scroll to top/bottom | =Command + arrow up=, =Command + arrow down= |
 ** Chrome - Plugins
 | Name     | Comment                                 |

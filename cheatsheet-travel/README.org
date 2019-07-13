@@ -31,14 +31,15 @@ Checklist before travel by flights
 | Chargers   | cellphones, laptop, etc.                                    |
 | Slippers   | be more comfortable on the plane or hotel                   |
 ** Checklist: International Flights
-| Item             | Summary                    |
-|------------------+----------------------------|
-| Fruits           | Apples, Oranges, etc       |
-| Check-in earlier | Choose seats               |
-| Earphone         | Noisy background on plane  |
-| Blanket          | It could cold on the plane |
-| Pillow           | Sleep well on the flights  |
-| Glass protection | Sleep well on the flights  |
+| Item             | Summary                               |
+|------------------+---------------------------------------|
+| Pen              | Might need to fill forms on the plane |
+| Fruits           | Apples, Oranges, etc                  |
+| Check-in earlier | Choose seats                          |
+| Earphone         | Noisy background on plane             |
+| Blanket          | It could cold on the plane            |
+| Pillow           | Sleep well on the flights             |
+| Glass protection | Sleep well on the flights             |
 ** Checklist: Optional
 | Item                | Summary                               |
 |---------------------+---------------------------------------|
