@@ -99,7 +99,10 @@ cone-zone:
 signal-hands:
 [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/signal-hands.png]]
 
-[[https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-driver-license-A4/road_split.png]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-driver-license-A4/road_split.png]]
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-driver-license-A4/parking-wheels.jpg]]
+
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -197,6 +200,43 @@ No faster than 65 mph.
 
 https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en
 #+END_EXAMPLE
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** 如果你途径一个車禍現場并想停下來提供救援,那么應該在何處停車才是正確的？
+https://pass-dmv-test.com/quiz-57-zh.html
+先駛過車禍現場后再找適當的地方停車.  正确
+在車禍現場的旁邊停車.
+在車禍現場之前停車,這樣可以警示後面經過的車輛.
+給警察打電話以征求最合適的建議.
+** 在駕車期間,如果你血液中的酒精濃度（BAC）達到或高於法定限度會面臨什麼后果？
+https://pass-dmv-test.com/quiz-62-zh.html
+警察會當場將你拘留.
+可能會被處以罰款.  正确
+沒關係,血液內的酒精濃度並不能作為對你進行判罰的依據.
+警察會吊銷你的駕照.
+** 在冬季里,哪一種道路上最有可能存在不易被發現的冰面.
+https://pass-dmv-test.com/quiz-39-zh.html
+位於山頂附近的的道路.
+鋪有瀝青的道路.
+橋樑和立交橋上的道路.  正确
+沙土路面的道路.
+** 開車的時候,你必須要留意那些在機動車道上騎自行車的人,因為:
+https://pass-dmv-test.com/quiz-45-zh.html
+他們不遵守交通規則.
+他們擁有更高的優先權.
+他們有權與機動車共享道路.  正确
+他們的速度很慢
+** 下列陳述中的哪一個是正確的？
+https://pass-dmv-test.com/quiz-47-zh.html
+加州的公路上是沒有最低時速限制的.
+車速越快就越難控制.  正确
+超車時如果車速過快會被罰款.
+加州法律規定,凌晨5點鐘至7點鐘之間禁止大型貨車駛入高速公路.
+** 下列哪種情況下,你應該反復踩剎車來讓剎車燈閃爍或者打開緊急信號燈（雙閃燈）？
+https://pass-dmv-test.com/quiz-36-zh.html
+你想要警告其他司機不遠處發生了交通事故.  正确
+你即將臨時停車.
+你準備倒車.
+你的車子胎壓不足了.
 ** 根據加州法律規定,下列哪種情況下你不能將6歲以下（含6歲）兒童留在汽車內:
 https://pass-dmv-test.com/quiz-28-zh.html
 除了該名兒童外,車內還有其他12歲以上的哥哥或姐姐.
