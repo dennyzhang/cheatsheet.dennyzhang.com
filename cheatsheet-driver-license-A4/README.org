@@ -47,6 +47,9 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Change lanes on freeway | You should signal for at least 5 seconds                                                 |
 | Tailgating              | To avoid tailgating, leave 3 second of space between you and the vehicle in front of you |
 | Make changes            | To avoid last-minute moves, look down the road 10-15 seconds                             |
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
 ** Fining
 | Name                 | Summary                                                           |
 |----------------------+-------------------------------------------------------------------|
@@ -59,9 +62,6 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Yellow     | Stop no longer than the time posted to load or unload passengers or freight.            |
 | Red        | No stopping, standing, or parking. (Buses may stop at a red zone marked for buses.)     |
 | Blue       | Parking for disabled people only                                                        |
-#+BEGIN_HTML
-<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
-#+END_HTML
 ** Terminology
 | Name                             | Summary                                                                                            |
 |----------------------------------+----------------------------------------------------------------------------------------------------|
@@ -83,6 +83,9 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 |----------------------------+-----------------------------------------------------------------|
 | Traffic lights not working | You need to come to a complete stop first                       |
 | Use horn                   | You may tap horn to try to make eye contact with another driver |
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
 ** Pictures
 hand-over-hand-steering:
 [[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/hand-over-hand-steering.jpg]]
@@ -103,6 +106,11 @@ signal-hands:
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-driver-license-A4/parking-wheels.jpg]]
 
+[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-driver-license-A4/keep-right.jpg]]
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-driver-license-A4/left-turn-on-green-only.png]]
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-driver-license-A4/driving-bac.jpg]]
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -201,6 +209,26 @@ No faster than 65 mph.
 https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en
 #+END_EXAMPLE
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** 如果警察以酒後駕駛的名義拘捕你，而你拒絕接受血液酒精濃度測試。其後果是：
+https://pass-dmv-test.com/quiz-127-zh.html
+駕駛執照將被吊銷至少一年。  正确
+你將被無罪釋放，因為警察無法對你進行定罪。
+只有當律師在場時，警察才能對你進行該項測試。
+你的汽車將被扣押。
+** 如图所示，如果有兩組雙黃實線且它们之間的距离至少有2英尺寬；这表示什么？
+https://pass-dmv-test.com/quiz-130-zh.html
+左轉彎或 U 型轉彎時可以跨越這兩組雙黃實線。
+對司機而言，這樣的兩組雙黃實線等同於不可逾越的墻壁。  正确
+前方即將出現渡口。
+該路段僅在節假日期間才允許重型卡車通行。
+** 如圖所示，這種形狀的橘黃色標誌表示：
+https://pass-dmv-test.com/quiz-138-zh.html
+如圖所示，這種形狀的橘黃色標誌表示：
+
+掛有這種標誌的機動車有優先權。
+掛有這種標誌的機動車是慢行車輛。  正确
+前方路段出現了危險狀況。
+前方路段正在施工。
 ** 如果你途径一个車禍現場并想停下來提供救援,那么應該在何處停車才是正確的？
 https://pass-dmv-test.com/quiz-57-zh.html
 先駛過車禍現場后再找適當的地方停車.  正确
@@ -225,6 +253,18 @@ https://pass-dmv-test.com/quiz-45-zh.html
 他們擁有更高的優先權.
 他們有權與機動車共享道路.  正确
 他們的速度很慢
+** 如果一条公路上的限速是55英里/小时，那么当道路潮濕時你应该以什么速度行驶？
+https://pass-dmv-test.com/quiz-69-zh.html
+遵守限速要求，以55英里/小時的速度行駛。
+以高於限速5-10英里/小時的速度行駛。
+以低於限速5-10英里/小時的速度速度行駛。  正确
+以低於限速20-25英里/小時的速度行駛。
+** 如果你捲入了交通事故，根據法律規定你必須和對方司機交換駕照信息，同時還要：
+https://pass-dmv-test.com/quiz-71-zh.html
+提供你的保險證明。
+提供你的保險證明和車輛登記證書。
+提供你的保險證明、車輛登記證書和目前的住址。  正确
+提供你的保險證明、車輛登記證書和你的家庭醫生聯繫方式。
 ** 下列陳述中的哪一個是正確的？
 https://pass-dmv-test.com/quiz-47-zh.html
 加州的公路上是沒有最低時速限制的.
@@ -253,7 +293,7 @@ https://pass-dmv-test.com/quiz-26-zh.html
    CLOSED: [2019-07-12 Fri 21:52]
  https://pass-dmv-test.com/quiz-1-zh.html
 
- 如果你駕車時經過一片施工區域,應該怎麼做才對？
+如果你駕車時經過一片施工區域,應該怎麼做才對？
  A 減速,小心路上的工人.
  B 鳴笛,引起周圍行人和車輛的注意.
  C 集中精神,小心駕駛即可.  正确
@@ -263,6 +303,18 @@ https://pass-dmv-test.com/quiz-26-zh.html
 加州公路巡邏隊 (CHP)
 加州機動車輛管理局 (DMV)  正确
 你的保險公司
+** 前方的路口沒有信號燈，而且看不到兩側方向有駛近的車輛，此時你應該以什麼車速通過該路口呢？
+https://pass-dmv-test.com/quiz-87-zh.html
+每小時25英里
+每小時15英里  正确
+每小時10英里
+每小時40英里
+** 什麼情況下才可以在小型卡車（如“皮卡”）的車斗中坐人？
+https://pass-dmv-test.com/quiz-89-zh.html
+車斗四周的圍欄高度在24英吋以上時。
+車斗上方有車罩覆蓋時。
+車斗內配有供乘客使用的安全座椅和安全帶。  正确
+任何情況下都不能再車斗內搭載乘客。   
 ** 什麼情況下你才可以在住宅區的車道上調頭？
    CLOSED: [2019-07-12 Fri 22:04]
 https://pass-dmv-test.com/quiz-13-zh.html
