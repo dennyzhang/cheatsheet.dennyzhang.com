@@ -62,7 +62,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-gym-A4/issues][Issues]] or st
 | 90 degree hold              | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]] |
 | Incline diamond push ups    | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]] |
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-gym-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-gym-A4/push-up.jpg]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-gym-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-gym-A4/push-ups.jpg]]
 
 ** Train For Legs
 | Name                   | Summary                                         |
