@@ -553,3 +553,5 @@ If open source did we remove the canonical trade marks from them?
 ** Can we rebuild identical container images we ship in our product at a later date?
 * TODO Cheatsheet enforce flyspell check automatically             :noexport:
 * TODO sql cheatsheet: from leetcode problems                      :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Quiz website: https://driver-test.com/                      :noexport:

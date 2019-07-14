@@ -37,10 +37,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 #+BEGIN_HTML
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B07D7Q6CHB&asins=B07D7Q6CHB&linkId=fb8b8f93c432332a3f582ff16f63fead&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
-#+END_HTML
 
-#+BEGIN_HTML
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B01M9AU8MB&asins=B01M9AU8MB&linkId=baca79d8c4d3e71b3dd88077a542ee68&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B01KBEOQJU&asins=B01KBEOQJU&linkId=6400902429f66fdaa80735cfcc1bcc0a&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
 #+END_HTML
 ** Checklist For Regular Maintenance
@@ -90,11 +91,21 @@ File me [[https://github.com/dennyzhang/cheatsheet-house-A4/issues][Issues]] or 
 | Wood Floors is squeaky | [[https://www.youtube.com/watch?v=3iAseVZZKlY][YouTube: Repair Squeaky Wood Floors]]        |
 | Wood Floor is chipped  | [[https://www.youtube.com/watch?v=DPGxCageub8][YouTube: How to Patch a Chipped Wood Floor]] |
 ** Pest control
-| Name                        | Summary                                     |
-|-----------------------------+---------------------------------------------|
-| Termites/white ants         | [[https://www.youtube.com/watch?v=ZvowhUYjqvQ][YouTube: Termites]]                           |
-| Spray Home for pest control | [[https://www.youtube.com/watch?v=OmWNoz3P1YM][YouTube: Spray Home Like A Pest Control Pro]] |
-| Reference                   | [[https://www.youtube.com/watch?v=l_MbJ_wMnjY][YouTube: How To Do Your Own Home Pest]]       |
+| Name                                  | Summary                                                                                               |
+|---------------------------------------+-------------------------------------------------------------------------------------------------------|
+| Termites/white ants                   | [[https://www.youtube.com/watch?v=ZvowhUYjqvQ][YouTube: Termites]]                                                                                     |
+| Spray Home for pest control           | [[https://www.youtube.com/watch?v=OmWNoz3P1YM][YouTube: Spray Home Like A Pest Control Pro]]                                                           |
+| Kill ants                             | [[https://www.youtube.com/watch?v=dRi1zdgm5C8][YouTube: How to Get Rid of Ants: Guaranteed Ant Control in Home & Yard]]                                |
+| Kill ants - utilize ant baits & traps | [[https://www.youtube.com/watch?v=2IQZIehbzcs][YouTube: TOP 5 Ways to Get Rid of Ants Around Your Home]], [[https://www.youtube.com/watch?v=IKYbabTzGvo][YouTube: ALL NATURAL ANT CONTROL using BORAX]] |
+| Kill ants - seal entry points         | [[https://www.youtube.com/watch?v=2IQZIehbzcs][YouTube: TOP 5 Ways to Get Rid of Ants Around Your Home]]                                               |
+| Reference                             | [[https://www.youtube.com/watch?v=l_MbJ_wMnjY][YouTube: How To Do Your Own Home Pest]]                                                                 |
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B00E4GACB8&asins=B00E4GACB8&linkId=f96dd0ba2e643c7d3e089673b4d343b3&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B07BRZDDTZ&asins=B07BRZDDTZ&linkId=ca43ab1eefc052a072b3f1f58b783015&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
 ** Kitchen
 | Name                    | Summary                                 |
 |-------------------------+-----------------------------------------|
@@ -601,3 +612,6 @@ https://www.amazon.com/Ring/dp/B01JTL2PYE/ref=sr_1_39?keywords=ring+alarm&qid=15
 * TODO One bulb in the family room doens't work                    :noexport:
 * TODO water service: setup online payment                         :noexport:
 * TODO Split this cheatsheet: buy a house & maintain ahouse        :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO spray home defense                                          :noexport:
+https://www.youtube.com/watch?v=2IQZIehbzcs

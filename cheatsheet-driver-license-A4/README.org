@@ -28,9 +28,9 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 |------------------------------------------------------+-----------------------------------|
 | Sample Class C Written Tests from DMV                | [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc2written?lang=en][Test1]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc3written?lang=en][Test2]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en][Test3]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en][Test4]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc6written?lang=en][Test5]] |
 | FREE DMV Practice Test for California Permit 2018    | [[https://driving-tests.org/california/dmv-practice-test/][Link: driving-tests.org]]           |
+| Chinese simulated driver license tests               | [[https://driver-test.com/][link:driver-test.com]], [[https://pass-dmv-test.com/quiz-1-zh.html][Link: quiz]]  |
 | California DMV Marathon Practice Test(150 Questions) | [[https://driving-tests.org/california/california-marathon-practice-test/][Link: driving-tests.org]]           |
 | California Driver Handbook                           | [[https://www.dmv.ca.gov/web/eng_pdf/dl600.pdf][Link: dmv pdf]]                     |
-| Chinese simulated tests                              | [[https://pass-dmv-test.com/quiz-1-zh.html][Link: quiz]]                        |
 ** Limits
 | Name                     | Summary                                                                                      |
 |--------------------------+----------------------------------------------------------------------------------------------|
@@ -68,12 +68,12 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Skid                             | automobiles slip relative to the road [[https://en.wikipedia.org/wiki/Skid_(automobile)][Link: wikipedia]]                                              |
 | California "Basic Speed Law"     | You must never driver faster than what is safe in current conditions                               |
 | Turnout area                     | You may pull to the side in these areas and allow cars behind you to pass. [[https://driversed.com/driving-information/driving-techniques/turnout-areas.aspx][Link]]                    |
-| a flashing yellow traffic signal | No need to stop, but slow down and alerted before entering intersection                            |
-| a flashing red traffic signal    | Treat like a STOP sign. stop, yield and only proceed when it's safe                                |
-| a nighttime reflector            | It shows where the road lies                                                                       |
-| hand-over-hand steering          | used when turning at low speeds, parking or recovering from a skid                                 |
-| one-hand steering                | You can use when you're backing up without much turning                                            |
-| three-point turn                 | standard method of turning vehicles around to face the opposite direction in a limited space. [[https://en.wikipedia.org/wiki/Three-point_turn][link]] |
+| A flashing yellow traffic signal | No need to stop, but slow down and alerted before entering intersection                            |
+| A flashing red traffic signal    | Treat like a STOP sign. stop, yield and only proceed when it's safe                                |
+| A nighttime reflector            | It shows where the road lies                                                                       |
+| Hand-over-hand steering          | used when turning at low speeds, parking or recovering from a skid                                 |
+| One-hand steering                | You can use when you're backing up without much turning                                            |
+| Three-point turn                 | standard method of turning vehicles around to face the opposite direction in a limited space. [[https://en.wikipedia.org/wiki/Three-point_turn][link]] |
 | DUI probation                    |                                                                                                    |
 | NEV                              | neighborhood electric vehicles                                                                     |
 | LSV                              | Low speed vehicles                                                                                 |
@@ -209,26 +209,83 @@ No faster than 65 mph.
 https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en
 #+END_EXAMPLE
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** 如果警察以酒後駕駛的名義拘捕你，而你拒絕接受血液酒精濃度測試。其後果是：
+** 以下哪些兒童要求使用兒童安全座椅
+https://pass-dmv-test.com/quiz-152-zh.html
+體重55磅的5歲兒童  正确
+體重60磅的6歲兒童
+體重65磅的5歲兒童
+體重70磅的8歲兒童
+** 車禍發生的瞬間,方向盤部分彈出的安全氣囊有可能對司機造成傷害,因此正確的做法是:
+https://pass-dmv-test.com/quiz-158-zh.html
+司機的頭部應該時刻位於方向盤的上方.
+司機和方向盤之間應該留有6.5英寸的距離.
+司機和方向盤之間應該留有10英寸的距离.  正确
+司機和方向盤之間應該留有20英寸的距离.
+** 在夜间灯光昏暗的街道上行驶时,您应
+https://driver-test.com/exam/CA/23
+缓慢行车,以便您可以在车灯的照射范围内及时停车  正确
+打开远光灯,以看清前方的车辆
+打开仪表盘的灯光并保持该亮度,以便其他驾驶者能看清您
+** 当车内有未满18岁的乘客时,吸烟的行为是:
+https://driver-test.com/exam/CA/29
+合法的,如果此人是您的子女
+在任何时候都不合法  正确
+不受法律限制
+** 在下列哪种情况下将六岁或以下的儿童留在机动车内属于合法行为
+https://driver-test.com/exam/CA/30
+将钥匙留在点火器上
+如有年满12岁或以上的人士照看儿童  正确
+当天气状况对儿童的健康或安全不构成威胁时
+** 您驶近交叉路口,红色交通灯正在闪烁,您应该:
+https://driver-test.com/exam/CA/32
+继续小心地驶过交叉路口
+在驶入交叉路口前停车,在安全的情况下继续前进  正确
+在驶入交叉路口前停车,等到绿灯亮起时继续前进
+** 下列哪项有关摩托车驾驶员和机动车驾驶员的表述是正确的？
+https://driver-test.com/exam/CA/34
+在交通拥堵的路况中,摩托车驾驶员不得以高于其它车辆的速度前进
+摩托车驾驶员与其它机动车驾驶员享有同等的权利和责任  正确
+摩托车体积比其它机动车小,有高于其它车辆的道路使用权
+** 两组双黄实线之间至少有两英尺的距离会被视作障碍区,以下表述哪一个正确:
+https://driver-test.com/exam/CA/35
+切勿在该障碍区行驶或穿越该障碍区  正确
+可以在该障碍区左转或掉头行驶
+可以在该障碍区左转,但不可以掉头
+** 不得穿越车道中央的双黄实线以进行
+https://driver-test.com/exam/CA/37
+超车  正确
+左转
+驶入私人车道
+** 您在变换车道或汇入其它车道时:
+https://driver-test.com/exam/CA/40
+拥有先行权
+应该先停车并察看来往的车辆
+需要跟其它车辆保持至少4秒钟的车距  正确
+** 如果交通信号灯失灵,您必须:
+https://driver-test.com/exam/CA/10
+先停车,然后在安全时再继续前进  正确
+在进入交叉路口之前停车,并让所有其他车辆先行
+仅在必要时减速或停车
+** 如果警察以酒後駕駛的名義拘捕你,而你拒絕接受血液酒精濃度測試.其後果是:
 https://pass-dmv-test.com/quiz-127-zh.html
-駕駛執照將被吊銷至少一年。  正确
-你將被無罪釋放，因為警察無法對你進行定罪。
-只有當律師在場時，警察才能對你進行該項測試。
-你的汽車將被扣押。
-** 如图所示，如果有兩組雙黃實線且它们之間的距离至少有2英尺寬；这表示什么？
+駕駛執照將被吊銷至少一年.  正确
+你將被無罪釋放,因為警察無法對你進行定罪.
+只有當律師在場時,警察才能對你進行該項測試.
+你的汽車將被扣押.
+** 如图所示,如果有兩組雙黃實線且它们之間的距离至少有2英尺寬;这表示什么？
 https://pass-dmv-test.com/quiz-130-zh.html
-左轉彎或 U 型轉彎時可以跨越這兩組雙黃實線。
-對司機而言，這樣的兩組雙黃實線等同於不可逾越的墻壁。  正确
-前方即將出現渡口。
-該路段僅在節假日期間才允許重型卡車通行。
-** 如圖所示，這種形狀的橘黃色標誌表示：
+左轉彎或 U 型轉彎時可以跨越這兩組雙黃實線.
+對司機而言,這樣的兩組雙黃實線等同於不可逾越的墻壁.  正确
+前方即將出現渡口.
+該路段僅在節假日期間才允許重型卡車通行.
+** 如圖所示,這種形狀的橘黃色標誌表示:
 https://pass-dmv-test.com/quiz-138-zh.html
-如圖所示，這種形狀的橘黃色標誌表示：
+如圖所示,這種形狀的橘黃色標誌表示:
 
-掛有這種標誌的機動車有優先權。
-掛有這種標誌的機動車是慢行車輛。  正确
-前方路段出現了危險狀況。
-前方路段正在施工。
+掛有這種標誌的機動車有優先權.
+掛有這種標誌的機動車是慢行車輛.  正确
+前方路段出現了危險狀況.
+前方路段正在施工.
 ** 如果你途径一个車禍現場并想停下來提供救援,那么應該在何處停車才是正確的？
 https://pass-dmv-test.com/quiz-57-zh.html
 先駛過車禍現場后再找適當的地方停車.  正确
@@ -253,18 +310,18 @@ https://pass-dmv-test.com/quiz-45-zh.html
 他們擁有更高的優先權.
 他們有權與機動車共享道路.  正确
 他們的速度很慢
-** 如果一条公路上的限速是55英里/小时，那么当道路潮濕時你应该以什么速度行驶？
+** 如果一条公路上的限速是55英里/小时,那么当道路潮濕時你应该以什么速度行驶？
 https://pass-dmv-test.com/quiz-69-zh.html
-遵守限速要求，以55英里/小時的速度行駛。
-以高於限速5-10英里/小時的速度行駛。
-以低於限速5-10英里/小時的速度速度行駛。  正确
-以低於限速20-25英里/小時的速度行駛。
-** 如果你捲入了交通事故，根據法律規定你必須和對方司機交換駕照信息，同時還要：
+遵守限速要求,以55英里/小時的速度行駛.
+以高於限速5-10英里/小時的速度行駛.
+以低於限速5-10英里/小時的速度速度行駛.  正确
+以低於限速20-25英里/小時的速度行駛.
+** 如果你捲入了交通事故,根據法律規定你必須和對方司機交換駕照信息,同時還要:
 https://pass-dmv-test.com/quiz-71-zh.html
-提供你的保險證明。
-提供你的保險證明和車輛登記證書。
-提供你的保險證明、車輛登記證書和目前的住址。  正确
-提供你的保險證明、車輛登記證書和你的家庭醫生聯繫方式。
+提供你的保險證明.
+提供你的保險證明和車輛登記證書.
+提供你的保險證明`車輛登記證書和目前的住址.  正确
+提供你的保險證明`車輛登記證書和你的家庭醫生聯繫方式.
 ** 下列陳述中的哪一個是正確的？
 https://pass-dmv-test.com/quiz-47-zh.html
 加州的公路上是沒有最低時速限制的.
@@ -303,18 +360,18 @@ https://pass-dmv-test.com/quiz-26-zh.html
 加州公路巡邏隊 (CHP)
 加州機動車輛管理局 (DMV)  正确
 你的保險公司
-** 前方的路口沒有信號燈，而且看不到兩側方向有駛近的車輛，此時你應該以什麼車速通過該路口呢？
+** 前方的路口沒有信號燈,而且看不到兩側方向有駛近的車輛,此時你應該以什麼車速通過該路口呢？
 https://pass-dmv-test.com/quiz-87-zh.html
 每小時25英里
 每小時15英里  正确
 每小時10英里
 每小時40英里
-** 什麼情況下才可以在小型卡車（如“皮卡”）的車斗中坐人？
+** 什麼情況下才可以在小型卡車（如"皮卡"）的車斗中坐人？
 https://pass-dmv-test.com/quiz-89-zh.html
-車斗四周的圍欄高度在24英吋以上時。
-車斗上方有車罩覆蓋時。
-車斗內配有供乘客使用的安全座椅和安全帶。  正确
-任何情況下都不能再車斗內搭載乘客。   
+車斗四周的圍欄高度在24英吋以上時.
+車斗上方有車罩覆蓋時.
+車斗內配有供乘客使用的安全座椅和安全帶.  正确
+任何情況下都不能再車斗內搭載乘客.   
 ** 什麼情況下你才可以在住宅區的車道上調頭？
    CLOSED: [2019-07-12 Fri 22:04]
 https://pass-dmv-test.com/quiz-13-zh.html
