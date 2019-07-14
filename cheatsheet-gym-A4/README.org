@@ -22,39 +22,63 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet-gym-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-gym-A4][this repo]].
 ** YouTube Channels
-| Name      | Summary                                              |
-|-----------+------------------------------------------------------|
-| Reference | [[https://www.youtube.com/channel/UCjfgkXbwmFzcWK8sqKA0tcA][YouTube: AlexKaltsMotivation]], [[https://www.youtube.com/channel/UCqjwF8rxRsotnojGl4gM0Zw][YouTube: OFFICIALTHENX]] |
-| Reference | [[https://www.youtube.com/channel/UCKik8uG08NYJStvTW7ZgUAQ][YouTube: Bowflex]], [[https://www.youtube.com/channel/UC1CVzH-XVr3E-kTT6D8hhfg][YouTube: FitnessFAQs]]               |
-| Reference | [[https://darebee.com/][Link: darebee - workout of the day]]                   |
-** Train For Chest
-| Name                        | Summary                                         |
-|-----------------------------+-------------------------------------------------|
-| Push ups                    |                                                 |
-| Push up in a circle         | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]]            |
-| Archer push ups             | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]]            |
-| Explosive negative push ups | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]]            |
-| 90 degree hold              | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]]            |
-| Incline diamond push ups    | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]]            |
-| Plank                       |                                                 |
-
-[[https://cheatsheet.dennyzhang.com/cheatsheet-gym-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-gym-A4/push-up.jpg]]
+| Name      | Summary                                                        |
+|-----------+----------------------------------------------------------------|
+| Reference | [[https://www.youtube.com/channel/UCjfgkXbwmFzcWK8sqKA0tcA][YouTube: AlexKaltsMotivation]], [[https://www.youtube.com/channel/UCqjwF8rxRsotnojGl4gM0Zw][YouTube: OFFICIALTHENX]]           |
+| Reference | [[https://www.youtube.com/channel/UCKik8uG08NYJStvTW7ZgUAQ][YouTube: Bowflex]], [[https://www.youtube.com/channel/UC1CVzH-XVr3E-kTT6D8hhfg][YouTube: FitnessFAQs]], [[https://www.youtube.com/channel/UCyiNCEHLyKbSUrrncVr9KvQ][YouTube: Fraser Wilson]] |
+| Reference | [[https://darebee.com/][Link: darebee - workout of the day]]                             |
 ** Train For Core
-| Name                   | Summary                                                                                     |
-|------------------------+---------------------------------------------------------------------------------------------|
-| Bicycle crunch         | [[https://www.youtube.com/watch?v=ziNFx9ARMI0][YouTube: The Three Minute TV Commercial Core Workout]]                                        |
-| Full plank             | [[https://www.youtube.com/watch?v=ynUw0YsrmSg][YouTube: The Three-Minute Perfect Plank Workout]], [[https://www.youtube.com/watch?v=lismOShjHnA][YouTube: 10 Most Common Mistakes Of Planks]] |
-| Elbow plank            |                                                                                             |
-| Raised-leg plank       |                                                                                             |
-| Bird dogs              | [[https://www.youtube.com/watch?v=W81ZT1njdmk][YouTube: Equip Yourself: 5 Bodyweight Exercises]]                                             |
-| Crawl forward/backward | [[https://www.youtube.com/watch?v=W81ZT1njdmk][YouTube: Equip Yourself: 5 Bodyweight Exercises]]                                             |
+| Name                          | Summary                                                                                     |
+|-------------------------------+---------------------------------------------------------------------------------------------|
+| Plank                         | [[https://www.youtube.com/watch?v=ZrT5AzCu79Y][YouTube: 6 Good Reasons Why You Should Do Plank Daily]]                                       |
+| Full plank                    | [[https://www.youtube.com/watch?v=ynUw0YsrmSg][YouTube: The Three-Minute Perfect Plank Workout]], [[https://www.youtube.com/watch?v=lismOShjHnA][YouTube: 10 Most Common Mistakes Of Planks]] |
+| Elbow plank                   |                                                                                             |
+| Raised-leg plank              |                                                                                             |
+| Plank knee twist              | [[https://www.youtube.com/watch?v=JbaIwwtJbdY][YouTube: Plank Knee Twist]]                                                                   |
+| Plank up - serratus exercise  | [[https://www.youtube.com/watch?v=UoC_O3HzsH0][YouTube: 10 MIN BODYWEIGHT WORKOUT]]                                                          |
+| Shoulder taps                 | [[https://www.youtube.com/watch?v=wcKyqAMqueQ][YouTube: How to do Shoulder Taps]]                                                            |
+| Moutain climbers              |                                                                                             |
+| Toe cross overs               |                                                                                             |
+| Heel touches                  |                                                                                             |
+| Bird dogs                     | [[https://www.youtube.com/watch?v=W81ZT1njdmk][YouTube: Equip Yourself: 5 Bodyweight Exercises]]                                             |
+| Bicycle crunch                | [[https://www.youtube.com/watch?v=ziNFx9ARMI0][YouTube: The Three Minute TV Commercial Core Workout]]                                        |
+| AB crunch - touch knees       | [[https://www.youtube.com/watch?v=UoC_O3HzsH0][YouTube: 10 MIN BODYWEIGHT WORKOUT]]                                                          |
+| Oblique crunch                | [[https://www.youtube.com/watch?v=UoC_O3HzsH0][YouTube: 10 MIN BODYWEIGHT WORKOUT]]                                                          |
+| Crawl forward/backward        | [[https://www.youtube.com/watch?v=W81ZT1njdmk][YouTube: Equip Yourself: 5 Bodyweight Exercises]]                                             |
+| Russian twists                |                                                                                             |
+| V INS - crunch from both ends |                                                                                             |
+| Rotating punch                | [[https://www.youtube.com/watch?v=UoC_O3HzsH0][YouTube: 10 MIN BODYWEIGHT WORKOUT]]                                                          |
+| Reference                     | [[https://www.youtube.com/watch?v=UoC_O3HzsH0][YouTube: 10 MIN BODYWEIGHT WORKOUT]]                                                          |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-gym-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-gym-A4/side-plank.png]]
+** Train For Chest
+| Name                        | Summary                              |
+|-----------------------------+--------------------------------------|
+| Push ups                    |                                      |
+| Push up in a circle         | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]] |
+| Archer push ups             | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]] |
+| Explosive negative push ups | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]] |
+| Wide push-ups               |                                      |
+| 90 degree hold              | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]] |
+| Incline diamond push ups    | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]] |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-gym-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-gym-A4/push-up.jpg]]
 
 ** Train For Legs
-| Name        | Summary                                         |
-|-------------+-------------------------------------------------|
-| Side lunges | [[https://www.youtube.com/watch?v=W81ZT1njdmk][YouTube: Equip Yourself: 5 Bodyweight Exercises]] |
+| Name                   | Summary                                         |
+|------------------------+-------------------------------------------------|
+| Side lunges            | [[https://www.youtube.com/watch?v=W81ZT1njdmk][YouTube: Equip Yourself: 5 Bodyweight Exercises]] |
+| Burpees - no push-up   | [[https://www.youtube.com/watch?v=UoC_O3HzsH0][YouTube: 10 MIN BODYWEIGHT WORKOUT]]              |
+| Toe jumps - Calf focus | [[https://www.youtube.com/watch?v=UoC_O3HzsH0][YouTube: 10 MIN BODYWEIGHT WORKOUT]]              |
+| Lunge jumps            | [[https://www.youtube.com/watch?v=UoC_O3HzsH0][YouTube: 10 MIN BODYWEIGHT WORKOUT]]              |
+| Lunge ups              | [[https://www.youtube.com/watch?v=UoC_O3HzsH0][YouTube: 10 MIN BODYWEIGHT WORKOUT]]              |
+| High knees             | [[https://www.youtube.com/watch?v=UoC_O3HzsH0][YouTube: 10 MIN BODYWEIGHT WORKOUT]]              |
+** Train For Big Back
+| Name | Summary |
+|------+---------|
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-gym-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-gym-A4/big-back-workout.png]]
+
 ** Gym Music
 | Name     | Summary                                            |
 |----------+----------------------------------------------------|
