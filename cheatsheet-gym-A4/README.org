@@ -24,8 +24,9 @@ File me [[https://github.com/dennyzhang/cheatsheet-gym-A4/issues][Issues]] or st
 ** YouTube Channels
 | Name      | Summary                                              |
 |-----------+------------------------------------------------------|
-| Reference | [[https://darebee.com/][Link: darebee - workout of the day]]                   |
 | Reference | [[https://www.youtube.com/channel/UCjfgkXbwmFzcWK8sqKA0tcA][YouTube: AlexKaltsMotivation]], [[https://www.youtube.com/channel/UCqjwF8rxRsotnojGl4gM0Zw][YouTube: OFFICIALTHENX]] |
+| Reference | [[https://www.youtube.com/channel/UCKik8uG08NYJStvTW7ZgUAQ][YouTube: Bowflex]], [[https://www.youtube.com/channel/UC1CVzH-XVr3E-kTT6D8hhfg][YouTube: FitnessFAQs]]               |
+| Reference | [[https://darebee.com/][Link: darebee - workout of the day]]                   |
 ** Train For Chest
 | Name                        | Summary                                         |
 |-----------------------------+-------------------------------------------------|
@@ -38,16 +39,22 @@ File me [[https://github.com/dennyzhang/cheatsheet-gym-A4/issues][Issues]] or st
 | Plank                       |                                                 |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-gym-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-gym-A4/push-up.jpg]]
+** Train For Core
+| Name                   | Summary                                                                                     |
+|------------------------+---------------------------------------------------------------------------------------------|
+| Bicycle crunch         | [[https://www.youtube.com/watch?v=ziNFx9ARMI0][YouTube: The Three Minute TV Commercial Core Workout]]                                        |
+| Full plank             | [[https://www.youtube.com/watch?v=ynUw0YsrmSg][YouTube: The Three-Minute Perfect Plank Workout]], [[https://www.youtube.com/watch?v=lismOShjHnA][YouTube: 10 Most Common Mistakes Of Planks]] |
+| Elbow plank            |                                                                                             |
+| Raised-leg plank       |                                                                                             |
+| Bird dogs              | [[https://www.youtube.com/watch?v=W81ZT1njdmk][YouTube: Equip Yourself: 5 Bodyweight Exercises]]                                             |
+| Crawl forward/backward | [[https://www.youtube.com/watch?v=W81ZT1njdmk][YouTube: Equip Yourself: 5 Bodyweight Exercises]]                                             |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-gym-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-gym-A4/side-plank.jpg]]
 
 ** Train For Legs
 | Name        | Summary                                         |
 |-------------+-------------------------------------------------|
 | Side lunges | [[https://www.youtube.com/watch?v=W81ZT1njdmk][YouTube: Equip Yourself: 5 Bodyweight Exercises]] |
-** Train For Core
-| Name                   | Summary                                         |
-|------------------------+-------------------------------------------------|
-| Bird dogs              | [[https://www.youtube.com/watch?v=W81ZT1njdmk][YouTube: Equip Yourself: 5 Bodyweight Exercises]] |
-| Crawl forward/backward | [[https://www.youtube.com/watch?v=W81ZT1njdmk][YouTube: Equip Yourself: 5 Bodyweight Exercises]] |
 ** Gym Music
 | Name     | Summary                                            |
 |----------+----------------------------------------------------|
