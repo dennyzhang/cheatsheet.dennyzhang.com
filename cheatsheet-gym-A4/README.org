@@ -92,7 +92,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-gym-A4/issues][Issues]] or st
 | Name           | Summary                                    |
 |----------------+--------------------------------------------|
 
-[[https://cheatsheet.dennyzhang.com/cheatsheet-gym-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-gym-A4/women-workout.jpg]]
+[[https://cheatsheet.dennyzhang.com/cheatsheet-gym-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-gym-A4/women-workout.png]]
 
 ** More Resources
 License: Code is licengym under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
