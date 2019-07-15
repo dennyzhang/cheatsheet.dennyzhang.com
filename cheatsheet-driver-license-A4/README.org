@@ -209,6 +209,11 @@ No faster than 65 mph.
 https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en
 #+END_EXAMPLE
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** 在路口右转弯时，如何处理自行车道
+https://driver-test.com/exam/CA/9
+不得驶入自行车道
+必须在转弯之前停车，然后才能汇入自行车道
+必须在转弯之前汇入自行车道  正确
 ** 以下哪些兒童要求使用兒童安全座椅
 https://pass-dmv-test.com/quiz-152-zh.html
 體重55磅的5歲兒童  正确

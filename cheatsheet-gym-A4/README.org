@@ -88,6 +88,12 @@ File me [[https://github.com/dennyzhang/cheatsheet-gym-A4/issues][Issues]] or st
 | Name           | Summary                                    |
 |----------------+--------------------------------------------|
 | Body fat scale | [[https://www.youtube.com/watch?v=5_A9yXiBqqk][YouTube: Does a Body Fat Scale Really Work]] |
+** Female Home Gym
+| Name           | Summary                                    |
+|----------------+--------------------------------------------|
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-gym-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-gym-A4/women-workout.jpg]]
+
 ** More Resources
 License: Code is licengym under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

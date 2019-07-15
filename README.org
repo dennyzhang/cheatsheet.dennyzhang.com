@@ -508,21 +508,9 @@ terraform
 ansible
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Send PR to PKS                                              :noexport:
-* TODO Send PR to bosh                                             :noexport:
-* TODO Send PR to concourse: https://github.com/concourse/docs     :noexport:
-https://concourse-ci.org/community.html
-
-https://github.com/dennyzhang/docs
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Recommend books for each cheatsheet                    :noexport:
 * TODO Blog: Linux CheatSheet                                      :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] Create my own signature for cheatsheet.dennyzhang.com website :noexport:
-* TODO [#A] Create my own cheatsheet.dennyzhang.com link, instead of the general one :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Cheatsheet: regrexp                                         :noexport:
-https://regexr.com/
 * TODO Infra unicorn startup                                       :noexport:
 https://en.wikipedia.org/wiki/List_of_unicorn_startup_companies
 https://www.cbinsights.com/research-unicorn-companies
@@ -539,7 +527,6 @@ https://www.gfmag.com/global-data/economic-data/largest-companies
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] GitHub link should have Amazon affiliate links: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-house-A4 :noexport:
 * TODO github unicode issue: https://github.com/dennyzhang/cheatsheet-python-A4/issues/1 :noexport:
-* TODO sql cheatsheet: from sql leetcode                           :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO markdown cheatsheet: https://devops.datenkollektiv.de/devops-markdown-cheat-sheet.html :noexport:
 * TODO Cheatsheet: Consuming Docker Images Without Legal Issue     :noexport:
@@ -552,6 +539,21 @@ Docker files with open ended “apt get” or sync’s with upstream repos (pote
 If open source did we remove the canonical trade marks from them?
 ** Can we rebuild identical container images we ship in our product at a later date?
 * TODO Cheatsheet enforce flyspell check automatically             :noexport:
-* TODO sql cheatsheet: from leetcode problems                      :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Quiz website: https://driver-test.com/                      :noexport:
+* TODO Cheatsheet website in mobile can't search                   :noexport:
+* TODO language R cheatsheet                                       :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO sql cheatsheet: from leetcode problems                      :noexport:
+* TODO Cheatsheet: regrexp                                         :noexport:
+https://regexr.com/
+
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Send PR to PKS                                              :noexport:
+* TODO Send PR to bosh                                             :noexport:
+
+* TODO Send PR to concourse: https://github.com/concourse/docs     :noexport:
+https://concourse-ci.org/community.html
+
+https://github.com/dennyzhang/docs
+
