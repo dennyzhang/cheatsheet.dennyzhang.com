@@ -39,12 +39,16 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 |  13 | [[https://code.dennyzhang.com/longest-word-in-dictionary][Leetcode: Longest Word in Dictionary]]         | [[https://code.dennyzhang.com/tag/trie][#trie]]                        |
 |  14 | [[https://code.dennyzhang.com/course-schedule][Leetcode: Course Schedule]]                    |                              |
 |  15 | [[https://en.wikipedia.org/wiki/Travelling_salesman_problem][Travelling salesman problem]]                  |                              |
-|  16 |                                              | #unionfind                   |
-|  17 |                                              | #slidingwindow               |
-|  18 |                                              | #minpathsum                  |
-|  19 |                                              |                              |
-|  20 |                                              |                              |
+|  18 | [[https://code.dennyzhang.com/stone-game][Leetcode: Stone Game]]                         | [[https://code.dennyzhang.com/tag/minmax][#minmax]]                      |
+|  16 |                                              | [[https://code.dennyzhang.com/tag/unionfind][#unionfind]]                   |
+|  17 |                                              | [[https://code.dennyzhang.com/tag/slidingwindow][#slidingwindow]]               |
+|  19 |                                              | [[https://code.dennyzhang.com/tag/combination][#combination]]                 |
+|  20 |                                              | #backtrack                   |
 #+TBLFM: $1=@-1$1+1;N
+
+#+BEGIN_HTML
+<a href="https://code.dennyzhang.com"><b><font color=blue>https://code.dennyzhang.com</font></b></a>
+#+END_HTML
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][https://cdn.dennyzhang.com/images/brain/denny_leetcode.png]]
 #+BEGIN_HTML

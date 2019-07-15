@@ -27,6 +27,12 @@ File me [[https://github.com/dennyzhang/cheatsheet-gym-A4/issues][Issues]] or st
 | Reference | [[https://www.youtube.com/channel/UCjfgkXbwmFzcWK8sqKA0tcA][YouTube: AlexKaltsMotivation]], [[https://www.youtube.com/channel/UCqjwF8rxRsotnojGl4gM0Zw][YouTube: OFFICIALTHENX]]           |
 | Reference | [[https://www.youtube.com/channel/UCKik8uG08NYJStvTW7ZgUAQ][YouTube: Bowflex]], [[https://www.youtube.com/channel/UC1CVzH-XVr3E-kTT6D8hhfg][YouTube: FitnessFAQs]], [[https://www.youtube.com/channel/UCyiNCEHLyKbSUrrncVr9KvQ][YouTube: Fraser Wilson]] |
 | Reference | [[https://darebee.com/][Link: darebee - workout of the day]]                             |
+** Gym Music
+| Name                | Summary                                            |
+|---------------------+----------------------------------------------------|
+| Motivation Lectures | [[https://www.youtube.com/watch?v=K638lvOWu6o][YouTube: KEEP GOING]], [[https://www.youtube.com/watch?v=rRCQZ0vWXDw][YouTube: IT'S POSSIBLE]]        |
+| Motivation Lectures | [[https://www.youtube.com/watch?v=n7pyp-3q0ZA][YouTube: LISTEN THIS TO CHANGE YOUR LIFE IN 2019]]   |
+| Motivation Lectures | [[https://www.youtube.com/watch?v=sEmZIi_0Kj8][YouTube: Best Motivational Speech Compilation EVER]] |
 ** Train For Core
 | Name                          | Summary                                                                                     |
 |-------------------------------+---------------------------------------------------------------------------------------------|
@@ -78,12 +84,6 @@ File me [[https://github.com/dennyzhang/cheatsheet-gym-A4/issues][Issues]] or st
 |------+---------|
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-gym-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-gym-A4/big-back-workout.png]]
-
-** Gym Music
-| Name     | Summary                                            |
-|----------+----------------------------------------------------|
-| Lectures | [[https://www.youtube.com/watch?v=n7pyp-3q0ZA][YouTube: LISTEN THIS TO CHANGE YOUR LIFE IN 2019]]   |
-| Lectures | [[https://www.youtube.com/watch?v=sEmZIi_0Kj8][YouTube: Best Motivational Speech Compilation EVER]] |
 ** Equipments
 | Name           | Summary                                    |
 |----------------+--------------------------------------------|
