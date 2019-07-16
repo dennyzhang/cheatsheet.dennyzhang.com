@@ -24,14 +24,15 @@ File me [[https://github.com/dennyzhang/cheatsheet-uaac-A4/issues][Issues]] or s
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** Free Driver License Written Tests
-| Name                                                 | Comment                           |
-|------------------------------------------------------+-----------------------------------|
-| Sample Class C Written Tests from DMV                | [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc2written?lang=en][Test1]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc3written?lang=en][Test2]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en][Test3]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en][Test4]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc6written?lang=en][Test5]] |
-| FREE DMV Practice Test for California Permit 2018    | [[https://driving-tests.org/california/dmv-practice-test/][Link: driving-tests.org]]           |
-| Chinese simulated driver license tests               | [[https://driver-test.com/][link:driver-test.com]], [[https://pass-dmv-test.com/quiz-1-zh.html][Link: quiz]]  |
-| California DMV Marathon Practice Test(150 Questions) | [[https://driving-tests.org/california/california-marathon-practice-test/][Link: driving-tests.org]]           |
-| California Driver Handbook                           | [[https://www.dmv.ca.gov/web/eng_pdf/dl600.pdf][Link: dmv pdf]]                     |
-** Limits
+| Name                                                 | Comment                                                          |
+|------------------------------------------------------+------------------------------------------------------------------|
+| Reference                                            | [[https://www.dmv.ca.gov/portal/dmv][Link: DMV Homepage - State of California]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/hdbk/ped_sig_traf_sgns][Link: Traffic Controls]] |
+| Sample Class C Written Tests from DMV                | [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc2written?lang=en][Test1]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc3written?lang=en][Test2]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en][Test3]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en][Test4]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc6written?lang=en][Test5]]                                |
+| FREE DMV Practice Test for California Permit 2018    | [[https://driving-tests.org/california/dmv-practice-test/][Link: driving-tests.org]]                                          |
+| Chinese simulated driver license tests               | [[https://driver-test.com/][link:driver-test.com]], [[https://pass-dmv-test.com/quiz-1-zh.html][Link: quiz]]                                 |
+| California DMV Marathon Practice Test(150 Questions) | [[https://driving-tests.org/california/california-marathon-practice-test/][Link: driving-tests.org]]                                          |
+| California Driver Handbook                           | [[https://www.dmv.ca.gov/web/eng_pdf/dl600.pdf][Link: dmv pdf]]                                                    |
+** Distance
 | Name                     | Summary                                                                                      |
 |--------------------------+----------------------------------------------------------------------------------------------|
 | Drive close to cicyclist | You must ensure there is more than 3 feet width for cyclist                                  |
@@ -62,31 +63,38 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Yellow     | Stop no longer than the time posted to load or unload passengers or freight.            |
 | Red        | No stopping, standing, or parking. (Buses may stop at a red zone marked for buses.)     |
 | Blue       | Parking for disabled people only                                                        |
+** Traffic Signals
+| Name                             | Summary                                                                 |
+|----------------------------------+-------------------------------------------------------------------------|
+| Traffic lights not working       | You need to come to a complete stop first                               |
+| A flashing red traffic signal    | Treat like a STOP sign. stop, yield and only proceed when it's safe     |
+| A flashing yellow traffic signal | No need to stop, but slow down and alerted before entering intersection |
+** Beams
+| Name                                    | Summary                                                        |
+|-----------------------------------------+----------------------------------------------------------------|
+| Use low beams when in fog, rain or snow | High beam will reflect back, which makes you hard to see ahead |
 ** Terminology
-| Name                             | Summary                                                                                            |
-|----------------------------------+----------------------------------------------------------------------------------------------------|
-| Skid                             | automobiles slip relative to the road [[https://en.wikipedia.org/wiki/Skid_(automobile)][Link: wikipedia]]                                              |
-| California "Basic Speed Law"     | You must never driver faster than what is safe in current conditions                               |
-| Turnout area                     | You may pull to the side in these areas and allow cars behind you to pass. [[https://driversed.com/driving-information/driving-techniques/turnout-areas.aspx][Link]]                    |
-| A flashing yellow traffic signal | No need to stop, but slow down and alerted before entering intersection                            |
-| A flashing red traffic signal    | Treat like a STOP sign. stop, yield and only proceed when it's safe                                |
-| A nighttime reflector            | It shows where the road lies                                                                       |
-| Hand-over-hand steering          | used when turning at low speeds, parking or recovering from a skid                                 |
-| One-hand steering                | You can use when you're backing up without much turning                                            |
-| Three-point turn                 | standard method of turning vehicles around to face the opposite direction in a limited space. [[https://en.wikipedia.org/wiki/Three-point_turn][link]] |
-| DUI probation                    |                                                                                                    |
-| NEV                              | neighborhood electric vehicles                                                                     |
-| LSV                              | Low speed vehicles                                                                                 |
-| HOV lane(High-Occupancy Vehicle) | Designed for buses, motorcycles, certain low-emission vehicles and 2+ passengers                   |
-** General
-| Name                       | Summary                                                         |
-|----------------------------+-----------------------------------------------------------------|
-| Traffic lights not working | You need to come to a complete stop first                       |
-| Use horn                   | You may tap horn to try to make eye contact with another driver |
+| Name                              | Summary                                                                                            |
+|-----------------------------------+----------------------------------------------------------------------------------------------------|
+| Skid                              | automobiles slip relative to the road [[https://en.wikipedia.org/wiki/Skid_(automobile)][Link: wikipedia]]                                              |
+| California "Basic Speed Law"      | You must never driver faster than what is safe in current conditions                               |
+| Turnout area                      | You may pull to the side in these areas and allow cars behind you to pass. [[https://driversed.com/driving-information/driving-techniques/turnout-areas.aspx][Link]]                    |
+| A nighttime reflector             | It shows where the road lies                                                                       |
+| Hand-over-hand steering           | used when turning at low speeds, parking or recovering from a skid                                 |
+| One-hand steering                 | You can use when you're backing up without much turning                                            |
+| Three-point turn                  | standard method of turning vehicles around to face the opposite direction in a limited space. [[https://en.wikipedia.org/wiki/Three-point_turn][link]] |
+| DUI probation                     |                                                                                                    |
+| NEV                               | neighborhood electric vehicles                                                                     |
+| LSV                               | Low speed vehicles                                                                                 |
+| HOV lane (High-Occupancy Vehicle) | Designed for buses, motorcycles, certain low-emission vehicles and 2+ passengers                   |
+| Use horn                          | You may tap horn to try to make eye contact with another driver                                    |
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
 ** Pictures
+signals:
+[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/signs.png]]
+
 hand-over-hand-steering:
 [[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/hand-over-hand-steering.jpg]]
 
@@ -209,11 +217,36 @@ No faster than 65 mph.
 https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en
 #+END_EXAMPLE
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** 在路口右转弯时，如何处理自行车道
+** 在路口右转弯时,如何处理自行车道
 https://driver-test.com/exam/CA/9
 不得驶入自行车道
-必须在转弯之前停车，然后才能汇入自行车道
+必须在转弯之前停车,然后才能汇入自行车道
 必须在转弯之前汇入自行车道  正确
+** 您在变换车道或汇入其它车道时:
+https://driver-test.com/exam/CA/40
+拥有先行权
+应该先停车并察看来往的车辆
+需要跟其它车辆保持至少4秒钟的车距  正确
+** 在住宅区可以合法回转的情况是
+https://driver-test.com/exam/CA/20
+在绿色箭头灯亮起的单行道上
+当附近没有车辆接近时  正确
+穿越两组双黄实线时
+** 在夜间灯光昏暗的街道上行驶时,您应
+https://driver-test.com/exam/CA/23
+缓慢行车,以便您可以在车灯的照射范围内及时停车  正确
+打开远光灯,以看清前方的车辆
+打开仪表盘的灯光并保持该亮度,以便其他驾驶者能看清您
+** 当车内有未满18岁的乘客时,吸烟的行为是
+https://driver-test.com/exam/CA/29
+合法的,如果此人是您的子女
+在任何时候都不合法  正确
+不受法律限制
+** 您想倒车退出停车位,您应一直保持慢速倒车并且:
+https://driver-test.com/exam/CA/28
+在倒车的过程中察看后视镜
+在倒车的过程中察看车侧后视镜
+在倒车的过程中回头察看右侧和左侧的情况  正确
 ** 以下哪些兒童要求使用兒童安全座椅
 https://pass-dmv-test.com/quiz-152-zh.html
 體重55磅的5歲兒童  正确
@@ -485,3 +518,13 @@ TxDMV
 1601 Southwest Parkway, Suite A
 Wichita Falls, TX 76302
 #+END_EXAMPLE
+* What is fog light?                                               :noexport:
+When driving in fog, rain, or snow, use:
+ 
+Low beams.
+
+High beams.
+
+Fog lights only.
+* Premium cheatsheet for drive test                                :noexport:
+https://cheat-sheets.dmv-written-test.com/en/california/car

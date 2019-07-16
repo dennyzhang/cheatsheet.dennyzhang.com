@@ -27,13 +27,18 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 |-------+---------------------------------------------------|
 | [[https://github.com/vmware/tern][Tern]]  | Open Source compliance for containers from VMware |
 | [[https://github.com/coreos/clair][Clair]] | Vulnerability Static Analysis for Containers      |
-  
+| [[https://github.com/wagoodman/dive][Dive]]  | A tool for exploring each layer in a docker image |
+
 ** Common Docker Registry
 | Name                      | Comment      |
 |---------------------------+--------------|
 | Docker hub                |              |
 | Google container registry |              |
 | Self-maintained registry  | JFrog, Nexus |
+** Docker Scan
+| Name                                         | Comment                                 |
+|----------------------------------------------+-----------------------------------------|
+| Detect wasted space in docker image via dive | =dive <docker_tag>=, =dive golang:1.12= |
 ** Container Compliance Principles
 | Name                                       | Comment                                          |
 |--------------------------------------------+--------------------------------------------------|
@@ -41,10 +46,8 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Download or install from external websites | Need to mirror the repo for apt-get, wget, etc   |
 | Install package with latest version        | Insecure because the process is not reproducible |
 | Build from source code                     | Good for the overall goverance                   |
-
 ** More Resources
-
- License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
  <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
  <a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
@@ -78,3 +81,4 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* TODO [#A] How to scan a docker image: golang/1.12                :noexport:
