@@ -27,12 +27,18 @@ File me [[https://github.com/dennyzhang/cheatsheet-gym-A4/issues][Issues]] or st
 | Reference | [[https://www.youtube.com/channel/UCjfgkXbwmFzcWK8sqKA0tcA][YouTube: AlexKaltsMotivation]], [[https://www.youtube.com/channel/UCqjwF8rxRsotnojGl4gM0Zw][YouTube: OFFICIALTHENX]]           |
 | Reference | [[https://www.youtube.com/channel/UCKik8uG08NYJStvTW7ZgUAQ][YouTube: Bowflex]], [[https://www.youtube.com/channel/UC1CVzH-XVr3E-kTT6D8hhfg][YouTube: FitnessFAQs]], [[https://www.youtube.com/channel/UCyiNCEHLyKbSUrrncVr9KvQ][YouTube: Fraser Wilson]] |
 | Reference | [[https://darebee.com/][Link: darebee - workout of the day]]                             |
+** Home Workout Video
+| Name      | Summary                              |
+|-----------+--------------------------------------|
+| Reference | [[https://www.youtube.com/watch?v=UoC_O3HzsH0][YouTube: 10 MIN BODYWEIGHT WORKOUT]]   |
+| Reference | [[https://www.youtube.com/watch?v=BkS1-El_WlE][YouTube: The BEST HOME CHEST WORKOUT]] |
 ** Gym Music
-| Name                | Summary                                            |
-|---------------------+----------------------------------------------------|
-| Motivation Lectures | [[https://www.youtube.com/watch?v=K638lvOWu6o][YouTube: KEEP GOING]], [[https://www.youtube.com/watch?v=rRCQZ0vWXDw][YouTube: IT'S POSSIBLE]]        |
-| Motivation Lectures | [[https://www.youtube.com/watch?v=n7pyp-3q0ZA][YouTube: LISTEN THIS TO CHANGE YOUR LIFE IN 2019]]   |
-| Motivation Lectures | [[https://www.youtube.com/watch?v=sEmZIi_0Kj8][YouTube: Best Motivational Speech Compilation EVER]] |
+| Name                | Summary                                             |
+|---------------------+-----------------------------------------------------|
+| Motivation Lectures | [[https://www.youtube.com/watch?v=K638lvOWu6o][YouTube: KEEP GOING]], [[https://www.youtube.com/watch?v=rRCQZ0vWXDw][YouTube: IT'S POSSIBLE]]         |
+| Motivation Lectures | [[https://www.youtube.com/watch?v=n7pyp-3q0ZA][YouTube: LISTEN THIS TO CHANGE YOUR LIFE IN 2019]]    |
+| Motivation Lectures | [[https://www.youtube.com/watch?v=sEmZIi_0Kj8][YouTube: Best Motivational Speech Compilation EVER]]  |
+| Motivation Lectures | [[https://www.youtube.com/watch?v=tbnzAVRZ9Xc][YouTube: Denzel Washington Motivational Speech 2019]] |
 ** Train For Core
 | Name                          | Summary                                                                                     |
 |-------------------------------+---------------------------------------------------------------------------------------------|
@@ -128,3 +134,6 @@ License: Code is licengym under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* TODO doc: gym in office, gym when sitting                        :noexport:
+* local notes                                                      :noexport:
+平板支撑5分钟,单腿举哑铃深蹲每只腿30个,健腹轮15个站立姿势,哑铃各种锻炼方法,侧腹肌练习,压腿,倒立推15个,用哑铃和头盔将手垫高慢俯卧撑30个,这些做完差不多就19点了

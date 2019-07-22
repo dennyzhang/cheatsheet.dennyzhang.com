@@ -31,6 +31,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-apt-A4/issues][Issues]] or st
 ** Basic
 | Name                                    | Command                                                                            |
 |-----------------------------------------+------------------------------------------------------------------------------------|
+| [[https://www.brightbox.com/blog/2016/01/06/ruby-2-3-ubuntu-packages/][Install package for a given version]]     | =apt-get install ruby2.3 ruby2.3-dev=                                              |
 | Start a ubuntu test container           | =docker run --rm -t -i --privileged --name test --entrypoint=/bin/sh ubuntu:14.04= |
 | Start a ubuntu kubernetes pod           | =kubectl run --rm -i -t --image=ubuntu:14.04 test -- sh=                           |
 | Parse log for install/remove operations | =grep 'install ' /var/log/dpkg.log=, =grep 'remove ' /var/log/dpkg.log=            |

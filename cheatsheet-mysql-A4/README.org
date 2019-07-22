@@ -1,4 +1,4 @@
-* CheatSheet: MySql & PSQL                                            :Tools:
+* CheatSheet: SQL & MySql                                             :Tools:
 :PROPERTIES:
 :type:     package
 :export_file_name: cheatsheet-mysql-A4.pdf
@@ -21,33 +21,39 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet-apt-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-apt-A4][this repo]].
+** SQL Statement
+| Name                       | Problem                                 |
+|----------------------------+-----------------------------------------|
+| SQL problems               | [[https://code.dennyzhang.com/tag/sql][#sql]]                                    |
+| topn entris for each group | [[https://code.dennyzhang.com/department-top-three-salaries][Leetcode: Department Top Three Salaries]] |
+| Rank score                 | [[https://code.dennyzhang.com/rank-scores][Leetcode: Rank Scores]]                   |
 ** Mysql Packages
 | Name                         | Command                                                                  |
 |------------------------------+--------------------------------------------------------------------------|
 | Install mysql server         | =apt-get install mysql-server=                                           |
 | Install mysql client         | =apt-get install mysql-client libmysqlclient-dev, yum install mysql-devel=  |
 | Install python mysql library | =easy_install mysql-python=                                              |
-** Mysql Basic
-| Name                           | Command                                                              |
-|--------------------------------+----------------------------------------------------------------------|
-| mysql connect                  | =mysql -u$username -p$password -P$port -h$dbhost $dbname=            |
-| database encoding              | =set names utf8;=                                                    |
-| List databases                 | =show databases;=                                                    |
-| List tables for current db     | =show tables;=                                                       |
-| Check table definition         | =describe $tablename;=                                               |
-| Run sql in non-interactive way | =mysql -uUSER -pPASSWORD databasename -e "select * from t limit 10"= |
 ** DB Management
-| Name                     | Command                                                                                    |
-|--------------------------+--------------------------------------------------------------------------------------------|
-| Import db                | =mysql -uUSER -pPASSWORD dbname < backup.sql=                                              |
-| export db                | =mysqldump -uUSER -pPASSWORD DATABASE > backup.sql=                                        |
-| export db without schema | =mysqldump -uUSER -pPASSWORD DATABASE --no-data=true --add-drop-table=false > backup.sql=  |
-| Grant access             | =GRANT SUPER ON `DBNAME`.`user` TO 'DBUSER'@'%'=                                           |
-| Add column               | =ALTER TABLE expenses ADD COLUMN createtime timestamp not null default now();=             |
-| Delete Column            | =ALTER TABLE expenses DROP COLUMN createtime;=                                             |
-| Delete index             | =DROP INDEX indexname ON table_name;=                                                      |
-| Create index             | =create index idindex on table_name(col_name) using btree;=                                |
-| Reset password           | UPDATE mysql.user SET Password=PASSWORD('MyNewPass') WHERE User='root'; FLUSH PRIVILEGES;   |
+| Name                                         | Command                                                                                   |
+|----------------------------------------------+-------------------------------------------------------------------------------------------|
+| mysql connect                                | =mysql -u$username -p$password -P$port -h$dbhost $dbname=                                 |
+| database encoding                            | =set names utf8;=                                                                         |
+| List databases                               | =show databases;=                                                                         |
+| List tables for current db                   | =show tables;=                                                                            |
+| Check table definition                       | =describe $tablename;=                                                                    |
+| Run sql in non-interactive way               | =mysql -uUSER -pPASSWORD databasename -e "select * from t limit 10"=                      |
+| Import db                                    | =mysql -uUSER -pPASSWORD dbname < backup.sql=                                             |
+| export db                                    | =mysqldump -uUSER -pPASSWORD DATABASE > backup.sql=                                       |
+| export db without schema                     | =mysqldump -uUSER -pPASSWORD DATABASE --no-data=true --add-drop-table=false > backup.sql= |
+| Grant access                                 | =GRANT SUPER ON `DBNAME`.`user` TO 'DBUSER'@'%'=                                          |
+| Add column                                   | =ALTER TABLE expenses ADD COLUMN createtime timestamp not null default now();=            |
+| Delete Column                                | =ALTER TABLE expenses DROP COLUMN createtime;=                                            |
+| Delete index                                 | =DROP INDEX indexname ON table_name;=                                                     |
+| Create index                                 | =create index idindex on table_name(col_name) using btree;=                               |
+| Reset password                               | UPDATE mysql.user SET Password=PASSWORD('MyNewPass') WHERE User='root'; FLUSH PRIVILEGES; |
+| [[https://stackoverflow.com/questions/5555328/error-1396-hy000-operation-create-user-failed-for-jacklocalhost][ERROR 1396 (HY000): Operation CREATE USER...]] | =drop user 'braindenny'@'%'; flush privileges; CREATE USER...=                            |
+| [[https://dev.mysql.com/doc/refman/8.0/en/creating-accounts.html][mysql8 create user with password]]             | =CREATE USER 'myuser'@'%' IDENTIFIED BY 'MYPASSWORD';=                                    |
+| mysql8 grant privileges to user              | =GRANT ALL PRIVILEGES ON mydbname.* TO 'myuser'@'%' WITH GRANT OPTION;=                   |
 ** SQL Statement
 | Name                               | Command                                                         |
 |------------------------------------+-----------------------------------------------------------------|
@@ -114,3 +120,189 @@ License: Code is licenmysql under [[https://www.dennyzhang.com/wp-content/mit_li
 * HALF doc: datediff('2019-06-23',available_from): https://leetcode.com/problems/unpopular-books/discuss/324747/MySQL-case-statement-in-having :noexport:
 * HALF doc: In SQL, how to select the top 2 rows for each group    :noexport:
 https://stackoverflow.com/questions/15969614/in-sql-how-to-select-the-top-2-rows-for-each-group
+* SQL                                                              :noexport:
+** DONE [#A] SQL syntax
+  CLOSED: [2017-10-18 Wed 15:37]
+http://www.dofactory.com/sql/group-by
+
+** DONE [#A] mysql topn query by group
+  CLOSED: [2017-10-20 Fri 10:35]
+# https://leetcode.com/problems/department-highest-salary/description/
+
+select Department.Name as Department, t3.Name as Employee, t3.Salary
+from Employee as t3 inner join
+     (select t1.Salary, t1.DepartmentId, count(1) as rank
+        from (select distinct Salary, DepartmentId from Employee) as t1
+             inner join
+             (select distinct Salary, DepartmentId from Employee) as t2
+             on t1.DepartmentId = t2.DepartmentId
+        where t1.Salary <= t2.Salary
+        group by t1.Salary, t1.DepartmentId) as t4
+      inner join Department
+      on t3.DepartmentId = t4.DepartmentId and t3.Salary = t4.Salary 
+      and t3.DepartmentId = Department.Id
+where t4.rank<4
+order by t3.DepartmentId asc, t3.Salary desc;
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** DONE MySQL update case help
+  CLOSED: [2017-10-18 Wed 15:02]
+https://stackoverflow.com/questions/6734231/mysql-update-case-help
+UPDATE  ae44
+SET     price =
+        CASE
+        WHEN ID = 'AT259793380' THEN
+                '500'
+        WHEN ID = 'AT271729590' THEN
+                '600'
+        WHEN ID = 'AT275981020' THEN
+                '700'
+        END
+
+UPDATE salary SET sex = IF(sex = 'm', 'f', 'm')
+** DONE sql not in
+  CLOSED: [2017-10-18 Wed 15:20]
+;; https://leetcode.com/problems/swap-salary/
+
+select * from cinema where description not like '%boring%' and id %2 != 0 order by rating desc;
+** DONE The SQL ORDER BY OFFSET syntax
+  CLOSED: [2017-10-18 Wed 17:57]
+http://www.dofactory.com/sql/order-by-offset-fetch
+The general syntax to exclude first n records is: 
+SELECT column-names
+  FROM table-name
+ ORDER BY column-names
+OFFSET n ROWS
+
+To exclude first n records and return only the next m records:
+SELECT column-names
+  FROM table-name
+ ORDER BY column-names
+OFFSET n ROWS
+ FETCH NEXT m ROWS ONLY
+
+This will return only record (n + 1) to (n + 1 + m). See example below. 
+** DONE sql date
+  CLOSED: [2017-10-18 Wed 18:08]
+http://www.w3school.com.cn/sql/func_date_add.asp
+SELECT OrderId, DATE_ADD(OrderDate, INTERVAL 2 DAY) AS OrderPayDate
+FROM Orders
+** DONE delete with inner join
+  CLOSED: [2017-10-18 Wed 18:26]
+;; https://leetcode.com/problems/delete-duplicate-emails/description/
+
+delete t1 from Person as t1 inner join Person as t2
+on t1.Email = t2.Email
+where t1.Id > t2.Id
+
+https://stackoverflow.com/questions/16481379/how-to-delete-using-inner-join-with-sql-server
+** DONE sql not exists
+  CLOSED: [2017-10-18 Wed 18:54]
+SELECT A.Name from Customers A
+WHERE NOT EXISTS (SELECT 1 FROM Orders B WHERE A.Id = B.CustomerId)
+
+SELECT A.Name from Customers A
+LEFT JOIN Orders B on  a.Id = B.CustomerId
+WHERE b.CustomerId is NULL
+
+SELECT A.Name from Customers A
+WHERE A.Id NOT IN (SELECT B.CustomerId from Orders B)
+** DONE group having
+  CLOSED: [2017-10-18 Wed 18:57]
+;; https://leetcode.com/problems/duplicate-emails/description/
+
+select Email
+from Person
+group by Email
+having count(Email)>1;
+** DONE sql round float to 2 digits: Select round(@number,2) 
+  CLOSED: [2017-10-19 Thu 12:03]
+https://stackoverflow.com/questions/10380197/sql-rounding-off-to-2-decimal-places
+** DONE sql Replacing NULL with 0 in a SQL server query: SELECT COALESCE(col1, 0) FROM table1
+  CLOSED: [2017-10-19 Thu 12:02]
+https://stackoverflow.com/questions/16840522/replacing-null-with-0-in-a-sql-server-query
+** DONE sql case in select clause
+  CLOSED: [2017-10-19 Thu 12:05]
+https://leetcode.com/problems/trips-and-users/discuss/
+select t.Request_at Day, 
+round(sum(case when t.Status like 'cancelled_%' then 1 else 0 end)/count(*),2) Rate
+from Trips t 
+inner join Users u 
+on t.Client_Id = u.Users_Id and u.Banned='No'
+where t.Request_at between '2013-10-01' and '2013-10-03'
+group by t.Request_at
+** DONE mysql fetch offset: mysql fetch offset: SELECT * FROM tbl LIMIT 5,10;  # Retrieve rows 6-15
+  CLOSED: [2017-10-19 Thu 12:33]
+https://dev.mysql.com/doc/refman/5.7/en/select.html
+
+https://www.petefreitag.com/item/451.cfm
+** DONE mysql function concat string
+   CLOSED: [2017-10-19 Thu 14:41]
+** DONE mysql function convert int to string: CAST(id as VARCHAR(50))
+  CLOSED: [2017-10-19 Thu 14:41]
+https://stackoverflow.com/questions/15368753/cast-int-to-varchar
+** DONE mysql concat: SELECT CONCAT('w3resource','.','com');
+  CLOSED: [2017-10-19 Thu 12:52]
+https://www.w3resource.com/mysql/string-functions/mysql-concat-function.php
+#+BEGIN_EXAMPLE
+mysql> SELECT CONCAT('w3resource');
++----------------------+
+| CONCAT('w3resource') |
++----------------------+
+| w3resource           |
++----------------------+
+1 row in set (0.00 sec)
+Two or more arguments:
+
+mysql> SELECT CONCAT('w3resource','.','com');
++--------------------------------+
+| CONCAT('w3resource','.','com') |
++--------------------------------+
+| w3resource.com                 |
++--------------------------------+
+1 row in set (0.00 sec)
+One of the arguments is NULL :
+
+mysql> SELECT CONCAT('w3resource','.','com',NULL);
++-------------------------------------+
+| CONCAT('w3resource','.','com',NULL) |
++-------------------------------------+
+| NULL                                |
++-------------------------------------+
+1 row in set (0.02 sec)
+Numeric argument:
+
+mysql> SELECT CONCAT(102.33);
++----------------+
+| CONCAT(102.33) |
++----------------+
+| 102.33         |
++----------------+
+1 row in set (0.00 sec)
+#+END_EXAMPLE
+** DONE mysql function define variable
+  CLOSED: [2017-10-19 Thu 14:41]
+# https://leetcode.com/problems/nth-highest-salary/description/
+
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+  DECLARE M INT;
+  DECLARE column_name varchar(100);
+  set M=N-1;
+  set column_name = CONCAT('getNthHighestSalary', N, ')');
+  RETURN (
+     select DISTINCT Salary as column_name
+     from Employee
+     order by Salary desc
+     LIMIT M, 1
+   );
+END
+
+** DONE sql isnull and if: if(s1.id % 2 = 0, s1.student, if(isnull(s2.student), s1.student, s2.student)) as student
+   CLOSED: [2017-10-19 Thu 17:02]
+** DONE MySQL: Auto increment temporary column in select statement
+  CLOSED: [2017-10-19 Thu 20:09]
+https://stackoverflow.com/questions/15930514/mysql-auto-increment-temporary-column-in-select-statement
+SET @rownr=0;
+SELECT @rownr:=@rownr+1 AS rowNumber, rowID
+  FROM myTable
+  WHERE CategoryID = 1

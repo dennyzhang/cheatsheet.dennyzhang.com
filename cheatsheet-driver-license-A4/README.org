@@ -24,13 +24,30 @@ File me [[https://github.com/dennyzhang/cheatsheet-uaac-A4/issues][Issues]] or s
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** Free Driver License Written Tests
-| Name                                   | Comment                                                          |
-|----------------------------------------+------------------------------------------------------------------|
-| Traffic control                        | [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/hdbk/ped_sig_traf_sgns][Link: Traffic Controls]]                                           |
-| Sample Class C Written Tests from DMV  | [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc2written?lang=en][Test1]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc3written?lang=en][Test2]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en][Test3]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en][Test4]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc6written?lang=en][Test5]]                                |
-| FREE DMV Practice Test for California  | [[https://driving-tests.org/california/dmv-practice-test/][Link: driving-tests.org]]                                          |
-| Chinese simulated driver license tests | [[https://driver-test.com/][link:driver-test.com]], [[https://pass-dmv-test.com/quiz-1-zh.html][Link: quiz]]                                 |
-| Reference                              | [[https://www.dmv.ca.gov/portal/dmv][Link: DMV Homepage - California]], [[https://www.dmv.ca.gov/web/eng_pdf/dl600.pdf][PDF: California Driver Handbook]] |
+| Name                                  | Comment                                                          |
+|---------------------------------------+------------------------------------------------------------------|
+| Traffic control                       | [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/hdbk/ped_sig_traf_sgns][Link: Traffic Controls]]                                           |
+| Sample Class C Written Tests from DMV | [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc2written?lang=en][Test1]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc3written?lang=en][Test2]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc4written?lang=en][Test3]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc5written?lang=en][Test4]], [[https://www.dmv.ca.gov/portal/dmv/detail/pubs/interactive/tdrive/clc6written?lang=en][Test5]]                                |
+| FREE DMV Practice Test for California | [[https://driving-tests.org/california/dmv-practice-test/][Link: driving-tests.org]]                                          |
+| Reference                             | [[https://www.dmv.ca.gov/portal/dmv][Link: DMV Homepage - California]], [[https://www.dmv.ca.gov/web/eng_pdf/dl600.pdf][PDF: California Driver Handbook]] |
+
+** Child
+| Name                                               | Summary                                                                        |
+|----------------------------------------------------+--------------------------------------------------------------------------------|
+| Need a child passenger restraint system            | Younger than 8 years; Or no more than 4 feet 9 inches                          |
+| Airbags may pose a severe safety risk for children | Children age 12 or under should sit in the back seat of a vehicle with airbags |
+
+** Abnormal Weather/Conditions
+| Name                                                 | Summary                                                                   |
+|------------------------------------------------------+---------------------------------------------------------------------------|
+| In rainy weather, slow down                          | Drive fast may cause tires lose contact with the surface of the road      |
+| On freezing, wet days                                | Bridges and overpasses tend to freeze before the rest of the road         |
+| Roadways are the most slippery during the first rain | oil and dust on the road have not previously been washed away.            |
+| Hit an animal                                        | Call the humane society. You should not leave it to die or try to move it |
+| If your wheels drop off the roadway or pavement edge | Wait until it is safe to do so, then gradually turn back                  |
+| Use low beams when in fog, rain or snow              | High beam will reflect back, which makes you hard to see ahead            |
+| When being tailgated, create extra space             | Slow down gradually prevents a collision with the tailgater.              |
+
 ** Distance
 | Name                     | Summary                                                                                      |
 |--------------------------+----------------------------------------------------------------------------------------------|
@@ -41,8 +58,18 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Turn a corner            | You should signal for at least 100 feet.                                                     |
 | Follow emergency vehcile | You must not follow within 400 feet of any emergency vehcile with a siren or flashing lights |
 | Use center lane          | While driving in a center left-turn lane, you may only drive for 200 feet.                   |
+| Park on a level street   | The front and back wheels must be parallel with and within 18 inches of the curb             |
 
-** Traffic Signals
+[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-driver-license-A4/signs.png]]
+
+** Fining
+| Name                                 | Summary                                                           |
+|--------------------------------------+-------------------------------------------------------------------|
+| The fine of litering                 | $1,000, in addition, you may be required to pick up what littered |
+| Abuse of a disabled placard or plate | a fine of up to $1,000, and up to six months of jail time         |
+| Fines in a construction zone         | Fines for traffic violations are doubled                          |
+
+** Traffic Control
 | Name                             | Summary                                                                   |
 |----------------------------------+---------------------------------------------------------------------------|
 | Traffic lights not working       | You need to come to a complete stop first                                 |
@@ -51,27 +78,11 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Diamond-shaped sign              | Many warning signs are diamond-shaped                                     |
 | Orange-colored signs             | indicate construction areas                                               |
 | Orange, diamond-shaped signs     | It usually mark construction, maintenance, survey, and utility work areas |
-
-[[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-driver-license-A4/signs.png]]
+| Yellow lines                     | Separate lanes of traffic moving in opposite directions.                  |
+| A white rectangular sign         | indicate that you must obey important rules.                              |
+| Pennant-shaped yellow signs      | indicate a no passing zone                                                |
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-driver-license-A4/signs2.jpg]]
-
-** Weather
-| Name                        | Summary                                                              |
-|-----------------------------+----------------------------------------------------------------------|
-| In rainy weather, slow down | Drive fast may cause tires lose contact with the surface of the road |
-| On freezing, wet days       | Bridges and overpasses tend to freeze before the rest of the road    |
-
-** Fining
-| Name                         | Summary                                                           |
-|------------------------------+-------------------------------------------------------------------|
-| The fine of litering         | $1,000, in addition, you may be required to pick up what littered |
-| Fines in a construction zone | Fines for traffic violations are doubled                          |
-
-** Child
-| Name                                    | Summary                                               |
-|-----------------------------------------+-------------------------------------------------------|
-| Need a child passenger restraint system | Younger than 8 years; Or no more than 4 feet 9 inches |
 
 ** Time
 | Name                    | Summary                                                                                  |
@@ -92,32 +103,12 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Red        | No stopping, standing, or parking. (Buses may stop at a red zone marked for buses.)     |
 | Blue       | Parking for disabled people only                                                        |
 
-** Beams
-| Name                                    | Summary                                                        |
-|-----------------------------------------+----------------------------------------------------------------|
-| Use low beams when in fog, rain or snow | High beam will reflect back, which makes you hard to see ahead |
-
-** Terminology
-| Name                              | Summary                                                                                            |
-|-----------------------------------+----------------------------------------------------------------------------------------------------|
-| Skid                              | automobiles slip relative to the road [[https://en.wikipedia.org/wiki/Skid_(automobile)][Link: wikipedia]]                                              |
-| BAC                               | Blood alcohol concentration                                                                        |
-| California "Basic Speed Law"      | You must never driver faster than what is safe in current conditions                               |
-| Turnout area                      | You may pull to the side in these areas and allow cars behind you to pass. [[https://driversed.com/driving-information/driving-techniques/turnout-areas.aspx][Link]]                    |
-| A nighttime reflector             | It shows where the road lies                                                                       |
-| Hand-over-hand steering           | used when turning at low speeds, parking or recovering from a skid                                 |
-| One-hand steering                 | You can use when you're backing up without much turning                                            |
-| Three-point turn                  | standard method of turning vehicles around to face the opposite direction in a limited space. [[https://en.wikipedia.org/wiki/Three-point_turn][link]] |
-| DUI probation                     |                                                                                                    |
-| NEV                               | neighborhood electric vehicles                                                                     |
-| LSV                               | Low speed vehicles                                                                                 |
-| HOV lane (High-Occupancy Vehicle) | Designed for buses, motorcycles, certain low-emission vehicles and 2+ passengers                   |
-| Use horn                          | You may tap horn to try to make eye contact with another driver                                    |
-#+BEGIN_HTML
-<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
-#+END_HTML
-
-** Pictures
+** Steering
+| Name                    | Summary                                                                                      |
+|-------------------------+----------------------------------------------------------------------------------------------|
+| Hand-over-hand steering | used when turning at low speeds, parking or recovering from a skid                           |
+| One-hand steering       | You can use when you're backing up without much turning                                      |
+| [[https://en.wikipedia.org/wiki/Three-point_turn][Three-point turn]]        | standard method of turning vehicles around to face the opposite direction in a limited space |
 hand-over-hand-steering:
 [[https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/hand-over-hand-steering.jpg]]
 
@@ -127,6 +118,26 @@ one-hand-steering:
 three-point-turn:
 [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/three-point-turn.png]]
 
+** Terminology
+| Name                              | Summary                                                                          |
+|-----------------------------------+----------------------------------------------------------------------------------|
+| California "Basic Speed Law"      | You must never driver faster than what is safe in current conditions             |
+| California Move Over law          | All vehicles to vacate the lane closest to an emergency vehicle                  |
+| Skid                              | automobiles slip relative to the road [[https://en.wikipedia.org/wiki/Skid_(automobile)][Link: wikipedia]]                            |
+| BAC                               | Blood alcohol concentration                                                      |
+| A nighttime reflector             | It shows where the road lies                                                     |
+| Turnout area                      | You may pull to the side in these areas and allow cars behind you to pass. [[https://driversed.com/driving-information/driving-techniques/turnout-areas.aspx][Link]]  |
+| roundabout                        |                                                                                  |
+| DUI probation                     |                                                                                  |
+| NEV                               | neighborhood electric vehicles                                                   |
+| LSV                               | Low speed vehicles                                                               |
+| HOV lane (High-Occupancy Vehicle) | Designed for buses, motorcycles, certain low-emission vehicles and 2+ passengers |
+| Use horn                          | You may tap horn to try to make eye contact with another driver                  |
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+
+** Pictures
 cone-zone:
 [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-living-in-ca/master/cone-zone.png]]
 

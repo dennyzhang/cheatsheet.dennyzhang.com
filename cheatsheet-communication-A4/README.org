@@ -73,6 +73,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 | Entrepreneur      |         |
 | Product manager   |         |
 | IT workers        |         |
+** Typical Communication Scenarios
+| Name                                                            | Summary |
+|-----------------------------------------------------------------+---------|
+| When another team asks you to do some chore                     |         |
+| Express your feelings of inappropriate assignments/expectations |         |
 ** [#A] Scenario - Technical Discussion Meeting
 | Name                                       | Summary                                                                        |
 |--------------------------------------------+--------------------------------------------------------------------------------|
@@ -469,3 +474,12 @@ FZ case
 * Common sense might be missing quite often                   :noexport:
 - No e2e tests, before PR
 * Simon Sinek - YouTube: Why leaders make you safe                 :noexport:
+* Lesson learned                                                   :noexport:
+- When you boss says I have communicated with XXX, is it really true?
+* local notes                                                      :noexport:
+- I can baby-sit the pipeline until I see it go green
+- Lots of interesting questions are stupid. And the answers don't really matter. Just think and enjoy.
+- Your online business should be designed for a specific audience. It’s not just a collection of what you like. Or even wore - what you think your audience should like.
+* [#A] How to ask questions in sharing session?                    :noexport:
+* TODO [#A] Escape bike-shedding                                   :noexport:
+* ask question, reply it directly                                  :noexport:

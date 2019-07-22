@@ -558,3 +558,5 @@ https://concourse-ci.org/community.html
 https://github.com/dennyzhang/docs
 
 * TODO Add keyword free for the cheatsheets                        :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Enable flyspell check manually                         :noexport:

@@ -55,7 +55,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]
 | Take snapshot for a testbed | NIMBUS=sc-prd-vc012 /mts/git/bin/nimbus-ctl --outputPath=$HOME screenshot denny-snapshot                                      |
 | Take snapshot for a testbed | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --testbed --snapshotIncludeMemory --snapshot $snapshotname create-snapshot $testbedname |
 | Take snapshot for a vm      | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --snapshotIncludeMemory --snapshot $snapshotname create-snapshot $vmname                |
-| Revert all snapshot         | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --testbed --snapshot $snapshotname revert-snapshot $testbedname                         |
+|  -Revert all snapshot       | NIMBUS=${POD} /mts/git/bin/nimbus-ctl --testbed --snapshot $snapshotname revert-snapshot $testbedname                         |
 | Reference                   | [[https://gitlab.eng.vmware.com/devtools/nimbus/nimbus][Gitlab: nimbus]]                                                                                                                |
 | Reference                   | [[https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4][CheatSheet: VMware Govmomi]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4][CheatSheet: VMware Nimbus]]                                                                         |
 ** Deploy Workload In Nimbus

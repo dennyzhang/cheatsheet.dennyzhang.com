@@ -1,11 +1,11 @@
-* V CheatSheet                                               :Languages:
+* Cheatsheet: Rust Language                                       :Languages:
 :PROPERTIES:
 :type:     v
-:export_file_name: cheatsheet-v-A4.pdf
+:export_file_name: cheatsheet-rust-A4.pdf
 :END:
 
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-v-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-rust-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -17,39 +17,23 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-v-A4/cheatsheet-v-A4.pdf][cheatsheet-v-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/languages/][languages]]
-- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-v-A4
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-rust-A4/cheatsheet-rust-A4.pdf][cheatsheet-rust-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/languages/][languages]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-rust-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-python-A4][Python CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4][Golang CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]] or star [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4][this repo]].
-** V Conversion
-| Name                           | Comment                                                         |
-|--------------------------------+-----------------------------------------------------------------|
-| Convert string to int          | i, _ := strconv.ParseInt("12345", 10, 64)                       |
-| Convert string to int          | i, err := strconv.Atoi("-42")                                   |
-| Convert string to list         | L := strings.Split("hi,v", "")                             |
-| Convert string to []byte       | =[]byte("abcXX")=                                               |
-| Convert string to float32      | f, _ := strconv.ParseFloat("3.1415", 32)                        |
-| Convert int to float32         | 0.5*float32(age)+7>= float32(age2)                              |
-| Convert int to string          | s := strconv.Itoa(-42)                                          |
-| Convert rune to string         | =string(rune1)=                                                 |
-| Convert list to string         | =strings.Join(list, ", ")=                                      |
-| Convert list to byte           | byteI := byte(65)                                               |
-| Convert byte to int            | =int(byte('a'))=                                                |
-| Convert byte to string         | =string(byte('a'))=                                             |
-| Convert bytes to string        | =string([]byte("abcXX"))=                                       |
-| Convert int32 to int32 Pointer | =func int32Ptr(i int32) *int32 { return &i }=                   |
-| Convert string[] to string     | =strings.Join([]string{"a", "b"}, ",")=                         |
-| Format string                  | =fmt.Sprintf("At %v, %s", e.When, e.What)=                      |
-| Format string                  | =fmt.Printf("int: %d, float: %f, bool: %t\n", 123, 78.9, true)= |
+** Rust Basic
+| Name             | Comment                                                                                                     |
+|------------------+-------------------------------------------------------------------------------------------------------------|
+| [[https://www.rust-lang.org/][Rust summary]]     | Good for embedded devices; guarantee memory-safety and thread-safety                                        |
+| Go VS Rust       | [[https://sdtimes.com/softwaredev/the-developers-dilemma-choosing-between-go-and-rust/][Link: Choosing between Go and Rust]], [[https://matthias-endler.de/2017/go-vs-rust/][Link: Go vs Rust]], [[https://www.youtube.com/watch?time_continue=3&v=B5xYBrxVSiE][YouTube: Go vs Rust - Concurrency and Race Conditions]] |
+| rust bin path    | =export PATH=$PATH:$HOME/.cargo/bin=                                                                        |
+| [[https://doc.rust-lang.org/stable/rust-by-example/hello.html][Rust hello world]] | =rustc hello.rs && ./hello=                                                                                 |
+| println          | =let x = 5+29; println!("Is `x` 10 or 100? x = {}", x);=                                                    |
+| Reference        | [[https://github.com/rust-lang/rust][Github: rust-lang/rust]], [[https://doc.rust-lang.org/stable/rust-by-example/index.html][Link: Rust by Example]], [[https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA/featured][YouTube: Rust]]                                                |
+
 ** More Resources
-https://play.v.org/
-
-https://tour.v.org/list
-
-https://v.org/doc/
-
-https://github.com/a8m/go-lang-cheat-sheet
+https://doc.rust-lang.org/stable/rust-by-example/index.html
 
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
@@ -73,8 +57,8 @@ https://github.com/a8m/go-lang-cheat-sheet
 #+LATEX_HEADER: \fancyhf{}
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
-#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-v-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-v-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-v-A4}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-rust-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-rust-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-rust-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)
