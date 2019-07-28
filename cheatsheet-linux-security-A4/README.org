@@ -20,7 +20,7 @@
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-linux-security-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-process-A4][CheatSheet: Linux Process]], [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][CheatSheet: Linux Networking]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-File me [[https://github.com/dennyzhang/cheatsheet-diff-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-diff-A4][this repo]].
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Security Concepts
 | Name                           | Comment                                                         |
 |--------------------------------+-----------------------------------------------------------------|

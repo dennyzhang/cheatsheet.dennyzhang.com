@@ -1,6 +1,6 @@
 * CheatSheet: Container Compliance                                 :Security:
 :PROPERTIES:
-:type:     v
+:type:     security
 :export_file_name: cheatsheet-compliance-A4.pdf
 :END:
 
@@ -21,13 +21,23 @@
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-compliance-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-security-A4][Cheatsheet: Kubernetes Security]], [[https://cheatsheet.dennyzhang.com/cheatsheet-linux-security-A4][Cheatsheet: Linux Security]] [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]] or star [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4][this repo]].
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Compliance Scan Tools
 | Name  | Comment                                           |
 |-------+---------------------------------------------------|
-| [[https://github.com/vmware/tern][Tern]]  | Open Source compliance for containers from VMware |
 | [[https://github.com/coreos/clair][Clair]] | Vulnerability Static Analysis for Containers      |
 | [[https://github.com/wagoodman/dive][Dive]]  | A tool for exploring each layer in a docker image |
+| [[https://github.com/vmware/tern][Tern]]  | Open Source compliance for containers from VMware |
+** Terminology
+| Name   | Comment                               |
+|--------+---------------------------------------|
+| OSS    | Open Source Software                  |
+| OSS/TP | Open Source Software/Third Party      |
+| CVE    | Common Vulnerabilities and Exposures  |
+| OSM    | Open-source & Security Manager System |
+| OSL    | Open Source License file              |
+| ODP    | Open source Disclosure Package        |
+| SBR    | Source, Build and Replace             |
 
 ** Common Docker Registry
 | Name                      | Comment      |
@@ -35,17 +45,21 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Docker hub                |              |
 | Google container registry |              |
 | Self-maintained registry  | JFrog, Nexus |
+
 ** Docker Scan
 | Name                                         | Comment                                 |
 |----------------------------------------------+-----------------------------------------|
 | Detect wasted space in docker image via dive | =dive <docker_tag>=, =dive golang:1.12= |
+| Analysis of the dockerfile is manual         |                                         |
 ** Container Compliance Principles
-| Name                                       | Comment                                          |
-|--------------------------------------------+--------------------------------------------------|
-| Choose container base images               | No authroized or insecured base images           |
-| Download or install from external websites | Need to mirror the repo for apt-get, wget, etc   |
-| Install package with latest version        | Insecure because the process is not reproducible |
-| Build from source code                     | Good for the overall goverance                   |
+| Name                                         | Comment                                          |
+|----------------------------------------------+--------------------------------------------------|
+| Choose container base images                 | No authroized or insecured base images           |
+| Download or install from external websites   | Need to mirror the repo for apt-get, wget, etc   |
+| Avoid installing package with latest version | Insecure because the process is not reproducible |
+| Build from source code                       | Good for the overall goverance                   |
+| Pin the package version                      | Make the build re-entrant and stable             |
+| In Dockerfile, use =COPY=, instead of =ADD=  |                                                  |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
@@ -82,3 +96,5 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+LINK_UP:
 #+LINK_HOME:
 * TODO [#A] How to scan a docker image: golang/1.12                :noexport:
+* TODO If my company has mirrored public github repo, is it fine enough now? :noexport:
+* TODO Whether to inventory docker images, after we have finishing the OSS/TP packages :noexport:

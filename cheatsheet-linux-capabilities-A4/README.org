@@ -20,7 +20,7 @@
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-linux-capabilities-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: Shell]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-File me [[https://github.com/dennyzhang/cheatsheet-linux-capabilities-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-linux-capabilities-A4][this repo]].
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Linux Capabilities - Frequent 
 Starting with kernel 2.2, Linux divides the privileges traditionally associated with superuser into distinct units, known as *linux capabilities*.
 | Name                   | Comment                                                                          |

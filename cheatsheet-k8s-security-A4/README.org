@@ -20,6 +20,7 @@
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-k8s-security-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Kubernetes Yaml Templates]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-tile-A4][this repo]].
 ** Summary
 | Name                                 | Summary                                                                             |
@@ -147,7 +148,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 
 Blog URL: https://kubernetes.dennyzhang.com/challenges-k8s-security, Category: [[https://kubernetes.dennyzhang.com/category/concept][concept]]
 
-File me [[https://github.com/DennyZhang/kubernetes-security-practice/issues][Issues]] or star [[https://github.com/DennyZhang/kubernetes-security-practice][this repo]].
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 
 See more Kubernetes sharing from Denny: [[https://github.com/topics/denny-kubernetes][denny-kubernetes]]
 ** Admission Controllers

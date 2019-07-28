@@ -20,7 +20,7 @@
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-browser-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-vim-a4][Vim CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-mac-a4][Mac Cheatsheet]]
 
-File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-tile-A4][this repo]].
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Chrome Shortcut In mac
 | Name                        | Comment                                      |
 |-----------------------------+----------------------------------------------|

@@ -20,7 +20,7 @@
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-kind-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-minikube-A4][Minikube CheatSheet]], [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Kubernetes Yaml]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-File me [[https://github.com/dennyzhang/cheatsheet-minikube-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-minikube-A4][this repo]].
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
@@ -36,12 +36,13 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Reference           | [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]],  [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Kubernetes Yaml]]                         |
 
 ** kind Command
-| Name                            | Command                                 |
-|---------------------------------+-----------------------------------------|
-| List all kind clusters          | =kind get clusters=                     |
-| List all nodes per cluster name | =kind get nodes --name $cluster_name=   |
-| Create kind clusrer             | =kind create cluster --name clusterapi= |
-| Delete kind cluster             | =kind delete cluster --name clusterapi= |
+| Name                               | Command                                         |
+|------------------------------------+-------------------------------------------------|
+| List all kind clusters             | =kind get clusters=                             |
+| Get kubeconfig for a given cluster | =kind get kubeconfig-path --name $cluster-name= |
+| List all nodes for a given cluster | =kind get nodes --name $cluster_name=           |
+| Create kind clusrer                | =kind create cluster --name clusterapi=         |
+| Delete kind cluster                | =kind delete cluster --name clusterapi=         |
 ** kind CLI Online Help
 #+BEGIN_EXAMPLE
 > kind version
@@ -106,3 +107,4 @@ https://github.com/kubernetes/minikube/tree/master/docs
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
+* TODO How to check kind service status                            :noexport:

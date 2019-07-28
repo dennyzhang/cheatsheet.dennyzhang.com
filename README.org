@@ -118,6 +118,8 @@ Cheers!
 | Cheatsheet for best practices | https://cheatsheet.dennyzhang.com |
 | Code tests for interviews     | https://code.dennyzhang.com       |
 | Learn system design           | https://architect.dennyzhang.com  |
+* Private pages                                                    :noexport:
+https://cheatsheet.dennyzhang.com/cheatsheet-wcp-A4
 * CANCELED                                                         :noexport:
 ** CANCELED Create symol link: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes :noexport:
    CLOSED: [2018-09-09 Sun 00:42]
@@ -560,3 +562,4 @@ https://github.com/dennyzhang/docs
 * TODO Add keyword free for the cheatsheets                        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Enable flyspell check manually                         :noexport:
+* cheatsheet tool: add common error code                           :noexport:

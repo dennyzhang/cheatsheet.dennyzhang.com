@@ -20,7 +20,7 @@
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-tmux-A4][CheatSheet Tmux/Tmate]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-File me [[https://github.com/dennyzhang/cheatsheet-emacs-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-emacs-A4][this repo]].
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Basic
 | Name                         | Summary                                  |
 |------------------------------+------------------------------------------|
@@ -31,12 +31,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-emacs-A4/issues][Issues]] or 
 | Name                         | Summary                                 |
 |------------------------------+-----------------------------------------|
 | Create a reminder for myself | =/remind @me some message tomorrow 9am= |
-
-File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
-
-See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** More Resources
-
 https://devdactic.com/slack-cheat-sheet/
 
 https://blog.hubspot.com/marketing/slack-tips

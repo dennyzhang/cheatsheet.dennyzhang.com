@@ -20,7 +20,7 @@
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-communication-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-it-career-A4][CheatSheet: IT Career Path]], [[https://cheatsheet.dennyzhang.com/cheatsheet-communication-A4][Cheatsheet: IT Communication]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-health-A4][this repo]].
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Pitfalls For Geek Culture
 | Name                                     | Second Thinking                                                                  |
 |------------------------------------------+----------------------------------------------------------------------------------|
@@ -58,6 +58,10 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 | Keep pushing until someone ask you to stop        |                                                                            |
 | You don't get paid for the effort you have spent  | Only for the value you have delivered                                      |
 | You can't solve all conflicts & problems          | Some problems can't be solved in your level or simply conflict of interest |
+** Terminology
+| Name         | Comment                                                                                   |
+|--------------+-------------------------------------------------------------------------------------------|
+| [[https://support.indiegogo.com/hc/en-us/articles/205183457-Building-Stretch-Goals][stretch goal]] | an additional goal you set for your campaign in case you exceed your initial funding goal |
 ** Typical Things People May Want
 | Name                           | Summary |
 |--------------------------------+---------|
@@ -74,10 +78,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-health-A4/issues][Issues]] or
 | Product manager   |         |
 | IT workers        |         |
 ** Typical Communication Scenarios
-| Name                                                            | Summary |
-|-----------------------------------------------------------------+---------|
-| When another team asks you to do some chore                     |         |
-| Express your feelings of inappropriate assignments/expectations |         |
+| Name                                                            | Summary                                             |
+|-----------------------------------------------------------------+-----------------------------------------------------|
+| When another team asks you to do some chore                     | Small things can pile up to be a big demand of time |
+| Express your feelings of inappropriate assignments/expectations |                                                     |
+| Overlapped responsibilities for multiple members/teams          |                                                     |
 ** [#A] Scenario - Technical Discussion Meeting
 | Name                                       | Summary                                                                        |
 |--------------------------------------------+--------------------------------------------------------------------------------|
@@ -483,3 +488,6 @@ FZ case
 * [#A] How to ask questions in sharing session?                    :noexport:
 * TODO [#A] Escape bike-shedding                                   :noexport:
 * ask question, reply it directly                                  :noexport:
+* I would defer the questions to a manager                         :noexport:
+* TODO Based on my observations, there are a lot of work here, it will take time to understand to figure out what need to be done. :noexport:
+* [#A] Save you bullets. You don't need to show your muscle, if unnecessary :noexport:

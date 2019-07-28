@@ -20,20 +20,21 @@
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-archive-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][Shell CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]]
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Decompress
-| Name         | Summary                                        |
-|--------------+------------------------------------------------|
-| Unpack *.tar | =tar -xvf ./file.tar=                          |
-| Unpack *.rar | =unrar e ./file.rar=                           |
-| Unpack *.zip | =unzip ./file.zip=                             |
-| Unpack *.gz  | =gunzip ./file.gz; gzip -d file.gz=            |
-| Unpack *.bz2 | =tar -jxvf file.tar.bz2 -C /tmp/extract_here/= |
-| Unpack *.7z  | =7z e ./file.7z= install p7zip first           |
-| Unpack *.xz  | =tar -xf ./file.tar.xz=                        |
-| Unpack *.jar | =jar -xvf ./file.jar=                          |
-| Unpack *.war | =jar -xvf ./file.war=                          |
-| Unpack *.tgz | =tar -xf ./file.tgz=                           |
+| Name            | Summary                                        |
+|-----------------+------------------------------------------------|
+| Unpack *.tar    | =tar -xvf ./file.tar=                          |
+| Unpack *.tar.gz | =tar xvzf ./file.tar.gz=                       |
+| Unpack *.rar    | =unrar e ./file.rar=                           |
+| Unpack *.zip    | =unzip ./file.zip=                             |
+| Unpack *.gz     | =gunzip ./file.gz; gzip -d file.gz=            |
+| Unpack *.bz2    | =tar -jxvf file.tar.bz2 -C /tmp/extract_here/= |
+| Unpack *.7z     | =7z e ./file.7z= install p7zip first           |
+| Unpack *.xz     | =tar -xf ./file.tar.xz=                        |
+| Unpack *.jar    | =jar -xvf ./file.jar=                          |
+| Unpack *.war    | =jar -xvf ./file.war=                          |
+| Unpack *.tgz    | =tar -xf ./file.tgz=                           |
 ** Compress Common Format
 | Name          | Command                                        |
 |---------------+------------------------------------------------|
