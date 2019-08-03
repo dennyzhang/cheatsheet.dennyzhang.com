@@ -491,3 +491,53 @@ FZ case
 * I would defer the questions to a manager                         :noexport:
 * TODO Based on my observations, there are a lot of work here, it will take time to understand to figure out what need to be done. :noexport:
 * [#A] Save you bullets. You don't need to show your muscle, if unnecessary :noexport:
+* TODO Naming could be confusing: vmware/kubectl-plugin-vsphere :noexport:
+* TODO Identity People's bluffing                                  :noexport:
+* TODO People keep talking about their requests, but ignore your requests :noexport:
+#+BEGIN_EXAMPLE
+Denny Zhang 10:24 AM
+Morning XXX
+I’d like to get notified when people have PRs for GCM.
+Do I need to join gitlab teams? e.g,
+https://gitlab.eng.vmware.com/core-build/cluster-api-provider-wcp/project_members
+https://gitlab.eng.vmware.com/core-build/vm-operator/project_members
+https://gitlab.eng.vmware.com/core-build/guest-cluster-controller/project_members
+XXX YYY:spiral_calendar_pad: 10:24 AM
+Hey Denny, before that did you see my related question last night ?
+XXX YYY
+Curious, do you have any ideas on how to do this? https://jira.eng.vmware.com/browse/GCM-645
+Direct Message | Yesterday at 10:59 PM | View conversation
+Denny Zhang 10:25 AM
+No idea. Haven’t done that before.
+Still ramping up things.
+XXX YYY:spiral_calendar_pad: 10:26 AM
+right, nothing to do with GC. just gilab stuff
+gitlab stuff
+Cool.
+Is that the reason you were asking to be notified ?
+Denny Zhang 10:27 AM
+I noticed there are some PRs, I might be able to help.
+So it shall help that I can be in the reviewer list
+XXX YYY:spiral_calendar_pad: 10:27 AM
+awesome. thank you.
+Denny Zhang 10:28 AM
+e.g, https://gitlab.eng.vmware.com/core-build/cluster-api-provider-wcp/merge_requests/67
+We can do more than that.
+There might be more differences except golang version in between local build vs gobuild.
+And any part can contribute to the build failure
+XXX YYY:spiral_calendar_pad: 10:40 AM
+YOu will have to ask Zach, I am not in these repos yet
+he can add you as a member to these projects
+Denny Zhang 10:40 AM
+Cool. I checked with Sabari. Let me ask Zach
+#+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] 要搭团队技术新锐的顺风车                               :noexport:
+* TODO 看到了问题，不要马上去解决                                  :noexport:
+- 理解是什么问题，理解是什么影响
+  PKS项目中, pivotal工作方式的问题与我无关。
+- 想想是谁的问题。谁解决更好
+- 现在解决，还是之后合适时机解决
+  PKS.next中Kaiting的焦点
+- 最后，才是怎么解决
+* TODO 不要脸皮薄, 该认怂时不要逞能                                :noexport:

@@ -54,8 +54,9 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Container Compliance Principles
 | Name                                         | Comment                                          |
 |----------------------------------------------+--------------------------------------------------|
+| Avoid pulling from external sources          | Need to mirror the repo for apt-get, wget, etc   |
+| Avoid using un-versioned packages            | Reproducibility                                  |
 | Choose container base images                 | No authroized or insecured base images           |
-| Download or install from external websites   | Need to mirror the repo for apt-get, wget, etc   |
 | Avoid installing package with latest version | Insecure because the process is not reproducible |
 | Build from source code                       | Good for the overall goverance                   |
 | Pin the package version                      | Make the build re-entrant and stable             |

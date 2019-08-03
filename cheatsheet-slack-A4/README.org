@@ -31,6 +31,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Name                         | Summary                                 |
 |------------------------------+-----------------------------------------|
 | Create a reminder for myself | =/remind @me some message tomorrow 9am= |
+| Reference                    | [[https://get.slack.help/hc/en-us/articles/208423427-Set-a-reminder][Link: Set a reminder]]                    |
 ** More Resources
 https://devdactic.com/slack-cheat-sheet/
 

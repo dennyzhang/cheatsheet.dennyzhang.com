@@ -25,17 +25,15 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 - Check kubernetes cheatsheet: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4
-** kind basic
-| Name                | Command                                                      |
-|---------------------+--------------------------------------------------------------|
-| [[https://github.com/kubernetes-sigs/kind][Kind]]                | Kubernetes IN Docker - local clusters for testing Kubernetes |
-| [[https://kind.sigs.k8s.io/][Install kind]]        | Install go and docker, then =go get -u sigs.k8s.io/kind=     |
-| Check kind cli      | =which kind=, =kind version=                                 |
-| Create kind clusrer | =kind create cluster --name clusterapi=                      |
-| Reference           | [[https://cheatsheet.dennyzhang.com/cheatsheet-minikube-A4][Minikube CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kind-A4][Kubernetes kind CheatSheet]]              |
-| Reference           | [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]],  [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Kubernetes Yaml]]                         |
+** Kind Basic
+| Name           | Command                                                      |
+|----------------+--------------------------------------------------------------|
+| [[https://github.com/kubernetes-sigs/kind][Kind]]           | Kubernetes IN Docker - local clusters for testing Kubernetes |
+| [[https://kind.sigs.k8s.io/][Install kind]]   | Install go and docker, then =go get -u sigs.k8s.io/kind=     |
+| Check kind cli | =which kind=, =kind version=                                 |
+| Reference      | [[https://cheatsheet.dennyzhang.com/cheatsheet-minikube-A4][Minikube CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]],  [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Kubernetes Yaml]]    |
 
-** kind Command
+** Kind Command
 | Name                               | Command                                         |
 |------------------------------------+-------------------------------------------------|
 | List all kind clusters             | =kind get clusters=                             |
@@ -43,7 +41,19 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | List all nodes for a given cluster | =kind get nodes --name $cluster_name=           |
 | Create kind clusrer                | =kind create cluster --name clusterapi=         |
 | Delete kind cluster                | =kind delete cluster --name clusterapi=         |
-** kind CLI Online Help
+
+** Kind Conf
+| Name                      | Command                                         |
+|---------------------------+-------------------------------------------------|
+| Conf files                | =/etc/kubernetes=                               |
+| Services start conf files | =/etc/kubernetes/manifests=                     |
+| kube api server conf file | =/etc/kubernetes/manifests/kube-apiserver.yaml= |
+
+** Kind Serviceability
+| Name                                          | Command                                                                                  |
+|-----------------------------------------------+------------------------------------------------------------------------------------------|
+| Restart kind clusters, after dockerd restarts | =docker start kind-control-plane=,  [[https://github.com/kubernetes-sigs/kind/issues/148][GitHub: Cluster doesn't restart when docker restarts]] |
+** Kind CLI Online Help
 #+BEGIN_EXAMPLE
 > kind version
 0.3.0-alpha

@@ -24,10 +24,17 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Govmomi Summary
 | Name        | Summary                                               |
 |-------------+-------------------------------------------------------|
-| govmomi     | Ruby Golang binding for vmomi client                  |
+| govmomi     | Golang binding for vmomi client                       |
 | govc import |                                                       |
 | Reference   | [[https://godoc.org/github.com/vmware/govmomi][Link: package govmomi]]                                 |
 | Reference   | [[https://cheatsheet.dennyzhang.com/cheatsheet-govmomi-A4][CheatSheet: VMware Govmomi]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nimbus-A4][CheatSheet: VMware Nimbus]] |
+** govc
+| Name                     | Summary                                                               |
+|--------------------------+-----------------------------------------------------------------------|
+| List data center         | =govc ls=                                                             |
+| Create a content library | =govc library.create Kubernetes=                                      |
+| Delete a content library | =govc library.rm Kubernetes=                                                              |
+| Upload ova from url      | =govc library.import -n test /Kubernetes http://XXX/my-ova-0.1.0.ova= |
 ** govc CLI Online Help
 #+BEGIN_EXAMPLE
 > govc -h
