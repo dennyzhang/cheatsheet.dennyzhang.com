@@ -456,12 +456,12 @@ Senior hiring:
 https://www.youtube.com/watch?v=R1vskiVDwl4
 * notes                                                            :noexport:
 ** how it worked before?
-** “讲道理”和“问问题”是聊天的两个基本组成部分
-** 精致的利己主义，没有人格魅力
+** "讲道理"和"问问题"是聊天的两个基本组成部分
+** 精致的利己主义,没有人格魅力
 ** 讲的故事要生动
 ** [#A] 闲聊中学习                                                 :noexport:
-** - 自己给自己园话，然后再讨论建议
-** - 自己给自己打好label，然后告诉别人
+** - 自己给自己园话,然后再讨论建议
+** - 自己给自己打好label,然后告诉别人
 Labels: Container expert/Technical selling
 ** 心要纯                                                          :noexport:
 * 技术有实力 ！= 有能力把事情做好                                  :noexport:
@@ -484,7 +484,7 @@ FZ case
 * local notes                                                      :noexport:
 - I can baby-sit the pipeline until I see it go green
 - Lots of interesting questions are stupid. And the answers don't really matter. Just think and enjoy.
-- Your online business should be designed for a specific audience. It’s not just a collection of what you like. Or even wore - what you think your audience should like.
+- Your online business should be designed for a specific audience. It's not just a collection of what you like. Or even wore - what you think your audience should like.
 * [#A] How to ask questions in sharing session?                    :noexport:
 * TODO [#A] Escape bike-shedding                                   :noexport:
 * ask question, reply it directly                                  :noexport:
@@ -497,7 +497,7 @@ FZ case
 #+BEGIN_EXAMPLE
 Denny Zhang 10:24 AM
 Morning XXX
-I’d like to get notified when people have PRs for GCM.
+I'd like to get notified when people have PRs for GCM.
 Do I need to join gitlab teams? e.g,
 https://gitlab.eng.vmware.com/core-build/cluster-api-provider-wcp/project_members
 https://gitlab.eng.vmware.com/core-build/vm-operator/project_members
@@ -508,7 +508,7 @@ XXX YYY
 Curious, do you have any ideas on how to do this? https://jira.eng.vmware.com/browse/GCM-645
 Direct Message | Yesterday at 10:59 PM | View conversation
 Denny Zhang 10:25 AM
-No idea. Haven’t done that before.
+No idea. Haven't done that before.
 Still ramping up things.
 XXX YYY:spiral_calendar_pad: 10:26 AM
 right, nothing to do with GC. just gilab stuff
@@ -533,11 +533,11 @@ Cool. I checked with Sabari. Let me ask Zach
 #+END_EXAMPLE
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] 要搭团队技术新锐的顺风车                               :noexport:
-* TODO 看到了问题，不要马上去解决                                  :noexport:
-- 理解是什么问题，理解是什么影响
-  PKS项目中, pivotal工作方式的问题与我无关。
-- 想想是谁的问题。谁解决更好
-- 现在解决，还是之后合适时机解决
+* TODO 看到了问题,不要马上去解决                                  :noexport:
+- 理解是什么问题,理解是什么影响
+  PKS项目中, pivotal工作方式的问题与我无关.
+- 想想是谁的问题.谁解决更好
+- 现在解决,还是之后合适时机解决
   PKS.next中Kaiting的焦点
-- 最后，才是怎么解决
+- 最后,才是怎么解决
 * TODO 不要脸皮薄, 该认怂时不要逞能                                :noexport:

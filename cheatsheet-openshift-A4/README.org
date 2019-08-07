@@ -1,6 +1,6 @@
 * OpenShift CheatSheet                                               :Cloud:
 :PROPERTIES:
-:type:     kubernetes, openshift
+:type:     kubernetes
 :export_file_name: cheatsheet-openshift-A4.pdf
 :END:
 

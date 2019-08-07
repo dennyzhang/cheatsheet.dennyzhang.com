@@ -1,4 +1,4 @@
-* CheatSheet: IT Document Template                                     :Life:
+* CheatSheet: IT Document Template & Business English                  :Life:
 :PROPERTIES:
 :type:     life
 :export_file_name: cheatsheet-doc-A4.pdf
@@ -28,6 +28,23 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Cross-team communication |         |
 | Design doc               |         |
 
+** Encourage team members to contribute
+| Name                                                         | Comment |
+|--------------------------------------------------------------+---------|
+| Feel free to fix the docs                                    |         |
+
+** Meeting English
+| Name                                  | Comment                                                        |
+|---------------------------------------+----------------------------------------------------------------|
+| When people take conversation offline | =Please socialize the outcome=                                 |
+| Track tasks & issues                  | =Can you open up a ticket, so that we don't lose track of it?= |
+| Delay the answer                      | =Yeah, I'm trying to think=                                    |
+| Delay the answer                      | =We take the question offline=                                 |
+
+** Report Tickets
+| Name                              | Comment                                   |
+|-----------------------------------+-------------------------------------------|
+| Not sure about ticket duplication | =Let me know if this is a separate issue= |
 ** More Resources
 License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

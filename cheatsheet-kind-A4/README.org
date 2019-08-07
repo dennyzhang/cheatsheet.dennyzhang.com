@@ -34,13 +34,15 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Reference      | [[https://cheatsheet.dennyzhang.com/cheatsheet-minikube-A4][Minikube CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]],  [[https://cheatsheet.dennyzhang.com/kubernetes-yaml-templates][Kubernetes Yaml]]    |
 
 ** Kind Command
-| Name                               | Command                                         |
-|------------------------------------+-------------------------------------------------|
-| List all kind clusters             | =kind get clusters=                             |
-| Get kubeconfig for a given cluster | =kind get kubeconfig-path --name $cluster-name= |
-| List all nodes for a given cluster | =kind get nodes --name $cluster_name=           |
-| Create kind clusrer                | =kind create cluster --name clusterapi=         |
-| Delete kind cluster                | =kind delete cluster --name clusterapi=         |
+| Name                                         | Command                                                       |
+|----------------------------------------------+---------------------------------------------------------------|
+| List all kind clusters                       | =kind get clusters=                                           |
+| Get kubeconfig for a given cluster           | =kind get kubeconfig-path --name $cluster-name=               |
+| List all nodes for a given cluster           | =kind get nodes --name $cluster_name=                         |
+| Create kind cluster                          | =kind create cluster --name clusterapi=                       |
+| [[https://github.com/kubernetes-sigs/kind/releases/tag/v0.4.0][Create cluster with different version of k8s]] | =kind create cluster --image=kindest/node:v1.15.0@sha256:XXX= |
+| Delete kind cluster                          | =kind delete cluster --name clusterapi=                       |
+| Load docker image from host to nodes         | =kind load docker-image debian:9=                             |
 
 ** Kind Conf
 | Name                      | Command                                         |

@@ -1,11 +1,11 @@
-* CheatSheet: iterm & iterm2                                          :Tools:
+* CheatSheet: Outlook                                              :Tools:
 :PROPERTIES:
 :type:     tool
-:export_file_name: cheatsheet-iterm-A4.pdf
+:export_file_name: cheatsheet-outlook-A4.pdf
 :END:
 
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-iterm-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-outlook-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
@@ -16,20 +16,18 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-iterm-A4/cheatsheet-iterm-A4.pdf][cheatsheet-iterm-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][Tools]]
-- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-iterm-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-outlook-A4/cheatsheet-outlook-A4.pdf][cheatsheet-outlook-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][Tools]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-outlook-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][Prometheus CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4][Nagios CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-** Iterm2 Shortcut In Mac
-| Name                         | Command     |
-|------------------------------+-------------|
-| Delete a word backward       | =Command-w= |
-| Delete a word forward        |             |
-| Move cursor to next word     |             |
-| Move cursor to previous word |             |
+** Outlook Basic
+| Name                                                 | Summary                                           |
+|------------------------------------------------------+---------------------------------------------------|
+| [[https://www.lifewire.com/delete-address-from-auto-list-outlook-1173778][Delete an Address From the Outlook Autocomplete List]] | Create a new email message -> To -> Choose delete |
+
 ** More Resources
-License: Code is licencurl under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
@@ -38,8 +36,8 @@ License: Code is licencurl under [[https://www.dennyzhang.com/wp-content/mit_lic
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
+#+DESCRIPTION:
+#+KEYWORDS:
 #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
 #+LaTeX_CLASS_OPTIONS: [8pt]
 #+LATEX_HEADER: \usepackage[english]{babel}
@@ -49,8 +47,8 @@ License: Code is licencurl under [[https://www.dennyzhang.com/wp-content/mit_lic
 #+LATEX_HEADER: \fancyhf{}
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
-#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-iterm-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-iterm-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-iterm-A4}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-outlook-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-outlook-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-outlook-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)
@@ -59,7 +57,5 @@ License: Code is licencurl under [[https://www.dennyzhang.com/wp-content/mit_lic
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+EXPORT_EXCLUDE_TAGS: exclude noexport
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
-* HALF iterm scrollback Buffer: unlimited scrollback               :noexport:
-* TODO iterm2 半角和全角                                           :noexport:
+#+LINK_UP:
+#+LINK_HOME:

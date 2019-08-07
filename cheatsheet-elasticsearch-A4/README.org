@@ -1,6 +1,6 @@
 * Elasticsearch CheatSheet                                            :Tools:
 :PROPERTIES:
-:type:     elasticsearch, database
+:type:     database
 :export_file_name: cheatsheet-elasticsearch-A4.pdf
 :END:
 
@@ -3130,13 +3130,13 @@ Filesystem      Size  Used Avail Use% Mounted on
 ** TODO [#A] why disk of es nodes drops?
 es-2, es-5, es-6, es-8 running into almost no disk.
 
-Any tips to check why this is happening? I don’t see shards relocating to them.
+Any tips to check why this is happening? I don't see shards relocating to them.
 
 So what action cause their disk capacities drop dramatically?
 
 new messages
 Kung Wang [6:59 PM]
-don’t know yet, let’s investigate. let me check es-5
+don't know yet, let's investigate. let me check es-5
 
 denny zhang [7:27 PM]
 Checked all es nodes whose free disk is under 5%.
@@ -3155,7 +3155,7 @@ Take es-5 for example
 
 Looks like es-cluster is waiting other nodes to take the ownership for old shard of es-5.
 
-When it’s ready in other nodes, it will remove this directory in es-5 and reclaim the disk.
+When it's ready in other nodes, it will remove this directory in es-5 and reclaim the disk.
 
 ** TODO [#A] DevOps Puzzle: what ES re-index commands fail in the middle?
 ** TODO [#A] ES OOM issue: why it happened quite suddenly
@@ -3180,7 +3180,7 @@ if that's the case, the circuit breaker may help
 Denny Zhang [5:17 PM]
 If shard allocation, it means we mislead ES cluster somehow. -> configuration issue
 
-If giant query, could we limit that at application level? Or send some warning? I understand, if it’s hard to achieve.
+If giant query, could we limit that at application level? Or send some warning? I understand, if it's hard to achieve.
 
 Just want to understand why.
 ** TODO index.merge.policy.expunge_deletes_allowed
@@ -3342,7 +3342,7 @@ or shard it to 20 shards.
 yes, but we have 8 machines, but only 5 primary shards, so 3 machines can not help
 
 Denny Zhang [4:19 PM]
-Agree, that won’t help.
+Agree, that won't help.
 
 [4:20]
 If we have more shards, it will spread out to more machines.
@@ -3440,7 +3440,7 @@ Robson Poffo [4:55 PM]
 I am getting a message: Tenant not found
 
 [4:56]
-supposedly, the domain should be senar.carol.ai, but it’s not working.
+supposedly, the domain should be senar.carol.ai, but it's not working.
 
 [4:56]
 senarn is the tennat name
@@ -3482,11 +3482,11 @@ but we should have excluded before adding the new node. or immediately after, be
 
 Denny Zhang
 [6:18 PM]
-Bruno, I don’t quite get your point.
+Bruno, I don't quite get your point.
 
 Once the rebalancing is done, we should be able to shutdown es-12.
 
-About es-13, I think that’s how ES cluster balancing data. Better we leave it to ES cluster, right?
+About es-13, I think that's how ES cluster balancing data. Better we leave it to ES cluster, right?
 
 
 Bruno Volpato
@@ -3500,7 +3500,7 @@ but we added es13 as an additional node, and it got shards from others, not es12
 
 Denny Zhang
 [6:30 PM]
-We’re adding es-14.
+We're adding es-14.
 
 ES-13 is an old node
 
@@ -3551,7 +3551,7 @@ I will integrate them into monitoring system or ChatOps part accordingly.
 ** TODO monitor: Robson's ES check DNS
 #+BEGIN_EXAMPLE
 Robson Poffo [5:56 PM]
-@denny.zhang, I am seeing that our kibana instance (stats.carol.ai) doesn’t have access to do-es-001.carol.ai:9200
+@denny.zhang, I am seeing that our kibana instance (stats.carol.ai) doesn't have access to do-es-001.carol.ai:9200
 
 
 [5:56]
@@ -3579,7 +3579,7 @@ Denny Zhang
 [5:59 PM]
 hmm, I see what you reports, @robson.poffo
 
-Checked ES node, firewall doesn’t allow that.
+Checked ES node, firewall doesn't allow that.
 
 Was it working previously?
  3 replies Last reply today at 6:11 PM View thread
@@ -3937,7 +3937,7 @@ WARN: elasticsearch cluster status is yellow, by checking 165.227.49.45:9200/_cl
 
 
 Denny Zhang (DevOps) [9:38 AM]
-Re-indexing for some tenants has failed. I’m checking
+Re-indexing for some tenants has failed. I'm checking
 
 
 Denny Zhang (DevOps) [9:42 AM]
@@ -4135,7 +4135,7 @@ Mitu Singh [4:22 PM]
 ok
 
 Denny Zhang (DevOps) [4:30 PM]
-But we haven’t tried to change `refresh interval`.
+But we haven't tried to change `refresh interval`.
 
 We can do some experiments against it. Probably this will come with some cost.
 Looks like positive to us.

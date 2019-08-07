@@ -1,6 +1,6 @@
 * CheatSheet: Curl & Wget                                             :Tools:
 :PROPERTIES:
-:type:     curl
+:type:     tool
 :export_file_name: cheatsheet-curl-A4.pdf
 :END:
 

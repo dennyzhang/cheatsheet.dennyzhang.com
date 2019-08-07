@@ -1,6 +1,6 @@
 * Nagios CheatSheet                                               :Tools:
 :PROPERTIES:
-:type:     nagios, monitoring
+:type:     monitoring, tool
 :export_file_name: cheatsheet-nagios-A4.pdf
 :END:
 
@@ -6195,9 +6195,9 @@ Index: /etc/puppet/modules/monitor/manifests/checktemplate.pp
 #+end_example
 ** DONE [#A] 保证zabbix的修改不被丢失                    :IMPORTANT:noexport:
    CLOSED: [2012-08-09 Thu 10:59]
-- 删除时，不能删除别人自定义的内容
+- 删除时,不能删除别人自定义的内容
    带特定flag属性的删除; 级联删除;
-- 添加时，不能覆盖别人自定义的内容
+- 添加时,不能覆盖别人自定义的内容
 *** checktemplate.pp
 #+begin_example
 class monitor::checktemplate {
@@ -6369,10 +6369,10 @@ INSERT INTO triggers VALUES (<%= zabbix_trigger_id %>,'{<%= zabbix_function_id %
 <% host_id=host_id-1 -%>
 <% end -%>
 #+end_example
-** CANCELED zabbix agent运行命令时，该用户是否有权限
+** CANCELED zabbix agent运行命令时,该用户是否有权限
    CLOSED: [2012-08-11 Sat 17:58]
 *** zabbix 检测/etc/init.d/zabbix-agent status是否活着
-** BYPASS zabbix添加port检查: 返回的结果不好两次处理，自己写脚本来实现了
+** BYPASS zabbix添加port检查: 返回的结果不好两次处理,自己写脚本来实现了
    CLOSED: [2012-08-22 Wed 16:56]
 net.tcp.port[192.168.0.2,80]
   http://www.360doc.com/content/12/0307/12/834950_192437194.shtml

@@ -1,6 +1,6 @@
 * Cheatsheet: Rust Language                                       :Languages:
 :PROPERTIES:
-:type:     v
+:type:     language
 :export_file_name: cheatsheet-rust-A4.pdf
 :END:
 

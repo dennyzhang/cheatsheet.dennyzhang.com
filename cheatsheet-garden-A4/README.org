@@ -1,6 +1,6 @@
 * CheatSheet: Backyard Gardening                                       :Life:
 :PROPERTIES:
-:type:     garden
+:type:     life
 :export_file_name: cheatsheet-garden-A4.pdf
 :END:
 

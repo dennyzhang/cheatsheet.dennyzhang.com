@@ -1,6 +1,6 @@
 * CheatSheet: SQL & MySql                                             :Tools:
 :PROPERTIES:
-:type:     package
+:type:     language
 :export_file_name: cheatsheet-mysql-A4.pdf
 :END:
 

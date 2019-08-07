@@ -1,6 +1,6 @@
 * CheatSheet: tcpdump                                                 :Linux:
 :PROPERTIES:
-:type:     file
+:type:     linux, networking
 :export_file_name: cheatsheet-tcpdump-A4.pdf
 :END:
 

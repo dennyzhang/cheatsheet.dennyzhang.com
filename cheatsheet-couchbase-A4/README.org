@@ -1,6 +1,6 @@
 * Couchbase CheatSheet                                               :Tools:
 :PROPERTIES:
-:type:     couchbase, database
+:type:     database
 :export_file_name: cheatsheet-couchbase-A4.pdf
 :END:
 
@@ -894,9 +894,9 @@ through every possible metric available through the Couchbase REST API.
 
 What is Couchbase?
 
-If you haven’t heard of it before, Couchbase  is a distributed NoSQL database. Despite a similar
+If you haven't heard of it before, Couchbase  is a distributed NoSQL database. Despite a similar
 name and shared heritage, Couchbase is a very different product than the more widely recognized
-CouchDB. I won’t go into the differences  between the two here, but if you haven’t heard of it
+CouchDB. I won't go into the differences  between the two here, but if you haven't heard of it
 before, Couchbase certainly is worth checking out. We have built several products on top of it,
 including our API and our real-time matchcenter Golazo.
 
@@ -943,7 +943,7 @@ Current connections
 In Datadog: couchbase.by_bucket.curr_connections by {host}
 
 What this measures: This metric simply counts the number of connections per host. We use this
-metric to make sure we don’t have anything unexpected in our environment configuration such as
+metric to make sure we don't have anything unexpected in our environment configuration such as
 forgetting to add one of the Couchbase nodes to the load balancer.
 
 Total objects
@@ -958,7 +958,7 @@ We actually just caught a serious problem in Golazo thanks to this metric. A run
 started adding new objects to the bucket at an alarming rate. The graph below helped us catch the
 issue before it could cause an outage.
 
-couchbase metricsUh-oh, something doesn’t look right here…
+couchbase metricsUh-oh, something doesn't look right here...
 
 Resident item ratio
 
@@ -969,7 +969,7 @@ on disk.
 
 The expected value of this metric will vary by application. We expect some of our apps to stay
 around 100% and others hover more around 10%. Ideally you want this metric as close to 100% as
-possible so that your app’s most active objects are “hot” and won’t invoke a (much) slower disk
+possible so that your app's most active objects are "hot" and won't invoke a (much) slower disk
 read when requested.
 
 couchbase metricsThe higher, the better, but each app will be different.
@@ -984,7 +984,7 @@ ejected. Keeping track of this value gives you an indication of when you need to
 memory to a bucket. The bright line below shows that one of our buckets has no headroom. Not good.
 
 couchbase metrics
-One of these buckets has run out of memory…
+One of these buckets has run out of memory...
 
 Cache miss ratio
 
@@ -1052,10 +1052,10 @@ Couchbase Metrics & Datadog
 Couchbase has a ton of other metrics that can be monitored and the Datadog integration exposes all
 of them. Luckily for us, the admin GUI already displays most of these metrics visually. Simply find
 a metric that you want to add to Datadog and hover over it. The tooltip will tell you what
-specifically is getting measured. If you’d like to gain this visibility, you can try Datadog for
+specifically is getting measured. If you'd like to gain this visibility, you can try Datadog for
 free for 14 days.
 
-Couchbase also has great documentation. If you’re interested in learning more about these metrics
+Couchbase also has great documentation. If you're interested in learning more about these metrics
 or more about how Couchbase manages its memory and active working set, I recommend reading more
 about its architecture.
 
@@ -15433,7 +15433,7 @@ ports.
 
 Important: If you want to run Couchbase Server on user-defined ports and with multiple instances
 running on a single machine, you have to keep in mind that the standard RPM installation for Linux
-doesn’t allow you to specify separate installation paths needed for separate multiple instances.
+doesn't allow you to specify separate installation paths needed for separate multiple instances.
 Therefore, you must perform multiple non-root (sudo or non-sudo) installations instead.
 
 Setting up Couchbase Server with User-Defined Ports
@@ -15692,7 +15692,7 @@ If 2 CB nodes crash, we might lose data.
 ** TODO slow LAN bandwith, result in couchbase cluster lose data
 ** TODO people didn't notice couchbase cluster issue 26 hours ago.
 Denny Zhang [12:39 PM]
-From above screenshot, it’s split-brain indeed.
+From above screenshot, it's split-brain indeed.
 
 One party: 10.1.1.10, the other party: other nodes.
 
@@ -15704,9 +15704,9 @@ Bruno Volpato [12:39 PM]
 it was the master before going down it seems
 
 Denny Zhang [12:41 PM]
-So we’re having couchbase issues, starting from 26 hours ago.
+So we're having couchbase issues, starting from 26 hours ago.
 
-People didn’t notice that, until early this morning.
+People didn't notice that, until early this morning.
 
 Right?
 
@@ -15720,7 +15720,7 @@ IP address seems to have changed. Unable to listen on 'ns_1@138.68.229.74'. (Und
 --
 
 AVISO LEGAL:
-Esta mensagem, incluindo seus anexos, é destinada exclusivamente para a(s) pessoa(s)
+Esta mensagem, incluindo seus anexos, e destinada exclusivamente para a(s) pessoa(s)
 ** TODO Couchbase cluster get memcached node list
 /tmp/test.log
 

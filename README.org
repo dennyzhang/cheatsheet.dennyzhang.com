@@ -563,3 +563,5 @@ https://github.com/dennyzhang/docs
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Enable flyspell check manually                         :noexport:
 * cheatsheet tool: add common error code                           :noexport:
+* Use Aniki to monetize cheatsheets                                :noexport:
+* TODO blog spam: avoid people to leave comments with http links   :noexport:

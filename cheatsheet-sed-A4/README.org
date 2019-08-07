@@ -1,6 +1,6 @@
 * Sed CheatSheet                                                      :Linux:
 :PROPERTIES:
-:type:     sed
+:type:     tool
 :export_file_name: cheatsheet-sed-A4.pdf
 :END:
 

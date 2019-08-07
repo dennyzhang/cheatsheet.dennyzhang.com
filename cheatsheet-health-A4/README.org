@@ -1,6 +1,6 @@
 * CheatSheet: Health For IT Workers                                    :Life:
 :PROPERTIES:
-:type:     health
+:type:     life
 :export_file_name: cheatsheet-health-A4.pdf
 :END:
 

@@ -1,6 +1,6 @@
 * CheatSheet: Makefile                                                :Linux:
 :PROPERTIES:
-:type:     makefile
+:type:     tool
 :export_file_name: cheatsheet-makefile-A4.pdf
 :END:
 
