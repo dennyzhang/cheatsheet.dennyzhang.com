@@ -1,0 +1,89 @@
+* CheatSheet: Perforce Source Code                                    :Tool:
+:PROPERTIES:
+:type:     tool
+:export_file_name: cheatsheet-perforce-A4.pdf
+:END:
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-perforce-A4/cheatsheet-perforce-A4.pdf][cheatsheet-perforce-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/cloud/][Cloud]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-perforce-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-vmware-A4][CheatSheet: VMware Products]], [[https://cheatsheet.dennyzhang.com/cheatsheet-openshift-A4][OpenShift CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** Perforce Basic
+| Name                         | Summary                                       |
+|------------------------------+-----------------------------------------------|
+| Download Perforce CLI Client | [[https://www.perforce.com/downloads/helix-command-line-client-p4][Link: Download Helix Command-Line Client (P4)]] |
+| Download Perforce GUI Client | [[https://www.perforce.com/downloads/helix-visual-client-p4v][Link: Download Helix Visual Client (P4V)]]      |
+** Perforce Workflow
+| Name                             | Summary                                                     |
+|----------------------------------+-------------------------------------------------------------|
+| Config file                      | =.p4config=                                                 |
+| Login to system                  | =p4 login=                                                  |
+| Sync source code                 | =p4 sync=                                                   |
+| Create a new P4 client           | =p4 client=                                                 |
+| Start editing mode               | =p4 edit $file_path=                                        |
+| Generate CLN                     | =p4 change=                                                 |
+| Generate a review link           | =/build/apps/bin/post-review $CLN=                          |
+| Check-in the change after review | =p4 submit -c $CLN=                                         |
+** p4 online help
+#+BEGIN_EXAMPLE
+-bash-4.1$ p4 help
+
+    Perforce -- the Fast Software Configuration Management System.
+
+    p4 is Perforce's client tool for the command line.  Try:
+
+        p4 help simple          list most common commands
+        p4 help commands        list all standard commands
+        p4 help command         help on a specific command
+
+        p4 help administration  help on specialized administration topics
+        p4 help charset         help on character set translation
+        p4 help configurables   list server configuration variables
+        p4 help environment     list environment and registry variables
+        p4 help filetypes       list supported file types
+        p4 help jobview         help on jobview syntax
+        p4 help networkaddress  help on network address syntax
+        p4 help revisions       help on specifying file revisions
+        p4 help streamintro     introduction to streams
+        p4 help usage           generic command line arguments
+        p4 help views           help on view syntax
+        p4 help replication     help on specialized replication topics
+        p4 help dvcs            help on decentralized Perforce configurations
+
+        p4 help legal           legal and license information
+
+    The full user manual is available at
+    https://www.perforce.com/support/self-service-resources/documentation
+
+    Server 2018.2/1740258.
+#+END_EXAMPLE
+** More Resources
+https://www.perforce.com/support/self-service-resources/documentation
+
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-perforce-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-perforce-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-perforce-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:

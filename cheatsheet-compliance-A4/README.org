@@ -99,3 +99,4 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 * TODO [#A] How to scan a docker image: golang/1.12                :noexport:
 * TODO If my company has mirrored public github repo, is it fine enough now? :noexport:
 * TODO Whether to inventory docker images, after we have finishing the OSS/TP packages :noexport:
+* TODO how should a multistage built Docker image be handled? do we just need to file tickets for the stuff in the final container? :noexport:
