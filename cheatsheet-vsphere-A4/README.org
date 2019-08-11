@@ -1,6 +1,6 @@
 * CheatSheet: VMware VSphere                                         :VMware:
 :PROPERTIES:
-:type:     infra
+:type:     cloud
 :export_file_name: cheatsheet-vsphere-A4.pdf
 :END:
 
@@ -281,3 +281,23 @@ Create least privelege on compute stack
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * content libraries vs NFS/FTP                                     :noexport:
+* linked clone or thin provisioning to cut down the clone time.    :noexport:
+#+BEGIN_EXAMPLE
+
+
+Denny Zhang Today at 3:18 PM
+One dummy question about guest cluster creation.
+(Please forgive me, if others have asked before)
+When we create a managedcluster with 1 master, 3 worker VMs, the vms are created in a strictly sequential order. Is there any particular reason about this? Or there are some improvements in our plan.
+Why not:
+1. master -> worker sequentially, then workers in parallel.
+2. All vms create in parallel, then bootstrap has a sequence control. like wait/retry.
+In dev phase, this would speed up the tests; In production phase, clusters would be created quickly. (edited)
+3 replies
+
+XXX XXX:spiral_calendar_pad:  3 minutes ago
+Sequentially is just a starting approach.  I'm sure we will optimize this once we have the bandwidth.
+
+XXX XXX:spiral_calendar_pad:  2 minutes ago
+I think the first optimization is to use linked clone or thin provisioning to cut down the clone time.
+#+END_EXAMPLE

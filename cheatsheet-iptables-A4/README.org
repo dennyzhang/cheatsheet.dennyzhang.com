@@ -1,6 +1,6 @@
 * CheatSheet: Iptables                                                :Linux:
 :PROPERTIES:
-:type:     iptables
+:type:     tool, linux, security
 :export_file_name: cheatsheet-iptables-A4.pdf
 :END:
 

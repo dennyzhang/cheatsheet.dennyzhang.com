@@ -1,6 +1,6 @@
 * CheatSheet: Ubuntu Apt                                              :Linux:
 :PROPERTIES:
-:type:     package
+:type:     linux, tool
 :export_file_name: cheatsheet-apt-A4.pdf
 :END:
 
@@ -36,7 +36,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Start a ubuntu kubernetes pod           | =kubectl run --rm -i -t --image=ubuntu:14.04 test -- sh=                           |
 | Parse log for install/remove operations | =grep 'install ' /var/log/dpkg.log=, =grep 'remove ' /var/log/dpkg.log=            |
 | dpkg/aptitude/apt/apt-get               |                                                                                    |
-
 ** dpkg
 | Name                                                   | Command            |
 |--------------------------------------------------------+--------------------|
@@ -258,3 +257,8 @@ make: *** No targets specified and no makefile found.  Stop.
 root@387d504951ef:~#  aptitude -y install squid3
 -bash: aptitude: command not found
 #+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Ubuntu install sshpass
+https://www.tecmint.com/sshpass-non-interactive-ssh-login-shell-script-ssh-password/
+* HALF Ubuntu install make:  apt-get install build-essential
+https://askubuntu.com/questions/161104/how-do-i-install-make

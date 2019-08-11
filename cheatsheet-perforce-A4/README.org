@@ -15,16 +15,24 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Download Perforce CLI Client | [[https://www.perforce.com/downloads/helix-command-line-client-p4][Link: Download Helix Command-Line Client (P4)]] |
 | Download Perforce GUI Client | [[https://www.perforce.com/downloads/helix-visual-client-p4v][Link: Download Helix Visual Client (P4V)]]      |
 ** Perforce Workflow
-| Name                             | Summary                                                     |
-|----------------------------------+-------------------------------------------------------------|
-| Config file                      | =.p4config=                                                 |
-| Login to system                  | =p4 login=                                                  |
-| Sync source code                 | =p4 sync=                                                   |
-| Create a new P4 client           | =p4 client=                                                 |
-| Start editing mode               | =p4 edit $file_path=                                        |
-| Generate CLN                     | =p4 change=                                                 |
-| Generate a review link           | =/build/apps/bin/post-review $CLN=                          |
-| Check-in the change after review | =p4 submit -c $CLN=                                         |
+| Name                             | Summary                                    |
+|----------------------------------+--------------------------------------------|
+| Config file                      | =.p4config=                                |
+| Login to system                  | =p4 login=                                 |
+| Sync source code                 | =p4 sync=                                  |
+| Create a new P4 client           | =p4 client=                                |
+| Edit a file                      | =p4 edit $file_path=                       |
+| Add a file                       | =p4 add $file_path=                        |
+| See files open for edit          | =p4 opened=                                |
+| Generate CLN                     | =p4 change=                                |
+| Generate a review link           | =/build/apps/bin/post-review $CLN=         |
+| Resolve conflict                 | =p4 resolve=                               |
+| Check-in the change after review | =p4 submit -c $CLN=                        |
+| Check-in the change after review | =p4 shelve -c $CLN -d, =p4 submit -c $CLN= |
+** Perforce Issues
+| Name                              | Summary                                                                                    |
+|-----------------------------------+--------------------------------------------------------------------------------------------|
+| [[https://community.perforce.com/s/article/3649][6 Failures Of Perforce Submission]] | If submit succeeds, files should be removed from shelf and changelist shown as 'submitted' |
 ** p4 online help
 #+BEGIN_EXAMPLE
 -bash-4.1$ p4 help
@@ -87,3 +95,33 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* TODO p4 fail to submit: shelved files                            :noexport:
+#+BEGIN_EXAMPLE
+-bash-4.1$ p4 submit -c 7330508
+Submitting change 7330508.
+Change 7330508 has shelved files --  cannot submit.
+#+END_EXAMPLE
+* TODO p4 fail to submit: Out of date files must be resolved or reverted :noexport:
+#+BEGIN_EXAMPLE
+-bash-4.1$ p4 submit -c 7330508
+Submitting change 7330508.
+//depot/bora/main/vpx/wcp/support/test-wcp - must resolve before submitting
+//depot/bora/main/vpx/wcp/support/test-wcp - must resolve #92,#93
+Out of date files must be resolved or reverted.
+Submit failed -- fix problems above then use 'p4 submit -c 7330508'.
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+-bash-4.1$ p4 shelve -c 7330508 -d
+Shelved change 7330508 deleted.
+-bash-4.1$ p4 submit -c 7330508
+Submitting change 7330508.
+Locking 1 files ...
+edit //depot/bora/main/vpx/wcp/support/test-wcp#94
+Change 7330508 renamed change 7332988 and submitted.
+#+END_EXAMPLE
+* Local notes                                                      :noexport:
+| Name     | Summary                                                     |
+|----------+-------------------------------------------------------------|
+| Perforce | [[https://wiki.eng.vmware.com/Perforce][wiki: SCM/Perforce]], [[https://confluence.eng.vmware.com/display/NSBU/Perforce+Setup][Confluence: Perforce Setup]]              |
+| Perforce | [[https://confluence.eng.vmware.com/display/WCP/Build+and+Run+Unit+Tests+for+WCP+Service+on+DBC#BuildandRunUnitTestsforWCPServiceonDBC-Compile][Confluence: Build and Run Unit Tests for WCP Service on DBC]] |

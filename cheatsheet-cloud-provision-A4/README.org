@@ -1,6 +1,6 @@
 * CheatSheet: Cloud Provision & Orchestration                         :Cloud:
 :PROPERTIES:
-:type:     provision
+:type:     cloud, tool
 :export_file_name: cheatsheet-cloud-provision-A4.pdf
 :END:
 
