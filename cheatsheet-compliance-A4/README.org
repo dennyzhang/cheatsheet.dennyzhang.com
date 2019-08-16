@@ -19,7 +19,7 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-compliance-A4/cheatsheet-compliance-A4.pdf][cheatsheet-compliance-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/security/][security]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-compliance-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-security-A4][Cheatsheet: Kubernetes Security]], [[https://cheatsheet.dennyzhang.com/cheatsheet-linux-security-A4][Cheatsheet: Linux Security]] [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-DevOps-A4][CheatSheet: DevOps & Software Development Life Cycle]], [[https://cheatsheet.dennyzhang.com/cheatsheet-linux-security-A4][Cheatsheet: Linux Security]] [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Compliance Scan Tools

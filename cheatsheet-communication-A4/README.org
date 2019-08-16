@@ -541,3 +541,14 @@ Cool. I checked with Sabari. Let me ask Zach
   PKS.next中Kaiting的焦点
 - 最后,才是怎么解决
 * TODO 不要脸皮薄, 该认怂时不要逞能                                :noexport:
+* TODO Clarify different definition of one same term               :noexport:
+Since people have different definitions of integration tests, let me clarify my perspective to provide a standard.
+
+Unit tests focus on function-level scope.  Integration tests focus on
+a higher-level functional scope.  However, integration tests are
+light-weight functional tests that do not require standing up an
+entire system to execute.  Integration tests typically run in the
+context of a test harness that stands up processes and mocks in a
+sufficient way to validate API or stack functionality in a low-cost,
+time-efficient manner.
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:

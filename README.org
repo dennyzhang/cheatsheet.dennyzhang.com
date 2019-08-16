@@ -529,7 +529,6 @@ https://www.gfmag.com/global-data/economic-data/largest-companies
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] GitHub link should have Amazon affiliate links: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-house-A4 :noexport:
 * TODO github unicode issue: https://github.com/dennyzhang/cheatsheet-python-A4/issues/1 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO markdown cheatsheet: https://devops.datenkollektiv.de/devops-markdown-cheat-sheet.html :noexport:
 * TODO Cheatsheet: Consuming Docker Images Without Legal Issue     :noexport:
 ** Binaries, including container base images, must be created from known good sources
@@ -545,8 +544,6 @@ If open source did we remove the canonical trade marks from them?
 * TODO Quiz website: https://driver-test.com/                      :noexport:
 * TODO Cheatsheet website in mobile can't search                   :noexport:
 * TODO language R cheatsheet                                       :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO sql cheatsheet: from leetcode problems                      :noexport:
 * TODO Cheatsheet: regrexp                                         :noexport:
 https://regexr.com/
 
@@ -561,7 +558,12 @@ https://github.com/dennyzhang/docs
 
 * TODO Add keyword free for the cheatsheets                        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] Enable flyspell check manually                         :noexport:
-* cheatsheet tool: add common error code                           :noexport:
-* Use Aniki to monetize cheatsheets                                :noexport:
+* [#A] Use Aniki to monetize cheatsheets                           :noexport:
+* [#A] Use Quiz to monetize cheatsheets                            :noexport:
 * TODO blog spam: avoid people to leave comments with http links   :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Enable flyspell check manually                         :noexport:
+* TODO [#A] cheatsheet tool: add common error code                 :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Recommend books & products for cheatsheets                  :noexport:
+* TODO sql cheatsheet: from leetcode problems                      :noexport:

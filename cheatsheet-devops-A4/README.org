@@ -17,33 +17,80 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-devops-A4/cheatsheet-devops-A4.pdf][cheatsheet-devops-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/security/][security]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-devops-A4/cheatsheet-devops-A4.pdf][cheatsheet-devops-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tool/][tool]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-devops-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-k8s-security-A4][Cheatsheet: Kubernetes Security]], [[https://cheatsheet.dennyzhang.com/cheatsheet-linux-security-A4][Cheatsheet: Linux Security]] [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-container-compliance-A4][CheatSheet: Container Compliance]], [[https://cheatsheet.dennyzhang.com/cheatsheet-linux-security-A4][Cheatsheet: Linux Security]] [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** Overview
+| Name                                               | Summary                                                            |
+|----------------------------------------------------+--------------------------------------------------------------------|
+| =Automate, Automate, Automate=                     | Avoid manual effort and reduce process delay                       |
+| =Unify= the ways of doing the same thing           | Build code, test features, etc. Thus reduce invalid failures       |
+| Enable =faster iteration= by reducing dependencies | Implement or leverage mockup services                              |
+| Definition of unit tests                           | Unit tests focus on function-level scope                           |
+| Definition of integration tests                    | Does integration tests include setup an entire system to validate? |
+| Definition of e2e tests                            |                                                                    |
+| Reference                                          | [[https://cheatsheet.dennyzhang.com/cheatsheet-container-compliance-A4][CheatSheet: Container Compliance]]                                   |
+| Reference                                          | [[https://cheatsheet.dennyzhang.com/cheatsheet-DevOps-A4][CheatSheet: DevOps & Software Development Life Cycle]]               |
 ** Code Build
-| Name                                             | Comment                                              |
-|--------------------------------------------------+------------------------------------------------------|
-| Unify different ways of building code            | =docker build= vs =make/mvn/gradle=                  |
-| Make prelight check                              |                                                      |
-| Reduce pulling dependencies from internet/GitHub | Modify iptables rules in the build box to enforce it |
+| Name                                             | Summary                                                      |
+|--------------------------------------------------+--------------------------------------------------------------|
+| Unify different ways of building code            | =docker build= vs =make/mvn/gradle=                          |
+| List versions & enforce prelight check           | List versions and dependencies, thus people can easily debug |
+| Reduce pulling dependencies from internet/GitHub | Modify iptables rules in the build box to enforce it         |
+| Automatically recommend build after validation   |                                                              |
 ** Pre-Merge Hook
-| Name             | Comment |
-|------------------+---------|
-| Code lint checks |         |
-| Unit test        |         |
+| Name                                                          | Summary                                                      |
+|---------------------------------------------------------------+--------------------------------------------------------------|
+| Pre-merge tests help to limit trouble shooting to individuals | This reduce cross-team join-effort debugging                 |
+| Code lint checks                                              |                                                              |
+| Unit test/BDD tests                                           |                                                              |
+| Monitor test coverage                                         | Test coverage includes unit test and integration test suites |
 ** Component Tests
-| Name                                    | Comment |
+| Name                                    | Summary |
 |-----------------------------------------+---------|
-| Mockup services                         |         |
-| Test individually                       |         |
-| Test quickly                            |         |
 | Move tests closer to develoers' machine |         |
+| Utilize mockup services                 |         |
+| Test component individually             |         |
+| Test component quickly                  |         |
 ** Integration Tests
-| Name                              | Comment |
-|-----------------------------------+---------|
-| Examine log for errors/exceptions |         |
+| Name                                                          | Summary                                                |
+|---------------------------------------------------------------+--------------------------------------------------------|
+| Define lightweight and heavyweight e2e tests                  |                                                        |
+| Examine log for errors/exceptions, even for successful builds |                                                        |
+| Airgap deployment and tests                                   |                                                        |
+| Track the data of successful builds                           | logs, timespan for each stage, etc                     |
+| Testbed management for complicated projects                   | vanilla testbed validator                              |
+| Enforce nightly builds and file tickets for each new failure  |                                                        |
+| Seperate dependencies failures from code issues               | Document the failures from unmanaged dependencies      |
+| Examine build/test pipelines for performance tuning           | Slowness may from test workflow or products themselves |
+** Additional Tests
+| Name            | Summary                                                           |
+|-----------------+-------------------------------------------------------------------|
+| Test categories | Chaos/Longevity tests, Workload tests, Upgrade tests, Scale tests |
+** Speedup process
+| Name                                           | Summary                             |
+|------------------------------------------------+-------------------------------------|
+| Speed up the review and merge of pull requests |                                     |
+| Reminders for team members                     | Regular meeting; regular activities |
+** DevSecOps
+| Name                                      | Summary                                       |
+|-------------------------------------------+-----------------------------------------------|
+| Enforce compliance check for OSS packages | Avoid legal issues and security vulnerability |
+| Log scan for security compliance          |                                               |
+| Don't save credentials in code repo       |                                               |
+| Don't display credentials in log files    |                                               |
+** Metrics-Driven Quality Control
+| Name        | Summary                                                                  |
+|-------------+--------------------------------------------------------------------------|
+| Key Metrics | Pass rate for acceptance e2e pipeline; Pass rate for code build pipeline |
+** Product Debuggability
+| Name                                    | Summary                                       |
+|-----------------------------------------+-----------------------------------------------|
+| Components can switch log level on fly  |                                               |
+| Watch out log velocity and values       | Log tons of useless entries would be annoying |
+| Implement a docker tool: =health_check= |                                               |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
@@ -79,3 +126,5 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] To speed up tests, how to run shell commands in a managed and parallel way? :noexport:
