@@ -33,6 +33,21 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Definition of e2e tests                            |                                                                    |
 | Reference                                          | [[https://cheatsheet.dennyzhang.com/cheatsheet-container-compliance-A4][CheatSheet: Container Compliance]]                                   |
 | Reference                                          | [[https://cheatsheet.dennyzhang.com/cheatsheet-DevOps-A4][CheatSheet: DevOps & Software Development Life Cycle]]               |
+** Use container for CI/CD
+| Name                                       | Summary                                                                 |
+|--------------------------------------------+-------------------------------------------------------------------------|
+| Dockerd hang issue                         | docker build image hang; docker stop container hang; docker prune hang; |
+| Make sure dockerd up-to-date               | dockerd might have known issues or improvements                         |
+| More CPU/RAM for dockerd machine           | machine is overloaded                                                   |
+| Use ephemeral dockerd machines for testing | cats vs cattle                                                          |
+| Dockerd storage driver: overlay2           |                                                                         |
+| Free disk of /var/lib is slow              |                                                                         |
+
+** Network dependency download flaky
+| Name                      | Summary |
+|---------------------------+---------|
+| Mirror the external repos |         |
+| Add retry for downloading |         |
 ** Code Build
 | Name                                             | Summary                                                      |
 |--------------------------------------------------+--------------------------------------------------------------|

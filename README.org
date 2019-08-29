@@ -216,6 +216,7 @@ https://cheatsheet.dennyzhang.com/cheatsheet-concourse-a4
 ** TODO mongodb: https://cheatsheet.dennyzhang.com/cheatsheet-mongodb-a4
 ** TODO wavefront: https://cheatsheet.dennyzhang.com/cheatsheet-wavefront-a4
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Think: how to make my cheatsheet more valuable?        :noexport:
 * HALF [#A] Generate cheatsheet PDF A4                             :noexport:
 ** TODO [#A] Line too long: line wrap, without truncation
 ** Add site url, version, logo
@@ -261,6 +262,7 @@ https://tex.stackexchange.com/questions/8827/preparing-cheat-sheets
    command-execute(org-export-dispatch)
  #+END_EXAMPLE
 ** TODO generate A4 pdf: https://github.com/PrateekKumarSingh/CheatSheets :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] blog post: avoid open a new link             :noexport:IMPORTANT:
 * TODO [#A] cheatsheet.dennyzhang.com                              :noexport:
 ** TODO align icon horizontally in blog: https://cheatsheet.dennyzhang.com/cheatsheet-golang/
@@ -567,3 +569,12 @@ https://github.com/dennyzhang/docs
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Recommend books & products for cheatsheets                  :noexport:
 * TODO sql cheatsheet: from leetcode problems                      :noexport:
+* TODO [#A] Share cheatsheets to community                         :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF https://cheatsheet.dennyzhang.com/cheatsheet-rust-A4        :noexport:
+* TODO https://cheatsheet.dennyzhang.com/cheatsheet-interview-programmer-A4 :noexport:
+* HALF https://cheatsheet.dennyzhang.com/cheatsheet-container-compliance-A4 :noexport:
+* HALF https://cheatsheet.dennyzhang.com/cheatsheet-v-A4           :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Merge small github repos                                    :noexport:
+

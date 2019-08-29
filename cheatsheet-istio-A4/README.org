@@ -21,7 +21,6 @@
 - Related posts:  [[https://cheatsheet.dennyzhang.com/cheatsheet-docker-A4][Docker CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-File me [[https://github.com/dennyzhang/cheatsheet-networking-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-networking-A4][this repo]].
 ** istio Basic
 | Name | Summary |
 |------+---------|
@@ -172,8 +171,6 @@ https://istio.io/docs/tasks/traffic-management/egress/
 /Users/zdenny/Dropbox/git_code/kubernetes/community_kubernetes/istio/install/kubernetes/helm/istio/templates/crds.yaml
 * TODO How istio hijack my traffic                                 :noexport:
 * Challenges By Scenarios                                          :noexport:
-File me [[https://github.com/DennyZhang/challenges-k8s-istio/issues][Issues]] or star [[https://github.com/DennyZhang/challenges-k8s-istio][this repo]].
-
 See more Kubernets sharing from Denny: [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
 
 ** Basic Features
