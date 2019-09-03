@@ -21,12 +21,25 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** SQL Problems
+| Name                            | Problem                                                                                   |
+|---------------------------------+-------------------------------------------------------------------------------------------|
+| Use having with group-by        | =group by class having count(distinct student)...= [[https://code.dennyzhang.com/classes-more-than-5-students][Leetcode: Classes More Than 5 Students]] |
+| Update records with case clause | =set sex = case when sex = 'm' then 'f' else 'm' end= [[https://code.dennyzhang.com/swap-salary][Leetcode: Swap Salary]]               |
+| Get maximum of multiple columns | [[https://code.dennyzhang.com/triangle-judgement][Leetcode: Triangle Judgement]]                                                              |
+| Rank score                      | [[https://code.dennyzhang.com/rank-scores][Leetcode: Rank Scores]]                                                                     |
+| topn entris for each group      | [[https://code.dennyzhang.com/department-top-three-salaries][Leetcode: Department Top Three Salaries]]                                                   |
+| subquery                        | [[https://code.dennyzhang.com/immediate-food-delivery-ii][Leetcode: Immediate Food Delivery II]]                                                      |
+| SQL problems                    | [[https://code.dennyzhang.com/review-sql][#sql]]                                                                                      |
 ** SQL Statement
-| Name                       | Problem                                 |
-|----------------------------+-----------------------------------------|
-| SQL problems               | [[https://code.dennyzhang.com/tag/sql][#sql]]                                    |
-| topn entris for each group | [[https://code.dennyzhang.com/department-top-three-salaries][Leetcode: Department Top Three Salaries]] |
-| Rank score                 | [[https://code.dennyzhang.com/rank-scores][Leetcode: Rank Scores]]                   |
+| Name                               | Command                                                         |
+|------------------------------------+-----------------------------------------------------------------|
+| Select with regexp in where clause | =select * from expenses where date regexp '2013-0[4-5]' limit 2;= |
+| Select with like in where clause   | =select * from expenses where date like '2013-0%' limit 2;=     |
+| Select unix timestamp              | =select unix_timestamp(createtime) from expenses limit 1;=      |
+| Offset limit                       | =select * from student limit 4 offset 9=                        |
+| Use replace function               | =UPDATE tb1 SET f1=REPLACE(f1, 'abc', 'def');=                  |
+| Use if function                    | select Db, IF(IFNULL(User, "")="", DB, User) from db;           |
 ** Mysql Packages
 | Name                         | Command                                                                  |
 |------------------------------+--------------------------------------------------------------------------|
@@ -54,15 +67,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | [[https://stackoverflow.com/questions/5555328/error-1396-hy000-operation-create-user-failed-for-jacklocalhost][ERROR 1396 (HY000): Operation CREATE USER...]] | =drop user 'braindenny'@'%'; flush privileges; CREATE USER...=                            |
 | [[https://dev.mysql.com/doc/refman/8.0/en/creating-accounts.html][mysql8 create user with password]]             | =CREATE USER 'myuser'@'%' IDENTIFIED BY 'MYPASSWORD';=                                    |
 | mysql8 grant privileges to user              | =GRANT ALL PRIVILEGES ON mydbname.* TO 'myuser'@'%' WITH GRANT OPTION;=                   |
-** SQL Statement
-| Name                               | Command                                                         |
-|------------------------------------+-----------------------------------------------------------------|
-| Select with regexp in where clause | =select * from expenses where date regexp '2013-0[4-5]' limit 2;= |
-| Select with like in where clause   | =select * from expenses where date like '2013-0%' limit 2;=     |
-| Select unix timestamp              | =select unix_timestamp(createtime) from expenses limit 1;=      |
-| Offset limit                       | =select * from student limit 4 offset 9=                        |
-| Use replace function               | =UPDATE tb1 SET f1=REPLACE(f1, 'abc', 'def');=                  |
-| Use if function                    | select Db, IF(IFNULL(User, "")="", DB, User) from db;           |
 ** PSQL/Postgres
 | Name                          | Command                                                                     |
 |-------------------------------+-----------------------------------------------------------------------------|

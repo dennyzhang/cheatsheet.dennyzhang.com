@@ -22,12 +22,22 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-apt-A4][CheatSheet: Ubuntu Apt]], [[https://cheatsheet.dennyzhang.com/cheatsheet-linux-security-A4][Cheatsheet: Linux Security]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-** Overview
-| Name                         | Summary                                                                 |
-|------------------------------+-------------------------------------------------------------------------|
-| Check service                | =systemctl status $service_name=,  =systemctl -l status $service_name=, |
-| Service cfg file             | =/lib/systemd/system/=                                                  |
-| [[https://unix.stackexchange.com/questions/20399/view-stdout-stderr-of-systemd-service][Check log of systemd service]] | =journalctl -u $service_name=                                           |
+** Systemd manage service
+| Name             | Summary                                                                |
+|------------------+------------------------------------------------------------------------|
+| Check service    | =systemctl status $service_name=,  =systemctl -l status $service_name= |
+| Service cfg file | =/lib/systemd/system/=                                                 |
+** Systemd check log
+| Name                         | Summary                                                   |
+|------------------------------+-----------------------------------------------------------|
+| [[https://blog.selectel.com/managing-logging-systemd/][Check log of systemd service]] | =journalctl -u docker=,  =journalctl -p err -u docker=    |
+| Filter log by a timeslot     | =journalctl --since 10:00 --until "1 hour ago" -u docker= |
+| View kernel messages         | =journalctl -k=                                           |
+| Check logs with error level  | =journalctl -p err -b=                                    |
+** Systemd Trouble Shooting
+| Name                                         | Summary                                                        |
+|----------------------------------------------+----------------------------------------------------------------|
+| [[https://lukerawlins.com/linux-server-wont-reboot/][Force machine reboot, if reboot doesn't work]] | =systemctl --force reboot=, =systemctl --force --force reboot= |
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
