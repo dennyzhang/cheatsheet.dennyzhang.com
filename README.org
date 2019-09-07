@@ -576,5 +576,9 @@ https://github.com/dennyzhang/docs
 * HALF https://cheatsheet.dennyzhang.com/cheatsheet-container-compliance-A4 :noexport:
 * HALF https://cheatsheet.dennyzhang.com/cheatsheet-v-A4           :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Why 200 page views, but $0.02, instead of $0.20?       :noexport:
 * TODO Merge small github repos                                    :noexport:
-
+* TODO Generated pdf has http links                                :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO sql cheatsheet                                              :noexport:
+* TODO motto cheatsheet                                            :noexport:

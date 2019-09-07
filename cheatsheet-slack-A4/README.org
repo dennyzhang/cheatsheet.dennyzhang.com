@@ -228,3 +228,4 @@ sc.api_call(
   text="Hello from Python! :tada:"
 )
 
+* TODO slack: configure it to be offline for non-business hours    :noexport:

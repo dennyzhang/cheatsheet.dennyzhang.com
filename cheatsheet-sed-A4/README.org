@@ -176,9 +176,6 @@ sed -i -r 's/^\s+//g' file.txt
 # To remove empty lines and print results to stdout:
 sed '/^$/d' file.txt
 
-# To replace newlines in multiple lines
-sed ':a;N;$!ba;s/\n//g'  file.txt
-
 # Insert a line before a matching pattern:
 sed '/Once upon a time/i\Chapter 1'
 

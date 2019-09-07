@@ -607,12 +607,14 @@ https://www.amazon.com/Ring/dp/B01JTL2PYE/ref=sr_1_39?keywords=ring+alarm&qid=15
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Join local community                                        :noexport:
 * [#A] 厨房炉子的右上方burner不work了                              :noexport:
-* TODO [#A] 后院没有自动喷水                                       :noexport:
 * TODO Get the Title of our toyota corolla                         :noexport:
-* TODO One bulb in the family room doens't work                    :noexport:
 * TODO water service: setup online payment                         :noexport:
 * TODO Split this cheatsheet: buy a house & maintain ahouse        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO spray home defense                                          :noexport:
 https://www.youtube.com/watch?v=2IQZIehbzcs
 * TODO Ring: Buy Doorbell, wooden door                             :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO bathroom toilet noise                                       :noexport:
+* TODO [#A] 后院没有自动喷水                                       :noexport:
+* TODO One bulb in the family room doens't work                    :noexport:

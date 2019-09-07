@@ -25,6 +25,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Name                                                 | Summary                                           |
 |------------------------------------------------------+---------------------------------------------------|
 | [[https://www.lifewire.com/delete-address-from-auto-list-outlook-1173778][Delete an Address From the Outlook Autocomplete List]] | Create a new email message -> To -> Choose delete |
+| Outlook out of office message                        | =Tool -> Out of Office=                           |
+| Outlook out of office message templates              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-outlook-A4/doc.md][Github Link]]                                       |
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
