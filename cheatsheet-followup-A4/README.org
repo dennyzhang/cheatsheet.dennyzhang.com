@@ -1,0 +1,123 @@
+* CheatSheet: 30 Common Code Problems & Follow-ups                :Languages:
+:PROPERTIES:
+:type:     language
+:export_file_name: cheatsheet-followup-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-followup-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-followup-A4/cheatsheet-followup-A4.pdf][cheatsheet-followup-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/languages/][languages]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Code Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** Code Problems & Follow-ups
+| Num | Category/Tag     | Example                                                         |
+|-----+------------------+-----------------------------------------------------------------|
+|   1 | [[https://code.dennyzhang.com/followup-atmostkdistinct][#atmostkdistinct]] | [[https://code.dennyzhang.com/followup-atmostkdistinct][#atmostkdistinct - Substring with at most k distinct characters]] |
+|   2 | [[https://code.dennyzhang.com/followup-twosum][#twosum]]          | [[https://code.dennyzhang.com/followup-twosum][TwoSum Problems & Follow-Up]]                                     |
+|   3 | [[https://code.dennyzhang.com/followup-maxsubarraysum][#maxsubarraysum]]  | [[https://code.dennyzhang.com/followup-maxsubarraysum][#maxsubarraysum - Maximum subarray problem]]                      |
+|   4 | [[https://code.dennyzhang.com/followup-nextpermutation][#nextpermutation]] | [[https://code.dennyzhang.com/followup-nextpermutation][#nextpermutation - Get the next permutation of an array]]         |
+|   5 | [[https://code.dennyzhang.com/followup-editdistance][#editdistance]]    | [[https://code.dennyzhang.com/followup-editdistance][Word Distance & Follow-up]]                                       |
+|   6 | [[https://code.dennyzhang.com/followup-baseconversion][#baseconversion]]  | [[https://code.dennyzhang.com/followup-baseconversion][Base Conversion Problems & Follow-Up]]                            |
+|   7 | [[https://code.dennyzhang.com/followup-presum][#presum]]          | [[https://code.dennyzhang.com/followup-presum][#presum - Caculate sum of a range quickly]]                       |
+|   8 | [[https://code.dennyzhang.com/followup-fibonacci][#fibonacci]]       | [[https://code.dennyzhang.com/followup-fibonacci][Fibonacci Problems & Follow-Up]]                                  |
+|   9 | [[https://code.dennyzhang.com/followup-island][#island]]          | [[https://code.dennyzhang.com/followup-island][Island Problems & Follow-up]]                                     |
+|  10 | [[https://code.dennyzhang.com/followup-rangesum][#rangesum]]        | [[https://code.dennyzhang.com/followup-rangesum][#rangesum - Caculate range sum of a slice]]                       |
+|  11 | [[https://code.dennyzhang.com/followup-matrixtraversal][#matrixtraversal]] | [[https://code.dennyzhang.com/followup-matrixtraversal][Matrix Traversal & Follow-up]]                                    |
+|  12 | [[https://code.dennyzhang.com/followup-reverseitem][#reverseitem]]     | [[https://code.dennyzhang.com/followup-reverseitem][Reverse List/String & Follow-up]]                                 |
+|  13 | [[https://code.dennyzhang.com/followup-topk][#topk]]            | [[https://code.dennyzhang.com/followup-topk][#topk - top k elements of a problem domain]]                      |
+|-----+------------------+-----------------------------------------------------------------|
+|  14 | [[https://code.dennyzhang.com/followup-groupelements][#groupelements]]   | [[https://code.dennyzhang.com/followup-groupelements][#groupelements - seperate a list into several groups]]            |
+|  15 | [[https://code.dennyzhang.com/followup-treetraversal][#treetraversal]]   | [[https://code.dennyzhang.com/followup-treetraversal][Tree Traversal & Follow-up]]                                      |
+|  16 | [[https://code.dennyzhang.com/followup-calculator][#calculator]]      | [[https://code.dennyzhang.com/followup-calculator][Calculator & Follow-up]]                                          |
+|  17 | [[https://code.dennyzhang.com/followup-calendar][#calendar]]        | [[https://code.dennyzhang.com/followup-calendar][Calendar & Follow-up]]                                            |
+|  18 | [[https://code.dennyzhang.com/followup-convertds][#convertds]]       | [[https://code.dennyzhang.com/followup-convertds][Convert Data Structure Problems & Follow-Up]]                     |
+|  19 | [[https://code.dennyzhang.com/followup-expression][#expression]]      | [[https://code.dennyzhang.com/followup-expression][Expression Problems & Follow-Up]]                                 |
+|  20 | [[https://code.dennyzhang.com/followup-frogjump][#frogjump]]        | [[https://code.dennyzhang.com/followup-frogjump][Frog Jump Game & Follow-up]]                                      |
+|  21 | [[https://code.dennyzhang.com/followup-houserobber][#houserobber]]     | [[https://code.dennyzhang.com/followup-houserobber][House Robber & Follow-up]]                                        |
+|  22 | [[https://code.dennyzhang.com/followup-ipaddress][#ipaddress]]       | [[https://code.dennyzhang.com/followup-ipaddress][IP Address Problems & Follow-Up]]                                 |
+|  23 | [[https://code.dennyzhang.com/followup-paintfence][#paintfence]]      | [[https://code.dennyzhang.com/followup-paintfence][Paint Fence & Follow-up]]                                         |
+|  24 | [[https://code.dennyzhang.com/followup-poison][#poison]]          | [[https://code.dennyzhang.com/followup-poison][Poison Problems & Follow-up]]                                     |
+|  25 | [[https://code.dennyzhang.com/followup-slidingpuzzle][#slidingpuzzle]]   | [[https://code.dennyzhang.com/followup-slidingpuzzle][Sliding Puzzle & Follow-up]]                                      |
+|  26 | [[https://code.dennyzhang.com/followup-trappingrain][#trappingrain]]    | [[https://code.dennyzhang.com/followup-trappingrain][Trapping Rain & Follow-up]]                                       |
+|  27 | [[https://code.dennyzhang.com/followup-coin][#coin]]            |                                                                 |
+|  28 |                  |                                                                 |
+|  29 |                  |                                                                 |
+|  30 |                  |                                                                 |
+#+TBLFM: $1=@-1$1+1;N
+** Review Problems By Category
+| Num | Name                | Summary                                           |
+|-----+---------------------+---------------------------------------------------|
+|   1 | [[https://code.dennyzhang.com/tag/binarytree][#binarytree]]         | [[https://code.dennyzhang.com/review-binarytree][Review: Binary Tree Problems]]                      |
+|   2 | [[https://code.dennyzhang.com/review-linkedlist][#linkedlist]]         | [[https://code.dennyzhang.com/review-linkedlist][Review: Linked List Problems]]                      |
+|   3 | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]       | [[https://code.dennyzhang.com/review-binarysearch][Review: Binary Search Problems]]                    |
+|   4 | [[https://code.dennyzhang.com/tag/dynamicprogramming][#dynamicprogramming]] | [[https://code.dennyzhang.com/review-dynamicprogramming][Review: Dynamic Programming Problems]]              |
+|   5 | [[https://code.dennyzhang.com/review-twopointer][#twopointer]]         | [[https://code.dennyzhang.com/review-twopointer][Review: TwoPointers Problems]]                      |
+|   6 | [[https://code.dennyzhang.com/review-trie][#trie]]               | [[https://code.dennyzhang.com/review-trie][Review: Trie Tree Problems]]                        |
+|   7 | [[https://code.dennyzhang.com/review-string][#string]]             | [[https://code.dennyzhang.com/review-string][Review: String Problems]]                           |
+|   8 | [[https://code.dennyzhang.com/review-stack][#stack]]              | [[https://code.dennyzhang.com/review-stack][Review: Stack Problems]]                            |
+|   9 | [[https://code.dennyzhang.com/review-bfs][#bfs]]                | [[https://code.dennyzhang.com/review-bfs][Review: BFS Problems]]                              |
+|  10 | [[https://code.dennyzhang.com/review-dfs][#dfs]]                | [[https://code.dennyzhang.com/review-dfs][Review: DFS Problems]]                              |
+|  11 | [[https://code.dennyzhang.com/tag/array][#array]]              | [[https://code.dennyzhang.com/review-array][Review: Array/SubArray Problems]]                   |
+|  12 | [[https://code.dennyzhang.com/review-hashmap][#hashmap]]            | [[https://code.dennyzhang.com/review-hashmap][Review: Hashmap Problems]]                          |
+|  13 | [[https://code.dennyzhang.com/review-monotone][#monotone]]           | [[https://code.dennyzhang.com/review-monotone][Review: Monotone Stack Or Monotone Queue Problems]] |
+|  14 | [[https://code.dennyzhang.com/tag/knapsack][#knapsack]]           | [[https://code.dennyzhang.com/review-knapsack][Review: Knapsack Problems]]                         |
+|  15 | [[https://code.dennyzhang.com/review-heap][#heap]]               | [[https://code.dennyzhang.com/review-heap][Review: Heap Problems]]                             |
+|  16 | [[https://code.dennyzhang.com/review-divideconquer][#divideconquer]]      | [[https://code.dennyzhang.com/review-divideconquer][Review: Divide And Conquer Problems]]               |
+|  17 | [[https://code.dennyzhang.com/review-backtracking][#backtracking]]       | [[https://code.dennyzhang.com/review-backtracking][Review: Backtracking Problems]]                     |
+|  18 | [[https://code.dennyzhang.com/review-unionfind][#unionfind]]          | [[https://code.dennyzhang.com/review-unionfind][Review: Union Find Problems]]                       |
+|  19 | [[https://code.dennyzhang.com/review-greedy][#greedy]]             | [[https://code.dennyzhang.com/review-greedy][Review: Greedy Problems]]                           |
+|  20 | [[https://code.dennyzhang.com/review-gcd][#gcd]]                | [[https://code.dennyzhang.com/review-gcd][Review: GCD Problems]]                              |
+|  21 | [[https://code.dennyzhang.com/review-interval][#interval]]           | [[https://code.dennyzhang.com/review-interval][Review: Interval Problems]]                         |
+|  22 | [[https://code.dennyzhang.com/review-combination][#combination]]        | [[https://code.dennyzhang.com/review-combination][Review: Combinations and Permutations Problems]]    |
+|  23 | [[https://code.dennyzhang.com/review-sql][#sql]]                | [[https://code.dennyzhang.com/review-sql][Review: SQL Problems]]                              |
+|  24 | [[https://code.dennyzhang.com/review-sqrt][#sqrt]]               | [[https://code.dennyzhang.com/review-sqrt][Review: sqrt Problems]]                             |
+#+TBLFM: $1=@-1$1+1;N
+
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-followup-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-followup-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:

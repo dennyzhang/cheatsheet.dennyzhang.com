@@ -22,15 +22,25 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** SQL Problems
-| Name                            | Problem                                                                                   |
-|---------------------------------+-------------------------------------------------------------------------------------------|
-| Use having with group-by        | =group by class having count(distinct student)...= [[https://code.dennyzhang.com/classes-more-than-5-students][Leetcode: Classes More Than 5 Students]] |
-| Update records with case clause | =set sex = case when sex = 'm' then 'f' else 'm' end= [[https://code.dennyzhang.com/swap-salary][Leetcode: Swap Salary]]               |
-| Get maximum of multiple columns | [[https://code.dennyzhang.com/triangle-judgement][Leetcode: Triangle Judgement]]                                                              |
-| Rank score                      | [[https://code.dennyzhang.com/rank-scores][Leetcode: Rank Scores]]                                                                     |
-| topn entris for each group      | [[https://code.dennyzhang.com/department-top-three-salaries][Leetcode: Department Top Three Salaries]]                                                   |
-| subquery                        | [[https://code.dennyzhang.com/immediate-food-delivery-ii][Leetcode: Immediate Food Delivery II]]                                                      |
-| SQL problems                    | [[https://code.dennyzhang.com/review-sql][#sql]]                                                                                      |
+| Name                                | Problem                                                                                   |
+|-------------------------------------+-------------------------------------------------------------------------------------------|
+| Use having with group-by            | =group by class having count(distinct student)...= [[https://code.dennyzhang.com/classes-more-than-5-students][Leetcode: Classes More Than 5 Students]] |
+| Update records with case clause     | =set sex = case when sex = 'm' then 'f' else 'm' end= [[https://code.dennyzhang.com/swap-salary][Leetcode: Swap Salary]]               |
+| Sum with case                       | =sum(case when state = 'approved' then 1 else 0 end)= [[https://code.dennyzhang.com/monthly-transactions-i][Leetcode: Monthly Transactions I]]    |
+| Rank score                          | =select @rownr:=@rownr+1 as rank= [[https://code.dennyzhang.com/rank-scores][Leetcode: Rank Scores]]                                   |
+| Subquery                            | =where (customer_id, order_date) in (select ...=  [[https://code.dennyzhang.com/immediate-food-delivery-ii][Leetcode: Immediate Food Delivery II]]    |
+| Sql isnull and if                   | =if(s1.id%2=0, s1.student, if(isnull(s2.student), s1.student, s2.student))=               |
+| Use having with group-by            | =group by class having count(distinct student)>4= [[https://code.dennyzhang.com/classes-more-than-5-students][Leecode: Classes More Than 5 Students]]   |
+| round float                         | =(round(accepts/requests, 2)= [[https://code.dennyzhang.com/friend-requests-i-overall-acceptance-rate][Leecode: Friend Requests I: Overall Acceptance Rate]]         |
+| [[https://stackoverflow.com/questions/15930514/mysql-auto-increment-temporary-column-in-select-statement][Select clause add an incremental id]] | select (@cnt1 := @cnt1 + 1) as id [[https://code.dennyzhang.com/students-report-by-geography][Leetcode: Students Report By Geography]]                  |
+| nth element in each group           | [[https://code.dennyzhang.com/nth-highest-salary][Leetcode: Nth Highest Salary]]                                                              |
+| topn entris for each group          | [[https://code.dennyzhang.com/department-top-three-salaries][Leetcode: Department Top Three Salaries]]                                                   |
+| =union= vs =union all=              | [[https://code.dennyzhang.com/friend-requests-ii-who-has-the-most-friends][Leetcode: Friend Requests II: Who Has the Most Friends]]                                    |
+| If no match show null               | [[https://code.dennyzhang.com/second-highest-salary][Leetcode: Second Highest Salary]]                                                           |
+| Get maximum of multiple columns     | [[https://code.dennyzhang.com/triangle-judgement][Leetcode: Triangle Judgement]]                                                              |
+| Impressive sql problems             | [[https://code.dennyzhang.com/find-median-given-frequency-of-numbers][Leecode: Find Median Given Frequency of Numbers]], [[https://code.dennyzhang.com/consecutive-available-seats][Leetcode: Consecutive Available Seats]]    |
+| Impressive sql problems             | [[https://code.dennyzhang.com/rank-scores][Leetcode: Rank Scores]], [[https://code.dennyzhang.com/exchange-seats][Leetcode: Exchange Seats]], [[https://code.dennyzhang.com/students-report-by-geography][Leetcode: Students Report By Geography]]   |
+| Leetcode SQL problems               | [[https://code.dennyzhang.com/review-sql][#sql]]                                                                                      |
 ** SQL Statement
 | Name                               | Command                                                         |
 |------------------------------------+-----------------------------------------------------------------|
@@ -300,13 +310,4 @@ BEGIN
      LIMIT M, 1
    );
 END
-
-** DONE sql isnull and if: if(s1.id % 2 = 0, s1.student, if(isnull(s2.student), s1.student, s2.student)) as student
-   CLOSED: [2017-10-19 Thu 17:02]
-** DONE MySQL: Auto increment temporary column in select statement
-  CLOSED: [2017-10-19 Thu 20:09]
-https://stackoverflow.com/questions/15930514/mysql-auto-increment-temporary-column-in-select-statement
-SET @rownr=0;
-SELECT @rownr:=@rownr+1 AS rowNumber, rowID
-  FROM myTable
-  WHERE CategoryID = 1
+* TODO [#A] mysql get the first entry for each group               :noexport:
