@@ -77,3 +77,6 @@ https://github.com/binhnguyennus/awesome-scalability
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* TODO [经验总结] 关于所谓的System Design: https://www.1point3acres.com/bbs/thread-169343-1-1.html :noexport:
+* TODO [题目讨论] 系统设计问题/面试题总结: https://www.1point3acres.com/bbs/thread-541834-1-1.html
+* TODO System design: https://www.1point3acres.com/bbs/forum-323-1.html :noexport:
