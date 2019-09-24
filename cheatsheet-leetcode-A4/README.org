@@ -84,9 +84,10 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Top 5 Binarysearch Problems
 | Num | Problem                             | Category/Tag | Summary                                                                |
 |-----+-------------------------------------+--------------+------------------------------------------------------------------------|
-|   1 | Find a first failing version        |              | [[https://code.dennyzhang.com/first-bad-version][Leetcode: First Bad Version]]                                            |
-|   2 | Search Insert Position              |              | [[https://code.dennyzhang.com/search-insert-position][Leetcode: Search Insert Position]], [[https://code.dennyzhang.com/time-based-key-value-store][Leetcode: Time Based Key-Value Store]] |
-|   3 | Binary search on monotonic function |              |                                                                        |
+|   1 | Search Insert Position              |              | [[https://code.dennyzhang.com/search-insert-position][Leetcode: Search Insert Position]], [[https://code.dennyzhang.com/time-based-key-value-store][Leetcode: Time Based Key-Value Store]] |
+|   2 | Find the first true                 |              | [[https://code.dennyzhang.com/first-bad-version][Leetcode: First Bad Version]]                                            |
+|   3 | Find the last true                  |              |                                                                        |
+|   4 | Binary search on monotonic function |              |                                                                        |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Top 10 Dynamic Programming Problems
@@ -163,11 +164,12 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  36 | Detect conflicts of intervals                        | [[https://code.dennyzhang.com/review-interval][#interval]]                         | [[https://code.dennyzhang.com/non-overlapping-intervals][Leetcode: Non-overlapping Intervals]]                                          |
 |  37 | Segment tree: solves range query problems quickly    | [[https://code.dennyzhang.com/review-segmenttree][#segmenttree]]                      | [[https://code.dennyzhang.com/range-sum-query-mutable][Leetcode: Range Sum Query - Mutable]]                                          |
 |  38 | Find best meeting points for a list of nodes         | [[https://code.dennyzhang.com/tag/meetingpoint][#meetingpoint]]                     | [[https://code.dennyzhang.com/best-meeting-point][Leetcode: Best Meeting Point]]                                                 |
-|  39 |                                                      |                                   | [[https://en.wikipedia.org/wiki/Travelling_salesman_problem][Travelling salesman problem]]                                                  |
-|  40 |                                                      |                                   | [[https://code.dennyzhang.com/remove-duplicates-from-sorted-array-ii][Leetcode: Remove Duplicates from Sorted Array II]]                             |
-|  41 |                                                      |                                   | [[https://code.dennyzhang.com/min-stack][Leetcode: Min Stack]]                                                          |
-|  42 |                                                      | [[https://code.dennyzhang.com/review-minmax][#minmax]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]      | [[https://code.dennyzhang.com/predict-the-winner][Leetcode: Predict the Winner]], [[https://code.dennyzhang.com/stone-game][Leetcode: Stone Game]]                           |
-|  43 | Topological Sort                                     |                                   |                                                                              |
+|  39 | Find the size of longest wiggle subsequence          | [[https://code.dennyzhang.com/followup-subsequence][#subsequence]], [[https://code.dennyzhang.com/followup-wiggle][#wiggle]]             | [[https://code.dennyzhang.com/wiggle-subsequence][Leetcode: Wiggle Subsequence]]                                                 |
+|  40 |                                                      |                                   | [[https://en.wikipedia.org/wiki/Travelling_salesman_problem][Travelling salesman problem]]                                                  |
+|  41 |                                                      |                                   | [[https://code.dennyzhang.com/remove-duplicates-from-sorted-array-ii][Leetcode: Remove Duplicates from Sorted Array II]]                             |
+|  42 |                                                      |                                   | [[https://code.dennyzhang.com/min-stack][Leetcode: Min Stack]]                                                          |
+|  43 |                                                      | [[https://code.dennyzhang.com/review-minmax][#minmax]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]      | [[https://code.dennyzhang.com/predict-the-winner][Leetcode: Predict the Winner]], [[https://code.dennyzhang.com/stone-game][Leetcode: Stone Game]]                           |
+|  44 | Topological Sort                                     |                                   |                                                                              |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
@@ -214,6 +216,14 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Use strings.Builder, instead of string            | [[https://code.dennyzhang.com/unique-email-addresses][Leetcode: Unique Email Addresses]]                                                               |
 | Variable Conversion                               | =float64(x_int/y_int)= != =float64(x_int)/float64(y_int)=, [[https://code.dennyzhang.com/maximum-average-subtree][Leetcode: Maximum Average Subtree]]   |
 | For a list of objects, pass by value or reference | =f(l []*TreeNode)= vs =f(l *[]*TreeNode)=, [[https://code.dennyzhang.com/lowest-common-ancestor-of-a-binary-tree][Leetcode: Lowest Common Ancestor of a Binary Tree]]   |
+** Whiteboard Tips
+| Name                                                    | Summary                                                               |
+|---------------------------------------------------------+-----------------------------------------------------------------------|
+| Focus on your key motivations or thinkings              | Pivot quickly from interviewers' feedback                             |
+| Brute force algorithm add values                        | Intuitive algorithms are  usually the starting points of optimal ones |
+| Work through specific test case clearly                 | Reduce bugs, and help to obtain interviewers' feedback early          |
+| Naming variables could be tricky                        | Settle down a set of variables per your preference                    |
+| You don't have to crack all problems/optimal algorithms |                                                                       |
 ** More Data Structure
 | Name           | Summary |
 |----------------+---------|
@@ -271,8 +281,15 @@ https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
+* TODO [#A] 刷题个人感悟                                           :noexport:
+1. 一味追求最优解可能就会误入歧途.
+   面试中对candidate的期待是通过一些算法题展示CS基础素质,所以面试题都是能够现场依靠CS基础知识推出结果的.
+   https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=538566&extra=page%3D1%26filter%3Ddigest%26digest%3D1%26digest%3D1
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO mitbbs job hunting: http://www.mitbbs.com/bbsdoc/JobHunting.html :noexport:
 * TODO code template: quicksort/quickselection                     :noexport:
 * TODO [#A] 刷题进阶Tips--分享给那些有刷题经验或工作经验的人: https://www.1point3acres.com/bbs/thread-289223-1-1.html :noexport:
 * TODO 谈谈coding面试的种类与基本应对策略: https://www.1point3acres.com/bbs/thread-435598-1-1.html :noexport:
+* TODO 刷题时候的一个小经验                                        :noexport:
+https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=533799&extra=page%3D1%26filter%3Ddigest%26digest%3D1%26digest%3D1
+

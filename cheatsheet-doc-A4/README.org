@@ -56,6 +56,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |-----------------------------------+-------------------------------------------|
 | Not sure about ticket duplication | =Let me know if this is a separate issue= |
 |                                   | =Thanks for the historical context=       |
+** Leave a conversation
+| Name                                                                | Comment |
+|---------------------------------------------------------------------+---------|
+| I'm gonna step away from this. I think it's clear what's wrong here |         |
+
 ** Misc
 | Name                      | Comment |
 |---------------------------+---------|

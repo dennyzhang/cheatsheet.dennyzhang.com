@@ -40,7 +40,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Get maximum of multiple columns     | [[https://code.dennyzhang.com/triangle-judgement][Leetcode: Triangle Judgement]]                                                              |
 | Impressive sql problems             | [[https://code.dennyzhang.com/find-median-given-frequency-of-numbers][Leecode: Find Median Given Frequency of Numbers]], [[https://code.dennyzhang.com/consecutive-available-seats][Leetcode: Consecutive Available Seats]]    |
 | Impressive sql problems             | [[https://code.dennyzhang.com/rank-scores][Leetcode: Rank Scores]], [[https://code.dennyzhang.com/exchange-seats][Leetcode: Exchange Seats]], [[https://code.dennyzhang.com/students-report-by-geography][Leetcode: Students Report By Geography]]   |
-| Leetcode SQL problems               | [[https://code.dennyzhang.com/review-sql][#sql]]                                                                                      |
+| Reference                           | [[https://code.dennyzhang.com/review-sql][Leetcode SQL problems]]                                                                     |
 ** SQL Statement
 | Name                               | Command                                                         |
 |------------------------------------+-----------------------------------------------------------------|
