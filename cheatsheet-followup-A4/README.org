@@ -38,22 +38,23 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  12 | [[https://code.dennyzhang.com/followup-reverseitem][#reverseitem]]                    | [[https://code.dennyzhang.com/followup-reverseitem][Reverse List/String & Follow-up]]              |
 |  13 | [[https://code.dennyzhang.com/followup-topk][#topk]], [[https://code.dennyzhang.com/review-heap][#heap]]                    | [[https://code.dennyzhang.com/followup-topk][Top k elements of a problem domain]]           |
 |  14 | [[https://code.dennyzhang.com/followup-subsequence][#subsequence]]                    | [[https://code.dennyzhang.com/followup-subsequence][Find Subsequence In Strings & Follow-up]]      |
+|  15 | [[https://code.dennyzhang.com/followup-lis][#lis]]                            | [[https://code.dennyzhang.com/followup-lis][Longest increasing subsequence & Follow-up]]   |
 |-----+---------------------------------+----------------------------------------------|
-|  15 | [[https://code.dennyzhang.com/followup-wiggle][#wiggle]]                         | [[https://code.dennyzhang.com/followup-wiggle][Wiggle Array Problems & Follow-up]]            |
-|  16 | [[https://code.dennyzhang.com/followup-groupelements][#groupelements]]                  | [[https://code.dennyzhang.com/followup-groupelements][Seperate a list into several groups]]          |
-|  17 | [[https://code.dennyzhang.com/followup-treetraversal][#treetraversal]], [[https://code.dennyzhang.com/tag/binarytree][#binarytree]]     | [[https://code.dennyzhang.com/followup-treetraversal][Tree Traversal & Follow-up]]                   |
-|  18 | [[https://code.dennyzhang.com/followup-calculator][#calculator]]                     | [[https://code.dennyzhang.com/followup-calculator][Calculator & Follow-up]]                       |
-|  19 | [[https://code.dennyzhang.com/followup-calendar][#calendar]]                       | [[https://code.dennyzhang.com/followup-calendar][Calendar & Follow-up]]                         |
-|  20 | [[https://code.dennyzhang.com/followup-convertds][#convertds]]                      | [[https://code.dennyzhang.com/followup-convertds][Convert Data Structure Problems & Follow-Up]]  |
-|  21 | [[https://code.dennyzhang.com/followup-expression][#expression]]                     | [[https://code.dennyzhang.com/followup-expression][Expression Problems & Follow-Up]]              |
-|  22 | [[https://code.dennyzhang.com/followup-frogjump][#frogjump]]                       | [[https://code.dennyzhang.com/followup-frogjump][Frog Jump Game & Follow-up]]                   |
-|  23 | [[https://code.dennyzhang.com/followup-houserobber][#houserobber]]                    | [[https://code.dennyzhang.com/followup-houserobber][House Robber & Follow-up]]                     |
-|  24 | [[https://code.dennyzhang.com/followup-ipaddress][#ipaddress]]                      | [[https://code.dennyzhang.com/followup-ipaddress][IP Address Problems & Follow-Up]]              |
-|  25 | [[https://code.dennyzhang.com/followup-paintfence][#paintfence]]                     | [[https://code.dennyzhang.com/followup-paintfence][Paint Fence & Follow-up]]                      |
-|  26 | [[https://code.dennyzhang.com/followup-poison][#poison]]                         | [[https://code.dennyzhang.com/followup-poison][Poison Problems & Follow-up]]                  |
-|  27 | [[https://code.dennyzhang.com/followup-slidingpuzzle][#slidingpuzzle]]                  | [[https://code.dennyzhang.com/followup-slidingpuzzle][Sliding Puzzle & Follow-up]]                   |
-|  28 | [[https://code.dennyzhang.com/followup-trappingrain][#trappingrain]]                   | [[https://code.dennyzhang.com/followup-trappingrain][Trapping Rain & Follow-up]]                    |
-|  29 | [[https://code.dennyzhang.com/followup-coin][#coin]]                           |                                              |
+|  16 | [[https://code.dennyzhang.com/followup-wiggle][#wiggle]]                         | [[https://code.dennyzhang.com/followup-wiggle][Wiggle Array Problems & Follow-up]]            |
+|  17 | [[https://code.dennyzhang.com/followup-groupelements][#groupelements]]                  | [[https://code.dennyzhang.com/followup-groupelements][Seperate a list into several groups]]          |
+|  18 | [[https://code.dennyzhang.com/followup-treetraversal][#treetraversal]], [[https://code.dennyzhang.com/tag/binarytree][#binarytree]]     | [[https://code.dennyzhang.com/followup-treetraversal][Tree Traversal & Follow-up]]                   |
+|  19 | [[https://code.dennyzhang.com/followup-calculator][#calculator]]                     | [[https://code.dennyzhang.com/followup-calculator][Calculator & Follow-up]]                       |
+|  20 | [[https://code.dennyzhang.com/followup-meetingconflict][#meetingconflict]]                | [[https://code.dennyzhang.com/followup-meetingconflict][Meeting Conflict Problems & Follow-up]]        |
+|  21 | [[https://code.dennyzhang.com/followup-meetingpoint][#meetingpoint]]                   | [[https://code.dennyzhang.com/followup-meetingconflict][Meeting Point Problems & Follow-up]]           |
+|  22 | [[https://code.dennyzhang.com/followup-convertds][#convertds]]                      | [[https://code.dennyzhang.com/followup-convertds][Convert Data Structure Problems & Follow-Up]]  |
+|  23 | [[https://code.dennyzhang.com/followup-expression][#expression]]                     | [[https://code.dennyzhang.com/followup-expression][Expression Problems & Follow-Up]]              |
+|  24 | [[https://code.dennyzhang.com/followup-frogjump][#frogjump]]                       | [[https://code.dennyzhang.com/followup-frogjump][Frog Jump Game & Follow-up]]                   |
+|  25 | [[https://code.dennyzhang.com/followup-houserobber][#houserobber]]                    | [[https://code.dennyzhang.com/followup-houserobber][House Robber & Follow-up]]                     |
+|  26 | [[https://code.dennyzhang.com/followup-ipaddress][#ipaddress]]                      | [[https://code.dennyzhang.com/followup-ipaddress][IP Address Problems & Follow-Up]]              |
+|  27 | [[https://code.dennyzhang.com/followup-paintfence][#paintfence]]                     | [[https://code.dennyzhang.com/followup-paintfence][Paint Fence & Follow-up]]                      |
+|  28 | [[https://code.dennyzhang.com/followup-poison][#poison]]                         | [[https://code.dennyzhang.com/followup-poison][Poison Problems & Follow-up]]                  |
+|  29 | [[https://code.dennyzhang.com/followup-slidingpuzzle][#slidingpuzzle]]                  | [[https://code.dennyzhang.com/followup-slidingpuzzle][Sliding Puzzle & Follow-up]]                   |
+|  30 | [[https://code.dennyzhang.com/followup-trappingrain][#trappingrain]]                   | [[https://code.dennyzhang.com/followup-trappingrain][Trapping Rain & Follow-up]]                    |
 #+TBLFM: $1=@-1$1+1;N
 ** Review Problems By Category
 | Num | Name                | Summary                                           |
