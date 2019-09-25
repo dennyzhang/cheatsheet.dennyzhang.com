@@ -1,4 +1,4 @@
-* CheatSheet: 30 Common Code Problems & Follow-ups                :Languages:
+* CheatSheet: Common Code Problems & Follow-ups                   :Languages:
 :PROPERTIES:
 :type:     language
 :export_file_name: cheatsheet-followup-A4.pdf
@@ -55,6 +55,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  28 | [[https://code.dennyzhang.com/followup-poison][#poison]]                         | [[https://code.dennyzhang.com/followup-poison][Poison Problems & Follow-up]]                  |
 |  29 | [[https://code.dennyzhang.com/followup-slidingpuzzle][#slidingpuzzle]]                  | [[https://code.dennyzhang.com/followup-slidingpuzzle][Sliding Puzzle & Follow-up]]                   |
 |  30 | [[https://code.dennyzhang.com/followup-trappingrain][#trappingrain]]                   | [[https://code.dennyzhang.com/followup-trappingrain][Trapping Rain & Follow-up]]                    |
+|  31 | [[https://code.dennyzhang.com/followup-coin][#coin]]                           |                                              |
 #+TBLFM: $1=@-1$1+1;N
 ** Review Problems By Category
 | Num | Name                | Summary                                           |

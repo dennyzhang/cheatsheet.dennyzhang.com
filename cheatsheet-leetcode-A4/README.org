@@ -290,6 +290,22 @@ https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/
 * TODO code template: quicksort/quickselection                     :noexport:
 * TODO [#A] 刷题进阶Tips--分享给那些有刷题经验或工作经验的人: https://www.1point3acres.com/bbs/thread-289223-1-1.html :noexport:
 * TODO 谈谈coding面试的种类与基本应对策略: https://www.1point3acres.com/bbs/thread-435598-1-1.html :noexport:
-* TODO 刷题时候的一个小经验                                        :noexport:
+* TODO 刷题经验                                                    :noexport:
 https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=533799&extra=page%3D1%26filter%3Ddigest%26digest%3D1%26digest%3D1
+刷题时候的一个小经验
 
+https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=521357&extra=page%3D1%26filter%3Ddigest%26digest%3D1%26digest%3D1
+让刷题幸福感提高的一百个心得
+
+#+BEGIN_EXAMPLE
+1. 刷题前一个小时不要吃太多碳水化合物.饭困影响发挥
+2. 睡眠很重要.睡不好第二天你根本不想动脑刷题
+3. 有的时候自己想的头大,可以把题目发给你的朋友,让他帮你想想,然后聊聊天
+4. 状态不好的时候,可以尝试一边听歌/聊天/游戏,一边看题目,不是为了凑时间,而是适当分散精力,减少那种无力感,同时又把难啃的骨头啃下去.
+5. 仅仅是放下刷题,去做别的事情,是不能消除无力感的,因为这种感觉是源于你的水平不到位.
+6. 请放弃使用ide进行刷题
+7. 请不要因为6感到无力或者难为情,相信我这是短暂的（一两天的时间）然后你会进步的更快,更有成就感的
+9. 刷题配合有氧运动效果更佳.如跑步,笔者用游泳,感觉二者互相促进,神清气爽
+10. 特别想编程的时候,多提交几个题目
+11. 不想编程的时候,多看看别人的解法和写代码的结构和细节
+#+END_EXAMPLE
