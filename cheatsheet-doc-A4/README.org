@@ -43,13 +43,17 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Delay the answer                      | =Yeah, I'm trying to think=                                    |
 | Delay the answer                      | =We take the question offline=                                 |
 | Ask feedback for your proposal        | =Does that make sense so far?=                                 |
+| Feel free to interrupt me anytime     |                                                                |
 
 ** Review Pull Requests
-| Name                           | Comment |
-|--------------------------------+---------|
-| DRY (Don't repeat yourself)    |         |
-| nit                            |         |
-| Can I get reviews for https... |         |
+| Name                        | Comment                                                        |
+|-----------------------------+----------------------------------------------------------------|
+| Ask people to review PR     | Can I get reviews for https...                                 |
+| Ask people to review PR     | Can we have eyes on https...                                   |
+| Ask people to review PR     | https://... is passing CI. And I'd appreciate a review. cc XXX |
+| DRY (Don't repeat yourself) |                                                                |
+| nit                         |                                                                |
+| Echo the comment from @XXX  |                                                                |
 
 ** Report Tickets
 | Name                              | Comment                                   |
@@ -57,9 +61,10 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Not sure about ticket duplication | =Let me know if this is a separate issue= |
 |                                   | =Thanks for the historical context=       |
 ** Leave a conversation
-| Name                                                                | Comment |
-|---------------------------------------------------------------------+---------|
-| I'm gonna step away from this. I think it's clear what's wrong here |         |
+| Name                                                                    | Comment |
+|-------------------------------------------------------------------------+---------|
+| I'm gonna step away from this. I think it's clear what's wrong here     |         |
+| I'm stepping away from this for now. Still not sure what happened here. |         |
 
 ** Misc
 | Name                      | Comment |
@@ -178,7 +183,7 @@ Proper error handling code is hard. Bugs in error handling code are a major caus
 This means that the probability of having sequential bugs, where an error causes buggy error
 handling code to run, isn't just the independent probabilities of the individual errors multiplied.
 It's common to have cascading failures cause a serious outage. There's a sense in which this is
-obvious – error handling is generally regarded as being hard. If I mention this to people they'll
+obvious - error handling is generally regarded as being hard. If I mention this to people they'll
 tell me how obvious it is that a disproportionate number of serious postmortems come out of bad
 error handling and cascading failures where errors are repeatedly not handled correctly. But
 despite this being "obvious", it's not so obvious that sufficient test and static analysis effort
@@ -229,14 +234,14 @@ happening again.
 I don't mean to pick on large cloud companies, either. If anything, the situation there is better
 than at most startups, even very well funded ones. Most of the "unicorn" startups that I know of
 don't have a proper testing/staging environment that lets them test risky config changes. I can
-understand why – it's often hard to set up a good QA environment that mirrors prod well enough that
+understand why - it's often hard to set up a good QA environment that mirrors prod well enough that
 config changes can get tested, and like driving without a seatbelt, nothing bad happens the vast
 majority of the time. If I had to make my own seatbelt before driving my car, I might not drive
 with a seatbelt either. Then again, if driving without a seatbelt were as scary as making config
 change, I might consider it.
 
 Back in 1985, Jim Gray observed that "operator actions, system configuration, and system maintence
-was the main source of failures – 42%". Since then, there have been a variety of studies that have
+was the main source of failures - 42%". Since then, there have been a variety of studies that have
 found similar results. For example, Rabkin and Katz found the following causes for failures:
 
 Causes in decreasing order: misconfig, bug, operational, system, user, install, hardware
@@ -374,7 +379,7 @@ in comments from folks who work at companies with less scale. Do my impressions 
 
 Thanks to gwern and Dan Reif for taking me up on this and finding some bugs in this post.
 
-← Reviewing Steve Yegge's prediction record Slashdot and Sourceforge →
+← Reviewing Steve Yegge's prediction record Slashdot and Sourceforge ->p
 Archive Popular About (hire me!) Twitter RSS
 
 #+end_example

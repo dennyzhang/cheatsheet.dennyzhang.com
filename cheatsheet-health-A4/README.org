@@ -32,14 +32,16 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 </iframe>
 #+END_HTML
 ** When Near Keybaords
-| Name               | Command                                                           |
-|--------------------+-------------------------------------------------------------------|
-| Keyboard           | Instead of laptop keyboard, use an external one                   |
-| Standing desk      |                                                                   |
-| Comfortable Chair  |                                                                   |
-| Take regular break | Takes breaks once every 45 minutes                                |
-| Use mouse          | Relax your fingers on the mouse buttons                           |
-| Use mouse          | Keep your mouse close so you are not extending your arm to use it |
+| Name                                 | Command                                                           |
+|--------------------------------------+-------------------------------------------------------------------|
+| Keyboard                             | Instead of laptop keyboard, use an external one                   |
+| Standing desk                        |                                                                   |
+| Comfortable Chair                    |                                                                   |
+| Take regular break                   | Takes breaks once every 45 minutes                                |
+| Use mouse                            | Relax your fingers on the mouse buttons                           |
+| Use mouse                            | Keep your mouse close so you are not extending your arm to use it |
+| [[https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh?hl=en-US][Google Chrome Extension: Dark Reader]] | Better for you eyes                                               |
+| [[https://chrome.google.com/webstore/detail/focusme-a-pomodoro-timer/koebbleaefghpjjmghelhjboilcmfpad][Google Chrome Extension: FocusMe]]     | A Pomodoro Timer and Website Blocker                              |
 
 ** More Resources
 License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

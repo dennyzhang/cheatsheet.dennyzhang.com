@@ -18,6 +18,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Name                             | Summary                                    |
 |----------------------------------+--------------------------------------------|
 | Config file                      | =.p4config=                                |
+| Validate p4 config file          | =ls -lth $P4CONFIG=                        |
 | Login to system                  | =p4 login=                                 |
 | Sync source code                 | =p4 sync=                                  |
 | Create a new P4 client           | =p4 client=                                |
@@ -125,3 +126,16 @@ Change 7330508 renamed change 7332988 and submitted.
 |----------+-------------------------------------------------------------|
 | Perforce | [[https://wiki.eng.vmware.com/Perforce][wiki: SCM/Perforce]], [[https://confluence.eng.vmware.com/display/NSBU/Perforce+Setup][Confluence: Perforce Setup]]              |
 | Perforce | [[https://confluence.eng.vmware.com/display/WCP/Build+and+Run+Unit+Tests+for+WCP+Service+on+DBC#BuildandRunUnitTestsforWCPServiceonDBC-Compile][Confluence: Build and Run Unit Tests for WCP Service on DBC]] |
+* source 
+~/.bashrc
+
+export TCROOT=/build/toolchain
+export BUILDAPPSROOT=/build/apps
+export BUILDAPPS=/build/apps/bin
+export PATH=/build/toolchain/lin64/jdk-1.7.0_51/bin:/build/toolchain/noarch/apache-ant-1.7.0/bin:$PATH
+export PATH=~/bin:~/tools/vmware-git/tools/bin:${TCROOT}/lin64/perforce-r13.1:${TCROOT}/lin64/perforce-r13.2/p4v-2013.2.685561/bin:${BUILD_APPS}/bin:$PATH
+export PATH=/mts/git/tools/bin:${PATH}
+
+export P4CONFIG=/dbc/sc-dbc1216/zdenny/p4/.p4config
+
+source ~/.bashrc
