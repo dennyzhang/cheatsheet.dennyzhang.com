@@ -383,3 +383,5 @@ Thanks to gwern and Dan Reif for taking me up on this and finding some bugs in t
 Archive Popular About (hire me!) Twitter RSS
 
 #+end_example
+* Describe situation                                               :noexport:
+relegated to the position of a second tier team(so to speak) with no real ownership or ability to drive any directions.
