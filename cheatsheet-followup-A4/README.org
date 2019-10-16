@@ -1,4 +1,4 @@
-* CheatSheet: Common Code Problems & Follow-ups                   :Languages:
+* CheatSheet: Common Code Problems & Follow-ups                   :Interview:
 :PROPERTIES:
 :type:     language
 :export_file_name: cheatsheet-followup-A4.pdf
@@ -16,7 +16,7 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-followup-A4/cheatsheet-followup-A4.pdf][cheatsheet-followup-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/languages/][languages]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/cheatsheet-behavior-A4.pdf][cheatsheet-behavior-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Code Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
@@ -65,6 +65,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  38 | [[https://code.dennyzhang.com/followup-constructstring][#constructstring]]                | [[https://code.dennyzhang.com/followup-constructstring][Construct string Problems & Follow-up]]                   |
 |  39 | [[https://code.dennyzhang.com/followup-colorgraph][#colorgraph]]                     | [[https://code.dennyzhang.com/followup-colorgraph][Coloring graph nodes Problems & Follow-up]]               |
 |  40 | [[https://code.dennyzhang.com/review-graphchangecell][#graphchangecell]]                | [[https://code.dennyzhang.com/review-graphchangecell][Change cells of graph Problems & Follow-up]]              |
+|  41 | [[https://code.dennyzhang.com/followup-splitarray][#splitarray]]                     | [[https://code.dennyzhang.com/followup-splitarray][Split Array Problems & Follow-up]]                        |
 #+TBLFM: $1=@-1$1+1;N
 ** Review Problems By Category
 | Num | Name                | Summary                                           |
@@ -96,6 +97,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  25 | [[https://code.dennyzhang.com/review-bucketsort][#bucketsort]]         | [[https://code.dennyzhang.com/review-bucketsort][Review: Bucketsort Problems]]                       |
 |  26 | [[https://code.dennyzhang.com/review-countsort][#countsort]]          | [[https://code.dennyzhang.com/review-countsort][Review: Countsort Problems]]                        |
 |  27 | [[https://code.dennyzhang.com/review-topologicalsort][#topologicalsort]]    | [[https://code.dennyzhang.com/review-topologicalsort][Review: Topological Sort Problems]]                 |
+|  28 | [[https://code.dennyzhang.com/review-random][#random]]             | [[https://code.dennyzhang.com/review-random][Review: Random Problems]]                           |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML

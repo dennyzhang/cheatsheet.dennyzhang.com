@@ -36,14 +36,15 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Mind filing a ticket to track this? |         |
 
 ** Meeting English
-| Name                                  | Comment                                                        |
-|---------------------------------------+----------------------------------------------------------------|
-| When people take conversation offline | =Please socialize the outcome=                                 |
-| Track tasks & issues                  | =Can you open up a ticket, so that we don't lose track of it?= |
-| Delay the answer                      | =Yeah, I'm trying to think=                                    |
-| Delay the answer                      | =We take the question offline=                                 |
-| Ask feedback for your proposal        | =Does that make sense so far?=                                 |
-| Feel free to interrupt me anytime     |                                                                |
+| Name                                   | Comment                                                        |
+|----------------------------------------+----------------------------------------------------------------|
+| When people take conversation offline  | =Please socialize the outcome=                                 |
+| Track tasks & issues                   | =Can you open up a ticket, so that we don't lose track of it?= |
+| Delay the answer                       | =Yeah, I'm trying to think=                                    |
+| Delay the answer                       | =We take the question offline=                                 |
+| Ask feedback for your proposal         | =Does that make sense so far?=                                 |
+| Start meeting without waiting everyone | =I think we have a quorum. Let's start=                        |
+| Feel free to interrupt me anytime      |                                                                |
 
 ** Review Pull Requests
 | Name                        | Comment                                                        |

@@ -1,4 +1,4 @@
-* CheatSheet: System Design For Code Interview                    :Languages:
+* CheatSheet: System Design For Code Interview                    :Interview:
 :PROPERTIES:
 :type:     language
 :export_file_name: cheatsheet-systemdesign-A4.pdf
@@ -16,7 +16,7 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/cheatsheet-systemdesign-A4.pdf][cheatsheet-systemdesign-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/languages/][languages]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/cheatsheet-behavior-A4.pdf][cheatsheet-behavior-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
@@ -25,12 +25,18 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Name                                       | Summary |
 |--------------------------------------------+---------|
 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: TinyURL - A URL Shorterner Service]] |         |
+| [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                 |         |
+| [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]]          |         |
+|--------------------------------------------+---------|
 | [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]                       |         |
 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]              |         |
 | [[https://architect.dennyzhang.com/design-elevator/][Design: An Elevator Service]]                |         |
 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]          |         |
-| [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]]          |         |
-| [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                 |         |
+
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
 
 ** Resources
 | Name      | Summary                                                                               |
@@ -80,3 +86,4 @@ https://github.com/binhnguyennus/awesome-scalability
 * TODO [经验总结] 关于所谓的System Design: https://www.1point3acres.com/bbs/thread-169343-1-1.html :noexport:
 * TODO [题目讨论] 系统设计问题/面试题总结: https://www.1point3acres.com/bbs/thread-541834-1-1.html
 * TODO System design: https://www.1point3acres.com/bbs/forum-323-1.html :noexport:
+* TODO system design: https://www.1point3acres.com/bbs/thread-171320-1-1.html :noexport:
