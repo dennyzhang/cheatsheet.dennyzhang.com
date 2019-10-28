@@ -69,6 +69,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  42 | [[https://code.dennyzhang.com/followup-splitarray][#splitarray]]                     | [[https://code.dennyzhang.com/followup-splitarray][Split Array Problems & Follow-up]]                        |
 |  43 | [[https://code.dennyzhang.com/followup-multiplechoices][#multiplechoices]]                | [[https://code.dennyzhang.com/followup-multiplechoices][Multiple Choices At Each Step Problems & Follow-Up]]      |
 |  44 | [[https://code.dennyzhang.com/followup-endswith][#endswith]]                       | [[https://code.dennyzhang.com/followup-endswith][Endswith Problems & Follow-up]]                           |
+|  45 | [[https://code.dennyzhang.com/followup-sortedmatrix][#sortedmatrix]]                   | [[https://code.dennyzhang.com/followup-sortedmatrix][Sorted 2D Matrix Problems & Follow-up]]                   |
 #+TBLFM: $1=@-1$1+1;N
 ** Review Problems By Category
 | Num | Name                | Summary                                           |
