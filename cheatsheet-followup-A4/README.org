@@ -63,9 +63,12 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  36 | [[https://code.dennyzhang.com/followup-countdistinctmoves][#countdistinctmoves]]             | [[https://code.dennyzhang.com/followup-countdistinctmoves][Count of distinct moves Problems & Follow-Up]]            |
 |  37 | [[https://code.dennyzhang.com/followup-maxprofitwithcost][#maxprofitwithcost]]              | [[https://code.dennyzhang.com/followup-maxprofitwithcost][Maximum profits with certain costs Problems & Follow-up]] |
 |  38 | [[https://code.dennyzhang.com/followup-constructstring][#constructstring]]                | [[https://code.dennyzhang.com/followup-constructstring][Construct string Problems & Follow-up]]                   |
-|  39 | [[https://code.dennyzhang.com/followup-colorgraph][#colorgraph]]                     | [[https://code.dennyzhang.com/followup-colorgraph][Coloring graph nodes Problems & Follow-up]]               |
-|  40 | [[https://code.dennyzhang.com/review-graphchangecell][#graphchangecell]]                | [[https://code.dennyzhang.com/review-graphchangecell][Change cells of graph Problems & Follow-up]]              |
-|  41 | [[https://code.dennyzhang.com/followup-splitarray][#splitarray]]                     | [[https://code.dennyzhang.com/followup-splitarray][Split Array Problems & Follow-up]]                        |
+|  39 | [[https://code.dennyzhang.com/followup-constructarray][#constructarray]]                 | [[https://code.dennyzhang.com/followup-constructarray][Construct array Problems & Follow-up]]                    |
+|  40 | [[https://code.dennyzhang.com/followup-colorgraph][#colorgraph]]                     | [[https://code.dennyzhang.com/followup-colorgraph][Coloring graph nodes Problems & Follow-up]]               |
+|  41 | [[https://code.dennyzhang.com/review-graphchangecell][#graphchangecell]]                | [[https://code.dennyzhang.com/review-graphchangecell][Change cells of graph Problems & Follow-up]]              |
+|  42 | [[https://code.dennyzhang.com/followup-splitarray][#splitarray]]                     | [[https://code.dennyzhang.com/followup-splitarray][Split Array Problems & Follow-up]]                        |
+|  43 | [[https://code.dennyzhang.com/followup-multiplechoices][#multiplechoices]]                | [[https://code.dennyzhang.com/followup-multiplechoices][Multiple Choices At Each Step Problems & Follow-Up]]      |
+|  44 | [[https://code.dennyzhang.com/followup-endswith][#endswith]]                       | [[https://code.dennyzhang.com/followup-endswith][Endswith Problems & Follow-up]]                           |
 #+TBLFM: $1=@-1$1+1;N
 ** Review Problems By Category
 | Num | Name                | Summary                                           |
@@ -83,7 +86,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  11 | [[https://code.dennyzhang.com/tag/array][#array]]              | [[https://code.dennyzhang.com/review-array][Review: Array/SubArray Problems]]                   |
 |  12 | [[https://code.dennyzhang.com/review-hashmap][#hashmap]]            | [[https://code.dennyzhang.com/review-hashmap][Review: Hashmap Problems]]                          |
 |  13 | [[https://code.dennyzhang.com/review-monotone][#monotone]]           | [[https://code.dennyzhang.com/review-monotone][Review: Monotone Stack Or Monotone Queue Problems]] |
-|  14 | [[https://code.dennyzhang.com/tag/knapsack][#knapsack]]           | [[https://code.dennyzhang.com/review-knapsack][Review: Knapsack Problems]]                         |
+|  14 | [[https://code.dennyzhang.com/review-knapsack][#knapsack]]           | [[https://code.dennyzhang.com/review-knapsack][Review: Knapsack Problems]]                         |
 |  15 | [[https://code.dennyzhang.com/review-heap][#heap]]               | [[https://code.dennyzhang.com/review-heap][Review: Heap Problems]]                             |
 |  16 | [[https://code.dennyzhang.com/review-divideconquer][#divideconquer]]      | [[https://code.dennyzhang.com/review-divideconquer][Review: Divide And Conquer Problems]]               |
 |  17 | [[https://code.dennyzhang.com/review-backtracking][#backtracking]]       | [[https://code.dennyzhang.com/review-backtracking][Review: Backtracking Problems]]                     |

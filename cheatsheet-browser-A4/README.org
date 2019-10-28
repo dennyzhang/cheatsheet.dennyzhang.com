@@ -22,15 +22,16 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Chrome Shortcut In mac
-| Name                        | Comment                                      |
-|-----------------------------+----------------------------------------------|
-| Chrome open a new tab       | =Command + T=                                |
-| Chrome open a new window    | =Command + N=                                |
-| Reload page                 | =Command + R=                                |
-| Chrome undo closed tab      | =Command + Shift + T=                        |
-| Enter/Exit full screen      | =Command + Control + F=                      |
-| Open developer tool         | =Command + Option + I=                       |
-| Chrome scroll to top/bottom | =Command + arrow up=, =Command + arrow down= |
+| Name                                         | Comment                                      |
+|----------------------------------------------+----------------------------------------------|
+| Chrome open a new tab                        | =Command + T=                                |
+| Chrome open a new window                     | =Command + N=                                |
+| Reload page                                  | =Command + R=                                |
+| Chrome undo closed tab                       | =Command + Shift + T=                        |
+| Enter/Exit full screen                       | =Command + Control + F=                      |
+| Open developer tool                          | =Command + Option + I=                       |
+| Chrome scroll to top/bottom                  | =Command + arrow up=, =Command + arrow down= |
+| [[https://superuser.com/questions/398385/deleting-a-specific-url-suggestion-in-chrome][Deleting a specific URL suggestion in Chrome]] | On mac, =Shift + Fn + Delete=                |
 ** Chrome - Plugins
 | Name     | Comment                                 |
 |----------+-----------------------------------------|

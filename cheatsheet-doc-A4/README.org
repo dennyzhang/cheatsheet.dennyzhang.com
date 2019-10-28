@@ -45,6 +45,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Ask feedback for your proposal         | =Does that make sense so far?=                                 |
 | Start meeting without waiting everyone | =I think we have a quorum. Let's start=                        |
 | Feel free to interrupt me anytime      |                                                                |
+| I have a question, if everyone is OK   |                                                                |
 
 ** Review Pull Requests
 | Name                        | Comment                                                        |

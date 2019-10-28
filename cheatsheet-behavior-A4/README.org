@@ -22,6 +22,23 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 
+- *Behavioral Interview* is about you and your history, your resume, and your motivation. 
+** Key Behavior Questions
+| Num | Name                                                     |
+|-----+----------------------------------------------------------|
+|   1 | What is the candidate's motivation? Why want to join us? |
+|   2 | how is his/her teamwork? Collaborate with the peers      |
+|   3 | How do they resolve conflicts?                           |
+|   4 | How big impact the candidate has/could drive?            |
+#+TBLFM: $1=@-1$1+1;N
+** Well-Known Cultures
+| Num | Name                                  |
+|-----+---------------------------------------|
+|   1 | [[https://www.facebook.com/pg/facebookcareers/photos/?tab=album&album_id=1655178611435493][Link: Facebook's 5 Core Values]]        |
+|   2 | [[https://www.amazon.jobs/en/principles][Link: Amazon 14 Leadership Principles]] |
+|   3 | [[https://blogs.vmware.com/cfo/epic2-vmware-values/][Link: VMware EPIC2 values]]             |
+#+TBLFM: $1=@-1$1+1;N
+
 ** Categories of Behavior Questions
 | Num | Name                              | Summary                                      |
 |-----+-----------------------------------+----------------------------------------------|
@@ -41,23 +58,31 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Self-intro Background
 | Num | Example                                                                   |
 |-----+---------------------------------------------------------------------------|
-|   1 | Why you left your previous job?                                           |
-|   2 | Talk about your working projects                                          |
-|   3 | Why should we hire you?                                                   |
-|   4 | Why you want to apply our company? And why current position?              |
-|   5 | Describe your process for XXX. Describe daily work                        |
-|   6 | Tell me about the most challenging problem you have encountered recently. |
-|   7 | Tell me about the most interesting project you have been working on.      |
+|   1 | Walk me through your resume                                               |
+|   2 | Why you left your previous job?                                           |
+|   3 | What's your career goal for the next 3 years?                             |
+|   4 | Talk about your working projects                                          |
+|   5 | Why should we hire you?                                                   |
+|   6 | Why you want to apply our company? And why current position?              |
+|   7 | Describe your process for XXX. Describe daily work                        |
+|   8 | Tell me about the most challenging problem you have encountered recently. |
+|   9 | Tell me about the most interesting project you have been working on.      |
+|  10 | What is your biggest challenge?                                           |
 #+TBLFM: $1=@-1$1+1;N
 
-** Self-intro Strength               
+** Self-intro Strength
 | Num | Example                                                              |
 |-----+----------------------------------------------------------------------|
 |   1 | How will you impact the team if you join. What skills you can bring. |
 |   2 | What is an accomplishment you're proud of and why?                   |
 |   3 | What will you do in your free time                                   |
+|   4 | Tell me about how you keep up with most updated technology.          |
+|   5 | What kinds of technologies are you most excited about?               |
 #+TBLFM: $1=@-1$1+1;N
 
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
 ** Self-intro Weakness               
 | Num | Example                                            |
 |-----+----------------------------------------------------|
@@ -91,7 +116,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   1 | What if you will do, if you think your manager is not fair. |
 |   2 | Describe your favorite manager/ team worker.                |
 |   3 | What if you don't get along with your tech lead?            |
+|   4 | How do you like to give and receive feedback?               |
 #+TBLFM: $1=@-1$1+1;N
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
 
 ** Deal With Failure                 
 | Num | Example                                                                 |
@@ -100,17 +129,21 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   2 | Numa time you messed up/ took at risk / failed / feel frustrated ?      |
 |   3 | Talk about difficulties / failures / tough time in project.             |
 |   4 | What's the most difficult decision you've had to make recently, and why |
+|   5 | What's the biggest mistake you have made?                               |
+|   6 | What would you change about your project if you did it all over again?  |
 #+TBLFM: $1=@-1$1+1;N                                                                     
 
 ** Leadership                        
 | Num | Example                                                                                   |
 |-----+-------------------------------------------------------------------------------------------|
-|   1 | Give an example of a time you managed a difficult employee, and how you overcame it.      |
-|   2 | How do you deal with people who disagree with you                                         |
-|   3 | Walk me through a time you managed a complex team project. How you approach and delegate? |
-|   4 | Tell me about the best leader or manager you ever had. What did you like about them       |
+|   1 | Tell me about a time when ...                                                             |
+|   2 | Give an example of a time you managed a difficult employee, and how you overcame it.      |
+|   3 | How do you deal with people who disagree with you                                         |
+|   4 | Walk me through a time you managed a complex team project. How you approach and delegate? |
+|   5 | Tell me about the best leader or manager you ever had. What did you like about them       |
 #+TBLFM: $1=@-1$1+1;N                                                                     
 
+[[image-blog:Amazon 14 Leadership][https://cheatsheet.dennyzhang.com/wp-content/uploads/2019/10/amazon-14-leadership.png]]
 ** Value Customers 
 | Num | Example                                                                                  |
 |-----+------------------------------------------------------------------------------------------|
@@ -187,3 +220,23 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 
 | Talk to the point + solid supportings | Interviewers can easily get tired or distracted.                                    |
 | Hands-on experience matters           | Point our your relevant working experience for current topic                        |
+* https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=209651&extra=page%3D1%26filter%3Dsortid%26sortid%3D192%26sortid%3D192 :noexport:
+* TODO https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=307462&extra=page%3D1%26filter%3Dsortid%26orderby%3Dheats%26sortid%3D311%26sortid%3D311%26orderby%3Dheats :noexport:
+* TODO Google behavior questions                                   :noexport:
+Google 很少问 BQ,准备下面几个就够用了:
+自我介绍
+Resume 上的内容
+Why Google
+Greatest experience or project
+* TODO https://www.1point3acres.com/bbs/thread-551630-1-1.html     :noexport:
+* TODO 首先要避免 pre-commitment, 对于"你期待的薪资是多少？"这个问题 :noexport:
+If you do not mind, can you tell me the rage of SDE 2 at XXX?
+
+huh, it depends, by the way, what is the earliest date I can start work?
+
+https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=533501&extra=page%3D7%26filter%3Ddigest%26digest%3D1%26sortid%3D192%26digest%3D1%26sortid%3D192
+谈谈如何与HR negotiate package|一亩三分地求职版
+* TODO https://www.1point3acres.com/bbs/thread-563886-1-1.html     :noexport:
+* TODO What are key events in your work history                    :noexport:
+https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/
+Know yourself: Take the time to review your own resume as your interviewer will almost certainly ask about key events in your work history.

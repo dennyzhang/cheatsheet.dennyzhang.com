@@ -21,33 +21,110 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-** Classic Problems                                 
-| Name                                       | Summary |
-|--------------------------------------------+---------|
-| [[https://architect.dennyzhang.com/design-url-redirect/][Design: TinyURL - A URL Shorterner Service]] |         |
-| [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                 |         |
-| [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]]          |         |
-|--------------------------------------------+---------|
-| [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]                       |         |
-| [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]              |         |
-| [[https://architect.dennyzhang.com/design-elevator/][Design: An Elevator Service]]                |         |
-| [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]          |         |
+
+** Key Points Of System Design
+| Num | Name                                           | Summary                               |
+|-----+------------------------------------------------+---------------------------------------|
+|   1 | The questions you asked define your level      | Clarification; Painpoints; Key Points |
+|   2 | What are the key trade-off? And your analysis  |                                       |
+|   3 | Enage the discussion as a two-way conversation |                                       |
+#+TBLFM: $1=@-1$1+1;N
+
+** Resources
+| Name       | Summary                                                                           |
+|------------+-----------------------------------------------------------------------------------|
+| Website    | [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: system-design-primer]], [[https://interviewing.io][Website: interviewing.io]], [[https://www.interviewbit.com/courses/system-design/][Website: interviewbit.com]] |
+| Website    | [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]], [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube: Success in Tech]]                    |
+| Website    | [[https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/][Link: Preparing for your Software Engineering Interview at Facebook]]               |
+| Cheatsheet | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Code Interview]]         |
+| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]                                           |
+| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                                |
 
 #+BEGIN_HTML
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
 #+END_HTML
 
-** Resources
-| Name      | Summary                                                                               |
-|-----------+---------------------------------------------------------------------------------------|
-| Reference | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://architect.dennyzhang.com][Link: System Design]]                                      |
-| Reference | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Code Interview]] |
-| Reference | [[https://interviewing.io][Website: interviewing.io]]                                                              |
+** Classic Design Problems - Design Business Features                                
+| Num | Name                                       | Summary |
+|-----+--------------------------------------------+---------|
+|   1 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: TinyURL - A URL Shorterner Service]] |         |
+|   2 | Design news feed                           |         |
+|   3 | Design web crawler                         |         |
+|-----+--------------------------------------------+---------|
+|   4 | Google autocomplete                        |         |
+|   5 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]              |         |
+|   6 | [[https://architect.dennyzhang.com/design-elevator/][Design: An Elevator Service]]                |         |
+|   7 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]          |         |
+|   8 | Design Google PageRank                     |         |
+#+TBLFM: $1=@-1$1+1;N
 
+** Classic Design Problems - Design A Complex Product
+- Think through the complicated, high-scale systems that you already use every day
+| Num | Name                              | Summary |
+|-----+-----------------------------------+---------|
+|   1 | [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]              |         |
+|   2 | Design K/V DB                     |         |
+|   3 | [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]] |         |
+|   4 | Design twitter                    |         |
+|   5 | Deisgn a payment processor        |         |
+|   6 | Design a voice conference system  |         |
+|   7 | Design google doc                 |         |
+|   8 | Design gmail                      |         |
+#+TBLFM: $1=@-1$1+1;N
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
+
+** Classic Design Problems - Design Technical Modules
+| Num | Name                                                       | Summary |
+|-----+------------------------------------------------------------+---------|
+|   1 | Design a distributed UUID generator                        |         |
+|   2 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 |         |
+|   3 | Design a stack supporting push/pop/getmin/getmostfrequent  |         |
+|   4 | Implement a timer                                          |         |
+|   5 | Thread-safe Hashmap                                        |         |
+|   6 | Top URL hits                                               |         |
+|   7 | Unique url hits                                            |         |
+|   8 | Delayed task scheduling                                    |         |
+|   9 | Design a client-server API to build a rich document editor |         |
+#+TBLFM: $1=@-1$1+1;N
+
+** Classic Design Problems - Explain workflow: What happens when XXX?
+| Num | Name                                  | Summary                     |
+|-----+---------------------------------------+-----------------------------|
+|   1 | When happens when I search in google? |                             |
+|   2 | How loadbalancer works                |                             |
+|   3 | Explain three phase commit model      |                             |
+|   4 | Explain HTTP return code              | 301 vs 302, 401 vs 403, etc |
+|   5 | Explain mysql DB replication model    |                             |
+#+TBLFM: $1=@-1$1+1;N
+
+** Classic Design Problems - Explain tools: how XXX supports XXX?
+| Num | Name                                  | Summary |
+|-----+---------------------------------------+---------|
+|   1 | How JDK implement hashmap?            |         |
+|   2 | Explain java garbage collection model |         |
+|   3 | Explain raft/etcd                     |         |
+#+TBLFM: $1=@-1$1+1;N
+
+** Classic Design Problems - Big Data
+| Num | Name                                                          | Summary      |
+|-----+---------------------------------------------------------------+--------------|
+|   1 | Reservoir sampling                                            |              |
+|   2 | Frequency estimation                                          |              |
+|   3 | Heavy hitters - Find top k frequent items in a data stream    |              |
+|   4 | Membership query - whether an element exists in a data stream | [[https://en.wikipedia.org/wiki/Bloom_filter][bloom filter]] |
+|   5 | Get median from an endless data stream                        |              |
+#+TBLFM: $1=@-1$1+1;N
+
+** Grow Design Expertise In Daily Work
+| Num | Summary                                                                          |
+|-----+----------------------------------------------------------------------------------|
+|   1 | Think through the complicated, high-scale systems that you already use every day |
+|   2 | Read engineering blogs of big companies                                          |
+#+TBLFM: $1=@-1$1+1;N
+
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -87,3 +164,42 @@ https://github.com/binhnguyennus/awesome-scalability
 * TODO [题目讨论] 系统设计问题/面试题总结: https://www.1point3acres.com/bbs/thread-541834-1-1.html
 * TODO System design: https://www.1point3acres.com/bbs/forum-323-1.html :noexport:
 * TODO system design: https://www.1point3acres.com/bbs/thread-171320-1-1.html :noexport:
+* design                                                           :noexport:
+- work through the workflow
+* TODO https://www.1point3acres.com/bbs/forum-323-1.html           :noexport:
+* TODO 设计ip cache缓存之类的                                      :noexport:
+* [#A] soulmachine系统设计(System Design) https://soulmachine.gitbooks.io/system-design/content/cn/distributed-id-generator.html :noexport:
+* TODO https://www.hiredintech.com/app#system-design               :noexport:
+* TODO news feed: https://36kr.com/p/201758                        :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO design twitter                                              :noexport:
+https://medium.com/@narengowda/system-design-for-twitter-e737284afc95
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Kafka vs Rabbitmq                                           :noexport:
+* system design                                                    :noexport:
+https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/
+The purpose of the interview is to assess the candidate's ability to solve a non-trivial engineering design problem. 
+
+There are two types of design interviews: systems design and product design.
+
+Start with requirements: Your interviewer might ask: "How would you architect the backend for a messaging system?" Obviously this question is extremely vague. Where do you even start? You could start with some requirements:
+How many users are we talking about here?
+How many messages sent?
+How many messages read?
+What are the latency requirements for sender->receiver message delivery?
+How are you going to store messages?
+What operations does this data store need to support?
+What operations is it optimized for?
+How do you push new messages to clients? Do you push at all, or rely on a pull based model?
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO What's your own familiar area? expertise?                   :noexport:
+* TODO What Complex products you have designed before?             :noexport:
+Reflect on your projects: Think about the projects you've built. What was easy, and what was difficult?
+
+List your projects
+List good improvements/tech challenges/open issues
+* TODO How to structurally analyize a product                      :noexport:
+- Feature/Use case
+- How to avoid abuse?
+- How to support different version?
+- Upgrade workflow

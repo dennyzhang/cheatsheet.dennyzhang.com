@@ -22,7 +22,7 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 
-- [[https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4][CheatSheet: 30 Common Code Problems & Follow-ups]]
+- [[https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4][CheatSheet: Common Code Problems & Follow-ups]]
 ** Top 25 Code Templates
 | Num | Category/Tag                       | Example                                                       |
 |-----+------------------------------------+---------------------------------------------------------------|
@@ -49,8 +49,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  21 | [[https://code.dennyzhang.com/review-twopointer][#twopointer]], [[https://code.dennyzhang.com/tag/mergetwolist][#mergetwolist]]         | [[https://code.dennyzhang.com/merge-sorted-array][Leetcode: Merge Sorted Array]]                                  |
 |  22 | [[https://code.dennyzhang.com/review-topologicalsort][#topologicalsort]]                   | [[https://code.dennyzhang.com/course-schedule][Leetcode: Course Schedule]]                                     |
 |  23 | [[https://code.dennyzhang.com/review-bfs][#bfs]], [[https://code.dennyzhang.com/review-bfs][bidirectional bfs]]            | [[https://code.dennyzhang.com/word-ladder][Leetcode: Word Ladder]]                                         |
-|  24 | [[https://code.dennyzhang.com/review-divideconquer][#divideconquer]], [[https://code.dennyzhang.com/review-recursive][#recursive]]         |                                                               |
-|  25 |                                    |                                                               |
+|  24 | [[https://code.dennyzhang.com/tag/monotonicfunc][#monotonicfunc]], [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]      | [[https://code.dennyzhang.com/kth-smallest-number-in-multiplication-table][Leetcode: Kth Smallest Number in Multiplication Table]]         |
+|  25 | [[https://code.dennyzhang.com/review-divideconquer][#divideconquer]], [[https://code.dennyzhang.com/review-recursive][#recursive]]         |                                                               |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Top 25 Graph Problems
@@ -92,29 +92,34 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
 
-** Top 5 Binarysearch Problems
-| Num | Problem                             | Category/Tag  | Summary                                                                |
-|-----+-------------------------------------+---------------+------------------------------------------------------------------------|
-|   1 | Search Insert Position              | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]] | [[https://code.dennyzhang.com/search-insert-position][Leetcode: Search Insert Position]], [[https://code.dennyzhang.com/time-based-key-value-store][Leetcode: Time Based Key-Value Store]] |
-|   2 | Find the first true                 | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]] | [[https://code.dennyzhang.com/first-bad-version][Leetcode: First Bad Version]]                                            |
-|   3 | Find the last true                  | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]] |                                                                        |
-|   4 | Binary search on monotonic function | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]] |                                                                        |
-|   5 |                                     | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]] |                                                                        |
+** Top 10 Binarysearch Problems
+| Num | Problem                                                  | Category/Tag                  | Summary                                                                |
+|-----+----------------------------------------------------------+-------------------------------+------------------------------------------------------------------------|
+|   1 | Search Insert Position                                   | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]                 | [[https://code.dennyzhang.com/search-insert-position][Leetcode: Search Insert Position]], [[https://code.dennyzhang.com/time-based-key-value-store][Leetcode: Time Based Key-Value Store]] |
+|   2 | Find the first true                                      | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]                 | [[https://code.dennyzhang.com/first-bad-version][Leetcode: First Bad Version]]                                            |
+|   3 | Find the last true                                       | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]                 |                                                                        |
+|   4 | Binary search on monotonic function                      | [[https://code.dennyzhang.com/tag/monotonicfunc][#monotonicfunc]], [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]] | [[https://code.dennyzhang.com/sqrtx][Leetcode: Sqrt(x)]], [[https://code.dennyzhang.com/capacity-to-ship-packages-within-d-days][Leetcode: Capacity To Ship Packages Within D Days]]   |
+|   5 | Place k elements such that minimum distance is maximized | [[https://code.dennyzhang.com/tag/monotonicfunc][#monotonicfunc]], [[https://code.dennyzhang.com/tag/float][#float]]        | [[https://code.dennyzhang.com/minimize-max-distance-to-gas-station][Leetcode: Minimize Max Distance to Gas Station]]                         |
+|   6 | Missing Element in Sorted Array                          | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]                 | [[https://code.dennyzhang.com/missing-element-in-sorted-array][Leetcode: Missing Element in Sorted Array]]                              |
+|   7 | Kth Smallest Number in Multiplication Table              | [[https://code.dennyzhang.com/tag/monotonicfunc][#monotonicfunc]], [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]] | [[https://code.dennyzhang.com/kth-smallest-number-in-multiplication-table][Leetcode: Kth Smallest Number in Multiplication Table]]                  |
 #+TBLFM: $1=@-1$1+1;N
 
-** Top 10 Dynamic Programming Problems
-| Num | Problem                                       | Time Complexity | Category/Tag                             | Summary                                   |
-|-----+-----------------------------------------------+-----------------+------------------------------------------+-------------------------------------------|
-|   1 | [[https://en.wikipedia.org/wiki/Maximum_subarray_problem][Maximum subarray problem]] - [[https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm][Kadane's algorithm]] | O(n)            | [[https://code.dennyzhang.com/followup-maxsubarraysum][#maxsubarraysum]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]     | [[https://code.dennyzhang.com/maximum-subarray][Leetcode: Maximum Subarray]]                |
-|   2 | [[https://en.wikipedia.org/wiki/Longest_increasing_subsequence][LIS - Longest increasing subsequence]]          | O(n)            | [[https://code.dennyzhang.com/followup-lis][#lis]], [[https://code.dennyzhang.com/review-string][#string]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]       | [[https://code.dennyzhang.com/longest-increasing-subsequence][Leetcode: Longest Increasing Subsequence]]  |
-|   3 | [[https://en.wikipedia.org/wiki/Longest_common_subsequence_problem][LCS - Longest Common Subsequence]]              | O(n*m)          | [[https://code.dennyzhang.com/followup-lcs][#lcs]], [[https://code.dennyzhang.com/followup-editdistance][#editdistance]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]] | [[https://code.dennyzhang.com/longest-common-subsequence][Leetcode: Longest Common Subsequence]]      |
-|   4 | LPS - Longest Palindromic Subsequence         | O(n)            | [[https://code.dennyzhang.com/review-palindrome][#palindrome]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]         | [[https://code.dennyzhang.com/longest-palindromic-subsequence][Leetcode: Longest Palindromic Subsequence]] |
-|   5 | [[https://en.wikipedia.org/wiki/Longest_palindromic_substring][Longest Palindromic Substring]]                 | O(n^2)/O(n)     | [[https://code.dennyzhang.com/review-palindrome][#palindrome]],[[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]          | [[https://code.dennyzhang.com/longest-palindromic-substring][Leetcode: Longest Palindromic Substring]]   |
-|   6 | [[https://en.wikipedia.org/wiki/Edit_distance][Edit distance of two strings]]                  | O(n^2)          | [[https://code.dennyzhang.com/followup-editdistance][#editdistance]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]       | [[https://code.dennyzhang.com/edit-distance][Leetcode: Edit Distance]]                   |
-|   7 | Maximum profits with certain costs            | O(n^2)          | [[https://code.dennyzhang.com/followup-maxprofitwithcost][#maxprofitwithcost]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]  | [[https://code.dennyzhang.com/4-keys-keyboard][Leetcode: 4 Keys Keyboard]]                 |
-|   8 | Regular Expression Matching                   | O(n*m)          | [[https://code.dennyzhang.com/followup-editdistance][#editdistance]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]       | [[https://code.dennyzhang.com/regular-expression-matching][Leetcode: Regular Expression Matching]]     |
-|   9 | Count of distinct subsequence                 | O(n)            | [[https://code.dennyzhang.com/followup-countdistinctmoves][#countdistinctmoves]], [[https://code.dennyzhang.com/followup-hashmap][#hashmap]]            | [[https://code.dennyzhang.com/distinct-subsequences-ii][Leetcode: Distinct Subsequences II]]        |
-|  10 | Count out of boundary paths in a 2D matrix    | O(n*m*N)        | [[https://code.dennyzhang.com/followup-countdistinctmoves][#countdistinctmoves]], [[https://code.dennyzhang.com/review-bfs][#bfs]]                | [[https://code.dennyzhang.com/out-of-boundary-paths][Leetcode: Out of Boundary Paths]]           |
+** Top 15 Dynamic Programming Problems
+| Num | Problem                                       | Time Complexity | Category/Tag                             | Summary                                          |
+|-----+-----------------------------------------------+-----------------+------------------------------------------+--------------------------------------------------|
+|   1 | [[https://en.wikipedia.org/wiki/Maximum_subarray_problem][Maximum subarray problem]] - [[https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm][Kadane's algorithm]] | O(n)            | [[https://code.dennyzhang.com/followup-maxsubarraysum][#maxsubarraysum]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]     | [[https://code.dennyzhang.com/maximum-subarray][Leetcode: Maximum Subarray]]                       |
+|   2 | [[https://en.wikipedia.org/wiki/Longest_increasing_subsequence][LIS - Longest increasing subsequence]]          | O(n)            | [[https://code.dennyzhang.com/followup-lis][#lis]], [[https://code.dennyzhang.com/review-string][#string]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]       | [[https://code.dennyzhang.com/longest-increasing-subsequence][Leetcode: Longest Increasing Subsequence]]         |
+|   3 | [[https://en.wikipedia.org/wiki/Longest_common_subsequence_problem][LCS - Longest Common Subsequence]]              | O(n*m)          | [[https://code.dennyzhang.com/followup-lcs][#lcs]], [[https://code.dennyzhang.com/followup-editdistance][#editdistance]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]] | [[https://code.dennyzhang.com/longest-common-subsequence][Leetcode: Longest Common Subsequence]]             |
+|   4 | LPS - Longest Palindromic Subsequence         | O(n)            | [[https://code.dennyzhang.com/review-palindrome][#palindrome]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]         | [[https://code.dennyzhang.com/longest-palindromic-subsequence][Leetcode: Longest Palindromic Subsequence]]        |
+|   5 | [[https://en.wikipedia.org/wiki/Longest_palindromic_substring][Longest Palindromic Substring]]                 | O(n^2)/O(n)     | [[https://code.dennyzhang.com/review-palindrome][#palindrome]],[[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]          | [[https://code.dennyzhang.com/longest-palindromic-substring][Leetcode: Longest Palindromic Substring]]          |
+|   6 | [[https://en.wikipedia.org/wiki/Edit_distance][Edit distance of two strings]]                  | O(n^2)          | [[https://code.dennyzhang.com/followup-editdistance][#editdistance]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]       | [[https://code.dennyzhang.com/edit-distance][Leetcode: Edit Distance]]                          |
+|   7 | Maximum profits with certain costs            | O(n^2)          | [[https://code.dennyzhang.com/followup-maxprofitwithcost][#maxprofitwithcost]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]  | [[https://code.dennyzhang.com/4-keys-keyboard][Leetcode: 4 Keys Keyboard]]                        |
+|   8 | Regular Expression Matching                   | O(n*m)          | [[https://code.dennyzhang.com/followup-editdistance][#editdistance]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]       | [[https://code.dennyzhang.com/regular-expression-matching][Leetcode: Regular Expression Matching]]            |
+|   9 | Count of distinct subsequence                 | O(n)            | [[https://code.dennyzhang.com/followup-countdistinctmoves][#countdistinctmoves]], [[https://code.dennyzhang.com/followup-hashmap][#hashmap]]            | [[https://code.dennyzhang.com/distinct-subsequences-ii][Leetcode: Distinct Subsequences II]]               |
+|  10 | Count out of boundary paths in a 2D matrix    | O(n*m*N)        | [[https://code.dennyzhang.com/followup-countdistinctmoves][#countdistinctmoves]], [[https://code.dennyzhang.com/review-bfs][#bfs]]                | [[https://code.dennyzhang.com/out-of-boundary-paths][Leetcode: Out of Boundary Paths]]                  |
+|  11 | Get two subset with the same sum              | O(n*s)          | [[https://code.dennyzhang.com/review-knapsack][#knapsack]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]           | [[https://code.dennyzhang.com/tallest-billboard][Leetcode: Tallest Billboard]]                      |
+|  12 | Multiple choices for each step                | O(n*m)          | [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]                      | [[https://code.dennyzhang.com/filling-bookcase-shelves][Leetcode: Filling Bookcase Shelves]]               |
+|  13 | DP breaks down into 2 subproblems             | O(n*n*n)        | [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]                      | [[https://code.dennyzhang.com/minimum-score-triangulation-of-polygon][Leetcode: Minimum Score Triangulation of Polygon]] |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Top 10 BinaryTree Problems
@@ -138,14 +143,15 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   5 |                              |                                    |                          |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 10 Math Problems
-| Num | Problem                                 | Category/Tag | Summary                                    |
-|-----+-----------------------------------------+--------------+--------------------------------------------|
-|   1 | Check prime - [[https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes][Sieve of Eratosthenes]]     | [[https://code.dennyzhang.com/tag/prime][#prime]]       | [[https://code.dennyzhang.com/count-primes][Leetcode: Count Primes]]                     |
-|   2 | Check leap year                         | [[https://code.dennyzhang.com/tag/leapyear][#leapyear]]    | [[https://code.dennyzhang.com/day-of-the-week][Leetcode: Day of the Week]]                  |
-|   3 | gcd                                     | [[https://code.dennyzhang.com/review-gcd][#gcd]]         |                                            |
-|   4 | Rectangle                               | [[https://code.dennyzhang.com/review-rectangle][#rectangle]]   |                                            |
-|   5 | Rotate Array by k steps                 | [[https://code.dennyzhang.com/tag/rotatelist][#rotatelist]]  | [[https://code.dennyzhang.com/rotate-array][Leetcode: Rotate Array]]                     |
-|   6 | Mapping data range of getRand algorithm | [[https://code.dennyzhang.com/review-random][#random]]      | [[https://code.dennyzhang.com/implement-rand10-using-rand7][Leetcode: Implement Rand10() Using Rand7()]] |
+| Num | Problem                                 | Category/Tag | Summary                                        |
+|-----+-----------------------------------------+--------------+------------------------------------------------|
+|   1 | Check prime - [[https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes][Sieve of Eratosthenes]]     | [[https://code.dennyzhang.com/tag/prime][#prime]]       | [[https://code.dennyzhang.com/count-primes][Leetcode: Count Primes]]                         |
+|   2 | Check leap year                         | [[https://code.dennyzhang.com/tag/leapyear][#leapyear]]    | [[https://code.dennyzhang.com/day-of-the-week][Leetcode: Day of the Week]]                      |
+|   3 | gcd                                     | [[https://code.dennyzhang.com/review-gcd][#gcd]]         |                                                |
+|   4 | Rectangle                               | [[https://code.dennyzhang.com/review-rectangle][#rectangle]]   |                                                |
+|   5 | Rotate Array by k steps                 | [[https://code.dennyzhang.com/tag/rotatelist][#rotatelist]]  | [[https://code.dennyzhang.com/rotate-array][Leetcode: Rotate Array]]                         |
+|   6 | Mapping data range of getRand algorithm | [[https://code.dennyzhang.com/review-random][#random]]      | [[https://code.dennyzhang.com/implement-rand10-using-rand7][Leetcode: Implement Rand10() Using Rand7()]]     |
+|   7 | Deal with float                         | [[https://code.dennyzhang.com/tag/float][#float]]       | [[https://code.dennyzhang.com/minimize-max-distance-to-gas-station][Leetcode: Minimize Max Distance to Gas Station]] |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Top 5 Greedy Problems
@@ -202,9 +208,9 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  40 | Use more space to save time                          | [[https://code.dennyzhang.com/review-stack][#stack]]                            | [[https://code.dennyzhang.com/min-stack][Leetcode: Min Stack]]                                                          |
 |  41 | Min max game problems                                | [[https://code.dennyzhang.com/review-minmax][#minmax]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]      | [[https://code.dennyzhang.com/predict-the-winner][Leetcode: Predict the Winner]], [[https://code.dennyzhang.com/stone-game][Leetcode: Stone Game]]                           |
 |  42 | Shortest Subarray with Sum at Least K                | [[https://code.dennyzhang.com/review-monotone][#monotone]]                         | [[https://code.dennyzhang.com/shortest-subarray-with-sum-at-least-k][Leetcode: Shortest Subarray with Sum at Least K]]                              |
-|  43 |                                                      |                                   | [[https://en.wikipedia.org/wiki/Travelling_salesman_problem][Travelling salesman problem]]                                                  |
-|  44 |                                                      |                                   | [[https://code.dennyzhang.com/remove-duplicates-from-sorted-array-ii][Leetcode: Remove Duplicates from Sorted Array II]]                             |
-|  45 |                                                      |                                   |                                                                              |
+|  43 | Wiggle sort                                          |                                   | [[https://code.dennyzhang.com/wiggle-sort-ii][Leetcode: Wiggle Sort II]]                                                     |
+|  44 |                                                      |                                   | [[https://en.wikipedia.org/wiki/Travelling_salesman_problem][Travelling salesman problem]]                                                  |
+|  45 |                                                      |                                   | [[https://code.dennyzhang.com/remove-duplicates-from-sorted-array-ii][Leetcode: Remove Duplicates from Sorted Array II]]                             |
 |  46 |                                                      |                                   |                                                                              |
 |  47 |                                                      |                                   |                                                                              |
 #+TBLFM: $1=@-1$1+1;N
@@ -212,6 +218,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
+** Basic Thinking Methodologies
+| Num | Name                                                    | Summary |
+|-----+---------------------------------------------------------+---------|
+|   1 | [[https://en.wikipedia.org/wiki/Trial_and_error][Trial and error]]                                         |         |
+|   2 | Divide and Conquer                                      |         |
+|   3 | Start with naive algorithm, then identify useless steps |         |
+#+TBLFM: $1=@-1$1+1;N
 ** Tips: Think From The Other Direction
 | Num | Name                                                     | Summary                                |
 |-----+----------------------------------------------------------+----------------------------------------|
@@ -275,21 +288,23 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | [[https://www.geeksforgeeks.org/inverted-index/][Inverted Index]] |         |
 
 ** Resource For Code Problems
-| Name                 | Summary                                                                                  |
-|----------------------+------------------------------------------------------------------------------------------|
-| Leetcode summary     | [[https://leetcode.com/problemset/top-google-questions/][Link: Top Google Questions]], [[https://leetcode.com/problemset/top-100-liked-questions/][Link: Top 100 Liked Questions]], [[https://leetcode.com/problemset/top-interview-questions/][Link: Top Interview Questions]] |
-| Leetcode summary     | [[https://github.com/kdn251/interviews][GitHub: kdn251/interviews]], [[https://github.com/liyin2015/Algorithms-and-Coding-Interviews][Github: Algorithms-and-Coding-Interviews]]                      |
-|----------------------+------------------------------------------------------------------------------------------|
-| Leetcoder on YouTube | [[https://www.youtube.com/channel/UCUBt1TDQTl1atYsscVoUzoQ/videos][lee 215]], [[https://www.youtube.com/channel/UCDVYMs-SYiJxhIU2T0e7gzw/videos][Aoxiang Cui]], [[https://www.youtube.com/channel/UCamg61pfZpRnTp5-L4XEM1Q][happygirlzt]]                                                        |
-| Online test websites | [[https://www.spoj.com][spoj.com]], [[https://codingcompetitions.withgoogle.com/codejam/schedule][Google - codejam]], [[https://www.hackerrank.com][hackerrank.com]], [[https://www.hackerrank.com/domains/algorithms?filters%5Bdifficulty%5D%5B%5D=hard&filters%5Bstatus%5D%5B%5D=unsolved][hackerrank - hard]], [[https://codeforces.com][codeforces.com]], [[http://poj.org/][poj.org]]   |
-| Online test websites | [[http://acm.hdu.edu.cn/][acm.hdu.edu.cn]], [[http://acm.zju.edu.cn/onlinejudge/][acm.zju.edu.cn]], [[http://acm.timus.ru][acm.timus.ru]], [[https://uva.onlinejudge.org][uva.onlinejudge.org]]                        |
-| [[https://visualgo.net/en][visualgo]]             | visualising data structures and algorithms through animation                             |
-| Reference            | [[https://www.geeksforgeeks.org][geeksforgeeks.org]], [[https://www.youtube.com/channel/UCZCFT11CWBi3MHNlGf019nw][Youtube: Abdul Bari - Algorithm]]                                       |
+| Name                 | Summary                                                                                          |
+|----------------------+--------------------------------------------------------------------------------------------------|
+| Leetcode summary     | [[https://leetcode.com/problemset/top-google-questions/][Link: Top Google Questions]], [[https://leetcode.com/problemset/top-100-liked-questions/][Link: Top 100 Liked Questions]], [[https://leetcode.com/problemset/top-interview-questions/][Link: Top Interview Questions]]         |
+| Leetcode summary     | [[https://github.com/kdn251/interviews][GitHub: kdn251/interviews]], [[https://github.com/liyin2015/Algorithms-and-Coding-Interviews][Github: Algorithms-and-Coding-Interviews]]                              |
+|----------------------+--------------------------------------------------------------------------------------------------|
+| YouTube              | [[https://www.youtube.com/watch?v=XKu_SEDAykw][How to: Work at Google - Example Coding/Engineering Interview]], [[https://www.youtube.com/channel/UCUBt1TDQTl1atYsscVoUzoQ/videos][lee 215]], [[https://www.youtube.com/channel/UCDVYMs-SYiJxhIU2T0e7gzw/videos][Aoxiang Cui]], [[https://www.youtube.com/channel/UCamg61pfZpRnTp5-L4XEM1Q][happygirlzt]] |
+| Online test websites | [[https://codeforces.com][codeforces.com]], [[https://www.spoj.com][spoj.com]], [[https://codingcompetitions.withgoogle.com/codejam/schedule][Google - codejam]], [[https://www.hackerrank.com][hackerrank.com]], [[https://www.hackerrank.com/domains/algorithms?filters%5Bdifficulty%5D%5B%5D=hard&filters%5Bstatus%5D%5B%5D=unsolved][hackerrank - hard]], [[http://poj.org/][poj.org]]           |
+| Online test websites | [[http://acm.hdu.edu.cn/][acm.hdu.edu.cn]], [[http://acm.zju.edu.cn/onlinejudge/][acm.zju.edu.cn]], [[http://acm.timus.ru][acm.timus.ru]], [[https://uva.onlinejudge.org][uva.onlinejudge.org]]                                |
+| [[https://visualgo.net/en][visualgo]]             | visualising data structures and algorithms through animation                                     |
+| Reference            | [[https://www.geeksforgeeks.org][geeksforgeeks.org]], [[https://www.youtube.com/channel/UCZCFT11CWBi3MHNlGf019nw][Youtube: Abdul Bari - Algorithm]]                                               |
+| Reference            | [[https://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures.php][COS 423 Theory of Algorithms]]                                                                     |
 
 ** Resource For Code Problems - In Chinese                         :noexport:
-| Name      | Summary                                  |
-|-----------+------------------------------------------|
-| Reference | [[https://github.com/imhuay/Algorithm_Interview_Notes-Chinese/tree/master/C-算法][Algorithm_Interview_Notes-Chinese/C-算法]] |
+| Name      | Summary                                    |
+|-----------+--------------------------------------------|
+| Reference | [[https://github.com/imhuay/Algorithm_Interview_Notes-Chinese/tree/master/C-算法][Algorithm_Interview_Notes-Chinese/C-算法]]   |
+| Reference | [[https://www.kancloud.cn/kancloud/data-structure-and-algorithm-notes/72897][Link: 数据结构与算法/leetcode/lintcode题解]] |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -336,12 +351,26 @@ https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/
 * TODO [#A] 刷题进阶Tips--分享给那些有刷题经验或工作经验的人: https://www.1point3acres.com/bbs/thread-289223-1-1.html :noexport:
 * TODO 谈谈coding面试的种类与基本应对策略: https://www.1point3acres.com/bbs/thread-435598-1-1.html :noexport:
 * TODO 刷题经验                                                    :noexport:
+https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=543136&extra=page=1&filter=digest&digest=1&sortid=192&digest=1&sortid=192
+刷题王的春天-'硬'闯谷歌有感|一亩三分地求职版
+
+https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=289223&extra=page%3D1%26orderby%3Dheats
+刷题进阶Tips-分享给那些有刷题经验或工作经验的人|一亩三分地刷题版
+
 https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=533799&extra=page%3D1%26filter%3Ddigest%26digest%3D1%26digest%3D1
 刷题时候的一个小经验
 
 https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=521357&extra=page%3D1%26filter%3Ddigest%26digest%3D1%26digest%3D1
 让刷题幸福感提高的一百个心得
 
+https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=433722&extra=page%3D1%26filter%3Ddigest%26digest%3D1%26digest%3D1
+谈谈面试官在面试coding题目时的考察终点与心理活动, 求大米|一亩三分地刷题版
+
+https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=435598&extra=page%3D1%26filter%3Ddigest%26digest%3D1%26digest%3D1
+谈谈coding面试的种类与基本应对策略, 欢迎其他有面试经验的人一起讨论|一亩三分地刷题版
+
+https://www.1point3acres.com/bbs/thread-97234-1-1.html
+***重磅炸弹*** Leetcode for Dummy|一亩三分地刷题版
 #+BEGIN_EXAMPLE
 1. 刷题前一个小时不要吃太多碳水化合物.饭困影响发挥
 2. 睡眠很重要.睡不好第二天你根本不想动脑刷题
@@ -387,3 +416,9 @@ https://blog.csdn.net/qq_39521554/article/details/79160815
 * TODO LeetCode难度                                                :noexport:
 https://blog.csdn.net/haimianjie2012/article/details/77899728
 LeetCode上面的题目偏基础性,基本上不考察复制的算法,很多都是对基础知识应用,难度与Topcoder div1 250或codeforces div1 A难度相当.如果想要练习编程基础或者准备面试的话,非常适合.
+* discussion                                                       :noexport:
+写题:千万不要埋头苦写,每写完一个子模块都要跟面试官说一遍写了啥,为什么这么写.我曾经还用过一个小trick:有一道原题,之前刷题的时候有一个很细节的bug,我思考了很久才想清楚为什么要这样处理.写题的时候,我想像面试官展示这个细节的精妙之处,就故意写了bug,写完这个小模块之后假装沉思一下,再一副恍然大悟的样子跟面试官说"我突然发现这样处理虽然看起来是对的,但其实有个corner case......".面试官其实根本就没注意到这有个bug,我解释了一会儿,还举了例子,他才发现这个处理的有趣之处.我相信这样他对我的印象更深刻了.
+
+主动跑test case:写完之后,不要让面试官开口,而是主动说"那么现在我写完了,让我们来跑几个test cases,看看这个算法对不对",面试官好感度立刻增加.
+
+关注公司Headcount,不到高峰期不轻易投简历
