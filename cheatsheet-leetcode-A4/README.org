@@ -96,7 +96,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Num | Problem                                                  | Category/Tag                  | Summary                                                                |
 |-----+----------------------------------------------------------+-------------------------------+------------------------------------------------------------------------|
 |   1 | Find the first true                                      | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]                 | [[https://code.dennyzhang.com/first-bad-version][Leetcode: First Bad Version]]                                            |
-|   2 | Find the last true                                       | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]                 |                                                                        |
+|   2 | Find the last true                                       | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]                 | [[https://code.dennyzhang.com/longest-repeating-substring][Leetcode: Longest Repeating Substring]]                                  |
 |   3 | Search Insert Position                                   | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]                 | [[https://code.dennyzhang.com/search-insert-position][Leetcode: Search Insert Position]], [[https://code.dennyzhang.com/time-based-key-value-store][Leetcode: Time Based Key-Value Store]] |
 |   4 | Leetcode: Random Point in Non-overlapping Rectangles     | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]                 | [[https://code.dennyzhang.com/random-point-in-non-overlapping-rectangles][Leetcode: Random Point in Non-overlapping Rectangles]]                   |
 |   5 | Binary search on monotonic function                      | [[https://code.dennyzhang.com/tag/monotonicfunc][#monotonicfunc]], [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]] | [[https://code.dennyzhang.com/sqrtx][Leetcode: Sqrt(x)]], [[https://code.dennyzhang.com/capacity-to-ship-packages-within-d-days][Leetcode: Capacity To Ship Packages Within D Days]]   |
@@ -135,13 +135,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   7 | Validate Binary Search Tree                       | [[https://code.dennyzhang.com/review-dfs][#dfs]]         | [[https://code.dennyzhang.com/validate-binary-search-tree][Leetcode: Validate Binary Search Tree]]                                 |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 5 String Problems
-| Num | Problem                      | Category/Tag                       | Summary                  |
-|-----+------------------------------+------------------------------------+--------------------------|
-|   1 | [[https://en.wikipedia.org/wiki/Edit_distance][Edit distance of two strings]] | [[https://code.dennyzhang.com/followup-editdistance][#editdistance]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]] | [[https://code.dennyzhang.com/edit-distance][Leetcode: Edit Distance]]  |
-|   2 | Remove duplicate letters     | [[https://code.dennyzhang.com/review-stack][#stack]], [[https://code.dennyzhang.com/review-greedy][#greedy]]                    | [[https://code.dennyzhang.com/remove-duplicate-letters][Remove Duplicate Letters]] |
-|   3 | Word ladder                  | [[https://code.dennyzhang.com/review-string][#string]], [[https://code.dennyzhang.com/review-bfs][#bfs]], [[https://code.dennyzhang.com/review-backtracking][#backtracking]]       | [[https://code.dennyzhang.com/word-ladder][Leetcode: Word Ladder]]    |
-|   4 |                              |                                    |                          |
-|   5 |                              |                                    |                          |
+| Num | Problem                           | Category/Tag                       | Summary                               |
+|-----+-----------------------------------+------------------------------------+---------------------------------------|
+|   1 | [[https://en.wikipedia.org/wiki/Edit_distance][Edit distance of two strings]]      | [[https://code.dennyzhang.com/followup-editdistance][#editdistance]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]] | [[https://code.dennyzhang.com/edit-distance][Leetcode: Edit Distance]]               |
+|   2 | Remove duplicate letters          | [[https://code.dennyzhang.com/review-stack][#stack]], [[https://code.dennyzhang.com/review-greedy][#greedy]]                    | [[https://code.dennyzhang.com/remove-duplicate-letters][Remove Duplicate Letters]]              |
+|   3 | Word ladder                       | [[https://code.dennyzhang.com/review-string][#string]], [[https://code.dennyzhang.com/review-bfs][#bfs]], [[https://code.dennyzhang.com/review-backtracking][#backtracking]]       | [[https://code.dennyzhang.com/word-ladder][Leetcode: Word Ladder]]                 |
+|   4 | lrs - Longest repeating substring | [[https://code.dennyzhang.com/followup-lrs][#lrs]], [[https://code.dennyzhang.com/tag/rollinghash][#rollinghash]]                 | [[https://leetcode.com/problems/longest-repeating-substring/][Leetcode: Longest Repeating Substring]] |
+|   5 |                                   |                                    |                                       |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 10 Math Problems
 | Num | Problem                                 | Category/Tag | Summary                                        |
@@ -234,38 +234,39 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   3 | Avoid deleting element from hashmaps                     |                                        |
 #+TBLFM: $1=@-1$1+1;N
 ** Common Tips For Clean Code
-| Num | Name                                                                  | Summary                                                                 |
-|-----+-----------------------------------------------------------------------+-------------------------------------------------------------------------|
-|   1 | Caculate sum of a range quickly                                       | [[https://code.dennyzhang.com/followup-presum][#presum]],[[https://code.dennyzhang.com/maximum-subarray][Leetcode: Maximum Subarray]]                                      |
-|   2 | Move in four directions for a matrix                                  | [[https://code.dennyzhang.com/sliding-puzzle][Leetcode: Sliding Puzzle]]                                                |
-|   3 | Split string by multiple seperator                                    | [[https://code.dennyzhang.com/brace-expansion][Leetcode: Brace Expansion]]                                               |
-|   4 | Add a dummy tailing element to simplify code                          | [[https://code.dennyzhang.com/brace-expansion][Leetcode: Brace Expansion]]                                               |
-|   5 | Fast slow pointers                                                    | [[https://code.dennyzhang.com/middle-of-linked-list][LintCode: Middle of Linked List]]                                         |
-|   6 | Deep copy an array                                                    | [[https://code.dennyzhang.com/combination-sum][Leetcode: Combination Sum]]                                               |
-|   7 | Use arrays instead of hashmaps, if possible                           | [[https://code.dennyzhang.com/number-of-days-in-a-month][Leetcode: Number of Days in a Month]]                                     |
-|   8 | Control the order of dfs                                              | [[https://code.dennyzhang.com/subsets-ii][Leetcode: Subsets II]]                                                    |
-|   9 | Avoid inserting into the head of an array                             | [[https://code.dennyzhang.com/path-in-zigzag-labelled-binary-tree][Leetcode: Path In Zigzag Labelled Binary Tree]]                           |
-|  10 | From right to left, instead of left to right                          | [[https://code.dennyzhang.com/merge-sorted-array][Leetcode: Merge Sorted Array]]                                            |
-|  11 | Think the other way around                                            | =Add Items= vs =Remove Items=, =Increase Counter= vs =Decrease Counter= |
-|  12 | Avoid uncessary if...else...                                          | res[i] = (diff/2 <= k), [[https://code.dennyzhang.com/can-make-palindrome-from-substring][Leetcode: Can Make Palindrome from Substring]]    |
-|  13 | To get the case of K, solve: at most K - at most (K-1)                | [[https://code.dennyzhang.com/subarrays-with-k-different-integers][Leetcode: Subarrays with K Different Integers]]                           |
-|  14 | Instead of deleting entry from hashmap, decrease counter              | [[https://code.dennyzhang.com/longest-substring-with-at-most-k-distinct-characters][Leetcode: Longest Substring with At Most K Distinct Characters]]          |
-|  15 | Find the max/min; If not found, return 0                              | [[https://code.dennyzhang.com/minimum-area-rectangle][Leetcode: Minimum Area Rectangle]]                                        |
-|  16 | With helper function vs without helper function                       | [[https://code.dennyzhang.com/longest-repeating-character-replacement][Leetcode: Longest Repeating Character Replacement]]                       |
-|  17 | Instead of adding a character, try to delete one                      | [[https://code.dennyzhang.com/longest-string-chain][Leetcode: Longest String Chain]]                                          |
-|  18 | [[https://code.dennyzhang.com/tag/roudtrippass][#roudtrippass]]: from left to right, then right to left                 | [[https://code.dennyzhang.com/shortest-distance-to-a-character][Leetcode: Shortest Distance to a Character]]                              |
-|  19 | Delayed caculation to simplify the code                               | [[https://code.dennyzhang.com/interval-list-intersections][Leetcode: Interval List Intersections]]                                   |
-|  20 | Instead of removing, add padding elements                             | [[https://code.dennyzhang.com/duplicate-zeros][Leetcode: Duplicate Zeros]]                                               |
-|  21 | Initialize array with n+1 length to simplify code                     | [[https://code.dennyzhang.com/range-addition][Leetcode: Range Addition]]                                                |
-|  22 | Look for off-by-one errors, sometimes use i+1<len(l) vs i<len(l)      | [[https://code.dennyzhang.com/previous-permutation-with-one-swap][Leetcode: Previous Permutation With One Swap]]                            |
-|  23 | Hashmap can reduce caculation, but may complicate things too          | [[https://code.dennyzhang.com/maximum-frequency-stack][Leetcode: Maximum Frequency Stack]]                                       |
-|  24 | Sliding window to get the longest size of subarray                    | [[https://code.dennyzhang.com/max-consecutive-ones-iii][Leetcode: Max Consecutive Ones III]]                                      |
-|  25 | In matrix dfs, change cell to impossible value to avoid state hashmap | [[https://code.dennyzhang.com/word-search-ii][Leetcode: Word Search II]]                                                |
-|  26 | Avoid unnecessary precheck                                            |                                                                         |
-|  27 | One pass instead of two pass                                          |                                                                         |
-|  28 | Swiping line algorithm                                                |                                                                         |
-|  29 | Add a dummy head node for linked list                                 |                                                                         |
-|  30 | Hide details which are irrelevant                                     |                                                                         |
+| Num | Name                                                                   | Summary                                                                 |
+|-----+------------------------------------------------------------------------+-------------------------------------------------------------------------|
+|   1 | Caculate sum of a range quickly                                        | [[https://code.dennyzhang.com/followup-presum][#presum]],[[https://code.dennyzhang.com/maximum-subarray][Leetcode: Maximum Subarray]]                                      |
+|   2 | Move in four directions for a matrix                                   | [[https://code.dennyzhang.com/sliding-puzzle][Leetcode: Sliding Puzzle]]                                                |
+|   3 | Split string by multiple seperator                                     | [[https://code.dennyzhang.com/brace-expansion][Leetcode: Brace Expansion]]                                               |
+|   4 | Add a dummy tailing element to simplify code                           | [[https://code.dennyzhang.com/brace-expansion][Leetcode: Brace Expansion]]                                               |
+|   5 | Fast slow pointers                                                     | [[https://code.dennyzhang.com/middle-of-linked-list][LintCode: Middle of Linked List]]                                         |
+|   6 | Deep copy an array                                                     | [[https://code.dennyzhang.com/combination-sum][Leetcode: Combination Sum]]                                               |
+|   7 | Use arrays instead of hashmaps, if possible                            | [[https://code.dennyzhang.com/number-of-days-in-a-month][Leetcode: Number of Days in a Month]]                                     |
+|   8 | Control the order of dfs                                               | [[https://code.dennyzhang.com/subsets-ii][Leetcode: Subsets II]]                                                    |
+|   9 | Avoid inserting into the head of an array                              | [[https://code.dennyzhang.com/path-in-zigzag-labelled-binary-tree][Leetcode: Path In Zigzag Labelled Binary Tree]]                           |
+|  10 | From right to left, instead of left to right                           | [[https://code.dennyzhang.com/merge-sorted-array][Leetcode: Merge Sorted Array]]                                            |
+|  11 | Think the other way around                                             | =Add Items= vs =Remove Items=, =Increase Counter= vs =Decrease Counter= |
+|  12 | Avoid uncessary if...else...                                           | res[i] = (diff/2 <= k), [[https://code.dennyzhang.com/can-make-palindrome-from-substring][Leetcode: Can Make Palindrome from Substring]]    |
+|  13 | To get the case of K, solve: at most K - at most (K-1)                 | [[https://code.dennyzhang.com/subarrays-with-k-different-integers][Leetcode: Subarrays with K Different Integers]]                           |
+|  14 | Instead of deleting entry from hashmap, decrease counter               | [[https://code.dennyzhang.com/longest-substring-with-at-most-k-distinct-characters][Leetcode: Longest Substring with At Most K Distinct Characters]]          |
+|  15 | Find the max/min; If not found, return 0                               | [[https://code.dennyzhang.com/minimum-area-rectangle][Leetcode: Minimum Area Rectangle]]                                        |
+|  16 | With helper function vs without helper function                        | [[https://code.dennyzhang.com/longest-repeating-character-replacement][Leetcode: Longest Repeating Character Replacement]]                       |
+|  17 | Instead of adding a character, try to delete one                       | [[https://code.dennyzhang.com/longest-string-chain][Leetcode: Longest String Chain]]                                          |
+|  18 | [[https://code.dennyzhang.com/tag/roudtrippass][#roudtrippass]]: from left to right, then right to left                  | [[https://code.dennyzhang.com/shortest-distance-to-a-character][Leetcode: Shortest Distance to a Character]]                              |
+|  19 | Delayed caculation to simplify the code                                | [[https://code.dennyzhang.com/interval-list-intersections][Leetcode: Interval List Intersections]]                                   |
+|  20 | Instead of removing, add padding elements                              | [[https://code.dennyzhang.com/duplicate-zeros][Leetcode: Duplicate Zeros]]                                               |
+|  21 | Initialize array with n+1 length to simplify code                      | [[https://code.dennyzhang.com/range-addition][Leetcode: Range Addition]]                                                |
+|  22 | Look for off-by-one errors, sometimes use i+1<len(l) vs i<len(l)       | [[https://code.dennyzhang.com/previous-permutation-with-one-swap][Leetcode: Previous Permutation With One Swap]]                            |
+|  23 | Hashmap can reduce caculation, but may complicate things too           | [[https://code.dennyzhang.com/maximum-frequency-stack][Leetcode: Maximum Frequency Stack]]                                       |
+|  24 | Sliding window to get the longest size of subarray                     | [[https://code.dennyzhang.com/max-consecutive-ones-iii][Leetcode: Max Consecutive Ones III]]                                      |
+|  25 | In matrix dfs, change cell to impossible value to avoid state hashmap  | [[https://code.dennyzhang.com/word-search-ii][Leetcode: Word Search II]]                                                |
+|  26 | For palindrome check, check the whole string, instead of the left half | [[https://code.dennyzhang.com/longest-chunked-palindrome-decomposition][Leetcode: Longest Chunked Palindrome Decomposition]]                      |
+|  27 | Avoid unnecessary precheck                                             |                                                                         |
+|  28 | One pass instead of two pass                                           |                                                                         |
+|  29 | Swiping line algorithm                                                 |                                                                         |
+|  30 | Add a dummy head node for linked list                                  |                                                                         |
+|  31 | Hide details which are irrelevant                                      |                                                                         |
 #+TBLFM: $1=@-1$1+1;N
 ** Golang Tips
 | Name                                              | Summary                                                                                        |

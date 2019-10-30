@@ -22,26 +22,40 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 
-** Key Points Of System Design
-| Num | Name                                                    | Summary                                              |
-|-----+---------------------------------------------------------+------------------------------------------------------|
-|   1 | The questions you asked define your level               | Clarification; Painpoints; Key Points                |
-|   2 | What are the key trade-off? And your pros/cons analysis |                                                      |
-|   3 | Enage the discussion as a two-way conversation          | Enable interviewers to feel part of the conversations |
+** Process Of System Design
+| Num | Name                                         | Summary                                               |
+|-----+----------------------------------------------+-------------------------------------------------------|
+|   1 | List use cases: List major and focus on some | Good sense. The questions you asked define your level |
+|   2 | Understand scale: *Data* + *Traffic*         | Estimate the volume of the problem space              |
+|   3 | Abstract design                              |                                                       |
+|   4 | Bottlenecks: *Key challenges* + *Trade-Offs* | Valid reasoning is the key                            |
+|   5 | Scale your design                            |                                                       |
 #+TBLFM: $1=@-1$1+1;N
 
-** Resources
-| Name                 | Summary                                                                           |
-|----------------------+-----------------------------------------------------------------------------------|
-| Website              | [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: system-design-primer]], [[https://interviewing.io][Website: interviewing.io]], [[https://www.interviewbit.com/courses/system-design/][Website: interviewbit.com]] |
-| Website              | [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]], [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube: Success in Tech]]                    |
-| Website              | [[https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/][Link: Preparing for your Software Engineering Interview at Facebook]]               |
-| Compnay Tech Blog    | [[https://www.facebook.com/pg/Engineering/notes/][Website: Facebook Engineering]], [[https://developers.googleblog.com][Website: Google Developers]]                         |
-| Compnay Tech Blog    | [[https://medium.com/netflix-techblog][Medium: Netflix Blog]], [[https://medium.com/airbnb-engineering][Medium: Airbnb Engineering & Data Science]]                   |
-| Individual Tech Blog | [[https://www.allthingsdistributed.com][Blog: All Things Distributed - Amazon CTO]], [[http://highscalability.com/][Blog: highscalability]]                  |
-| Cheatsheet           | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Code Interview]]         |
-| Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]                                           |
-| Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                                |
+** Engineering Of Well-Known Products
+| Name          | Summary                                                  |
+|---------------+----------------------------------------------------------|
+| Google        | [[http://highscalability.com/google-architecture][Link: Google Architecture]]                                |
+| Facebook      | [[http://highscalability.com/blog/2016/6/27/how-facebook-live-streams-to-800000-simultaneous-viewers.html][Link: Facebook Live Streams]]                              |
+| Twitter       | [[http://highscalability.com/blog/2016/4/20/how-twitter-handles-3000-images-per-second.html][Link: Twitter Image Service]], [[https://www.infoq.com/presentations/Twitter-Timeline-Scalability/][YouTube: Timelines at Scale]] |
+| Uber          | [[http://highscalability.com/blog/2016/10/12/lessons-learned-from-scaling-uber-to-2000-engineers-1000-ser.html][Link: Lessons Learned From Scaling Uber]]                  |
+| Tumblr        | [[http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html][Link: Tumblr Architecture]]                                |
+| StackOverflow | [[http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html][Link: Stack Overflow Architecture]]                        |
+
+** Engineering Blogs/Websites
+| Name                 | Summary                                                                        |
+|----------------------+--------------------------------------------------------------------------------|
+| Compnay Tech Blog    | [[https://www.facebook.com/pg/Engineering/notes/][Website: Facebook Engineering]], [[https://developers.googleblog.com][Website: Google Developers]]                      |
+| Compnay Tech Blog    | [[https://medium.com/netflix-techblog][Medium: Netflix Blog]], [[https://medium.com/airbnb-engineering][Medium: Airbnb Engineering & Data Science]]                |
+| Individual Tech Blog | [[https://www.allthingsdistributed.com][Blog: All Things Distributed - Amazon CTO]], [[http://highscalability.com/][Blog: highscalability]]               |
+| Website              | [[https://interviewing.io][Website: interviewing.io]], [[https://www.interviewbit.com/courses/system-design/][Website: interviewbit.com]]                            |
+| Website              | [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]], [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: system-design-primer]]             |
+| YouTube              | [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube Channel: Success in Tech]], [[https://www.youtube.com/watch?v=-W9F__D3oY4&feature=youtu.be][YouTube: Scalability Harvard Web Development]] |
+| Reference            | [[https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/][Link: Preparing for your Software Engineering Interview at Facebook]]            |
+| Reference            | [[https://www.hiredintech.com/classrooms/system-design/lesson/55][Link: The System Design Process]]                                                |
+| Cheatsheet           | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Code Interview]]      |
+| Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]                                        |
+| Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                             |
 
 #+BEGIN_HTML
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
@@ -80,17 +94,18 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+END_HTML
 
 ** Classic Design Problems - Design Technical Modules
-| Num | Name                                                       | Summary |
-|-----+------------------------------------------------------------+---------|
-|   1 | Design a distributed UUID generator                        |         |
-|   2 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 |         |
-|   3 | Design a stack supporting push/pop/getmin/getmostfrequent  |         |
-|   4 | Implement a timer                                          |         |
-|   5 | Thread-safe Hashmap                                        |         |
-|   6 | Top URL hits                                               |         |
-|   7 | Unique url hits                                            |         |
-|   8 | Delayed task scheduling                                    |         |
-|   9 | Design a client-server API to build a rich document editor |         |
+| Num | Name                                                       | Summary    |
+|-----+------------------------------------------------------------+------------|
+|   1 | Design a distributed UUID generator                        |            |
+|   2 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 | [[https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/][link]], [[https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/][link]] |
+|   3 | Design a circuit breaker                                   |            |
+|   4 | Design a stack supporting push/pop/getmin/getmostfrequent  |            |
+|   5 | Implement a timer                                          |            |
+|   6 | Thread-safe Hashmap                                        |            |
+|   7 | Top URL hits                                               |            |
+|   8 | Unique url hits                                            |            |
+|   9 | Delayed task scheduling                                    |            |
+|  10 | Design a client-server API to build a rich document editor |            |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Classic Design Problems - Explain workflow: What happens when XXX?
@@ -101,6 +116,9 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   3 | Explain three phase commit model      |                             |
 |   4 | Explain HTTP return code              | 301 vs 302, 401 vs 403, etc |
 |   5 | Explain mysql DB replication model    |                             |
+|   6 | Explain Mysql replication mechanism   |                             |
+|   7 | Explain gossip protocol               |                             |
+|   8 | Explain CAP                           |                             |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Classic Design Problems - Explain tools: how XXX supports XXX?
@@ -122,10 +140,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+TBLFM: $1=@-1$1+1;N
 
 ** Grow Design Expertise In Daily Work
-| Num | Summary                                                                          |
-|-----+----------------------------------------------------------------------------------|
-|   1 | Think through the complicated, high-scale systems that you already use every day |
-|   2 | Read engineering blogs of big companies                                          |
+| Num | Summary                                                                                                  |
+|-----+----------------------------------------------------------------------------------------------------------|
+|   1 | Think through the complicated, high-scale systems that you already use every day                         |
+|   2 | Read engineering blogs of big companies                                                                  |
+|   3 | For common tools/frameworks, understand behind the hook                                                  |
+|   4 | Try tools. What problem it solves, what its alternatives are, and what some common pros and cons may be. |
+|   5 | Keep researching the alternatives to a technology. e.g, rabbitmq vs kafaka, memcached vs redis           |
 #+TBLFM: $1=@-1$1+1;N
 
 ** More Resources
@@ -206,3 +227,23 @@ List good improvements/tech challenges/open issues
 - How to avoid abuse?
 - How to support different version?
 - Upgrade workflow
+* TODO https://github.com/shishan100/Java-Interview-Advanced       :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO cross dataset sync                                          :noexport:
+* TODO Read links                                                  :noexport:
+http://highscalability.com/blog/2011/11/29/datasift-architecture-realtime-datamining-at-120000-tweets-p.html
+https://www.youtube.com/watch?v=w5WVu624fY8
+https://www.youtube.com/watch?v=5cKTP36HVgI
+http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html
+http://highscalability.com/blog/2013/9/23/salesforce-architecture-how-they-handle-13-billion-transacti.html
+http://highscalability.com/plentyoffish-architecture
+http://highscalability.com/blog/2016/6/15/the-image-optimization-technology-that-serves-millions-of-re.html
+http://highscalability.com/blog/2017/10/23/one-model-at-a-time-integrating-and-running-deep-learning-mo.html
+http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html
+* TODO Scalability for Dummies                                     :noexport:
+https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones
+https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database
+https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache
+https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism
+* Understand big IT corps in US                                    :noexport:
+https://www.1point3acres.com/bbs/thread-169418-1-1.html
