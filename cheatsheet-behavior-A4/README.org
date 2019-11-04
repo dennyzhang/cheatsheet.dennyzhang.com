@@ -18,7 +18,7 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/cheatsheet-behavior-A4.pdf][cheatsheet-behavior-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Code Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 
@@ -244,15 +244,15 @@ Know yourself: Take the time to review your own resume as your interviewer will 
 * TODO questions                                                   :noexport:
 https://www.1point3acres.com/bbs/thread-560499-1-1.html
 面狗家的下面必看啊（怕惹麻烦所以加个隐藏）
-以前狗家5轮都是coding或者system design（除非你面的是manager）。大约半年前加了一个behavioral and leaderhsip round，所以如果你是L3，你会有4轮coding和一个BQ。但是HR好像没有给很多hint怎么准备。题目无非就是你讲故事，或者问你这个情况你会怎么做。大家不要误会那个leadership是要怎么管理别人。老美的leadership含义很广，对L3/4/5来说，leadership其实是怎么管理自己-自己的项目，进度，成长，沟通等等。Behavioral那都是common sense了，team work什么的。
+以前狗家5轮都是coding或者system design（除非你面的是manager）.大约半年前加了一个behavioral and leaderhsip round,所以如果你是L3,你会有4轮coding和一个BQ.但是HR好像没有给很多hint怎么准备.题目无非就是你讲故事,或者问你这个情况你会怎么做.大家不要误会那个leadership是要怎么管理别人.老美的leadership含义很广,对L3/4/5来说,leadership其实是怎么管理自己-自己的项目,进度,成长,沟通等等.Behavioral那都是common sense了,team work什么的.
 
-亚麻的那个军规16条很好，可以做基础。狗家自己特别的是：
-- 你得能管理自己的项目和进度，能够prioritize自己的项目。根据什么标准prioritize？你自己的喜好吗？亚麻军规里其实有，我不敢说的太明了。其实都是common sense
-- 需求不明确怎么办？你会自己想办法吗？还是依赖别人？Project的需求总在变，你会撂摊子不干了，或者抱怨连天吗？
-- 亚麻里有个having backbone，那是指manager。如果你的同事做了不好的事或者决定呢？你会视而不见或者和稀泥吗？想想狗家“不做恶”的信条，想想你怎么融入啊？
+亚麻的那个军规16条很好,可以做基础.狗家自己特别的是:
+- 你得能管理自己的项目和进度,能够prioritize自己的项目.根据什么标准prioritize？你自己的喜好吗？亚麻军规里其实有,我不敢说的太明了.其实都是common sense
+- 需求不明确怎么办？你会自己想办法吗？还是依赖别人？Project的需求总在变,你会撂摊子不干了,或者抱怨连天吗？
+- 亚麻里有个having backbone,那是指manager.如果你的同事做了不好的事或者决定呢？你会视而不见或者和稀泥吗？想想狗家"不做恶"的信条,想想你怎么融入啊？
 
-需要准备至少3-4个故事，比如怎么处理和team里的人的conflict，项目要miss deadline了怎么办的等等。实在没有？那也要编啊。一定要有细节，因为面试官会问得很细。还有一句“废话”，要显示出你对产品的热情，对自己职业的热情，而不是就安于一个“码农”，说说你怎么提高自己的，online course? open source project？
+需要准备至少3-4个故事,比如怎么处理和team里的人的conflict,项目要miss deadline了怎么办的等等.实在没有？那也要编啊.一定要有细节,因为面试官会问得很细.还有一句"废话",要显示出你对产品的热情,对自己职业的热情,而不是就安于一个"码农",说说你怎么提高自己的,online course? open source project？
 
-说实话我不觉得这种对非manager的BQ面试有什么用，只能过滤一下无脑的愣头青吧。但是你只要知道面试官想听的keyword，还是比涮题简单的吧。
+说实话我不觉得这种对非manager的BQ面试有什么用,只能过滤一下无脑的愣头青吧.但是你只要知道面试官想听的keyword,还是比涮题简单的吧.
 
-另外，我们写面试报告的时候，不能用he or she，就是不想透露任何在HC环节能引起歧视的信息，包括年龄，种族等等。狗家在这点上真是很nice和认真的。所以大家回答问题的时候，可千万别一不小心说漏了嘴。那很可能是一票否决。
+另外,我们写面试报告的时候,不能用he or she,就是不想透露任何在HC环节能引起歧视的信息,包括年龄,种族等等.狗家在这点上真是很nice和认真的.所以大家回答问题的时候,可千万别一不小心说漏了嘴.那很可能是一票否决.

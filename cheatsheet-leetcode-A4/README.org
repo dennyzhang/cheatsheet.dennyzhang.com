@@ -16,9 +16,9 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/cheatsheet-behavior-A4.pdf][cheatsheet-behavior-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-leetcode-A4/cheatsheet-leetcode-A4.pdf][cheatsheet-leetcode-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Code Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 
@@ -443,3 +443,8 @@ LeetCode上面的题目偏基础性,基本上不考察复制的算法,很多都�
 sorry I will keep the variable names short just for convenience. In real code I will sure use more descriptive names
 Of course you are not looking for this brute force implementation. OK, this can be optimized by ....
 should I start implement it in code, or you want me to conitnue to optimize it?
+* TODO Think follow-up of one code problem                         :noexport:
+- Did I see a similar code problem?
+- What if there are negatives, not sorted, has duplicates, has cycles, etc?
+- Can you solve the problem in a different way?
+- How to speed up with multi-threading

@@ -1,4 +1,4 @@
-* CheatSheet: System Design For Code Interview                    :Interview:
+* CheatSheet: System Design For Job Interview                     :Interview:
 :PROPERTIES:
 :type:     language
 :export_file_name: cheatsheet-systemdesign-A4.pdf
@@ -16,12 +16,11 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/cheatsheet-behavior-A4.pdf][cheatsheet-behavior-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/cheatsheet-systemdesign-A4.pdf][cheatsheet-systemdesign-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-
 ** Process Of System Design
 | Num | Name                                         | Summary                                               |
 |-----+----------------------------------------------+-------------------------------------------------------|
@@ -31,7 +30,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   4 | Bottlenecks: *Key challenges* + *Trade-Offs* | Valid reasoning is the key                            |
 |   5 | Scale your design                            |                                                       |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Engineering Of Well-Known Products
 | Name          | Summary                                                  |
 |---------------+----------------------------------------------------------|
@@ -41,8 +39,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Uber          | [[http://highscalability.com/blog/2016/10/12/lessons-learned-from-scaling-uber-to-2000-engineers-1000-ser.html][Link: Lessons Learned From Scaling Uber]]                  |
 | Tumblr        | [[http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html][Link: Tumblr Architecture]]                                |
 | StackOverflow | [[http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html][Link: Stack Overflow Architecture]]                        |
-
-** Classic Design Problems - Design Business Features                                
+** Classic Design Problems - Design Business Features
 | Num | Name                                       | Summary |
 |-----+--------------------------------------------+---------|
 |   1 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: TinyURL - A URL Shorterner Service]] |         |
@@ -55,39 +52,26 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   7 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]          |         |
 |   8 | Design Google PageRank                     |         |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Classic Design Problems - Design A Complex Product
 - Think through the complicated, high-scale systems that you already use every day
-| Num | Name                              | Summary |
-|-----+-----------------------------------+---------|
-|   1 | [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]              |         |
-|   2 | Design K/V DB                     |         |
-|   3 | [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]] |         |
-|   4 | Design twitter                    |         |
-|   5 | Deisgn a payment processor        |         |
-|   6 | Design a voice conference system  |         |
-|   7 | Design google doc                 |         |
-|   8 | Design gmail                      |         |
+| Num | Name                                     | Summary |
+|-----+------------------------------------------+---------|
+|   1 | [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]                     |         |
+|   2 | Design K/V DB                            |         |
+|   3 | [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]]        |         |
+|   4 | Design twitter                           |         |
+|   5 | Deisgn a payment processor               |         |
+|   6 | Design a voice conference system         |         |
+|   7 | Design google doc                        |         |
+|   8 | Design gmail                             |         |
+|   9 | Design instagram, a photo sharing app    |         |
+|  10 | Design Yelp, a check-in app              |         |
+|  11 | Design an API gateway                    |         |
+|  12 | Design amazon book recommendation system |         |
 #+TBLFM: $1=@-1$1+1;N
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
-
-** Classic Design Problems - Design Technical Modules
-| Num | Name                                                       | Summary    |
-|-----+------------------------------------------------------------+------------|
-|   1 | Design a distributed UUID generator                        |            |
-|   2 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 | [[https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/][link]], [[https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/][link]] |
-|   3 | Design a circuit breaker                                   |            |
-|   4 | Design a stack supporting push/pop/getmin/getmostfrequent  |            |
-|   5 | Implement a timer                                          |            |
-|   6 | Thread-safe Hashmap                                        |            |
-|   7 | Top URL hits                                               |            |
-|   8 | Unique url hits                                            |            |
-|   9 | Delayed task scheduling                                    |            |
-|  10 | Design a client-server API to build a rich document editor |            |
-#+TBLFM: $1=@-1$1+1;N
-
 ** Classic Design Problems - Explain workflow: What happens when XXX?
 | Num | Name                                  | Summary                     |
 |-----+---------------------------------------+-----------------------------|
@@ -100,7 +84,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   7 | Explain gossip protocol               |                             |
 |   8 | Explain CAP                           |                             |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Classic Design Problems - Explain tools: how XXX supports XXX?
 | Num | Name                                  | Summary |
 |-----+---------------------------------------+---------|
@@ -108,7 +91,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   2 | Explain java garbage collection model |         |
 |   3 | Explain raft/etcd                     |         |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Classic Design Problems - Big Data
 | Num | Name                                                          | Summary      |
 |-----+---------------------------------------------------------------+--------------|
@@ -118,7 +100,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   4 | Membership query - whether an element exists in a data stream | [[https://en.wikipedia.org/wiki/Bloom_filter][bloom filter]] |
 |   5 | Get median from an endless data stream                        |              |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Typical Tech Areas
 | Num | Summary                            |
 |-----+------------------------------------|
@@ -129,7 +110,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   5 | Security                           |
 |   6 | SDDC - Software defined datacenter |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Grow Design Expertise In Daily Work
 | Num | Name                    | Summary                                                                                        |
 |-----+-------------------------+------------------------------------------------------------------------------------------------|
@@ -152,7 +132,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | YouTube              | [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube Channel: Success in Tech]], [[https://www.youtube.com/watch?v=-W9F__D3oY4&feature=youtu.be][YouTube: Scalability Harvard Web Development]] |
 | Reference            | [[https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/][Link: Preparing for your Software Engineering Interview at Facebook]]            |
 | Reference            | [[https://www.hiredintech.com/classrooms/system-design/lesson/55][Link: The System Design Process]]                                                |
-| Cheatsheet           | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Code Interview]]      |
+| Cheatsheet           | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]]      |
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]                                        |
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                             |
 
@@ -160,8 +140,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
 #+END_HTML
-
-
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -215,7 +193,7 @@ https://medium.com/@narengowda/system-design-for-twitter-e737284afc95
 * TODO Kafka vs Rabbitmq                                           :noexport:
 * system design                                                    :noexport:
 https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/
-The purpose of the interview is to assess the candidate's ability to solve a non-trivial engineering design problem. 
+The purpose of the interview is to assess the candidate's ability to solve a non-trivial engineering design problem.
 
 There are two types of design interviews: systems design and product design.
 
@@ -268,3 +246,11 @@ https://www.1point3acres.com/bbs/thread-169418-1-1.html
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO design uber                                                 :noexport:
 http://systemdesigns.blogspot.com/2015/12/design-uber.html
+* TODO design google doc                                           :noexport:
+* TODO read: https://www.1point3acres.com/bbs/thread-208829-1-1.html :noexport:
+* TODO How to design API gateway                                   :noexport:
+* TODO design amazon book recommend system                         :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO design 多线程题 例如web crawler, max photo                 :noexport:
+* TODO How would you design a car radio system interface           :noexport:
+* TODO caching mechanism: lru, lfu                                 :noexport:
