@@ -20,12 +20,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Config file                      | =.p4config=                                |
 | Validate p4 config file          | =ls -lth $P4CONFIG=                        |
 | Login to system                  | =p4 login=                                 |
-| Sync source code                 | =p4 sync=                                  |
 | Create a new P4 client           | =p4 client=                                |
+| Sync source code                 | =p4 sync=                                  |
 | Edit a file                      | =p4 edit $file_path=                       |
 | Add a file                       | =p4 add $file_path=                        |
 | See files open for edit          | =p4 opened=                                |
 | Generate CLN                     | =p4 change=                                |
+| Update an existing CLN           | =p4 change $CLN=                           |
 | Generate a review link           | =/build/apps/bin/post-review $CLN=         |
 | Resolve conflict                 | =p4 resolve=                               |
 | Check-in the change after review | =p4 submit -c $CLN=                        |
@@ -126,7 +127,7 @@ Change 7330508 renamed change 7332988 and submitted.
 |----------+-------------------------------------------------------------|
 | Perforce | [[https://wiki.eng.vmware.com/Perforce][wiki: SCM/Perforce]], [[https://confluence.eng.vmware.com/display/NSBU/Perforce+Setup][Confluence: Perforce Setup]]              |
 | Perforce | [[https://confluence.eng.vmware.com/display/WCP/Build+and+Run+Unit+Tests+for+WCP+Service+on+DBC#BuildandRunUnitTestsforWCPServiceonDBC-Compile][Confluence: Build and Run Unit Tests for WCP Service on DBC]] |
-* source 
+* source                                                           :noexport:
 ~/.bashrc
 
 export TCROOT=/build/toolchain
@@ -139,3 +140,14 @@ export PATH=/mts/git/tools/bin:${PATH}
 export P4CONFIG=/dbc/sc-dbc1216/zdenny/p4/.p4config
 
 source ~/.bashrc
+* p4 can't login and sync                                          :noexport:
+#+BEGIN_EXAMPLE
+   /Users/zdenny/p4  p4 login                                                                                                                                                                                                                                        ✘ 1
+Enter password:
+Password invalid.
+'p4auth' validation failed: zdenny appears locked in Active Directory as of 2019-11-01 11:00:26 PDT.
+See http://tinyurl.eng.vmware.com/b2v for more info.
+
+   /Users/zdenny/p4  p4 sync                                                                                                                                                                                                                                         ✘ 1
+Client 'p4' can only be used from host 'sc-dbc1216.eng.vmware.com'.
+#+END_EXAMPLE

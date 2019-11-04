@@ -21,7 +21,7 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Code Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-** Code Problems & Follow-ups
+** 50 Typical Code Problems & Follow-ups
 | Num | Category/Tag                    | Example                                                 |
 |-----+---------------------------------+---------------------------------------------------------|
 |   1 | [[https://code.dennyzhang.com/followup-atmostkdistinct][#atmostkdistinct]], [[https://code.dennyzhang.com/review-string][#string]]       | [[https://code.dennyzhang.com/followup-atmostkdistinct][Substring with at most k distinct characters]]            |
@@ -71,6 +71,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  44 | [[https://code.dennyzhang.com/followup-endswith][#endswith]]                       | [[https://code.dennyzhang.com/followup-endswith][Endswith Problems & Follow-up]]                           |
 |  45 | [[https://code.dennyzhang.com/followup-sortedmatrix][#sortedmatrix]]                   | [[https://code.dennyzhang.com/followup-sortedmatrix][Sorted 2D Matrix Problems & Follow-up]]                   |
 |  46 | [[https://code.dennyzhang.com/followup-rollinghash][#rollinghash]]                    | [[https://code.dennyzhang.com/followup-rollinghash][Rolling Hash Problems & Follow-up]]                       |
+|  47 | [[https://code.dennyzhang.com/followup-lfu][#lfu]]                            | [[https://code.dennyzhang.com/followup-lfu][LFU - Least Frequently Used Cache Problems & Follow-up]]  |
+|  48 | [[https://code.dennyzhang.com/followup-geometry][#geometry]]                       | [[https://code.dennyzhang.com/followup-geometry][Geometry Problems & Follow-up]]                           |
 #+TBLFM: $1=@-1$1+1;N
 ** Review Problems By Category
 | Num | Name                | Summary                                           |
@@ -103,6 +105,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  26 | [[https://code.dennyzhang.com/review-countsort][#countsort]]          | [[https://code.dennyzhang.com/review-countsort][Review: Countsort Problems]]                        |
 |  27 | [[https://code.dennyzhang.com/review-topologicalsort][#topologicalsort]]    | [[https://code.dennyzhang.com/review-topologicalsort][Review: Topological Sort Problems]]                 |
 |  28 | [[https://code.dennyzhang.com/review-random][#random]]             | [[https://code.dennyzhang.com/review-random][Review: Random Problems]]                           |
+|  29 | [[https://code.dennyzhang.com/review-rectangle][#rectangle]]          | [[https://code.dennyzhang.com/review-rectangle][Review: Rectangle Problems]]                        |
+|  30 | [[https://code.dennyzhang.com/review-multithread][#multithread]]        | [[https://code.dennyzhang.com/review-multithread][Review: Multi-threaded Problems]]                   |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML

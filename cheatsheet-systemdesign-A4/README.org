@@ -42,26 +42,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Tumblr        | [[http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html][Link: Tumblr Architecture]]                                |
 | StackOverflow | [[http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html][Link: Stack Overflow Architecture]]                        |
 
-** Engineering Blogs/Websites
-| Name                 | Summary                                                                        |
-|----------------------+--------------------------------------------------------------------------------|
-| Compnay Tech Blog    | [[https://www.facebook.com/pg/Engineering/notes/][Website: Facebook Engineering]], [[https://developers.googleblog.com][Website: Google Developers]]                      |
-| Compnay Tech Blog    | [[https://medium.com/netflix-techblog][Medium: Netflix Blog]], [[https://medium.com/airbnb-engineering][Medium: Airbnb Engineering & Data Science]]                |
-| Individual Tech Blog | [[https://www.allthingsdistributed.com][Blog: All Things Distributed - Amazon CTO]], [[http://highscalability.com/][Blog: highscalability]]               |
-| Website              | [[https://interviewing.io][Website: interviewing.io]], [[https://www.interviewbit.com/courses/system-design/][Website: interviewbit.com]]                            |
-| Website              | [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]], [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: system-design-primer]]             |
-| YouTube              | [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube Channel: Success in Tech]], [[https://www.youtube.com/watch?v=-W9F__D3oY4&feature=youtu.be][YouTube: Scalability Harvard Web Development]] |
-| Reference            | [[https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/][Link: Preparing for your Software Engineering Interview at Facebook]]            |
-| Reference            | [[https://www.hiredintech.com/classrooms/system-design/lesson/55][Link: The System Design Process]]                                                |
-| Cheatsheet           | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Code Interview]]      |
-| Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]                                        |
-| Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                             |
-
-#+BEGIN_HTML
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
-</iframe>
-#+END_HTML
-
 ** Classic Design Problems - Design Business Features                                
 | Num | Name                                       | Summary |
 |-----+--------------------------------------------+---------|
@@ -139,15 +119,48 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   5 | Get median from an endless data stream                        |              |
 #+TBLFM: $1=@-1$1+1;N
 
-** Grow Design Expertise In Daily Work
-| Num | Summary                                                                                                  |
-|-----+----------------------------------------------------------------------------------------------------------|
-|   1 | Think through the complicated, high-scale systems that you already use every day                         |
-|   2 | Read engineering blogs of big companies                                                                  |
-|   3 | For common tools/frameworks, understand behind the hook                                                  |
-|   4 | Try tools. What problem it solves, what its alternatives are, and what some common pros and cons may be. |
-|   5 | Keep researching the alternatives to a technology. e.g, rabbitmq vs kafaka, memcached vs redis           |
+** Typical Tech Areas
+| Num | Summary                            |
+|-----+------------------------------------|
+|   1 | Distributed Database               |
+|   2 | Task scheduling                    |
+|   3 | LCM - life cycle management        |
+|   4 | Logging & Monitoring               |
+|   5 | Security                           |
+|   6 | SDDC - Software defined datacenter |
 #+TBLFM: $1=@-1$1+1;N
+
+** Grow Design Expertise In Daily Work
+| Num | Name                    | Summary                                                                                        |
+|-----+-------------------------+------------------------------------------------------------------------------------------------|
+|   1 | Products under the hood | Complicated and high-scale systems which you might use every day                               |
+|   2 | Read engineering blogs  | Especially for big companies                                                                   |
+|   3 | Tools under the hood    | Common tools/frameworks                                                                        |
+|   4 | Try tools               | Use cases; Alternatives; Pros and Cons                                                         |
+|   5 | Read papers             |                                                                                                |
+|   6 | Try new things          | Keep researching the alternatives to a technology. e.g, rabbitmq vs kafaka, memcached vs redis |
+#+TBLFM: $1=@-1$1+1;N
+** Engineering Blogs/Websites
+| Name                 | Summary                                                                        |
+|----------------------+--------------------------------------------------------------------------------|
+| Compnay Tech Blog    | [[https://www.facebook.com/pg/Engineering/notes/][Website: Facebook Engineering]], [[https://developers.googleblog.com][Website: Google Developers]]                      |
+| Compnay Tech Blog    | [[https://medium.com/netflix-techblog][Medium: Netflix Blog]], [[https://medium.com/airbnb-engineering][Medium: Airbnb Engineering & Data Science]]                |
+| Individual Tech Blog | [[https://www.allthingsdistributed.com][Blog: All Things Distributed - Amazon CTO]], [[http://highscalability.com/][Blog: highscalability]]               |
+| Website              | [[https://interviewing.io][Website: interviewing.io]], [[https://www.interviewbit.com/courses/system-design/][Website: interviewbit.com]]                            |
+| Website              | [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]], [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: system-design-primer]]             |
+| YouTube              | [[https://www.youtube.com/watch?v=ZgdS0EUmn70][YouTube: Intro to Architecture and Systems Design Interviews]]                   |
+| YouTube              | [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube Channel: Success in Tech]], [[https://www.youtube.com/watch?v=-W9F__D3oY4&feature=youtu.be][YouTube: Scalability Harvard Web Development]] |
+| Reference            | [[https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/][Link: Preparing for your Software Engineering Interview at Facebook]]            |
+| Reference            | [[https://www.hiredintech.com/classrooms/system-design/lesson/55][Link: The System Design Process]]                                                |
+| Cheatsheet           | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Code Interview]]      |
+| Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]                                        |
+| Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                             |
+
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
+
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -185,7 +198,7 @@ https://github.com/binhnguyennus/awesome-scalability
 #+LINK_UP:
 #+LINK_HOME:
 * TODO [经验总结] 关于所谓的System Design: https://www.1point3acres.com/bbs/thread-169343-1-1.html :noexport:
-* TODO [题目讨论] 系统设计问题/面试题总结: https://www.1point3acres.com/bbs/thread-541834-1-1.html
+* TODO [题目讨论] 系统设计问题/面试题总结: https://www.1point3acres.com/bbs/thread-541834-1-1.html :noexport:
 * TODO System design: https://www.1point3acres.com/bbs/forum-323-1.html :noexport:
 * TODO system design: https://www.1point3acres.com/bbs/thread-171320-1-1.html :noexport:
 * design                                                           :noexport:
@@ -247,3 +260,11 @@ https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache
 https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism
 * Understand big IT corps in US                                    :noexport:
 https://www.1point3acres.com/bbs/thread-169418-1-1.html
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO design k/v db store                                         :noexport:
+* TODO 某建筑有五十层高,打算装俩电梯,设计该电梯系统                :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO How to implement a singleton                                :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO design uber                                                 :noexport:
+http://systemdesigns.blogspot.com/2015/12/design-uber.html
