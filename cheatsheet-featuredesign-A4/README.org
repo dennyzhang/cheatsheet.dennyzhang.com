@@ -21,19 +21,93 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** Key Blocks For Feature/System Design
+| Num | Name                                    | Summary                                                    |
+|-----+-----------------------------------------+------------------------------------------------------------|
+|   1 | [[https://architect.dennyzhang.com/explain-cache][Caching]]                                 |                                                            |
+|   2 | [[https://architect.dennyzhang.com/explain-messagequeue][Message Queue]]                           |                                                            |
+|   3 | [[https://architect.dennyzhang.com/explain-loadbalancer][Load balancer]]                           |                                                            |
+|   4 | [[https://architect.dennyzhang.com/explain-dns][Networking: DNS]]                         |                                                            |
+|   5 | [[https://architect.dennyzhang.com/explain-locks][Pessimistic And Optimistic Locking]]      |                                                            |
+|   6 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                         |                                                            |
+|   7 | [[https://architect.dennyzhang.com/explain-db-replication][DB replication]]                          |                                                            |
+|   8 | [[https://architect.dennyzhang.com/explain-cap][CAP: Consistency/Availability/Partition]] |                                                            |
+|   9 | [[https://architect.dennyzhang.com/explain-coordination][Concurrency & Communication]]             |                                                            |
+|  10 | [[https://architect.dennyzhang.com/explain-session][Session management]]                      |                                                            |
+|  11 | [[https://architect.dennyzhang.com/explain-poll-push][Pull vs Push model]]                      |                                                            |
+|  12 | Data Partition & Scaling                | Vertical scaling and Horizontal scaling                    |
+|  13 | Networking: HTTP                        |                                                            |
+|  14 | Networking: TCP vs UDP                  |                                                            |
+|  15 | API Design                              |                                                            |
+|  16 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency |
+|  17 | Availability patterns                   | Fail-over vs Replication                                   |
+|  18 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(barrier)][bulkhead]]                  |
+|  19 | Data Replication                        |                                                            |
+|  20 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write               |
+|-----+-----------------------------------------+------------------------------------------------------------|
+|  21 | CDN                                     |                                                            |
+|  22 | Distributed Systems                     |                                                            |
+|  23 | Garbage Collection                      |                                                            |
+|  24 | Memory Management                       |                                                            |
+|  25 | Concurrency                             |                                                            |
+|  26 | Networking                              |                                                            |
+|  27 | Security                                |                                                            |
+#+TBLFM: $1=@-1$1+1;N
+** Additional Blocks For Feature/System Design
+| Num | Name                             | Summary |
+|-----+----------------------------------+---------|
+|   1 | Heartbeats                       |         |
+|   2 | [[https://architect.dennyzhang.com/explain-gossip][Gossip]]                           |         |
+|   3 | [[https://architect.dennyzhang.com/design-explain-paxos][Paxos and raft protocol]]          |         |
+|   4 | [[https://architect.dennyzhang.com/explain-vector-clocks][Vector Clocks/Version Vectors]]    |         |
+|   5 | [[https://architect.dennyzhang.com/explain-split-brain][Split brain]]                      |         |
+|   6 | Merkle Tree                      |         |
+|   7 | Sloppy Quorum and hinted handoff |         |
+#+TBLFM: $1=@-1$1+1;N
+[[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-featuredesign-A4/dynamo.png]]
 ** Design Technical Modules
 | Num | Name                                                       | Summary    |
 |-----+------------------------------------------------------------+------------|
 |   1 | Design a distributed UUID generator                        |            |
-|   2 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 | [[https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/][link]], [[https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/][link]] |
-|   3 | Design a circuit breaker                                   |            |
-|   4 | Design a stack supporting push/pop/getmin/getmostfrequent  |            |
-|   5 | Implement a timer                                          |            |
-|   6 | Thread-safe Hashmap                                        |            |
-|   7 | Top URL hits                                               |            |
-|   8 | Unique url hits                                            |            |
-|   9 | Delayed task scheduling                                    |            |
-|  10 | Design a client-server API to build a rich document editor |            |
+|   2 | Implement a timer                                          |            |
+|   3 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 | [[https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/][link]], [[https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/][link]] |
+|   4 | Design online/offline status system                        |            |
+|   5 | Thread-safe Hashmap                                        | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/hash_table/hash_map.ipynb][link]]       |
+|   6 | Top URL hits                                               |            |
+|   7 | Unique url hits                                            |            |
+|   8 | Delayed task scheduling                                    |            |
+|   9 | Design a distributed counter                               |            |
+|  10 | Design a distributed hashtable                             |            |
+|  11 | Design a load balancer                                     |            |
+|  12 | Design a client-server API to build a rich document editor |            |
+|  13 | Design a circuit breaker                                   |            |
+|  14 | Design a stack supporting push/pop/getmin/getmostfrequent  |            |
+|  15 | Design a credential management system                      |            |
+#+TBLFM: $1=@-1$1+1;N
+** Explain workflow: What happens when XXX?
+| Num | Name                                  | Summary                     |
+|-----+---------------------------------------+-----------------------------|
+|   1 | When happens when I search in google? |                             |
+|   2 | How loadbalancer works                |                             |
+|   3 | Explain three phase commit model      |                             |
+|   4 | Explain HTTP return code              | 301 vs 302, 401 vs 403, etc |
+|   5 | Explain Mysql DB replication model    |                             |
+|   6 | Explain gossip protocol               |                             |
+|   7 | [[https://architect.dennyzhang.com/explain-cap][Explain CAP]]                     |                             |
+|   8 | Explain Hadoop file system            |                             |
+#+TBLFM: $1=@-1$1+1;N
+
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
+** Explain tools: how XXX supports XXX?
+| Num | Name                                  | Summary |
+|-----+---------------------------------------+---------|
+|   1 | How JDK implement hashmap?            |         |
+|   2 | Explain java garbage collection model |         |
+|   3 | Explain raft/etcd                     |         |
+|   4 | How OS supports XXX?                  |         |
 #+TBLFM: $1=@-1$1+1;N
 ** Misc
 | Num | Name                                                                            | Summary                           |
@@ -42,7 +116,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   2 | How to support feature of "diff 1.txt 2. txt"                                   |                                   |
 |   3 | How to store 2TB data into 3 disks of 1TB. And be tolerant for one disk failure | A, B, C. And C = A XOR B          |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Top 20 Object-Oriented Design Problems
 | Num | Problem                      | Category/Tag           | Example                                |
 |-----+------------------------------+------------------------+----------------------------------------|
@@ -95,16 +168,52 @@ https://github.com/binhnguyennus/awesome-scalability
 * TODO What's raid?                                                :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO multiple threading                                          :noexport:
-第一题find largest subarray秒，之后问用2个线程怎么做，4个线程怎么优化。。。
+第一题find largest subarray秒,之后问用2个线程怎么做,4个线程怎么优化...
 * TODO Difference between: threading/process/goroutine             :noexport:
 * TODO How to design SNS system: twitter/youtube/uber              :noexport:
 * TODO 对每个题目找工业界实现的blog                                :noexport:
 https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=543700&highlight=design
 
-授之以渔：
+授之以渔:
 
-对每家onsite的公司 -> 在地里翻完最近两年所有onsite面筋aggregate所有design题目 -> 对每个题目找工业界实现的blog -> 阅读每个blog，选中最好的一到两个 -> 读到烂熟，整理出我当面试官的话会问的所有问题不停考自己 -> 白板英文自行mock 3遍 -> over
+对每家onsite的公司 -> 在地里翻完最近两年所有onsite面筋aggregate所有design题目 -> 对每个题目找工业界实现的blog -> 阅读每个blog,选中最好的一到两个 -> 读到烂熟,整理出我当面试官的话会问的所有问题不停考自己 -> 白板英文自行mock 3遍 -> over
 
-举个栗子：
-面试lyft -> lyft喜欢考payment system -> google之 -> uber有个分布式的实现，不怎么详细，airbnb有个非常详细的SQL sharding的实现，很详细在它的blog上，采用
-然后lyft onsite果然考了，秒了
+举个栗子:
+面试lyft -> lyft喜欢考payment system -> google之 -> uber有个分布式的实现,不怎么详细,airbnb有个非常详细的SQL sharding的实现,很详细在它的blog上,采用
+然后lyft onsite果然考了,秒了
+* TODO caching system                                              :noexport:
+* TODO 3-way merge                                                 :noexport:
+* Grokking the System Design                                       :noexport:
+https://www.educative.io/courses/grokking-the-system-design-interview
+https://www.educative.io/courses/grokking-the-object-oriented-design-interview
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO discussed various sharding approaches                       :noexport:
+* TODO 脸书和谷歌的推荐系统相关的paper一般含金量都很高             :noexport:
+* TODO hadoop, spark, storm                                        :noexport:
+* TODO 微信的@功能,设计个分组可见功能                             :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO privacy policy design                                       :noexport:
+https://www.1point3acres.com/bbs/thread-301250-1-1.html
+https://termly.io/resources/articles/privacy-by-design/
+https://www.privacytrust.com/gdpr/privacy-by-design-gdpr.html
+* TODO http post vs http put                                       :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO How to caculate availability                                :noexport:
+Availability in parallel vs in sequence
+If a service consists of multiple components prone to failure, the service's overall availability depends on whether the components are in sequence or in parallel.
+
+In sequence
+Overall availability decreases when two components with availability < 100% are in sequence:
+
+Availability (Total) = Availability (Foo) * Availability (Bar)
+If both Foo and Bar each had 99.9% availability, their total availability in sequence would be 99.8%.
+
+In parallel
+Overall availability increases when two components with availability < 100% are in parallel:
+
+Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
+If both Foo and Bar each had 99.9% availability, their total availability in parallel would be 99.9999%.
+* TODO Merkle Tree                                                 :noexport:
+大名鼎鼎的merkle tree。是个perfect的二叉树。每个节点是hash（左孩子的hash，右孩子的hash）。除了最底层的leaf。leaf node的值就是hash（data block）
+
+Merkle Tree的特点使得我们需要Partition 3的操作：先把key range分bucket。否则一旦有新的node加入进来，在转移data的同时，我们需要扫描data，重新进行hash的计算，因为data partitioning和merkle tree的key range partitioning并不一致。而如果我们通过分bucket让他们保持一致，则只需要把merkle tree的一部分子树转移到另一个节点上，并重新计算一下向上的根结点的hash就可以了。
