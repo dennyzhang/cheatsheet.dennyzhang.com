@@ -64,7 +64,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   6 | Merkle Tree                      |         |
 |   7 | Sloppy Quorum and hinted handoff |         |
 #+TBLFM: $1=@-1$1+1;N
-[[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-featuredesign-A4/dynamo.png]]
+[[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-featuredesign-A4/dynamo_summary.png]]
 ** Design Technical Modules
 | Num | Name                                                       | Summary    |
 |-----+------------------------------------------------------------+------------|
@@ -214,6 +214,6 @@ Overall availability increases when two components with availability < 100% are 
 Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
 If both Foo and Bar each had 99.9% availability, their total availability in parallel would be 99.9999%.
 * TODO Merkle Tree                                                 :noexport:
-大名鼎鼎的merkle tree。是个perfect的二叉树。每个节点是hash（左孩子的hash，右孩子的hash）。除了最底层的leaf。leaf node的值就是hash（data block）
+大名鼎鼎的merkle tree.是个perfect的二叉树.每个节点是hash（左孩子的hash,右孩子的hash）.除了最底层的leaf.leaf node的值就是hash（data block）
 
-Merkle Tree的特点使得我们需要Partition 3的操作：先把key range分bucket。否则一旦有新的node加入进来，在转移data的同时，我们需要扫描data，重新进行hash的计算，因为data partitioning和merkle tree的key range partitioning并不一致。而如果我们通过分bucket让他们保持一致，则只需要把merkle tree的一部分子树转移到另一个节点上，并重新计算一下向上的根结点的hash就可以了。
+Merkle Tree的特点使得我们需要Partition 3的操作:先把key range分bucket.否则一旦有新的node加入进来,在转移data的同时,我们需要扫描data,重新进行hash的计算,因为data partitioning和merkle tree的key range partitioning并不一致.而如果我们通过分bucket让他们保持一致,则只需要把merkle tree的一部分子树转移到另一个节点上,并重新计算一下向上的根结点的hash就可以了.
