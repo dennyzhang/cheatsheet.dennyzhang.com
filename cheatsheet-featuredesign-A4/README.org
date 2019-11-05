@@ -41,7 +41,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  15 | API Design                              |                                                            |
 |  16 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency |
 |  17 | Availability patterns                   | Fail-over vs Replication                                   |
-|  18 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(barrier)][bulkhead]]                  |
+|  18 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]]                  |
 |  19 | Data Replication                        |                                                            |
 |  20 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write               |
 |-----+-----------------------------------------+------------------------------------------------------------|
@@ -64,7 +64,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   6 | Merkle Tree                      |         |
 |   7 | Sloppy Quorum and hinted handoff |         |
 #+TBLFM: $1=@-1$1+1;N
-[[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-featuredesign-A4/dynamo_summary.png]]
+[[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-featuredesign-A4/dynamo-summary.png]]
 ** Design Technical Modules
 | Num | Name                                                       | Summary    |
 |-----+------------------------------------------------------------+------------|
@@ -109,6 +109,15 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   3 | Explain raft/etcd                     |         |
 |   4 | How OS supports XXX?                  |         |
 #+TBLFM: $1=@-1$1+1;N
+** Cloud Design Patterns
+| Num | Name                | Summary |
+|-----+---------------------+---------|
+|   1 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/ambassador][Ambassador pattern]]  |         |
+|   2 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/cache-aside][Cache-Aside]]         |         |
+|   3 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker][Circuit Breaker]]     |         |
+|   4 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation][Gateway Aggregation]] |         |
+#+TBLFM: $1=@-1$1+1;N
+
 ** Misc
 | Num | Name                                                                            | Summary                           |
 |-----+---------------------------------------------------------------------------------+-----------------------------------|
@@ -217,3 +226,13 @@ If both Foo and Bar each had 99.9% availability, their total availability in par
 大名鼎鼎的merkle tree.是个perfect的二叉树.每个节点是hash（左孩子的hash,右孩子的hash）.除了最底层的leaf.leaf node的值就是hash（data block）
 
 Merkle Tree的特点使得我们需要Partition 3的操作:先把key range分bucket.否则一旦有新的node加入进来,在转移data的同时,我们需要扫描data,重新进行hash的计算,因为data partitioning和merkle tree的key range partitioning并不一致.而如果我们通过分bucket让他们保持一致,则只需要把merkle tree的一部分子树转移到另一个节点上,并重新计算一下向上的根结点的hash就可以了.
+* TODO Network security: cookie attack                             :noexport:
+use forged cookies to log in without a password
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO online rolling upgrade for mysql DB schema                  :noexport:
+* TODO Garbage Collection                                          :noexport:
+https://rushter.com/blog/python-garbage-collector/
+https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals
+* TODO currency Model                                              :noexport:
+* TODO How Slack works: https://www.youtube.com/watch?v=WE9c9AZe-DY :noexport:
+* TODO https://techcrunch.com/2012/04/12/how-to-scale-a-1-billion-startup-a-guide-from-instagram-co-founder-mike-krieger/ :noexport:
