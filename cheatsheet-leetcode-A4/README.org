@@ -125,15 +125,18 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+TBLFM: $1=@-1$1+1;N
 
 ** Top 10 BinaryTree Problems
-| Num | Problem                                           | Category/Tag | Summary                                                               |
-|-----+---------------------------------------------------+--------------+-----------------------------------------------------------------------|
-|   1 | Binary Tree Level Order Traversal                 | [[https://code.dennyzhang.com/review-bfs][#bfs]]         | [[https://code.dennyzhang.com/binary-tree-right-side-view][Leetcode: Binary Tree Right Side View]]                                 |
-|   2 | Height of binary tree                             | [[https://code.dennyzhang.com/review-dfs][#dfs]]         | [[https://code.dennyzhang.com/balanced-binary-tree][Leetcode: Balanced Binary Tree]]                                        |
-|   3 | LCA - Lowest Common Ancestor of a binary Tree     | [[https://code.dennyzhang.com/review-dfs][#dfs]]         | [[https://code.dennyzhang.com/lowest-common-ancestor-of-a-binary-tree][Leetcode: Lowest Common Ancestor of a Binary Tree]]                     |
-|   4 | Check whether a binary tree is a full binary tree | [[https://code.dennyzhang.com/review-dfs][#dfs]], [[https://code.dennyzhang.com/review-bfs][#bfs]]   |                                                                       |
-|   5 | Construct binary tree                             | [[https://code.dennyzhang.com/review-recursive][#recursive]]   | [[https://code.dennyzhang.com/construct-binary-tree-from-preorder-and-postorder-traversal][Leetcode: Construct Binary Tree from Preorder and Postorder Traversal]] |
-|   7 | Validate Binary Search Tree                       | [[https://code.dennyzhang.com/review-dfs][#dfs]]         | [[https://code.dennyzhang.com/validate-binary-search-tree][Leetcode: Validate Binary Search Tree]]                                 |
-|   6 | Right view of a tree                              |              |                                                                       |
+| Num | Problem                                             | Category/Tag | Summary                                                               |
+|-----+-----------------------------------------------------+--------------+-----------------------------------------------------------------------|
+|   1 | Binary Tree Level Order Traversal                   | [[https://code.dennyzhang.com/review-bfs][#bfs]]         | [[https://code.dennyzhang.com/binary-tree-right-side-view][Leetcode: Binary Tree Right Side View]]                                 |
+|   2 | Get binary tree height, width                       | [[https://code.dennyzhang.com/review-dfs][#dfs]]         | [[https://code.dennyzhang.com/balanced-binary-tree][Leetcode: Balanced Binary Tree]]                                        |
+|   3 | LCA - Lowest Common Ancestor of a binary Tree       | [[https://code.dennyzhang.com/review-dfs][#dfs]]         | [[https://code.dennyzhang.com/lowest-common-ancestor-of-a-binary-tree][Leetcode: Lowest Common Ancestor of a Binary Tree]]                     |
+|   4 | Validate Binary Search Tree                         | [[https://code.dennyzhang.com/review-dfs][#dfs]]         | [[https://code.dennyzhang.com/validate-binary-search-tree][Leetcode: Validate Binary Search Tree]]                                 |
+|   5 | Check whether a binary tree is a full binary tree   | [[https://code.dennyzhang.com/review-dfs][#dfs]], [[https://code.dennyzhang.com/review-bfs][#bfs]]   |                                                                       |
+|   6 | Right view of a tree                                |              |                                                                       |
+|   7 | Longest path inside a binary tree                   |              |                                                                       |
+|   8 | Biggest path sum inside a binary tree               |              |                                                                       |
+|   9 | Implement a getNext iterator of in-order trasversal |              |                                                                       |
+|  10 | Construct binary tree                               | [[https://code.dennyzhang.com/review-recursive][#recursive]]   | [[https://code.dennyzhang.com/construct-binary-tree-from-preorder-and-postorder-traversal][Leetcode: Construct Binary Tree from Preorder and Postorder Traversal]] |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 5 String Problems
 | Num | Problem                           | Category/Tag                       | Summary                               |
@@ -389,6 +392,9 @@ https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=435598&extra=page%
 
 https://www.1point3acres.com/bbs/thread-97234-1-1.html
 ***重磅炸弹*** Leetcode for Dummy|一亩三分地刷题版
+
+https://www.1point3acres.com/bbs/thread-559799-1-1.html
+我在FLAGUAP工作4年的职场感悟|一亩三分地职场达人版
 #+BEGIN_EXAMPLE
 1. 刷题前一个小时不要吃太多碳水化合物.饭困影响发挥
 2. 睡眠很重要.睡不好第二天你根本不想动脑刷题

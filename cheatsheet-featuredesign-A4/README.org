@@ -36,6 +36,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  10 | [[https://architect.dennyzhang.com/explain-session][Session management]]                      |                                                            |
 |  11 | [[https://architect.dennyzhang.com/explain-poll-push][Pull vs Push model]]                      |                                                            |
 |  12 | Data Partition & Scaling                | Vertical scaling and Horizontal scaling                    |
+|  14 | Architect: gRPC vs REST                 |                                                            |
 |  13 | Networking: HTTP                        |                                                            |
 |  14 | Networking: TCP vs UDP                  |                                                            |
 |  15 | API Design                              |                                                            |
@@ -44,8 +45,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  18 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]]                  |
 |  19 | Data Replication                        |                                                            |
 |  20 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write               |
+|  21 | CDN - Content Delivery Network          |                                                            |
 |-----+-----------------------------------------+------------------------------------------------------------|
-|  21 | CDN                                     |                                                            |
 |  22 | Distributed Systems                     |                                                            |
 |  23 | Garbage Collection                      |                                                            |
 |  24 | Memory Management                       |                                                            |
@@ -72,29 +73,29 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   2 | Implement a timer                                          |            |
 |   3 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 | [[https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/][link]], [[https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/][link]] |
 |   4 | Design online/offline status system                        |            |
-|   5 | Thread-safe Hashmap                                        | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/hash_table/hash_map.ipynb][link]]       |
-|   6 | Top URL hits                                               |            |
-|   7 | Unique url hits                                            |            |
-|   8 | Delayed task scheduling                                    |            |
-|   9 | Design a distributed counter                               |            |
-|  10 | Design a distributed hashtable                             |            |
+|   5 | Top URL hits                                               |            |
+|   6 | Unique url hits                                            |            |
+|   7 | Delayed task scheduling                                    |            |
+|   8 | Design a thread-safe Hashmap                               | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/hash_table/hash_map.ipynb][link]]       |
+|   9 | Design a distributed Hashmap                               |            |
+|  10 | Design a distributed counter                               |            |
 |  11 | Design a load balancer                                     |            |
 |  12 | Design a client-server API to build a rich document editor |            |
 |  13 | Design a circuit breaker                                   |            |
 |  14 | Design a stack supporting push/pop/getmin/getmostfrequent  |            |
-|  15 | Design a credential management system                      |            |
+|  15 | Design a secrets management system                         |            |
 #+TBLFM: $1=@-1$1+1;N
 ** Explain workflow: What happens when XXX?
-| Num | Name                                  | Summary                     |
-|-----+---------------------------------------+-----------------------------|
-|   1 | When happens when I search in google? |                             |
-|   2 | How loadbalancer works                |                             |
-|   3 | Explain three phase commit model      |                             |
-|   4 | Explain HTTP return code              | 301 vs 302, 401 vs 403, etc |
-|   5 | Explain Mysql DB replication model    |                             |
-|   6 | Explain gossip protocol               |                             |
-|   7 | [[https://architect.dennyzhang.com/explain-cap][Explain CAP]]                     |                             |
-|   8 | Explain Hadoop file system            |                             |
+| Num | Name                                  | Summary                                 |
+|-----+---------------------------------------+-----------------------------------------|
+|   1 | When happens when I search in google? |                                         |
+|   2 | How loadbalancer works                |                                         |
+|   3 | Explain three phase commit model      |                                         |
+|   4 | Explain HTTP return code              | 301 vs 302, 401 vs 403, 503 vs 504, etc |
+|   5 | Explain Mysql DB replication model    |                                         |
+|   6 | Explain gossip protocol               |                                         |
+|   7 | [[https://architect.dennyzhang.com/explain-cap][Explain CAP]]                           |                                         |
+|   8 | Explain Hadoop file system            |                                         |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
@@ -121,9 +122,9 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Misc
 | Num | Name                                                                            | Summary                           |
 |-----+---------------------------------------------------------------------------------+-----------------------------------|
-|   1 | Find out the difference between two files. Majority of these two are the same   | [[https://code.dennyzhang.com/followup-lcs][#lcs - Longest Common Subsequence]] |
-|   2 | How to support feature of "diff 1.txt 2. txt"                                   |                                   |
-|   3 | How to store 2TB data into 3 disks of 1TB. And be tolerant for one disk failure | A, B, C. And C = A XOR B          |
+|   1 | How to store 2TB data into 3 disks of 1TB. And be tolerant for one disk failure | A, B, C. And C = A XOR B          |
+|   2 | Find out the difference between two files. Majority of these two are the same   | [[https://code.dennyzhang.com/followup-lcs][#lcs - Longest Common Subsequence]] |
+|   3 | How to support feature of "diff 1.txt 2. txt"                                   |                                   |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Object-Oriented Design Problems
 | Num | Problem                      | Category/Tag           | Example                                |
@@ -141,6 +142,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 
 https://github.com/binhnguyennus/awesome-scalability
 
+https://docs.microsoft.com/en-us/azure/architecture/patterns/
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 

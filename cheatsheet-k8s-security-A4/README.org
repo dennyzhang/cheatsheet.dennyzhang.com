@@ -349,5 +349,6 @@ Kube-Bench: An Open Source Tool for Running Kubernetes CIS Benchmark Tests
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * OIDC: OpenID Connect (OIDC)                                      :noexport:
 JWT
-
 refresh token
+* notes                                                            :noexport:
+- Sensitive personal information should only be collected and processed if permitted by law.

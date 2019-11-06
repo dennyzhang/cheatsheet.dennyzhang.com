@@ -40,41 +40,41 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+TBLFM: $1=@-1$1+1;N
 
 ** Classic Design Problems - Design A Complex Product
-| Num | Name                                       | Summary |
-|-----+--------------------------------------------+---------|
-|   1 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: TinyURL - A URL Shorterner Service]] |         |
-|   2 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]              | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/parking_lot/parking_lot.ipynb][link]]    |
-|   3 | [[https://architect.dennyzhang.com/design-elevator/][Design: An Elevator Service]]                |         |
-|   4 | [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]                       |         |
-|   5 | Design twitter news feed                   | [[https://medium.com/@narengowda/system-design-for-twitter-e737284afc95][link]]    |
-|-----+--------------------------------------------+---------|
-|   6 | Design web crawler                         |         |
-|   7 | Design K/V DB                              |         |
-|   8 | [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]]          |         |
-|   9 | Design a payment processor                 |         |
-|  10 | Design a voice conference system           |         |
-|  11 | Design google doc                          |         |
-|  12 | Design gmail                               |         |
-|  13 | Design instagram, a photo sharing app      |         |
-|  14 | Design Yelp, a location-based system       |         |
-|  15 | Design an API gateway                      |         |
-|  16 | Design amazon book recommendation system   |         |
-|  17 | Design leetcode                            |         |
-|  18 | Google autocomplete                        |         |
-|  19 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]          |         |
-|  20 | Design Google PageRank                     |         |
-|  21 | Design messaging/notification system       |         |
-|  22 | Design search post system                  |         |
-|  23 | Design memcache                            |         |
-|  24 | Design typeahead                           |         |
+| Num | Name                                       | Summary                                      |
+|-----+--------------------------------------------+----------------------------------------------|
+|   1 | *Design A Technical Feature*               | [[https://cheatsheet.dennyzhang.com/cheatsheet-featuredesign-A4][CheatSheet: Feature Design For Job Interview]] |
+|   2 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: TinyURL - A URL Shorterner Service]] |                                              |
+|   3 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]              | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/parking_lot/parking_lot.ipynb][link]]                                         |
+|   4 | [[https://architect.dennyzhang.com/design-elevator/][Design: An Elevator Service]]                |                                              |
+|   5 | [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]                       |                                              |
+|   6 | Design twitter news feed                   | [[https://medium.com/@narengowda/system-design-for-twitter-e737284afc95][link]]                                         |
+|-----+--------------------------------------------+----------------------------------------------|
+|   7 | Design web crawler                         |                                              |
+|   8 | Design K/V DB                              |                                              |
+|   9 | [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]]          |                                              |
+|  10 | Design a payment processor                 |                                              |
+|  11 | Design a voice conference system           |                                              |
+|  12 | Design google doc                          |                                              |
+|  13 | Design gmail                               |                                              |
+|  14 | Design instagram, a photo sharing app      |                                              |
+|  15 | Design Yelp, a location-based system       |                                              |
+|  16 | Design an API gateway                      |                                              |
+|  17 | Design amazon book recommendation system   |                                              |
+|  18 | Design leetcode                            |                                              |
+|  19 | Google autocomplete                        |                                              |
+|  20 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]          |                                              |
+|  21 | Design Google PageRank                     |                                              |
+|  22 | Design messaging/notification system       |                                              |
+|  23 | Design search post system                  |                                              |
+|  24 | Design memcache                            |                                              |
+|  25 | Design typeahead                           |                                              |
+|  26 | Design Google Adsense fraud detection      |                                              |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
 #+END_HTML
-** Classic Design Problems - Design A Technical Feature
-[[https://cheatsheet.dennyzhang.com/cheatsheet-featuredesign-A4][CheatSheet: Feature Design For Job Interview]]
 ** Engineering Of Well-Known Products
 | Name          | Summary                                                  |
 |---------------+----------------------------------------------------------|
@@ -85,16 +85,18 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Tumblr        | [[http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html][Link: Tumblr Architecture]]                                |
 | StackOverflow | [[http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html][Link: Stack Overflow Architecture]]                        |
 ** Grow Design Expertise In Daily Work
-| Num | Name                      | Summary                                                          |
-|-----+---------------------------+------------------------------------------------------------------|
-|   1 | Products under the hood   | Complicated and high-scale systems which you might use every day |
-|   2 | Read engineering blogs    | Especially for big companies                                     |
-|   3 | Tools under the hood      | Common tools/frameworks                                          |
-|   4 | Try tools                 | Use cases; Alternatives; Pros and Cons                           |
-|   5 | Read papers               | Best practices in papers                                         |
-|   6 | Try new things            | Gain hands-on experience; evaluate alternatives                  |
-|   7 | Datastore & OS            | Learn how databases and operating systems work                   |
-|   8 | Deep dive into daily work | Unify and normalize problems from daily work                     |
+| Num | Name                             | Summary                                                                 |
+|-----+----------------------------------+-------------------------------------------------------------------------|
+|   1 | Deep dive into your daily work   | Unify and normalize problems from daily work                            |
+|   2 | Learn the work of your coleagues | Indirect working experience also help                                   |
+|   3 | Popular products under the hood  | Once you notice an interesting feature, think about how it's supported? |
+|   4 | Read engineering blogs           | Especially for big companies                                            |
+|   5 | Tools under the hood             | Common tools/frameworks                                                 |
+|   6 | Try tools                        | Use cases; Alternatives; Pros and Cons                                  |
+|   7 | Read papers                      | Best practices in papers                                                |
+|   8 | Try new things                   | Gain hands-on experience; evaluate alternatives                         |
+|   9 | Datastore & OS                   | Learn how databases and operating systems work                          |
+|  10 | Language implementation          | Deep dive into one programming language. Java, Python, Golang, etc      |
 #+TBLFM: $1=@-1$1+1;N
 ** Engineering Blogs/Websites
 | Name                 | Summary                                                                        |
@@ -245,3 +247,6 @@ http://systemdesigns.blogspot.com/2015/12/design-uber.html
 |   4 | Membership query - whether an element exists in a data stream | [[https://en.wikipedia.org/wiki/Bloom_filter][bloom filter]] |
 |   5 | Get median from an endless data stream                        |              |
 #+TBLFM: $1=@-1$1+1;N
+
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Design Recommend System                                     :noexport:
