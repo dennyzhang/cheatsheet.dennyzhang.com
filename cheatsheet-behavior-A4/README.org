@@ -32,6 +32,15 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   4 | How do they resolve conflicts?                           |
 |   5 | How big impact the candidate has/could drive?            |
 #+TBLFM: $1=@-1$1+1;N
+** Top Behavior Questions
+| Num | Name                                                   | Link |
+|-----+--------------------------------------------------------+------|
+|   1 | How do you handle missing a deadline or project delay? |      |
+|   2 | How do you deal with people who disagree with you?     |      |
+|   3 | What's the biggest mistake you have made?              | [[https://www.myperfectresume.com/how-to/interview-tips/what-is-the-biggest-mistake-youve-made][link]] |
+|   4 | Tell me about the best leader or manager you ever had  | [[https://www.thebalancecareers.com/how-to-answer-interview-questions-about-your-ideal-boss-2063848][link]] |
+#+TBLFM: $1=@-1$1+1;N
+[[image-blog:Star Principle][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-behavior-A4/star.png]]
 ** Well-Known Cultures
 | Num | Name                                  |
 |-----+---------------------------------------|
@@ -106,14 +115,14 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+TBLFM: $1=@-1$1+1;N
 
 ** Collaboration/Ownership/Conflicts 
-| Num | Example                                                                         |
-|-----+---------------------------------------------------------------------------------|
-|   1 | Tell us about a time you were given feedback that made you change your strategy |
-|   2 | How do you handle conflicts at work?                                   |
-|   3 | What if people take your credits ?                                              |
-|   4 | If you happen to notice your colleagues made a mistake, what you will do?       |
-|   5 | Tell me about a project that went beyond your scope of work.                    |
-|   6 | Customer vs share-holder                                                        |
+| Num | Example                                                                         | Link |
+|-----+---------------------------------------------------------------------------------+------|
+|   1 | Tell us about a time you were given feedback that made you change your strategy |      |
+|   2 | How do you handle conflicts at work?                                            |      |
+|   3 | What if people take your credits ?                                              |      |
+|   4 | If you happen to notice your colleagues made a mistake, what you will do?       |      |
+|   5 | Tell me about a project that went beyond your scope of work.                    |      |
+|   6 | Customer vs share-holder                                                        |      |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Communication/Team work           
@@ -129,14 +138,14 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+END_HTML
 
 ** Deal With Failure                 
-| Num | Example                                                                 |
-|-----+-------------------------------------------------------------------------|
-|   1 | How do you handle missing a deadline or project delay.                  |
-|   2 | Name time you messed up/ took at risk / failed / feel frustrated ?      |
-|   3 | Talk about difficulties / failures / tough time in project.             |
-|   4 | What's the most difficult decision you've had to make recently, and why |
-|   5 | What's the biggest mistake you have made?                               |
-|   6 | What would you change about your project if you did it all over again?  |
+| Num | Example                                                                 | Link |
+|-----+-------------------------------------------------------------------------+------|
+|   1 | How do you handle missing a deadline or project delay?                  |      |
+|   2 | Name time you messed up/ took at risk / failed / feel frustrated ?      |      |
+|   3 | Talk about difficulties / failures / tough time in project.             |      |
+|   4 | What's the most difficult decision you've had to make recently, and why |      |
+|   5 | What's the biggest mistake you have made?                               | [[https://www.myperfectresume.com/how-to/interview-tips/what-is-the-biggest-mistake-youve-made][link]] |
+|   6 | What would you change about your project if you did it all over again?  |      |
 #+TBLFM: $1=@-1$1+1;N                                                                     
 
 ** Leadership                        
@@ -146,7 +155,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   2 | Give an example of a time you managed a difficult employee, and how you overcame it.      |
 |   3 | How do you deal with people who disagree with you?                                        |
 |   4 | Walk me through a time you managed a complex team project. How you approach and delegate? |
-|   5 | Tell me about the best leader or manager you ever had. What did you like about them.      |
+|   5 | Tell me about the best leader or manager you ever had                                     |
 #+TBLFM: $1=@-1$1+1;N                                                                     
 
 [[image-blog:Amazon 14 Leadership][https://cheatsheet.dennyzhang.com/wp-content/uploads/2019/10/amazon-14-leadership.png]]

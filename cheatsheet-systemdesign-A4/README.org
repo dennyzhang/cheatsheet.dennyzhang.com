@@ -28,7 +28,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   2 | Understand scale: *Data* + *Traffic*            | Estimate the volume of the problem space                             |
 |   3 | Abstract design                                 | Sketch main components, explain workflow, avoid too deep for details |
 |   4 | Bottlenecks: *Key challenges* + *Trade-Offs*    | Valid reasoning to justify your proposals                            |
-|   5 | Scale your design                               | Availability, Scalability, Reliability, Security, etc                |
+|   5 | [[https://docs.microsoft.com/en-us/azure/architecture/guide/pillars][Scale your design]]                               | Availability, Scalability, Resiliency, Security, Management, etc     |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Typical Trade-Off
@@ -101,16 +101,16 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Engineering Blogs/Websites
 | Name                 | Summary                                                                        |
 |----------------------+--------------------------------------------------------------------------------|
-| Compnay Tech Blog    | [[https://www.facebook.com/pg/Engineering/notes/][Website: Facebook Engineering]], [[https://developers.googleblog.com][Website: Google Developers]]                      |
-| Compnay Tech Blog    | [[https://medium.com/netflix-techblog][Medium: Netflix Blog]], [[https://medium.com/airbnb-engineering][Medium: Airbnb Engineering & Data Science]]                |
-| Individual Tech Blog | [[https://www.allthingsdistributed.com][Blog: All Things Distributed - Amazon CTO]], [[http://highscalability.com/][Blog: highscalability]]               |
-| Papers               | [[https://github.com/papers-we-love/papers-we-love][Github: papers-we-love]]                                                         |
+| Website              | [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: system-design-primer]], [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]]             |
 | Website              | [[https://interviewing.io][Website: interviewing.io]], [[https://www.interviewbit.com/courses/system-design/][Website: interviewbit.com]]                            |
-| Website              | [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]], [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: system-design-primer]]             |
-| YouTube              | [[https://www.youtube.com/watch?v=ZgdS0EUmn70][YouTube: Intro to Architecture and Systems Design Interviews]]                   |
-| YouTube              | [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube Channel: Success in Tech]], [[https://www.youtube.com/watch?v=-W9F__D3oY4&feature=youtu.be][YouTube: Scalability Harvard Web Development]] |
 | Reference            | [[https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/][Link: Preparing for your Software Engineering Interview at Facebook]]            |
 | Reference            | [[https://www.hiredintech.com/classrooms/system-design/lesson/55][Link: The System Design Process]]                                                |
+| Papers               | [[https://github.com/papers-we-love/papers-we-love][Github: papers-we-love]]                                                         |
+| Individual Tech Blog | [[https://www.allthingsdistributed.com][Blog: All Things Distributed - Amazon CTO]], [[http://highscalability.com/][Blog: highscalability]]               |
+| Compnay Tech Blog    | [[https://www.facebook.com/pg/Engineering/notes/][Website: Facebook Engineering]], [[https://developers.googleblog.com][Website: Google Developers]]                      |
+| Compnay Tech Blog    | [[https://medium.com/netflix-techblog][Medium: Netflix Blog]], [[https://medium.com/airbnb-engineering][Medium: Airbnb Engineering & Data Science]]                |
+| YouTube              | [[https://www.youtube.com/watch?v=ZgdS0EUmn70][YouTube: Intro to Architecture and Systems Design Interviews]]                   |
+| YouTube              | [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube Channel: Success in Tech]], [[https://www.youtube.com/watch?v=-W9F__D3oY4&feature=youtu.be][YouTube: Scalability Harvard Web Development]] |
 | Cheatsheet           | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]]       |
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]                                        |
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                             |

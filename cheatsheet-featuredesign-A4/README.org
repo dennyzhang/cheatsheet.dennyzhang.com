@@ -24,46 +24,48 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Key Blocks For Feature/System Design
 | Num | Name                                    | Summary                                                    |
 |-----+-----------------------------------------+------------------------------------------------------------|
-|   1 | [[https://architect.dennyzhang.com/explain-cache][Caching]]                                 |                                                            |
+|   1 | [[https://architect.dennyzhang.com/explain-cache][Caching]]                                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/database-caching-strategies-using-redis.pdf][link]]                                                       |
 |   2 | [[https://architect.dennyzhang.com/explain-messagequeue][Message Queue]]                           |                                                            |
 |   3 | [[https://architect.dennyzhang.com/explain-loadbalancer][Load balancer]]                           |                                                            |
 |   4 | [[https://architect.dennyzhang.com/explain-dns][Networking: DNS]]                         |                                                            |
-|   5 | [[https://architect.dennyzhang.com/explain-locks][Pessimistic And Optimistic Locking]]      |                                                            |
-|   6 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                         |                                                            |
-|   7 | [[https://architect.dennyzhang.com/explain-db-replication][DB replication]]                          |                                                            |
+|   5 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                         |                                                            |
+|   6 | [[https://architect.dennyzhang.com/explain-db-replication][DB replication]]                          |                                                            |
+|   7 | [[https://architect.dennyzhang.com/explain-locks][Pessimistic And Optimistic Locking]]      |                                                            |
 |   8 | [[https://architect.dennyzhang.com/explain-cap][CAP: Consistency/Availability/Partition]] |                                                            |
 |   9 | [[https://architect.dennyzhang.com/explain-coordination][Concurrency & Communication]]             |                                                            |
 |  10 | [[https://architect.dennyzhang.com/explain-session][Session management]]                      |                                                            |
 |  11 | [[https://architect.dennyzhang.com/explain-poll-push][Pull vs Push model]]                      |                                                            |
 |  12 | Data Partition & Scaling                | Vertical scaling and Horizontal scaling                    |
-|  14 | Architect: gRPC vs REST                 |                                                            |
-|  13 | Networking: HTTP                        |                                                            |
-|  14 | Networking: TCP vs UDP                  |                                                            |
-|  15 | API Design                              |                                                            |
-|  16 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency |
-|  17 | Availability patterns                   | Fail-over vs Replication                                   |
-|  18 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]]                  |
-|  19 | Data Replication                        |                                                            |
-|  20 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write               |
-|  21 | CDN - Content Delivery Network          |                                                            |
+|  13 | Architect: gRPC vs REST                 |                                                            |
+|  14 | Networking: HTTP                        |                                                            |
+|  15 | Networking: TCP vs UDP                  |                                                            |
+|  16 | API Design                              |                                                            |
+|  17 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency |
+|  18 | Availability patterns                   | Fail-over vs Replication                                   |
+|  19 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]]                  |
+|  20 | Data Replication                        |                                                            |
+|  21 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write               |
+|  22 | CDN - Content Delivery Network          |                                                            |
+|  23 | [[https://architect.dennyzhang.com/explain-monitoring][Monitoring]]                              |                                                            |
 |-----+-----------------------------------------+------------------------------------------------------------|
-|  22 | Distributed Systems                     |                                                            |
-|  23 | Garbage Collection                      |                                                            |
-|  24 | Memory Management                       |                                                            |
-|  25 | Concurrency                             |                                                            |
-|  26 | Networking                              |                                                            |
-|  27 | Security                                |                                                            |
+|  24 | Distributed Systems                     |                                                            |
+|  25 | Garbage Collection                      |                                                            |
+|  26 | Memory Management                       |                                                            |
+|  27 | Concurrency                             |                                                            |
+|  28 | Networking                              |                                                            |
+|  29 | Security                                |                                                            |
 #+TBLFM: $1=@-1$1+1;N
 ** Additional Blocks For Feature/System Design
-| Num | Name                             | Summary |
-|-----+----------------------------------+---------|
-|   1 | Heartbeats                       |         |
-|   2 | [[https://architect.dennyzhang.com/explain-gossip][Gossip]]                           |         |
-|   3 | [[https://architect.dennyzhang.com/design-explain-paxos][Paxos and raft protocol]]          |         |
-|   4 | [[https://architect.dennyzhang.com/explain-vector-clocks][Vector Clocks/Version Vectors]]    |         |
-|   5 | [[https://architect.dennyzhang.com/explain-split-brain][Split brain]]                      |         |
-|   6 | Merkle Tree                      |         |
-|   7 | Sloppy Quorum and hinted handoff |         |
+| Num | Name                                     | Summary |
+|-----+------------------------------------------+---------|
+|   1 | [[https://architect.dennyzhang.com/explain-heartbeat][Heartbeats]]                               |         |
+|   2 | [[https://architect.dennyzhang.com/explain-gossip][Gossip]]                                   |         |
+|   3 | [[https://architect.dennyzhang.com/design-explain-paxos][Paxos and raft protocol]]                  |         |
+|   4 | [[https://architect.dennyzhang.com/explain-crdts][CRDTs (Consistent Replicated Data Types)]] |         |
+|   5 | [[https://architect.dennyzhang.com/explain-vector-clocks][Vector Clocks/Version Vectors]]            |         |
+|   6 | [[https://architect.dennyzhang.com/explain-split-brain][Split brain]]                              |         |
+|   7 | Merkle Tree                              |         |
+|   8 | Sloppy Quorum and hinted handoff         |         |
 #+TBLFM: $1=@-1$1+1;N
 [[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-featuredesign-A4/dynamo-summary.png]]
 ** Design Technical Modules
@@ -78,7 +80,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   7 | Delayed task scheduling                                    |            |
 |   8 | Design a thread-safe Hashmap                               | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/hash_table/hash_map.ipynb][link]]       |
 |   9 | Design a distributed Hashmap                               |            |
-|  10 | Design a distributed counter                               |            |
+|  10 | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed counter]]                               | [[https://www.slideshare.net/kevinweil/rainbird-realtime-analytics-at-twitter-strata-2011/59-If_You_Only_Remember_One][link]]       |
 |  11 | Design a load balancer                                     |            |
 |  12 | Design a client-server API to build a rich document editor |            |
 |  13 | Design a circuit breaker                                   |            |
@@ -98,10 +100,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   8 | Explain Hadoop file system            |                                         |
 #+TBLFM: $1=@-1$1+1;N
 
-#+BEGIN_HTML
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
-</iframe>
-#+END_HTML
 ** Explain tools: how XXX supports XXX?
 | Num | Name                                  | Summary |
 |-----+---------------------------------------+---------|
@@ -110,13 +108,27 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   3 | Explain raft/etcd                     |         |
 |   4 | How OS supports XXX?                  |         |
 #+TBLFM: $1=@-1$1+1;N
+** Cloud Design Principles
+| Num | Name                     | Summary |
+|-----+--------------------------+---------|
+|   1 | Fail fast                |         |
+|   2 | Design for failure       |         |
+|   3 | Immutable infrastructure |         |
+|   4 | [[https://www.engineyard.com/blog/pets-vs-cattle][Cats vs Cattle]]           |         |
+|   5 | [[https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/self-healing][Auto healing]]             |         |
+|   6 | Async programming        |         |
+|   7 | GitOps operational model |         |
+#+TBLFM: $1=@-1$1+1;N
 ** Cloud Design Patterns
-| Num | Name                | Summary |
-|-----+---------------------+---------|
-|   1 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/ambassador][Ambassador pattern]]  |         |
-|   2 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/cache-aside][Cache-Aside]]         |         |
-|   3 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker][Circuit Breaker]]     |         |
-|   4 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation][Gateway Aggregation]] |         |
+| Num | Name                        | Summary                                                                 |
+|-----+-----------------------------+-------------------------------------------------------------------------|
+|   1 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/ambassador][Ambassador pattern]]          | Create helper service to send network requests, besides the main sevice |
+|   2 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/cache-aside][Cache-Aside pattern]]         | Load data on demand into a cache from a data store                      |
+|   3 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker][Circuit Breaker pattern]]     | If a request takes too many reousrce, abort it                          |
+|   4 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/bulkhead][Bulkhead pattern]]            | Isolate elements into pools, so that one fire won't burn all            |
+|   5 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation][Gateway Aggregation pattern]] | Aggregate multiple individual requests into a single request            |
+|   6 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/priority-queue][Priority Queue pattern]]      | Support different SLAs for different individual clients                 |
+|   7 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/strangler][Strangler pattern]]           | Incrementally migrate a legacy system piece by piece                    |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Misc
@@ -127,15 +139,22 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   3 | How to support feature of "diff 1.txt 2. txt"                                   |                                   |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Object-Oriented Design Problems
-| Num | Problem                      | Category/Tag           | Example                                |
-|-----+------------------------------+------------------------+----------------------------------------|
-|   1 | Max Stack                    | [[https://code.dennyzhang.com/review-stack][#stack]] , [[https://code.dennyzhang.com/review-oodesign][#oodesign]]     | [[https://code.dennyzhang.com/max-stack][Leetcode: Max Stack]]                    |
-|   2 | LRU cache                    | [[https://code.dennyzhang.com/review-linkedlist][#linkedlist]], [[https://code.dennyzhang.com/review-oodesign][#oodesign]] | [[https://code.dennyzhang.com/lru-cache][Leetcode: LRU Cache]]                    |
-|   3 | LFU cache                    | [[https://code.dennyzhang.com/review-linkedlist][#linkedlist]], [[https://code.dennyzhang.com/review-oodesign][#oodesign]] | [[https://code.dennyzhang.com/lfu-cache][Leetcode: LFU Cache]]                    |
-|   4 | Design Hit Counter           | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-hit-counter][Leetcode: Design Hit Counter]]           |
-|   5 | Logger Rate Limiter          | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/logger-rate-limiter][Leetcode: Logger Rate Limiter]]          |
-|   6 | Design HashMap               | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-hashmap][Leetcode: Design HashMap]]               |
-|   7 | Insert Delete GetRandom O(1) | [[https://code.dennyzhang.com/review-oodesign][#oodesign]], [[https://code.dennyzhang.com/review-random][#random]]     | [[https://code.dennyzhang.com/insert-delete-getrandom-o1][Leetcode: Insert Delete GetRandom O(1)]] |
+| Num | Problem                         | Category/Tag           | Example                                                                            |
+|-----+---------------------------------+------------------------+------------------------------------------------------------------------------------|
+|   1 | Cache                           | [[https://code.dennyzhang.com/review-linkedlist][#linkedlist]], [[https://code.dennyzhang.com/review-oodesign][#oodesign]] | [[https://code.dennyzhang.com/lru-cache][Leetcode: LRU Cache]], [[https://code.dennyzhang.com/lfu-cache][Leetcode: LFU Cache]], [[https://code.dennyzhang.com/all-oone-data-structure][Leetcode: All O`one Data Structure]]       |
+|   2 | Throttling                      | [[https://code.dennyzhang.com/review-linkedlist][#linkedlist]], [[https://code.dennyzhang.com/review-oodesign][#oodesign]] | [[https://code.dennyzhang.com/design-hit-counter][Leetcode: Design Hit Counter]], [[https://code.dennyzhang.com/logger-rate-limiter][Leetcode: Logger Rate Limiter]]                        |
+|   3 | Iterator                        | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/binary-search-tree-iterator][Leetcode: Binary Search Tree Iterator]], [[https://code.dennyzhang.com/design-compressed-string-iterator][Leetcode: Design Compressed String Iterator]] |
+|   4 | Design Log Storage System       | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-log-storage-system][Leetcode: Design Log Storage System]]                                                |
+|   5 | Linked List with random access  | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-linked-list][Leetcode: Design Linked List]]                                                       |
+|   6 | Max Stack                       | [[https://code.dennyzhang.com/review-stack][#stack]] , [[https://code.dennyzhang.com/review-oodesign][#oodesign]]     | [[https://code.dennyzhang.com/max-stack][Leetcode: Max Stack]]                                                                |
+|   7 | Design HashMap                  | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-hashmap][Leetcode: Design HashMap]]                                                           |
+|   8 | Circular Queue                  | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-circular-queue][Leetcode: Design Circular Queue]], [[https://code.dennyzhang.com/design-circular-deque][Leetcode: Design Circular Deque]]                   |
+|   9 | Trie tree                       | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/implement-trie-prefix-tree][Leetcode: Implement Trie (Prefix Tree)]]                                             |
+|  10 | Get Median                      | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/find-median-from-data-stream][Leetcode: Find Median from Data Stream]]                                             |
+|  11 | Range Sum Query                 | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/range-sum-query-mutable][Leetcode: Range Sum Query - Mutable]], [[https://code.dennyzhang.com/range-sum-query-immutable][Leetcode: Range Sum Query - Immutable]]         |
+|  12 | Design File System              | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-file-system][Leetcode: Design File System]]                                                       |
+|  13 | Insert Delete GetRandom O(1)    | [[https://code.dennyzhang.com/review-oodesign][#oodesign]], [[https://code.dennyzhang.com/review-random][#random]]     | [[https://code.dennyzhang.com/insert-delete-getrandom-o1][Leetcode: Insert Delete GetRandom O(1)]]                                             |
+|  14 | Insert Delete GetRandom O(1) II | [[https://code.dennyzhang.com/review-oodesign][#oodesign]], [[https://code.dennyzhang.com/review-random][#random]]     | [[https://code.dennyzhang.com/insert-delete-getrandom-o1-duplicates-allowed][Leetcode: Insert Delete GetRandom O(1) - Duplicates allowed]]                        |
 #+TBLFM: $1=@-1$1+1;N
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -238,3 +257,16 @@ https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals
 * TODO currency Model                                              :noexport:
 * TODO How Slack works: https://www.youtube.com/watch?v=WE9c9AZe-DY :noexport:
 * TODO https://techcrunch.com/2012/04/12/how-to-scale-a-1-billion-startup-a-guide-from-instagram-co-founder-mike-krieger/ :noexport:
+* TODO Deep dive into lisp language implementation                 :noexport:
+* TODO Security: SAML and LDAP external IDP's                      :noexport:
+* TODO Security: certicate rotation                                :noexport:
+* TODO Compliance standards: FIPS,  PCI/DSS                        :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO What to do when service is overloaded?                      :noexport:
+- Scaling up/out
+- Throttling
+  drop clients: api limits
+  drop features: bulkhead
+  drop requests: circuit breaker
+* TODO Realtime Analytics at Twitter                               :noexport:
+https://www.slideshare.net/kevinweil/rainbird-realtime-analytics-at-twitter-strata-2011/8-And_My_Personal_Favorite

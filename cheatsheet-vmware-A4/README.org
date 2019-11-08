@@ -307,6 +307,49 @@ Create least privelege on compute stack
 * Velocloud                                                        :noexport:
 * [#A] cloudhealth                                                 :noexport:
 * EULA: end user license agreement                                 :noexport:
+* DONE use log insight as a syslog server                          :noexport:
+  CLOSED: [2019-11-06 Wed 13:51]
+https://docs.vmware.com/en/vRealize-Log-Insight/4.8/com.vmware.log-insight.administration.doc/GUID-848E4804-3837-4D5E-956E-2216B17376AD.html
+
+https://gcm-wcp.licf.vmware.com
+
+514
+
+** Install syslog client
+https://www.syslog-ng.com/community/b/blog/posts/installing-the-latest-syslog-ng-on-ubuntu-and-other-deb-distributions
+
+apt-get install syslog-ng-core
+** generate log
+export docker_image="ubuntu:18.04"
+docker stop my-test; docker rm my-test
+docker run -t -d --privileged -h mytest --name my-test --entrypoint=/bin/sh "$docker_image"
+docker exec -it my-test bash
+
+docker exec -it my-test sh
+ls -d /etc/*syslog*
+
+https://help.papertrailapp.com/kb/configuration/configuring-remote-syslog-from-unixlinux-and-bsdos-x/#configure-syslog-ng
+
+gcm-wcp.licf.vmware.com:514
+
+ps -ef | grep syslog
+
+cd /etc/syslog-ng/conf.d
+
+cat > /etc/syslog-ng/conf.d/my.conf << EOF
+destination d_papertrail {
+    udp("gcm-wcp.licf.vmware.com" port(514));
+};
+
+# replace "s_sys" with the name you found:
+log { source(s_src); destination(d_papertrail); };
+EOF
+
+cat /etc/syslog-ng/conf.d/my.conf
+** start the client
+service syslog-ng start
+** generate dummy log
+ logger "Testing Papertrail message delivery"
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO GTM investments                                             :noexport:
 * TODO PMM, TMM                                                    :noexport:
