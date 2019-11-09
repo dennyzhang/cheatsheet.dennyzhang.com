@@ -250,3 +250,7 @@ http://systemdesigns.blogspot.com/2015/12/design-uber.html
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Design Recommend System                                     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO How redis is implemented?                                   :noexport:
+* TODO How kafaka is implemented?                                  :noexport:
+
