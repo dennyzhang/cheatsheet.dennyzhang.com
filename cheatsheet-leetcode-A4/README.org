@@ -27,7 +27,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Num | Category/Tag                       | Example                                                       |
 |-----+------------------------------------+---------------------------------------------------------------|
 |   1 | [[https://code.dennyzhang.com/review-bfs][#bfs]]                               | [[https://code.dennyzhang.com/binary-tree-level-order-traversal][Leetcode: Binary Tree Level Order Traversal]]                   |
-|   2 | [[https://code.dennyzhang.com/review-dfs][#dfs]]                               | [[https://code.dennyzhang.com/island-perimeter][Leetcode: Island Perimeter]], [[https://code.dennyzhang.com/surrounded-regions][Surrounded Regions]]                |
+|   2 | [[https://code.dennyzhang.com/review-dfs][#dfs]]                               | [[https://code.dennyzhang.com/island-perimeter][Leetcode: Island Perimeter]], [[https://code.dennyzhang.com/surrounded-regions][Leetcode: Surrounded Regions]]      |
 |   3 | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]                      | [[https://code.dennyzhang.com/search-insert-position][Leetcode: Search Insert Position]]                              |
 |   4 | [[https://code.dennyzhang.com/review-interval][#interval]], [[https://code.dennyzhang.com/tag/mergetwolist][#mergetwolist]]           | [[https://code.dennyzhang.com/interval-list-intersections][Leetcode: Interval List Intersections]]                         |
 |   5 | [[https://code.dennyzhang.com/review-twopointer][#twopointer]], [[https://code.dennyzhang.com/tag/array][#array]]                | [[https://code.dennyzhang.com/reverse-words-in-a-string-ii][Leetcode: Reverse Words in a String II]]                        |
@@ -53,6 +53,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  25 | [[https://code.dennyzhang.com/review-divideconquer][#divideconquer]], [[https://code.dennyzhang.com/review-recursive][#recursive]]         |                                                               |
 #+TBLFM: $1=@-1$1+1;N
 
+#+BEGIN_HTML
+<a href="https://code.dennyzhang.com"><b><font color=blue>https://code.dennyzhang.com</font></b></a>
+#+END_HTML
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][https://cdn.dennyzhang.com/images/brain/denny_leetcode.png]]
 ** Top 25 Graph Problems
 | Num | Problem                                                                 | Category/Tag              | Summary                                                 |
 |-----+-------------------------------------------------------------------------+---------------------------+---------------------------------------------------------|
@@ -83,11 +88,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  25 | Bridges in a connected graph - [[https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm][Tarjan's algorithm]]                       |                           | [[https://code.dennyzhang.com/critical-connections-in-a-network][Leetcode: Critical Connections in a Network]]             |
 #+TBLFM: $1=@-1$1+1;N
 
-#+BEGIN_HTML
-<a href="https://code.dennyzhang.com"><b><font color=blue>https://code.dennyzhang.com</font></b></a>
-#+END_HTML
-
-[[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][https://cdn.dennyzhang.com/images/brain/denny_leetcode.png]]
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
@@ -172,7 +172,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   2 | Split Array into Consecutive Subsequences | [[https://code.dennyzhang.com/tag/splitarray][#splitarray]], [[https://code.dennyzhang.com/review-greedy][#greedy]]      | [[https://code.dennyzhang.com/split-array-into-consecutive-subsequences][Leetcode: Split Array into Consecutive Subsequences]] |
 |   3 | Remove duplicate letters                  | [[https://code.dennyzhang.com/review-stack][#stack]], [[https://code.dennyzhang.com/review-greedy][#greedy]]           | [[https://code.dennyzhang.com/remove-duplicate-letters][Remove Duplicate Letters]]                            |
 |   4 | Two City Scheduling                       | [[https://code.dennyzhang.com/review-greedy][#greedy]]                   | [[https://code.dennyzhang.com/two-city-scheduling][Leetcode: Two City Scheduling]]                       |
-|   5 |                                           |                           |                                                     |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Object-Oriented Design Problems
 | Num | Problem                         | Category/Tag           | Example                                                                            |
@@ -240,6 +239,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  43 | Wiggle sort                                          |                                   | [[https://code.dennyzhang.com/wiggle-sort-ii][Leetcode: Wiggle Sort II]]                                                     |
 |  44 |                                                      |                                   | [[https://code.dennyzhang.com/remove-duplicates-from-sorted-array-ii][Leetcode: Remove Duplicates from Sorted Array II]]                             |
 |  45 |                                                      |                                   | [[https://en.wikipedia.org/wiki/Travelling_salesman_problem][Travelling salesman problem]]                                                  |
+|  46 | Array compressed storage                             | [[https://code.dennyzhang.com/review-oodesign][#oodesign]], [[https://code.dennyzhang.com/review-game][#game]]                  | [[https://code.dennyzhang.com/design-tic-tac-toe][Leetcode: Design Tic-Tac-Toe]]                                                 |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
@@ -295,13 +295,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  31 | Add a dummy head node for linked list                                  |                                                                         |
 |  32 | Hide details which are irrelevant                                      |                                                                         |
 #+TBLFM: $1=@-1$1+1;N
-** Golang Tips
-| Name                                              | Summary                                                                                        |
-|---------------------------------------------------+------------------------------------------------------------------------------------------------|
-| Golang return a tuple                             | =func dfs(root *TreeNode, max *float64) (sum int, cnt int)=, [[https://code.dennyzhang.com/maximum-average-subtree][Leetcode: Maximum Average Subtree]] |
-| Use strings.Builder, instead of string            | [[https://code.dennyzhang.com/unique-email-addresses][Leetcode: Unique Email Addresses]]                                                               |
-| Variable Conversion                               | =float64(x_int/y_int)= != =float64(x_int)/float64(y_int)=, [[https://code.dennyzhang.com/maximum-average-subtree][Leetcode: Maximum Average Subtree]]   |
-| For a list of objects, pass by value or reference | =f(l []*TreeNode)= vs =f(l *[]*TreeNode)=, [[https://code.dennyzhang.com/lowest-common-ancestor-of-a-binary-tree][Leetcode: Lowest Common Ancestor of a Binary Tree]]   |
 ** Whiteboard Tips
 | Name                                                    | Summary                                                               |
 |---------------------------------------------------------+-----------------------------------------------------------------------|

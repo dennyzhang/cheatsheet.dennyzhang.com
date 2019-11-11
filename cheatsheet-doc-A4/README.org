@@ -388,5 +388,6 @@ Archive Popular About (hire me!) Twitter RSS
 * Describe situation                                               :noexport:
 relegated to the position of a second tier team(so to speak) with no real ownership or ability to drive any directions.
 
-
 An interview is typically different from your day-to-day job.
+* notes                                                            :noexport:
+What you gonna do to mitigate the single-point-of-failure issues.

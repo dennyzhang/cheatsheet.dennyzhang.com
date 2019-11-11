@@ -25,56 +25,66 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Num | Name                                            | Summary                                                              |
 |-----+-------------------------------------------------+----------------------------------------------------------------------|
 |   1 | Outline use cases: List major and focus on some | Show good sense. The questions you asked define your level           |
-|   2 | Understand scale: *Data* + *Traffic*            | Estimate the volume of the problem space                             |
-|   3 | Abstract design                                 | Sketch main components, explain workflow, avoid too deep for details |
-|   4 | Bottlenecks: *Key challenges* + *Trade-Offs*    | Valid reasoning to justify your proposals                            |
-|   5 | [[https://docs.microsoft.com/en-us/azure/architecture/guide/pillars][Scale your design]]                               | Availability, Scalability, Resiliency, Security, Management, etc     |
+|   2 | Estimate scale: *Data* + *Traffic*              | Back-of-the-envelope estimation                                      |
+|   3 | Defining data model                             | It helps to clarify how data will flow among different components    |
+|   4 | Abstract design                                 | Sketch main components, explain workflow, avoid too deep for details |
+|   5 | Detailed design + discussion with interviewers  | Explain trade-off of your proposal + on-demand deep dive             |
+|   6 | Identify and resolve Bottlenecks                | *Key challenges* + *Trade-Offs*. Usuaully no optimal solution(s)     |
+|   7 | [[https://docs.microsoft.com/en-us/azure/architecture/guide/pillars][Scale your design]]                               | Availability, Resiliency, Scalability, Security, Serviceability, etc |
 #+TBLFM: $1=@-1$1+1;N
 
-** Typical Trade-Off
-| Num | Name                        | Summary              |
-|-----+-----------------------------+----------------------|
-|   1 | Performance vs Scalability  |                      |
-|   2 | Latency vs Throughput       |                      |
-|   3 | Availability vs Consistency | Brewer's CAP theorem |
-#+TBLFM: $1=@-1$1+1;N
+** Feature Design
+- [[https://cheatsheet.dennyzhang.com/cheatsheet-featuredesign-A4][CheatSheet: Feature Design For Job Interview]]
 
 ** Classic Design Problems - Design A Complex Product
 | Num | Name                                       | Summary                                      |
 |-----+--------------------------------------------+----------------------------------------------|
 |   1 | *Design A Technical Feature*               | [[https://cheatsheet.dennyzhang.com/cheatsheet-featuredesign-A4][CheatSheet: Feature Design For Job Interview]] |
 |   2 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: TinyURL - A URL Shorterner Service]] |                                              |
-|   3 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]              | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/parking_lot/parking_lot.ipynb][link]]                                         |
-|   4 | [[https://architect.dennyzhang.com/design-elevator/][Design: An Elevator Service]]                |                                              |
-|   5 | [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]                       |                                              |
-|   6 | Design twitter news feed                   | [[https://medium.com/@narengowda/system-design-for-twitter-e737284afc95][link]]                                         |
+|   3 | [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]                       |                                              |
+|   4 | Design twitter news feed                   | [[https://medium.com/@narengowda/system-design-for-twitter-e737284afc95][link]]                                         |
 |-----+--------------------------------------------+----------------------------------------------|
-|   7 | Design web crawler                         |                                              |
-|   8 | Design K/V DB                              |                                              |
-|   9 | [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]]          |                                              |
-|  10 | Design a payment processor                 |                                              |
-|  11 | Design a voice conference system           |                                              |
-|  12 | Design google doc                          |                                              |
-|  13 | Design gmail                               |                                              |
-|  14 | Design instagram, a photo sharing app      |                                              |
-|  15 | Design Yelp, a location-based system       |                                              |
-|  16 | Design an API gateway                      |                                              |
-|  17 | Design amazon book recommendation system   |                                              |
-|  18 | Design leetcode                            |                                              |
-|  19 | Google autocomplete                        |                                              |
-|  20 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]          |                                              |
-|  21 | Design Google PageRank                     |                                              |
-|  22 | Design messaging/notification system       |                                              |
-|  23 | Design search post system                  |                                              |
-|  24 | Design memcache                            |                                              |
-|  25 | Design typeahead                           |                                              |
-|  26 | Design Google Adsense fraud detection      |                                              |
+|   5 | Design web crawler                         |                                              |
+|   6 | Design K/V DB                              |                                              |
+|   7 | Design amazon shopping cart                |                                              |
+|   8 | [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]]          |                                              |
+|   9 | Design a payment processor                 |                                              |
+|  10 | Design slack                               |                                              |
+|  11 | Design google doc                          |                                              |
+|  12 | Design gmail                               |                                              |
+|  13 | Design instagram, a photo sharing app      |                                              |
+|  14 | Design Yelp, a location-based system       |                                              |
+|  15 | Design an API gateway                      |                                              |
+|  16 | Design amazon book recommendation system   |                                              |
+|  17 | Google autocomplete                        |                                              |
+|  18 | Design Google PageRank                     |                                              |
+|  19 | Design messaging/notification system       |                                              |
+|  20 | Design search post system                  |                                              |
+|  21 | [[https://architect.dennyzhang.com/design-redis][Design memcache/redis]]                      |                                              |
+|  22 | Design typeahead                           |                                              |
+|  23 | Design Google Adsense fraud detection      |                                              |
+|  24 | Design Pastebin.com                        |                                              |
+|  25 | Design Mint.com                            |                                              |
+|  26 | Design leetcode                            |                                              |
+|  27 | Design a voice conference system           |                                              |
+|  28 | [[https://architect.dennyzhang.com/design-elevator/][Design: An Elevator Service]]                |                                              |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
 #+END_HTML
+** Papers Of Well-Known Products
+| Name                                  | Summary |
+|---------------------------------------+---------|
+| Dynamo - HA K/V store                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/dynamo-amazon.pdf][paper]]   |
+| Chubby - Lock service                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/chubby-osdi06.pdf][paper]]   |
+| Cassandra - Decentralized storage     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/cassandra-facebook.pdf][paper]]   |
+| Kafka - distributed messageing system | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/kafka-linkedin.pdf][paper]]   |
+| Bigtable - distributed storage        | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/bigtable-google.pdf][paper]]   |
+| Zookeeper - Cooridnation              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/zookeeper.pdf][paper]]   |
+| Spanner - Globally-distributed db     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/spanner-google.pdf][paper]]   |
+| Google file system                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/the-google-file-system.pdf][paper]]   |
 ** Engineering Of Well-Known Products
 | Name          | Summary                                                  |
 |---------------+----------------------------------------------------------|
@@ -114,6 +124,14 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Cheatsheet           | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]]       |
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]                                        |
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                             |
+** Typical Trade-Off
+| Num | Name                        | Summary              |
+|-----+-----------------------------+----------------------|
+|   1 | Performance vs Scalability  |                      |
+|   2 | Latency vs Throughput       |                      |
+|   3 | Availability vs Consistency | Brewer's CAP theorem |
+#+TBLFM: $1=@-1$1+1;N
+
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

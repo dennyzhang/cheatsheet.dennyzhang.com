@@ -27,35 +27,37 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   1 | [[https://architect.dennyzhang.com/explain-cache][Caching]]                                 | Stores data so that future requests of data retrieval can be faster |
 |   2 | [[https://architect.dennyzhang.com/explain-messagequeue][Message Queue]]                           | Provides an asynchronous communications protocol,                   |
 |   3 | [[https://architect.dennyzhang.com/explain-partition][Data Partition & Sharding]]               | Break up a big data volume into many smaller parts                  |
-|   4 | [[https://architect.dennyzhang.com/explain-poll-push][Pull vs Push model]]                      |                                                                     |
-|   5 | Networking: HTTP                        |                                                                     |
-|   6 | [[https://architect.dennyzhang.com/explain-loadbalancer][Load balancer]]                           |                                                                     |
-|   7 | [[https://architect.dennyzhang.com/explain-coordination][Concurrency & Communication]]             |                                                                     |
-|   8 | [[https://architect.dennyzhang.com/explain-db-replication][DB replication]]                          |                                                                     |
-|   9 | [[https://architect.dennyzhang.com/explain-cap][CAP: Consistency/Availability/Partition]] |                                                                     |
-|  10 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                         |                                                                     |
-|  11 | [[https://en.wikipedia.org/wiki/Two-phase_commit_protocol][Two-phase commit]]/[[https://en.wikipedia.org/wiki/Three-phase_commit_protocol][Three-phase commit]]     |                                                                     |
-|  12 | API: gRPC vs REST                       |                                                                     |
-|  13 | Scale up vs Scale out                   | Vertical scaling and Horizontal scaling                             |
-|  14 | [[https://architect.dennyzhang.com/explain-locks][Pessimistic And Optimistic Locking]]      |                                                                     |
-|  15 | [[https://architect.dennyzhang.com/explain-session][Session management]]                      |                                                                     |
-|  16 | Networking: TCP vs UDP                  |                                                                     |
-|  17 | API Design                              |                                                                     |
-|  18 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency          |
-|  19 | Availability patterns                   | Fail-over vs Replication                                            |
-|  20 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]]                           |
-|  21 | Data Replication                        |                                                                     |
-|  22 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write                        |
-|  23 | CDN - Content Delivery Network          |                                                                     |
-|  24 | [[https://architect.dennyzhang.com/explain-monitoring][Monitoring]]                              |                                                                     |
+|   4 | [[https://architect.dennyzhang.com/explain-indexing][DB Indexing]]                             | Create indexes on multiple columns to speed up table look up        |
+|   5 | [[https://architect.dennyzhang.com/explain-poll-push][Pull vs Push model]]                      |                                                                     |
+|   6 | Networking: HTTP                        |                                                                     |
+|   7 | [[https://architect.dennyzhang.com/explain-loadbalancer][Load balancer]]                           |                                                                     |
+|   8 | [[https://architect.dennyzhang.com/explain-coordination][Concurrency & Communication]]             |                                                                     |
+|   9 | [[https://architect.dennyzhang.com/explain-db-replication][DB replication]]                          |                                                                     |
+|  10 | [[https://architect.dennyzhang.com/explain-cap][CAP: Consistency/Availability/Partition]] |                                                                     |
+|  11 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                         |                                                                     |
+|  12 | [[https://architect.dennyzhang.com/explain-eventualconsistency][Eventually consistency]]                  |                                                                     |
+|  13 | [[https://en.wikipedia.org/wiki/Two-phase_commit_protocol][Two-phase commit]]/[[https://en.wikipedia.org/wiki/Three-phase_commit_protocol][Three-phase commit]]     |                                                                     |
+|  14 | API: gRPC vs REST                       |                                                                     |
+|  15 | Scale up vs Scale out                   | Vertical scaling and Horizontal scaling                             |
+|  16 | [[https://architect.dennyzhang.com/explain-locks][Pessimistic And Optimistic Locking]]      |                                                                     |
+|  17 | [[https://architect.dennyzhang.com/explain-session][Session management]]                      |                                                                     |
+|  18 | Networking: TCP vs UDP                  |                                                                     |
+|  19 | API Design                              |                                                                     |
+|  20 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency          |
+|  21 | Availability patterns                   | Fail-over vs Replication                                            |
+|  22 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]]                           |
+|  23 | Data Replication                        |                                                                     |
+|  24 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write                        |
+|  25 | CDN - Content Delivery Network          |                                                                     |
+|  26 | [[https://architect.dennyzhang.com/explain-monitoring][Monitoring]]                              |                                                                     |
 |-----+-----------------------------------------+---------------------------------------------------------------------|
-|  25 | Distributed Systems                     |                                                                     |
-|  26 | Garbage Collection                      |                                                                     |
-|  27 | Memory Management                       |                                                                     |
-|  28 | Concurrency                             |                                                                     |
-|  29 | Networking: SDN                         |                                                                     |
-|  30 | Security                                |                                                                     |
-|  31 | [[https://architect.dennyzhang.com/explain-dns][Networking: DNS]]                         |                                                                     |
+|  27 | Distributed Systems                     |                                                                     |
+|  28 | Garbage Collection                      |                                                                     |
+|  29 | Memory Management                       |                                                                     |
+|  30 | Concurrency                             |                                                                     |
+|  31 | Networking: SDN                         |                                                                     |
+|  32 | Security                                |                                                                     |
+|  33 | [[https://architect.dennyzhang.com/explain-dns][Networking: DNS]]                         |                                                                     |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
@@ -151,6 +153,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   1 | How to store 2TB data into 3 disks of 1TB. And be tolerant for one disk failure | A, B, C. And C = A XOR B          |
 |   2 | Find out the difference between two files. Majority of these two are the same   | [[https://code.dennyzhang.com/followup-lcs][#lcs - Longest Common Subsequence]] |
 |   3 | How to support feature of "diff 1.txt 2. txt"                                   |                                   |
+|   4 | Avoid double payment in a distributed payment system                            | [[https://medium.com/airbnb-engineering/avoiding-double-payments-in-a-distributed-payments-system-2981f6b070bb][link]]                              |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Object-Oriented Design Problems
 | Num | Problem                         | Category/Tag           | Example                                                                            |
@@ -308,3 +311,6 @@ incidents that suddenly result in extremely low availability for
 extended periods of time. This results in reputational and financial
 damage to the customers.
 * TODO How to define SLA?                                          :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Pod creation process                                        :noexport:
+* TODO VM creation process                                         :noexport:
