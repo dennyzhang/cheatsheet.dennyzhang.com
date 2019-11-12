@@ -21,43 +21,41 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-** Key Blocks For Feature/System Design
+** 30 Key Concepts For Feature/System Design
 | Num | Name                                    | Summary                                                             |
 |-----+-----------------------------------------+---------------------------------------------------------------------|
 |   1 | [[https://architect.dennyzhang.com/explain-cache][Caching]]                                 | Stores data so that future requests of data retrieval can be faster |
 |   2 | [[https://architect.dennyzhang.com/explain-messagequeue][Message Queue]]                           | Provides an asynchronous communications protocol,                   |
 |   3 | [[https://architect.dennyzhang.com/explain-partition][Data Partition & Sharding]]               | Break up a big data volume into many smaller parts                  |
 |   4 | [[https://architect.dennyzhang.com/explain-indexing][DB Indexing]]                             | Create indexes on multiple columns to speed up table look up        |
-|   5 | [[https://architect.dennyzhang.com/explain-poll-push][Pull vs Push model]]                      |                                                                     |
-|   6 | Networking: HTTP                        |                                                                     |
-|   7 | [[https://architect.dennyzhang.com/explain-loadbalancer][Load balancer]]                           |                                                                     |
-|   8 | [[https://architect.dennyzhang.com/explain-coordination][Concurrency & Communication]]             |                                                                     |
-|   9 | [[https://architect.dennyzhang.com/explain-db-replication][DB replication]]                          |                                                                     |
-|  10 | [[https://architect.dennyzhang.com/explain-cap][CAP: Consistency/Availability/Partition]] |                                                                     |
-|  11 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                         |                                                                     |
-|  12 | [[https://architect.dennyzhang.com/explain-eventualconsistency][Eventually consistency]]                  |                                                                     |
+|   5 | [[https://architect.dennyzhang.com/explain-db-replication][DB replication]]                          | Duplicate data to increase service availability                     |
+|   6 | [[https://architect.dennyzhang.com/explain-cap][CAP: Consistency/Availability/Partition]] | A distributed database system can only have 2 of the 3              |
+|   7 | [[https://architect.dennyzhang.com/explain-nosql][DB: SQL & NoSQL]]                         | Relational databases and non-relational databases                   |
+|-----+-----------------------------------------+---------------------------------------------------------------------|
+|   8 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                         |                                                                     |
+|   9 | [[https://architect.dennyzhang.com/explain-poll-push][Pull vs Push model]]                      |                                                                     |
+|  10 | [[https://architect.dennyzhang.com/explain-eventualconsistency][Eventually consistency]]                  |                                                                     |
+|  11 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write                        |
+|  12 | Garbage Collection                      |                                                                     |
+|-----+-----------------------------------------+---------------------------------------------------------------------|
 |  13 | [[https://en.wikipedia.org/wiki/Two-phase_commit_protocol][Two-phase commit]]/[[https://en.wikipedia.org/wiki/Three-phase_commit_protocol][Three-phase commit]]     |                                                                     |
 |  14 | API: gRPC vs REST                       |                                                                     |
-|  15 | Scale up vs Scale out                   | Vertical scaling and Horizontal scaling                             |
-|  16 | [[https://architect.dennyzhang.com/explain-locks][Pessimistic And Optimistic Locking]]      |                                                                     |
-|  17 | [[https://architect.dennyzhang.com/explain-session][Session management]]                      |                                                                     |
-|  18 | Networking: TCP vs UDP                  |                                                                     |
-|  19 | API Design                              |                                                                     |
-|  20 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency          |
-|  21 | Availability patterns                   | Fail-over vs Replication                                            |
-|  22 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]]                           |
-|  23 | Data Replication                        |                                                                     |
-|  24 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write                        |
-|  25 | CDN - Content Delivery Network          |                                                                     |
-|  26 | [[https://architect.dennyzhang.com/explain-monitoring][Monitoring]]                              |                                                                     |
-|-----+-----------------------------------------+---------------------------------------------------------------------|
-|  27 | Distributed Systems                     |                                                                     |
-|  28 | Garbage Collection                      |                                                                     |
-|  29 | Memory Management                       |                                                                     |
-|  30 | Concurrency                             |                                                                     |
-|  31 | Networking: SDN                         |                                                                     |
-|  32 | Security                                |                                                                     |
-|  33 | [[https://architect.dennyzhang.com/explain-dns][Networking: DNS]]                         |                                                                     |
+|  15 | [[https://architect.dennyzhang.com/explain-loadbalancer][Load balancer]]                           |                                                                     |
+|  16 | [[https://architect.dennyzhang.com/explain-coordination][Concurrency & Communication]]             |                                                                     |
+|  17 | Scale up vs Scale out                   | Vertical scaling and Horizontal scaling                             |
+|  18 | API Design                              |                                                                     |
+|  19 | [[https://architect.dennyzhang.com/explain-locks][Pessimistic And Optimistic Locking]]      |                                                                     |
+|  20 | [[https://architect.dennyzhang.com/explain-session][Session management]]                      |                                                                     |
+|  21 | Networking: HTTP                        |                                                                     |
+|  22 | Networking: TCP vs UDP                  |                                                                     |
+|  23 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency          |
+|  24 | Availability patterns                   | Fail-over vs Replication                                            |
+|  25 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]], throttling               |
+|  26 | CDN - Content Delivery Network          |                                                                     |
+|  27 | [[https://architect.dennyzhang.com/explain-monitoring][Monitoring]]                              |                                                                     |
+|  28 | Memory Management                       |                                                                     |
+|  29 | Security                                |                                                                     |
+|  30 | [[https://architect.dennyzhang.com/explain-dns][Networking: DNS]]                         |                                                                     |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
@@ -98,6 +96,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   7 | Merkle Tree                              |         |
 |   8 | Sloppy Quorum and hinted handoff         |         |
 |   9 | [[https://architect.dennyzhang.com/explain-lsm][LSM (Log Structured Merge Trees)]]         |         |
+|  10 | Networking: SDN                          |         |
 #+TBLFM: $1=@-1$1+1;N
 [[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-featuredesign-A4/dynamo-summary.png]]
 ** Explain workflow: What happens when XXX?
@@ -314,3 +313,5 @@ damage to the customers.
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Pod creation process                                        :noexport:
 * TODO VM creation process                                         :noexport:
+* TODO Why it's called reverse proxy                               :noexport:
+A reverse proxy retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client, appearing as if they originated from the proxy server itself.

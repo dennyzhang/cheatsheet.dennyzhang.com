@@ -74,17 +74,25 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
 #+END_HTML
-** Papers Of Well-Known Products
-| Name                                  | Summary |
-|---------------------------------------+---------|
-| Dynamo - HA K/V store                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/dynamo-amazon.pdf][paper]]   |
-| Chubby - Lock service                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/chubby-osdi06.pdf][paper]]   |
-| Cassandra - Decentralized storage     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/cassandra-facebook.pdf][paper]]   |
-| Kafka - distributed messageing system | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/kafka-linkedin.pdf][paper]]   |
-| Bigtable - distributed storage        | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/bigtable-google.pdf][paper]]   |
-| Zookeeper - Cooridnation              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/zookeeper.pdf][paper]]   |
-| Spanner - Globally-distributed db     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/spanner-google.pdf][paper]]   |
-| Google file system                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/the-google-file-system.pdf][paper]]   |
+** 15 Well-Known Papers
+| Num | Name                                  | Summary |
+|-----+---------------------------------------+---------|
+|   1 | Dynamo - HA K/V store                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/dynamo-amazon.pdf][paper]]   |
+|   2 | MapReduce                             | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/mapreduce.pdf][paper]]   |
+|   3 | Kafka - distributed messageing system | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/kafka-linkedin.pdf][paper]]   |
+|   4 | Chubby - Lock service                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/chubby-osdi06.pdf][paper]]   |
+|   5 | Cassandra - Decentralized storage     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/cassandra-facebook.pdf][paper]]   |
+|   6 | Cache                                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/database-caching-strategies-using-redis.pdf][paper]]   |
+|   7 | Bigtable - distributed storage        | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/bigtable-google.pdf][paper]]   |
+|   8 | Zookeeper - Cooridnation              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/zookeeper.pdf][paper]]   |
+|   9 | Spanner - Globally-distributed db     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/spanner-google.pdf][paper]]   |
+|  10 | Google File System                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/the-google-file-system.pdf][paper]]   |
+|  11 | Hadoop Distributed File System        | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/hdfs.pdf][paper]]   |
+|  12 | Concurrency Control                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/concurrency-control.pdf][paper]]   |
+|  13 | Consistent Hashing                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/consistent-hashing.pdf][paper]]   |
+|  14 | Paxos                                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/paxos-simple-Copy.pdf][paper]]   |
+#+TBLFM: $1=@-1$1+1;N
+
 ** Engineering Of Well-Known Products
 | Name          | Summary                                                  |
 |---------------+----------------------------------------------------------|
@@ -97,16 +105,17 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Grow Design Expertise In Daily Work
 | Num | Name                             | Summary                                                                 |
 |-----+----------------------------------+-------------------------------------------------------------------------|
-|   1 | Deep dive into your daily work   | Unify and normalize problems from daily work                            |
-|   2 | Learn the work of your coleagues | Indirect working experience also help                                   |
-|   3 | Popular products under the hood  | Once you notice an interesting feature, think about how it's supported? |
-|   4 | Read engineering blogs           | Especially for big companies                                            |
-|   5 | Tools under the hood             | Common tools/frameworks                                                 |
-|   6 | Try tools                        | Use cases; Alternatives; Pros and Cons                                  |
-|   7 | Read papers                      | Best practices in papers                                                |
-|   8 | Try new things                   | Gain hands-on experience; evaluate alternatives                         |
-|   9 | Datastore & OS                   | Learn how databases and operating systems work                          |
-|  10 | Language implementation          | Deep dive into one programming language. Java, Python, Golang, etc      |
+|   1 | Keep the curiosity               | Thinking about interesting/weird questions helps                        |
+|   2 | Deep dive into your daily work   | Unify and normalize problems from daily work                            |
+|   3 | Learn the work of your coleagues | Indirect working experience also help                                   |
+|   4 | Popular products under the hood  | Once you notice an interesting feature, think about how it's supported? |
+|   5 | Read engineering blogs           | Especially for big companies                                            |
+|   6 | Tools under the hood             | Common tools/frameworks                                                 |
+|   7 | Try tools                        | Use cases; Alternatives; Pros and Cons                                  |
+|   8 | Read papers                      | Best practices in papers                                                |
+|   9 | Try new things                   | Gain hands-on experience; evaluate alternatives                         |
+|  10 | Datastore & OS                   | Learn how databases and operating systems work                          |
+|  11 | Language implementation          | Deep dive into one programming language. Java, Python, Golang, etc      |
 #+TBLFM: $1=@-1$1+1;N
 ** Engineering Blogs/Websites
 | Name                 | Summary                                                                        |
@@ -268,7 +277,5 @@ http://systemdesigns.blogspot.com/2015/12/design-uber.html
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Design Recommend System                                     :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO How redis is implemented?                                   :noexport:
-* TODO How kafaka is implemented?                                  :noexport:
-
+* TODO Take turns to ask questions                                 :noexport:
+好的问题,间接告诉了对方我们的经验和思维深度和广度
