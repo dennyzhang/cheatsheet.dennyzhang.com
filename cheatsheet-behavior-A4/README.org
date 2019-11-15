@@ -1,0 +1,327 @@
+* CheatSheet: Behavior Questions For Coder Interview              :Interview:
+:PROPERTIES:
+:type:     interview
+:export_file_name: cheatsheet-behavior-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-behavior-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/cheatsheet-behavior-A4.pdf][cheatsheet-behavior-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+
+- *Behavioral Interview* is about you and your history, your resume, and your motivation. 
+** Key Behavior Questions
+| Num | Name                                                     |
+|-----+----------------------------------------------------------|
+|   1 | What is the candidate's motivation? Why want to join us? |
+|   2 | Tell me about a time when XXX                            |
+|   3 | how is his/her teamwork? Collaborate with the peers      |
+|   4 | How do they resolve conflicts?                           |
+|   5 | How big impact the candidate has/could drive?            |
+#+TBLFM: $1=@-1$1+1;N
+** Top Behavior Questions
+| Num | Name                                                   | Link |
+|-----+--------------------------------------------------------+------|
+|   1 | How do you handle missing a deadline or project delay? |      |
+|   2 | How do you deal with people who disagree with you?     |      |
+|   3 | What's the biggest mistake you have made?              | [[https://www.myperfectresume.com/how-to/interview-tips/what-is-the-biggest-mistake-youve-made][link]] |
+|   4 | Tell me about the best leader or manager you ever had  | [[https://www.thebalancecareers.com/how-to-answer-interview-questions-about-your-ideal-boss-2063848][link]] |
+#+TBLFM: $1=@-1$1+1;N
+[[image-blog:Star Principle][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-behavior-A4/my-star.png]]
+** Well-Known Cultures
+| Num | Name                                  |
+|-----+---------------------------------------|
+|   1 | [[https://www.facebook.com/pg/facebookcareers/photos/?tab=album&album_id=1655178611435493][Link: Facebook's 5 Core Values]]        |
+|   2 | [[https://www.amazon.jobs/en/principles][Link: Amazon 14 Leadership Principles]] |
+|   3 | [[https://blogs.vmware.com/cfo/epic2-vmware-values/][Link: VMware EPIC2 values]]             |
+#+TBLFM: $1=@-1$1+1;N
+
+** Categories of Behavior Questions
+| Num | Name                              | Summary                                      |
+|-----+-----------------------------------+----------------------------------------------|
+|   1 | Self-intro Background             | Check background, skillset, culture fit, etc |
+|   2 | Self-intro Strength               |                                              |
+|   3 | Self-intro Weakness               |                                              |
+|   4 | Deal With Priority                |                                              |
+|   5 | Collaboration/Ownership/Conflicts |                                              |
+|   6 | Communication/Team work           |                                              |
+|   7 | Deal With Failure                 |                                              |
+|   8 | Leadership                        |                                              |
+|   9 | Value Customers                   |                                              |
+|  10 | Deal With Ambiguity               |                                              |
+|  11 | Closing Interview                 |                                              |
+#+TBLFM: $1=@-1$1+1;N
+
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=0312337361&asins=0312337361&linkId=9215d43db678251263203c0cd79b48bc&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
+
+** Self-intro Background
+| Num | Example                                                                   |
+|-----+---------------------------------------------------------------------------|
+|   1 | Walk me through your resume                                               |
+|   2 | Why you left your previous job?                                           |
+|   3 | What's your career goal for the next 3 years?                             |
+|   4 | Talk about your working projects                                          |
+|   5 | Why should we hire you?                                                   |
+|   6 | Why you want to apply our company? And why current position?              |
+|   7 | Describe your process for XXX. Describe daily work                        |
+|   8 | Tell me about the most challenging problem you have encountered recently. |
+|   9 | Tell me about the most interesting project you have been working on.      |
+|  10 | What is your biggest challenge?                                           |
+#+TBLFM: $1=@-1$1+1;N
+
+** Self-intro Strength
+| Num | Example                                                              |
+|-----+----------------------------------------------------------------------|
+|   1 | How will you impact the team if you join. What skills you can bring. |
+|   2 | What is an accomplishment you're proud of and why?                   |
+|   3 | What will you do in your free time                                   |
+|   4 | Tell me about how you keep up with most updated technology.          |
+|   5 | What kinds of technologies are you most excited about?               |
+#+TBLFM: $1=@-1$1+1;N
+
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+** Self-intro Weakness               
+| Num | Example                                            |
+|-----+----------------------------------------------------|
+|   1 | Self personality                                   |
+|   2 | Different focus of skills set and domain knowledge |
+#+TBLFM: $1=@-1$1+1;N
+
+** Deal with Priority                
+| Num | Example                                             |
+|-----+-----------------------------------------------------|
+|   1 | How to trade-off on various limitations             |
+|   2 | Work on a project with insufficient resource (time) |
+|   3 | How to trade-off "Fast" and "Quality"               |
+|   4 | Work under pressure                                 |
+#+TBLFM: $1=@-1$1+1;N
+
+** Collaboration/Ownership/Conflicts 
+| Num | Example                                                                         | Link |
+|-----+---------------------------------------------------------------------------------+------|
+|   1 | Tell us about a time you were given feedback that made you change your strategy |      |
+|   2 | How do you handle conflicts at work?                                            |      |
+|   3 | What if people take your credits ?                                              |      |
+|   4 | If you happen to notice your colleagues made a mistake, what you will do?       |      |
+|   5 | Tell me about a project that went beyond your scope of work.                    |      |
+|   6 | Customer vs share-holder                                                        |      |
+#+TBLFM: $1=@-1$1+1;N
+
+** Communication/Team work           
+| Num | Example                                                     |
+|-----+-------------------------------------------------------------|
+|   1 | What if you will do, if you think your manager is not fair. |
+|   2 | Describe your favorite manager/ team worker.                |
+|   3 | What if you don't get along with your tech lead?            |
+|   4 | How do you like to give and receive feedback?               |
+#+TBLFM: $1=@-1$1+1;N
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+
+** Deal With Failure                 
+| Num | Example                                                                 | Link |
+|-----+-------------------------------------------------------------------------+------|
+|   1 | How do you handle missing a deadline or project delay?                  |      |
+|   2 | Name time you messed up/ took at risk / failed / feel frustrated ?      |      |
+|   3 | Talk about difficulties / failures / tough time in project.             |      |
+|   4 | What's the most difficult decision you've had to make recently, and why |      |
+|   5 | What's the biggest mistake you have made?                               | [[https://www.myperfectresume.com/how-to/interview-tips/what-is-the-biggest-mistake-youve-made][link]] |
+|   6 | What would you change about your project if you did it all over again?  |      |
+#+TBLFM: $1=@-1$1+1;N                                                                     
+
+** Leadership                        
+| Num | Example                                                                                   |
+|-----+-------------------------------------------------------------------------------------------|
+|   1 | Tell me about a time when ...                                                             |
+|   2 | Give an example of a time you managed a difficult employee, and how you overcame it.      |
+|   3 | How do you deal with people who disagree with you?                                        |
+|   4 | Walk me through a time you managed a complex team project. How you approach and delegate? |
+|   5 | Tell me about the best leader or manager you ever had                                     |
+#+TBLFM: $1=@-1$1+1;N                                                                     
+
+[[image-blog:Amazon 14 Leadership][https://cheatsheet.dennyzhang.com/wp-content/uploads/2019/10/amazon-14-leadership.png]]
+** Value Customers 
+| Num | Example                                                                                  |
+|-----+------------------------------------------------------------------------------------------|
+|   1 | How do you plan to ensure that your focus is always on improving the customer experience |
+|   2 | (?) Tell me about a time you had to think outside the box to complete a task.            |
+|   3 | Customer benefits vs Share-holder's benefits                                             |
+#+TBLFM: $1=@-1$1+1;N                                                                     
+
+** Deal With Ambiguity
+|Num| Example                                                             |
+|------+---------------------------------------------------------------------|
+|    1 | Tell me about a time you had to deal with ambiguity                 |
+|    2 | Describe a situation where you had to make a decision without data. |
+#+TBLFM: $1=@-1$1+1;N                                                                     
+
+** Closing Interview
+| Num | Example                                           |
+|-----+---------------------------------------------------|
+|   1 | Do you have some questions for me or our project? |
+#+TBLFM: $1=@-1$1+1;N                                                                     
+
+** Reference
+| Num       | Example                                                                             |
+|-----------+-------------------------------------------------------------------------------------|
+| Reference | [[https://www.amazon.jobs/en/principles][Link: Amazon Leadership Principles]], [[https://www.youtube.com/watch?v=PJKYqLP6MRE&t=3s][YouTube: Intro to Behavioural Interviews]]        |
+| Reference | [[https://hire.google.com/articles/leadership-interview-questions/][Google: 10 leadership interview questions]], [[https://hire.google.com/articles/7-proven-job-interview-questions/][Google: 7 Proven Job Interview Questions]] |
+
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-behavior-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-behavior-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* misc                                                             :noexport:
+
+[[color:#c7254e][Common Pitfalls To Avoid:]]
+
+1. Fake something to make yourself look better.
+- Take credits of others' work.
+- Show signals of being negative or no energy
+
+[[color:#c7254e][Fundamental Questions:]]
+
+1. Why you want to join us? [[color:#c7254e][How you can benefit from us]].
+- What you can provide? [[color:#c7254e][How we can benefit from you]].
+- [[color:#c7254e][Self Intro]]: Introduce your experience and yourself.
+
+| Talk to the point + solid supportings | Interviewers can easily get tired or distracted.                                    |
+| Hands-on experience matters           | Point our your relevant working experience for current topic                        |
+* https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=209651&extra=page%3D1%26filter%3Dsortid%26sortid%3D192%26sortid%3D192 :noexport:
+* TODO https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=307462&extra=page%3D1%26filter%3Dsortid%26orderby%3Dheats%26sortid%3D311%26sortid%3D311%26orderby%3Dheats :noexport:
+* TODO Google behavior questions                                   :noexport:
+Google 很少问 BQ,准备下面几个就够用了:
+自我介绍
+Resume 上的内容
+Why Google
+Greatest experience or project
+* TODO https://www.1point3acres.com/bbs/thread-551630-1-1.html     :noexport:
+* TODO 首先要避免 pre-commitment, 对于"你期待的薪资是多少？"这个问题 :noexport:
+If you do not mind, can you tell me the rage of SDE 2 at XXX?
+
+huh, it depends, by the way, what is the earliest date I can start work?
+
+https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=533501&extra=page%3D7%26filter%3Ddigest%26digest%3D1%26sortid%3D192%26digest%3D1%26sortid%3D192
+谈谈如何与HR negotiate package|一亩三分地求职版
+* TODO https://www.1point3acres.com/bbs/thread-563886-1-1.html     :noexport:
+* TODO What are key events in your work history                    :noexport:
+https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/
+Know yourself: Take the time to review your own resume as your interviewer will almost certainly ask about key events in your work history.
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO questions                                                   :noexport:
+https://www.1point3acres.com/bbs/thread-560499-1-1.html
+面狗家的下面必看啊（怕惹麻烦所以加个隐藏）
+以前狗家5轮都是coding或者system design（除非你面的是manager）.大约半年前加了一个behavioral and leaderhsip round,所以如果你是L3,你会有4轮coding和一个BQ.但是HR好像没有给很多hint怎么准备.题目无非就是你讲故事,或者问你这个情况你会怎么做.大家不要误会那个leadership是要怎么管理别人.老美的leadership含义很广,对L3/4/5来说,leadership其实是怎么管理自己-自己的项目,进度,成长,沟通等等.Behavioral那都是common sense了,team work什么的.
+
+亚麻的那个军规16条很好,可以做基础.狗家自己特别的是:
+- 你得能管理自己的项目和进度,能够prioritize自己的项目.根据什么标准prioritize？你自己的喜好吗？亚麻军规里其实有,我不敢说的太明了.其实都是common sense
+- 需求不明确怎么办？你会自己想办法吗？还是依赖别人？Project的需求总在变,你会撂摊子不干了,或者抱怨连天吗？
+- 亚麻里有个having backbone,那是指manager.如果你的同事做了不好的事或者决定呢？你会视而不见或者和稀泥吗？想想狗家"不做恶"的信条,想想你怎么融入啊？
+
+需要准备至少3-4个故事,比如怎么处理和team里的人的conflict,项目要miss deadline了怎么办的等等.实在没有？那也要编啊.一定要有细节,因为面试官会问得很细.还有一句"废话",要显示出你对产品的热情,对自己职业的热情,而不是就安于一个"码农",说说你怎么提高自己的,online course? open source project？
+
+说实话我不觉得这种对非manager的BQ面试有什么用,只能过滤一下无脑的愣头青吧.但是你只要知道面试官想听的keyword,还是比涮题简单的吧.
+
+另外,我们写面试报告的时候,不能用he or she,就是不想透露任何在HC环节能引起歧视的信息,包括年龄,种族等等.狗家在这点上真是很nice和认真的.所以大家回答问题的时候,可千万别一不小心说漏了嘴.那很可能是一票否决.
+* TODO 问BQ(behavioral question)时,他们到底在问什么               :noexport:
+https://www.1point3acres.com/bbs/thread-566677-1-1.html
+#+BEGIN_EXAMPLE
+历时2个多月的刷题和无数拒信后,楼主终于转专业上岸了,写一些关于BQ的经验回报地里吧.关于我认为的BQ问题的潜台词,我给您翻译翻译,这些BQ到底在问什么？现在BQ越来越重要了,我碰到两次面试,有一轮就是只问BQ,连续40分钟BQ快问快答,人都要疯掉了,说得口干舌燥.这里写一些常见的BQ吧,基本属于必考感觉.
+
+介绍一个你最喜欢的项目？介绍下简历？介绍下自己？
+
+翻译:有没有看职位要求？说说职位要求要找什么人？你是这样的人么？介绍一个你最符合这个职位要求的项目,最后强调你是good fit
+
+你最大的缺点/失败？
+
+翻译:你一个无伤大雅的小缺点/失败是什么？你从以前的哪个项目知道自己有这个缺点/失败？知道以后学到了什么教训？在后面哪个项目中吸取了这个教训,做了什么,取得了什么结果？
+
+你最大的优点？
+
+翻译:我知道你很牛,你哪个特质最符合这个职位的要求,并且在最后强调你的某某优点让你是一个good fit for this position
+
+为什么选我们这个公司？
+
+翻译:公司的mission是什么？我的career goal和你们公司的mission完美契合;职位的要求是什么？我的背景和能力和这个职位的要求完美契合.最后强调你是good fit
+
+怎么知道这个职位的？
+
+翻译:如实回答就行,我一般都说career fair和公司的工程师聊了聊,关键是最后要再重复一遍,据我了解,这个职位是干啥或者需要啥,我以前也在做这个或者有相关的技能,所以good fit
+
+队友/同事不干活/很难相处咋办？
+
+翻译:你有没有经常和队友/同事主动沟通？你愿不愿意为了团队,帮队友/同事分担一些工作？能不能以非常职业的方式解决这个问题？
+
+队友/同事不同意你的观点咋办？
+
+翻译:你有没有自己花一些时间做一个数字化（quantitative）的比较？有没有向队友/同事提交一个详细的报告或者比较（report/strong case）来说服ta？会不会有效的沟通？
+
+你怎么定义成功？
+
+翻译:一般我都说达到自己制定的目标就算成功,这样容易说;那就可以理解为你有没有为自己制定目标？你的目标是啥？你现在完成的怎么样？未来在这个公司想怎么发展自己？（develop tech stack,gain more domain knowledge,see myself in postion of senior engiener in xx years）
+
+被安排了一个很难的任务咋办？
+
+翻译:你会不会和你的老板沟通？你会不会和你的同事沟通？你会不会提出合理的要求？能不能以非常职业的方式解决这个问题？
+
+任务的due被提前了咋办？有没有身背数个deadline的经历？
+以下内容需要积分高于 20 您已经可以浏览
+
+翻译:你是怎么管理你的时间的？比如日历上设置好项目,还有提醒;你会不会根据工作的优先级安排你的时间？你会不会为了项目组的整体利益考虑（best interest of my team）,舍弃一些个人利益？比如为了毕设,自己的考试就不投入太多时间;会不会和别人沟通寻找解决方案？如果你是组长,你知道due提前了会不会采取措施？比如立刻开会,重新安排这个项目后面的任务和时间节点.
+
+为什么你是xx专业,却想做sde/ds/mle？
+
+翻译:你之前哪段项目/实习经历做了有关sde/ds/mle的啥？你产生了啥影响,取得了啥结果？你是不是很享受你的产出？（是,所以我想转）
+#+END_EXAMPLE
+* Review behavior question                                         :noexport:
+- There are lots of common-sense and easy tips
+  Before fighting back, understand what they want? Might not be as much as you thought.
+  For credential management, no plain text are common sense. But kepts getting ignored.

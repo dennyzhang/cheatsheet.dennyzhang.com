@@ -1,6 +1,6 @@
 * CheatSheet: Feature Design For Job Interview                    :Interview:
 :PROPERTIES:
-:type:     language
+:type:     interview
 :export_file_name: cheatsheet-featuredesign-A4.pdf
 :END:
 
@@ -21,7 +21,35 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-** 30 Key Concepts For Feature/System Design
+** Top 20 Design Problems For Technical Modules
+| Num | Name                                                       | Summary          |
+|-----+------------------------------------------------------------+------------------|
+|   1 | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed counter]]                               | [[https://architect.dennyzhang.com/design-distributed-counter][link]], [[https://www.slideshare.net/kevinweil/rainbird-realtime-analytics-at-twitter-strata-2011/59-If_You_Only_Remember_One][link]]       |
+|   2 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task scheduling]]                                    | [[https://architect.dennyzhang.com/explain-delayedqueue][link]]             |
+|   3 | [[https://architect.dennyzhang.com/design-concurrent-hashmap][Design a thread-safe Hashmap]]                               | [[https://architect.dennyzhang.com/design-concurrent-hashmap][link]], [[https://www.geeksforgeeks.org/internal-working-of-hashmap-java/][link]]       |
+|-----+------------------------------------------------------------+------------------|
+|   4 | Design a distributed Hashmap                               |                  |
+|   5 | Design a distributed UUID generator                        |                  |
+|   6 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 | [[https://architect.dennyzhang.com/design-api-limiter/][link]], [[https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/][link]], [[https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/][link]] |
+|-----+------------------------------------------------------------+------------------|
+|   7 | Design a distributed transaction                           |                  |
+|   8 | Top URL hits                                               |                  |
+|   9 | Unique url hits                                            |                  |
+|  10 | Design a distributed transactions                          |                  |
+|  11 | Design a load balancer                                     |                  |
+|  12 | Design a client-server API to build a rich document editor |                  |
+|  13 | Design online/offline status system                        |                  |
+|  14 | Design a circuit breaker                                   |                  |
+|  15 | Design a secrets management system                         |                  |
+|  16 | Design data sync for a distributed system                  |                  |
+|  17 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]                              | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/parking_lot/parking_lot.ipynb][link]]             |
+|  18 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]                          |                  |
+|  19 | Design a service auto-discovery feature                    |                  |
+|-----+------------------------------------------------------------+------------------|
+|  20 | Design A big file transfer feature                         |                  |
+|  21 | TODO                                                       |                  |
+#+TBLFM: $1=@-1$1+1;N
+** Top 30 Concepts For Feature/System Design
 | Num | Name                                    | Summary                                                             |
 |-----+-----------------------------------------+---------------------------------------------------------------------|
 |   1 | [[https://architect.dennyzhang.com/explain-cache][Caching]]                                 | Stores data so that future requests of data retrieval can be faster |
@@ -32,28 +60,28 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   6 | [[https://architect.dennyzhang.com/explain-cap][CAP: Consistency/Availability/Partition]] | A distributed database system can only have 2 of the 3              |
 |   7 | [[https://architect.dennyzhang.com/explain-nosql][DB: SQL & NoSQL]]                         | Relational databases and non-relational databases                   |
 |-----+-----------------------------------------+---------------------------------------------------------------------|
-|   8 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                         |                                                                     |
-|   9 | [[https://architect.dennyzhang.com/explain-poll-push][Pull vs Push model]]                      |                                                                     |
-|  10 | [[https://architect.dennyzhang.com/explain-eventualconsistency][Eventually consistency]]                  |                                                                     |
-|  11 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write                        |
-|  12 | Garbage Collection                      |                                                                     |
+|   8 | [[https://architect.dennyzhang.com/explain-coordination][Concurrency & Communication]]             |                                                                     |
+|   9 | [[https://architect.dennyzhang.com/explain-locks][Pessimistic And Optimistic Locking]]      |                                                                     |
+|  10 | [[https://architect.dennyzhang.com/explain-eventualconsistency][Consistency Module]]                      | weak consistency, eventual consistency, strong consistency          |
+|  11 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write, CRDT                  |
 |-----+-----------------------------------------+---------------------------------------------------------------------|
-|  13 | [[https://en.wikipedia.org/wiki/Two-phase_commit_protocol][Two-phase commit]]/[[https://en.wikipedia.org/wiki/Three-phase_commit_protocol][Three-phase commit]]     |                                                                     |
-|  14 | API: gRPC vs REST                       |                                                                     |
-|  15 | [[https://architect.dennyzhang.com/explain-loadbalancer][Load balancer]]                           |                                                                     |
-|  16 | [[https://architect.dennyzhang.com/explain-coordination][Concurrency & Communication]]             |                                                                     |
-|  17 | Scale up vs Scale out                   | Vertical scaling and Horizontal scaling                             |
-|  18 | API Design                              |                                                                     |
-|  19 | [[https://architect.dennyzhang.com/explain-locks][Pessimistic And Optimistic Locking]]      |                                                                     |
-|  20 | [[https://architect.dennyzhang.com/explain-session][Session management]]                      |                                                                     |
-|  21 | Networking: HTTP                        |                                                                     |
-|  22 | Networking: TCP vs UDP                  |                                                                     |
-|  23 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency          |
-|  24 | Availability patterns                   | Fail-over vs Replication                                            |
-|  25 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]], throttling               |
-|  26 | CDN - Content Delivery Network          |                                                                     |
-|  27 | [[https://architect.dennyzhang.com/explain-monitoring][Monitoring]]                              |                                                                     |
-|  28 | Memory Management                       |                                                                     |
+|  12 | [[https://architect.dennyzhang.com/explain-http][Networking: HTTP]]                        |                                                                     |
+|  13 | [[https://architect.dennyzhang.com/explain-poll-push][Pull vs Push model]]                      |                                                                     |
+|  14 | Garbage Collection                      |                                                                     |
+|  15 | [[https://architect.dennyzhang.com/explain-memory-management][Memory Management]]                       |                                                                     |
+|  16 | [[https://architect.dennyzhang.com/explain-heartbeat][Heartbeats]]                              |                                                                     |
+|  17 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]], throttling               |
+|  18 | Filesystem                              |                                                                     |
+|  19 | API: gRPC vs REST                       |                                                                     |
+|  20 | [[https://architect.dennyzhang.com/explain-loadbalancer][Load balancer]]                           |                                                                     |
+|  21 | Scale up vs Scale out                   | Vertical scaling and Horizontal scaling                             |
+|  22 | API Design                              |                                                                     |
+|  23 | [[https://architect.dennyzhang.com/explain-session][Session management]]                      |                                                                     |
+|  24 | Networking: TCP vs UDP                  |                                                                     |
+|  25 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency          |
+|  26 | Availability patterns                   | Fail-over vs Replication                                            |
+|  27 | CDN - Content Delivery Network          | Edge caching                                                        |
+|  28 | [[https://architect.dennyzhang.com/explain-monitoring][Monitoring]]                              |                                                                     |
 |  29 | Security                                |                                                                     |
 |  30 | [[https://architect.dennyzhang.com/explain-dns][Networking: DNS]]                         |                                                                     |
 #+TBLFM: $1=@-1$1+1;N
@@ -61,55 +89,37 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
-** Design Technical Modules
-| Num | Name                                                       | Summary    |
-|-----+------------------------------------------------------------+------------|
-|   1 | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed counter]]                               | [[https://www.slideshare.net/kevinweil/rainbird-realtime-analytics-at-twitter-strata-2011/59-If_You_Only_Remember_One][link]]       |
-|-----+------------------------------------------------------------+------------|
-|   2 | Design a distributed UUID generator                        |            |
-|   3 | Implement a timer                                          |            |
-|   4 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 | [[https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/][link]], [[https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/][link]] |
-|   5 | Design online/offline status system                        |            |
-|   6 | Top URL hits                                               |            |
-|   7 | Unique url hits                                            |            |
-|   8 | Delayed task scheduling                                    |            |
-|   9 | Design a thread-safe Hashmap                               | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/hash_table/hash_map.ipynb][link]]       |
-|  10 | Design a distributed Hashmap                               |            |
-|  11 | Design a distributed transactions                          |            |
-|  12 | Design a load balancer                                     |            |
-|  13 | Design a client-server API to build a rich document editor |            |
-|  14 | Design a circuit breaker                                   |            |
-|  15 | Design a secrets management system                         |            |
-|  16 | Design data sync for a distributed system                  |            |
-|  17 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]                              | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/parking_lot/parking_lot.ipynb][link]]       |
-|  18 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]                          |            |
+** Advanced Data Structure & Algorithms
+| Num | Name                                      | Summary                                                                     |
+|-----+-------------------------------------------+-----------------------------------------------------------------------------|
+|   1 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                           |                                                                             |
+|   2 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed queue]]                             | Run scheduled tasks                                                         |
+|   3 | [[https://architect.dennyzhang.com/explain-bloomfilter][Bloom filter]]                              | A space-effcient query returns either "possibly in set" or "definitely not" |
+|-----+-------------------------------------------+-----------------------------------------------------------------------------|
+|   4 | [[https://architect.dennyzhang.com/explain-gossip][Gossip]]                                    | Propagate cluster status                                                    |
+|   5 | [[https://en.wikipedia.org/wiki/Two-phase_commit_protocol][Two-phase commit]]/[[https://en.wikipedia.org/wiki/Three-phase_commit_protocol][Three-phase commit]]       |                                                                             |
+|   6 | [[https://architect.dennyzhang.com/explain-sstable][SSTable (Sorted Strings Table)]]            |                                                                             |
+|   7 | [[https://architect.dennyzhang.com/explain-lsm][LSM (Log Structured Merge Trees)]]          |                                                                             |
+|   8 | B+ Tree                                   |                                                                             |
+|-----+-------------------------------------------+-----------------------------------------------------------------------------|
+|   9 | [[https://architect.dennyzhang.com/explain-crdts][CRDT(Conflict-Free Replicated Data Types)]] |                                                                             |
+|  10 | [[https://architect.dennyzhang.com/explain-vector-clocks][Vector Clocks/Version Vectors]]             |                                                                             |
+|  11 | [[https://architect.dennyzhang.com/design-explain-paxos][Paxos and raft protocol]]                   |                                                                             |
+|  12 | Merkle Tree                               |                                                                             |
 #+TBLFM: $1=@-1$1+1;N
-** Additional Blocks For Feature/System Design
-| Num | Name                                     | Summary |
-|-----+------------------------------------------+---------|
-|   1 | [[https://architect.dennyzhang.com/explain-heartbeat][Heartbeats]]                               |         |
-|   2 | [[https://architect.dennyzhang.com/explain-gossip][Gossip]]                                   |         |
-|   3 | [[https://architect.dennyzhang.com/design-explain-paxos][Paxos and raft protocol]]                  |         |
-|   4 | [[https://architect.dennyzhang.com/explain-crdts][CRDTs (Consistent Replicated Data Types)]] |         |
-|   5 | [[https://architect.dennyzhang.com/explain-vector-clocks][Vector Clocks/Version Vectors]]            |         |
-|   6 | [[https://architect.dennyzhang.com/explain-split-brain][Split brain]]                              |         |
-|   7 | Merkle Tree                              |         |
-|   8 | Sloppy Quorum and hinted handoff         |         |
-|   9 | [[https://architect.dennyzhang.com/explain-lsm][LSM (Log Structured Merge Trees)]]         |         |
-|  10 | Networking: SDN                          |         |
-#+TBLFM: $1=@-1$1+1;N
+
 [[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-featuredesign-A4/dynamo-summary.png]]
 ** Explain workflow: What happens when XXX?
-| Num | Name                                  | Summary                                 |
-|-----+---------------------------------------+-----------------------------------------|
-|   1 | When happens when I search in google? |                                         |
-|   2 | How loadbalancer works                |                                         |
-|   3 | Explain three phase commit model      |                                         |
-|   4 | Explain HTTP return code              | 301 vs 302, 401 vs 403, 503 vs 504, etc |
-|   5 | Explain Mysql DB replication model    |                                         |
-|   6 | Explain gossip protocol               |                                         |
-|   7 | [[https://architect.dennyzhang.com/explain-cap][Explain CAP]]                           |                                         |
-|   8 | Explain Hadoop file system            |                                         |
+| Num | Name                                  | Summary |
+|-----+---------------------------------------+---------|
+|   1 | When happens when I search in google? |         |
+|   2 | How loadbalancer works                |         |
+|   3 | Explain three phase commit model      |         |
+|   4 | Explain HTTP return code              |         |
+|   5 | Explain Mysql DB replication model    |         |
+|   6 | Explain gossip protocol               |         |
+|   7 | [[https://architect.dennyzhang.com/explain-cap][Explain CAP]]                           |         |
+|   8 | Explain Hadoop file system            |         |
 #+TBLFM: $1=@-1$1+1;N
 ** Explain tools: how XXX supports XXX?
 | Num | Name                                  | Summary |
@@ -120,20 +130,18 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   4 | How OS supports XXX?                  |         |
 #+TBLFM: $1=@-1$1+1;N
 ** Cloud Design Principles
-| Num | Name                     | Summary                 |
-|-----+--------------------------+-------------------------|
-|   1 | Fail fast                |                         |
-|   2 | Design for failure       |                         |
-|   3 | Immutable infrastructure |                         |
-|   4 | [[https://www.engineyard.com/blog/pets-vs-cattle][Cats vs Cattle]]           | Avoid snowflake servers |
-|   5 | [[https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/self-healing][Auto healing]]             |                         |
-|   6 | Async programming        |                         |
-|   7 | GitOps operational model |                         |
+| Num | Name                       | Summary                 |
+|-----+----------------------------+-------------------------|
+|   1 | Fail fast                  |                         |
+|   2 | Design for failure         |                         |
+|   3 | Immutable infrastructure   |                         |
+|   4 | [[https://www.engineyard.com/blog/pets-vs-cattle][Cats vs Cattle]]             | Avoid snowflake servers |
+|   5 | [[https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/self-healing][Auto healing]]               |                         |
+|   6 | Async programming          |                         |
+|   7 | GitOps operational model   |                         |
+|   8 | Event-Driven Architectures |                         |
 #+TBLFM: $1=@-1$1+1;N
 
-#+BEGIN_HTML
-<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
-#+END_HTML
 ** Cloud Design Patterns
 | Num | Name                        | Summary                                                                 |
 |-----+-----------------------------+-------------------------------------------------------------------------|
@@ -145,6 +153,9 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   6 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/priority-queue][Priority Queue pattern]]      | Support different SLAs for different individual clients                 |
 |   7 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/strangler][Strangler pattern]]           | Incrementally migrate a legacy system piece by piece                    |
 #+TBLFM: $1=@-1$1+1;N
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
 
 ** Misc
 | Num | Name                                                                            | Summary                           |
@@ -176,6 +187,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
 https://github.com/donnemartin/system-design-primer
+
+https://github.com/checkcheckzz/system-design-interview
 
 https://github.com/binhnguyennus/awesome-scalability
 
@@ -244,7 +257,6 @@ https://www.educative.io/courses/grokking-the-object-oriented-design-interview
 https://www.1point3acres.com/bbs/thread-301250-1-1.html
 https://termly.io/resources/articles/privacy-by-design/
 https://www.privacytrust.com/gdpr/privacy-by-design-gdpr.html
-* TODO http post vs http put                                       :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO How to caculate availability                                :noexport:
 Availability in parallel vs in sequence
@@ -315,3 +327,23 @@ damage to the customers.
 * TODO VM creation process                                         :noexport:
 * TODO Why it's called reverse proxy                               :noexport:
 A reverse proxy retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client, appearing as if they originated from the proxy server itself.
+* TODO misc: Additional Blocks For Feature/System Design           :noexport:
+| Num | Name                                     | Summary |
+|-----+------------------------------------------+---------|
+|   2 | [[https://architect.dennyzhang.com/explain-split-brain][Split brain]]                              |         |
+|   3 | Sloppy Quorum and hinted handoff         |         |
+|   4 | Networking: SDN                          |         |
+#+TBLFM: $1=@-1$1+1;N
+* TODO How golang implement hashmap?                               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO 3-way merge                                                 :noexport:
+https://neil.fraser.name/writing/sync/
+
+Client, Server, Base v1 -> Base v2
+
+
+Three-way merges are found in Subversion,[?] the Mjølner Project[?] and many other products. An overview of the process is:
+
+The client sends the contents of the document to the server.
+The server performs a three-way merge to extract the user's changes and merge them with changes from other users.
+The server sends a new copy of the document to the client.

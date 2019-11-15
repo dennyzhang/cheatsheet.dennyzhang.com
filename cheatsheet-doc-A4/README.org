@@ -391,3 +391,5 @@ relegated to the position of a second tier team(so to speak) with no real owners
 An interview is typically different from your day-to-day job.
 * notes                                                            :noexport:
 What you gonna do to mitigate the single-point-of-failure issues.
+* resign                                                           :noexport:
+While I am looking forward to the next steps in my career and new opportunity, I will deeply miss working with each of you.

@@ -352,3 +352,7 @@ JWT
 refresh token
 * notes                                                            :noexport:
 - Sensitive personal information should only be collected and processed if permitted by law.
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO pre-shared secret                                           :noexport:
+https://www.rabbitmq.com/distributed.html
+Nodes authenticate to each other using a pre-shared secret typically installed by deployment automation tools.

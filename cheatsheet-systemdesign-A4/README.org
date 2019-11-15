@@ -1,6 +1,6 @@
 * CheatSheet: System Design For Job Interview                     :Interview:
 :PROPERTIES:
-:type:     language
+:type:     interview
 :export_file_name: cheatsheet-systemdesign-A4.pdf
 :END:
 
@@ -21,19 +21,8 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-** Process Of System Design
-| Num | Name                                            | Summary                                                              |
-|-----+-------------------------------------------------+----------------------------------------------------------------------|
-|   1 | Outline use cases: List major and focus on some | Show good sense. The questions you asked define your level           |
-|   2 | Estimate scale: *Data* + *Traffic*              | Back-of-the-envelope estimation                                      |
-|   3 | Defining data model                             | It helps to clarify how data will flow among different components    |
-|   4 | Abstract design                                 | Sketch main components, explain workflow, avoid too deep for details |
-|   5 | Detailed design + discussion with interviewers  | Explain trade-off of your proposal + on-demand deep dive             |
-|   6 | Identify and resolve Bottlenecks                | *Key challenges* + *Trade-Offs*. Usuaully no optimal solution(s)     |
-|   7 | [[https://docs.microsoft.com/en-us/azure/architecture/guide/pillars][Scale your design]]                               | Availability, Resiliency, Scalability, Security, Serviceability, etc |
-#+TBLFM: $1=@-1$1+1;N
 
-** Feature Design
+** Feature Design - 101
 - [[https://cheatsheet.dennyzhang.com/cheatsheet-featuredesign-A4][CheatSheet: Feature Design For Job Interview]]
 
 ** Classic Design Problems - Design A Complex Product
@@ -69,6 +58,17 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  27 | Design a voice conference system           |                                              |
 |  28 | [[https://architect.dennyzhang.com/design-elevator/][Design: An Elevator Service]]                |                                              |
 #+TBLFM: $1=@-1$1+1;N
+** Process Of System Design
+| Num | Name                                            | Summary                                                              |
+|-----+-------------------------------------------------+----------------------------------------------------------------------|
+|   1 | Outline use cases: List major and focus on some | Show good sense. The questions you asked define your level           |
+|   2 | Estimate scale: *Data* + *Traffic*              | Back-of-the-envelope estimation                                      |
+|   3 | Defining data model                             | It helps to clarify how data will flow among different components    |
+|   4 | Abstract design                                 | Sketch main components, explain workflow, avoid too deep for details |
+|   5 | Detailed design + discussion with interviewers  | Explain trade-off of your proposal + on-demand deep dive             |
+|   6 | Identify and resolve Bottlenecks                | *Key challenges* + *Trade-Offs*. Usuaully no optimal solution(s)     |
+|   7 | [[https://docs.microsoft.com/en-us/azure/architecture/guide/pillars][Scale your design]]                               | Availability, Resiliency, Scalability, Security, Serviceability, etc |
+#+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
@@ -92,6 +92,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  13 | Consistent Hashing                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/consistent-hashing.pdf][paper]]   |
 |  14 | Paxos                                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/paxos-simple-Copy.pdf][paper]]   |
 #+TBLFM: $1=@-1$1+1;N
+
+- [[https://www.linkedin.com/pulse/100-open-source-big-data-architecture-papers-anil-madan/][125 open source Big Data architecture papers]]
 
 ** Engineering Of Well-Known Products
 | Name          | Summary                                                  |
@@ -120,14 +122,16 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Engineering Blogs/Websites
 | Name                 | Summary                                                                        |
 |----------------------+--------------------------------------------------------------------------------|
+| Compnay Tech Blog    | [[https://www.facebook.com/pg/Engineering/notes/][Website: Facebook Engineering]], [[https://developers.googleblog.com][Website: Google Developers]]                      |
+| Compnay Tech Blog    | [[https://medium.com/netflix-techblog][Medium: Netflix Blog]], [[https://medium.com/airbnb-engineering][Medium: Airbnb Engineering & Data Science]]                |
+| Compnay Tech Blog    | [[https://github.blog/category/engineering/][Github Engineering]]                                                             |
+|----------------------+--------------------------------------------------------------------------------|
 | Website              | [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: system-design-primer]], [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]]             |
 | Website              | [[https://interviewing.io][Website: interviewing.io]], [[https://www.interviewbit.com/courses/system-design/][Website: interviewbit.com]]                            |
 | Reference            | [[https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/][Link: Preparing for your Software Engineering Interview at Facebook]]            |
 | Reference            | [[https://www.hiredintech.com/classrooms/system-design/lesson/55][Link: The System Design Process]]                                                |
 | Papers               | [[https://github.com/papers-we-love/papers-we-love][Github: papers-we-love]]                                                         |
 | Individual Tech Blog | [[https://www.allthingsdistributed.com][Blog: All Things Distributed - Amazon CTO]], [[http://highscalability.com/][Blog: highscalability]]               |
-| Compnay Tech Blog    | [[https://www.facebook.com/pg/Engineering/notes/][Website: Facebook Engineering]], [[https://developers.googleblog.com][Website: Google Developers]]                      |
-| Compnay Tech Blog    | [[https://medium.com/netflix-techblog][Medium: Netflix Blog]], [[https://medium.com/airbnb-engineering][Medium: Airbnb Engineering & Data Science]]                |
 | YouTube              | [[https://www.youtube.com/watch?v=ZgdS0EUmn70][YouTube: Intro to Architecture and Systems Design Interviews]]                   |
 | YouTube              | [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube Channel: Success in Tech]], [[https://www.youtube.com/watch?v=-W9F__D3oY4&feature=youtu.be][YouTube: Scalability Harvard Web Development]] |
 | Cheatsheet           | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]]       |
