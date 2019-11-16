@@ -52,12 +52,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  24 | [[https://code.dennyzhang.com/tag/monotonicfunc][#monotonicfunc]], [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]      | [[https://code.dennyzhang.com/kth-smallest-number-in-multiplication-table][Leetcode: Kth Smallest Number in Multiplication Table]]         |
 |  25 | [[https://code.dennyzhang.com/review-divideconquer][#divideconquer]], [[https://code.dennyzhang.com/review-recursive][#recursive]]         |                                                               |
 #+TBLFM: $1=@-1$1+1;N
-
-#+BEGIN_HTML
-<a href="https://code.dennyzhang.com"><b><font color=blue>https://code.dennyzhang.com</font></b></a>
-#+END_HTML
-
-[[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][https://cdn.dennyzhang.com/images/brain/denny_leetcode.png]]
+[[image-blog:CheatSheet: Leetcode Common Templates & Common Code Problems][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/problems/cheatsheet-leetcode-A4/datastructre.png]]
 ** Top 25 Graph Problems
 | Num | Problem                                                                 | Category/Tag              | Summary                                                 |
 |-----+-------------------------------------------------------------------------+---------------------------+---------------------------------------------------------|
@@ -88,9 +83,12 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  25 | Bridges in a connected graph - [[https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm][Tarjan's algorithm]]                       |                           | [[https://code.dennyzhang.com/critical-connections-in-a-network][Leetcode: Critical Connections in a Network]]             |
 #+TBLFM: $1=@-1$1+1;N
 
+
 #+BEGIN_HTML
-<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+<a href="https://code.dennyzhang.com"><b><font color=blue>https://code.dennyzhang.com</font></b></a>
 #+END_HTML
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][https://cdn.dennyzhang.com/images/brain/denny_leetcode.png]]
 
 ** Top 10 Binarysearch Problems
 | Num | Problem                                     | Category/Tag                  | Summary                                                                |
@@ -124,6 +122,9 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  14 | [[https://en.wikipedia.org/wiki/Minimum-weight_triangulation][Minimum-weight triangulation]]                  | O(n*n*n)        | [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]]                      | [[https://code.dennyzhang.com/minimum-score-triangulation-of-polygon][Leetcode: Minimum Score Triangulation of Polygon]] |
 #+TBLFM: $1=@-1$1+1;N
 
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
 ** Top 10 BinaryTree Problems
 | Num | Problem                                             | Category/Tag | Summary                                                               |
 |-----+-----------------------------------------------------+--------------+-----------------------------------------------------------------------|

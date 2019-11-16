@@ -40,7 +40,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   3 | What's the biggest mistake you have made?              | [[https://www.myperfectresume.com/how-to/interview-tips/what-is-the-biggest-mistake-youve-made][link]] |
 |   4 | Tell me about the best leader or manager you ever had  | [[https://www.thebalancecareers.com/how-to-answer-interview-questions-about-your-ideal-boss-2063848][link]] |
 #+TBLFM: $1=@-1$1+1;N
-[[image-blog:Star Principle][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-behavior-A4/my-star.png]]
+[[image-blog:Star Principle][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-behavior-A4/mystar.png]]
 ** Well-Known Cultures
 | Num | Name                                  |
 |-----+---------------------------------------|
