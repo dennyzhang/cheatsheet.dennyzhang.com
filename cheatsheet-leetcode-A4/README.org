@@ -52,7 +52,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  24 | [[https://code.dennyzhang.com/tag/monotonicfunc][#monotonicfunc]], [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]      | [[https://code.dennyzhang.com/kth-smallest-number-in-multiplication-table][Leetcode: Kth Smallest Number in Multiplication Table]]         |
 |  25 | [[https://code.dennyzhang.com/review-divideconquer][#divideconquer]], [[https://code.dennyzhang.com/review-recursive][#recursive]]         |                                                               |
 #+TBLFM: $1=@-1$1+1;N
-[[image-blog:CheatSheet: Leetcode Common Templates & Common Code Problems][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/problems/cheatsheet-leetcode-A4/datastructre.png]]
+[[image-blog:CheatSheet: Leetcode Common Templates & Common Code Problems][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-leetcode-A4/datastructre.png]]
 ** Top 25 Graph Problems
 | Num | Problem                                                                 | Category/Tag              | Summary                                                 |
 |-----+-------------------------------------------------------------------------+---------------------------+---------------------------------------------------------|
@@ -101,6 +101,10 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   6 | Binary search on monotonic function         | [[https://code.dennyzhang.com/tag/monotonicfunc][#monotonicfunc]], [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]] | [[https://code.dennyzhang.com/sqrtx][Leetcode: Sqrt(x)]], [[https://code.dennyzhang.com/capacity-to-ship-packages-within-d-days][Leetcode: Capacity To Ship Packages Within D Days]]   |
 |   7 | Place k elements to minimize max distance   | [[https://code.dennyzhang.com/tag/monotonicfunc][#monotonicfunc]], [[https://code.dennyzhang.com/tag/float][#float]]        | [[https://code.dennyzhang.com/minimize-max-distance-to-gas-station][Leetcode: Minimize Max Distance to Gas Station]]                         |
 |   8 | Kth Smallest Number in Multiplication Table | [[https://code.dennyzhang.com/tag/monotonicfunc][#monotonicfunc]], [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]] | [[https://code.dennyzhang.com/kth-smallest-number-in-multiplication-table][Leetcode: Kth Smallest Number in Multiplication Table]]                  |
+|-----+---------------------------------------------+-------------------------------+------------------------------------------------------------------------|
+|   9 | Dynamic programming with binary search      |                               |                                                                        |
+|  10 | Montone stack with binary search            |                               |                                                                        |
+|  11 | Patient sort                                |                               |                                                                        |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Top 15 Dynamic Programming Problems
@@ -176,22 +180,24 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   4 | Two City Scheduling                       | [[https://code.dennyzhang.com/review-greedy][#greedy]]                   | [[https://code.dennyzhang.com/two-city-scheduling][Leetcode: Two City Scheduling]]                       |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Object-Oriented Design Problems
-| Num | Problem                         | Category/Tag           | Example                                                                            |
-|-----+---------------------------------+------------------------+------------------------------------------------------------------------------------|
-|   1 | Cache                           | [[https://code.dennyzhang.com/review-linkedlist][#linkedlist]], [[https://code.dennyzhang.com/review-oodesign][#oodesign]] | [[https://code.dennyzhang.com/lru-cache][Leetcode: LRU Cache]], [[https://code.dennyzhang.com/lfu-cache][Leetcode: LFU Cache]], [[https://code.dennyzhang.com/all-oone-data-structure][Leetcode: All O`one Data Structure]]       |
-|   2 | Throttling                      | [[https://code.dennyzhang.com/review-linkedlist][#linkedlist]], [[https://code.dennyzhang.com/review-oodesign][#oodesign]] | [[https://code.dennyzhang.com/design-hit-counter][Leetcode: Design Hit Counter]], [[https://code.dennyzhang.com/logger-rate-limiter][Leetcode: Logger Rate Limiter]]                        |
-|   3 | Iterator                        | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/binary-search-tree-iterator][Leetcode: Binary Search Tree Iterator]], [[https://code.dennyzhang.com/design-compressed-string-iterator][Leetcode: Design Compressed String Iterator]] |
-|   4 | Design Log Storage System       | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-log-storage-system][Leetcode: Design Log Storage System]]                                                |
-|   5 | Linked List with random access  | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-linked-list][Leetcode: Design Linked List]]                                                       |
-|   6 | Max Stack                       | [[https://code.dennyzhang.com/review-stack][#stack]] , [[https://code.dennyzhang.com/review-oodesign][#oodesign]]     | [[https://code.dennyzhang.com/max-stack][Leetcode: Max Stack]]                                                                |
-|   7 | Design HashMap                  | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-hashmap][Leetcode: Design HashMap]]                                                           |
-|   8 | Circular Queue                  | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-circular-queue][Leetcode: Design Circular Queue]], [[https://code.dennyzhang.com/design-circular-deque][Leetcode: Design Circular Deque]]                   |
-|   9 | Trie tree                       | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/implement-trie-prefix-tree][Leetcode: Implement Trie (Prefix Tree)]], [[https://code.dennyzhang.com/add-and-search-word-data-structure-design][Leetcode: Add and Search Word]]              |
-|  10 | Get Median                      | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/find-median-from-data-stream][Leetcode: Find Median from Data Stream]]                                             |
-|  11 | Range Sum Query                 | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/range-sum-query-mutable][Leetcode: Range Sum Query - Mutable]], [[https://code.dennyzhang.com/range-sum-query-immutable][Leetcode: Range Sum Query - Immutable]]         |
-|  12 | Design File System              | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-file-system][Leetcode: Design File System]]                                                       |
-|  13 | Insert Delete GetRandom O(1)    | [[https://code.dennyzhang.com/review-oodesign][#oodesign]], [[https://code.dennyzhang.com/review-random][#random]]     | [[https://code.dennyzhang.com/insert-delete-getrandom-o1][Leetcode: Insert Delete GetRandom O(1)]]                                             |
-|  14 | Insert Delete GetRandom O(1) II | [[https://code.dennyzhang.com/review-oodesign][#oodesign]], [[https://code.dennyzhang.com/review-random][#random]]     | [[https://code.dennyzhang.com/insert-delete-getrandom-o1-duplicates-allowed][Leetcode: Insert Delete GetRandom O(1) - Duplicates allowed]]                        |
+| Num | Problem                         | Category/Tag           | Example                                                                      |
+|-----+---------------------------------+------------------------+------------------------------------------------------------------------------|
+|   1 | Cache                           | [[https://code.dennyzhang.com/review-linkedlist][#linkedlist]], [[https://code.dennyzhang.com/review-oodesign][#oodesign]] | [[https://code.dennyzhang.com/lru-cache][Leetcode: LRU Cache]], [[https://code.dennyzhang.com/lfu-cache][Leetcode: LFU Cache]], [[https://code.dennyzhang.com/all-oone-data-structure][Leetcode: All O`one Data Structure]] |
+|   2 | Throttling                      | [[https://code.dennyzhang.com/review-linkedlist][#linkedlist]], [[https://code.dennyzhang.com/review-oodesign][#oodesign]] | [[https://code.dennyzhang.com/design-hit-counter][Leetcode: Design Hit Counter]], [[https://code.dennyzhang.com/logger-rate-limiter][Leetcode: Logger Rate Limiter]]                  |
+|   3 | Design Log Storage System       | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-log-storage-system][Leetcode: Design Log Storage System]]                                          |
+|   4 | Linked List with random access  | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-linked-list][Leetcode: Design Linked List]]                                                 |
+|   5 | Max Stack                       | [[https://code.dennyzhang.com/review-stack][#stack]] , [[https://code.dennyzhang.com/review-oodesign][#oodesign]]     | [[https://code.dennyzhang.com/max-stack][Leetcode: Max Stack]]                                                          |
+|   6 | Design HashMap                  | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-hashmap][Leetcode: Design HashMap]]                                                     |
+|   7 | Circular Queue                  | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-circular-queue][Leetcode: Design Circular Queue]], [[https://code.dennyzhang.com/design-circular-deque][Leetcode: Design Circular Deque]]             |
+|   8 | Trie tree                       | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/implement-trie-prefix-tree][Leetcode: Implement Trie (Prefix Tree)]], [[https://code.dennyzhang.com/add-and-search-word-data-structure-design][Leetcode: Add and Search Word]]        |
+|   9 | Get Median                      | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/find-median-from-data-stream][Leetcode: Find Median from Data Stream]]                                       |
+|  10 | Range Sum Query                 | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/range-sum-query-mutable][Leetcode: Range Sum Query - Mutable]], [[https://code.dennyzhang.com/range-sum-query-immutable][Leetcode: Range Sum Query - Immutable]]   |
+|  11 | Design File System              | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-file-system][Leetcode: Design File System]]                                                 |
+|  12 | Tree Iterator                   | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/binary-search-tree-iterator][Leetcode: Binary Search Tree Iterator]]                                        |
+|  13 | String Iterator                 | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/design-compressed-string-iterator][Leetcode: Design Compressed String Iterator]]                                  |
+|  14 | ZigZag Iterator                 | [[https://code.dennyzhang.com/review-oodesign][#oodesign]]              | [[https://code.dennyzhang.com/zigzag-iterator][Leetcode: Zigzag Iterator]]                                                    |
+|  15 | Insert Delete GetRandom O(1)    | [[https://code.dennyzhang.com/review-oodesign][#oodesign]], [[https://code.dennyzhang.com/review-random][#random]]     | [[https://code.dennyzhang.com/insert-delete-getrandom-o1][Leetcode: Insert Delete GetRandom O(1)]]                                       |
+|  16 | Insert Delete GetRandom O(1) II | [[https://code.dennyzhang.com/review-oodesign][#oodesign]], [[https://code.dennyzhang.com/review-random][#random]]     | [[https://code.dennyzhang.com/insert-delete-getrandom-o1-duplicates-allowed][Leetcode: Insert Delete GetRandom O(1) - Duplicates allowed]]                  |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 50 General Problems
 | Num | Problem                                              | Category/Tag                      | Example                                                                      |
@@ -290,12 +296,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  24 | Sliding window to get the longest size of subarray                    | [[https://code.dennyzhang.com/max-consecutive-ones-iii][Leetcode: Max Consecutive Ones III]]                                      |
 |  25 | In matrix dfs, change cell to impossible value to avoid state hashmap | [[https://code.dennyzhang.com/word-search-ii][Leetcode: Word Search II]]                                                |
 |  26 | For palindrome check, check the whole string, instead of left half    | [[https://code.dennyzhang.com/longest-chunked-palindrome-decomposition][Leetcode: Longest Chunked Palindrome Decomposition]]                      |
-|  27 | Find a pair with sum meets some requirements                          | [[https://code.dennyzhang.com/two-sum][Leetcode: Two Sum]]                                                       |
-|  28 | Avoid unnecessary precheck                                            |                                                                         |
-|  29 | One pass instead of two pass                                          |                                                                         |
-|  30 | Swiping line algorithm                                                |                                                                         |
-|  31 | Add a dummy head node for linked list                                 |                                                                         |
-|  32 | Hide details which are irrelevant                                     |                                                                         |
+|  27 | Use queue to keep flipping the orders                                 | [[https://code.dennyzhang.com/zigzag-iterator][Leetcode: Zigzag Iterator]]                                               |
+|  28 | Find a pair with sum meets some requirements                          | [[https://code.dennyzhang.com/two-sum][Leetcode: Two Sum]]                                                       |
+|  29 | Avoid unnecessary precheck                                            |                                                                         |
+|  30 | One pass instead of two pass                                          |                                                                         |
+|  31 | Swiping line algorithm                                                |                                                                         |
+|  32 | Add a dummy head node for linked list                                 |                                                                         |
+|  33 | Hide details which are irrelevant                                     |                                                                         |
 #+TBLFM: $1=@-1$1+1;N
 ** Whiteboard Tips
 | Name                                                    | Summary                                                               |
@@ -327,10 +334,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Resource For Code Problems - In Chinese                         :noexport:
 | Name      | Summary                                    |
 |-----------+--------------------------------------------|
+| Reference | [[http://wiki.gyh.me/][wiki.gyh.me]], [[https://oi-wiki.org/][OI WIKI]]                       |
 | Reference | [[https://github.com/imhuay/Algorithm_Interview_Notes-Chinese/tree/master/C-算法][Algorithm_Interview_Notes-Chinese/C-算法]]   |
 | Reference | [[https://www.kancloud.cn/kancloud/data-structure-and-algorithm-notes/72897][Link: 数据结构与算法/leetcode/lintcode题解]] |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+https://en.wikipedia.org/wiki/Data_structure
 
 https://www.cs.princeton.edu/~rs/AlgsDS07/
 
