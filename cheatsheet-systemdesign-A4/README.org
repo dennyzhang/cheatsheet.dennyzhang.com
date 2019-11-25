@@ -124,7 +124,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |----------------------+--------------------------------------------------------------------------------|
 | Compnay Tech Blog    | [[https://www.facebook.com/pg/Engineering/notes/][Website: Facebook Engineering]], [[https://developers.googleblog.com][Website: Google Developers]]                      |
 | Compnay Tech Blog    | [[https://medium.com/netflix-techblog][Medium: Netflix Blog]], [[https://medium.com/airbnb-engineering][Medium: Airbnb Engineering & Data Science]]                |
-| Compnay Tech Blog    | [[https://github.blog/category/engineering/][Github Engineering]]                                                             |
+| Compnay Tech Blog    | [[https://engineering.shopify.com/][Shopify Engineering]], [[https://github.blog/category/engineering/][Github Engineering]]                                        |
 |----------------------+--------------------------------------------------------------------------------|
 | Website              | [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: system-design-primer]], [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]]             |
 | Website              | [[https://interviewing.io][Website: interviewing.io]], [[https://www.interviewbit.com/courses/system-design/][Website: interviewbit.com]]                            |

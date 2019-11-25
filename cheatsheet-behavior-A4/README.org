@@ -40,7 +40,16 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   3 | What's the biggest mistake you have made?              | [[https://www.myperfectresume.com/how-to/interview-tips/what-is-the-biggest-mistake-youve-made][link]] |
 |   4 | Tell me about the best leader or manager you ever had  | [[https://www.thebalancecareers.com/how-to-answer-interview-questions-about-your-ideal-boss-2063848][link]] |
 #+TBLFM: $1=@-1$1+1;N
-[[image-blog:Star Principle][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-behavior-A4/mystar.png]]
+** Grow Skills Of Behavior Questions In Daily Work
+| Num | Summary                                                                                |
+|-----+----------------------------------------------------------------------------------------|
+|   1 | Any emails/messages you don't know how to reply would be a good learning opportunities |
+#+TBLFM: $1=@-1$1+1;N
+
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=0312337361&asins=0312337361&linkId=9215d43db678251263203c0cd79b48bc&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
 ** Well-Known Cultures
 | Num | Name                                  |
 |-----+---------------------------------------|
@@ -64,11 +73,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  10 | Deal With Ambiguity               |                                              |
 |  11 | Closing Interview                 |                                              |
 #+TBLFM: $1=@-1$1+1;N
-
-#+BEGIN_HTML
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=0312337361&asins=0312337361&linkId=9215d43db678251263203c0cd79b48bc&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
-</iframe>
-#+END_HTML
 
 ** Self-intro Background
 | Num | Example                                                                   |
@@ -125,6 +129,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   6 | Customer vs share-holder                                                        |      |
 #+TBLFM: $1=@-1$1+1;N
 
+[[image-blog:Star Principle][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-behavior-A4/mystar.png]]
 ** Communication/Team work           
 | Num | Example                                                     |
 |-----+-------------------------------------------------------------|
@@ -325,3 +330,7 @@ https://www.1point3acres.com/bbs/thread-566677-1-1.html
 - There are lots of common-sense and easy tips
   Before fighting back, understand what they want? Might not be as much as you thought.
   For credential management, no plain text are common sense. But kepts getting ignored.
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO local notes                                                 :noexport:
+** TODO How to nail down a tech person                             :noexport:
+** TODO How to avoid shitty project?                               :noexport:
