@@ -92,24 +92,25 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  10 | [[https://code.dennyzhang.com/review-dfs][#dfs]]                | [[https://code.dennyzhang.com/review-dfs][Review: DFS Problems]]                              |
 |  11 | [[https://code.dennyzhang.com/tag/array][#array]]              | [[https://code.dennyzhang.com/review-array][Review: Array/SubArray Problems]]                   |
 |  12 | [[https://code.dennyzhang.com/review-hashmap][#hashmap]]            | [[https://code.dennyzhang.com/review-hashmap][Review: Hashmap Problems]]                          |
-|  13 | [[https://code.dennyzhang.com/review-monotone][#monotone]]           | [[https://code.dennyzhang.com/review-monotone][Review: Monotone Stack Or Monotone Queue Problems]] |
-|  14 | [[https://code.dennyzhang.com/review-knapsack][#knapsack]]           | [[https://code.dennyzhang.com/review-knapsack][Review: Knapsack Problems]]                         |
-|  15 | [[https://code.dennyzhang.com/review-heap][#heap]]               | [[https://code.dennyzhang.com/review-heap][Review: Heap Problems]]                             |
-|  16 | [[https://code.dennyzhang.com/review-divideconquer][#divideconquer]]      | [[https://code.dennyzhang.com/review-divideconquer][Review: Divide And Conquer Problems]]               |
-|  17 | [[https://code.dennyzhang.com/review-backtracking][#backtracking]]       | [[https://code.dennyzhang.com/review-backtracking][Review: Backtracking Problems]]                     |
-|  18 | [[https://code.dennyzhang.com/review-unionfind][#unionfind]]          | [[https://code.dennyzhang.com/review-unionfind][Review: Union Find Problems]]                       |
-|  19 | [[https://code.dennyzhang.com/review-greedy][#greedy]]             | [[https://code.dennyzhang.com/review-greedy][Review: Greedy Problems]]                           |
-|  20 | [[https://code.dennyzhang.com/review-gcd][#gcd]]                | [[https://code.dennyzhang.com/review-gcd][Review: GCD Problems]]                              |
-|  21 | [[https://code.dennyzhang.com/review-interval][#interval]]           | [[https://code.dennyzhang.com/review-interval][Review: Interval Problems]]                         |
-|  22 | [[https://code.dennyzhang.com/review-combination][#combination]]        | [[https://code.dennyzhang.com/review-combination][Review: Combinations and Permutations Problems]]    |
-|  23 | [[https://code.dennyzhang.com/review-sql][#sql]]                | [[https://code.dennyzhang.com/review-sql][Review: SQL Problems]]                              |
-|  24 | [[https://code.dennyzhang.com/review-sqrt][#sqrt]]               | [[https://code.dennyzhang.com/review-sqrt][Review: sqrt Problems]]                             |
-|  25 | [[https://code.dennyzhang.com/review-bucketsort][#bucketsort]]         | [[https://code.dennyzhang.com/review-bucketsort][Review: Bucketsort Problems]]                       |
-|  26 | [[https://code.dennyzhang.com/review-countsort][#countsort]]          | [[https://code.dennyzhang.com/review-countsort][Review: Countsort Problems]]                        |
-|  27 | [[https://code.dennyzhang.com/review-topologicalsort][#topologicalsort]]    | [[https://code.dennyzhang.com/review-topologicalsort][Review: Topological Sort Problems]]                 |
-|  28 | [[https://code.dennyzhang.com/review-random][#random]]             | [[https://code.dennyzhang.com/review-random][Review: Random Problems]]                           |
-|  29 | [[https://code.dennyzhang.com/review-rectangle][#rectangle]]          | [[https://code.dennyzhang.com/review-rectangle][Review: Rectangle Problems]]                        |
-|  30 | [[https://code.dennyzhang.com/review-multithread][#multithread]]        | [[https://code.dennyzhang.com/review-multithread][Review: Multi-threaded Problems]]                   |
+|  13 | [[https://code.dennyzhang.com/review-minmax][#minmax]]             | [[https://code.dennyzhang.com/review-minmax][Review: minmax Problems]]                           |
+|  14 | [[https://code.dennyzhang.com/review-monotone][#monotone]]           | [[https://code.dennyzhang.com/review-monotone][Review: Monotone Stack Or Monotone Queue Problems]] |
+|  15 | [[https://code.dennyzhang.com/review-knapsack][#knapsack]]           | [[https://code.dennyzhang.com/review-knapsack][Review: Knapsack Problems]]                         |
+|  16 | [[https://code.dennyzhang.com/review-heap][#heap]]               | [[https://code.dennyzhang.com/review-heap][Review: Heap Problems]]                             |
+|  17 | [[https://code.dennyzhang.com/review-divideconquer][#divideconquer]]      | [[https://code.dennyzhang.com/review-divideconquer][Review: Divide And Conquer Problems]]               |
+|  18 | [[https://code.dennyzhang.com/review-backtracking][#backtracking]]       | [[https://code.dennyzhang.com/review-backtracking][Review: Backtracking Problems]]                     |
+|  19 | [[https://code.dennyzhang.com/review-unionfind][#unionfind]]          | [[https://code.dennyzhang.com/review-unionfind][Review: Union Find Problems]]                       |
+|  20 | [[https://code.dennyzhang.com/review-greedy][#greedy]]             | [[https://code.dennyzhang.com/review-greedy][Review: Greedy Problems]]                           |
+|  21 | [[https://code.dennyzhang.com/review-gcd][#gcd]]                | [[https://code.dennyzhang.com/review-gcd][Review: GCD Problems]]                              |
+|  22 | [[https://code.dennyzhang.com/review-interval][#interval]]           | [[https://code.dennyzhang.com/review-interval][Review: Interval Problems]]                         |
+|  23 | [[https://code.dennyzhang.com/review-combination][#combination]]        | [[https://code.dennyzhang.com/review-combination][Review: Combinations and Permutations Problems]]    |
+|  24 | [[https://code.dennyzhang.com/review-sql][#sql]]                | [[https://code.dennyzhang.com/review-sql][Review: SQL Problems]]                              |
+|  25 | [[https://code.dennyzhang.com/review-sqrt][#sqrt]]               | [[https://code.dennyzhang.com/review-sqrt][Review: sqrt Problems]]                             |
+|  26 | [[https://code.dennyzhang.com/review-bucketsort][#bucketsort]]         | [[https://code.dennyzhang.com/review-bucketsort][Review: Bucketsort Problems]]                       |
+|  27 | [[https://code.dennyzhang.com/review-countsort][#countsort]]          | [[https://code.dennyzhang.com/review-countsort][Review: Countsort Problems]]                        |
+|  28 | [[https://code.dennyzhang.com/review-topologicalsort][#topologicalsort]]    | [[https://code.dennyzhang.com/review-topologicalsort][Review: Topological Sort Problems]]                 |
+|  29 | [[https://code.dennyzhang.com/review-random][#random]]             | [[https://code.dennyzhang.com/review-random][Review: Random Problems]]                           |
+|  30 | [[https://code.dennyzhang.com/review-rectangle][#rectangle]]          | [[https://code.dennyzhang.com/review-rectangle][Review: Rectangle Problems]]                        |
+|  31 | [[https://code.dennyzhang.com/review-multithread][#multithread]]        | [[https://code.dennyzhang.com/review-multithread][Review: Multi-threaded Problems]]                   |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML

@@ -74,27 +74,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
 #+END_HTML
-** 15 Well-Known Papers
-| Num | Name                                  | Summary |
-|-----+---------------------------------------+---------|
-|   1 | Dynamo - HA K/V store                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/dynamo-amazon.pdf][paper]]   |
-|   2 | MapReduce                             | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/mapreduce.pdf][paper]]   |
-|   3 | Kafka - distributed messageing system | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/kafka-linkedin.pdf][paper]]   |
-|   4 | Chubby - Lock service                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/chubby-osdi06.pdf][paper]]   |
-|   5 | Cassandra - Decentralized storage     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/cassandra-facebook.pdf][paper]]   |
-|   6 | Cache                                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/database-caching-strategies-using-redis.pdf][paper]]   |
-|   7 | Bigtable - distributed storage        | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/bigtable-google.pdf][paper]]   |
-|   8 | Zookeeper - Cooridnation              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/zookeeper.pdf][paper]]   |
-|   9 | Spanner - Globally-distributed db     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/spanner-google.pdf][paper]]   |
-|  10 | Google File System                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/the-google-file-system.pdf][paper]]   |
-|  11 | Hadoop Distributed File System        | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/hdfs.pdf][paper]]   |
-|  12 | Concurrency Control                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/concurrency-control.pdf][paper]]   |
-|  13 | Consistent Hashing                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/consistent-hashing.pdf][paper]]   |
-|  14 | Paxos                                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-featuredesign-A4/paper/paxos-simple-Copy.pdf][paper]]   |
-#+TBLFM: $1=@-1$1+1;N
-
-- [[https://www.linkedin.com/pulse/100-open-source-big-data-architecture-papers-anil-madan/][125 open source Big Data architecture papers]]
-
 ** Engineering Of Well-Known Products
 | Name          | Summary                                                  |
 |---------------+----------------------------------------------------------|
@@ -132,8 +111,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Reference            | [[https://www.hiredintech.com/classrooms/system-design/lesson/55][Link: The System Design Process]]                                                |
 | Papers               | [[https://github.com/papers-we-love/papers-we-love][Github: papers-we-love]]                                                         |
 | Individual Tech Blog | [[https://www.allthingsdistributed.com][Blog: All Things Distributed - Amazon CTO]], [[http://highscalability.com/][Blog: highscalability]]               |
+|----------------------+--------------------------------------------------------------------------------|
 | YouTube              | [[https://www.youtube.com/watch?v=ZgdS0EUmn70][YouTube: Intro to Architecture and Systems Design Interviews]]                   |
 | YouTube              | [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube Channel: Success in Tech]], [[https://www.youtube.com/watch?v=-W9F__D3oY4&feature=youtu.be][YouTube: Scalability Harvard Web Development]] |
+| YouTube              | [[https://www.youtube.com/channel/UC9vLsnF6QPYuH51njmIooCQ][YouTube: System Design Interview]]                                               |
+|----------------------+--------------------------------------------------------------------------------|
 | Cheatsheet           | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]]       |
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]                                        |
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                             |
