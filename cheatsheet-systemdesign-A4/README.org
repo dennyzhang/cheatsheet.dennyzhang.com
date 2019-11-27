@@ -22,8 +22,9 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 
-** Feature Design - 101
+** Related CheatSheets
 - [[https://cheatsheet.dennyzhang.com/cheatsheet-featuredesign-A4][CheatSheet: Feature Design For Job Interview]]
+- [[https://cheatsheet.dennyzhang.com/cheatsheet-paper-A4][CheatSheet: Well-Known Papers For IT Industry]]
 
 ** Classic Design Problems - Design A Complex Product
 | Num | Name                                       | Summary                                      |
