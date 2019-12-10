@@ -39,11 +39,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | =union= vs =union all=                                | [[https://code.dennyzhang.com/friend-requests-ii-who-has-the-most-friends][Leetcode: Friend Requests II: Who Has the Most Friends]]                                    |
 | If no match show null                                 | [[https://code.dennyzhang.com/second-highest-salary][Leetcode: Second Highest Salary]]                                                           |
 | Get maximum of multiple columns                       | [[https://code.dennyzhang.com/triangle-judgement][Leetcode: Triangle Judgement]]                                                              |
+| Tree hierachy in SQL                                  | [[https://code.dennyzhang.com/all-people-report-to-the-given-manager][Leetcode: All People Report to the Given Manager]]                                          |
 | Impressive sql problems                               | [[https://code.dennyzhang.com/find-median-given-frequency-of-numbers][Leecode: Find Median Given Frequency of Numbers]], [[https://code.dennyzhang.com/consecutive-available-seats][Leetcode: Consecutive Available Seats]]    |
 | Impressive sql problems                               | [[https://code.dennyzhang.com/rank-scores][Leetcode: Rank Scores]], [[https://code.dennyzhang.com/exchange-seats][Leetcode: Exchange Seats]], [[https://code.dennyzhang.com/students-report-by-geography][Leetcode: Students Report By Geography]]   |
 | mysql doesn't support full outer join                 | [[https://code.dennyzhang.com/monthly-transactions-ii][Leetcode: Monthly Transactions II]]                                                         |
 | When left join+groupby, group by which tables' field? | [[https://code.dennyzhang.com/team-scores-in-football-tournament][Leetcode: Team Scores in Football Tournament]]                                              |
 | =sum(if(isnull(= vs =ifnull(sum(=                     | [[https://code.dennyzhang.com/team-scores-in-football-tournament][Leetcode: Team Scores in Football Tournament]]                                              |
+| Three tables' join                                    | [[https://code.dennyzhang.com/students-and-examinations][Leetcode: Students and Examinations]]                                                       |
 | Reference                                             | [[https://code.dennyzhang.com/review-sql][Leetcode SQL problems]]                                                                     |
 ** SQL Statement
 | Name                               | Command                                                         |

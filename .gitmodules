@@ -64,3 +64,6 @@
 [submodule "cheatsheet-prometheus-A4"]
 	path = cheatsheet-prometheus-A4
 	url = git@github.com:dennyzhang/cheatsheet-prometheus-A4.git
+[submodule "cheatsheet-paper-A4"]
+	path = cheatsheet-paper-A4
+	url = git@github.com:dennyzhang/cheatsheet-paper-A4.git

@@ -199,31 +199,31 @@ https://www.todayshomeowner.com/
 #+LINK_UP:
 #+LINK_HOME:
 * [#A] Utility Contact                                             :noexport:
-| Name                              | Contact                | Phone                                   | Website/Email/Notes                          |                                                                      |
-|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
-| Notify USCIS                      |                        |                                         | Bestbuy/HomeDepo coupon                      |                                                                      |
-|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
-| 换门锁 - electric locks           |                        | Locksmith,Lowes                         | Lowes Ebay 有coupon                          |                                                                      |
-| Utilities: elec/gas               | PG&E                   | (877)660-6789                           | https://www.pge.com/                         |                                                                      |
-| Water                             | San Jose Water Company | (408) 279-7900                          | https://www.sjwater.com/                     |                                                                      |
-| Garbage                           | GreenTeam of San Jose  | (408) 282-4400                          | https://www.greenteam.com/                   |                                                                      |
-| Internet                          | Xfinity                | (800) 934-6489                          | https://www.xfinity.com/                     |                                                                      |
-| Change Address                    |                        | USPS                                    | https://moversguide.usps.com/mgo/whos-moving |                                                                      |
-|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
-| Notify DMV                        |                        |                                         |                                              |                                                                      |
-| Change Bank address: debit/credit |                        |                                         |                                              |                                                                      |
-| Auto insurance                    |                        |                                         |                                              |                                                                      |
-| Medicare insurance                |                        |                                         |                                              |                                                                      |
-| Detal insurance                   |                        |                                         |                                              |                                                                      |
-| Update contact in VMware websites |                        |                                         |                                              |                                                                      |
-|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+----------------------------------------------------------------------|
-| Contractor                        | James(Licensed)        | (408)916-6465                           |                                              |                                                                      |
-| Contractor                        | 丁师傅                 | (408)828-9808                           |                                              |                                                                      |
-| Cleaning                          |                        | Crystal Carpet cleaning                 | (408)930-6225                                |                                                                      |
-| Cleaning & Handyman               |                        | Handy.com                               |                                              | 通常有coupon或者新用户 折扣                                          |
-| Property Tax                      |                        | https://payments.sccgov.org/propertytax | Tax due 4/10 and 12/10 each year             |                                                                      |
+| Name                              | Contact                | Phone                                   | Website/Email/Notes                          |                                                                   |
+|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+-------------------------------------------------------------------|
+| Notify USCIS                      |                        |                                         | Bestbuy/HomeDepo coupon                      |                                                                   |
+| Tree - Raymundo Dias              |                        | 408-466-1306                            |                                              |                                                                   |
+| 换门锁 - electric locks           |                        | Locksmith,Lowes                         | Lowes Ebay 有coupon                          |                                                                   |
+| Utilities: elec/gas               | PG&E                   | (877)660-6789                           | https://www.pge.com/                         |                                                                   |
+| Water                             | San Jose Water Company | (408) 279-7900                          | https://www.sjwater.com/                     |                                                                   |
+| Garbage                           | GreenTeam of San Jose  | (408) 282-4400                          | https://www.greenteam.com/                   |                                                                   |
+| Internet                          | Xfinity                | (800) 934-6489                          | https://www.xfinity.com/                     |                                                                   |
+| Change Address                    |                        | USPS                                    | https://moversguide.usps.com/mgo/whos-moving |                                                                   |
+|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+-------------------------------------------------------------------|
+| Notify DMV                        |                        |                                         |                                              |                                                                   |
+| Change Bank address: debit/credit |                        |                                         |                                              |                                                                   |
+| Auto insurance                    |                        |                                         |                                              |                                                                   |
+| Medicare insurance                |                        |                                         |                                              |                                                                   |
+| Detal insurance                   |                        |                                         |                                              |                                                                   |
+| Update contact in VMware websites |                        |                                         |                                              |                                                                   |
+|-----------------------------------+------------------------+-----------------------------------------+----------------------------------------------+-------------------------------------------------------------------|
+| Contractor                        | James(Licensed)        | (408)916-6465                           |                                              |                                                                   |
+| Contractor                        | 丁师傅                 | (408)828-9808                           |                                              |                                                                   |
+| Cleaning                          |                        | Crystal Carpet cleaning                 | (408)930-6225                                |                                                                   |
+| Cleaning & Handyman               |                        | Handy.com                               |                                              | 通常有coupon或者新用户 折扣                                       |
+| Property Tax                      |                        | https://payments.sccgov.org/propertytax | Tax due 4/10 and 12/10 each year             |                                                                   |
 | Moving                            |                        | 兄弟搬家                                | (510) 648-6546                               | 最好当天最早时间,否则 容易迟到,通常他们报价 包含小费,预约时先确定 |
-| HOA                               | N/A                    |                                         |                                              |                                                                      |
+| HOA                               | N/A                    |                                         |                                              |                                                                   |
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * DONE local notes                                                 :noexport:
 ** DONE Hang pictures to the wall                                  :noexport:
@@ -314,104 +314,6 @@ https://www.todayshomeowner.com/
  https://sfbay.craigslist.org/eby/grd/d/newark-brand-new-electric-lawn-mower/6843218175.html
 ** DONE change air heater filter                                   :noexport:
    CLOSED: [2019-04-06 Sat 17:27]
-** CANCELED old notes                                              :noexport:
-   CLOSED: [2019-02-19 Tue 09:21]
- #+BEGIN_EXAMPLE
- 看房🏠
-
- zip code:
-
- https://cheatsheet.dennyzhang.com/cheatsheet-house-A4
-
- Sunnyvale:
- - 94086
- - 94087
- - 94089: not good
-
-
- Portoflio by Dec
- - Fidelity: 1.35
- - Robinhond: 0.91
- - Bitcoin: 0.06
-
- Maintenance (0.65):
- - monthly saving: 1
- - House cost: 0.6
- - Stock: 0.25
-
- 13.3*12+
-
- 340-264+10+10
-
- VMware: 3495 Deer Creek Rd, Palo Alto, CA 94304
- KPMG: 3975 Freedom Cir, Santa Clara, CA 95054
-
-
- 1.5m: 每月7000
- 即房子开支多出了4000
- 每月孩子开支多出2000
-
- 每月存4000,即每年4.8w
- 奖金:2w,股票:2w
-
- 即每年存8.8w
- ---------------------------------------------
- Meadowood Apartments: 1555 W. Middlefield Rd #4, Mountain View, CA 94043
-
- ----------------------------------------------
-
- Park Square Apartments: 1285 Montecito Ave, Mountain View, CA 94043
-
- $2,495; 816 Sq Ft;
- ￼
- ￼
-
- - MountainView
- | Name                 | Price | Size | Distance S, D |
- |----------------------+-------+------+---------------|
- | Village Lake         | 2,550 |  682 | (7, 7)        |
- | Highland Gardens     | 2,980 |  750 | (8, 9)        |
- | Avalon Mountain View | 2,895 |  701 |               |
- | Birch Creek          | 2,795 |  800 |               |
- | Americana Apartments | 2,750 |  740 |               |
-
- - Sunnyvale
- | Name                      | Price | Size | Distance S, D |
- |---------------------------+-------+------+---------------|
- | Mission Pointe by Windsor | 2,685 |  704 | (4, 15)       |
-*** Village Lake: 777 W Middlefield Rd, Mountain View, CA 94043
- https://www.zillow.com/homes/for_rent/house,condo,apartment_duplex,mobile,townhouse_type/5XjLXT_bldg/37.403001,-122.076286_ll/1-_beds/0-752851_price/0-3000_mp/600-_size/37.409172,-122.063674,37.396388,-122.083844_rect/15_zm/
-*** Highland Gardens: 234 Escuela Ave, Mountain View, CA 94040
- https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/2096379137_zpid/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.430603,-122.021327,37.379468,-122.131877_rect/13_zm/
-*** Avalon Mountain View: 1600 Villa St, Mountain View, CA 94041
- https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/2095571415_zpid/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.430058,-122.044759,37.378513,-122.091794_rect/13_zm/
-*** Birch Creek: 575 S Rengstorff Ave, Mountain View, CA 94040
- https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/5XjKKB_bldg/37.39725,-122.09952_ll/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.416834,-122.013173,37.365689,-122.123723_rect/13_zm/
-*** Americana Apartments: 707 Continental Cir, Mountain View, CA 94040
- https://www.zillow.com/homes/for_rent/Mountain-View-CA/condo,apartment_duplex_type/5hGhMy_bldg/37.375162,-122.065018_ll/32999_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.411653,-122.009912,37.360505,-122.120461_rect/13_zm/
-*** Mission Pointe by Windsor: 1063 Morse Ave, Sunnyvale, CA 94089
- https://www.zillow.com/homes/for_rent/Sunnyvale-CA/condo,apartment_duplex_type/5XjPcj_bldg/37.400296,-122.0178_ll/54626_rid/0-752851_price/0-3000_mp/700-_size/1_laundry/37.411176,-121.966052,37.360027,-122.076602_rect/13_zm/
-
-
- 看房考虑因素:
- - view要好,有deck晒太阳
- - private drive way
- - 空调机会不会很吵
- - 一楼独立的suite
- - 采光好
- - HOA多少
- - 晚上去看一下:看停车
-
- 中国的字画作装饰
-
- 基本事实:
- - 到9-1总共存款:17万（10.8美元+0.8人民币+5六个月新增存款=16.6）
- - 45万房子,首付17万贷款28万15年,月供大概 $1953（不加维护费）
- - 房子维护费:房产税,HOA,insurance:1000
- - 稳定后开支:把sophia工资花掉,存着Denny工资.即每月花6000,存6000元
- - 无房贷的日用开支: $4500
- - 每年可以存7万,6年即42万.
- #+END_EXAMPLE
 ** DONE Shopping: 大篓子放枕头                                     :noexport:
    CLOSED: [2019-04-06 Sat 22:29]
 ** DONE [#A] Change Refrigerator Water Filter                      :noexport:
@@ -419,7 +321,6 @@ https://www.todayshomeowner.com/
  Refrigerator Water Filter
  - Flush 4 gallons of water through water filter cartridge before use
  - Replace dispensable filter every 3-6 months to maximize contaminant reduction.
-
  https://www.youtube.com/watch?v=U-p62wMxfWU
  https://www.amazon.com/4396841-4396710-Refrigerator-Compatible-EDR3RXD1/dp/B07MYWTTM7/ref=sr_1_3?keywords=whirlpool+refrigerator+water+filter+4396710&qid=1553656434&s=hi&sr=1-3
  https://everydropwater.com/Assets/Doc/filterGuide.pdf

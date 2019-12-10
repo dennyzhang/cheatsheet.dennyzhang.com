@@ -588,3 +588,9 @@ https://github.com/dennyzhang/docs
 * TODO Design follow-up questions                                  :noexport:
 * TODO [#A] Avoid add external links                               :noexport:
 * TODO Add an interview category to cheatsheet.dennyzhang.com      :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Post add link back to cheatsheet                            :noexport:
+- Tag:
+
+- [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]
+

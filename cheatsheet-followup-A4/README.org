@@ -76,6 +76,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  49 | [[https://code.dennyzhang.com/followup-geometry][#geometry]]                       | [[https://code.dennyzhang.com/followup-geometry][Geometry Problems & Follow-up]]                           |
 |  50 | [[https://code.dennyzhang.com/followup-reachpoint][#reachpoint]]                     | [[https://code.dennyzhang.com/followup-reachpoint][Reach point Problems & Follow-Up]]                        |
 |  51 | [[https://code.dennyzhang.com/followup-getmedian][#getmedian]]                      | [[https://code.dennyzhang.com/followup-getmedian][Get Median Problems & Follow-Up]]                         |
+|  52 | [[https://code.dennyzhang.com/followup-mountainarray][#mountainarray]]                  | [[https://code.dennyzhang.com/followup-mountainarray][Mountain Array Problems & Follow-Up]]                     |
+|  53 | [[https://code.dennyzhang.com/followup-intervaldp][#intervaldp]]                     | [[https://code.dennyzhang.com/followup-intervaldp][Dynamic Programming On Interval Problems & Follow-up]]    |
 #+TBLFM: $1=@-1$1+1;N
 ** Review Problems By Category
 | Num | Name                | Summary                                           |
@@ -110,7 +112,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  28 | [[https://code.dennyzhang.com/review-topologicalsort][#topologicalsort]]    | [[https://code.dennyzhang.com/review-topologicalsort][Review: Topological Sort Problems]]                 |
 |  29 | [[https://code.dennyzhang.com/review-random][#random]]             | [[https://code.dennyzhang.com/review-random][Review: Random Problems]]                           |
 |  30 | [[https://code.dennyzhang.com/review-rectangle][#rectangle]]          | [[https://code.dennyzhang.com/review-rectangle][Review: Rectangle Problems]]                        |
-|  31 | [[https://code.dennyzhang.com/review-multithread][#multithread]]        | [[https://code.dennyzhang.com/review-multithread][Review: Multi-threaded Problems]]                   |
+|  31 | [[https://code.dennyzhang.com/review-concurrency][#concurrency]]        | [[https://code.dennyzhang.com/review-concurrency][Review: Concurrency Problems]]                      |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML

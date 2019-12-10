@@ -68,6 +68,10 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | I'm gonna step away from this. I think it's clear what's wrong here     |         |
 | I'm stepping away from this for now. Still not sure what happened here. |         |
 
+** Start a conversation
+| Name                                                                                     | Comment |
+|------------------------------------------------------------------------------------------+---------|
+| Hey XXX - I'm not quite sure who to ask about this, so I thought I might start with you. |         |
 ** Misc
 | Name                      | Comment |
 |---------------------------+---------|
@@ -431,4 +435,27 @@ With this letter we are introducing ourselves, the WeWorkers Coalition. We are t
 We want to work with you. Please join us in writing a better ending to this chapter of the WeWork story.
 
 By this Thursday at 5:00 p.m. EST, we would like to receive confirmation of your receipt of this letter and an indication of your willingness to meet us.
+#+END_EXAMPLE
+* ask PTO email                                                    :noexport:
+#+BEGIN_EXAMPLE
+Hi Jack,
+
+I’d like to request vacation time from Monday, October 2nd, through Friday, October 6th because I’ll be taking a family vacation over those days.
+
+While I’m gone, I’ll be reachable by email but not phone. I’ll be making sure that we have coverage in the support queue while I’m gone, and I’ll also be distributing a playbook to my team so it’s clear who owns which issues.
+
+Is this OK?
+
+Thanks,
+
+-Ramit
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+Hi XXX,
+I’d like to request vacation time of 8 days, which means from Dec 18th to Dec 31st excluding the weekends and Christmas holidays. I’ll be taking a family vacation and some family activities over those days.
+While I’m gone, I’ll be reachable by email and slack. Please expect a delay in response up to several hours’ delay, since I might be  on and off. Feel free to contact me via phone call for urgency.
+Is this OK?
+Thanks,
+-Denny
 #+END_EXAMPLE
