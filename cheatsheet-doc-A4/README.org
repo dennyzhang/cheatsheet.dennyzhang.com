@@ -46,6 +46,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Start meeting without waiting everyone | =I think we have a quorum. Let's start=                        |
 | Feel free to interrupt me anytime      |                                                                |
 | I have a question, if everyone is OK   |                                                                |
+| When meeitng is overdue                | =I just add a timecheck=                                       |
 
 ** Review Pull Requests
 | Name                        | Comment                                                        |
