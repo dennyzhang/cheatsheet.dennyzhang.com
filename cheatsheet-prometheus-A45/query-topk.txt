@@ -1,0 +1,15 @@
+# Example: Top 5 Docker images by CPU
+topk(5,
+   sum by (image) (
+      rate (container_cpu_usage_secnods_total) {
+         id=~"/system.slice/docker.*"} [5m]
+      )
+   )
+)
+
+# Example: 10 highest read rates per second
+topk(10,
+  sum by(job, keyspace, columnfamily) (
+      rate(cassandra_columnfamily_readlatency[5m])
+  )
+)

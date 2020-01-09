@@ -16,12 +16,6 @@
 [submodule "cheatsheet-jenkins-groovy-A4"]
 	path = cheatsheet-jenkins-groovy-A4
 	url = git@github.com:dennyzhang/cheatsheet-jenkins-groovy-A4.git
-[submodule "cheatsheet-jq-A4"]
-	path = cheatsheet-jq-A4
-	url = git@github.com:dennyzhang/cheatsheet-jq-A4.git
-[submodule "cheatsheet-knative-A4"]
-	path = cheatsheet-knative-A4
-	url = git@github.com:dennyzhang/cheatsheet-knative-A4.git
 [submodule "cheatsheet-kubernetes-A4"]
 	path = cheatsheet-kubernetes-A4
 	url = git@github.com:dennyzhang/cheatsheet-kubernetes-A4.git
@@ -58,12 +52,6 @@
 [submodule "kubernetes-yaml-templates"]
 	path = kubernetes-yaml-templates
 	url = git@github.com:dennyzhang/kubernetes-yaml-templates.git
-[submodule "cheatsheet-mac-A4"]
-	path = cheatsheet-mac-A4
-	url = git@github.com:dennyzhang/cheatsheet-mac-A4.git
-[submodule "cheatsheet-prometheus-A4"]
-	path = cheatsheet-prometheus-A4
-	url = git@github.com:dennyzhang/cheatsheet-prometheus-A4.git
 [submodule "cheatsheet-paper-A4"]
 	path = cheatsheet-paper-A4
 	url = git@github.com:dennyzhang/cheatsheet-paper-A4.git

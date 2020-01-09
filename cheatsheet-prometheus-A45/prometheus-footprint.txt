@@ -1,0 +1,12 @@
+  kubectl top pod -n prometheus --containers=true
+POD                                               NAME                       CPU(cores)   MEMORY(bytes)
+prometheus-1-alertmanager-0                       prometheus-alertmanager    1m           15Mi
+prometheus-1-alertmanager-1                       prometheus-alertmanager    0m           11Mi
+prometheus-1-grafana-0                            grafana                    3m           29Mi
+prometheus-1-kube-state-metrics-74554f744-hz92k   kube-state-metrics         5m           23Mi
+prometheus-1-kube-state-metrics-74554f744-hz92k   addon-resizer              0m           7Mi
+prometheus-1-node-exporter-7sz4f                  prometheus-node-exporter   3m           8Mi
+prometheus-1-node-exporter-jknvb                  prometheus-node-exporter   3m           8Mi
+prometheus-1-node-exporter-s9g4n                  prometheus-node-exporter   3m           8Mi
+prometheus-1-prometheus-0                         prometheus-server          24m          382Mi
+prometheus-1-prometheus-1                         prometheus-server          22m          358Mi

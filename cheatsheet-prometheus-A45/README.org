@@ -1,0 +1,1057 @@
+* CheatSheet: Prometheus                                              :Cloud:
+:PROPERTIES:
+:type:     cloud, kubernetes, monitoring, tool
+:export_file_name: cheatsheet-prometheus-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-prometheus-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/blob/master/cheatsheet-prometheus-A4.pdf][cheatsheet-prometheus-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/cloud/][Cloud]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-nagios-A4][Nagios CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4][Kubectl CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** Prometheus Commands
+| Name                                          | Command                                                                                                      |
+|-----------------------------------------------+--------------------------------------------------------------------------------------------------------------|
+| Run prometheus server with docker             | =docker run -p 9090:9090 prom/prometheus=, =http://localhost:9090/graph=, =http://localhost:9090/metrics=    |
+| Run cadvisor to get local containers' metrics | =docker run -v /var/run:/var/run -v /sys:/sys -p 8080:8080 google/cadvisor=, =http://localhost:8080/metrics= |
+| Query metrics by api, instead of web console  | =curl http://localhost:9090/api/v1/query?query=container_memory_usage_bytes=                                 |
+| List all alerts of alertmanager               | =curl http://localhost:9093/api/v1/alerts=                                                                   |
+| [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/blob/master/prometheus-footprint.txt][Prometheus tech stack footprint]]               | prometheus(350MB RAM), node-exporter(10MB), kube-state-metrics(20MB), alertmanager(15MB), grafana(30MB)      |
+| Example of client libraries                   | [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/blob/master/prometheus-python-example.py][Link: prometheus-python-example.py]]                                                                           |
+| Prometheus Online Demo                        | [[https://demo.cloudalchemy.org/][Live demo from CloudAlchemy]]                                                                                  |
+| Prometheus Config file                        | =/etc/prometheus/prometheus.yml= Sections in conf: =global=, =rule_files=, =scrape_configs=                  |
+** Prometheus Components
+| Name                      | Command                                                                                                        |
+|---------------------------+----------------------------------------------------------------------------------------------------------------|
+| [[https://github.com/prometheus/prometheus][Prometheus server]]         | Scrapes and store time series data. It uses mainly pull model, instead of push.                                |
+| Special-purpose exporters | Get metrics for all kinds of services. e.g, [[https://github.com/prometheus/node_exporter][Node Exporter]], [[https://github.com/prometheus/blackbox_exporter][Blackbox Exporter]], [[https://github.com/prometheus/snmp_exporter][SNMP Exporter]], [[https://github.com/prometheus/jmx_exporter][JMX Exporter]], etc |
+| Client libraries          | Instrument application code.                                                                                   |
+| [[https://github.com/prometheus/alertmanager][Alertmanager]]              | Handle alerts.                                                                                                 |
+| [[https://github.com/prometheus/pushgateway][Push gateway]]              | Support short-lived jobs. Persist the most recent push of metrics from batch jobs.                             |
+| Reference                 | [[https://prometheus.io/docs/instrumenting/exporters/][Link: Exporters And Integrations]], [[https://github.com/prometheus/prometheus/wiki/Default-port-allocations][Link: Default port allocations]]                                               |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-prometheus-A4/master/prometheus-overview.png]]
+** Prometheus Metric Types
+| Name      | Command                                                                                                            |
+|-----------+--------------------------------------------------------------------------------------------------------------------|
+| [[https://prometheus.io/docs/concepts/metric_types/#counter][Counter]]   | It only goes up (and resets), counts something. e.g, the number of requests served, tasks completed, or errors.    |
+| [[https://prometheus.io/docs/concepts/metric_types/#gauge][Gauge]]     | It goes up and down, snapshot of state. e.g, temperatures or current memory usage, etc                             |
+| [[https://prometheus.io/docs/concepts/metric_types/#summary][Summary]]   | It samples observations, espeically over a sliding time window. e.g, =rate(http_request_duration_seconds_sum[5m])= |
+| [[https://prometheus.io/docs/concepts/metric_types/#histogram][Histogram]] | It samples observations and counts them in configurable buckets.                                                   |
+** Prometheus Concepts
+| Name      | Summary                                                                        |
+|-----------+--------------------------------------------------------------------------------|
+| [[https://prometheus.io/docs/introduction/glossary/#target][Target]]    | A target is the definition of an object to scrape.                             |
+| [[https://prometheus.io/docs/introduction/glossary/#job][Job]]       | A collection of targets with the same purpose.                                 |
+| [[https://prometheus.io/docs/introduction/glossary/#instance][Instance]]  | A label that uniquely identifies a target in a job.                            |
+| [[https://prometheus.io/docs/introduction/glossary/#exporter][Exporter]]  | Expose metrics from a non-Prometheus format into a format Prometheus supports. |
+| [[https://prometheus.io/docs/introduction/glossary/#collector][Collector]] | A part of an exporter that represents a set of metrics.                        |
+| Handler   |                                                                                |
+| Rule      |                                                                                |
+** Kubernetes Metrics Targets & Samples
+| Name                           | Command                                    | Sample Metrics                                |
+|--------------------------------+--------------------------------------------+-----------------------------------------------|
+| cadvisor                       | http://$node_ip:10255/metrics/cadvisor     | [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/blob/master/cadvisor-sample.txt][Link: cadvisor-sample.txt]]                     |
+| node-exporter                  | http://$node_ip:9100/metrics               | [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/blob/master/node-exporter-sample.txt][Link: node-exporter-sample.txt]]                |
+| kubelet                        | http://$kubelet_ip:10255/metrics           | [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/blob/master/kubelet-sample.txt][Link: kubelet-sample.txt]]                      |
+| kube-dns                       | http://$kube_dns_addon_ip:10054/metrics    | [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/blob/master/kube-dns-sample.txt][Link: kube-dns-sample.txt]]                     |
+| kube-state-metrics http-metric | http://$kube_state_metric_svc:8080/metrics | [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/blob/master/kube-state-metrics-http-sample.txt][Link: kube-state-metrics-http-sample.txt]]      |
+| kube-state-metrics telemetry   | http://$kube_state_metric_svc:8081/metrics | [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/blob/master/kube-state-metrics-telemetry-sample.txt][Link: kube-state-metrics-telemetry-sample.txt]] |
+| apiserver                      | https://$api_server:443/metrics            |                                               |
+
+[[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-prometheus-A4/master/prometheus-deployment.png]]
+** Prometheus PromQL Query
+| Name                                                           | Command                                                   |
+|----------------------------------------------------------------+-----------------------------------------------------------|
+| Reference                                                      | [[https://prometheus.io/docs/prometheus/latest/querying/basics/][Link: query]]                                               |
+| Find metric by name+job+group                                  | somemetric{job="prometheus",group="canary"}               |
+|                                                                | rate(apiserver_request_count{verb="GET", code="200"}[1m]) |
+| The avg network traffic received per second, over the last min | rate(node_network_receive_bytes_total[1m])                |
+| topk query                                                     | [[https://github.com/dennyzhang/cheatsheet-prometheus-A4/blob/master/query-topk.txt][Link: query-topk.txt]]                                      |
+| join                                                           |                                                           |
+| cut                                                            |                                                           |
+| slice                                                          |                                                           |
+| count                                                          |                                                           |
+| predict                                                        |                                                           |
+| sum                                                            |                                                           |
+| min                                                            |                                                           |
+| max                                                            |                                                           |
+| avg                                                            |                                                           |
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+** Prometheus Alerts
+| Name                                                 | Command |
+|------------------------------------------------------+---------|
+| How full will the disks be in 4 hours?               |         |
+| Which services are the top 5 users of CPU?           |         |
+| What's the 95th percentile latency in EU datacenter? |         |
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+https://prometheus.io/
+
+https://povilasv.me/prometheus-tracking-request-duration/
+
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-prometheus-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-prometheus-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* DONE Finished local notes                                        :noexport:
+** DONE where is pod 110 limitation is set?                        :noexport:
+   CLOSED: [2018-10-19 Fri 22:40]
+ https://github.com/gardener/gardener/issues/117
+
+ From kube-state-metrics
+
+ kube_node_status_allocatable_pods{node="gke-cluster-1-default-pool-36da1c6a-4356"} 110
+ kube_node_status_allocatable_pods{node="gke-cluster-1-default-pool-36da1c6a-6wx8"} 110
+** CANCELED prometheus happens to run into error: lb issue in GKE? :noexport:
+   CLOSED: [2018-10-20 Sat 00:01]
+ #+BEGIN_EXAMPLE
+ bash-3.2$  curl -L -I http://35.208.3.28:9090/
+ curl: (56) Recv failure: Connection reset by peer
+ #+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Send a PR to promethues website: https://github.com/prometheus/docs :noexport:
+* TODO [#A] Blog: What I have learned from prometheus designs      :noexport:
+** Prometheus is good for lossless storage efficiency, 3.5 bytes per datapoint.
+** Performance is super good: a single prometheus can handle over 100K samples per second!
+** Don't monitor just at the edges.
+Services have internals; Monitor the internals
+** Prometheus is not accurate enough for billing, but good for monitoring. Not for logging solutions
+** Prometheus expects metrics to be available on targets on a path of /metrics.
+** The main Prometheus server runs standalone and has no external dependencies.
+** Each Prometheus server is standalone, not depending on network storage or other remote services.
+** Can alert based on any query.
+** DONE promethues won't get kubernetes events                     :noexport:
+   CLOSED: [2018-10-20 Sat 00:01]
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Question: Federation allows pulling key metrics from other Promethues servers :noexport:
+* TODO Question: prometheus has not namespace user for multi-tenancy monitoring :noexport:
+* TODO Question: how reliable the data store of prometheus is?     :noexport:
+* TODO [#A] promethues best practice                               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO setup prometheus in k8s: https://github.com/giantswarm/kubernetes-prometheus :noexport:
+* TODO prometheus operator                                         :noexport:
+* TODO prometheus bosh release                                     :noexport:
+* TODO https://www.weave.works/blog/kubernetes-horizontal-pod-autoscaler-and-prometheus :noexport:
+* TODO golang metric: https://github.com/prometheus/client_golang/blob/master/examples/simple/main.go :noexport:
+* HALF k8s prometheus                                              :noexport:
+https://akomljen.com/get-kubernetes-cluster-metrics-with-prometheus-in-5-minutes/
+** Error: apiVersion "monitoring.coreos.com/v1alpha1" in kube-prometheus/charts/prometheus/templates/prometheus.yaml is not available
+https://github.com/coreos/prometheus-operator/issues/1312
+
+face-palm... needed prometheus-operator installed first.
+
+#+BEGIN_EXAMPLE
+kubo@jumper:~/denny/prometheus$ helm install \
+>     --name mon \
+>     --namespace monitoring \
+>     -f custom-values.yaml \
+>     coreos/kube-prometheus
+Error: apiVersion "monitoring.coreos.com/v1alpha1" in kube-prometheus/charts/prometheus/templates/prometheus.yaml is not available
+kubo@jumper:~/denny/prometheus$
+#+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Blog: Use Prometheus To Monitor And Tuning Containers :noexport:IMPORTANT:
+https://prometheus.io
+https://docs.docker.com/engine/admin/prometheus/
+http://5pi.de/2015/01/26/monitor-docker-containers-with-prometheus/
+https://blog.alexellis.io/prometheus-monitoring/
+http://containerjournal.com/2017/07/17/state-container-monitoring-apm-market/
+https://www.reddit.com/r/devops/comments/6hg4n6/best_monitoring_solutions/
+http://rancher.com/comparing-monitoring-options-for-docker-deployments/
+
+| Name        | Summary                                      |
+|-------------+----------------------------------------------|
+| Config file | /etc/prometheus/prometheus.yml               |
+| Targets     | http://localhost:9090/targets/               |
+| /prometheus |                                              |
+| Dashboard   | http://localhost:9090/                       |
+| metric list | http://localhost:9090/metric                 |
+|-------------+----------------------------------------------|
+| Check       | container_memory_usage_bytes{name="grafana"} |
+
+Prometheus: http://localhost:9090
+AlertManager: http://localhost:9093
+cadvisor: http://localhost:8080
+
+/Users/mac/Dropbox/private_data/project/devops_consultant/consultant_code/dennytest/docker_apm/docker-compose.yml
+** [#A] Types of Prometheus exporters
+https://airtame.engineering/practical-services-monitoring-with-prometheus-and-docker-30abd3cf9603
+https://prometheus.io/docs/concepts/metric_types/
+
+- Node Exporter - Runs on each EC2 instance as a daemon and exposes system metrics like I/O, memory and CPU.
+- Cloud Metrics Exporter - Custom exporter, written in-house, that shows us some important metrics by querying production databases.
+- MySQLd Exporter - One of these per MySQL instance. Queries each environment's database instances.
+- Blackbox Exporter - Blackbox monitoring can be seen as "monitoring from outside". It simply cares whether the instance is up or down.
+- cAdvisor - Exposes resource usage data and performance characteristics of running containers.
+** DONE cadvisor: Analyzes resource usage and performance characteristics of running containers.
+   CLOSED: [2017-08-09 Wed 23:30]
+https://github.com/google/cadvisor
+*** web page: Monitoring Docker Containers - docker stats, cAdvisor, Universal Control Plane | The Couchbase Blog
+https://blog.couchbase.com/monitoring-docker-containers-docker-stats-cadvisor-universal-control-plane/
+**** webcontent                                                    :noexport:
+#+begin_example
+Location: https://blog.couchbase.com/monitoring-docker-containers-docker-stats-cadvisor-universal-control-plane/
+  * Couchbase.com
+  * Couchbase Developer
+  * Couchbase Connect
+
+  * Sign In
+  * Register
+
+Search Close
+Menu Close
+
+Categories
+
+UncategorizedCouchbase ServerCouchbase MobileBest Practices and TutorialsN1QL / Query.NETNode.js
+JavaApplication DesignData ModelingCouchbase ArchitectureSecurityGoLang
+
+Tags
+
+Couchbase ServerN1QL.NETnosqlCouchbase MobiledockercouchbaseDOTNETJavajavascriptSDKeventsC#query
+Coming upperformancecouchbase liteJSONmobileCouchbase Sync Gateway
+
+Archives
+
+August 2017 July 2017 June 2017 May 2017 April 2017 March 2017 February 2017 January 2017 December
+2016 November 2016 October 2016 September 2016
+
+  * BLOG TOPICS
+      + APPLICATION DESIGN
+      + BEST PRACTICES/TUTORIALS
+      + COUCHBASE SERVER
+      + COUCHBASE MOBILE
+      + DATA MODELING
+      + JAVA
+      + N1QL / QUERY
+      + .NET
+      + Node.js
+  * WHY NOSQL?
+  * PRODUCTS
+      + COUCHBASE DATA PLATFORM
+      + COUCHBASE SERVER
+          o N1QL
+          o BIG DATA
+      + COUCHBASE MOBILE
+      + Get Started
+      + Free Downloads
+  * RESOURCES
+      + WHY NOSQL?
+      + WEBINARS
+      + PRESENTATIONS
+      + WHITEPAPERS
+      + DOCUMENTATION
+      + EVENTS
+      + Couchbase Connect
+      + Customers
+  * Download
+
+  * Couchbase.com
+  * Couchbase Developer
+  * Couchbase Connect
+
+  * Sign In
+  * Register
+
+Couchbase Blog
+
+The Couchbase Blog
+
+Couchbase, the NoSQL Database
+
+  * BLOG TOPICS
+      + APPLICATION DESIGN
+      + BEST PRACTICES/TUTORIALS
+      + COUCHBASE SERVER
+      + COUCHBASE MOBILE
+      + DATA MODELING
+      + JAVA
+      + N1QL / QUERY
+      + .NET
+      + Node.js
+  * WHY NOSQL?
+  * PRODUCTS
+      + COUCHBASE DATA PLATFORM
+      + COUCHBASE SERVER
+          o N1QL
+          o BIG DATA
+      + COUCHBASE MOBILE
+      + Get Started
+      + Free Downloads
+  * RESOURCES
+      + WHY NOSQL?
+      + WEBINARS
+      + PRESENTATIONS
+      + WHITEPAPERS
+      + DOCUMENTATION
+      + EVENTS
+      + Couchbase Connect
+      + Customers
+  * Download
+
+NextCouchbase Weekly, Apr 11, 2016
+
+  * Search
+  * Menu
+  * Menu
+
+Monitoring Docker Containers - docker stats, cAdvisor, Universal Control Plane
+
+[61fb] Arun Gupta, VP, Developer Advocacy, Couchbase on January 3, 2017
+
+There are multiple ways to monitor Docker containers. This blog will explain a few simple and easy
+to use options:
+
+ 1. docker stats command
+ 2. Docker Remote API
+ 3. cAdvisor
+     1. Prometheus
+     2. InfluxDB
+ 4. Docker Universal Control Plane
+
+Lets take a look at each one of them.
+
+We'll use a Couchbase server to gather the monitoring data. Lets start the server as:
+
+[docker run -d -p 809]
+
+1 docker run -d -p 8091-8093:8091-8093 -p 11210:11210 --name couchbase arungupta/couchbase
+
+arungupta/couchbase image is explained at github.com/arun-gupta/docker-images/tree/master/couchbase
+. It performs:
+
+  * Sets up memory for Index and Data service
+  * Configures the Couchbase server for Index, Data, and Query service
+  * Sets up username and password credentials
+
+Now lets gather monitoring data.
+
+docker stats
+
+docker stats display a live stream of the following container(s) resource usage statistics:
+
+  * CPU % usage
+  * Memory usage, limit, % usage
+  * Network i/o
+  * Disk i/o
+
+The stats are updated every second. Here is a sample output:
+
+[CONTAINER           ]
+
+  CONTAINER           CPU %               MEM USAGE / LIMIT     MEM %               NET I/O
+1                BLOCK I/O
+2 4827f0139b1f        10.94%              706.2 MB / 1.045 GB   67.61%              299.7 kB /
+  2.473 MB   456 MB / 327.3 MB
+
+By default, this command display statistics for all the running containers. A list of container
+names or ids can be specified, separated by a space, to restrict the stream to a subset of running
+containers. For example, stats for only the
+Couchbase container can be seen as:
+
+[docker stats couchba]
+
+1 docker stats couchbase
+
+where couchbase is the container name. And the output looks like:
+
+[CONTAINER           ]
+
+  CONTAINER           CPU %               MEM USAGE / LIMIT     MEM %               NET I/O
+1              BLOCK I/O
+2 couchbase           12.50%              708.2 MB / 1.045 GB   67.80%              301 kB / 2.477
+  MB   456 MB / 327.6 MB
+
+--no-stream option can be specified where only the first snapshot is displayed and results are not
+streamed. The Docker Logentries Container can be used to collect
+this data.
+
+Docker Remote API
+
+Docker daemon provides a Remote REST API. This API is used by the Client to communicate with the
+engine. This API can be also be invoked by by other tools, such as
+curl or Chrome Postman REST Client.
+
+If you are creating Docker daemons using Docker Machine on OSX Mavericks, then getting this API to
+work is a bit tricky. If you are on Mac, follow the instructions in Enable Docker Remote API to
+ensure curl can invoke this REST API. The API that provide stats about the container is /containers
+/{id}/stats or /containers/{name}/stats.
+
+Then more stats about the container can be obtained as:
+
+[~ > curl https://192]
+
+1 ~ > curl https://192.168.99.100:2376/containers/42d1414883af/stats --cert $DOCKER_CERT_PATH/
+  cert2.p12 --pass mypass --key $DOCKER_CERT_PATH/key.pem --cacert $DOCKER_CERT_PATH/ca.pem
+
+The following result (formatted) is shown:
+
+[{                   ]
+
+1   {
+2       "read": "2016-02-07T13:26:56.142981314Z",
+3       "precpu_stats": {
+4           "cpu_usage": {
+5               "total_usage": 0,
+6               "percpu_usage": null,
+7               "usage_in_kernelmode": 0,
+8               "usage_in_usermode": 0
+9           },
+10          "system_cpu_usage": 0,
+11          "throttling_data": {
+12              "periods": 0,
+13              "throttled_periods": 0,
+14              "throttled_time": 0
+15          }
+16      },
+17      "cpu_stats": {
+18          "cpu_usage": {
+19              "total_usage": 242581854769,
+20              "percpu_usage": [242581854769],
+21              "usage_in_kernelmode": 33910000000,
+22              "usage_in_usermode": 123040000000
+23          },
+24          "system_cpu_usage": 3367860000000,
+25          "throttling_data": {
+26              "periods": 0,
+27              "throttled_periods": 0,
+28              "throttled_time": 0
+29          }
+30      },
+31      "memory_stats": {
+32          "usage": 693821440,
+33          "max_usage": 818733056,
+34          "stats": {
+35              "active_anon": 282038272,
+36              "active_file": 28938240,
+37              "cache": 82534400,
+38              "hierarchical_memory_limit": 9223372036854771712,
+39              "hierarchical_memsw_limit": 9223372036854771712,
+40              "inactive_anon": 329543680,
+41              "inactive_file": 53284864,
+42              "mapped_file": 26558464,
+43              "pgfault": 809513,
+44              "pgmajfault": 2559,
+45              "pgpgin": 1015608,
+46              "pgpgout": 940757,
+47              "rss": 611270656,
+48              "rss_huge": 136314880,
+49              "swap": 249049088,
+50              "total_active_anon": 282038272,
+51              "total_active_file": 28938240,
+52              "total_cache": 82534400,
+53              "total_inactive_anon": 329543680,
+54              "total_inactive_file": 53284864,
+55              "total_mapped_file": 26558464,
+56              "total_pgfault": 809513,
+57              "total_pgmajfault": 2559,
+58              "total_pgpgin": 1015608,
+59              "total_pgpgout": 940757,
+60              "total_rss": 611270656,
+61              "total_rss_huge": 136314880,
+62              "total_swap": 249049088,
+63              "total_unevictable": 0,
+64              "total_writeback": 0,
+65              "unevictable": 0,
+66              "writeback": 0
+67          },
+68          "failcnt": 0,
+69          "limit": 1044574208
+70      },
+71      "blkio_stats": {
+72          "io_service_bytes_recursive": [{
+73                  "major": 8,
+74                  "minor": 0,
+75                  "op": "Read",
+76                  "value": 301649920
+77              }, {
+78                  "major": 8,
+79                  "minor": 0,
+80                  "op": "Write",
+81                  "value": 248315904
+82              }, {
+83                  "major": 8,
+84                  "minor": 0,
+85                  "op": "Sync",
+86                  "value": 201003008
+87              }, {
+88                  "major": 8,
+89                  "minor": 0,
+90                  "op": "Async",
+91                  "value": 348962816
+92              }, {
+93                  "major": 8,
+94                  "minor": 0,
+95                  "op": "Total",
+96                  "value": 549965824
+97              }],
+98          "io_serviced_recursive": [{
+99                  "major": 8,
+100                 "minor": 0,
+101                 "op": "Read",
+102                 "value": 41771
+103             }, {
+104                 "major": 8,
+105                 "minor": 0,
+106                 "op": "Write",
+107                 "value": 72796
+108             }, {
+109                 "major": 8,
+110                 "minor": 0,
+111                 "op": "Sync",
+112                 "value": 61246
+113             }, {
+114                 "major": 8,
+115                 "minor": 0,
+116                 "op": "Async",
+117                 "value": 53321
+118             }, {
+119                 "major": 8,
+120                 "minor": 0,
+121                 "op": "Total",
+122                 "value": 114567
+123             }],
+124         "io_queue_recursive": [],
+125         "io_service_time_recursive": [],
+126         "io_wait_time_recursive": [],
+127         "io_merged_recursive": [],
+128         "io_time_recursive": [],
+129         "sectors_recursive": []
+130     },
+131     "pids_stats": {},
+132     "networks": {
+133         "eth0": {
+134             "rx_bytes": 40192,
+135             "rx_packets": 285,
+136             "rx_errors": 0,
+137             "rx_dropped": 0,
+138             "tx_bytes": 222138,
+139             "tx_packets": 150,
+140             "tx_errors": 0,
+141             "tx_dropped": 0
+142         }
+143     }
+144 }
+
+There is lot more details on memory, disk, and network. A new set of metrics are pushed every
+second.
+
+cAdvisor
+
+cAdvisor or Container Advisor provide host and container metrics. It is a running daemon that
+collects, aggregates, processes, and exports information about running containers. Let's start the
+cAdvisor
+container:
+
+[docker run -d --name]
+
+1 docker run -d --name=cadvisor -p 8080:8080 --volume=/var/run:/var/run:rw --volume=/sys:/sys:ro --
+  volume=/var/lib/docker/:/var/lib/docker:ro google/cadvisor:latest
+
+cAdvisor dashboard shows data for the last 60 seconds only. However multiple backends, such as
+Prometheus and InfluxDB,
+are supported that allows long term storage, retrieval and analysis.
+
+Use Couchbase Query Tool to connect with the Couchbase Server:
+
+[~ > docker run -it -]
+
+1 ~ > docker run -it --link couchbase:db arungupta/couchbase cbq --engine http://db:8093
+2 Couchbase query shell connected to http://db:8093/ . Type Ctrl-D to exit.
+3 cbq>
+
+Invoke a N1QL query:
+
+[cbq> select * from `]
+
+1  cbq> select * from `travel-sample` limit 1;
+2  {
+3      "requestID": "7af2d1b1-c37e-4c75-a913-cfaa99dcabdd",
+4      "signature": {
+5          "*": "*"
+6      },
+7      "results": [
+8          {
+9              "travel-sample": {
+10                 "callsign": "MILE-AIR",
+11                 "country": "United States",
+12                 "iata": "Q5",
+13                 "icao": "MLA",
+14                 "id": 10,
+15                 "name": "40-Mile Air",
+16                 "type": "airline"
+17             }
+18         }
+19     ],
+20     "status": "success",
+21     "metrics": {
+22         "elapsedTime": "10.292951ms",
+23         "executionTime": "10.232921ms",
+24         "resultCount": 1,
+25         "resultSize": 300
+26     }
+27 }
+
+cAdvisor only store one minute of data and here is a capture of the dashboard:
+cadvisor-cpu-usage
+
+And memory usage:
+
+cadvisor-total-memory-usage
+
+There are plenty of tools that can use the data generated by cAdvisor and show them in a nice
+dashboard. More details are available at github.com/google/cadvisor/tree/master/docs.
+
+Docker Universal Control Plane
+
+Docker Universal Control Plane (DUCP) allows to manage and deploy Dockerized distributed
+applications, all from within the firewall. It integrates with key systems like LDAP/AD to manage
+users and provides and interface for IT operations teams to
+deploy and manage. RBAC, SSO integration with Docker Trusted Registry, simple and easy to use web
+UI are some of the key features. Read product overview for complete
+set of features.
+
+Docker Universal Control Plan with Docker Machine is the easiest way to experience this on your
+local machine. The instructions are very detailed and work out of the box. Here are
+some images after deploying a Couchbase image.
+
+DUCP installation consists of an DUCP controller and one or more hosts. These are configured in a
+Docker Swarm cluster. And then containers are started on these clusters:
+
+Docker Universal Control Plane Image
+Port mapping is easily defined:
+Docker Universal Control Port Mapping
+Once the container is running, monitoring stats can be seen:
+Docker Universal Control Monitoring Stats
+And finally the pretty looking dashboard:
+
+Docker Universal Control Plane Dashboard
+
+A client bundle is provided that shows the information about the Docker Swarm cluster as:
+
+[Containers: 10      ]
+
+   Containers: 10
+   Running: 10
+1  Paused: 0
+2  Stopped: 0
+3  Images: 15
+4  Server Version: swarm/1.1.3
+5  Role: primary
+6  Strategy: spread
+7  Filters: health, port, dependency, affinity, constraint
+8  Nodes: 2
+9  node1: 192.168.99.101:12376
+10   └ Status: Healthy
+11   └ Containers: 7
+12   └ Reserved CPUs: 0 / 1
+13   └ Reserved Memory: 0 B / 2.004 GiB
+14   └ Labels: executiondriver=native-0.2, kernelversion=4.1.19-boot2docker, operatingsystem=
+15 Boot2Docker 1.10.3 (TCL 6.4.1); master : 625117e - Thu Mar 10 22:09:02 UTC 2016, provider=
+16 virtualbox, storagedriver=aufs
+17   └ Error: (none)
+18   └ UpdatedAt: 2016-04-09T00:12:53Z
+19 node2: 192.168.99.102:12376
+20   └ Status: Healthy
+21   └ Containers: 3
+22   └ Reserved CPUs: 0 / 1
+23   └ Reserved Memory: 0 B / 2.004 GiB
+24   └ Labels: executiondriver=native-0.2, kernelversion=4.1.19-boot2docker, operatingsystem=
+25 Boot2Docker 1.10.3 (TCL 6.4.1); master : 625117e - Thu Mar 10 22:09:02 UTC 2016, provider=
+26 virtualbox, storagedriver=aufs
+27   └ Error: (none)
+28   └ UpdatedAt: 2016-04-09T00:12:48Z
+29 Cluster Managers: 1
+30 192.168.99.101: Healthy
+31   └ Orca Controller: https://192.168.99.101:443
+32   └ Swarm Manager: tcp://192.168.99.101:3376
+33   └ KV: etcd://192.168.99.101:12379
+34 Plugins:
+35 Volume:
+36 Network:
+37 Kernel Version: 4.1.19-boot2docker
+38 Operating System: linux
+39 Architecture: amd64
+40 CPUs: 2
+41 Total Memory: 4.008 GiB
+42 Name: ucp-controller-node1
+43 ID: 6LTO:GVZJ:2M6Z:DONM:ZAKR:2JIL:ZWJG:KY7R:G3EL:AS2Y:X22F:RXM3
+44 Labels:
+45 com.docker.ucp.license_key=XXXXXXXXXXXXXXXXXXXXXXXX
+   com.docker.ucp.license_max_engines=1
+   com.docker.ucp.license_expires=XXXXXXXXXXXXXXXXXXXXXXXX
+
+There are plenty of tools that provide monitoring data:
+
+  * Sysdig Cloud
+  * Docker-Scout
+  * Data Dog
+  * Ruxit
+  * NewRelic
+  * Logentries
+
+docker stats and Docker Remote API are certainly the easiest one to give you first snapshot of
+your monitoring data.
+
+And it only becomes interesting from there!
+
+  * Posted in: Couchbase Server
+
+[61fb334]
+
+Posted by Arun Gupta, VP, Developer Advocacy, Couchbase
+
+Arun Gupta is the vice president of developer advocacy at Couchbase. He has built and led developer
+communities for 10+ years at Sun, Oracle, and Red Hat. He has deep expertise in leading
+cross-functional teams to develop and execute strategy, planning and execution of content,
+marketing campaigns, and programs. Prior to that he led engineering teams at Sun and is a founding
+member of the Java EE team. Gupta has authored more than 2,000 blog posts on technology. He has
+extensive speaking experience in more than 40 countries on myriad topics and is a JavaOne Rock Star
+for three years in a row. Gupta also founded the Devoxx4Kids chapter in the US and continues to
+promote technology education among children. An author of several books on technology, an avid
+runner, a globe trotter, a Java Champion, a JUG leader, NetBeans Dream Team member, and a Docker
+Captain, he is easily accessible at @arungupta.
+
+All Posts
+
+Share
+
+  * Click to share on Twitter (Opens in new window)
+  * Click to share on LinkedIn (Opens in new window)
+  * Click to share on Facebook (Opens in new window)
+  * Click to share on Google+ (Opens in new window)
+  * Click to email this to a friend (Opens in new window)
+  *
+
+Leave a comment Hide comments
+
+Leave a reply Cancel reply
+
+You must be logged in to post a comment.
+
+Digital Innovation Survey - Is the data dilemma holding you back?
+Couchbase Connect New York 2017 On Demand
+
+Subscribe to Blog via Email
+
+Enter your email address to subscribe to this blog and receive notifications of new posts by email.
+
+Email Address
+
+ Subscribe
+
+RSS
+
+  * RSS - Posts
+  * RSS - Comments
+
+Blog Topics
+
+Blog Topics[Select Topic                ]
+
+Authors
+
+  * Alex Popov (1)
+  * Alexis Roos (4)
+  * Ali LeClerc (31)
+  * Anil Kumar (11)
+  * Anne Obendorff (6)
+  * Arun Gupta (94)
+  * Arunkumar Senthilnathan (1)
+  * Austin Gonyou (4)
+  * Benjamin Young (2)
+  * Bob Wiederhold (25)
+  * Brett Lawson (17)
+  * Cecile Le Pape (2)
+  * Cihan Biyikoglu (36)
+  * The Couchbase Team (84)
+  * Damien Katz (3)
+  * David Haikney (1)
+  * David Maier (1)
+  * David Maitland (4)
+  * David Ostrovsky (1)
+  * David Segleau (1)
+  * Dipti Borkar (1)
+  * Don Pinto (43)
+  * Doug Laird (4)
+  * Dustin Sallings (8)
+  * Eric Cooper (1)
+  * Eric Lambert (1)
+  * Gareth Powell (1)
+  * Hod Greeley (34)
+  * Ilam Siva (4)
+  * J. Chris Anderson (12)
+  * James Nocentini (19)
+  * James Phillips (14)
+  * Jan Lehnardt (1)
+  * Jay Gopalakrishnan (1)
+  * Jeff Morris (44)
+  * Jerod Johnson (1)
+  * John Zablocki (16)
+  * Justin Michaels (3)
+  * Keshav Murthy (3)
+  * Ketaki Gangal (1)
+  * Kirk Kirkconnell (13)
+  * Koji Kawamura (1)
+  * Laura Czajkowski (70)
+  * Lauren Duda (1)
+  * Laurent Doguin (38)
+  * Manu Dhundi (1)
+  * Manuel Hurtado (4)
+  * Mark Nunberg (9)
+  * Martin Esmann (10)
+  * Marty Schoch (4)
+  * Cain (1)
+  * Matt Ingenthron (8)
+  * Matthew Groves (70)
+  * Matthew Revell (33)
+  * MC Brown (4)
+  * Michael Nitschinger (15)
+  * Nic Raboy (135)
+  * Nowrin Joyita (1)
+  * Pasin Suriyentrakorn (1)
+  * Patrick Galbraith (5)
+  * Perry Krug (10)
+  * Peter Finter (1)
+  * Philipp Fehre (2)
+  * Pranav Mayuram (6)
+  * Prasad Varakur (3)
+  * Priya Rajagopal (10)
+  * Qi Zhu (2)
+  * Raghavan Srinivas (7)
+  * Ravi Mayuram (1)
+  * Ritam Sharma (1)
+  * Roi Katz (3)
+  * Sandhya Krishnamurthy (4)
+  * Sean Lynch (3)
+  * Sergey Avseyev (11)
+  * Shane Johnson (30)
+  * Simon Basle (13)
+  * Sachin Smotra (4)
+  * Steve Yen (2)
+  * Tim Wong (3)
+  * Todd Greenstein (14)
+  * Tom Rosenfeld (1)
+  * Traun Leyden (1)
+  * Trond Norbye (12)
+  * Tyler Mitchell (3)
+  * Venkat Subramanian (1)
+  * Volker Mische (3)
+  * Wayne Carter (8)
+  * Will Gardella (5)
+  * William Hoang (41)
+
+Show More
+
+Follow Us on Twitter
+
+My Tweets
+
+Follow Us on Facebook
+
+    Follow Us on Facebook
+
+Search
+
+Contact
+
+  * LinkedIn
+  * Facebook
+  * Twitter
+  * Google+
+
+COMPANY
+
+  * ABOUT
+  * LEADERSHIP
+  * NEWS & PRESS
+  * CAREERS
+  * CONTACT US
+  * PRICING
+
+SUPPORT
+
+  * DEVELOPER PORTAL
+  * FORUMS
+  * PROFESSIONAL SERVICES
+  * SUPPORT LOGIN
+  * TRAINING
+
+QUICKLINKS
+
+  * BLOG
+  * DOWNLOADS
+  * GET STARTED
+  * ONLINE TRAINING
+  * RESOURCES
+  * WHY NOSQL
+
+© 2017 Couchbase All rights reserved.
+
+  * Terms of Service
+  * Privacy Policy
+
+Send to Email Address Your Name [                    ] Your Email Address
+[                         ] loading  Send Email  Cancel
+Post was not sent - check your email addresses!
+Email check failed, please try again
+Sorry, your blog cannot share posts by email.
+
+#+end_example
+** DONE prometheus/node_exporter: https://github.com/prometheus/node_exporter
+   CLOSED: [2017-08-08 Tue 10:30]
+https://hub.docker.com/r/prom/node-exporter/
+** DONE Create alerts and enable slack notification
+   CLOSED: [2017-08-09 Wed 13:33]
+** DONE prometheus: when check is good, send OK notification: send_resolved: true
+   CLOSED: [2017-08-09 Wed 22:09]
+#+BEGIN_EXAMPLE
+receivers:
+    - name: 'slack'
+      slack_configs:
+          - send_resolved: true
+            text: "{{ .CommonAnnotations.description }}"
+            username: 'Prometheus'
+            channel: '#alerts'
+            api_url: 'https://hooks.slack.com/services/.../.../'
+#+END_EXAMPLE
+** DONE How to reload configuration, without restarting alert/prometheus service: kill -SIGHUP $prometheus_pid
+   CLOSED: [2017-08-09 Wed 22:03]
+https://prometheus.io/docs/operating/configuration/
+Prometheus can reload its configuration at runtime.
+
+A configuration reload is triggered by sending a SIGHUP to the Prometheus process or sending a HTTP POST request to the /-/reload endpoint.
+
+#+BEGIN_EXAMPLE
+time="2017-08-10T03:04:00Z" level=info msg="Loading configuration file /etc/prometheus/prometheus.yml" source="main.go:252"
+time="2017-08-10T03:04:06Z" level=info msg="Checkpointing in-memory metrics and chunks..." source="persistence.go:633"
+time="2017-08-10T03:04:06Z" level=info msg="Done checkpointing in-memory metrics and chunks in 203.678479ms." source="persistence.go:665"
+time="2017-08-10T03:04:17Z" level=info msg="Loading configuration file /etc/prometheus/prometheus.yml" source="main.go:252"
+#+END_EXAMPLE
+** TODO Blog: Enforce monitoring for docker env
+1. Use docker healthcheck
+- OK/ERROR/WARN
+- Restart if healthcheck has failed
+
+2. Install nagios agent in docker host, then run "docker exec " for check
+
+3. Install nagios agent inside docker containers
+
+#+BEGIN_EXAMPLE
+Hello Denny, how u r doing well. My concern is about docker monitoring, which one is the best solution to monitor docker containers all the resources
+1:08 PM
+Denny Zhang sent the following message at 1:10 PM
+Sumit, do you mean how to enforce in-depth monitoring for docker solution?
+1:10 PM
+sumit anand sent the following message at 1:11 PM
+ sumit anand
+Yes....like if talking about open-source solutions then nagios can able to provide entire infrastructure monitoring stats as well application level....is there any similar solution for docker
+1:11 PM
+Denny Zhang sent the following message at 1:14 PM
+Unfortunately, I don't see one.  Each container is supposed to run only one process. If we install nagios agent inside containers, it's a bit against the practice.  Well, technically speaking, we can wrap up multiple foreground process by supervisord in docker containers.  As a trade-off, I enforce the checks in docker healthcheck. (curl, grep, cli check, etc.) Have you ever tried docker healthcheck before, Sumit?
+#+END_EXAMPLE
+** TODO [#A] prom/blackbox-exporter: Blackbox prober exporter for Prometheus :IMPORTANT:
+https://hub.docker.com/r/prom/blackbox-exporter/
+** TODO understand the implementation of haproxy exporter
+https://github.com/prometheus/haproxy_exporter/blob/master/haproxy_exporter.go
+** #  --8<-------------------------- separator ------------------------>8--
+** TODO Blog: Prometheus docker APM: poll resource metrics for one typical container
+https://docs.docker.com/engine/admin/prometheus/
+** TODO [#A] Blog: Prometheus: monitor docker process: cpu, memory, fd, threadcount, etc
+** #  --8<-------------------------- separator ------------------------>8--
+** HALF Blog: Prometheus monitor docker container healthcheck:
+http://localhost:8080
+container_memory_usage_bytes{job='cadvisor',name="nginx"}
+
+monitor nginx by blackbox-exporter
+** TODO difference between cadvisor and nodeexporter
+** useful link
+http://newrelic.com/application-monitoring
+https://www.youtube.com/watch?v=WUkNnY65htQ&t=186s
+https://www.youtube.com/watch?v=QgJbxCWRZ1s
+https://github.com/stefanprodan/dockprom
+https://www.youtube.com/watch?v=sxE1vDtkYps
+http://rancher.com/comparing-monitoring-options-for-docker-deployments/
+
+https://dzone.com/articles/5-things-weve-learned-about-monitoring-containers
+* TODO [#A] Question: RBAC access for multiple namespace in kubernetes envs :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Make sure my prometheus can get metrics for different namespaces: only deployment grafana can't see wordpress namespace :noexport:
+* TODO k8s metrics: https://blog.freshtracks.io/search?q=A%20Deep%20Dive%20into%20Kubernetes%20Metrics :noexport:
+* TODO push gateway: Support short-lived jobs                      :noexport:
+https://prometheus.io/docs/introduction/overview/
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] How to paste grafana rules to prometheus               :noexport:
+- ALERTS{alertstate="firing",alertname!="DeadMansSwitch"}
+* TODO [#A] Question: How prometheus auto service discovery works? :noexport:
+* TODO Question: prometheus list metrics for a given job           :noexport:
+http_requests_total{job="apiserver", handler="/api/comments"}
+* TODO Question: Prometheus scaling problem: https://www.robustperception.io/scaling-and-federating-prometheus :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Questoin: Crash recovery process                            :noexport:
+https://prometheus.io/docs/prometheus/1.8/storage/#crash-recovery
+* TODO Question: how big the footprint of prometheus is?           :noexport:
+* TODO Question: golang for push gateway                           :noexport:
+* TODO Question: what is blackbox exporter                         :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Question: prometheus go client                              :noexport:
+https://github.com/prometheus/client_golang
+
+https://github.com/juliusv/prometheus_workshop/blob/master/example_golang/server.go
+* TODO prometheus alerts definition                                :noexport:
+* TODO prometheus Histogram                                        :noexport:
+* TODO draw a picture: job/instance/target                         :noexport:
+https://prometheus.io/docs/concepts/jobs_instances/
+* TODO [#A] prometheus vs vmware wavefront                         :noexport:
+* TODO prometheus metrics vs kubernetes open metrics               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO kube-state-metrics: https://github.com/kubernetes/kube-state-metrics :noexport:
+* TODO [#A] prometheus for different namespace                     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO alert manager send out slack notification                   :noexport:
+* TODO Use prometheus to monitor dbc host disk capacity            :noexport:
+* TODO Use prometheus to monitor dev ci url endpoint               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Use prometheus to monitor http url endpoint            :noexport:

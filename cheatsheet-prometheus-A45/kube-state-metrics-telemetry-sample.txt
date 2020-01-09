@@ -1,0 +1,219 @@
+/home # curl http://prometheus-1-kube-state-metrics.prometheus.svc:8081/metrics
+# HELP go_gc_duration_seconds A summary of the GC invocation durations.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 1.8762e-05
+go_gc_duration_seconds{quantile="0.25"} 3.186e-05
+go_gc_duration_seconds{quantile="0.5"} 3.4013e-05
+go_gc_duration_seconds{quantile="0.75"} 3.7285e-05
+go_gc_duration_seconds{quantile="1"} 0.005141934
+go_gc_duration_seconds_sum 0.555070397
+go_gc_duration_seconds_count 2743
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+go_goroutines 132
+# HELP go_memstats_alloc_bytes Number of bytes allocated and still in use.
+# TYPE go_memstats_alloc_bytes gauge
+go_memstats_alloc_bytes 1.3929312e+07
+# HELP go_memstats_alloc_bytes_total Total number of bytes allocated, even if freed.
+# TYPE go_memstats_alloc_bytes_total counter
+go_memstats_alloc_bytes_total 2.056804272e+10
+# HELP go_memstats_buck_hash_sys_bytes Number of bytes used by the profiling bucket hash table.
+# TYPE go_memstats_buck_hash_sys_bytes gauge
+go_memstats_buck_hash_sys_bytes 1.908237e+06
+# HELP go_memstats_frees_total Total number of frees.
+# TYPE go_memstats_frees_total counter
+go_memstats_frees_total 3.74922345e+08
+# HELP go_memstats_gc_sys_bytes Number of bytes used for garbage collection system metadata.
+# TYPE go_memstats_gc_sys_bytes gauge
+go_memstats_gc_sys_bytes 946176
+# HELP go_memstats_heap_alloc_bytes Number of heap bytes allocated and still in use.
+# TYPE go_memstats_heap_alloc_bytes gauge
+go_memstats_heap_alloc_bytes 1.3929312e+07
+# HELP go_memstats_heap_idle_bytes Number of heap bytes waiting to be used.
+# TYPE go_memstats_heap_idle_bytes gauge
+go_memstats_heap_idle_bytes 5.955584e+06
+# HELP go_memstats_heap_inuse_bytes Number of heap bytes that are in use.
+# TYPE go_memstats_heap_inuse_bytes gauge
+go_memstats_heap_inuse_bytes 1.609728e+07
+# HELP go_memstats_heap_objects Number of allocated objects.
+# TYPE go_memstats_heap_objects gauge
+go_memstats_heap_objects 152003
+# HELP go_memstats_heap_released_bytes_total Total number of heap bytes released to OS.
+# TYPE go_memstats_heap_released_bytes_total counter
+go_memstats_heap_released_bytes_total 2.514944e+06
+# HELP go_memstats_heap_sys_bytes Number of heap bytes obtained from system.
+# TYPE go_memstats_heap_sys_bytes gauge
+go_memstats_heap_sys_bytes 2.2052864e+07
+# HELP go_memstats_last_gc_time_seconds Number of seconds since 1970 of last garbage collection.
+# TYPE go_memstats_last_gc_time_seconds gauge
+go_memstats_last_gc_time_seconds 1.5400158927097232e+09
+# HELP go_memstats_lookups_total Total number of pointer lookups.
+# TYPE go_memstats_lookups_total counter
+go_memstats_lookups_total 49652
+# HELP go_memstats_mallocs_total Total number of mallocs.
+# TYPE go_memstats_mallocs_total counter
+go_memstats_mallocs_total 3.75074348e+08
+# HELP go_memstats_mcache_inuse_bytes Number of bytes in use by mcache structures.
+# TYPE go_memstats_mcache_inuse_bytes gauge
+go_memstats_mcache_inuse_bytes 1736
+# HELP go_memstats_mcache_sys_bytes Number of bytes used for mcache structures obtained from system.
+# TYPE go_memstats_mcache_sys_bytes gauge
+go_memstats_mcache_sys_bytes 16384
+# HELP go_memstats_mspan_inuse_bytes Number of bytes in use by mspan structures.
+# TYPE go_memstats_mspan_inuse_bytes gauge
+go_memstats_mspan_inuse_bytes 188024
+# HELP go_memstats_mspan_sys_bytes Number of bytes used for mspan structures obtained from system.
+# TYPE go_memstats_mspan_sys_bytes gauge
+go_memstats_mspan_sys_bytes 245760
+# HELP go_memstats_next_gc_bytes Number of heap bytes when next garbage collection will take place.
+# TYPE go_memstats_next_gc_bytes gauge
+go_memstats_next_gc_bytes 1.6975088e+07
+# HELP go_memstats_other_sys_bytes Number of bytes used for other system allocations.
+# TYPE go_memstats_other_sys_bytes gauge
+go_memstats_other_sys_bytes 379627
+# HELP go_memstats_stack_inuse_bytes Number of bytes in use by the stack allocator.
+# TYPE go_memstats_stack_inuse_bytes gauge
+go_memstats_stack_inuse_bytes 1.015808e+06
+# HELP go_memstats_stack_sys_bytes Number of bytes obtained from system for stack allocator.
+# TYPE go_memstats_stack_sys_bytes gauge
+go_memstats_stack_sys_bytes 1.015808e+06
+# HELP go_memstats_sys_bytes Number of bytes obtained by system. Sum of all system allocations.
+# TYPE go_memstats_sys_bytes gauge
+go_memstats_sys_bytes 2.6564856e+07
+# HELP ksm_resources_per_scrape Number of resources returned per scrape
+# TYPE ksm_resources_per_scrape summary
+ksm_resources_per_scrape{resource="configmap",quantile="0.5"} 17
+ksm_resources_per_scrape{resource="configmap",quantile="0.9"} 17
+ksm_resources_per_scrape{resource="configmap",quantile="0.99"} 17
+ksm_resources_per_scrape_sum{resource="configmap"} 88417
+ksm_resources_per_scrape_count{resource="configmap"} 5201
+ksm_resources_per_scrape{resource="cronjob",quantile="0.5"} 0
+ksm_resources_per_scrape{resource="cronjob",quantile="0.9"} 0
+ksm_resources_per_scrape{resource="cronjob",quantile="0.99"} 0
+ksm_resources_per_scrape_sum{resource="cronjob"} 0
+ksm_resources_per_scrape_count{resource="cronjob"} 5201
+ksm_resources_per_scrape{resource="daemonset",quantile="0.5"} 4
+ksm_resources_per_scrape{resource="daemonset",quantile="0.9"} 4
+ksm_resources_per_scrape{resource="daemonset",quantile="0.99"} 4
+ksm_resources_per_scrape_sum{resource="daemonset"} 20804
+ksm_resources_per_scrape_count{resource="daemonset"} 5201
+ksm_resources_per_scrape{resource="deployment",quantile="0.5"} 8
+ksm_resources_per_scrape{resource="deployment",quantile="0.9"} 9
+ksm_resources_per_scrape{resource="deployment",quantile="0.99"} 9
+ksm_resources_per_scrape_sum{resource="deployment"} 41826
+ksm_resources_per_scrape_count{resource="deployment"} 5201
+ksm_resources_per_scrape{resource="endpoint",quantile="0.5"} 14
+ksm_resources_per_scrape{resource="endpoint",quantile="0.9"} 14
+ksm_resources_per_scrape{resource="endpoint",quantile="0.99"} 14
+ksm_resources_per_scrape_sum{resource="endpoint"} 72814
+ksm_resources_per_scrape_count{resource="endpoint"} 5201
+ksm_resources_per_scrape{resource="horizontalpodautoscaler",quantile="0.5"} 0
+ksm_resources_per_scrape{resource="horizontalpodautoscaler",quantile="0.9"} 0
+ksm_resources_per_scrape{resource="horizontalpodautoscaler",quantile="0.99"} 0
+ksm_resources_per_scrape_sum{resource="horizontalpodautoscaler"} 0
+ksm_resources_per_scrape_count{resource="horizontalpodautoscaler"} 5201
+ksm_resources_per_scrape{resource="job",quantile="0.5"} 2
+ksm_resources_per_scrape{resource="job",quantile="0.9"} 2
+ksm_resources_per_scrape{resource="job",quantile="0.99"} 2
+ksm_resources_per_scrape_sum{resource="job"} 10402
+ksm_resources_per_scrape_count{resource="job"} 5201
+ksm_resources_per_scrape{resource="limitrange",quantile="0.5"} 1
+ksm_resources_per_scrape{resource="limitrange",quantile="0.9"} 1
+ksm_resources_per_scrape{resource="limitrange",quantile="0.99"} 1
+ksm_resources_per_scrape_sum{resource="limitrange"} 5201
+ksm_resources_per_scrape_count{resource="limitrange"} 5201
+ksm_resources_per_scrape{resource="namespace",quantile="0.5"} 5
+ksm_resources_per_scrape{resource="namespace",quantile="0.9"} 5
+ksm_resources_per_scrape{resource="namespace",quantile="0.99"} 5
+ksm_resources_per_scrape_sum{resource="namespace"} 26005
+ksm_resources_per_scrape_count{resource="namespace"} 5201
+ksm_resources_per_scrape{resource="node",quantile="0.5"} 3
+ksm_resources_per_scrape{resource="node",quantile="0.9"} 3
+ksm_resources_per_scrape{resource="node",quantile="0.99"} 3
+ksm_resources_per_scrape_sum{resource="node"} 15603
+ksm_resources_per_scrape_count{resource="node"} 5201
+ksm_resources_per_scrape{resource="persistentvolume",quantile="0.5"} 12
+ksm_resources_per_scrape{resource="persistentvolume",quantile="0.9"} 12
+ksm_resources_per_scrape{resource="persistentvolume",quantile="0.99"} 12
+ksm_resources_per_scrape_sum{resource="persistentvolume"} 62409
+ksm_resources_per_scrape_count{resource="persistentvolume"} 5201
+ksm_resources_per_scrape{resource="persistentvolumeclaim",quantile="0.5"} 12
+ksm_resources_per_scrape{resource="persistentvolumeclaim",quantile="0.9"} 12
+ksm_resources_per_scrape{resource="persistentvolumeclaim",quantile="0.99"} 12
+ksm_resources_per_scrape_sum{resource="persistentvolumeclaim"} 62409
+ksm_resources_per_scrape_count{resource="persistentvolumeclaim"} 5201
+ksm_resources_per_scrape{resource="pod",quantile="0.5"} 26
+ksm_resources_per_scrape{resource="pod",quantile="0.9"} 27
+ksm_resources_per_scrape{resource="pod",quantile="0.99"} 27
+ksm_resources_per_scrape_sum{resource="pod"} 135444
+ksm_resources_per_scrape_count{resource="pod"} 5201
+ksm_resources_per_scrape{resource="replicaset",quantile="0.5"} 16
+ksm_resources_per_scrape{resource="replicaset",quantile="0.9"} 17
+ksm_resources_per_scrape{resource="replicaset",quantile="0.99"} 17
+ksm_resources_per_scrape_sum{resource="replicaset"} 83434
+ksm_resources_per_scrape_count{resource="replicaset"} 5201
+ksm_resources_per_scrape{resource="replicationcontroller",quantile="0.5"} 0
+ksm_resources_per_scrape{resource="replicationcontroller",quantile="0.9"} 0
+ksm_resources_per_scrape{resource="replicationcontroller",quantile="0.99"} 0
+ksm_resources_per_scrape_sum{resource="replicationcontroller"} 0
+ksm_resources_per_scrape_count{resource="replicationcontroller"} 5201
+ksm_resources_per_scrape{resource="resourcequota",quantile="0.5"} 0
+ksm_resources_per_scrape{resource="resourcequota",quantile="0.9"} 0
+ksm_resources_per_scrape{resource="resourcequota",quantile="0.99"} 0
+ksm_resources_per_scrape_sum{resource="resourcequota"} 0
+ksm_resources_per_scrape_count{resource="resourcequota"} 5201
+ksm_resources_per_scrape{resource="secret",quantile="0.5"} 42
+ksm_resources_per_scrape{resource="secret",quantile="0.9"} 42
+ksm_resources_per_scrape{resource="secret",quantile="0.99"} 42
+ksm_resources_per_scrape_sum{resource="secret"} 218442
+ksm_resources_per_scrape_count{resource="secret"} 5201
+ksm_resources_per_scrape{resource="service",quantile="0.5"} 12
+ksm_resources_per_scrape{resource="service",quantile="0.9"} 12
+ksm_resources_per_scrape{resource="service",quantile="0.99"} 12
+ksm_resources_per_scrape_sum{resource="service"} 62412
+ksm_resources_per_scrape_count{resource="service"} 5201
+ksm_resources_per_scrape{resource="statefulset",quantile="0.5"} 5
+ksm_resources_per_scrape{resource="statefulset",quantile="0.9"} 5
+ksm_resources_per_scrape{resource="statefulset",quantile="0.99"} 5
+ksm_resources_per_scrape_sum{resource="statefulset"} 26005
+ksm_resources_per_scrape_count{resource="statefulset"} 5201
+# HELP ksm_scrape_error_total Total scrape errors encountered when scraping a resource
+# TYPE ksm_scrape_error_total counter
+ksm_scrape_error_total{resource="configmap"} 0
+ksm_scrape_error_total{resource="cronjob"} 0
+ksm_scrape_error_total{resource="daemonset"} 0
+ksm_scrape_error_total{resource="deployment"} 0
+ksm_scrape_error_total{resource="endpoint"} 0
+ksm_scrape_error_total{resource="horizontalpodautoscaler"} 0
+ksm_scrape_error_total{resource="job"} 0
+ksm_scrape_error_total{resource="limitrange"} 0
+ksm_scrape_error_total{resource="namespace"} 0
+ksm_scrape_error_total{resource="node"} 0
+ksm_scrape_error_total{resource="persistentvolume"} 0
+ksm_scrape_error_total{resource="persistentvolumeclaim"} 0
+ksm_scrape_error_total{resource="pod"} 0
+ksm_scrape_error_total{resource="replicaset"} 0
+ksm_scrape_error_total{resource="replicationcontroller"} 0
+ksm_scrape_error_total{resource="resourcequota"} 0
+ksm_scrape_error_total{resource="secret"} 0
+ksm_scrape_error_total{resource="service"} 0
+ksm_scrape_error_total{resource="statefulset"} 0
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 194.73
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1.048576e+06
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 13
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 4.0562688e+07
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.53997690573e+09
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 2.5704448e+08
+
