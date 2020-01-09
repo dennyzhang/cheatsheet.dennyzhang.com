@@ -58,6 +58,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | nit                         |                                                                |
 | Echo the comment from @XXX  |                                                                |
 
+** Appraise
+| Name                                       | Comment |
+|--------------------------------------------+---------|
+| We learned a lot collaboratively as a team |         |
+
 ** Report Tickets
 | Name                              | Comment                                            |
 |-----------------------------------+----------------------------------------------------|

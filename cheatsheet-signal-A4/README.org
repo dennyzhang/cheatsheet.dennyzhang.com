@@ -1,0 +1,52 @@
+* Linux Signal CheatSheet                                             :Linux:
+:PROPERTIES:
+:type:     tool
+:export_file_name: cheatsheet-signal-A4.pdf
+:END:
+
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-signal-A4/cheatsheet-signal-A4.pdf][cheatsheet-signal-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/linux/][linux]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-signal-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** Basic
+| Name                                     | Command                           |
+|------------------------------------------+-----------------------------------|
+| List all signals                         | =kill -l=                         |
+| Send kill signal to a given process      | =kill -term $pid=, =kill -9 $pid= |
+| [[https://www.thegeekstuff.com/2010/05/unix-background-job/][Suspend process: bring it to background]]  | =kill -STOP $pid=, =Ctrl+z=       |
+| Bring a background process to foreground | =fg $JOB_ID=                      |
+| List all background jobs                 | =jobs=                            |
+| User defined signals                     | =SIGUSR1=, =SIGUSR2=              |
+
+** More Resources
+License: Code is licensignal under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-signal-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-signal-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-signal-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
+* TODO background processes are related to a specific terminal/screen :noexport:
+jobs

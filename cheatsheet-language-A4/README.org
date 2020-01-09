@@ -16,24 +16,35 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nano-A4/cheatsheet-nano-A4.pdf][cheatsheet-language-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-language-A4/cheatsheet-language-A4.pdf][cheatsheet-language-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-language-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4][Golang CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 
-** Modules
-| Name                | Summary |
-|---------------------+---------|
-| concurrent hash map |         |
-| delayedqueue        |         |
-| semophore           |         |
-| sorted map          |         |
-** Languages
-| Name                  | Summary           |
-|-----------------------+-------------------|
-| Source code of JDK    | [[https://github.com/openjdk-mirror/jdk7u-jdk][Github: jdk7u-jdk]] |
-| Source code of Golang | [[https://github.com/golang/go][Github: go]]        |
+** Languages & Tools
+| Name                 | Summary                          |
+|----------------------+----------------------------------|
+| Java JDK Source Code | [[https://github.com/openjdk-mirror/jdk7u-jdk/tree/master/src/share/classes/java/util][Github: jdk7u-jdk]]                |
+| Golang Source Code   | [[https://github.com/golang/go/tree/master/src/runtime][Github: go]]                       |
+| Redis Source Code    | [[https://github.com/antirez/redis/tree/unstable/src][Github: redis]]                    |
+| Git Source Code      | [[https://github.com/git/git][Github: git]]                      |
+| Reference            | [[http://tutorials.jenkov.com/java-util-concurrent/index.html][Link: Java Concurrency Utilities]] |
+
+** Modules & Functions
+| Name                     | Summary                                                     |
+|--------------------------+-------------------------------------------------------------|
+| Blocking Queue           |                                                             |
+| Delayed Queue            |                                                             |
+| Concurrent Linked Queue  | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/ConcurrentLinkedQueue.java][Github: jdk7u-jdk/.../concurrent/ConcurrentLinkedQueue.java]] |
+| Priority Blocking Queue  | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/PriorityBlockingQueue.java][Github: jdk7u-jdk/.../concurrent/PriorityBlockingQueue.java]] |
+| Deque                    | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/Deque.java][Github: jdk7u-jdk/.../Deque.java]]                            |
+| bitset                   |                                                             |
+| Garbage Collection       |                                                             |
+| Concurrent Hash Map      |                                                             |
+| Sorted Map, Treemap      |                                                             |
+| Semophore                | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/Semaphore.java][Github: jdk7u-jdk/.../concurrent/Semaphore.java]]             |
+| String contains() method |                                                             |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -76,4 +87,5 @@ lock, queue
 
 state
 reschedule
-
+* TODO token bucket vs leaky bucket                                :noexport:
+https://en.wikipedia.org/wiki/Token_bucket

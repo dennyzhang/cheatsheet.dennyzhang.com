@@ -7480,3 +7480,7 @@ https://developer.couchbase.com/documentation/server/current/architecture/core-d
 * TODO [#A] cheatsheet https://www.expeditedssl.com/aws-in-plain-english :noexport:
 * TODO RDS download snapshot to local
 https://stackoverflow.com/questions/14916899/download-rds-snapshot
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE How do I delete a Route 53 hosted zone created by service discovery? :noexport:
+  CLOSED: [2020-01-12 Sun 15:00]
+https://aws.amazon.com/premiumsupport/knowledge-center/route-53-service-discovery-delete-zone/

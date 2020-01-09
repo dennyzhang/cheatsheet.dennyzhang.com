@@ -18,47 +18,20 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/cheatsheet-systemdesign-A4.pdf][cheatsheet-systemdesign-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-paper-A4][CheatSheet: Well-Known Papers For IT Industry]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-
-** Related CheatSheets
-- [[https://cheatsheet.dennyzhang.com/cheatsheet-featuredesign-A4][CheatSheet: Feature Design For Job Interview]]
-- [[https://cheatsheet.dennyzhang.com/cheatsheet-paper-A4][CheatSheet: Well-Known Papers For IT Industry]]
-
-** Classic Design Problems - Design A Complex Product
-| Num | Name                                       | Summary                                      |
-|-----+--------------------------------------------+----------------------------------------------|
-|   1 | *Design A Technical Feature*               | [[https://cheatsheet.dennyzhang.com/cheatsheet-featuredesign-A4][CheatSheet: Feature Design For Job Interview]] |
-|   2 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: TinyURL - A URL Shorterner Service]] |                                              |
-|   3 | [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]                       |                                              |
-|   4 | Design twitter news feed                   | [[https://medium.com/@narengowda/system-design-for-twitter-e737284afc95][link]]                                         |
-|-----+--------------------------------------------+----------------------------------------------|
-|   5 | Design web crawler                         |                                              |
-|   6 | Design K/V DB                              |                                              |
-|   7 | Design amazon shopping cart                |                                              |
-|   8 | [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]]          |                                              |
-|   9 | Design a payment processor                 |                                              |
-|  10 | Design slack                               |                                              |
-|  11 | Design google doc                          |                                              |
-|  12 | Design gmail                               |                                              |
-|  13 | Design instagram, a photo sharing app      |                                              |
-|  14 | Design Yelp, a location-based system       |                                              |
-|  15 | Design an API gateway                      |                                              |
-|  16 | Design amazon book recommendation system   |                                              |
-|  17 | Google autocomplete                        |                                              |
-|  18 | Design Google PageRank                     |                                              |
-|  19 | Design messaging/notification system       |                                              |
-|  20 | Design search post system                  |                                              |
-|  21 | [[https://architect.dennyzhang.com/design-redis][Design memcache/redis]]                      |                                              |
-|  22 | Design typeahead                           |                                              |
-|  23 | Design Google Adsense fraud detection      |                                              |
-|  24 | Design Pastebin.com                        |                                              |
-|  25 | Design Mint.com                            |                                              |
-|  26 | Design leetcode                            |                                              |
-|  27 | Design a voice conference system           |                                              |
-|  28 | [[https://architect.dennyzhang.com/design-elevator/][Design: An Elevator Service]]                |                                              |
-#+TBLFM: $1=@-1$1+1;N
+** Reference
+| Name       | Summary                                                                                |
+|------------+----------------------------------------------------------------------------------------|
+| Papers     | [[https://cheatsheet.dennyzhang.com/cheatsheet-paper-A4][CheatSheet: Well-Known Papers For IT Industry]], [[https://github.com/papers-we-love/papers-we-love][Github: papers-we-love]]                  |
+| Github     | [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: system-design-primer]]                                                           |
+| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                                     |
+| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4][CheatSheet: Common Code Problems & Follow-ups]] |
+| Coding     | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]                   |
+| YouTube    | [[https://www.youtube.com/watch?v=ZgdS0EUmn70][YouTube: Intro to Architecture and Systems Design Interviews]]                           |
+| YouTube    | [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube Channel: Success in Tech]], [[https://www.youtube.com/watch?v=-W9F__D3oY4&feature=youtu.be][YouTube: Scalability Harvard Web Development]]         |
+| YouTube    | [[https://www.youtube.com/channel/UC9vLsnF6QPYuH51njmIooCQ][YouTube: System Design Interview]]                                                       |
 ** Process Of System Design
 | Num | Name                                            | Summary                                                              |
 |-----+-------------------------------------------------+----------------------------------------------------------------------|
@@ -74,6 +47,172 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+BEGIN_HTML
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B06XPJML5D&asins=B06XPJML5D&linkId=9688cd3adb81a953935114b68a65989e&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
+#+END_HTML
+** Top 20 Design Problems For Technical Modules
+| Num | Name                                                       | Summary          |
+|-----+------------------------------------------------------------+------------------|
+|   1 | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed counter]]                               | [[https://architect.dennyzhang.com/design-distributed-counter][link]], [[https://www.slideshare.net/kevinweil/rainbird-realtime-analytics-at-twitter-strata-2011/59-If_You_Only_Remember_One][link]]       |
+|   2 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task scheduling]]                                    | [[https://architect.dennyzhang.com/explain-delayedqueue][link]]             |
+|   3 | [[https://architect.dennyzhang.com/design-concurrent-hashmap][Design a thread-safe Hashmap]]                               | [[https://architect.dennyzhang.com/design-concurrent-hashmap][link]], [[https://www.geeksforgeeks.org/internal-working-of-hashmap-java/][link]]       |
+|-----+------------------------------------------------------------+------------------|
+|   4 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 | [[https://architect.dennyzhang.com/design-api-limiter/][link]], [[https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/][link]], [[https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/][link]] |
+|   5 | Design a distributed UUID generator                        |                  |
+|-----+------------------------------------------------------------+------------------|
+|   6 | Design a distributed Hashmap                               |                  |
+|   7 | Design a distributed transaction                           |                  |
+|   8 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]                              | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/parking_lot/parking_lot.ipynb][link]]             |
+|   9 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]                          |                  |
+|  10 | Top URL hits                                               |                  |
+|  11 | Unique url hits                                            |                  |
+|  12 | Design a distributed transactions                          |                  |
+|  13 | Design a load balancer                                     |                  |
+|  14 | Design a client-server API to build a rich document editor |                  |
+|  15 | Design online/offline status system                        |                  |
+|  16 | Design a circuit breaker                                   |                  |
+|  17 | Design data sync for a distributed system                  |                  |
+|  18 | Design a service auto-discovery feature                    |                  |
+|  19 | Design A big file transfer feature                         |                  |
+|  20 | Design a secrets management system                         |                  |
+#+TBLFM: $1=@-1$1+1;N
+** Top 20 Design Problems For A Complex Product
+| Num | Name                                       | Summary |
+|-----+--------------------------------------------+---------|
+|   1 | Design K/V DB                              |         |
+|   2 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: TinyURL - A URL Shorterner Service]] |         |
+|   3 | [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]                       |         |
+|   4 | Design an API gateway                      |         |
+|   5 | Design twitter news feed                   | [[https://medium.com/@narengowda/system-design-for-twitter-e737284afc95][link]]    |
+|   6 | [[https://architect.dennyzhang.com/design-elevator/][Design: An Elevator Service]]                |         |
+|-----+--------------------------------------------+---------|
+|   7 | Design web crawler                         |         |
+|   8 | Design amazon shopping cart                |         |
+|   9 | [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]]          |         |
+|  10 | Design a payment processor                 |         |
+|  11 | Design google doc                          |         |
+|  12 | Design gmail                               |         |
+|  13 | Design instagram, a photo sharing app      |         |
+|  14 | Design Yelp, a location-based system       |         |
+|  15 | Design Pastebin.com                        |         |
+|  16 | Design amazon book recommendation system   |         |
+|  17 | Google autocomplete                        |         |
+|  18 | Design Google PageRank                     |         |
+|  19 | Design messaging/notification system       |         |
+|  20 | Design search post system                  |         |
+|  21 | [[https://architect.dennyzhang.com/design-redis][Design memcache/redis]]                      |         |
+|  22 | Design typeahead                           |         |
+|  23 | Design Google Adsense fraud detection      |         |
+|  24 | Design a voice conference system           |         |
+|  25 | Design slack                               |         |
+#+TBLFM: $1=@-1$1+1;N
+** Top 30 Concepts For Feature/System Design
+| Num | Name                                    | Summary                                                             |
+|-----+-----------------------------------------+---------------------------------------------------------------------|
+|   1 | [[https://architect.dennyzhang.com/explain-cache][Caching]]                                 | Stores data so that future requests of data retrieval can be faster |
+|   2 | [[https://architect.dennyzhang.com/explain-messagequeue][Message Queue]]                           | Provides an asynchronous communications protocol,                   |
+|   3 | [[https://architect.dennyzhang.com/explain-partition][Data Partition & Sharding]]               | Break up a big data volume into many smaller parts                  |
+|   4 | [[https://architect.dennyzhang.com/explain-indexing][DB Indexing]]                             | Create indexes on multiple columns to speed up table look up        |
+|   5 | [[https://architect.dennyzhang.com/explain-db-replication][DB replication]]                          | Duplicate data to increase service availability                     |
+|   6 | [[https://architect.dennyzhang.com/explain-cap][CAP: Consistency/Availability/Partition]] | A distributed database system can only have 2 of the 3              |
+|   7 | [[https://architect.dennyzhang.com/explain-nosql][DB: SQL & NoSQL]]                         | Relational databases and non-relational databases                   |
+|-----+-----------------------------------------+---------------------------------------------------------------------|
+|   8 | [[https://architect.dennyzhang.com/explain-coordination][Concurrency & Communication]]             |                                                                     |
+|   9 | [[https://architect.dennyzhang.com/explain-locks][Pessimistic And Optimistic Locking]]      |                                                                     |
+|  10 | [[https://architect.dennyzhang.com/explain-eventualconsistency][Consistency Module]]                      | weak consistency, eventual consistency, strong consistency          |
+|  11 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write, CRDT                  |
+|  12 | B+ Tree                                 |                                                                     |
+|-----+-----------------------------------------+---------------------------------------------------------------------|
+|  13 | [[https://architect.dennyzhang.com/explain-http][Networking: HTTP]]                        |                                                                     |
+|  14 | [[https://architect.dennyzhang.com/explain-poll-push][Pull vs Push model]]                      |                                                                     |
+|  15 | Garbage Collection                      |                                                                     |
+|  16 | [[https://architect.dennyzhang.com/explain-memory-management][Memory Management]]                       |                                                                     |
+|  17 | [[https://architect.dennyzhang.com/explain-heartbeat][Heartbeats]]                              |                                                                     |
+|  18 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]], throttling               |
+|  19 | Filesystem                              |                                                                     |
+|  20 | API: gRPC vs REST                       |                                                                     |
+|  21 | [[https://architect.dennyzhang.com/explain-loadbalancer][Load balancer]]                           |                                                                     |
+|  22 | Scale up vs Scale out                   | Vertical scaling and Horizontal scaling                             |
+|  23 | API Design                              |                                                                     |
+|  24 | [[https://architect.dennyzhang.com/explain-session][Session management]]                      |                                                                     |
+|  25 | Networking: TCP vs UDP                  |                                                                     |
+|  26 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency          |
+|  27 | Availability patterns                   | Fail-over vs Replication                                            |
+|  28 | CDN - Content Delivery Network          | Edge caching                                                        |
+|  29 | [[https://architect.dennyzhang.com/explain-monitoring][Monitoring]]                              |                                                                     |
+|  30 | Security                                |                                                                     |
+|  31 | [[https://architect.dennyzhang.com/explain-dns][Networking: DNS]]                         |                                                                     |
+|  32 | Linux signals                           |                                                                     |
+#+TBLFM: $1=@-1$1+1;N
+
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+** Top 15 Advanced Data Structure & Algorithms
+| Num | Name                                      | Summary                                                                     |
+|-----+-------------------------------------------+-----------------------------------------------------------------------------|
+|   1 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                           |                                                                             |
+|   2 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed queue]]                             | Run scheduled tasks                                                         |
+|   3 | [[https://architect.dennyzhang.com/explain-bloomfilter][Bloom filter]]                              | A space-effcient query returns either "possibly in set" or "definitely not" |
+|-----+-------------------------------------------+-----------------------------------------------------------------------------|
+|   4 | [[https://architect.dennyzhang.com/explain-crdts][CRDT(Conflict-Free Replicated Data Types)]] |                                                                             |
+|   5 | [[https://architect.dennyzhang.com/explain-sstable][SSTable (Sorted Strings Table)]]            |                                                                             |
+|   6 | [[https://architect.dennyzhang.com/explain-lsm][LSM (Log Structured Merge Trees)]]          |                                                                             |
+|   7 | [[https://architect.dennyzhang.com/explain-gossip][Gossip]]                                    | Propagate cluster status                                                    |
+|-----+-------------------------------------------+-----------------------------------------------------------------------------|
+|   8 | [[https://en.wikipedia.org/wiki/Two-phase_commit_protocol][Two-phase commit]]/[[https://en.wikipedia.org/wiki/Three-phase_commit_protocol][Three-phase commit]]       |                                                                             |
+|  10 | [[https://architect.dennyzhang.com/explain-vector-clocks][Vector Clocks/Version Vectors]]             |                                                                             |
+|  11 | [[https://architect.dennyzhang.com/design-explain-paxos][Paxos and raft protocol]]                   |                                                                             |
+|  12 | Merkle Tree                               |                                                                             |
+#+TBLFM: $1=@-1$1+1;N
+
+[[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-featuredesign-A4/dynamo-summary.png]]
+** Explain workflow: What happens when XXX?
+| Num | Name                                          | Summary |
+|-----+-----------------------------------------------+---------|
+|   1 | When happens when I search in google?         |         |
+|   2 | How loadbalancer works                        |         |
+|   3 | Explain three phase commit model              |         |
+|   4 | Explain HTTP return code                      |         |
+|   5 | Explain Mysql DB replication model            |         |
+|   6 | Explain gossip protocol                       |         |
+|   7 | [[https://architect.dennyzhang.com/explain-cap][Explain CAP]]                                   |         |
+|   8 | Explain Hadoop file system                    |         |
+|   9 | [Linux] Explain OS booting process            |         |
+|  10 | [Linux] What happens, when running "ls -l *"  |         |
+|  11 | [Linux]What happens, when pressing "Ctrl + c" |         |
+#+TBLFM: $1=@-1$1+1;N
+** Explain tools: how XXX supports XXX?
+| Num | Name                                  | Summary |
+|-----+---------------------------------------+---------|
+|   1 | How JDK implement hashmap?            |         |
+|   2 | Explain java garbage collection model |         |
+|   3 | Explain raft/etcd                     |         |
+|   4 | How OS supports XXX?                  |         |
+#+TBLFM: $1=@-1$1+1;N
+** Cloud Design Principles
+| Num | Name                       | Summary                 |
+|-----+----------------------------+-------------------------|
+|   1 | Fail fast                  |                         |
+|   2 | Design for failure         |                         |
+|   3 | Immutable infrastructure   |                         |
+|   4 | [[https://www.engineyard.com/blog/pets-vs-cattle][Cats vs Cattle]]             | Avoid snowflake servers |
+|   5 | [[https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/self-healing][Auto healing]]               |                         |
+|   6 | Async programming          |                         |
+|   7 | GitOps operational model   |                         |
+|   8 | Event-Driven Architectures |                         |
+#+TBLFM: $1=@-1$1+1;N
+** Cloud Design Patterns
+| Num | Name                        | Summary                                                                 |
+|-----+-----------------------------+-------------------------------------------------------------------------|
+|   1 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/ambassador][Ambassador pattern]]          | Create helper service to send network requests, besides the main sevice |
+|   2 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/cache-aside][Cache-Aside pattern]]         | Load data on demand into a cache from a data store                      |
+|   3 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker][Circuit Breaker pattern]]     | If a request takes too many reousrce, abort it                          |
+|   4 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/bulkhead][Bulkhead pattern]]            | Isolate elements into pools, so that one fire won't burn all            |
+|   5 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation][Gateway Aggregation pattern]] | Aggregate multiple individual requests into a single request            |
+|   6 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/priority-queue][Priority Queue pattern]]      | Support different SLAs for different individual clients                 |
+|   7 | [[https://docs.microsoft.com/en-us/azure/architecture/patterns/strangler][Strangler pattern]]           | Incrementally migrate a legacy system piece by piece                    |
+#+TBLFM: $1=@-1$1+1;N
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
 ** Engineering Of Well-Known Products
 | Name          | Summary                                                  |
@@ -100,26 +239,17 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  11 | Language implementation          | Deep dive into one programming language. Java, Python, Golang, etc      |
 #+TBLFM: $1=@-1$1+1;N
 ** Engineering Blogs/Websites
-| Name                 | Summary                                                                        |
-|----------------------+--------------------------------------------------------------------------------|
-| Compnay Tech Blog    | [[https://www.facebook.com/pg/Engineering/notes/][Website: Facebook Engineering]], [[https://developers.googleblog.com][Website: Google Developers]]                      |
-| Compnay Tech Blog    | [[https://medium.com/netflix-techblog][Medium: Netflix Blog]], [[https://medium.com/airbnb-engineering][Medium: Airbnb Engineering & Data Science]]                |
-| Compnay Tech Blog    | [[https://engineering.shopify.com/][Shopify Engineering]], [[https://github.blog/category/engineering/][Github Engineering]]                                        |
-|----------------------+--------------------------------------------------------------------------------|
-| Website              | [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: system-design-primer]], [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]]             |
-| Website              | [[https://interviewing.io][Website: interviewing.io]], [[https://www.interviewbit.com/courses/system-design/][Website: interviewbit.com]]                            |
-| Reference            | [[https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/][Link: Preparing for your Software Engineering Interview at Facebook]]            |
-| Reference            | [[https://www.hiredintech.com/classrooms/system-design/lesson/55][Link: The System Design Process]]                                                |
-| Papers               | [[https://github.com/papers-we-love/papers-we-love][Github: papers-we-love]]                                                         |
-| Individual Tech Blog | [[https://www.allthingsdistributed.com][Blog: All Things Distributed - Amazon CTO]], [[http://highscalability.com/][Blog: highscalability]]               |
-|----------------------+--------------------------------------------------------------------------------|
-| YouTube              | [[https://www.youtube.com/watch?v=ZgdS0EUmn70][YouTube: Intro to Architecture and Systems Design Interviews]]                   |
-| YouTube              | [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube Channel: Success in Tech]], [[https://www.youtube.com/watch?v=-W9F__D3oY4&feature=youtu.be][YouTube: Scalability Harvard Web Development]] |
-| YouTube              | [[https://www.youtube.com/channel/UC9vLsnF6QPYuH51njmIooCQ][YouTube: System Design Interview]]                                               |
-|----------------------+--------------------------------------------------------------------------------|
-| Cheatsheet           | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]], [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]]       |
-| Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]                                        |
-| Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                             |
+| Name                 | Summary                                                             |
+|----------------------+---------------------------------------------------------------------|
+| Compnay Tech Blog    | [[https://www.facebook.com/pg/Engineering/notes/][Website: Facebook Engineering]], [[https://developers.googleblog.com][Website: Google Developers]]           |
+| Compnay Tech Blog    | [[https://medium.com/netflix-techblog][Medium: Netflix Blog]], [[https://medium.com/airbnb-engineering][Medium: Airbnb Engineering & Data Science]]     |
+| Compnay Tech Blog    | [[https://engineering.shopify.com/][Shopify Engineering]], [[https://github.blog/category/engineering/][Github Engineering]]                             |
+|----------------------+---------------------------------------------------------------------|
+| Website              | [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]]                                |
+| Website              | [[https://interviewing.io][Website: interviewing.io]], [[https://www.interviewbit.com/courses/system-design/][Website: interviewbit.com]]                 |
+| Reference            | [[https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/][Link: Preparing for your Software Engineering Interview at Facebook]] |
+| Reference            | [[https://www.hiredintech.com/classrooms/system-design/lesson/55][Link: The System Design Process]]                                     |
+| Individual Tech Blog | [[https://www.allthingsdistributed.com][Blog: All Things Distributed - Amazon CTO]], [[http://highscalability.com/][Blog: highscalability]]    |
 ** Typical Trade-Off
 | Num | Name                        | Summary              |
 |-----+-----------------------------+----------------------|
@@ -127,11 +257,26 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   2 | Latency vs Throughput       |                      |
 |   3 | Availability vs Consistency | Brewer's CAP theorem |
 #+TBLFM: $1=@-1$1+1;N
-
+** Misc
+| Num | Name                                                                            | Summary                           |
+|-----+---------------------------------------------------------------------------------+-----------------------------------|
+|   1 | How to store 2TB data into 3 disks of 1TB. And be tolerant for one disk failure | A, B, C. And C = A XOR B          |
+|   2 | Find out the difference between two files. Majority of these two are the same   | [[https://code.dennyzhang.com/followup-lcs][#lcs - Longest Common Subsequence]] |
+|   3 | How to support feature of "diff 1.txt 2. txt"                                   |                                   |
+|   4 | Avoid double payment in a distributed payment system                            | [[https://medium.com/airbnb-engineering/avoiding-double-payments-in-a-distributed-payments-system-2981f6b070bb][link]]                              |
+#+TBLFM: $1=@-1$1+1;N
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
 https://github.com/binhnguyennus/awesome-scalability
+
+https://github.com/donnemartin/system-design-primer
+
+https://github.com/checkcheckzz/system-design-interview
+
+https://github.com/binhnguyennus/awesome-scalability
+
+https://docs.microsoft.com/en-us/azure/architecture/patterns/
 
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
@@ -266,3 +411,5 @@ http://systemdesigns.blogspot.com/2015/12/design-uber.html
 * TODO Design Recommend System                                     :noexport:
 * TODO Take turns to ask questions                                 :noexport:
 好的问题,间接告诉了对方我们的经验和思维深度和广度
+* TODO Design Mint.com                                             :noexport:
+* TODO Design leetcode                                             :noexport:

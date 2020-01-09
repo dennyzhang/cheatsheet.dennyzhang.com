@@ -22,12 +22,12 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Basic
-| Name                         | Summary                                  |
-|------------------------------+------------------------------------------|
-| Slack keyboard shortcuts     | =Ctrl+/=, [[https://get.slack.help/hc/en-us/articles/201374536-Slack-keyboard-shortcuts][Official Slack Link: shortcuts]] |
-| Jump to channel or person    | =Ctrl+T=                                 |
-| Move to next unread messages | =Alt+Shift+Arrow=                        |
-|                              |                                          |
+| Name                         | Summary                                   |
+|------------------------------+-------------------------------------------|
+| Slack keyboard shortcuts     | =Ctrl+/=, [[https://get.slack.help/hc/en-us/articles/201374536-Slack-keyboard-shortcuts][Official Slack Link: shortcuts]]  |
+| Jump to channel or person    | =Ctrl+T=                                  |
+| Move to next unread messages | =Alt+Shift+Arrow=                         |
+| Delete a channel             | =Additional Options -> Archive or Delete= |
 ** Reminders
 | Name                         | Summary                                 |
 |------------------------------+-----------------------------------------|
