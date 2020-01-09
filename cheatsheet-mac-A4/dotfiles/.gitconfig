@@ -1,0 +1,27 @@
+[push]
+	default = simple
+[alias]
+  blog="log origin/master... --left-right"
+  br=branch
+  ci=duet-commit
+  co=checkout
+  dc=diff --cached
+  di=diff
+  ds="diff --staged"
+  fetch="fetch --all --prune"
+  fix-remote = ! "f() { export remote=$(git remote get-url origin --push); if [ -z ${remote##https://github.com/*} ]; then git remote set-url origin --push \"git@github.com:${remote#https://github.com/}\"; fi; unset remote; }; f"
+  fixup="commit --fixup"
+  flog="log --pretty=fuller --decorate"
+  llog="log --date=local"
+  lol="log --graph --decorate --oneline"
+  lola="log --graph --decorate --oneline --all"
+  p="pull --rebase --autostash"
+  rum="rebase master@{u}"
+  squash="commit --squash"
+  st=status
+  sta=stash
+  sur="submodule update --init --recursive"
+  unstage="reset HEAD"
+[user]
+	name = Denny Zhang
+	email = denny.zhang001@gmail.com

@@ -1,0 +1,318 @@
+* Knative CheatSheet                                                     :Cloud:
+:PROPERTIES:
+:type:     kubernetes
+:export_file_name: cheatsheet-knative-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-knative-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet-knative-A4/blob/master/cheatsheet-knative-A4.pdf][cheatsheet-knative-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/cloud/][Cloud]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-knative-A4
+
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+
+See more kubernetes from Denny: [[https://github.com/topics/denny-kubernetes][#denny-kubernetes]]
+
+- Query status
+| Name                        | Command                                                                                                           |
+|-----------------------------+-------------------------------------------------------------------------------------------------------------------|
+| List configurations         | =kubectl get configurations=                                                                                      |
+| List all revisions          | =kubectl get revisions=                                                                                           |
+| List all functions          | =kubectl get route=                                                                                               |
+| List all gateways           | =kubectl get gateway --all-namespaces=                                                                            |
+| List all related pods       | watch "kubectl get pods -n istio-system; echo "\n"; kubectl get pods -n knative-serving"                          |
+| Get function domain name    | =kubectl get services.serving.knative.dev $conf_name -o=custom-columns=NAME:.metadata.name,DOMAIN:.status.domain= |
+| Get ingress gateway service | =kubectl get svc knative-ingressgateway -n istio-system=                                                          |
+[[https://cheatsheet.dennyzhang.com/cheatsheet-prometheus-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet-knative-A4/master/images/faas.png]]
+** Typical Workloads in Functional-As-A-Service
+- web events
+- event-based integration
+- large scale streaming data
+** CRD Knative event has created                                   :noexport:
+ https://github.com/knative/eventing/tree/master/cheatsheet-knative-A4][challenges-leetcode-interesting]]
+ | CRD Name           | Summary |
+ |--------------------+---------|
+ | bus                |         |
+ | channel            |         |
+ | clusterbus         |         |
+ | clustereventsource |         |
+ | clustereventsource |         |
+ | eventsource        |         |
+ | eventtype          |         |
+ | feed               |         |
+ | flow               |         |
+ | subscription       |         |
+
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+
+<a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+<a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a>
+#+END_HTML
+* Deploy knative on minikube                                       :noexport:
+** basic use
+- Knative requires a Kubernetes cluster v1.10 or newer. kubectl v1.10 is also required.
+
+#+BEGIN_EXAMPLE
+The following Knative components are currently available:
+
+- Build - Source-to-container build orchestration
+- Eventing - Management and delivery of events
+- Serving - Request-driven compute that can scale to zero
+#+END_EXAMPLE
+
+https://github.com/knative/docs/tree/master/cheatsheet-knative-A4][challenges-leetcode-interesting]]
+#+BEGIN_EXAMPLE
+
+Knative Serving defines a set of objects as Kubernetes Custom Resource Definitions (CRDs). These objects are used to define and control how your serverless workload behaves on the cluster:
+
+- Service: The service.serving.knative.dev resource automatically manages the whole lifecycle of your workload. It controls the creation of other objects to ensure that your app has a route, a configuration, and a new revision for each update of the service. Service can be defined to always route traffic to the latest revision or to a pinned revision.
+- Route: The route.serving.knative.dev resource maps a network endpoint to a one or more revisions. You can manage the traffic in several ways, including fractional traffic and named routes.
+- Configuration: The configuration.serving.knative.dev resource maintains the desired state for your deployment. It provides a clean separation between code and configuration and follows the Twelve-Factor App methodology. Modifying a configuration creates a new revision.
+- Revision: The revision.serving.knative.dev resource is a point-in-time snapshot of the code and configuration for each modification made to the workload. Revisions are immutable objects and can be retained for as long as useful.
+#+END_EXAMPLE
+** Benefits
+Benefits from severless:
+- Cost saving: Infra will be shutdown if no requests
+- Minimum maintainance: Infra and application is decoupled, and SRE effort are delegated
+- Serve different version of one API
+** Useful tips
+- kubectl describe services.serving.knative.dev helloworld-go2
+
+- watch "kubectl get pods -n istio-system; echo "\n"; kubectl get pods -n knative-serving"
+
+- kubectl get pods -n knative-serving
+
+#+BEGIN_EXAMPLE
+ /Users/zdenny  kubectl describe services.serving.knative.dev helloworld-go2                                                                          ✔ 0
+Name:         helloworld-go2
+Namespace:    default
+Labels:       <none>
+Annotations:  kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"serving.knative.dev/v1alpha1","kind":"Service","metadata":{"annotations":{},"name":"helloworld-go2","namespace":"default"},"spec":{"runL...
+API Version:  serving.knative.dev/v1alpha1
+Kind:         Service
+Metadata:
+ Cluster Name:
+ Creation Timestamp:  2018-07-26T06:50:32Z
+ Generation:          1
+ Resource Version:    4814
+ Self Link:           /apis/serving.knative.dev/v1alpha1/namespaces/default/services/helloworld-go2
+ UID:                 313a146e-90a0-11e8-b2c6-080027a8db9e
+Spec:
+ Generation:  1
+ Run Latest:
+   Configuration:
+     Revision Template:
+       Metadata:
+         Creation Timestamp:  <nil>
+       Spec:
+         Concurrency Model:  Multi
+         Container:
+           Env:
+             Name:   TARGET
+             Value:  Go Sample v2
+           Image:    docker.io/denny/helloworld-go
+           Name:
+           Resources:
+Status:
+ Conditions:
+   Last Transition Time:        2018-07-26T06:50:34Z
+   Message:                     Revision "helloworld-go2-00001" failed with message: "UNAUTHORIZED: \"authentication required\"".
+   Reason:                      RevisionFailed
+   Status:                      False
+   Type:                        ConfigurationsReady
+   Last Transition Time:        2018-07-26T06:50:53Z
+   Message:                     Configuration "helloworld-go2" does not have any ready Revision.
+   Reason:                      RevisionMissing
+   Status:                      False
+   Type:                        RoutesReady
+   Last Transition Time:        2018-07-26T06:51:23Z
+   Message:                     Configuration "helloworld-go2" does not have any ready Revision.
+   Reason:                      RevisionMissing
+   Status:                      False
+   Type:                        Ready
+ Domain:                        helloworld-go2.default.example.com
+ Domain Internal:               helloworld-go2.default.svc.cluster.local
+ Latest Created Revision Name:  helloworld-go2-00001
+ Observed Generation:           1
+#+END_EXAMPLE
+** hello world setup
+*** Install virtualbox, minikube
+*** Start infra
+https://github.com/knative/docs/blob/master/install/Knative-with-Minikube.md#installing-knative-serving
+
+- Start minikube vm
+#+BEGIN_EXAMPLE
+minikube start --memory=8192 --cpus=4 \
+  --kubernetes-version=v1.10.5 \
+  --vm-driver=virtualbox \
+  --bootstrapper=kubeadm \
+  --extra-config=controller-manager.cluster-signing-cert-file="/var/lib/localkube/certs/ca.crt" \
+  --extra-config=controller-manager.cluster-signing-key-file="/var/lib/localkube/certs/ca.key" \
+  --extra-config=apiserver.admission-control="LimitRanger,NamespaceExists,NamespaceLifecycle,ResourceQuota,ServiceAccount,DefaultStorageClass,MutatingAdmissionWebhook"
+#+END_EXAMPLE
+
+- Check status
+#+BEGIN_EXAMPLE
+Every 1.0s: kubectl get pods -n istio-system                                                                                                          zdenny-a02.vmware.com: Wed Jul 25 23:29:20 2018
+
+NAME                                       READY     STATUS      RESTARTS   AGE
+istio-citadel-7bdc7775c7-ssdkj             1/1       Running     0          15m
+istio-cleanup-old-ca-gw2sk                 0/1       Completed   0          15m
+istio-egressgateway-795fc9b47-hsqrd        1/1       Running     0          15m
+istio-ingress-84659cf44c-5vtzd             1/1       Running     0          15m
+istio-ingressgateway-7d89dbf85f-nkcbc      1/1       Running     0          15m
+istio-mixer-post-install-cjxsx             0/1       Completed   0          15m
+istio-pilot-66f4dd866c-5q7kv               2/2       Running     0          15m
+istio-policy-76c8896799-29trn              2/2       Running     0          15m
+istio-sidecar-injector-645c89bc64-mv99l    1/1       Running     0          15m
+istio-statsd-prom-bridge-949999c4c-rqngn   1/1       Running     0          15m
+istio-telemetry-6554768879-mjqjw           2/2       Running     0          15m
+#+END_EXAMPLE
+*** Deploy a sample application
+https://github.com/knative/docs/blob/master/serving/samples/helloworld-go/README.md
+
+https://github.com/knative/docs/blob/master/install/getting-started-knative-app.md
+
+- Build docker image
+#+BEGIN_EXAMPLE
+docker build -t denny/knative:helloworld_go .
+
+docker push denny/knative:helloworld_go
+#+END_EXAMPLE
+
+- Create service
+#+BEGIN_EXAMPLE
+kubectl apply -f service.yaml
+
+kubectl get svc knative-ingressgateway -n istio-system
+
+kubectl get services.serving.knative.dev helloworld-go  -o=custom-columns=NAME:.metadata.name,DOMAIN:.status.domain
+#+END_EXAMPLE
+
+- Get Access IP, since we're using NodePort, instead of loadbalance service
+
+#+BEGIN_EXAMPLE
+echo $(minikube ip):$(kubectl get svc knative-ingressgateway -n istio-system -o 'jsonpath={.spec.ports[?(@.port==80)].nodePort}')
+#+END_EXAMPLE
+
+https://github.com/knative/docs/blob/master/install/getting-started-knative-app.md
+
+- Validate the service
+#+BEGIN_EXAMPLE
+curl -I -H "Host: helloworld-go.default.example.com" http://10.0.2.15:32380
+#+END_EXAMPLE
+
+* Interesting Observations With Knative local test                 :noexport:
+** DONE [#A] get pods stucks in ContainerCreating state: takes more than 15 minutes (Nowhere to check what is going on)
+   CLOSED: [2018-07-25 Wed 23:35]
+** DONE [#A] Since pod will be created on-demand, the first request of warm-up takes 11 seconds (It's too slow for real usage)
+   CLOSED: [2018-07-27 Fri 09:38]
+#+BEGIN_EXAMPLE
+$ time  curl  -H "Host: helloworld-go4.default.example.com" http://${IP_ADDRESS}
+Hello World: Go Sample v4!
+
+real	0m11.426s
+user	0m0.003s
+sys	0m0.001s
+#+END_EXAMPLE
+** TODO How I can customize how many pods to serve my given function? (Not all functions are equally important)
+** DONE minikube start: is super slow: more than 10 minutes to deploy
+   CLOSED: [2018-07-25 Wed 23:36]
+** DONE knative serving deployment takes more than 5 minutes
+   CLOSED: [2018-07-25 Wed 23:35]
+** DONE Istio yaml and Knative Serving yaml files are super long: 3K-16.7K lines
+   CLOSED: [2018-07-27 Fri 09:54]
+https://github.com/knative/docs/blob/master/install/Knative-with-Minikube.md#installing-istio
+
+https://github.com/knative/docs/blob/master/install/Knative-with-Minikube.md#installing-knative-serving
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO How Knative build works?
+https://github.com/knative/build
+https://medium.com/@pczarkowski/introduction-to-knative-b93a0b9aeeef
+** TODO [#A] How to avoid build docker image manually: source-to-container :IMPORTANT:
+** TODO Example: use lambda to get logs: https://github.com/knative/docs/tree/master/cheatsheet-knative-A4][challenges-leetcode-interesting]]
+** TODO [#A] How many CRD knative uses, and what we can learn from them? :IMPORTANT:
+- route, revisions, configurations, gateway
+** TODO How knative run CRD controller in HA way
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO Why we need to label the default namespace? 
+https://github.com/knative/docs/blob/master/install/Knative-with-GKE.md
+#+BEGIN_EXAMPLE
+kubectl label namespace default istio-injection=enabled
+#+END_EXAMPLE
+** TODO app stucks in PodInitializing for quite a while
+helloworld-go3-00001-autoscaler-69487d9986-bwcqs
+
+kubectl get pods -n knative-serving
+
+#+BEGIN_EXAMPLE
+Every 2.0s: kubectl get pods -n knative-serving                                                                                                      zdenny-a02.vmware.com: Wed Jul 25 23:59:55 2018
+
+NAME                                               READY     STATUS            RESTARTS   AGE
+activator-5f78d674df-q2xkv                         2/2       Running           0          29m
+autoscaler-5787568ff8-7558j                        2/2       Running           0          29m
+controller-c8dd5d467-wvt7h                         1/1       Running           0          29m
+helloworld-go3-00001-autoscaler-69487d9986-bwcqs   0/2       PodInitializing   0          4m
+webhook-78f58769cb-mmdqj                           1/1       Running           0          29m
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+$  curl  -H "Host: helloworld-go4.default.example.com" http://${IP_ADDRESS}
+Hello World: Go Sample v4!
+#+END_EXAMPLE
+** TODO Hard to Trouble: When it's not working, no idea how to debug
+** TODO After recreating app, the domain field will disappear
+** TODO Try more serving functions and examples
+https://github.com/knative/docs/tree/master/cheatsheet-knative-A4][challenges-leetcode-interesting]]
+** TODO How to scale knative pod instances
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO How knative deploy controller     :noexport:
+* knative source code                                              :noexport:
+** TODO Why need annoation: https://github.com/knative/eventing/blob/master/config/500-controller.yaml#L23-L24
+** TODO how to implement CRD?
+/Users/zdenny/Dropbox/git_code/kubernetes/community_kubernetes/knative/eventing/cmd/controller/main.go
+** TODO controller-manager and controller
+https://github.com/knative/eventing/blob/master/config/500-controller.yaml
+https://github.com/knative/eventing/blob/master/config/500-controller-manager.yaml
+* TODO how knative do e2e tests
+https://github.com/knative/eventing/tree/master/cheatsheet-knative-A4][challenges-leetcode-interesting]]
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-knative-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-knative-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-knative-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 

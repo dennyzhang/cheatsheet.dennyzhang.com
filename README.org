@@ -503,7 +503,6 @@ nc (netcat) is def missing :)
 * TODO cheatsheet use case: Support Validation                     :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO change openshift from cheatsheet to git repo                :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO cheatsheet: k8s deployment solution                         :noexport:
 kubepray
 kops

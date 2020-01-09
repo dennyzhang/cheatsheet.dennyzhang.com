@@ -1,0 +1,1974 @@
+* Cheatsheet: mac                                                      :Tools:
+:PROPERTIES:
+:type:     linux, tool
+:export_file_name: cheatsheet-mac-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-mac-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet-mac-A4/blob/master/cheatsheet-mac-A4.pdf][cheatsheet-mac-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/tools/][tools]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-mac-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][Shell CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-browser-A4][CheatSheet: Web Browser]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** Summary
+| Name                          | Comment                                                                  |
+|-------------------------------+--------------------------------------------------------------------------|
+| Share files across intranet   | =System Preferences -> Sharing -> File Sharing=, then =\\192.168.XX.XXX= |
+| Lock the screen               | =Ctrl + Shift + Power=                                                   |
+| [[https://www.laptopmag.com/articles/change-macs-default-screenshot-directory][Customize screenshot location]] | =defaults write com.apple.screencapture location ~/Dropbox/Screenshots=  |
+| Swap Cap and Command key      | [[https://support.apple.com/kb/PH25240?locale=en_US][Link: support.apple.com]]                                                  |
+** Home Brew Basic
+| Name                                    | Comment                                                  |
+|-----------------------------------------+----------------------------------------------------------|
+| Get brew version                        | =brew --version=                                         |
+| HomeBrew update                         | =brew update=                                            |
+| Install big binary                      | =brew cask install <package_name>=                       |
+| List all installed casks                | =brew cask list=, =brew cask help=                       |
+| uninstall big binary                    | =brew cask uninstall <package_name>=                     |
+| Upgrade all the casks                   | =brew cask upgrade=, =brew cask upgrade --no-quarantine= |
+| Install openjdk                         | =brew cask install adoptopenjdk=                         |
+| Install mvn                             | =brew install maven=                                     |
+| Brew install package with given version | =brew install python@2=                                  |
+| Reference                               | [[https://github.com/Homebrew/homebrew-cask/blob/master/USAGE.md][Link: How to Use Homebrew-Cask]]                           |
+** Mac Install Packages
+| Name                       | Comment                                  |
+|----------------------------+------------------------------------------|
+| Install all basic packages | [[https://github.com/dennyzhang/cheatsheet-mac-A4/blob/master/code/setup_mac.sh][code/setup_mac.sh]]                        |
+| Install iterm2             | =brew cask install iterm2=               |
+| [[https://bosh.io/docs/cli-v2-install/][Install bosh]]               | =brew install cloudfoundry/tap/bosh-cli= |
+| Install realpath           | =brew install coreutils=                 |
+| Install lpass              | =brew install lastpass-cli=              |
+| Mac install jvm            | [[https://www.java.com/en/download/mac_download.jsp][Link: Download Java for Mac OS X]]         |
+** zsh
+| Name                                    | Comment                                       |
+|-----------------------------------------+-----------------------------------------------|
+| Partially disable zsh's auto correction | alias vim='nocorrect vim' [[https://superuser.com/questions/439209/how-to-partially-disable-the-zshs-autocorrect][Link: stackoverflow]] |
+** Clean & Release disk
+| Name  | Comment                               |
+|-------+---------------------------------------|
+| Xcode | =Library/Developer/Xcode/DerivedData= |
+| Trash | =~/.Trash=, =~/trash=                 |
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+
+<a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+<a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-mac-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-mac-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-mac-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE [#A] Blog: setup mac workstation                  :IMPORTANT:noexport:
+  CLOSED: [2017-12-03 Sun 23:05]
+** DONE install dropbox, emacs, iterm
+   CLOSED: [2017-12-01 Fri 12:06]
+** DONE enable one click tap
+   CLOSED: [2017-12-01 Fri 10:17]
+** DONE install homebrew
+   CLOSED: [2017-12-03 Sun 23:06]
+** DONE mac setup: sudo easy_install pip
+   CLOSED: [2017-12-02 Sat 18:38]
+** DONE install docker daemon, and virtualbox
+   CLOSED: [2017-12-01 Fri 13:08]
+** DONE Enable dropbox sync
+   CLOSED: [2017-12-01 Fri 13:08]
+** DONE configure VPN
+   CLOSED: [2017-12-01 Fri 15:02]
+** DONE mac setup: git config --global --edit
+  CLOSED: [2017-12-01 Fri 22:46]
+bash-3.2$ git commit -am 'mark todo'
+[master 8fd251b] mark todo
+ Committer: mac <mac@macs-MBP.lan>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 14 insertions(+), 9 deletions(-)
+** DONE git diff pager: git config --global core.pager cat
+   CLOSED: [2018-01-25 Thu 13:07]
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** DONE mac fail to install cfssl: use google go to install
+  CLOSED: [2017-12-02 Sat 10:05]
+https://github.com/cloudflare/cfssl
+** DONE mac setup: install vagrant and virtualbox: https://www.vagrantup.com/
+  CLOSED: [2017-12-02 Sat 10:23]
+https://www.virtualbox.org/wiki/Downloads
+** DONE macbook add lock to touchbar: http://osxdaily.com/2017/02/22/screen-lock-macbook-pro-touch-bar/
+   CLOSED: [2017-12-04 Mon 18:34]
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** DONE mac setup: can't open gpg
+  CLOSED: [2017-12-04 Mon 19:04]
+https://github.com/Homebrew/homebrew-core/issues/14737
+
+brew install pinentry-mac
+echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+killall gpg-agent
+** TODO mac setup: create crontab
+** DONE mac setup: install aws credential: pip install aws
+   CLOSED: [2017-12-05 Tue 09:50]
+** DONE mac setup: mac setup: input chinese: 搜狗五笔输入法
+  CLOSED: [2017-12-07 Thu 12:52]
+https://pinyin.sogou.com/mac/wubi.php
+** HALF wechat mac
+https://weixin.qq.com/cgi-bin/readtemplate?t=mac&lang=en
+** DONE mac setup: use control + space to switch input method: prefs/keyboard/shortcuts and changing the shortcut to Control + Space.
+  CLOSED: [2017-12-07 Thu 12:56]
+https://discussions.apple.com/thread/7848807?start=0&tstart=0
+** DONE mac setup: disable shortcut for Spotlight
+   CLOSED: [2017-12-07 Thu 12:55]
+** DONE mac add lock screen to menu bar: keyboard -> Customize Control Strip
+   CLOSED: [2018-01-09 Tue 09:28]
+https://www.howtogeek.com/howto/32810/how-to-lock-your-mac-os-x-display-when-youre-away/
+** DONE doc: mac setup: mkdir -p /Users/DennyZhang/.getmail/
+   CLOSED: [2018-01-16 Tue 13:01]
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO mac setup: install docker
+** HALF mac install gpg: brew install gnupg
+** HALF chrome install plugin: fox proxy
+** ./setup_mac.sh
+** ./update_git_code.sh
+** HALF Install mutliple chrome releases
+https://www.google.com/chrome/browser/canary.html
+
+https://www.chromium.org/getting-involved/download-chromium
+* iterm2                                                           :noexport:
+** iterm2 powerline compatible font mac OS
+https://github.com/powerline/fonts
+** DONE iterm default frame size: Preference -> Profile -> Settings for New Windows
+   CLOSED: [2018-07-18 Wed 14:42]
+https://apple.stackexchange.com/questions/98342/changing-the-default-size-of-iterm2-when-it-opens
+
+https://apple.stackexchange.com/a/98406
+
+https://apple.stackexchange.com/questions/98342/changing-the-default-size-of-iterm2-when-it-opens
+** DONE Use iterm instead of terminal. And customize your iterm colors
+   CLOSED: [2018-06-14 Thu 10:03]
+* ozsh                                                             :noexport:
+** powerline: https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme
+** useful link
+https://gist.github.com/kevin-smets/8568070
+* [#A] Apple mac OSX                                :noexport:Linux:Personal:
+:PROPERTIES:
+:type:   Tool
+:END:
+
+- 快捷键
+| Name                           | Comment                                |
+|--------------------------------+----------------------------------------|
+| terminal 分屏                  | command + d                            |
+| 恢复terminal分屏的效果         | command + shift+ d                     |
+| 锁屏幕                         | control + shift + power/eject          |
+| mac通过快捷键最大化            | control + command + f                  |
+| 类似"右键"的效果               | 触摸板是同时两个手指按下               |
+| 快捷键回到桌面                 | 在非全屏下,按F11                      |
+|--------------------------------+----------------------------------------|
+| 打开文件管理器                 | command + o                            |
+| 打开文件                       | command + o                            |
+| 快捷键打开一个finder界面       | option + command + space               |
+| 在finder界面中输入路径名       | command + shift + g                    |
+| 对于当前程序打开一个新的实例   | command + n                            |
+| Turn off/on Dock Hiding        | command + option + d                   |
+| 强制退出应用程序               | command+option+esc                     |
+| 在相同应用程序的不同窗口间切换 | Command + ~                            |
+|--------------------------------+----------------------------------------|
+| 查看多张图片                   | Command + a全选, Command +o 打开       |
+| mac finder跳到上一层目录       | 点击右下方的路径                       |
+| mac连接windows共享文件夹       | smb://DOMAIN;User@ServerName/ShareName |
+
+- 软件推荐
+| Name                | Comment                 |
+|---------------------+-------------------------|
+| 画图工具OmniGraffle | 画图神器                |
+| QuickTime player    | 屏幕录制,视频录制, etc |
+| CleanMyMac          | 系统清理工具            |
+
+- application/command
+| Name                      | Comment                              |
+|---------------------------+--------------------------------------|
+| Safari Reopen Closed Tabs | Command + z                          |
+| 强制清空磁盘和内存的缓存  | purge                                |
+| 禁用或启用Time machine    | sudo tmutil disablelocal/enablelocal |
+| 数据库的GUI连接工具       | navicat preimum                      |
+| e-books tool              | calibre                              |
+
+- 包管理
+| Name                      | Comment                  |
+|---------------------------+--------------------------|
+| brew安装指定版本的package | brew install msmtp1.4.10 |
+
+- equvilent linux tools on mac
+| Mac          | Linux        |
+|--------------+--------------|
+| strace df -h | dtruss df -h |
+
+- Command line
+| Name            | Summary                            |
+|-----------------+------------------------------------|
+| restart network | sudo ifconfig en0 down/up          |
+| get cput info   | sysctl -n machdep.cpu.brand_string |
+** [#A] System installation
+export HOME=/Users/mac; getmail -v -n -r /Users/mac/baidu/百度云同步盘/private_data/emacs_stuff/backup_small/fetch_mail/getmailrc.totvslab
+
+echo "denny, are you there?" | msmtp -d -a  totvs denny@dennyzhang.com
+echo "denny, are you there?" | msmtp -d -a  126 denny@dennyzhang.com
+*** [#A] source install msmtp, instead of brew install
+**** OS installation: msmtp install with NTLM enabled
+https://sourceforge.net/projects/msmtp/files/msmtp/1.6.5/
+https://qa.debian.org/watch/sf.php/msmtp/msmtp-1.6.5.tar.xz
+
+./configure --with-libgsasl
+#+BEGIN_EXAMPLE
+Denny-mac:msmtp-1.6.5 mac$ ./configure --with-libgsasl
+checking build system type... x86_64-apple-darwin13.4.0
+checking host system type... x86_64-apple-darwin13.4.0
+checking target system type... x86_64-apple-darwin13.4.0
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/local/bin/gmkdir -p
+checking for gawk... no
+checking for mawk... no
+checking for nawk... no
+checking for awk... awk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking whether make supports nested variables... yes
+checking dependency style of gcc... gcc3
+checking whether make supports nested variables... (cached) yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking whether NLS is requested... yes
+checking for msgfmt... /opt/local/bin//msgfmt
+checking for gmsgfmt... /opt/local/bin//msgfmt
+checking for xgettext... /opt/local/bin//xgettext
+checking for msgmerge... /opt/local/bin//msgmerge
+checking for ld used by gcc... /Library/Developer/CommandLineTools/usr/bin/ld
+checking if the linker (/Library/Developer/CommandLineTools/usr/bin/ld) is GNU ld... no
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... yes
+checking for CFLocaleCopyCurrent... yes
+checking for GNU gettext in libc... no
+checking for iconv... no, consider installing GNU libiconv
+checking for GNU gettext in libintl... no
+checking whether to use NLS... no
+checking sysexits.h usability... yes
+checking sysexits.h presence... yes
+checking for sysexits.h... yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/wait.h usability... yes
+checking sys/wait.h presence... yes
+checking for sys/wait.h... yes
+checking for fmemopen... no
+checking for fseeko... yes
+checking for fseeko64... no
+checking for getpass... yes
+checking for getservbyname... yes
+checking for link... yes
+checking for mkstemp... yes
+checking for strndup... yes
+checking for syslog... yes
+checking for vasprintf... yes
+checking for library containing nanosleep... none required
+checking for library containing socket... none required
+checking size of long long... 8
+checking for pkg-config... /usr/local/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for libgnutls... no
+configure: WARNING: library libgnutls not found:
+configure: WARNING: No package 'gnutls' found
+configure: WARNING: libgnutls is provided by GnuTLS; Debian package: libgnutls-dev
+checking for libssl... yes
+checking for libgsasl... no
+configure: WARNING: library libgsasl not found:
+configure: WARNING: No package 'libgsasl' found
+configure: WARNING: libgsasl is provided by GNU SASL; Debian package: libgsasl7-dev
+checking whether AI_IDN is declared... no
+checking whether libidn is needed for IDN support... yes
+checking for libidn... no
+configure: WARNING: library libidn not found:
+configure: WARNING: No package 'libidn' found
+configure: WARNING: libidn is provided by GNU Libidn; Debian package: libidn11-dev
+checking for libsecret... no
+configure: WARNING: library libsecret not found:
+configure: WARNING: No package 'libsecret-1' found
+configure: WARNING: libsecret is provided by Gnome; Debian package: libsecret-1-dev
+checking for SecKeychainGetVersion... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating po/Makefile.in
+config.status: creating doc/Makefile
+config.status: creating scripts/Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+
+Install prefix ......... : /usr/local
+TLS/SSL support ........ : yes (Library: OpenSSL)
+GNU SASL support ....... : no
+IDN support ............ : no
+NLS support ............ : no
+Libsecret support (GNOME): no
+MacOS X Keychain support : yes
+
+Denny-mac:org_data mac$ msmtp --version
+msmtp version 1.6.5
+Platform: x86_64-apple-darwin13.4.0
+TLS/SSL library: OpenSSL
+Authentication library: built-in
+Supported authentication methods:
+plain external cram-md5 login
+IDN support: disabled
+NLS: disabled
+Keyring support: MacOS
+System configuration file name: /usr/local/etc/msmtprc
+User configuration file name: /Users/mac/.msmtprc
+
+Copyright (C) 2016 Martin Lambers and others.
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
+#+END_EXAMPLE
+** #  --8<-------------------------- separator ------------------------>8--
+** mac福利社的软件下载: http://soft.macx.cn                        :noexport:
+** DONE [#A] mac sshd
+  CLOSED: [2013-08-22 Thu 17:23]
+http://www.2cto.com/os/201203/123274.html
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+
+launchctl unload /Library/LaunchAgents/com.apple.OpenProgram.plist
+** 截图 screenshot
+| Name                                  | Content                                         |
+|---------------------------------------+-------------------------------------------------|
+| 截屏, 截全屏, 截后生成图片放在硬盘中  | command+shift+ 3                                |
+| 截屏,截区域, 截后生成图片放在硬盘中 | command+shift+ 4                                |
+| 截屏,截全屏, 截后生成图片放在内存中  | control+command+shift+ 3                        |
+| 截屏,截区域, 截后生成图片放在内存中  | control+command+shift+ 4                        |
+| 默认后缀名从png改成JPG                | defaults write com.apple.screencapture type JPG |
+** # --8<-------------------------- separator ------------------------>8--
+** package managemnt: home brew
+| Name                 | Summary         |
+|----------------------+-----------------|
+| 按名字进行子串搜索包 | brew search ema |
+| 查看包的状态         | brew info git   |
+| 找出过期的包         | brew outdated   |
+| 查看下载的内容       | brew --cache    |
+
+- Install homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+*** brew help                                                      :noexport:
+#+begin_example
+bash-3.2$ brew --help
+Example usage:
+  brew [info | home | options ] [FORMULA...]
+  brew install FORMULA...
+  brew uninstall FORMULA...
+  brew search [foo]
+  brew list [FORMULA...]
+  brew update
+  brew upgrade [FORMULA...]
+
+Troubleshooting:
+  brew doctor
+  brew install -vd FORMULA
+  brew [--env | --config]
+
+Brewing:
+  brew create [URL [--no-fetch]]
+  brew edit [FORMULA...]
+  open https://github.com/mxcl/homebrew/wiki/Formula-Cookbook
+
+Further help:
+  man brew
+  brew home
+#+end_example
+** [#A] [question] 查看某个可执行文件(例如:/usr/bin/svn)是由哪个包来提供, 类似dpkg -S /usr/lib/libgtk-1.2.so.0.9.1
+** [#B] [emacs on mac] emacs for mac terminal中进行命令输入历史的联想
+** [#A] [emacs on mac] msmtp: support for authentication method NTLM is not compiled in :IMPORTANT:
+http://downloads.sourceforge.net/project/msmtp/msmtp/1.4.10/msmtp-1.4.10.tar.bz2
+
+http://downloads.sourceforge.net/project/msmtp/msmtp/1.6.1/msmtp-1.6.1.tar.bz2
+
+http://jaist.dl.sourceforge.net/project/msmtp/msmtp/1.4.10/msmtp-1.4.10.tar.bz2
+
+./configure --with-libgsasl
+
+gettext-dev
+*** DONE error: libintl.h: No such file or directory: 下载gettext的源码重新编译
+   CLOSED: [2013-03-19 Tue 00:07]
+http://www.gnu.org/software/gettext/
+*** TODO conftest.c:9:28: error: ac_nonexistent.h: No such file or directory
+*** TODO conftest.c:52:26: error: minix/config.h: No such file or directory
+*** misc                                                           :noexport:
+/Users/mac/msmtp/msmtp-1.4.30/src/msmtp
+
+先安装: brew install libgsasl openssl libidn gnutls , 再安装brew install msmtp
+
+brew install libgnome_keyring
+
+brew install libgnutls-dev
+
+http://lists.gnu.org/archive/html/help-gsasl/2011-06/msg00008.html
+http://mac.softpedia.com/get/Internet-Utilities/msmtp.shtml
+
+http://www.edugeek.net/forums/mac/35659-smoothwall-macs-ntlm-authentication.html
+
+http://ufoai.org/forum/index.php?topic=2950.15
+
+#+begin_example
+bash-3.2$ brew install msmtp
+==> Downloading http://downloads.sourceforge.net/project/msmtp/msmtp/1.4.30/msmtp-1.4.30.tar.bz2
+Already downloaded: /Library/Caches/Homebrew/msmtp-1.4.30.tar.bz2
+==> ./configure --prefix=/usr/local/Cellar/msmtp/1.4.30
+==> make install
+🍺  /usr/local/Cellar/msmtp/1.4.30: 8 files, 256K, built in 9 seconds
+#+end_example
+
+#+begin_example
+localhost:~ mac$ msmtp --version
+msmtp version 1.4.30
+Platform: x86_64-apple-darwin12.2.1
+
+TLS/SSL library: OpenSSL
+Authentication library: built-in
+Supported authentication methods:
+plain cram-md5 external login
+IDN support: disabled
+NLS: disabled
+Keyring support: MacOS
+System configuration file name: /usr/local/Cellar/msmtp/1.4.30/etc/msmtprc
+User configuration file name: /Users/mac/.msmtprc
+
+Copyright (C) 2012 Martin Lambers and others.
+This is free software.  You may redistribute copies of it under the terms of
+the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
+There is NO WARRANTY, to the extent permitted by law.
+#+end_example
+*** config.log                                                     :noexport:
+#+begin_example
+
+
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+It was created by msmtp configure 1.4.30, which was
+generated by GNU Autoconf 2.69.  Invocation command line was
+
+  $ ./configure --with-libgsasl
+
+## --------- ##
+## Platform. ##
+## --------- ##
+
+hostname = localhost
+uname -m = x86_64
+uname -r = 12.2.1
+uname -s = Darwin
+uname -v = Darwin Kernel Version 12.2.1: Thu Oct 18 12:13:47 PDT 2012; root:xnu-2050.20.9~1/RELEASE_X86_64
+
+/usr/bin/uname -p = i386
+/bin/uname -X     = unknown
+
+/bin/arch              = unknown
+/usr/bin/arch -k       = unknown
+/usr/convex/getsysinfo = unknown
+/usr/bin/hostinfo      = Mach kernel version:
+	 Darwin Kernel Version 12.2.1: Thu Oct 18 12:13:47 PDT 2012; root:xnu-2050.20.9~1/RELEASE_X86_64
+Kernel configured for up to 4 processors.
+2 processors are physically available.
+4 processors are logically available.
+Processor type: i486 (Intel 80486)
+Processors active: 0 1 2 3
+Primary memory available: 4.00 gigabytes
+Default processor set: 100 tasks, 473 threads, 4 processors
+Load average: 0.60, Mach factor: 3.39
+/bin/machine           = unknown
+/usr/bin/oslevel       = unknown
+/bin/universe          = unknown
+
+PATH: /usr/bin
+PATH: /bin
+PATH: /usr/sbin
+PATH: /sbin
+PATH: /usr/local/bin/
+
+
+## ----------- ##
+## Core tests. ##
+## ----------- ##
+
+configure:2299: checking build system type
+configure:2313: result: x86_64-apple-darwin12.2.1
+configure:2333: checking host system type
+configure:2346: result: x86_64-apple-darwin12.2.1
+configure:2366: checking target system type
+configure:2379: result: x86_64-apple-darwin12.2.1
+configure:2453: checking for gcc
+configure:2469: found /usr/bin/gcc
+configure:2480: result: gcc
+configure:2709: checking for C compiler version
+configure:2718: gcc --version >&5
+i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)
+Copyright (C) 2007 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+configure:2729: $? = 0
+configure:2718: gcc -v >&5
+Using built-in specs.
+Target: i686-apple-darwin11
+Configured with: /private/var/tmp/llvmgcc42/llvmgcc42-2336.11~148/src/configure --disable-checking --enable-werror --prefix=/Applications/Xcode.app/Contents/Developer/usr/llvm-gcc-4.2 --mandir=/share/man --enable-languages=c,objc,c++,obj-c++ --program-prefix=llvm- --program-transform-name=/^[cg][^.-]*$/s/$/-4.2/ --with-slibdir=/usr/lib --build=i686-apple-darwin11 --enable-llvm=/private/var/tmp/llvmgcc42/llvmgcc42-2336.11~148/dst-llvmCore/Developer/usr/local --program-prefix=i686-apple-darwin11- --host=x86_64-apple-darwin11 --target=i686-apple-darwin11 --with-gxx-include-dir=/usr/include/c++/4.2.1
+Thread model: posix
+gcc version 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)
+configure:2729: $? = 0
+configure:2718: gcc -V >&5
+llvm-gcc-4.2: argument to `-V' is missing
+configure:2729: $? = 1
+configure:2718: gcc -qversion >&5
+i686-apple-darwin11-llvm-gcc-4.2: no input files
+configure:2729: $? = 1
+configure:2749: checking whether the C compiler works
+configure:2771: gcc    conftest.c  >&5
+configure:2775: $? = 0
+configure:2823: result: yes
+configure:2826: checking for C compiler default output file name
+configure:2828: result: a.out
+configure:2834: checking for suffix of executables
+configure:2841: gcc -o conftest    conftest.c  >&5
+configure:2845: $? = 0
+configure:2867: result:
+configure:2889: checking whether we are cross compiling
+configure:2897: gcc -o conftest    conftest.c  >&5
+configure:2901: $? = 0
+configure:2908: ./conftest
+configure:2912: $? = 0
+configure:2927: result: no
+configure:2932: checking for suffix of object files
+configure:2954: gcc -c   conftest.c >&5
+configure:2958: $? = 0
+configure:2979: result: o
+configure:2983: checking whether we are using the GNU C compiler
+configure:3002: gcc -c   conftest.c >&5
+configure:3002: $? = 0
+configure:3011: result: yes
+configure:3020: checking whether gcc accepts -g
+configure:3040: gcc -c -g  conftest.c >&5
+configure:3040: $? = 0
+configure:3081: result: yes
+configure:3098: checking for gcc option to accept ISO C89
+configure:3161: gcc  -c -g -O2  conftest.c >&5
+configure:3161: $? = 0
+configure:3174: result: none needed
+configure:3200: checking how to run the C preprocessor
+configure:3231: gcc -E  conftest.c
+configure:3231: $? = 0
+configure:3245: gcc -E  conftest.c
+conftest.c:9:28: error: ac_nonexistent.h: No such file or directory
+configure:3245: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "msmtp"
+| #define PACKAGE_TARNAME "msmtp"
+| #define PACKAGE_VERSION "1.4.30"
+| #define PACKAGE_STRING "msmtp 1.4.30"
+| #define PACKAGE_BUGREPORT "marlam@marlam.de"
+| #define PACKAGE_URL "http://msmtp.sourceforge.net/"
+| /* end confdefs.h.  */
+| #include <ac_nonexistent.h>
+configure:3270: result: gcc -E
+configure:3290: gcc -E  conftest.c
+configure:3290: $? = 0
+configure:3304: gcc -E  conftest.c
+conftest.c:9:28: error: ac_nonexistent.h: No such file or directory
+configure:3304: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "msmtp"
+| #define PACKAGE_TARNAME "msmtp"
+| #define PACKAGE_VERSION "1.4.30"
+| #define PACKAGE_STRING "msmtp 1.4.30"
+| #define PACKAGE_BUGREPORT "marlam@marlam.de"
+| #define PACKAGE_URL "http://msmtp.sourceforge.net/"
+| /* end confdefs.h.  */
+| #include <ac_nonexistent.h>
+configure:3333: checking for grep that handles long lines and -e
+configure:3391: result: /usr/bin/grep
+configure:3396: checking for egrep
+configure:3458: result: /usr/bin/grep -E
+configure:3463: checking for ANSI C header files
+configure:3483: gcc -c -g -O2  conftest.c >&5
+configure:3483: $? = 0
+configure:3556: gcc -o conftest -g -O2   conftest.c  >&5
+configure:3556: $? = 0
+configure:3556: ./conftest
+configure:3556: $? = 0
+configure:3567: result: yes
+configure:3580: checking for sys/types.h
+configure:3580: gcc -c -g -O2  conftest.c >&5
+configure:3580: $? = 0
+configure:3580: result: yes
+configure:3580: checking for sys/stat.h
+configure:3580: gcc -c -g -O2  conftest.c >&5
+configure:3580: $? = 0
+configure:3580: result: yes
+configure:3580: checking for stdlib.h
+configure:3580: gcc -c -g -O2  conftest.c >&5
+configure:3580: $? = 0
+configure:3580: result: yes
+configure:3580: checking for string.h
+configure:3580: gcc -c -g -O2  conftest.c >&5
+configure:3580: $? = 0
+configure:3580: result: yes
+configure:3580: checking for memory.h
+configure:3580: gcc -c -g -O2  conftest.c >&5
+configure:3580: $? = 0
+configure:3580: result: yes
+configure:3580: checking for strings.h
+configure:3580: gcc -c -g -O2  conftest.c >&5
+configure:3580: $? = 0
+configure:3580: result: yes
+configure:3580: checking for inttypes.h
+configure:3580: gcc -c -g -O2  conftest.c >&5
+configure:3580: $? = 0
+configure:3580: result: yes
+configure:3580: checking for stdint.h
+configure:3580: gcc -c -g -O2  conftest.c >&5
+configure:3580: $? = 0
+configure:3580: result: yes
+configure:3580: checking for unistd.h
+configure:3580: gcc -c -g -O2  conftest.c >&5
+configure:3580: $? = 0
+configure:3580: result: yes
+configure:3593: checking minix/config.h usability
+configure:3593: gcc -c -g -O2  conftest.c >&5
+conftest.c:52:26: error: minix/config.h: No such file or directory
+configure:3593: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "msmtp"
+| #define PACKAGE_TARNAME "msmtp"
+| #define PACKAGE_VERSION "1.4.30"
+| #define PACKAGE_STRING "msmtp 1.4.30"
+| #define PACKAGE_BUGREPORT "marlam@marlam.de"
+| #define PACKAGE_URL "http://msmtp.sourceforge.net/"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| /* end confdefs.h.  */
+| #include <stdio.h>
+| #ifdef HAVE_SYS_TYPES_H
+| # include <sys/types.h>
+| #endif
+| #ifdef HAVE_SYS_STAT_H
+| # include <sys/stat.h>
+| #endif
+| #ifdef STDC_HEADERS
+| # include <stdlib.h>
+| # include <stddef.h>
+| #else
+| # ifdef HAVE_STDLIB_H
+| #  include <stdlib.h>
+| # endif
+| #endif
+| #ifdef HAVE_STRING_H
+| # if !defined STDC_HEADERS && defined HAVE_MEMORY_H
+| #  include <memory.h>
+| # endif
+| # include <string.h>
+| #endif
+| #ifdef HAVE_STRINGS_H
+| # include <strings.h>
+| #endif
+| #ifdef HAVE_INTTYPES_H
+| # include <inttypes.h>
+| #endif
+| #ifdef HAVE_STDINT_H
+| # include <stdint.h>
+| #endif
+| #ifdef HAVE_UNISTD_H
+| # include <unistd.h>
+| #endif
+| #include <minix/config.h>
+configure:3593: result: no
+configure:3593: checking minix/config.h presence
+configure:3593: gcc -E  conftest.c
+conftest.c:19:26: error: minix/config.h: No such file or directory
+configure:3593: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "msmtp"
+| #define PACKAGE_TARNAME "msmtp"
+| #define PACKAGE_VERSION "1.4.30"
+| #define PACKAGE_STRING "msmtp 1.4.30"
+| #define PACKAGE_BUGREPORT "marlam@marlam.de"
+| #define PACKAGE_URL "http://msmtp.sourceforge.net/"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| /* end confdefs.h.  */
+| #include <minix/config.h>
+configure:3593: result: no
+configure:3593: checking for minix/config.h
+configure:3593: result: no
+configure:3614: checking whether it is safe to define __EXTENSIONS__
+configure:3632: gcc -c -g -O2  conftest.c >&5
+configure:3632: $? = 0
+configure:3639: result: yes
+configure:3660: checking for special C compiler options needed for large files
+configure:3705: result: no
+configure:3711: checking for _FILE_OFFSET_BITS value needed for large files
+configure:3736: gcc -c -g -O2  conftest.c >&5
+configure:3736: $? = 0
+configure:3768: result: no
+configure:3869: checking for a BSD-compatible install
+configure:3937: result: /usr/bin/install -c
+configure:3948: checking whether build environment is sane
+configure:3998: result: yes
+configure:4139: checking for a thread-safe mkdir -p
+configure:4178: result: build-aux/install-sh -c -d
+configure:4191: checking for gawk
+configure:4221: result: no
+configure:4191: checking for mawk
+configure:4221: result: no
+configure:4191: checking for nawk
+configure:4221: result: no
+configure:4191: checking for awk
+configure:4207: found /usr/bin/awk
+configure:4218: result: awk
+configure:4229: checking whether make sets $(MAKE)
+configure:4251: result: yes
+configure:4281: checking for style of include used by make
+configure:4309: result: GNU
+configure:4343: checking whether make supports nested variables
+configure:4360: result: yes
+configure:4434: checking dependency style of gcc
+configure:4545: result: gcc3
+configure:4572: checking whether make supports nested variables
+configure:4589: result: yes
+configure:4648: checking for gcc
+configure:4675: result: gcc
+configure:4904: checking for C compiler version
+configure:4913: gcc --version >&5
+i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)
+Copyright (C) 2007 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+configure:4924: $? = 0
+configure:4913: gcc -v >&5
+Using built-in specs.
+Target: i686-apple-darwin11
+Configured with: /private/var/tmp/llvmgcc42/llvmgcc42-2336.11~148/src/configure --disable-checking --enable-werror --prefix=/Applications/Xcode.app/Contents/Developer/usr/llvm-gcc-4.2 --mandir=/share/man --enable-languages=c,objc,c++,obj-c++ --program-prefix=llvm- --program-transform-name=/^[cg][^.-]*$/s/$/-4.2/ --with-slibdir=/usr/lib --build=i686-apple-darwin11 --enable-llvm=/private/var/tmp/llvmgcc42/llvmgcc42-2336.11~148/dst-llvmCore/Developer/usr/local --program-prefix=i686-apple-darwin11- --host=x86_64-apple-darwin11 --target=i686-apple-darwin11 --with-gxx-include-dir=/usr/include/c++/4.2.1
+Thread model: posix
+gcc version 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)
+configure:4924: $? = 0
+configure:4913: gcc -V >&5
+llvm-gcc-4.2: argument to `-V' is missing
+configure:4924: $? = 1
+configure:4913: gcc -qversion >&5
+i686-apple-darwin11-llvm-gcc-4.2: no input files
+configure:4924: $? = 1
+configure:4928: checking whether we are using the GNU C compiler
+configure:4956: result: yes
+configure:4965: checking whether gcc accepts -g
+configure:5026: result: yes
+configure:5043: checking for gcc option to accept ISO C89
+configure:5119: result: none needed
+configure:5155: checking whether NLS is requested
+configure:5164: result: yes
+configure:5205: checking for msgfmt
+configure: trying /usr/local/bin//msgfmt...
+0 translated messages.
+configure:5237: result: /usr/local/bin//msgfmt
+configure:5246: checking for gmsgfmt
+configure:5277: result: /usr/local/bin//msgfmt
+configure:5328: checking for xgettext
+configure: trying /usr/local/bin//xgettext...
+/usr/local/bin//xgettext: warning: file '/dev/null' extension '' is unknown; will try C
+configure:5360: result: /usr/local/bin//xgettext
+configure:5406: checking for msgmerge
+configure: trying /usr/local/bin//msgmerge...
+configure:5437: result: /usr/local/bin//msgmerge
+configure:5494: checking for ld used by GCC
+configure:5558: result: /usr/llvm-gcc-4.2/libexec/gcc/i686-apple-darwin11/4.2.1/ld
+configure:5565: checking if the linker (/usr/llvm-gcc-4.2/libexec/gcc/i686-apple-darwin11/4.2.1/ld) is GNU ld
+configure:5578: result: no
+configure:5585: checking for shared library run path origin
+configure:5598: result: done
+configure:6170: checking for CFPreferencesCopyAppValue
+configure:6188: gcc -o conftest -g -O2   conftest.c  -Wl,-framework -Wl,CoreFoundation >&5
+configure:6188: $? = 0
+configure:6197: result: yes
+configure:6204: checking for CFLocaleCopyCurrent
+configure:6222: gcc -o conftest -g -O2   conftest.c  -Wl,-framework -Wl,CoreFoundation >&5
+configure:6222: $? = 0
+configure:6231: result: yes
+configure:6280: checking for GNU gettext in libc
+configure:6300: gcc -o conftest -g -O2   conftest.c  >&5
+Undefined symbols for architecture x86_64:
+  "__nl_domain_bindings", referenced from:
+      _main in cc6vaxdn.o
+  "__nl_msg_cat_cntr", referenced from:
+      _main in cc6vaxdn.o
+  "_libintl_bindtextdomain", referenced from:
+      _main in cc6vaxdn.o
+  "_libintl_gettext", referenced from:
+      _main in cc6vaxdn.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+configure:6300: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "msmtp"
+| #define PACKAGE_TARNAME "msmtp"
+| #define PACKAGE_VERSION "1.4.30"
+| #define PACKAGE_STRING "msmtp 1.4.30"
+| #define PACKAGE_BUGREPORT "marlam@marlam.de"
+| #define PACKAGE_URL "http://msmtp.sourceforge.net/"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define __EXTENSIONS__ 1
+| #define _ALL_SOURCE 1
+| #define _GNU_SOURCE 1
+| #define _POSIX_PTHREAD_SEMANTICS 1
+| #define _TANDEM_SOURCE 1
+| #define PACKAGE "msmtp"
+| #define VERSION "1.4.30"
+| #define PLATFORM "x86_64-apple-darwin12.2.1"
+| #define HAVE_CFPREFERENCESCOPYAPPVALUE 1
+| #define HAVE_CFLOCALECOPYCURRENT 1
+| /* end confdefs.h.  */
+| #include <libintl.h>
+|
+| extern int _nl_msg_cat_cntr;
+| extern int *_nl_domain_bindings;
+| int
+| main ()
+| {
+| bindtextdomain ("", "");
+| return * gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
+|   ;
+|   return 0;
+| }
+configure:6309: result: no
+configure:6343: checking for iconv
+configure:6365: gcc -o conftest -g -O2   conftest.c  >&5
+Undefined symbols for architecture x86_64:
+  "_iconv", referenced from:
+      _main in cc9luaZ1.o
+  "_iconv_close", referenced from:
+      _main in cc9luaZ1.o
+  "_iconv_open", referenced from:
+      _main in cc9luaZ1.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+configure:6365: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "msmtp"
+| #define PACKAGE_TARNAME "msmtp"
+| #define PACKAGE_VERSION "1.4.30"
+| #define PACKAGE_STRING "msmtp 1.4.30"
+| #define PACKAGE_BUGREPORT "marlam@marlam.de"
+| #define PACKAGE_URL "http://msmtp.sourceforge.net/"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define __EXTENSIONS__ 1
+| #define _ALL_SOURCE 1
+| #define _GNU_SOURCE 1
+| #define _POSIX_PTHREAD_SEMANTICS 1
+| #define _TANDEM_SOURCE 1
+| #define PACKAGE "msmtp"
+| #define VERSION "1.4.30"
+| #define PLATFORM "x86_64-apple-darwin12.2.1"
+| #define HAVE_CFPREFERENCESCOPYAPPVALUE 1
+| #define HAVE_CFLOCALECOPYCURRENT 1
+| /* end confdefs.h.  */
+| #include <stdlib.h>
+| #include <iconv.h>
+| int
+| main ()
+| {
+| iconv_t cd = iconv_open("","");
+|        iconv(cd,NULL,NULL,NULL,NULL);
+|        iconv_close(cd);
+|   ;
+|   return 0;
+| }
+configure:6387: gcc -o conftest -g -O2   conftest.c  -liconv >&5
+configure:6387: $? = 0
+configure:6397: result: yes
+configure:6400: checking for working iconv
+configure:6495: gcc -o conftest -g -O2   conftest.c  -liconv >&5
+configure:6495: $? = 0
+configure:6495: ./conftest
+configure:6495: $? = 0
+configure:6507: result: yes
+configure:6522: checking how to link with libiconv
+configure:6524: result: -liconv
+configure:6996: checking for GNU gettext in libintl
+configure:7024: gcc -o conftest -g -O2  -I/usr/local/include  conftest.c  -L/usr/local/lib -lintl -liconv -lc >&5
+configure:7024: $? = 0
+configure:7065: result: yes
+configure:7100: checking whether to use NLS
+configure:7102: result: yes
+configure:7105: checking where the gettext function comes from
+configure:7116: result: external libintl
+configure:7124: checking how to link with libintl
+configure:7126: result: -L/usr/local/lib -lintl -liconv -lc -Wl,-framework -Wl,CoreFoundation
+configure:7177: checking sysexits.h usability
+configure:7177: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:7177: $? = 0
+configure:7177: result: yes
+configure:7177: checking sysexits.h presence
+configure:7177: gcc -E -I/usr/local/include conftest.c
+configure:7177: $? = 0
+configure:7177: result: yes
+configure:7177: checking for sysexits.h
+configure:7177: result: yes
+configure:7177: checking netdb.h usability
+configure:7177: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:7177: $? = 0
+configure:7177: result: yes
+configure:7177: checking netdb.h presence
+configure:7177: gcc -E -I/usr/local/include conftest.c
+configure:7177: $? = 0
+configure:7177: result: yes
+configure:7177: checking for netdb.h
+configure:7177: result: yes
+configure:7177: checking arpa/inet.h usability
+configure:7177: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:7177: $? = 0
+configure:7177: result: yes
+configure:7177: checking arpa/inet.h presence
+configure:7177: gcc -E -I/usr/local/include conftest.c
+configure:7177: $? = 0
+configure:7177: result: yes
+configure:7177: checking for arpa/inet.h
+configure:7177: result: yes
+configure:7177: checking sys/socket.h usability
+configure:7177: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:7177: $? = 0
+configure:7177: result: yes
+configure:7177: checking sys/socket.h presence
+configure:7177: gcc -E -I/usr/local/include conftest.c
+configure:7177: $? = 0
+configure:7177: result: yes
+configure:7177: checking for sys/socket.h
+configure:7177: result: yes
+configure:7177: checking sys/wait.h usability
+configure:7177: gcc -c -g -O2 -I/usr/local/include conftest.c >&5
+configure:7177: $? = 0
+configure:7177: result: yes
+configure:7177: checking sys/wait.h presence
+configure:7177: gcc -E -I/usr/local/include conftest.c
+configure:7177: $? = 0
+configure:7177: result: yes
+configure:7177: checking for sys/wait.h
+configure:7177: result: yes
+configure:7190: checking for fseeko
+configure:7190: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:7190: $? = 0
+configure:7190: result: yes
+configure:7190: checking for fseeko64
+configure:7190: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+Undefined symbols for architecture x86_64:
+  "_fseeko64", referenced from:
+      _main in ccEFMZ6v.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+configure:7190: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "msmtp"
+| #define PACKAGE_TARNAME "msmtp"
+| #define PACKAGE_VERSION "1.4.30"
+| #define PACKAGE_STRING "msmtp 1.4.30"
+| #define PACKAGE_BUGREPORT "marlam@marlam.de"
+| #define PACKAGE_URL "http://msmtp.sourceforge.net/"
+| #define STDC_HEADERS 1
+| #define HAVE_SYS_TYPES_H 1
+| #define HAVE_SYS_STAT_H 1
+| #define HAVE_STDLIB_H 1
+| #define HAVE_STRING_H 1
+| #define HAVE_MEMORY_H 1
+| #define HAVE_STRINGS_H 1
+| #define HAVE_INTTYPES_H 1
+| #define HAVE_STDINT_H 1
+| #define HAVE_UNISTD_H 1
+| #define __EXTENSIONS__ 1
+| #define _ALL_SOURCE 1
+| #define _GNU_SOURCE 1
+| #define _POSIX_PTHREAD_SEMANTICS 1
+| #define _TANDEM_SOURCE 1
+| #define PACKAGE "msmtp"
+| #define VERSION "1.4.30"
+| #define PLATFORM "x86_64-apple-darwin12.2.1"
+| #define HAVE_CFPREFERENCESCOPYAPPVALUE 1
+| #define HAVE_CFLOCALECOPYCURRENT 1
+| #define HAVE_ICONV 1
+| #define ENABLE_NLS 1
+| #define HAVE_GETTEXT 1
+| #define HAVE_DCGETTEXT 1
+| #define HAVE_SYSEXITS_H 1
+| #define HAVE_NETDB_H 1
+| #define HAVE_ARPA_INET_H 1
+| #define HAVE_SYS_SOCKET_H 1
+| #define HAVE_SYS_WAIT_H 1
+| #define HAVE_FSEEKO 1
+| /* end confdefs.h.  */
+| /* Define fseeko64 to an innocuous variant, in case <limits.h> declares fseeko64.
+|    For example, HP-UX 11i <limits.h> declares gettimeofday.  */
+| #define fseeko64 innocuous_fseeko64
+|
+| /* System header to define __stub macros and hopefully few prototypes,
+|     which can conflict with char fseeko64 (); below.
+|     Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
+|     <limits.h> exists even on freestanding compilers.  */
+|
+| #ifdef __STDC__
+| # include <limits.h>
+| #else
+| # include <assert.h>
+| #endif
+|
+| #undef fseeko64
+|
+| /* Override any GCC internal prototype to avoid an error.
+|    Use char because int might match the return type of a GCC
+|    builtin and then its argument prototype would still apply.  */
+| #ifdef __cplusplus
+| extern "C"
+| #endif
+| char fseeko64 ();
+| /* The GNU C library defines this for functions which it implements
+|     to always fail with ENOSYS.  Some functions are actually named
+|     something starting with __ and the normal name is an alias.  */
+| #if defined __stub_fseeko64 || defined __stub___fseeko64
+| choke me
+| #endif
+|
+| int
+| main ()
+| {
+| return fseeko64 ();
+|   ;
+|   return 0;
+| }
+configure:7190: result: no
+configure:7190: checking for getpass
+configure:7190: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:7190: $? = 0
+configure:7190: result: yes
+configure:7190: checking for getservbyname
+configure:7190: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:7190: $? = 0
+configure:7190: result: yes
+configure:7190: checking for link
+configure:7190: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:7190: $? = 0
+configure:7190: result: yes
+configure:7190: checking for mkstemp
+configure:7190: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:7190: $? = 0
+configure:7190: result: yes
+configure:7190: checking for sigaction
+configure:7190: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:7190: $? = 0
+configure:7190: result: yes
+configure:7190: checking for strndup
+configure:7190: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+conftest.c:67: warning: conflicting types for built-in function 'strndup'
+configure:7190: $? = 0
+configure:7190: result: yes
+configure:7190: checking for syslog
+configure:7190: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:7190: $? = 0
+configure:7190: result: yes
+configure:7190: checking for vasprintf
+configure:7190: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:7190: $? = 0
+configure:7190: result: yes
+configure:7199: checking for library containing nanosleep
+configure:7230: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:7230: $? = 0
+configure:7247: result: none required
+configure:7255: checking for library containing socket
+configure:7286: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
+configure:7286: $? = 0
+configure:7303: result: none required
+configure:7366: checking for pkg-config
+configure:7384: found /usr/local/bin//pkg-config
+configure:7396: result: /usr/local/bin//pkg-config
+configure:7421: checking pkg-config is at least version 0.9.0
+configure:7424: result: yes
+configure:7466: checking for libgnutls
+configure:7473: $PKG_CONFIG --exists --print-errors "gnutls >= 0.0"
+configure:7476: $? = 0
+configure:7490: $PKG_CONFIG --exists --print-errors "gnutls >= 0.0"
+configure:7493: $? = 0
+configure:7531: result: yes
+configure:7671: checking for libgsasl
+configure:7678: $PKG_CONFIG --exists --print-errors "libgsasl >= 0.0"
+configure:7681: $? = 0
+configure:7695: $PKG_CONFIG --exists --print-errors "libgsasl >= 0.0"
+configure:7698: $? = 0
+configure:7736: result: yes
+configure:7775: checking for libidn
+configure:7782: $PKG_CONFIG --exists --print-errors "libidn >= 0.0"
+configure:7785: $? = 0
+configure:7799: $PKG_CONFIG --exists --print-errors "libidn >= 0.0"
+configure:7802: $? = 0
+configure:7840: result: yes
+configure:7871: checking for libgnome_keyring
+configure:7878: $PKG_CONFIG --exists --print-errors "gnome-keyring-1"
+Package gnome-keyring-1 was not found in the pkg-config search path.
+Perhaps you should add the directory containing `gnome-keyring-1.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'gnome-keyring-1' found
+configure:7881: $? = 1
+configure:7895: $PKG_CONFIG --exists --print-errors "gnome-keyring-1"
+Package gnome-keyring-1 was not found in the pkg-config search path.
+Perhaps you should add the directory containing `gnome-keyring-1.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'gnome-keyring-1' found
+configure:7898: $? = 1
+configure:7912: result: no
+No package 'gnome-keyring-1' found
+configure:7941: WARNING: library libgnome-keyring not found:
+configure:7943: WARNING: No package 'gnome-keyring-1' found
+configure:7945: WARNING: libgnome-keyring is provided by Gnome; Debian package: libgnome-keyring-dev
+configure:7965: checking for SecKeychainGetVersion
+configure:7983: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  -Wl,-framework -Wl,Security >&5
+configure:7983: $? = 0
+configure:7992: result: yes
+configure:8147: creating ./config.status
+
+## ---------------------- ##
+## Running config.status. ##
+## ---------------------- ##
+
+This file was extended by msmtp config.status 1.4.30, which was
+generated by GNU Autoconf 2.69.  Invocation command line was
+
+  CONFIG_FILES    =
+  CONFIG_HEADERS  =
+  CONFIG_LINKS    =
+  CONFIG_COMMANDS =
+  $ ./config.status
+
+on localhost
+
+config.status:944: creating Makefile
+config.status:944: creating src/Makefile
+config.status:944: creating po/Makefile.in
+config.status:944: creating doc/Makefile
+config.status:944: creating scripts/Makefile
+config.status:944: creating config.h
+config.status:1125: config.h is unchanged
+config.status:1173: executing depfiles commands
+config.status:1173: executing po-directories commands
+
+## ---------------- ##
+## Cache variables. ##
+## ---------------- ##
+
+ac_cv_build=x86_64-apple-darwin12.2.1
+ac_cv_c_compiler_gnu=yes
+ac_cv_env_CC_set=
+ac_cv_env_CC_value=
+ac_cv_env_CFLAGS_set=
+ac_cv_env_CFLAGS_value=
+ac_cv_env_CPPFLAGS_set=
+ac_cv_env_CPPFLAGS_value=
+ac_cv_env_CPP_set=
+ac_cv_env_CPP_value=
+ac_cv_env_LDFLAGS_set=
+ac_cv_env_LDFLAGS_value=
+ac_cv_env_LIBS_set=
+ac_cv_env_LIBS_value=
+ac_cv_env_PKG_CONFIG_LIBDIR_set=
+ac_cv_env_PKG_CONFIG_LIBDIR_value=
+ac_cv_env_PKG_CONFIG_PATH_set=
+ac_cv_env_PKG_CONFIG_PATH_value=
+ac_cv_env_PKG_CONFIG_set=
+ac_cv_env_PKG_CONFIG_value=
+ac_cv_env_build_alias_set=
+ac_cv_env_build_alias_value=
+ac_cv_env_host_alias_set=
+ac_cv_env_host_alias_value=
+ac_cv_env_libgnome_keyring_CFLAGS_set=
+ac_cv_env_libgnome_keyring_CFLAGS_value=
+ac_cv_env_libgnome_keyring_LIBS_set=
+ac_cv_env_libgnome_keyring_LIBS_value=
+ac_cv_env_libgnutls_CFLAGS_set=
+ac_cv_env_libgnutls_CFLAGS_value=
+ac_cv_env_libgnutls_LIBS_set=
+ac_cv_env_libgnutls_LIBS_value=
+ac_cv_env_libgsasl_CFLAGS_set=
+ac_cv_env_libgsasl_CFLAGS_value=
+ac_cv_env_libgsasl_LIBS_set=
+ac_cv_env_libgsasl_LIBS_value=
+ac_cv_env_libidn_CFLAGS_set=
+ac_cv_env_libidn_CFLAGS_value=
+ac_cv_env_libidn_LIBS_set=
+ac_cv_env_libidn_LIBS_value=
+ac_cv_env_libssl_CFLAGS_set=
+ac_cv_env_libssl_CFLAGS_value=
+ac_cv_env_libssl_LIBS_set=
+ac_cv_env_libssl_LIBS_value=
+ac_cv_env_target_alias_set=
+ac_cv_env_target_alias_value=
+ac_cv_func_SecKeychainGetVersion=yes
+ac_cv_func_fseeko64=no
+ac_cv_func_fseeko=yes
+ac_cv_func_getpass=yes
+ac_cv_func_getservbyname=yes
+ac_cv_func_link=yes
+ac_cv_func_mkstemp=yes
+ac_cv_func_sigaction=yes
+ac_cv_func_strndup=yes
+ac_cv_func_syslog=yes
+ac_cv_func_vasprintf=yes
+ac_cv_header_arpa_inet_h=yes
+ac_cv_header_inttypes_h=yes
+ac_cv_header_memory_h=yes
+ac_cv_header_minix_config_h=no
+ac_cv_header_netdb_h=yes
+ac_cv_header_stdc=yes
+ac_cv_header_stdint_h=yes
+ac_cv_header_stdlib_h=yes
+ac_cv_header_string_h=yes
+ac_cv_header_strings_h=yes
+ac_cv_header_sys_socket_h=yes
+ac_cv_header_sys_stat_h=yes
+ac_cv_header_sys_types_h=yes
+ac_cv_header_sys_wait_h=yes
+ac_cv_header_sysexits_h=yes
+ac_cv_header_unistd_h=yes
+ac_cv_host=x86_64-apple-darwin12.2.1
+ac_cv_objext=o
+ac_cv_path_EGREP='/usr/bin/grep -E'
+ac_cv_path_GMSGFMT=/usr/local/bin//msgfmt
+ac_cv_path_GREP=/usr/bin/grep
+ac_cv_path_MSGFMT=/usr/local/bin//msgfmt
+ac_cv_path_MSGMERGE=/usr/local/bin//msgmerge
+ac_cv_path_XGETTEXT=/usr/local/bin//xgettext
+ac_cv_path_ac_pt_PKG_CONFIG=/usr/local/bin//pkg-config
+ac_cv_path_install='/usr/bin/install -c'
+ac_cv_prog_AWK=awk
+ac_cv_prog_CPP='gcc -E'
+ac_cv_prog_ac_ct_CC=gcc
+ac_cv_prog_cc_c89=
+ac_cv_prog_cc_g=yes
+ac_cv_prog_make_make_set=yes
+ac_cv_safe_to_define___extensions__=yes
+ac_cv_search_nanosleep='none required'
+ac_cv_search_socket='none required'
+ac_cv_sys_file_offset_bits=no
+ac_cv_sys_largefile_CC=no
+ac_cv_target=x86_64-apple-darwin12.2.1
+acl_cv_hardcode_direct=no
+acl_cv_hardcode_libdir_flag_spec=
+acl_cv_hardcode_libdir_separator=
+acl_cv_hardcode_minus_L=no
+acl_cv_libext=a
+acl_cv_libname_spec='lib$name'
+acl_cv_library_names_spec='$libname$shrext'
+acl_cv_path_LD=/usr/llvm-gcc-4.2/libexec/gcc/i686-apple-darwin11/4.2.1/ld
+acl_cv_prog_gnu_ld=no
+acl_cv_rpath=done
+acl_cv_shlibext=dylib
+acl_cv_wl=-Wl,
+am_cv_CC_dependencies_compiler_type=gcc3
+am_cv_func_iconv=yes
+am_cv_func_iconv_works=yes
+am_cv_lib_iconv=yes
+am_cv_make_support_nested_variables=yes
+gt_cv_func_CFLocaleCopyCurrent=yes
+gt_cv_func_CFPreferencesCopyAppValue=yes
+gt_cv_func_gnugettext1_libc=no
+gt_cv_func_gnugettext1_libintl=yes
+pkg_cv_libgnutls_CFLAGS='-I/usr/local/Cellar/gnutls/3.1.9/include -I/usr/local/Cellar/libtasn1/3.2/include -I/usr/local/Cellar/p11-kit/0.14/include/p11-kit-1 '
+pkg_cv_libgnutls_LIBS='-L/usr/local/Cellar/gnutls/3.1.9/lib -lgnutls '
+pkg_cv_libgsasl_CFLAGS='-I/usr/local/include '
+pkg_cv_libgsasl_LIBS='-L/usr/local/lib -lgsasl '
+pkg_cv_libidn_CFLAGS='-I/usr/local/Cellar/libidn/1.26/include '
+pkg_cv_libidn_LIBS='-L/usr/local/Cellar/libidn/1.26/lib -lidn '
+
+## ----------------- ##
+## Output variables. ##
+## ----------------- ##
+
+ACLOCAL='${SHELL} /Users/mac/msmtp/msmtp-1.4.30/build-aux/missing --run aclocal-1.11'
+AMDEPBACKSLASH='\'
+AMDEP_FALSE='#'
+AMDEP_TRUE=''
+AMTAR='$${TAR-tar}'
+AM_BACKSLASH='\'
+AM_DEFAULT_V='$(AM_DEFAULT_VERBOSITY)'
+AM_DEFAULT_VERBOSITY='0'
+AM_V='$(V)'
+AUTOCONF='${SHELL} /Users/mac/msmtp/msmtp-1.4.30/build-aux/missing --run autoconf'
+AUTOHEADER='${SHELL} /Users/mac/msmtp/msmtp-1.4.30/build-aux/missing --run autoheader'
+AUTOMAKE='${SHELL} /Users/mac/msmtp/msmtp-1.4.30/build-aux/missing --run automake-1.11'
+AWK='awk'
+CC='gcc'
+CCDEPMODE='depmode=gcc3'
+CFLAGS='-g -O2'
+CPP='gcc -E'
+CPPFLAGS='-I/usr/local/include'
+CYGPATH_W='echo'
+DEFS='-DHAVE_CONFIG_H'
+DEPDIR='.deps'
+ECHO_C='\c'
+ECHO_N=''
+ECHO_T=''
+EGREP='/usr/bin/grep -E'
+EXEEXT=''
+GETTEXT_MACRO_VERSION='0.18'
+GMSGFMT='/usr/local/bin//msgfmt'
+GMSGFMT_015='/usr/local/bin//msgfmt'
+GREP='/usr/bin/grep'
+HAVE_LIBGSASL_FALSE='#'
+HAVE_LIBGSASL_TRUE=''
+HAVE_TLS_FALSE='#'
+HAVE_TLS_TRUE=''
+INSTALL_DATA='${INSTALL} -m 644'
+INSTALL_PROGRAM='${INSTALL}'
+INSTALL_SCRIPT='${INSTALL}'
+INSTALL_STRIP_PROGRAM='$(install_sh) -c -s'
+INTLLIBS='-L/usr/local/lib -lintl -liconv -lc -Wl,-framework -Wl,CoreFoundation'
+INTL_MACOSX_LIBS='-Wl,-framework -Wl,CoreFoundation'
+LDFLAGS=''
+LIBICONV='-liconv'
+LIBINTL='-L/usr/local/lib -lintl -liconv -lc -Wl,-framework -Wl,CoreFoundation'
+LIBOBJS=''
+LIBS=' -Wl,-framework -Wl,Security'
+LTLIBICONV='-liconv'
+LTLIBINTL='-L/usr/local/lib -lintl -liconv -lc -R/usr/local/lib -Wl,-framework -Wl,CoreFoundation'
+LTLIBOBJS=''
+MAKEINFO='${SHELL} /Users/mac/msmtp/msmtp-1.4.30/build-aux/missing --run makeinfo'
+MKDIR_P='build-aux/install-sh -c -d'
+MSGFMT='/usr/local/bin//msgfmt'
+MSGFMT_015='/usr/local/bin//msgfmt'
+MSGMERGE='/usr/local/bin//msgmerge'
+OBJEXT='o'
+PACKAGE='msmtp'
+PACKAGE_BUGREPORT='marlam@marlam.de'
+PACKAGE_NAME='msmtp'
+PACKAGE_STRING='msmtp 1.4.30'
+PACKAGE_TARNAME='msmtp'
+PACKAGE_URL='http://msmtp.sourceforge.net/'
+PACKAGE_VERSION='1.4.30'
+PATH_SEPARATOR=':'
+PKG_CONFIG='/usr/local/bin//pkg-config'
+PKG_CONFIG_LIBDIR=''
+PKG_CONFIG_PATH=''
+POSUB='po'
+SET_MAKE=''
+SHELL='/bin/sh'
+STRIP=''
+USE_NLS='yes'
+VERSION='1.4.30'
+XGETTEXT='/usr/local/bin//xgettext'
+XGETTEXT_015='/usr/local/bin//xgettext'
+XGETTEXT_EXTRA_OPTIONS=''
+ac_ct_CC='gcc'
+am__EXEEXT_FALSE=''
+am__EXEEXT_TRUE='#'
+am__fastdepCC_FALSE='#'
+am__fastdepCC_TRUE=''
+am__include='include'
+am__isrc=''
+am__leading_dot='.'
+am__nodep='_no'
+am__quote=''
+am__tar='$${TAR-tar} chof - "$$tardir"'
+am__untar='$${TAR-tar} xf -'
+bindir='${exec_prefix}/bin'
+build='x86_64-apple-darwin12.2.1'
+build_alias=''
+build_cpu='x86_64'
+build_os='darwin12.2.1'
+build_vendor='apple'
+datadir='${datarootdir}'
+datarootdir='${prefix}/share'
+docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
+dvidir='${docdir}'
+exec_prefix='${prefix}'
+host='x86_64-apple-darwin12.2.1'
+host_alias=''
+host_cpu='x86_64'
+host_os='darwin12.2.1'
+host_vendor='apple'
+htmldir='${docdir}'
+includedir='${prefix}/include'
+infodir='${datarootdir}/info'
+install_sh='${SHELL} /Users/mac/msmtp/msmtp-1.4.30/build-aux/install-sh'
+libdir='${exec_prefix}/lib'
+libexecdir='${exec_prefix}/libexec'
+libgnome_keyring_CFLAGS=''
+libgnome_keyring_LIBS=''
+libgnutls_CFLAGS='-I/usr/local/Cellar/gnutls/3.1.9/include -I/usr/local/Cellar/libtasn1/3.2/include -I/usr/local/Cellar/p11-kit/0.14/include/p11-kit-1 '
+libgnutls_LIBS='-L/usr/local/Cellar/gnutls/3.1.9/lib -lgnutls '
+libgsasl_CFLAGS='-I/usr/local/include '
+libgsasl_LIBS='-L/usr/local/lib -lgsasl '
+libidn_CFLAGS='-I/usr/local/Cellar/libidn/1.26/include '
+libidn_LIBS='-L/usr/local/Cellar/libidn/1.26/lib -lidn '
+libssl_CFLAGS=''
+libssl_LIBS=''
+localedir='${datarootdir}/locale'
+localstatedir='${prefix}/var'
+mandir='${datarootdir}/man'
+mkdir_p='$(top_builddir)/build-aux/install-sh -c -d'
+oldincludedir='/usr/include'
+pdfdir='${docdir}'
+prefix='/usr/local'
+program_transform_name='s,x,x,'
+psdir='${docdir}'
+sbindir='${exec_prefix}/sbin'
+sharedstatedir='${prefix}/com'
+sysconfdir='${prefix}/etc'
+target='x86_64-apple-darwin12.2.1'
+target_alias=''
+target_cpu='x86_64'
+target_os='darwin12.2.1'
+target_vendor='apple'
+tls_CFLAGS='-I/usr/local/Cellar/gnutls/3.1.9/include -I/usr/local/Cellar/libtasn1/3.2/include -I/usr/local/Cellar/p11-kit/0.14/include/p11-kit-1 '
+tls_LIBS='-L/usr/local/Cellar/gnutls/3.1.9/lib -lgnutls '
+
+## ----------- ##
+## confdefs.h. ##
+## ----------- ##
+
+/* confdefs.h */
+#define PACKAGE_NAME "msmtp"
+#define PACKAGE_TARNAME "msmtp"
+#define PACKAGE_VERSION "1.4.30"
+#define PACKAGE_STRING "msmtp 1.4.30"
+#define PACKAGE_BUGREPORT "marlam@marlam.de"
+#define PACKAGE_URL "http://msmtp.sourceforge.net/"
+#define STDC_HEADERS 1
+#define HAVE_SYS_TYPES_H 1
+#define HAVE_SYS_STAT_H 1
+#define HAVE_STDLIB_H 1
+#define HAVE_STRING_H 1
+#define HAVE_MEMORY_H 1
+#define HAVE_STRINGS_H 1
+#define HAVE_INTTYPES_H 1
+#define HAVE_STDINT_H 1
+#define HAVE_UNISTD_H 1
+#define __EXTENSIONS__ 1
+#define _ALL_SOURCE 1
+#define _GNU_SOURCE 1
+#define _POSIX_PTHREAD_SEMANTICS 1
+#define _TANDEM_SOURCE 1
+#define PACKAGE "msmtp"
+#define VERSION "1.4.30"
+#define PLATFORM "x86_64-apple-darwin12.2.1"
+#define HAVE_CFPREFERENCESCOPYAPPVALUE 1
+#define HAVE_CFLOCALECOPYCURRENT 1
+#define HAVE_ICONV 1
+#define ENABLE_NLS 1
+#define HAVE_GETTEXT 1
+#define HAVE_DCGETTEXT 1
+#define HAVE_SYSEXITS_H 1
+#define HAVE_NETDB_H 1
+#define HAVE_ARPA_INET_H 1
+#define HAVE_SYS_SOCKET_H 1
+#define HAVE_SYS_WAIT_H 1
+#define HAVE_FSEEKO 1
+#define HAVE_GETPASS 1
+#define HAVE_GETSERVBYNAME 1
+#define HAVE_LINK 1
+#define HAVE_MKSTEMP 1
+#define HAVE_SIGACTION 1
+#define HAVE_STRNDUP 1
+#define HAVE_SYSLOG 1
+#define HAVE_VASPRINTF 1
+#define HAVE_LIBGNUTLS 1
+#define HAVE_TLS 1
+#define HAVE_LIBGSASL 1
+#define HAVE_LIBIDN 1
+#define HAVE_MACOSXKEYRING 1
+
+configure: exit 0
+#+end_example
+*** TODO libiconv and MacOS
+http://www.koven.org/archives/mac-os-x-libiconv-error.html
+http://stackoverflow.com/questions/12619600/libiconv-and-macos
+** # --8<-------------------------- separator ------------------------>8--
+** useful link
+http://soft.macx.cn/1699.htm
+** mac项目进度管理
+** TODO mac speech                                                :IMPORTANT:
+/Users/mac/Library/Speech/Speakable Items/Application Speakable Items
+** TODO max -rw-r--r-- 1 mac  staff   694B Apr  8 23:41 Next line, 而不是-rw-r--r--@
+** TODO mac sed
+#+begin_example
+bash-3.2$ name="activate"
+bash-3.2$ path="/tmp/hosts"
+bash-3.2$ replace="deactivate"
+bash-3.2$ sed -i "s/$name/$replace" $path
+sed: 1: "/tmp/hosts": extra characters at the end of h command
+bash-3.2$ sed -i "s/$name/$replace/g" $path
+sed: 1: "/tmp/hosts": extra characters at the end of h command
+bash-3.2$ command="s/$name/$replace/g"
+bash-3.2$ sed -i "$command" $path
+sed: 1: "/tmp/hosts": extra characters at the end of h command
+bash-3.2$ sh -x "sed -i "$command" $path"
+sh: sed -i s/activate/deactivate/g /tmp/hosts: No such file or directory
+bash-3.2$ sed -i 's/activate/deactivate/g' /tmp/hosts
+sed: 1: "/tmp/hosts": extra characters at the end of h command
+bash-3.2$ sed -i "s/activate/deactivate/g" /tmp/hosts
+sed: 1: "/tmp/hosts": extra characters at the end of h command
+bash-3.2$
+#+end_example
+** TODO 让 Mac 自动语音汇报刚刚完成的工作
+http://www.guomii.com/posts/26576
+** TODO 默认mac的字体不好看
+** DONE mac与xp虚拟机之间互相拷贝数据: virtualbox enable
+   CLOSED: [2015-04-17 Fri 11:18]
+** TODO mac Launchd                                               :IMPORTANT:
+** TODO mac safari中去掉一些不要的历史链接, 输入w: http://weibo.cn/pub/
+** TODO mac: man -erl httpc
+** TODO 给 Mac 设置定时关机`重启`睡眠
+http://www.guomii.com/posts/30902
+** [#B] [question] mac停掉不用的服务,以提供系统的响应速度
+** 试用facetime
+** DONE Enabling OS X Screen Sharing from the Command Line
+  CLOSED: [2013-11-01 Fri 14:02]
+http://pivotallabs.com/enabling-os-x-screen-sharing-from-the-command-line/
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -access -off -restart -agent -privs -all -allowAccessFor -allUsers
+** DONE mac安装homebrew: ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+  CLOSED: [2013-11-01 Fri 10:31]
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+http://linfan.info/blog/2012/02/25/homebrew-installation-and-usage/
+** DONE brew安装必要软件
+  CLOSED: [2013-11-01 Fri 10:32]
+brew install git
+brew update
+brew install wget
+** [#B] mac console install dmg
+http://docwiki.embarcadero.com/RADStudio/XE4/en/Installing_the_Xcode_Command_Line_Tools_on_a_Mac
+** DONE option key on a non mac keyboard: Ctrl
+  CLOSED: [2013-12-09 Mon 12:37]
+http://answers.yahoo.com/question/index?qid=20080127140237AAo7zIx
+** DONE mac command line to check cpu info
+  CLOSED: [2013-11-26 Tue 11:44]
+http://osxdaily.com/2011/07/15/get-cpu-info-via-command-line-in-mac-os-/x
+#+begin_example
+macs-mac-mini:~ mac$ sysctl -n machdep.cpu.brand_string
+Intel(R) Core(TM) i7-3615QM CPU @ 2.30GHz
+macs-mac-mini:~ mac$ system_profiler | grep Processor
+
+      Processor Name: Intel Core i7
+      Processor Speed: 2.3 GHz
+      Number of Processors: 1
+#+end_example
+** DONE [#A] 去除背景白色: Keynote --> Image --> Instant Alpha    :IMPORTANT:
+  CLOSED: [2016-07-18 Mon 08:35]
+In Phontoshop
+http://jingyan.baidu.com/article/647f0115955fef7f2148a8b8.html
+怎么去除图片背景
+
+In KeyNote: Keynote --> Image --> Instant Alpha
+https://support.apple.com/kb/PH16928?locale=en_US
+** DONE safari Webpage as a Single Image: Paparazzi
+  CLOSED: [2016-07-25 Mon 10:18]
+http://derailer.org/paparazzi/
+** #  --8<-------------------------- separator ------------------------>8--
+** DONE check computer how to get connected wifi password
+  CLOSED: [2016-09-15 Thu 10:05]
+http://www.wikihow.com/Find-Your-WiFi-Password-when-You-Forgot-It
+
+Open the "Keychain Access" program -> Find your network -> Display the password
+** DONE mac add router rule
+  CLOSED: [2015-11-18 Wed 12:52]
+http://blog.remibergsma.com/2012/03/04/howto-quickly-add-a-route-in-mac-osx/
+#+BEGIN_EXAMPLE
+Adding a route manually can be necessary sometimes. When on Linux, I know the command by head:
+
+sudo route add -net 10.67.0.0/16 gw 192.168.120.254
+On the Mac the command is similar, but a bit different :-) Just as a note to myself and anyone else interested:
+
+sudo route -n add -net 10.67.0.0/16  192.168.120.254
+This sets up a route to the 10.67.0.0/16 net through gateway 192.168.120.254. First one on Linux, second one on Mac OSX.
+#+END_EXAMPLE
+** DONE apple change app account
+  CLOSED: [2015-07-14 Tue 16:38]
+https://discussions.apple.com/thread/4025425?tstart=0
+Settings / iTunes & App Stores > click Apple ID and login... went to my Country Region
+** DONE mac delete router
+  CLOSED: [2015-11-18 Wed 13:33]
+https://glazenbakje.wordpress.com/2012/11/07/add-or-delete-static-routes-apple-mac-os-x-mountain-lion/
+
+http://superuser.com/questions/756134/how-to-direct-ip-route-through-specific-interface-in-os-x
+
+sudo route -n add -net 172.17.2.0/24 192.168.1.1 -ifscope en0
+sudo route -n delete 172.17.2.0/24 192.168.1.1 -ifscope en0
+** DONE berks install error: Encoding::InvalidByteSequenceError: "\xC2" on US-ASCII
+  CLOSED: [2015-04-03 Fri 21:58]
+locale-gen --lang en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_CTYPE="en_US.UTF-8"
+
+#+BEGIN_EXAMPLE
+Using os-basic (0.0.1) from source at .
+Installing windows (1.36.6) from https://supermarket.getchef.com ([opscode] https://supermarket.chef.io/api/v1)
+E, [2015-04-04T02:23:21.961465 #384] ERROR -- : Actor crashed!
+Encoding::InvalidByteSequenceError: "\xC2" on US-ASCII
+	/var/lib/gems/1.9.1/gems/json-1.8.2/lib/json/common.rb:155:in `encode'
+	/var/lib/gems/1.9.1/gems/json-1.8.2/lib/json/common.rb:155:in `initialize'
+	/var/lib/gems/1.9.1/gems/json-1.8.2/lib/json/common.rb:155:in `new'
+	/var/lib/gems/1.9.1/gems/json-1.8.2/lib/json/common.rb:155:in `parse'
+	/var/lib/gems/1.9.1/gems/ridley-4.1.2/lib/ridley/chef/cookbook/metadata.rb:473:in `from_json'
+	/var/lib/gems/1.9.1/gems/ridley-4.1.2/lib/ridley/chef/cookbook/metadata.rb:29:in `from_json'
+	/var/lib/gems/1.9.1/gems/ridley-4.1.2/lib/ridley/chef/cookbook.rb:36:in `from_path'
+	/var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/cached_cookbook.rb:15:in `from_store_path'
+	/var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/cookbook_store.rb:86:in `cookbook'
+	/var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/cookbook_store.rb:67:in `import'
+	/var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/cookbook_store.rb:30:in `import'
+	/var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/installer.rb:106:in `block in install'
+	/var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/downloader.rb:38:in `block in download'
+	/var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/downloader.rb:35:in `each'
+	/var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/downloader.rb:35:in `download'
+	/var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/installer.rb:105:in `install'
+	/var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/calls.rb:26:in `public_send'
+	/var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/calls.rb:26:in `dispatch'
+	/var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/calls.rb:63:in `dispatch'
+	/var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/cell.rb:60:in `block in invoke'
+	/var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/cell.rb:71:in `block in task'
+	/var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/actor.rb:357:in `block in task'
+	/var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/tasks.rb:57:in `block in initialize'
+	/var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/tasks/task_fiber.rb:15:in `block in create'
+Installing yum-epel (0.6.0) from https://supermarket.getchef.com ([opscode] https://supermarket.chef.io/api/v1)
+Installing yum (3.5.3) from https://supermarket.getchef.com ([opscode] https://supermarket.chef.io/api/v1)
+/var/lib/gems/1.9.1/gems/json-1.8.2/lib/json/common.rb:155:in `encode': "\xC2" on US-ASCII (Encoding::InvalidByteSequenceError)
+	from /var/lib/gems/1.9.1/gems/json-1.8.2/lib/json/common.rb:155:in `initialize'
+	from /var/lib/gems/1.9.1/gems/json-1.8.2/lib/json/common.rb:155:in `new'
+	from /var/lib/gems/1.9.1/gems/json-1.8.2/lib/json/common.rb:155:in `parse'
+	from /var/lib/gems/1.9.1/gems/ridley-4.1.2/lib/ridley/chef/cookbook/metadata.rb:473:in `from_json'
+	from /var/lib/gems/1.9.1/gems/ridley-4.1.2/lib/ridley/chef/cookbook/metadata.rb:29:in `from_json'
+	from /var/lib/gems/1.9.1/gems/ridley-4.1.2/lib/ridley/chef/cookbook.rb:36:in `from_path'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/cached_cookbook.rb:15:in `from_store_path'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/cookbook_store.rb:86:in `cookbook'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/cookbook_store.rb:67:in `import'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/cookbook_store.rb:30:in `import'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/installer.rb:106:in `block in install'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/downloader.rb:38:in `block in download'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/downloader.rb:35:in `each'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/downloader.rb:35:in `download'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/installer.rb:105:in `install'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/calls.rb:26:in `public_send'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/calls.rb:26:in `dispatch'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/calls.rb:63:in `dispatch'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/cell.rb:60:in `block in invoke'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/cell.rb:71:in `block in task'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/actor.rb:357:in `block in task'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/tasks.rb:57:in `block in initialize'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/tasks/task_fiber.rb:15:in `block in create'
+	from (celluloid):0:in `remote procedure call'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/calls.rb:92:in `value'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/proxies/sync_proxy.rb:33:in `method_missing'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/proxies/cell_proxy.rb:17:in `_send_'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/pool_manager.rb:41:in `_send_'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/pool_manager.rb:140:in `method_missing'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/calls.rb:26:in `public_send'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/calls.rb:26:in `dispatch'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/calls.rb:63:in `dispatch'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/cell.rb:60:in `block in invoke'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/cell.rb:71:in `block in task'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/actor.rb:357:in `block in task'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/tasks.rb:57:in `block in initialize'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/tasks/task_fiber.rb:15:in `block in create'
+	from (celluloid):0:in `remote procedure call'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/future.rb:104:in `value'
+	from /var/lib/gems/1.9.1/gems/celluloid-0.16.0/lib/celluloid/future.rb:68:in `value'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/installer.rb:175:in `map'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/installer.rb:175:in `install_from_universe'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/installer.rb:39:in `run'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/berksfile.rb:374:in `install'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/cli.rb:143:in `install'
+	from /var/lib/gems/1.9.1/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+	from /var/lib/gems/1.9.1/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+	from /var/lib/gems/1.9.1/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/cli.rb:52:in `dispatch'
+	from /var/lib/gems/1.9.1/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/lib/berkshelf/cli.rb:27:in `execute!'
+	from /var/lib/gems/1.9.1/gems/berkshelf-3.2.3/bin/berks:5:in `<top (required)>'
+	from /usr/local/bin/berks:23:in `load'
+	from /usr/local/bin/berks:23:in `<main>'
+#+END_EXAMPLE
+** DONE Install XeLaTeX on Mac OS X
+  CLOSED: [2015-01-27 Tue 19:25]
+http://www.texts.io/support/0001/
+** DONE new mac compabitle issues <2017-01-06 07:35 UTC +8>
+   CLOSED: [2017-01-06 Fri 07:35]
+*** DONE Chinese input method: reinstall
+    CLOSED: [2017-01-06 Fri 07:35]
+*** DONE safari: favorite website bookmark is missing: View -> Show Favorite Bar
+    CLOSED: [2017-01-06 Fri 07:26]
+** DONE [#A] mac iNote doesn't connect with iphone iNotes: mac version is not supported :IMPORTANT:
+  CLOSED: [2017-01-05 Thu 20:30]
+https://support.apple.com/en-us/HT205064
+
+Add a device to the list
+
+After you sign in on a device with your Apple ID, that device appears in the list. Here's where you need to sign in:
+For iOS 9 and later, sign in to iCloud, iMessage, FaceTime, the iTunes and App Store, or Game Center on the device. You can also see your paired Apple Watch.
+For iOS 8 sign in to iCloud or the iTunes and App Store on the device. You can also see your paired Apple Watch.
+For OS X Yosemite and later or Windows 10 and later, sign in to iCloud on the device.
+For tvOS 7 and later, sign in to the iTunes and App Store on the device.
+If any of your devices are using earlier versions of iOS, OS X, or tvOS, you won't see them in your device list.
+** DONE mac gem install error
+   CLOSED: [2017-01-07 Sat 22:49]
+http://stackoverflow.com/questions/30812777/cannot-install-cocoa-pods-after-uninstalling-results-in-error/30851030#30851030
+sudo gem install -n /usr/local/bin cocoapods
+
+#+BEGIN_EXAMPLE
+➜  ~ sudo gem install rubocop
+ERROR:  While executing gem ... (Errno::EPERM)
+    Operation not permitted - /usr/bin/rubocop
+#+END_EXAMPLE
+** TODO [#A] mac setup: can't export pdf CV: ! Missing \endcsname inserted.
+https://tex.stackexchange.com/questions/165404/latex-error-message-missing-endcsname-inserted
+#+BEGIN_EXAMPLE
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/base/xstring.sty
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/base/xstring.tex))
+! Missing \endcsname inserted.
+<to be read again>
+                   \blx@datamodel@constant@optiondatatypes
+l.5860 ...odel@constant@optiondatatypes\endcsname}
+
+?
+#+END_EXAMPLE
+*** DONE 'ucharcat.sty' not found
+  CLOSED: [2017-12-04 Mon 18:14]
+https://www.resolveask.com/questions/737719/awesome-cv-ucharcat-sty-not-found
+https://stackoverflow.com/questions/1390828/how-do-i-install-a-latex-sty-file-on-osx
+
+/Users/mac/Dropbox/private_data/emacs_stuff/latex/README.md
+*** DONE Unknown option 'vargreek-shape' for package unicode-math.
+  CLOSED: [2017-12-04 Mon 18:28]
+https://tex.stackexchange.com/questions/355888/why-does-copying-my-sharelatex-project-cause-it-to-not-compile
+
+https://tex.stackexchange.com/questions/353136/compilation-error-option-unknown-unicode-math
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/filehook/filehook.sty)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! keyvalue error: "option-unknown"
+!
+! Unknown option 'vargreek-shape' for package unicode-math.
+!
+! See the keyvalue documentation for further information.
+!
+! For immediate help type H <return>.
+!...............................................
+
+l.385 \ProcessKeysOptions {unicode-math}
+
+?
+! Emergency stop.
+!...............................................
+
+l.385 \ProcessKeysOptions {unicode-math}
+
+No pages of output.
+Transcript written on denny_cv_devops_2017.log.
+** TODO mac setup: enable to quit Finder
+** HALF mac setup: install latex: http://www.texts.io/support/0001/
+** DONE change chromiuem background colors for better health: Care your Eyes
+  CLOSED: [2018-06-14 Thu 09:59]
+https://chrome.google.com/webstore/detail/care-your-eyes/fidmpnedniahpnkeomejhnepmbdamlhl/related?hl=en
+** TODO [#A] Mac remote control, try GoToMeeting
+** DONE mac open mkv video: http://www.videolan.org/vlc/index.html
+  CLOSED: [2016-10-20 Thu 23:48]
+** DONE mac setup path: ~/.profile
+  CLOSED: [2018-02-07 Wed 19:05]
+Open the Terminal application. It can be found in the Utilities directory inside the Applications directory.
+Type the following: echo 'export PATH=YOURPATHHERE:$PATH' >> ~/.profile, replacing "YOURPATHHERE" with the name of the directory you want to add. ...
+Hit Enter.
+Close the Terminal and reopen.
+** DONE mac use SSD as extra memory
+  CLOSED: [2015-06-13 Sat 21:47]
+Basically you already have.  The OS and apps run in virtual memory that can exceed the size of real RAM installed.
+
+https://discussions.apple.com/thread/4251270?tstart=0
+http://superuser.com/questions/317033/convert-ssd-drive-into-more-ram
+** DONE mac convert VMA files to MP3: MHAudioConverter
+  CLOSED: [2015-12-11 Fri 14:24]
+http://www.mediahuman.com/audio-converter/downloading-mac.html
+** DONE what does the @ mean in ls -l on mac OSx : xattr
+  CLOSED: [2015-04-29 Wed 10:06]
+https://mackuba.eu/2008/06/30/ls-on-mac-and-extended-file-attributes/
+
+http://unix.stackexchange.com/questions/10/what-does-the-mean-in-ls-l
+http://ubuntuforums.org/showthread.php?t=1149891
+http://superuser.com/questions/463074/is-debian-squeezes-tar-still-lacking-a-tar-with-xattr-support
+* TODO github: start a git repo: setup mac                         :noexport:
+** make the code re-entrant
+** brew update && brew install kubectl && brew cask install docker minikube virtualbox
+https://gist.github.com/kevin-smets/b91a34cea662d0c523968472a81788f7
+** setup touch id
+** setup
+~/.ssh/config
+~/.ssh/id_rsa
+~/.ssh/id_rsa.pub
+* TODO cleanup the disk                                            :noexport:
+/cores/core/*
+* TODO chromiue avoid change tgz to tar                            :noexport:
+https://superuser.com/questions/940605/chromium-prevent-unpacking-tar-gz
+#+BEGIN_EXAMPLE
+About the Chromium behavior
+
+If we want to prevent, if need to change in server side. Doesn't seem to have a way to change in the client side.
+In server side: `make sure your web server serves .tar.gz files without the content-encoding: gzip header.`
+#+END_EXAMPLE
+* TODO consolidate mac cheatsheet: https://github.com/0nn0/terminal-mac-cheatsheet :noexport:
+* TODO mac disable dictionary                                      :noexport:
+https://www.tekrevue.com/tip/how-to-turn-off-multitouch-trackpad-look-up-in-os-x/
+* [#A] example: https://github.com/thoughtbot/laptop               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO consolidate: https://github.com/jaywcjlove/awesome-mac      :noexport:
+* TODO consolidate: https://github.com/0nn0/terminal-mac-cheatsheet :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] mac docker run: echo: write error: No space left on device :noexport:
+#+BEGIN_EXAMPLE
+   /Users/zdenny/Dropbox/private_data/work/vmware/code/pks-gear2-ci/dockerfile/jenkins-testbed  docker run -p 8080:8080 -p 50000:50000 pksoctopus/jenkins:nimbus                                                                                                                  denny ✘ ✭  ✔ 0
+/usr/local/bin/jenkins.sh: line 6: echo: write error: No space left on device
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+   /Users/zdenny/Dropbox/private_data/work/vmware/code/pks-gear2-ci/dockerfile/jenkins-testbed  df -h                                                                                                                                                                             denny ✘ ✭  ✘ 1
+Filesystem                                Size   Used  Avail Capacity iused      ifree %iused  Mounted on
+/dev/disk1                               465Gi  299Gi  165Gi    65% 2097087 4292870192    0%   /
+devfs                                    184Ki  184Ki    0Bi   100%     638          0  100%   /dev
+map -hosts                                 0Bi    0Bi    0Bi   100%       0          0  100%   /net
+map auto_home                              0Bi    0Bi    0Bi   100%       0          0  100%   /home
+/Library/Input Methods/SogouWBInput.app  465Gi  299Gi  165Gi    65% 2097121 4292870158    0%   /private/var/folders/ty/5x436r4s61516hsm5h60wks40000gq/T/AppTranslocation/4394A17C-BD7B-43F5-97B3-3534DC4E84B8
+#+END_EXAMPLE
