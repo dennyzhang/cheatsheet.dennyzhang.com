@@ -22,20 +22,27 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Markdown
-| Name              | Command                                                                              |
-|-------------------+--------------------------------------------------------------------------------------|
-| Add links         | =[Some Text](https://www.google.com)=                                                |
-| Add image         | =![alt text](https://github.com/XXX/my.png "Logo Title Text 1")=                     |
-| Add code snippet  | =Inline `code` .=, =```python ...```=                                                |
-| Add YouTube video | =[![Some Text](http://img.youtube.com/XXX.jpg)](http://www.youtube.com/watch?v=XXX)= |
-| Add emoji icon    | =:smiley:=, =:(=                                                                     |
-| Reference         | [[https://paperhive.org/help/markdown][Link: Markdown cheat sheet - paperhive]], [[https://www.markdownguide.org/cheat-sheet/][Link: Markdown Cheat Sheet - markdownguide]]   |
+| Name                | Command                                                                              |
+|---------------------+--------------------------------------------------------------------------------------|
+| Add links           | =[Some Text](https://www.google.com)=                                                |
+| Add image           | =![alt text](https://github.com/XXX/my.png "Logo Title Text 1")=                     |
+| Add code snippet    | =Inline `code` .=, =```python ...```=                                                |
+| Add YouTube video   | =[![Some Text](http://img.youtube.com/XXX.jpg)](http://www.youtube.com/watch?v=XXX)= |
+| Add emoji icon      | =:smiley:=, =:(=                                                                     |
+| Add header 1        | =========, =# h1=                                                                    |
+| Add header 2        | =-------=, =## h2=                                                                   |
+| Add Blockquotes     | => XXX=                                                                              |
+| Add items of a list | =- Item XXX=, =* Item XXX=                                                           |
+| Emphasis            | =*italic*=, =_italic_=, =**bold**=, =__bold__=                                       |
+| Reference           | [[https://paperhive.org/help/markdown][Link: Markdown cheat sheet - paperhive]], [[https://www.markdownguide.org/cheat-sheet/][Link: Markdown Cheat Sheet - markdownguide]]   |
 ** More Resources
 License: Code is licenmarkdown under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
 https://assemble.io/docs/Cheatsheet-Markdown.html
 
 https://gitlab.com/francoisjacquet/rosariosis/wikis/Markdown-Cheatsheet
+
+https://cheatsheet.dennyzhang.com/cheatsheet-markdown-A4
 
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>

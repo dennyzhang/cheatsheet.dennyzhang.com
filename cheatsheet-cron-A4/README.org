@@ -29,12 +29,12 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Runs every midnight                  | =0 0 * * * /root/mycommand.sh=                            |
 | Redirect output to log file          | =0 0 * * * /root/mycommand.sh >>/var/log/mycron.log 2>&1= |
 ** Cron job - common
-| Name                                 | Comment                                 |
-|--------------------------------------+-----------------------------------------|
-| Find crontab daemon process          | =pgrep crond=                           |
-| List cron jobs created by automation | =ls -lth /etc/cron*=                    |
-| List cron jobs created by me         | =crontab -l=                            |
-| Changing default crontab editor      | =export EDITOR=vim= [[https://askubuntu.com/questions/55022/changing-default-crontab-editor][Link: askubuntu.com]] |
+| Name                                 | Comment                                   |
+|--------------------------------------+-------------------------------------------|
+| Find crontab daemon process          | =pgrep crond=                             |
+| List cron jobs created by automation | =ls -lth /etc/cron*=                      |
+| List cron jobs created by me         | =crontab -l=                              |
+| [[https://askubuntu.com/questions/55022/changing-default-crontab-editor][Changing default crontab editor]]      | =export EDITOR=vim=, export VISUAL="nano" |
 ** At
 | Name                              | Comment       |
 |-----------------------------------+---------------|

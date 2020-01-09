@@ -68,6 +68,7 @@ http://www.csheeet.com/en/latest/notes/c_make.html
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO makefile problems                                           :noexport:
 ** makefile phony
 https://qinyeli.github.io/cheatsheets/makefile-cheatsheet/
@@ -128,3 +129,5 @@ http://www.csheeet.com/en/latest/notes/c_make.html
 http://www.chinaunix.net/jh/23/408225.html
 
 https://www.cheatography.com/bavo-van-achte/cheat-sheets/gnumake/
+* TODO makefile PHONY                                              :noexport:
+https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html

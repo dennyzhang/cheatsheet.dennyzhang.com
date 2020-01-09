@@ -361,3 +361,4 @@ PMM belongs to product manager, it's out facing to customers
 
 TMM is technical marketing, belongs to marketing for technical support of pre-sale etc
 * HALF What the define: http://wtf.eng.vmware.com/                 :noexport:
+* TODO vmware tech talk: https://tech-talks.eng.vmware.com/        :noexport:

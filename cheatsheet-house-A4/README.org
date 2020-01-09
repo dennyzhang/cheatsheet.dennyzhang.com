@@ -512,6 +512,19 @@ https://www.amazon.com/Ring/dp/B01JTL2PYE/ref=sr_1_39?keywords=ring+alarm&qid=15
 * TODO water service: setup online payment                         :noexport:
 * TODO Split this cheatsheet: buy a house & maintain ahouse        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO 父母活动                                                    :noexport:
+
+- 看电影
+- 逛farmers market 
+- 逛museum
+- 逛half moon bay
+- 逛各downtown
+- 农庄
+- trade jose
+- burlingame
+- 教会连wifi
+查看地理位置，防止丢失
+中英翻译软件，列有常见用语
 * TODO spray home defense                                          :noexport:
 https://www.youtube.com/watch?v=2IQZIehbzcs
 * TODO Ring: Buy Doorbell, wooden door                             :noexport:
@@ -519,3 +532,10 @@ https://www.youtube.com/watch?v=2IQZIehbzcs
 * TODO bathroom toilet noise                                       :noexport:
 * TODO [#A] 后院没有自动喷水                                       :noexport:
 * TODO One bulb in the family room doens't work                    :noexport:
+* TODO 前后院桔树防虫                                              :noexport:
+* TODO homedepot：买土给果树                                       :noexport:
+* TODO bestbuy：ring camera                                        :noexport:
+* TODO 修手机屏幕                                                  :noexport:
+* TODO 次卧厕所淋浴漏水                                            :noexport:
+* TODO 次卧厕所地板积水                                            :noexport:
+* TODO 炉子开不了                                                  :noexport:

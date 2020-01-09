@@ -24,13 +24,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** SQL Problems
 | Name                                                  | Problem                                                                                   |
 |-------------------------------------------------------+-------------------------------------------------------------------------------------------|
-| Use having with group-by                              | =group by class having count(distinct student)...= [[https://code.dennyzhang.com/classes-more-than-5-students][Leetcode: Classes More Than 5 Students]] |
+| Use having with group-by                              | =group by class having count(distinct student)>4= [[https://code.dennyzhang.com/classes-more-than-5-students][Leecode: Classes More Than 5 Students]]   |
 | Update records with case clause                       | =set sex = case when sex = 'm' then 'f' else 'm' end= [[https://code.dennyzhang.com/swap-salary][Leetcode: Swap Salary]]               |
 | Sum with case                                         | =sum(case when state = 'approved' then 1 else 0 end)= [[https://code.dennyzhang.com/monthly-transactions-i][Leetcode: Monthly Transactions I]]    |
-| Rank score                                            | =select @rownr:=@rownr+1 as rank= [[https://code.dennyzhang.com/rank-scores][Leetcode: Rank Scores]]                                   |
 | Subquery                                              | =where (customer_id, order_date) in (select ...=  [[https://code.dennyzhang.com/immediate-food-delivery-ii][Leetcode: Immediate Food Delivery II]]    |
 | Sql isnull and if                                     | =if(s1.id%2=0, s1.student, if(isnull(s2.student), s1.student, s2.student))=               |
-| Use having with group-by                              | =group by class having count(distinct student)>4= [[https://code.dennyzhang.com/classes-more-than-5-students][Leecode: Classes More Than 5 Students]]   |
 | round float                                           | =(round(accepts/requests, 2)= [[https://code.dennyzhang.com/friend-requests-i-overall-acceptance-rate][Leecode: Friend Requests I: Overall Acceptance Rate]]         |
 | [[https://stackoverflow.com/questions/15930514/mysql-auto-increment-temporary-column-in-select-statement][Select clause add an incremental id]]                   | select (@cnt1 := @cnt1 + 1) as id [[https://code.dennyzhang.com/students-report-by-geography][Leetcode: Students Report By Geography]]                  |
 | Get accumulated sum for each group                    | [[https://code.dennyzhang.com/last-person-to-fit-in-the-elevator][Leetcode: Last Person to Fit in the Elevator]]                                              |
@@ -44,8 +42,10 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Impressive sql problems                               | [[https://code.dennyzhang.com/rank-scores][Leetcode: Rank Scores]], [[https://code.dennyzhang.com/exchange-seats][Leetcode: Exchange Seats]], [[https://code.dennyzhang.com/students-report-by-geography][Leetcode: Students Report By Geography]]   |
 | mysql doesn't support full outer join                 | [[https://code.dennyzhang.com/monthly-transactions-ii][Leetcode: Monthly Transactions II]]                                                         |
 | When left join+groupby, group by which tables' field? | [[https://code.dennyzhang.com/team-scores-in-football-tournament][Leetcode: Team Scores in Football Tournament]]                                              |
+| Rank score                                            | (select @rank := 0, @prev := -1) as rows [[https://code.dennyzhang.com/rank-scores][Leetcode: Rank Scores]]                            |
 | =sum(if(isnull(= vs =ifnull(sum(=                     | [[https://code.dennyzhang.com/team-scores-in-football-tournament][Leetcode: Team Scores in Football Tournament]]                                              |
-| Three tables' join                                    | [[https://code.dennyzhang.com/students-and-examinations][Leetcode: Students and Examinations]]                                                       |
+| Three tables' inner join                              | [[https://code.dennyzhang.com/students-and-examinations][Leetcode: Students and Examinations]]                                                       |
+| Find Continuous Ranges                                | [[https://code.dennyzhang.com/find-the-start-and-end-number-of-continuous-ranges][Find the Start and End Number of Continuous Ranges]]                                        |
 | Reference                                             | [[https://code.dennyzhang.com/review-sql][Leetcode SQL problems]]                                                                     |
 ** SQL Statement
 | Name                               | Command                                                         |
