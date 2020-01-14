@@ -22,14 +22,22 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Basic
-| Name                                     | Command                           |
-|------------------------------------------+-----------------------------------|
-| List all signals                         | =kill -l=                         |
-| Send kill signal to a given process      | =kill -term $pid=, =kill -9 $pid= |
-| [[https://www.thegeekstuff.com/2010/05/unix-background-job/][Suspend process: bring it to background]]  | =kill -STOP $pid=, =Ctrl+z=       |
-| Bring a background process to foreground | =fg $JOB_ID=                      |
-| List all background jobs                 | =jobs=                            |
-| User defined signals                     | =SIGUSR1=, =SIGUSR2=              |
+| Name                                | Command                                      |
+|-------------------------------------+----------------------------------------------|
+| List all signals                    | =kill -l=                                    |
+| [[https://stackoverflow.com/questions/45993444/in-detail-what-happens-when-you-press-ctrl-c-in-a-terminal][What happens, when pressing Ctrl-C]]  | Eventually send =SIGINT= to linux kernel     |
+| Send kill signal to a given process | =kill -term $pid=, =kill -9 $pid=            |
+| =HUP= signal                        | Terminal warns dependent processes of logout |
+| User defined signals                | =SIGUSR1=, =SIGUSR2=                         |
+
+** Background & Daemons
+| Name                                                       | Command                                                              |
+|------------------------------------------------------------+----------------------------------------------------------------------|
+| [[https://www.thegeekstuff.com/2010/05/unix-background-job/][Suspend process: bring it to background]]                    | =kill -STOP $pid=, =Ctrl-z=                                          |
+| Bring a background process to foreground                   | =fg $JOB_ID=                                                         |
+| List all background jobs                                   | =jobs=                                                               |
+| [[https://en.wikipedia.org/wiki/Nohup][Put a running process to background, and ignore HUP signal]] | =nohup $command &=, =nohup $command>foo.out 2>foo.err < /dev/null &= |
+| Tools to bring process to background and detach signals    | =nohup=, =tmux=, =screen=                                            |
 
 ** More Resources
 License: Code is licensignal under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
