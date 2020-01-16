@@ -415,3 +415,5 @@ http://systemdesigns.blogspot.com/2015/12/design-uber.html
 * TODO Design leetcode                                             :noexport:
 * TODO In what scenarios, you would choose "linked list" over "array list"? :noexport:
 https://www.1point3acres.com/bbs/thread-562110-1-1.html
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Q: How to quickly crash an linux machine                    :noexport:

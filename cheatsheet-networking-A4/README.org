@@ -40,16 +40,18 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Export local http service to Internet | [[https://ngrok.com/][SaaS: ngrok.com]]                                             |
 | Reference                             | [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][CheatSheet: Curl & Wget]], [[https://github.com/ripienaar/free-for-dev][GitHub: free-for-dev]]               |
 ** TCP
-| Name                         | Comment                                                   |
-|------------------------------+-----------------------------------------------------------|
-| List all listening tcp ports | =netstat -tunlp=                                          |
-| Port scan for a given host   | =sudo nmap -O 192.168.1.103=, [[https://viewdns.info/portscan/][SaaS: viewdns.info/portscan]] |
-| Add 97ms latency to eth0     | [[http://bencane.com/2012/07/16/tc-adding-simulated-network-latency-to-your-linux-server/][Link: tc]], =tc qdisc add dev eth0 root netem delay 97ms=   |
-| Check tc status              | =tc -s qdisc=                                             |
-| Remove tc rule               | =tc qdisc del dev eth0 root netem=                        |
-| Check network speed          | [[http://www.att.com/speedtest/][SaaS: www.att.com/speedtest]]                               |
-| Tcp manual                   | =man 7 tcp=                                               |
-| Reference                    | [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]]                                        |
+| Name                                         | Comment                                                   |
+|----------------------------------------------+-----------------------------------------------------------|
+| List all listening tcp ports                 | =netstat -tunlp=                                          |
+| Port scan for a given host                   | =sudo nmap -O 192.168.1.103=, [[https://viewdns.info/portscan/][SaaS: viewdns.info/portscan]] |
+| Add 97ms latency to eth0                     | [[http://bencane.com/2012/07/16/tc-adding-simulated-network-latency-to-your-linux-server/][Link: tc]], =tc qdisc add dev eth0 root netem delay 97ms=   |
+| Check tc status                              | =tc -s qdisc=                                             |
+| Remove tc rule                               | =tc qdisc del dev eth0 root netem=                        |
+| Check network speed                          | [[http://www.att.com/speedtest/][SaaS: www.att.com/speedtest]]                               |
+| Tcp manual                                   | =man 7 tcp=                                               |
+| [[https://proprivacy.com/vpn/guides/disable-ipv6][Disable ipv6]]                                 | Change systcl, by adding net.ipv6.conf.*.disable_ipv6     |
+| [[https://www.cyberciti.biz/faq/check-for-ipv6-support-in-linux-kernel/][Check for IPv6 support in the current kernel]] | =/proc/net/if_inet6=                                      |
+| Reference                                    | [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]]                                        |
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
@@ -2511,6 +2513,15 @@ https://askubuntu.com/questions/247625/what-is-the-loopback-device-and-how-do-i-
 The loopback device is a special, virtual network interface that your computer uses to communicate with itself.
 
 Mounting a file containing a filesystem via such a loop mount makes the files within that filesystem accessible. 
-* TODO Q: duplex, singleplex, halfplex
+* TODO Q: duplex, singleplex, halfplex                             :noexport:
 https://lifescience.roche.com/global_en/blog/lab-life/real-time-pcr/compare-and-contrast-multiplex-vs-singleplex-pcr.html
 https://www.thebalance.com/is-a-halfplex-a-duplex-1798248
+* Disable ipv6                                                     :noexport:
+https://proprivacy.com/vpn/guides/disable-ipv6
+vim /etc/sysctl.conf
+
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1 
+net.ipv6.conf.lo.disable_ipv6 = 1
+
+sysctl -p

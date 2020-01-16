@@ -90,7 +90,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+END_HTML
 
 [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][https://cdn.dennyzhang.com/images/brain/denny_leetcode.png]]
-
 ** Top 20 Binarysearch Problems
 | Num | Problem                                     | Summary                                                                |
 |-----+---------------------------------------------+------------------------------------------------------------------------|
@@ -206,7 +205,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   9 | Remove 9                                | [[https://code.dennyzhang.com/remove-9][Leetcode: Remove 9]]                             |
 |  10 | Fraction to Recurring Decimal           | [[https://code.dennyzhang.com/fraction-to-recurring-decimal][Leetcode: Fraction to Recurring Decimal]]        |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Top 10 Greedy Problems
 | Num | Problem                                   | Summary                                             |
 |-----+-------------------------------------------+-----------------------------------------------------|
@@ -217,7 +215,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   5 | Two City Scheduling                       | [[https://code.dennyzhang.com/two-city-scheduling][Leetcode: Two City Scheduling]]                       |
 |   6 | Split Concatenated Strings                | [[https://code.dennyzhang.com/split-concatenated-strings][Leetcode: Split Concatenated Strings]]                |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Top 5 Heap/Priority Queue Problems
 | Num | Problem           | Summary                     |
 |-----+-------------------+-----------------------------|
@@ -225,14 +222,12 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   2 | Task Scheduler    | [[https://code.dennyzhang.com/task-scheduler][Leetcode: Task Scheduler]]    |
 |   3 | Last Stone Weight | [[https://code.dennyzhang.com/last-stone-weight][Leetcode: Last Stone Weight]] |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Top 5 Montone Stack/Queue Problems
 | Num | Problem                                  | Summary                                                         |
 |-----+------------------------------------------+-----------------------------------------------------------------|
 |   1 | Monotone stack for consecutive subarrays | [[https://code.dennyzhang.com/online-stock-span][Leetcode: Online Stock Span]], [[https://code.dennyzhang.com/sum-of-subarray-minimums][Leetcode: Sum of Subarray Minimums]] |
 |   2 | Shortest Subarray with Sum at Least K    | [[https://code.dennyzhang.com/shortest-subarray-with-sum-at-least-k][Leetcode: Shortest Subarray with Sum at Least K]]                 |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Top 5 Backtracking Problems
 | Num | Problem                  | Summary                            |
 |-----+--------------------------+------------------------------------|
@@ -377,7 +372,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |----------------+---------|
 | Tree map       |         |
 | [[https://www.geeksforgeeks.org/inverted-index/][Inverted Index]] |         |
-
 ** Resource For Code Problems
 | Name                 | Summary                                                                                          |
 |----------------------+--------------------------------------------------------------------------------------------------|
@@ -390,7 +384,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | [[https://visualgo.net/en][visualgo]]             | visualizing data structures and algorithms through animation                                     |
 | Reference            | [[https://www.geeksforgeeks.org][geeksforgeeks.org]], [[https://www.youtube.com/channel/UCZCFT11CWBi3MHNlGf019nw][Youtube: Abdul Bari - Algorithm]]                                               |
 | Reference            | [[https://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures.php][COS 423 Theory of Algorithms]]                                                                     |
-
 ** Resource For Code Problems - In Chinese                         :noexport:
 | Name      | Summary                                    |
 |-----------+--------------------------------------------|

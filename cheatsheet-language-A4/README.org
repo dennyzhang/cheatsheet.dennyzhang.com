@@ -21,31 +21,34 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4][Golang CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-
 ** Languages & Tools
 | Name                 | Summary                          |
 |----------------------+----------------------------------|
 | Java JDK Source Code | [[https://github.com/openjdk-mirror/jdk7u-jdk/tree/master/src/share/classes/java/util][Github: jdk7u-jdk]]                |
 | Golang Source Code   | [[https://github.com/golang/go/tree/master/src/runtime][Github: go]]                       |
+| Python Source Code   | [[https://github.com/python/cpython][Github: cpython]]                  |
 | Redis Source Code    | [[https://github.com/antirez/redis/tree/unstable/src][Github: redis]]                    |
 | Git Source Code      | [[https://github.com/git/git][Github: git]]                      |
 | Reference            | [[http://tutorials.jenkov.com/java-util-concurrent/index.html][Link: Java Concurrency Utilities]] |
-
-** Modules & Functions
+** Data Structures
+| Name                    | Summary                                                     |
+|-------------------------+-------------------------------------------------------------|
+| Blocking Queue          |                                                             |
+| Delayed Queue           |                                                             |
+| Concurrent Linked Queue | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/ConcurrentLinkedQueue.java][Github: jdk7u-jdk/.../concurrent/ConcurrentLinkedQueue.java]] |
+| Priority Blocking Queue | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/PriorityBlockingQueue.java][Github: jdk7u-jdk/.../concurrent/PriorityBlockingQueue.java]] |
+| Deque                   | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/Deque.java][Github: jdk7u-jdk/.../Deque.java]]                            |
+| bitset                  |                                                             |
+| Garbage Collection      |                                                             |
+| Concurrent Hash Map     |                                                             |
+| Sorted Map, Treemap     |                                                             |
+| Semophore               | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/Semaphore.java][Github: jdk7u-jdk/.../concurrent/Semaphore.java]]             |
+** Functions & Methods
 | Name                                        | Summary                                                          |
 |---------------------------------------------+------------------------------------------------------------------|
-| Blocking Queue                              |                                                                  |
-| Delayed Queue                               |                                                                  |
-| Concurrent Linked Queue                     | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/ConcurrentLinkedQueue.java][Github: jdk7u-jdk/.../concurrent/ConcurrentLinkedQueue.java]]      |
-| Priority Blocking Queue                     | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/PriorityBlockingQueue.java][Github: jdk7u-jdk/.../concurrent/PriorityBlockingQueue.java]]      |
-| Deque                                       | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/Deque.java][Github: jdk7u-jdk/.../Deque.java]]                                 |
-| bitset                                      |                                                                  |
-| Garbage Collection                          |                                                                  |
-| Concurrent Hash Map                         |                                                                  |
-| Sorted Map, Treemap                         |                                                                  |
-| Semophore                                   | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/Semaphore.java][Github: jdk7u-jdk/.../concurrent/Semaphore.java]]                  |
 | How string contains() method is implemented |                                                                  |
 | How sqrt method is implemented              | sqrt(x) = 2**k * sqrt(y) [[https://github.com/golang/go/blob/master/src/math/sqrt.go][Github: ../sqrt.go]], [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/native/java/lang/fdlibm/src/e_sqrt.c][Github: ../e_sqrt.c]] |
+| How Thread.sleep() is implemented           |                                                                  |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
