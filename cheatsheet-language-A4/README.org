@@ -32,19 +32,20 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Reference            | [[http://tutorials.jenkov.com/java-util-concurrent/index.html][Link: Java Concurrency Utilities]] |
 
 ** Modules & Functions
-| Name                     | Summary                                                     |
-|--------------------------+-------------------------------------------------------------|
-| Blocking Queue           |                                                             |
-| Delayed Queue            |                                                             |
-| Concurrent Linked Queue  | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/ConcurrentLinkedQueue.java][Github: jdk7u-jdk/.../concurrent/ConcurrentLinkedQueue.java]] |
-| Priority Blocking Queue  | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/PriorityBlockingQueue.java][Github: jdk7u-jdk/.../concurrent/PriorityBlockingQueue.java]] |
-| Deque                    | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/Deque.java][Github: jdk7u-jdk/.../Deque.java]]                            |
-| bitset                   |                                                             |
-| Garbage Collection       |                                                             |
-| Concurrent Hash Map      |                                                             |
-| Sorted Map, Treemap      |                                                             |
-| Semophore                | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/Semaphore.java][Github: jdk7u-jdk/.../concurrent/Semaphore.java]]             |
-| String contains() method |                                                             |
+| Name                                        | Summary                                                          |
+|---------------------------------------------+------------------------------------------------------------------|
+| Blocking Queue                              |                                                                  |
+| Delayed Queue                               |                                                                  |
+| Concurrent Linked Queue                     | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/ConcurrentLinkedQueue.java][Github: jdk7u-jdk/.../concurrent/ConcurrentLinkedQueue.java]]      |
+| Priority Blocking Queue                     | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/PriorityBlockingQueue.java][Github: jdk7u-jdk/.../concurrent/PriorityBlockingQueue.java]]      |
+| Deque                                       | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/Deque.java][Github: jdk7u-jdk/.../Deque.java]]                                 |
+| bitset                                      |                                                                  |
+| Garbage Collection                          |                                                                  |
+| Concurrent Hash Map                         |                                                                  |
+| Sorted Map, Treemap                         |                                                                  |
+| Semophore                                   | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/Semaphore.java][Github: jdk7u-jdk/.../concurrent/Semaphore.java]]                  |
+| How string contains() method is implemented |                                                                  |
+| How sqrt method is implemented              | sqrt(x) = 2**k * sqrt(y) [[https://github.com/golang/go/blob/master/src/math/sqrt.go][Github: ../sqrt.go]], [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/native/java/lang/fdlibm/src/e_sqrt.c][Github: ../e_sqrt.c]] |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

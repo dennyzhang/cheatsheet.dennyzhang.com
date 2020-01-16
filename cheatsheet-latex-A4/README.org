@@ -85,4 +85,11 @@ sudo ./tlmgr update --self
 sudo ./tlmgr install wrapfig
 sudo ./tlmgr install marvosym
 sudo ./tlmgr install wasysym
+sudo ./tlmgr install lipsum
+sudo ./tlmgr install textpos
+sudo ./tlmgr install biblatex
+sudo ./tlmgr install biber
 sudo ./tlmgr install capt-of
+
+* TODO how latex install font                                      :noexport:
+latinmodern-math.otf

@@ -21,6 +21,15 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-file-A4][CheatSheet: Linux Files]], [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][CheatSheet: Linux Networking]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** Linux Process Status
+| Status                                                          | Type                      |
+|-----------------------------------------------------------------+---------------------------|
+| =R= Ready or running                                            | =TASK_RUNNING(R)=         |
+| =D= Uninterruptible sleep (usually IO)                          | =TASK_UNINTERRUPTIBLE(D)= |
+| =S= Interruptible sleep (waiting for an event to complete)      | =TASK_INTERRUPTIBLE(S)=   |
+| =Z= defunct/zombie, terminated but not cleaned up by its parent | =TASK_ZOMBIE(Z)=          |
+| =T= Execution stopped                                           | =TASK_STOPPED(T)=         |
+| Processes contribute to CPU load                                | =R=, =D=                  |
 ** Find process
 | Name                         | Comment                                          |
 |------------------------------+--------------------------------------------------|
@@ -63,14 +72,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | List all modules                    | =/proc/modules=                        |
 | List TCP/UDP packages               | =sudo cat /proc/$PID/net/nf_conntrack= |
 | Get current IP from /proc           | See [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-process-A4/proc-get-ip.sh][proc-get-ip.sh]]                     |
-** Linux Process Status
-| Status                                      | Type                      |
-|---------------------------------------------+---------------------------|
-| Ready or running                            | =TASK_RUNNING(R)=         |
-| Blocked (waiting for an event)              | =TASK_INTERRUPTIBLE(S)=   |
-| Blocked (usually for I/O)                   | =TASK_UNINTERRUPTIBLE(D)= |
-| Terminated but not cleaned up by its parent | =TASK_ZOMBIE(Z)=          |
-| Execution stopped                           | =TASK_STOPPED(T)=         |
 ** More Resources
 License: Code is licendiff under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -349,4 +350,13 @@ command. You might able to remove the zombie process by:
 #+end_example
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO list which process is using a given file                    :noexport:
+* TODO Q: list which process is using a given file                 :noexport:
+lsof ?
+
+* TODO Q: Why is I/O uninterruptible?                              :noexport:
+https://unix.stackexchange.com/questions/62697/why-is-i-o-uninterruptible
+
+In short, making I/O uninterruptible is for the purpose of making the I/O task finish ASAP, without being interfered by signals.
+
+The word "uninterruptible" should refer to "uninterruptible sleep". When a process is in uninterruptible sleep, it can NOT be woken up by signals, nor can it handle signals.
+* TODO Q: difference between process vs thread vs gorountine       :noexport:

@@ -22,13 +22,19 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Basic
-| Name                                | Command                                                        |
-|-------------------------------------+----------------------------------------------------------------|
-| List all signals                    | =kill -l=                                                      |
-| [[https://stackoverflow.com/questions/45993444/in-detail-what-happens-when-you-press-ctrl-c-in-a-terminal][What happens, when pressing Ctrl-C]]  | Kernal translates the ASCII character(=^C=) to =SIGINT= signal |
-| =HUP= signal                        | Terminal warns dependent processes of logout                   |
-| Send kill signal to a given process | =kill -term $pid=, =kill -9 $pid=                              |
-| User defined signals                | =SIGUSR1=, =SIGUSR2=                                           |
+| Name                               | Command                                                                |
+|------------------------------------+------------------------------------------------------------------------|
+| =kill -l=                          | List all signals                                                       |
+| =SIGINT=                           | Users wish to interrupt the process                                    |
+| =SIGHUP=                           | [[https://stackoverflow.com/questions/19052354/sighup-for-reloading-configuration][Reload or restart a process]]. =kill -HUP $pid=                          |
+| =SIGHUP=                           | Terminal warns dependent processes of logout                           |
+| =SIGCHILD=                         | When a child process terminates, instruct OS to cleanup the resource   |
+| =SIGSTOP=                          | Suspend a process                                                      |
+| =SIGKILL=, =SIGTERM=               | Send kill signal to a given process. =kill -term $pid=, =kill -9 $pid= |
+| =SIGUSR1=, =SIGUSR2=               | User defined signals                                                   |
+| =SIGSTOP= vs =SIGTSTP=             | SIGSTOP can't be ignored by the targetted process, but SIGTSTP can     |
+| [[https://stackoverflow.com/questions/45993444/in-detail-what-happens-when-you-press-ctrl-c-in-a-terminal][What happens, when pressing Ctrl-C]] | Kernal translates the ASCII character(=^C=) to =SIGINT= signal         |
+| Reference                          | [[https://en.wikipedia.org/wiki/Signal_(IPC)#POSIX_signals][wikipedia: Signal (IPC)]]                                                |
 
 ** Background & Daemons
 | Name                                                       | Command                                                              |
@@ -69,3 +75,11 @@ License: Code is licensignal under [[https://www.dennyzhang.com/wp-content/mit_l
 #+LINK_HOME: 
 * TODO background processes are related to a specific terminal/screen :noexport:
 jobs
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO SIGVTALRM                                                   :noexport:
+* TODO SIGSTOP and SIGCONT                                         :noexport:
+* TODO SIGSTOP and SIGSTP                                          :noexport:
+* TODO SIGABRT                                                     :noexport:
+* TODO SIGBUS                                                      :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO What happens if press Ctrl+C                                :noexport:

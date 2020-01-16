@@ -26,6 +26,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |-------------------------------+---------------------------------------------------------------------------------|
 | Examine network nic traffic   | =ethtool -S eth0=                                                               |
 | Check system configuration    | =sysctl -a=                                                                     |
+| [[http://www.rackspace.com/knowledge_center/article/centos-hostname-change][Change linux machine hostname]] | =/etc/sysconfig/network=, =/etc/hostname=                                       |
 | Ports for well-known services | =cat /etc/services=                                                             |
 | Reference                     | [[https://cheatsheet.dennyzhang.com/cheatsheet-ssh-A4][SSH CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-curl-A4][CheatSheet: Curl & Wget]]                     |
 | Reference                     | [[https://cheatsheet.dennyzhang.com/cheatsheet-file-A4][CheatSheet: Linux File]], [[https://cheatsheet.dennyzhang.com/cheatsheet-process-A4][CheatSheet: Linux Process]], [[https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4][CheatSheet: Linux Networking]] |
@@ -2501,3 +2502,15 @@ nexus.fluigdata.com (104.236.180.184)
 * TODO consolidate https://github.com/JeffDeCola/my-cheat-sheets/tree/master/software/development/operating-systems/linux/dns-cheat-sheet :noexport:
 * TODO add netcat                                                  :noexport:
 * TODO NSX vs NSX Service Mesh                                     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Q: /etc/resolv.conf vs /etc/nsswitch.conf                      :noexport:
+* TODO Q: What's loopback device? Why people need it?              :noexport:
+https://en.wikipedia.org/wiki/Loop_device
+https://askubuntu.com/questions/247625/what-is-the-loopback-device-and-how-do-i-use-it
+
+The loopback device is a special, virtual network interface that your computer uses to communicate with itself.
+
+Mounting a file containing a filesystem via such a loop mount makes the files within that filesystem accessible. 
+* TODO Q: duplex, singleplex, halfplex
+https://lifescience.roche.com/global_en/blog/lab-life/real-time-pcr/compare-and-contrast-multiplex-vs-singleplex-pcr.html
+https://www.thebalance.com/is-a-halfplex-a-duplex-1798248

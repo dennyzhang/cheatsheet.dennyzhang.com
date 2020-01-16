@@ -54,24 +54,24 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   1 | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed counter]]                               | [[https://architect.dennyzhang.com/design-distributed-counter][link]], [[https://www.slideshare.net/kevinweil/rainbird-realtime-analytics-at-twitter-strata-2011/59-If_You_Only_Remember_One][link]]       |
 |   2 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task scheduling]]                                    | [[https://architect.dennyzhang.com/explain-delayedqueue][link]]             |
 |   3 | [[https://architect.dennyzhang.com/design-concurrent-hashmap][Design a thread-safe Hashmap]]                               | [[https://architect.dennyzhang.com/design-concurrent-hashmap][link]], [[https://www.geeksforgeeks.org/internal-working-of-hashmap-java/][link]]       |
-|-----+------------------------------------------------------------+------------------|
 |   4 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 | [[https://architect.dennyzhang.com/design-api-limiter/][link]], [[https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/][link]], [[https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/][link]] |
 |   5 | Design a distributed UUID generator                        |                  |
 |-----+------------------------------------------------------------+------------------|
 |   6 | Design a distributed Hashmap                               |                  |
-|   7 | Design a distributed transaction                           |                  |
-|   8 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]                              | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/parking_lot/parking_lot.ipynb][link]]             |
-|   9 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]                          |                  |
-|  10 | Top URL hits                                               |                  |
-|  11 | Unique url hits                                            |                  |
-|  12 | Design a distributed transactions                          |                  |
-|  13 | Design a load balancer                                     |                  |
-|  14 | Design a client-server API to build a rich document editor |                  |
-|  15 | Design online/offline status system                        |                  |
-|  16 | Design a circuit breaker                                   |                  |
-|  17 | Design data sync for a distributed system                  |                  |
-|  18 | Design a service auto-discovery feature                    |                  |
-|  19 | Design A big file transfer feature                         |                  |
+|   7 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]                              | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/parking_lot/parking_lot.ipynb][link]]             |
+|   8 | Design data sync for a distributed system                  |                  |
+|   9 | Design A big file transfer feature                         |                  |
+|-----+------------------------------------------------------------+------------------|
+|  10 | Design a distributed transaction                           |                  |
+|  11 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]                          |                  |
+|  12 | Top URL hits                                               |                  |
+|  13 | Unique url hits                                            |                  |
+|  14 | Design a distributed transactions                          |                  |
+|  15 | Design a load balancer                                     |                  |
+|  16 | Design a client-server API to build a rich document editor |                  |
+|  17 | Design online/offline status system                        |                  |
+|  18 | Design a circuit breaker                                   |                  |
+|  19 | Design a service auto-discovery feature                    |                  |
 |  20 | Design a secrets management system                         |                  |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Design Problems For A Complex Product
@@ -413,3 +413,5 @@ http://systemdesigns.blogspot.com/2015/12/design-uber.html
 好的问题,间接告诉了对方我们的经验和思维深度和广度
 * TODO Design Mint.com                                             :noexport:
 * TODO Design leetcode                                             :noexport:
+* TODO In what scenarios, you would choose "linked list" over "array list"? :noexport:
+https://www.1point3acres.com/bbs/thread-562110-1-1.html
