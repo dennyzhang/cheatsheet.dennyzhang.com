@@ -23,17 +23,24 @@
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 
 - *Behavioral Interview* is about you and your history, your resume, and your motivation. 
-** Top 10 Behavior Questions
-| Num | Name                                                              | Link |
-|-----+-------------------------------------------------------------------+------|
-|   1 | Tell me about yourself?                                           |      |
-|   2 | How do you handle missing a deadline or project delay?            |      |
-|   3 | Tell me about your biggest mistake                                | [[https://www.myperfectresume.com/how-to/interview-tips/what-is-the-biggest-mistake-youve-made][link]] |
-|   4 | Tell me about your biggest achivement & decision with huge impact |      |
-|   5 | Tell me one time where you disagree with your colleagues          |      |
-|   6 | Tell me about the best leader or manager you ever had             | [[https://www.thebalancecareers.com/how-to-answer-interview-questions-about-your-ideal-boss-2063848][link]] |
-|   7 | Why you want to join us?                                          |      |
-|   8 | How do you resolve conflicts?                                     |      |
+** Top 15 Behavior Questions
+| Num | Name                                                                            |
+|-----+---------------------------------------------------------------------------------|
+|   1 | Tell me about yourself?                                                         |
+|   2 | How do you handle missing a deadline or project delay?                          |
+|   3 | Why you want to join us?                                                        |
+|   4 | Tell me about your biggest mistake                                              |
+|   5 | Tell me about your biggest achivement & decision with huge impact               |
+|   6 | Tell me one time where you disagree with your colleagues                        |
+|   7 | Tell me about the most interesting project you have been working on             |
+|   8 | Tell me a time you messed up/ took at risk / failed / feel frustrated?          |
+|   9 | What would you change about your project if you did it all over again?          |
+|  10 | How do you resolve conflicts?                                                   |
+|  11 | What if people take your credits?                                               |
+|  12 | Tell us about a time you were given feedback that made you change your strategy |
+|  13 | Tell me about a project that went beyond your scope of work.                    |
+|  14 | What if you will do, if you think your manager is not fair.                     |
+|  15 | Do you have some question for me or this position?                              |
 #+TBLFM: $1=@-1$1+1;N
 ** Principles Of Behavior Questions
 | Num | Name                                          |
@@ -77,18 +84,18 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+TBLFM: $1=@-1$1+1;N
 
 ** Self-intro Background
-| Num | Example                                                                   |
-|-----+---------------------------------------------------------------------------|
-|   1 | Walk me through your resume                                               |
-|   2 | Why you left your previous job?                                           |
-|   3 | What's your career goal for the next 3 years?                             |
-|   4 | Talk about your working projects                                          |
-|   5 | Why should we hire you?                                                   |
-|   6 | Why you want to apply our company? And why current position?              |
-|   7 | Describe your process for XXX. Describe daily work                        |
-|   8 | Tell me about the most challenging problem you have encountered recently. |
-|   9 | Tell me about the most interesting project you have been working on.      |
-|  10 | What is your biggest challenge?                                           |
+| Num | Example                                                                  |
+|-----+--------------------------------------------------------------------------|
+|   1 | Walk me through your resume                                              |
+|   2 | Why you left your previous job?                                          |
+|   3 | What's your career goal for the next 3 years?                            |
+|   4 | Talk about your working projects                                         |
+|   5 | Why should we hire you?                                                  |
+|   6 | Why you want to apply our company? And why current position?             |
+|   7 | Describe your process for XXX. Describe daily work                       |
+|   8 | Tell me about the most challenging problem you have encountered recently |
+|   9 | Tell me about the most interesting project you have been working on      |
+|  10 | What is your biggest challenge?                                          |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Self-intro Strength
@@ -125,7 +132,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |-----+---------------------------------------------------------------------------------+------|
 |   1 | Tell us about a time you were given feedback that made you change your strategy |      |
 |   2 | How do you handle conflicts at work?                                            |      |
-|   3 | What if people take your credits ?                                              |      |
+|   3 | What if people take your credits?                                               |      |
 |   4 | If you happen to notice your colleagues made a mistake, what you will do?       |      |
 |   5 | Tell me about a project that went beyond your scope of work.                    |      |
 |   6 | Customer vs share-holder                                                        |      |
@@ -151,7 +158,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Num | Example                                                                 | Link |
 |-----+-------------------------------------------------------------------------+------|
 |   1 | How do you handle missing a deadline or project delay?                  |      |
-|   2 | Name time you messed up/ took at risk / failed / feel frustrated ?      |      |
+|   2 | Tell me a time you messed up/ took at risk / failed / feel frustrated?  |      |
 |   3 | Talk about difficulties / failures / tough time in project.             |      |
 |   4 | What's the most difficult decision you've had to make recently, and why |      |
 |   5 | What's the biggest mistake you have made?                               | [[https://www.myperfectresume.com/how-to/interview-tips/what-is-the-biggest-mistake-youve-made][link]] |
@@ -178,10 +185,10 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+TBLFM: $1=@-1$1+1;N                                                                     
 
 ** Deal With Ambiguity
-|Num| Example                                                             |
-|------+---------------------------------------------------------------------|
-|    1 | Tell me about a time you had to deal with ambiguity                 |
-|    2 | Describe a situation where you had to make a decision without data. |
+| Num | Example                                                             |
+|-----+---------------------------------------------------------------------|
+|   1 | Tell me about a time you had to deal with ambiguity                 |
+|   2 | Describe a situation where you had to make a decision without data. |
 #+TBLFM: $1=@-1$1+1;N                                                                     
 
 ** Closing Interview
@@ -479,3 +486,11 @@ post_newreply
 #+END_EXAMPLE
 * [面试经验] 亚麻详细准备经过 BQ准备资料                           :noexport:
 https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=532862
+* What you learned as a team lead, compared to individual contributor :noexport:
+What's the role of team lead
+
+- Don't get emotional
+- Avoid holding too much ego
+- Be sharp yet emphathy
+- Keep practical
+

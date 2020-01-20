@@ -78,20 +78,21 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  51 | [[https://code.dennyzhang.com/followup-getmedian][#getmedian]]                      | [[https://code.dennyzhang.com/followup-getmedian][Get Median Problems & Follow-Up]]                         |
 |  52 | [[https://code.dennyzhang.com/followup-mountainarray][#mountainarray]]                  | [[https://code.dennyzhang.com/followup-mountainarray][Mountain Array Problems & Follow-Up]]                     |
 |  53 | [[https://code.dennyzhang.com/followup-intervaldp][#intervaldp]]                     | [[https://code.dennyzhang.com/followup-intervaldp][Dynamic Programming On Interval Problems & Follow-up]]    |
-|  53 | [[https://code.dennyzhang.com/followup-treedp][#treedp]]                         | [[https://code.dennyzhang.com/followup-treedp][Dynamic Programming On Binary Tree Problems & Follow-up]] |
-|  54 | [[https://code.dennyzhang.com/followup-possibilities][#possibilities]]                  | [[https://code.dennyzhang.com/followup-possibilities][Possibilities Problems & Follow-up]]                      |
-|  55 | [[https://code.dennyzhang.com/followup-uglynumber][#uglynumber]]                     | [[https://code.dennyzhang.com/followup-uglynumber][Ugly Number Problems & Follow-up]]                        |
-|  56 | [[https://code.dennyzhang.com/followup-prime][#prime]]                          | [[https://code.dennyzhang.com/followup-prime][Prime Problems & Follow-up]]                              |
-|  57 | [[https://code.dennyzhang.com/followup-geometry][#geometry]]                       | [[https://code.dennyzhang.com/followup-geometry][Geometry Problems & Follow-up]]                           |
-|  58 | [[https://code.dennyzhang.com/followup-palindrome][#palindrome]]                     | [[https://code.dennyzhang.com/followup-palindrome][Palindrome Problems & Follow-Up]]                         |
-|  59 | [[https://code.dennyzhang.com/followup-encoding][#encoding]]                       | [[https://code.dennyzhang.com/followup-encoding][Encoding Problems & Follow-up]]                           |
-|  60 | [[https://code.dennyzhang.com/followup-circulararray][#circulararray]]                  | [[https://code.dennyzhang.com/followup-circulararray][Circular Array Problems & Follow-up]]                     |
-|  61 | [[https://code.dennyzhang.com/followup-heightoftree][#heightoftree]]                   | [[https://code.dennyzhang.com/followup-heightoftree][Height Of Tree Problems & Follow-up]]                     |
-|  62 | [[https://code.dennyzhang.com/followup-circleingraph][#circleingraph]]                  | [[https://code.dennyzhang.com/followup-circleingraph][Circle In Graph Problems & Follow-Up]]                    |
-|  63 | [[https://code.dennyzhang.com/followup-floydcycle][#floydcycle]]                     | [[https://code.dennyzhang.com/followup-floydcycle][Floyd Cycle Problems & Follow-up]]                        |
-|  64 | [[https://code.dennyzhang.com/followup-screenfit][#screenfit]]                      | [[https://code.dennyzhang.com/followup-screenfit][Screen Fit Problems & Follow-up]]                         |
-|  65 | [[https://code.dennyzhang.com/followup-abbreviation][#abbreviation]]                   | [[https://code.dennyzhang.com/followup-abbreviation][Abbreviation Problems & Follow-Up]]                       |
-|  66 | [[https://code.dennyzhang.com/followup-anagram][#anagram]]                        | [[https://code.dennyzhang.com/followup-anagram][Anagram Problems & Follow-up]]                            |
+|  54 | [[https://code.dennyzhang.com/followup-treedp][#treedp]]                         | [[https://code.dennyzhang.com/followup-treedp][Dynamic Programming On Binary Tree Problems & Follow-up]] |
+|  55 | [[https://code.dennyzhang.com/followup-possibilities][#possibilities]]                  | [[https://code.dennyzhang.com/followup-possibilities][Possibilities Problems & Follow-up]]                      |
+|  56 | [[https://code.dennyzhang.com/followup-uglynumber][#uglynumber]]                     | [[https://code.dennyzhang.com/followup-uglynumber][Ugly Number Problems & Follow-up]]                        |
+|  57 | [[https://code.dennyzhang.com/followup-prime][#prime]]                          | [[https://code.dennyzhang.com/followup-prime][Prime Problems & Follow-up]]                              |
+|  58 | [[https://code.dennyzhang.com/followup-geometry][#geometry]]                       | [[https://code.dennyzhang.com/followup-geometry][Geometry Problems & Follow-up]]                           |
+|  59 | [[https://code.dennyzhang.com/followup-palindrome][#palindrome]]                     | [[https://code.dennyzhang.com/followup-palindrome][Palindrome Problems & Follow-Up]]                         |
+|  60 | [[https://code.dennyzhang.com/followup-encoding][#encoding]]                       | [[https://code.dennyzhang.com/followup-encoding][Encoding Problems & Follow-up]]                           |
+|  61 | [[https://code.dennyzhang.com/followup-circulararray][#circulararray]]                  | [[https://code.dennyzhang.com/followup-circulararray][Circular Array Problems & Follow-up]]                     |
+|  62 | [[https://code.dennyzhang.com/followup-heightoftree][#heightoftree]]                   | [[https://code.dennyzhang.com/followup-heightoftree][Height Of Tree Problems & Follow-up]]                     |
+|  63 | [[https://code.dennyzhang.com/followup-circleingraph][#circleingraph]]                  | [[https://code.dennyzhang.com/followup-circleingraph][Circle In Graph Problems & Follow-Up]]                    |
+|  64 | [[https://code.dennyzhang.com/followup-floydcycle][#floydcycle]]                     | [[https://code.dennyzhang.com/followup-floydcycle][Floyd Cycle Problems & Follow-up]]                        |
+|  65 | [[https://code.dennyzhang.com/followup-screenfit][#screenfit]]                      | [[https://code.dennyzhang.com/followup-screenfit][Screen Fit Problems & Follow-up]]                         |
+|  66 | [[https://code.dennyzhang.com/followup-abbreviation][#abbreviation]]                   | [[https://code.dennyzhang.com/followup-abbreviation][Abbreviation Problems & Follow-Up]]                       |
+|  67 | [[https://code.dennyzhang.com/followup-anagram][#anagram]]                        | [[https://code.dennyzhang.com/followup-anagram][Anagram Problems & Follow-up]]                            |
+|  68 | [[https://code.dennyzhang.com/followup-linesweep][#linesweep]]                      | [[https://code.dennyzhang.com/followup-linesweep][Line Sweep Problems & Follow-up]]                         |
 #+TBLFM: $1=@-1$1+1;N
 ** Review Problems By Category
 | Num | Name                | Summary                                           |
@@ -108,7 +109,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  10 | [[https://code.dennyzhang.com/review-dfs][#dfs]]                | [[https://code.dennyzhang.com/review-dfs][Review: DFS Problems]]                              |
 |  11 | [[https://code.dennyzhang.com/tag/array][#array]]              | [[https://code.dennyzhang.com/review-array][Review: Array/SubArray Problems]]                   |
 |  12 | [[https://code.dennyzhang.com/review-hashmap][#hashmap]]            | [[https://code.dennyzhang.com/review-hashmap][Review: Hashmap Problems]]                          |
-|  13 | [[https://code.dennyzhang.com/review-minmax][#minmax]]             | [[https://code.dennyzhang.com/review-minmax][Review: minmax Problems]]                           |
+|  13 | [[https://code.dennyzhang.com/review-minimax][#minimax]]            | [[https://code.dennyzhang.com/review-minimax][Review: minimax Problems]]                          |
 |  14 | [[https://code.dennyzhang.com/review-monotone][#monotone]]           | [[https://code.dennyzhang.com/review-monotone][Review: Monotone Stack Or Monotone Queue Problems]] |
 |  15 | [[https://code.dennyzhang.com/review-knapsack][#knapsack]]           | [[https://code.dennyzhang.com/review-knapsack][Review: Knapsack Problems]]                         |
 |  16 | [[https://code.dennyzhang.com/review-heap][#heap]]               | [[https://code.dennyzhang.com/review-heap][Review: Heap Problems]]                             |

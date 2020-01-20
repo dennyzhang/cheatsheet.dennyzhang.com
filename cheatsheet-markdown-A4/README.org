@@ -74,3 +74,5 @@ https://cheatsheet.dennyzhang.com/cheatsheet-markdown-A4
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
+* how markdown can link file to a function, instead of line nymber :noexport:
+https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-networking-A4/network.sh#L15

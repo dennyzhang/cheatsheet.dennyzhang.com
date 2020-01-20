@@ -49,7 +49,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Remove tc rule                               | =tc qdisc del dev eth0 root netem=                        |
 | Check network speed                          | [[http://www.att.com/speedtest/][SaaS: www.att.com/speedtest]]                               |
 | Tcp manual                                   | =man 7 tcp=                                               |
-| [[https://proprivacy.com/vpn/guides/disable-ipv6][Disable ipv6]]                                 | Change systcl, by adding net.ipv6.conf.*.disable_ipv6     |
+| [[https://proprivacy.com/vpn/guides/disable-ipv6][Disable ipv6]]                                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-networking-A4/network.sh#L15][Change systcl, by adding net.ipv6.conf.*.disable_ipv6]]     |
 | [[https://www.cyberciti.biz/faq/check-for-ipv6-support-in-linux-kernel/][Check for IPv6 support in the current kernel]] | =/proc/net/if_inet6=                                      |
 | Reference                                    | [[https://cheatsheet.dennyzhang.com/cheatsheet-tcpdump-A4][Tcpdump CheatSheet]]                                        |
 #+BEGIN_HTML
@@ -2516,12 +2516,3 @@ Mounting a file containing a filesystem via such a loop mount makes the files wi
 * TODO Q: duplex, singleplex, halfplex                             :noexport:
 https://lifescience.roche.com/global_en/blog/lab-life/real-time-pcr/compare-and-contrast-multiplex-vs-singleplex-pcr.html
 https://www.thebalance.com/is-a-halfplex-a-duplex-1798248
-* Disable ipv6                                                     :noexport:
-https://proprivacy.com/vpn/guides/disable-ipv6
-vim /etc/sysctl.conf
-
-net.ipv6.conf.all.disable_ipv6 = 1
-net.ipv6.conf.default.disable_ipv6 = 1 
-net.ipv6.conf.lo.disable_ipv6 = 1
-
-sysctl -p

@@ -22,9 +22,10 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Iptables
-| Name           | Command                            |
-|----------------+------------------------------------|
-| Show all rules | =iptables -L INPUT --line-numbers= |
+| Name                                          | Command                            |
+|-----------------------------------------------+------------------------------------|
+| Show all rules                                | =iptables -L INPUT --line-numbers= |
+| [[https://my.esecuredata.com/index.php?/knowledgebase/article/49/how-to-redirect-an-incoming-connection-to-a-different-ip-address-on-a-specific-port-using-iptables/][Redirect TCP traffic to another remote server]] | Change PREROUTING and POSTROUTING  |
 
 ** More Resources
 License: Code is liceniptables under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -83,7 +84,6 @@ iptables -A INPUT -i eth0 -p tcp --dport 902 -j REJECT --reject-with icmp-port-u
 
 # Add a comment to a rule:
 iptables ... -m comment --comment "This rule is here for this reason"
-
 
 # To remove or insert a rule:
 # 1) Show all rules

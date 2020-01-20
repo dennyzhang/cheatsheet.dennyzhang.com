@@ -25,6 +25,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Name                               | Summary                                             |
 |------------------------------------+-----------------------------------------------------|
 | [[https://www.wpbeginner.com/wp-tutorials/how-to-easily-bulk-delete-all-wordpress-comments/][Bulk Delete All WordPress Comments]] | =TRUNCATE wp_commentmeta;=, =TRUNCATE wp_comments;= |
+| Create database for wordpress      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-wordpress-A4/INSTRUCT.md#create-database-for-wordpress][Github: Create database for wordpress]]               |
 ** SEO Concept
 | Name        | Summary                    |
 |-------------+----------------------------|
@@ -69,32 +70,6 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+LINK_UP:
 #+LINK_HOME:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* DONE [#A] create database for wordpress                          :noexport:
-  CLOSED: [2017-11-08 Wed 23:37]
-mysql> CREATE DATABASE databasename;
-Query OK, 1 row affected (0.00 sec)
-
-
-mysql> CREATE USER wordpressuser;
-Query OK, 0 rows affected (0.00 sec)
-
-
-mysql> SET PASSWORD FOR wordpressuser = PASSWORD("wordpresspassword");
-Query OK, 0 rows affected (0.00 sec)
-
-
-GRANT ALL PRIVILEGES ON databasename.* TO "wordpressuser"@"%" IDENTIFIED BY "wordpresspassword";
-
-mysql> GRANT ALL PRIVILEGES ON databasename.* TO "wordpressuser"@"localhost" IDENTIFIED BY "wordpresspassword";
-Query OK, 0 rows affected (0.00 sec)
-
-
-mysql> FLUSH PRIVILEGES;
-Query OK, 0 rows affected (0.00 sec)
-
-
-mysql> EXIT
-
 * [#A] Blog Improvement                                  :noexport:IMPORTANT:
 ** DONE wordpress导航的标签云,居占摆放
    CLOSED: [2012-12-05 Wed 23:15]
@@ -1408,8 +1383,8 @@ Header 部分常用到的 PHP 函数
 <?php _e('Message'); ?>:输出相应信息
 <?php wp_register(); ?>:显示注册链接
 <?php wp_loginout(); ?>:显示登录/注销链接
-<!–next page–>:将当前内容分页
-<!–more–>:将当前内容截断,以不在主页/目录页显示全部内容
+<!-next page->:将当前内容分页
+<!-more->:将当前内容截断,以不在主页/目录页显示全部内容
 <?php timer_stop(1); ?>:网页加载时间(秒)
 <?php echo get_num_queries(); ?>:网页加载查询量
 ** 页面访问插件
@@ -1444,7 +1419,6 @@ $con = new mysqli($servername, $username, $password);
 
 [Sun Sep 18 08:23:34.122384 2016] [:error] [pid 7481] [client 175.9.29.202:64965] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /var/www/devops_blog/wp-content/themes/portfolio-press/updatemeta.php:5\nStack trace:\n#0 {main}\n  thrown in /var/www/devops_blog/wp-content/themes/portfolio-press/updatemeta.php on line 5
 
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO wordpress中文的permlink                                     :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO wordpress database size                                     :noexport:

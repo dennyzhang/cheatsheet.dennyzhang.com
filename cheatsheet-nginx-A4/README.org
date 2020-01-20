@@ -1,0 +1,496 @@
+* CheatSheet: Nginx Web Server                                        :Linux:
+:PROPERTIES:
+:type:     linux, tool
+:export_file_name: cheatsheet-nginx-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-nginx-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nginx-A4/cheatsheet-nginx-A4.pdf][cheatsheet-nginx-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/linux/][linux]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-nginx-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** Basic
+| Name                                   | Command                                               |
+|----------------------------------------+-------------------------------------------------------|
+| [[https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/][Reload nginx with zero-downtime]]        | =nginx -s reload=, =service nginx reload=             |
+| Restart nginx                          | =service nginx restart=                               |
+| Start a nginx server with container    | =docker run -t -d -p 8080:80 --name nginx-test nginx= |
+| Get Nginx version                      | =nginx -v=                                            |
+| Nginx log                              | =/var/log/nginx/=                                     |
+| Default document root directory        | =/usr/share/nginx/html=                               |
+| SSL and vhost config directory         | =/etc/nginx/conf.d/=                                  |
+| Nginx configuration files              | =/etc/nginx/nginx.conf=, =/etc/nginx/conf.d/=         |
+| Redirect http url in nginx             | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nginx-A4/INSTRUCT.md#nginx-redirect-url][Github: Nginx redirect URL]]                            |
+| [[https://nginxlibrary.com/enable-directory-listing/][Nginx enable directory listing]]         | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nginx-A4/INSTRUCT.md#nginx-enable-directory-listing][Github: Nginx enable directory listing]]                |
+| Nginx add password protection to vhost | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-nginx-A4/INSTRUCT.md#nginx-add-password-protection][Github: Nginx add password protection]]                 |
+** Advanced
+| Name                                        | Command |
+|---------------------------------------------+---------|
+| [[https://www.nginx.com/resources/admin-guide/nginx-ssl-termination/][Nginx SSL termination]]                       |         |
+| Nginx support http 2.0                      |         |
+| Test whether nginx website has enabled gzip |         |
+** More Resources
+License: Code is licenapt under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-nginx-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-nginx-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-nginx-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO why I can't redirect http to https in ELB                   :noexport:
+* TODO nginx http://localhost/ return 200 OK                       :noexport:
+* TODO [#A] nginx check mysql connection without installing mysql binary :noexport:
+* nginx 404 page to avoid performance penalty                      :noexport:
+* [#A] nginx                                    :noexport:IMPORTANT:Personal:
+| Name                               | Comment                                        |
+|------------------------------------+------------------------------------------------|
+| proxy_set_header Connection close; |                                                |
+| proxy_http_version 1.1;            |                                                |
+| add_header Connection close;       |                                                |
+| php_fcgi.conf                      |                                                |
+** DONE nginx支持php网站
+   CLOSED: [2011-12-26 Mon 14:28]
+#+begin_example
+nginx.conf中配置
+server
+{
+                            listen             80;
+                            server_name    test.com;
+                            index  index.php index.html index.htm ;
+                            root    /data/www/test;
+                            location ~ .*\.php?$
+                            {
+                                     include fcgi.conf;
+                                     fastcgi_pass    127.0.0.1:10080;
+                                     fastcgi_param SCRIPT_FILENAME /data/www/test/$fastcgi_script_name;
+                                     fastcgi_index index.php;
+                            }
+
+
+
+                         log_format    accessh    '$remote_addr - $remote_user [$time_local] "$request" '
+                                                                        '$status $body_bytes_sent "$http_referer" '
+                                                                        '"$http_user_agent" $http_x_forwarded_for';
+                         access_log    /data/logs/test.log    accessh;
+                         error_log    /data/logs/test.com info;
+}
+
+
+借用lighttpd的spawn-fcgi来支持php,启动php-cgi进程,监听127.0.0.1的10080端口,
+进程数为5（如果服务器内存小于3GB,可以只开启25个进程）,用户为nginx:
+
+spawn-fcgi -a 127.0.0.1 -p 10080 -C 5 -u nginx -g nginx -f /usr/bin/php-cgi
+#+end_example
+*** useful link
+http://blog.chinaunix.net/space.php?uid=303837&do=blog&id=2441484\\
+nginx支持php-ChinaUnix博客 - IT人与你分享快乐生活
+** DONE upgrade nginx
+  CLOSED: [2013-05-30 Thu 10:33]
+http://serverfault.com/questions/458121/how-to-upgrade-nginx
+$ nginx -v
+nginx: nginx version: nginx/1.0.5
+ curl -O http://nginx.org/download/nginx-1.2.6.tar.gz
+ tar xvzf nginx-1.2.6.tar.gz
+ cd nginx-1.2.6/
+ ./configure
+ make && sudo make install
+
+$ nginx -v
+nginx: nginx version: nginx/1.0.5 <<< still old version!!!
+** DONE nginx add error/access log
+  CLOSED: [2013-05-28 Tue 16:28]
+error_log  logs/1235_error.log;
+access_log  logs/1235_access.log;
+** DONE [#A] nginx配置完vhosts后,相应的php不能执行,报403错误: 文件夹权限不对 :IMPORTANT:
+   CLOSED: [2013-03-26 Tue 15:22]
+** TODO nginx reverse proxy for different website
+** DONE enable Browser Cache Static Files on Nginx
+  CLOSED: [2014-05-07 Wed 22:22]
+#+begin_example
+location ~* .(jpg|jpeg|png|gif|ico|css|js)$ {
+expires 365d;
+}
+In this example, all your .gif, .jpg, .jpeg, .png,  .css, .ico and .js files are set to be cached from the next 365 days.
+
+To apply the changes, just reload nginx:
+
+/etc/init.d/nginx reload
+#+end_example
+** DONE Get user agent from nginx log
+   CLOSED: [2014-05-08 Thu 23:56]
+#+begin_example
+[root@centos-vm1 ~]# tail -f /var/log/nginx/access.log
+tail -f /var/log/nginx/access.log
+162.225.236.218 - - [08/May/2014:20:51:28 -0400] "GET /wp-content/themes/portfolio-press/style.css?ver=2.2.0 HTTP/1.1" 200 8026 "https://www.dennyzhang.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_0) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0 Safari/537.75.14" "-"
+162.225.236.218 - - [08/May/2014:20:51:28 -0400] "GET /wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1 HTTP/1.1" 200 3225 "https://www.dennyzhang.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_0) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0 Safari/537.75.14" "-"
+162.225.236.218 - - [08/May/2014:20:51:29 -0400] "GET /wp-includes/css/dashicons.min.css?ver=3.8.1 HTTP/1.1" 200 21348 "https://www.dennyzhang.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_0) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0 Safari/537.75.14" "-"
+#+end_example
+** TODO [#A] nginx: [emerg] invalid condition "!-f" in /etc/nginx/conf.d/wordpress.conf:26
+http://forum.nginx.org/read.php?2,228528,228529#msg-228529
+** DONE [#A] nginx support php
+  CLOSED: [2014-08-06 Wed 17:26]
+http://askubuntu.com/questions/134666/what-is-the-easiest-way-to-enable-php-on-nginx
+sudo apt-get install php5-common php5-cli php5-fpm
+
+vim /etc/nginx/sites-available/default
+#+begin_example
+location ~ \.php$ {
+  fastcgi_split_path_info ^(.+\.php)(/.+)$;
+  fastcgi_pass 127.0.0.1:9000;
+  fastcgi_index index.php;
+  include fastcgi_params;
+}
+#+end_example
+sudo service php5-fpm restart
+sudo service nginx restart
+
+curl http://192.168.2.78:80/file.php
+** TODO [#A] nginx start another vhost in port 80
+** nginx trouble shooting
+- nginx on Ubuntu
+| Name              | Summary                                 |
+|-------------------+-----------------------------------------|
+| conf file         | tree /etc/nginx                         |
+| site vhosts       | ls /etc/nginx/sites-available  |
+| nginx log file    | ls -lth /var/log/nginx                  |
+| php5-fpm file     | ls -lth /var/log/php5-fpm.log           |
+| php5-fpm conf     | tree /etc/php5/fpm/                     |
+| fastcgi 9000 port | lsof -i tcp:9000                        |
+*** tree /etc/nginx/
+#+begin_example
+root@ubuntu188:/var/www/html/startuptopic_cn# tree /etc/nginx/
+tree /etc/nginx/
+/etc/nginx/
+├── conf.d
+├── fastcgi_params
+├── koi-utf
+├── koi-win
+├── mime.types
+├── naxsi_core.rules
+├── naxsi.rules
+├── naxsi-ui.conf.1.4.1
+├── nginx.conf
+├── proxy_params
+├── scgi_params
+├── sites-available
+│   └── stackui.conf
+├── sites-enabled
+│   └── stackui.conf -> /etc/nginx/sites-available/stackui.conf
+├── uwsgi_params
+└── win-utf
+
+3 directories, 14 files
+root@ubuntu188:/var/www/html/startuptopic_cn#
+#+end_example
+*** sample conf
+#+begin_example
+root@ubuntu188:/var/www/html/startuptopic_cn# cat /etc/nginx/sites-available/stackui.conf
+<l/startuptopic_cn# cat /etc/nginx/sites-available/stackui.conf
+server {
+        listen 80;
+
+        root /var/www/stackui/;
+        index index.php index.html index.htm;
+        server_name www.stackui.com stackui.com;
+
+        location / {
+		try_files $uri $uri/ /index.php?q=$uri&args;
+        }
+
+        location ~ \.php$ {
+                try_files $uri =404;
+		fastcgi_pass 127.0.0.1:9000;
+                #fastcgi_pass unix:/var/run/php5-fpm.sock;
+                fastcgi_index index.php;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                include fastcgi_params;
+        }
+
+}
+
+root@ubuntu188:/var/www/html/startuptopic_cn#
+#+end_example
+** DONE Configure Nginx as a Reverse Proxy
+  CLOSED: [2016-10-06 Thu 11:40]
+https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-reverse-proxy-for-apache
+#+BEGIN_EXAMPLE
+server {
+        listen   80;
+
+        root /var/www/;
+        index index.php index.html index.htm;
+
+        server_name example.com;
+
+        location / {
+        try_files $uri $uri/ /index.php;
+        }
+
+        location ~ \.php$ {
+
+        proxy_set_header X-Real-IP  $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:8080;
+
+         }
+
+         location ~ /\.ht {
+                deny all;
+        }
+}
+#+END_EXAMPLE
+** DONE nginx reverse proxy
+   CLOSED: [2018-01-01 Mon 00:27]
+https://stackoverflow.com/questions/5432331/nginx-proxy-all-traffic-to-remote-nginx
+server {
+  listen 80;
+  server_name mydomain.com;
+    location / {
+      access_log off;
+      proxy_pass http://mydomain.com:8080;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header Host $host;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+** DONE nginx resolve host not found in upstream
+  CLOSED: [2017-04-30 Sun 10:55]
+http://stackoverflow.com/questions/32845674/setup-nginx-not-to-crash-if-host-in-upstream-is-not-found
+
+http://stackoverflow.com/questions/26585510/nginx-configuration-file-etc-nginx-nginx-conf-test-failed-host-not-found-in-u
+
+Resolve it at the location level, if you can't do the above (this will allow Nginx to start/run):
+location /foo {
+  resolver 127.0.0.1 valid=30s;
+  # or some other DNS (you company/internal DNS server)
+  #resolver 8.8.8.8 valid=30s;
+  set $upstream_foo foo;
+  proxy_pass http://$upstream_foo:80;
+}
+
+location /bar {
+  resolver 127.0.0.1 valid=30s;
+  # or some other DNS (you company/internal DNS server)
+  #resolver 8.8.8.8 valid=30s;
+  set $upstream_bar foo;
+  proxy_pass http://$upstream_bar:80;
+}
+** #  --8<-------------------------- separator ------------------------>8--
+** DONE [#A] In SoteriaNetwork, why we might have to restart nginx, when idp restarts :IMPORTANT:
+  CLOSED: [2017-07-07 Fri 17:47]
+https://bitbucket.org/nubesecure/devops/issues/114/nginx-proxy-research-make-proxy-service#comment-38097840
+#+BEGIN_EXAMPLE
+Okay with hours of researching, here is my understanding.
+**TL;TR: We don't need to make any code change. We're actually using the best practice.**
+**1. Question1: Previously upstream container restart, we might need to restart proxy container. Why?**
+
+Previously we have DNS resolver enabled.
+
+The tricky part is: **By default, servers defined in nginx upstreams are only resolved when nginx starts.**
+
+```
+Read more:
+https://github.com/GUI/nginx-upstream-dynamic-servers
+https://www.ruby-forum.com/topic/4407628
+```
+
+1. Let's say, we have run "docker-compose up -d" in brozton project.
+
+2. Internal DNS know the ip address of idp. When nginx start, it will query DNS for the ip address of idp. Everything works perfectly
+
+3. Now we have restarted idp container somehow. The ip address of idp has changed. DNS know the new information.
+
+4. *But nginx won't ask that, since it will ask once when it starts!* How ridiculously it is. But that's what it is.
+
+There is a 3rd nginx module to enforce run-time DNS resolution. But it's missing by default.
+**How we can resolve this?**
+
+1. We just remove DNS resolver in nginx setting. Since nginx is in the same network of other containers, it always know the correct ip address.
+
+2. But we have to make sure one thing: when nginx starts, all other upstream containers has already started. Just when nginx starts.
+**Question2: How we can make sure when nginx starts, all other upstream containers has already started? **
+
+docker has depends_on mechanism. But by design, it won't gurantee idp will be running, when nginx starts.
+
+They expect us to make sure the requirement is met. And the charming thing is that they're suggesting something like wait-for-it.sh. And we happen to be the exact the same thing for what we're doing!
+
+```Read more: https://docs.docker.com/compose/startup-order/```
+**Question3: When upstream services are down, would nginx be affected?**
+
+No, nginx won't do that.
+
+As an error detection, nginx only confirm the domain name resolution works when it starts.
+
+When nginx is already running, it won't check upstream backend services any more.
+
+Here is one common misunderstanding. (At least I had this before).
+
+If we start proxy container before idp container, we will see below error messages,
+
+```
+nginx: [emerg] host not found in upstream: idp
+```
+**We might think nginx has detected the upstream of idp is not running. Well, actually it's NOT.**
+
+It's more about failing to resolve DNS domain name of idp.
+
+I tried to bind a false ip-hostname mapping in /etc/hosts of nginx, it will start correctly. Whether the upstream service is running? Of course, not.
+**Question4: how mature nginx it is, as a loadbalancer?**
+
+haproxy is far more capable for this.
+
+nginx is a powerful web server, a good reverse proxy, but not a capable loadbalancer.
+
+The free version of nginx doesn't support health checks. And the monitoring metrics are missing from the free version as well.
+
+```
+Read more:
+https://serverfault.com/questions/229945/what-are-the-differences-between-haproxy-and-ngnix-in-reverse-proxy-mode
+https://thehftguy.com/2016/10/03/haproxy-vs-nginx-why-you-should-never-use-nginx-for-load-balancing/
+https://www.quora.com/Which-software-load-balancer-is-better-HAProxy-or-nginx
+https://www.scalescale.com/nginx-haproxy-varnish-comparison/
+```
+
+What's our strategy?
+
+If we want to do docker clustering via kubuernets, I'm sure they will have built-in support.
+Otherwise, we can use haproxy. Well, if we choose to keep it simple, nginx can also do the jobs. But just come with some compromise.
+#+END_EXAMPLE
+** DONE [#A] nginx dns resolver doesn't run run-time dns resolution :IMPORTANT:
+  CLOSED: [2017-07-07 Fri 17:57]
+https://github.com/GUI/nginx-upstream-dynamic-servers
+https://www.ruby-forum.com/topic/4407628
+
+#+BEGIN_EXAMPLE
+An nginx module to resolve domain names inside upstreams and keep them up to date.
+
+By default, servers defined in nginx upstreams are only resolved when nginx starts. This module provides an additional resolve parameter for server definitions that can be used to asynchronously resolve upstream domain names. This keeps the upstream definition up to date according to the DNS TTL of each domain names. This can be useful if you want to use upstreams for dynamic types of domain names that may frequently change IP addresses.
+
+This module also allows nginx to start if an upstream contains a defunct domain name that no longer resolves. By default, nginx will fail to start if an upstream server contains an unresolvable domain name. With this module, nginx is still allowed to start with invalid domain names, but an error will be logged and the unresolvable domain names will be marked as down.
+#+END_EXAMPLE
+
+https://serverfault.com/questions/240476/how-to-force-nginx-to-resolve-dns-of-a-dynamic-hostname-everytime-when-doing-p
+https://www.jethrocarr.com/2013/11/02/nginx-reverse-proxies-and-dns-resolution/
+https://bitbucket.org/nubesecure/devops/issues/96/a-proxy-container-restart-is-required-when
+
+https://bitbucket.org/nubesecure/devops/pull-requests/75/proxy-restart-image/diff
+
+http://jenkins.shibgeek.com:48084/view/Pipeline/job/PipelineDeployTest/53
+https://github.com/GUI/nginx-upstream-dynamic-servers
+ssh root@45.79.83.210
+
+curl http://localhost/idp/
+curl http://idp/idp/
+ping idp
+
+bash -xe /usr/sbin/selenium_gui_test.sh "http://www.brozton.com" \
+"/root/deployment_test/soteria/devops/test/gui_test/scripts/selenium_load_page.py" "30" \
+"seleinum" "www.brozton.com:172.17.0.1"
+
+curl http://localhost/idp/
+curl -L http://localhost/idp/
+
+curl http://idp/idp/
+curl http://172.18.0.10/idp/
+
+head /etc/nginx/conf.d/default.conf
+
+"docker stop idp" VS "docker-compose stop idp"
+
+IP changed from 172.18.0.10 to 172.18.0.7
+#+BEGIN_EXAMPLE
+Found a testcase which can 100% reproduce this issue.
+1 Brozton dev repo, start docker-compose
+docker-compose up -d
+docker-compose ps
+2 Manually stop idp
+docker-compose stop idp
+docker-compose start idp
+3 Wait for 10 minutes, and verify all docker healthcheck has passed
+docker-compose ps
+docker ps
+4 Verify GUI login
+#+END_EXAMPLE
+*** An nginx module to resolve domain names inside upstreams and keep them up to date.
+https://github.com/GUI/nginx-upstream-dynamic-servers
+
+By default, servers defined in nginx upstreams are only resolved when nginx starts.
+** DONE get nginx version: nginx -v
+   CLOSED: [2017-07-21 Fri 21:34]
+** DONE NGINX - Allow access only to certain IPs
+  CLOSED: [2017-08-12 Sat 11:09]
+https://www.owned-networks.net/client_area/knowledgebase/9/NGINX--Allow-access-only-to-certain-IPs.html
+#+BEGIN_EXAMPLE
+location / {
+deny 192.168.1.1;
+allow 192.168.1.0/24;
+allow 10.1.1.0/16;
+allow 2001:0db8::/32;
+deny all;
+}
+#+END_EXAMPLE
+
+** DONE nginx reload conf: Run service nginx reload or /etc/init.d/nginx reload
+  CLOSED: [2017-10-14 Sat 11:02]
+https://serverfault.com/questions/378581/nginx-config-reload-without-downtime
+** DONE nginx redirect http to https
+  CLOSED: [2017-10-13 Fri 21:44]
+https://www.bjornjohansen.no/redirect-to-https-with-nginx
+#+BEGIN_EXAMPLE
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	server_name _;
+	return 301 https://$host$request_uri;
+}
+#+END_EXAMPLE
+** DONE [#A] nginx container: https://hub.docker.com/_/nginx/
+   CLOSED: [2017-11-05 Sun 12:01]
+docker run -p 8080:80 --name some-nginx -d  nginx
+
+http://localhost:8080
+docker exec -it some-nginx bash
+
+cd /etc/nginx/conf.d
+
+# reload nginx without restart
+nginx -s reload

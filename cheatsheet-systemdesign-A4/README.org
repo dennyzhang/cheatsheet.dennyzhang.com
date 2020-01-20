@@ -49,60 +49,61 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 </iframe>
 #+END_HTML
 ** Top 20 Design Problems For Technical Modules
-| Num | Name                                                       | Summary          |
-|-----+------------------------------------------------------------+------------------|
-|   1 | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed counter]]                               | [[https://architect.dennyzhang.com/design-distributed-counter][link]], [[https://www.slideshare.net/kevinweil/rainbird-realtime-analytics-at-twitter-strata-2011/59-If_You_Only_Remember_One][link]]       |
-|   2 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task scheduling]]                                    | [[https://architect.dennyzhang.com/explain-delayedqueue][link]]             |
-|   3 | [[https://architect.dennyzhang.com/design-concurrent-hashmap][Design a thread-safe Hashmap]]                               | [[https://architect.dennyzhang.com/design-concurrent-hashmap][link]], [[https://www.geeksforgeeks.org/internal-working-of-hashmap-java/][link]]       |
-|   4 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 | [[https://architect.dennyzhang.com/design-api-limiter/][link]], [[https://nordicapis.com/everything-you-need-to-know-about-api-rate-limiting/][link]], [[https://konghq.com/blog/how-to-design-a-scalable-rate-limiting-algorithm/][link]] |
-|   5 | Design a distributed UUID generator                        |                  |
-|-----+------------------------------------------------------------+------------------|
-|   6 | Design a distributed Hashmap                               |                  |
-|   7 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]                              | [[https://github.com/donnemartin/system-design-primer/blob/master/solutions/object_oriented_design/parking_lot/parking_lot.ipynb][link]]             |
-|   8 | Design data sync for a distributed system                  |                  |
-|   9 | Design A big file transfer feature                         |                  |
-|-----+------------------------------------------------------------+------------------|
-|  10 | Design a distributed transaction                           |                  |
-|  11 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]                          |                  |
-|  12 | Top URL hits                                               |                  |
-|  13 | Unique url hits                                            |                  |
-|  14 | Design a distributed transactions                          |                  |
-|  15 | Design a load balancer                                     |                  |
-|  16 | Design a client-server API to build a rich document editor |                  |
-|  17 | Design online/offline status system                        |                  |
-|  18 | Design a circuit breaker                                   |                  |
-|  19 | Design a service auto-discovery feature                    |                  |
-|  20 | Design a secrets management system                         |                  |
+| Num | Name                                                       |
+|-----+------------------------------------------------------------|
+|   1 | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed counter]]                               |
+|   2 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task scheduling]]                                    |
+|   3 | [[https://architect.dennyzhang.com/design-concurrent-hashmap][Design a thread-safe Hashmap]]                               |
+|   4 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                 |
+|   5 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed queue]]                                              |
+|   6 | Design a distributed UUID generator                        |
+|   7 | Design a distributed Hashmap                               |
+|   8 | Design data sync for a distributed system                  |
+|   9 | Design A big file transfer feature                         |
+|-----+------------------------------------------------------------|
+|  10 | Design a distributed transactions                          |
+|  11 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]                              |
+|  12 | Design a distributed transaction                           |
+|  13 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]                          |
+|  14 | Top URL hits                                               |
+|  15 | Unique url hits                                            |
+|  16 | Design a load balancer                                     |
+|  17 | Design a client-server API to build a rich document editor |
+|  18 | Design online/offline status system                        |
+|  19 | Design a circuit breaker                                   |
+|  20 | Design a service auto-discovery feature                    |
+|  21 | Design a secrets management system                         |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Design Problems For A Complex Product
-| Num | Name                                       | Summary |
-|-----+--------------------------------------------+---------|
-|   1 | Design K/V DB                              |         |
-|   2 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: TinyURL - A URL Shorterner Service]] |         |
-|   3 | [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]                       |         |
-|   4 | Design an API gateway                      |         |
-|   5 | Design twitter news feed                   | [[https://medium.com/@narengowda/system-design-for-twitter-e737284afc95][link]]    |
-|   6 | [[https://architect.dennyzhang.com/design-elevator/][Design: An Elevator Service]]                |         |
-|-----+--------------------------------------------+---------|
-|   7 | Design web crawler                         |         |
-|   8 | Design amazon shopping cart                |         |
-|   9 | [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]]          |         |
-|  10 | Design a payment processor                 |         |
-|  11 | Design google doc                          |         |
-|  12 | Design gmail                               |         |
-|  13 | Design instagram, a photo sharing app      |         |
-|  14 | Design Yelp, a location-based system       |         |
-|  15 | Design Pastebin.com                        |         |
-|  16 | Design amazon book recommendation system   |         |
-|  17 | Google autocomplete                        |         |
-|  18 | Design Google PageRank                     |         |
-|  19 | Design messaging/notification system       |         |
-|  20 | Design search post system                  |         |
-|  21 | [[https://architect.dennyzhang.com/design-redis][Design memcache/redis]]                      |         |
-|  22 | Design typeahead                           |         |
-|  23 | Design Google Adsense fraud detection      |         |
-|  24 | Design a voice conference system           |         |
-|  25 | Design slack                               |         |
+| Num | Name                                       |
+|-----+--------------------------------------------|
+|   1 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: TinyURL - A URL Shorterner Service]] |
+|   2 | [[https://architect.dennyzhang.com/design-news-feed][Design Twitter News Feed]]                   |
+|   3 | Design K/V DB                              |
+|-----+--------------------------------------------|
+|   4 | Design: Flight booking service             |
+|   5 | [[https://architect.dennyzhang.com/design-uber/][Design: Uber Backend]]                       |
+|   6 | Design an API gateway                      |
+|   7 | [[https://architect.dennyzhang.com/design-elevator/][Design: An Elevator Service]]                |
+|   8 | Design web crawler                         |
+|   9 | Design amazon shopping cart                |
+|  10 | [[https://architect.dennyzhang.com/design-google-suggestion/][Design: Google Suggestion Service]]          |
+|  11 | Design a payment processor                 |
+|  12 | Design google doc                          |
+|  13 | Design gmail                               |
+|  14 | Design instagram, a photo sharing app      |
+|  15 | Design Yelp, a location-based system       |
+|  16 | Design Pastebin.com                        |
+|  17 | Design amazon book recommendation system   |
+|  18 | Google autocomplete                        |
+|  19 | Design Google PageRank                     |
+|  20 | Design messaging/notification system       |
+|  21 | Design search post system                  |
+|  22 | [[https://architect.dennyzhang.com/design-redis][Design memcache/redis]]                      |
+|  23 | Design typeahead                           |
+|  24 | Design Google Adsense fraud detection      |
+|  25 | Design a voice conference system           |
+|  26 | Design slack                               |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 30 Concepts For Feature/System Design
 | Num | Name                                    | Summary                                                             |
@@ -150,7 +151,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Num | Name                                      | Summary                                                                     |
 |-----+-------------------------------------------+-----------------------------------------------------------------------------|
 |   1 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                           |                                                                             |
-|   2 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed queue]]                             | Run scheduled tasks                                                         |
 |   3 | [[https://architect.dennyzhang.com/explain-bloomfilter][Bloom filter]]                              | A space-effcient query returns either "possibly in set" or "definitely not" |
 |-----+-------------------------------------------+-----------------------------------------------------------------------------|
 |   4 | [[https://architect.dennyzhang.com/explain-crdts][CRDT(Conflict-Free Replicated Data Types)]] |                                                                             |
@@ -166,19 +166,19 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 
 [[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-featuredesign-A4/dynamo-summary.png]]
 ** Explain workflow: What happens when XXX?
-| Num | Name                                          | Summary |
-|-----+-----------------------------------------------+---------|
-|   1 | When happens when I search in google?         |         |
-|   2 | How loadbalancer works                        |         |
-|   3 | Explain three phase commit model              |         |
-|   4 | Explain HTTP return code                      |         |
-|   5 | Explain Mysql DB replication model            |         |
-|   6 | Explain gossip protocol                       |         |
-|   7 | [[https://architect.dennyzhang.com/explain-cap][Explain CAP]]                                   |         |
-|   8 | Explain Hadoop file system                    |         |
-|   9 | [Linux] Explain OS booting process            |         |
-|  10 | [Linux] What happens, when running "ls -l *"  |         |
-|  11 | [Linux]What happens, when pressing "Ctrl + c" |         |
+| Num | Name                                           | Summary |
+|-----+------------------------------------------------+---------|
+|   1 | When happens when I search in google?          |         |
+|   2 | How loadbalancer works                         |         |
+|   3 | Explain three phase commit model               |         |
+|   4 | Explain HTTP return code                       |         |
+|   5 | Explain Mysql DB replication model             |         |
+|   6 | Explain gossip protocol                        |         |
+|   7 | [[https://architect.dennyzhang.com/explain-cap][Explain CAP]]                                    |         |
+|   8 | Explain Hadoop file system                     |         |
+|   9 | [Linux] Explain OS booting process             |         |
+|  10 | [Linux] What happens, when running "ls -l *"   |         |
+|  11 | [Linux] What happens, when pressing "Ctrl + c" |         |
 #+TBLFM: $1=@-1$1+1;N
 ** Explain tools: how XXX supports XXX?
 | Num | Name                                  | Summary |

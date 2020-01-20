@@ -186,10 +186,17 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   2 | Detect cycle for a linked list   | [[https://code.dennyzhang.com/linked-list-cycle][Leetcode: Linked List Cycle]]    |
 |   3 | LFU cache with double linkedlist | [[https://code.dennyzhang.com/lfu-cache][Leetcode: LFU Cache]]            |
 #+TBLFM: $1=@-1$1+1;N
-** Top 5 Sliding Window Problems
-| Num | Problem                                 | Summary                            |
-|-----+-----------------------------------------+------------------------------------|
-|   1 | Sliding window with non-decreasing size | [[https://code.dennyzhang.com/max-consecutive-ones-iii][Leetcode: Max Consecutive Ones III]] |
+** Top 10 Sliding Window Problems
+| Num | Problem                                                   | Summary                                                  |
+|-----+-----------------------------------------------------------+----------------------------------------------------------|
+|   1 | Sliding window with fixed size                            | [[https://code.dennyzhang.com/find-all-anagrams-in-a-string][Leetcode: Find All Anagrams in a String]]                  |
+|   2 | Sliding window with non-decreasing size                   | [[https://code.dennyzhang.com/max-consecutive-ones-iii][Leetcode: Max Consecutive Ones III]]                       |
+|   3 | How to initialize the time window?                        | [[https://code.dennyzhang.com/minimum-swaps-to-group-all-1s-together][Leetcode: Minimum Swaps to Group All 1's Together]]        |
+|   4 | Sliding window with non-decreasing size                   | [[https://code.dennyzhang.com/max-consecutive-ones-iii][Leetcode: Max Consecutive Ones III]]                       |
+|   5 | Move two pointers: two loop vs One loop                   | [[https://code.dennyzhang.com/longest-substring-without-repeating-characters][Leetcode: Longest Substring Without Repeating Characters]] |
+|   6 | Inspiring sliding window problem                          | [[https://code.dennyzhang.com/moving-stones-until-consecutive-ii][Leetcode: Moving Stones Until Consecutive II]]             |
+|   7 | Sliding window with adjustable size                       |                                                          |
+|   8 | Move pointer1 to match the other, or the other way around |                                                          |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 10 Math Problems
 | Num | Problem                                 | Summary                                        |
@@ -197,13 +204,14 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   1 | Check prime - [[https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes][Sieve of Eratosthenes]]     | [[https://code.dennyzhang.com/count-primes][Leetcode: Count Primes]]                         |
 |   2 | Check leap year                         | [[https://code.dennyzhang.com/day-of-the-week][Leetcode: Day of the Week]]                      |
 |   3 | GCD                                     | [[https://code.dennyzhang.com/fraction-addition-and-subtraction][Leetcode: Fraction Addition and Subtraction]]    |
-|   4 | Rectangle                               | [[https://code.dennyzhang.com/rectangle-area][Leetcode: Rectangle Area]]                       |
-|   5 | Rotate Array by k steps                 | [[https://code.dennyzhang.com/rotate-array][Leetcode: Rotate Array]]                         |
-|   6 | Mapping data range of getRand algorithm | [[https://code.dennyzhang.com/implement-rand10-using-rand7][Leetcode: Implement Rand10() Using Rand7()]]     |
-|   7 | Deal with float                         | [[https://code.dennyzhang.com/minimize-max-distance-to-gas-station][Leetcode: Minimize Max Distance to Gas Station]] |
-|   8 | Sum of Subsequence Widths               | [[https://code.dennyzhang.com/sum-of-subsequence-widths][Leetcode: Sum of Subsequence Widths]]            |
-|   9 | Remove 9                                | [[https://code.dennyzhang.com/remove-9][Leetcode: Remove 9]]                             |
-|  10 | Fraction to Recurring Decimal           | [[https://code.dennyzhang.com/fraction-to-recurring-decimal][Leetcode: Fraction to Recurring Decimal]]        |
+|   4 | Overlapping area of two rectangles      | [[https://code.dennyzhang.com/rectangle-area][Leetcode: Rectangle Area]]                       |
+|   5 | [[https://stackoverflow.com/questions/3838329/how-can-i-check-if-two-segments-intersect][Check if two line segments intersect]]    |                                                |
+|   6 | Rotate Array by k steps                 | [[https://code.dennyzhang.com/rotate-array][Leetcode: Rotate Array]]                         |
+|   7 | Mapping data range of getRand algorithm | [[https://code.dennyzhang.com/implement-rand10-using-rand7][Leetcode: Implement Rand10() Using Rand7()]]     |
+|   8 | Deal with float                         | [[https://code.dennyzhang.com/minimize-max-distance-to-gas-station][Leetcode: Minimize Max Distance to Gas Station]] |
+|   9 | Sum of Subsequence Widths               | [[https://code.dennyzhang.com/sum-of-subsequence-widths][Leetcode: Sum of Subsequence Widths]]            |
+|  10 | Remove 9                                | [[https://code.dennyzhang.com/remove-9][Leetcode: Remove 9]]                             |
+|  11 | Fraction to Recurring Decimal           | [[https://code.dennyzhang.com/fraction-to-recurring-decimal][Leetcode: Fraction to Recurring Decimal]]        |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 10 Greedy Problems
 | Num | Problem                                   | Summary                                             |
@@ -214,13 +222,23 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   4 | Bag of Tokens                             | [[https://code.dennyzhang.com/bag-of-tokens][Leetcode: Bag of Tokens]]                             |
 |   5 | Two City Scheduling                       | [[https://code.dennyzhang.com/two-city-scheduling][Leetcode: Two City Scheduling]]                       |
 |   6 | Split Concatenated Strings                | [[https://code.dennyzhang.com/split-concatenated-strings][Leetcode: Split Concatenated Strings]]                |
+|   7 | Jump Game II                              | [[https://code.dennyzhang.com/jump-game-ii][Leetcode: Jump Game II]]                              |
+|   8 | Delete Columns to Make Sorted II          | [[https://code.dennyzhang.com/delete-columns-to-make-sorted-ii][Leetcode: Delete Columns to Make Sorted II]]          |
+#+TBLFM: $1=@-1$1+1;N
+** Top 5 Trie Problems
+| Num | Problem                                        | Summary                                           |
+|-----+------------------------------------------------+---------------------------------------------------|
+|   1 | Extra datastructure in trie to save caculation | [[https://code.dennyzhang.com/word-search-ii][Leetcode: Word Search II]]                          |
+|   2 | Trie for bit manipulation                      | [[https://code.dennyzhang.com/maximum-xor-of-two-numbers-in-an-array/][Leetcode: Maximum XOR of Two Numbers in an Array]]. |
+|   3 | Fuzzy match for trie tree                      | [[https://code.dennyzhang.com/implement-magic-dictionary/][Leetcode: Implement Magic Dictionary]]              |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 5 Heap/Priority Queue Problems
-| Num | Problem           | Summary                     |
-|-----+-------------------+-----------------------------|
-|   1 | Meeting Rooms II  | [[https://code.dennyzhang.com/meeting-rooms-ii][Leetcode: Meeting Rooms II]]  |
-|   2 | Task Scheduler    | [[https://code.dennyzhang.com/task-scheduler][Leetcode: Task Scheduler]]    |
-|   3 | Last Stone Weight | [[https://code.dennyzhang.com/last-stone-weight][Leetcode: Last Stone Weight]] |
+| Num | Problem             | Summary                       |
+|-----+---------------------+-------------------------------|
+|   1 | Meeting Rooms II    | [[https://code.dennyzhang.com/meeting-rooms-ii][Leetcode: Meeting Rooms II]]    |
+|   2 | Task Scheduler      | [[https://code.dennyzhang.com/task-scheduler][Leetcode: Task Scheduler]]      |
+|   3 | Last Stone Weight   | [[https://code.dennyzhang.com/last-stone-weight][Leetcode: Last Stone Weight]]   |
+|   4 | The Skyline Problem | [[https://code.dennyzhang.com/the-skyline-problem][Leetcode: The Skyline Problem]] |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 5 Montone Stack/Queue Problems
 | Num | Problem                                  | Summary                                                         |
