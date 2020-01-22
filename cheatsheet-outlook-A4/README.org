@@ -1,4 +1,4 @@
-* CheatSheet: Outlook                                              :Tools:
+* CheatSheet: Mailing - OutLook, Gmail                                :Tools:
 :PROPERTIES:
 :type:     tool
 :export_file_name: cheatsheet-outlook-A4.pdf
@@ -28,6 +28,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Outlook out of office message                        | =Tool -> Out of Office=                           |
 | Outlook out of office message templates              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-outlook-A4/doc.md][Github Link]]                                       |
 | Define inbox rules for outlook emails                | Create/goto folder, check *Rules* from sub-menu   |
+
+** Gmail
+| Name                               | Summary                              |
+|------------------------------------+--------------------------------------|
+| Filter gmail into different labels | [[https://www.yesware.com/blog/how-to-create-folders-in-gmail/][Link: How to Create Folders in Gmail]] |
 
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

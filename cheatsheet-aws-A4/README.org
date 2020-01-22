@@ -7484,3 +7484,5 @@ https://stackoverflow.com/questions/14916899/download-rds-snapshot
 * DONE How do I delete a Route 53 hosted zone created by service discovery? :noexport:
   CLOSED: [2020-01-12 Sun 15:00]
 https://aws.amazon.com/premiumsupport/knowledge-center/route-53-service-discovery-delete-zone/
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO allow users to check bill                                   :noexport:

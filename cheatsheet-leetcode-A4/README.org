@@ -232,6 +232,12 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   2 | Trie for bit manipulation                      | [[https://code.dennyzhang.com/maximum-xor-of-two-numbers-in-an-array/][Leetcode: Maximum XOR of Two Numbers in an Array]]. |
 |   3 | Fuzzy match for trie tree                      | [[https://code.dennyzhang.com/implement-magic-dictionary/][Leetcode: Implement Magic Dictionary]]              |
 #+TBLFM: $1=@-1$1+1;N
+** Top 5 Union Find Problems
+| Num | Problem                                         | Summary                           |
+|-----+-------------------------------------------------+-----------------------------------|
+|   1 | Union find for weighted graph                   | [[https://code.dennyzhang.com/evaluate-division][Leetcode: Evaluate Division]]       |
+|   2 | Union find: connect groups and merge node count | [[https://code.dennyzhang.com/bricks-falling-when-hit][Leetcode: Bricks Falling When Hit]] |
+#+TBLFM: $1=@-1$1+1;N
 ** Top 5 Heap/Priority Queue Problems
 | Num | Problem             | Summary                       |
 |-----+---------------------+-------------------------------|

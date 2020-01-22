@@ -119,7 +119,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   8 | [[https://architect.dennyzhang.com/explain-coordination][Concurrency & Communication]]             |                                                                     |
 |   9 | [[https://architect.dennyzhang.com/explain-locks][Pessimistic And Optimistic Locking]]      |                                                                     |
 |  10 | [[https://architect.dennyzhang.com/explain-eventualconsistency][Consistency Module]]                      | weak consistency, eventual consistency, strong consistency          |
-|  11 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write, CRDT                  |
+|  11 | Conflict resolution                     | Quorum, vector lock, reconcile on read/write, CRDTs                 |
 |  12 | B+ Tree                                 |                                                                     |
 |-----+-----------------------------------------+---------------------------------------------------------------------|
 |  13 | [[https://architect.dennyzhang.com/explain-http][Networking: HTTP]]                        |                                                                     |
@@ -148,20 +148,20 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
 ** Top 15 Advanced Data Structure & Algorithms
-| Num | Name                                      | Summary                                                                     |
-|-----+-------------------------------------------+-----------------------------------------------------------------------------|
-|   1 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                           |                                                                             |
-|   3 | [[https://architect.dennyzhang.com/explain-bloomfilter][Bloom filter]]                              | A space-effcient query returns either "possibly in set" or "definitely not" |
-|-----+-------------------------------------------+-----------------------------------------------------------------------------|
-|   4 | [[https://architect.dennyzhang.com/explain-crdts][CRDT(Conflict-Free Replicated Data Types)]] |                                                                             |
-|   5 | [[https://architect.dennyzhang.com/explain-sstable][SSTable (Sorted Strings Table)]]            |                                                                             |
-|   6 | [[https://architect.dennyzhang.com/explain-lsm][LSM (Log Structured Merge Trees)]]          |                                                                             |
-|   7 | [[https://architect.dennyzhang.com/explain-gossip][Gossip]]                                    | Propagate cluster status                                                    |
-|-----+-------------------------------------------+-----------------------------------------------------------------------------|
-|   8 | [[https://en.wikipedia.org/wiki/Two-phase_commit_protocol][Two-phase commit]]/[[https://en.wikipedia.org/wiki/Three-phase_commit_protocol][Three-phase commit]]       |                                                                             |
-|  10 | [[https://architect.dennyzhang.com/explain-vector-clocks][Vector Clocks/Version Vectors]]             |                                                                             |
-|  11 | [[https://architect.dennyzhang.com/design-explain-paxos][Paxos and raft protocol]]                   |                                                                             |
-|  12 | Merkle Tree                               |                                                                             |
+| Num | Name                                        | Summary                                                                     |
+|-----+---------------------------------------------+-----------------------------------------------------------------------------|
+|   1 | [[https://architect.dennyzhang.com/explain-consistent-hash][Consistent Hash]]                             |                                                                             |
+|   3 | [[https://architect.dennyzhang.com/explain-bloomfilter][Bloom filter]]                                | A space-effcient query returns either "possibly in set" or "definitely not" |
+|-----+---------------------------------------------+-----------------------------------------------------------------------------|
+|   4 | [[https://architect.dennyzhang.com/explain-crdts][CRDTs (Conflict-Free Replicated Data Types)]] |                                                                             |
+|   5 | [[https://architect.dennyzhang.com/explain-sstable][SSTable (Sorted Strings Table)]]              |                                                                             |
+|   6 | [[https://architect.dennyzhang.com/explain-lsm][LSM (Log Structured Merge Trees)]]            |                                                                             |
+|   7 | [[https://architect.dennyzhang.com/explain-gossip][Gossip]]                                      | Propagate cluster status                                                    |
+|-----+---------------------------------------------+-----------------------------------------------------------------------------|
+|   8 | [[https://en.wikipedia.org/wiki/Two-phase_commit_protocol][Two-phase commit]]/[[https://en.wikipedia.org/wiki/Three-phase_commit_protocol][Three-phase commit]]         |                                                                             |
+|  10 | [[https://architect.dennyzhang.com/explain-vector-clocks][Vector Clocks/Version Vectors]]               |                                                                             |
+|  11 | [[https://architect.dennyzhang.com/design-explain-paxos][Paxos and raft protocol]]                     |                                                                             |
+|  12 | Merkle Tree                                 |                                                                             |
 #+TBLFM: $1=@-1$1+1;N
 
 [[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-featuredesign-A4/dynamo-summary.png]]

@@ -31,18 +31,24 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Git Source Code      | [[https://github.com/git/git][Github: git]]                      |
 | Reference            | [[http://tutorials.jenkov.com/java-util-concurrent/index.html][Link: Java Concurrency Utilities]] |
 ** Data Structures
-| Name                    | Summary                                                     |
-|-------------------------+-------------------------------------------------------------|
-| Blocking Queue          |                                                             |
-| Delayed Queue           |                                                             |
-| Concurrent Linked Queue | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/ConcurrentLinkedQueue.java][Github: jdk7u-jdk/.../concurrent/ConcurrentLinkedQueue.java]] |
-| Priority Blocking Queue | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/PriorityBlockingQueue.java][Github: jdk7u-jdk/.../concurrent/PriorityBlockingQueue.java]] |
-| Deque                   | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/Deque.java][Github: jdk7u-jdk/.../Deque.java]]                            |
-| bitset                  |                                                             |
-| Garbage Collection      |                                                             |
-| Concurrent Hash Map     |                                                             |
-| Sorted Map, Treemap     |                                                             |
-| Semophore               | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/Semaphore.java][Github: jdk7u-jdk/.../concurrent/Semaphore.java]]             |
+| Name                                        | Summary                                                     |
+|---------------------------------------------+-------------------------------------------------------------|
+| Blocking Queue                              |                                                             |
+| Delayed Queue                               |                                                             |
+| Concurrent Linked Queue                     | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/ConcurrentLinkedQueue.java][Github: jdk7u-jdk/.../concurrent/ConcurrentLinkedQueue.java]] |
+| Priority Blocking Queue                     | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/PriorityBlockingQueue.java][Github: jdk7u-jdk/.../concurrent/PriorityBlockingQueue.java]] |
+| Deque                                       | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/Deque.java][Github: jdk7u-jdk/.../Deque.java]]                            |
+| bitset                                      |                                                             |
+| Garbage Collection                          |                                                             |
+| Concurrent Hash Map                         |                                                             |
+| Sorted Map, Treemap                         |                                                             |
+| Semophore                                   | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/Semaphore.java][Github: jdk7u-jdk/.../concurrent/Semaphore.java]]             |
+| Golang channels                             |                                                             |
+|---------------------------------------------+-------------------------------------------------------------|
+| API Rate Limiter                            |                                                             |
+| Skiplist                                    |                                                             |
+| Bloom filter                                |                                                             |
+| CRDTs (Conflict-Free Replicated Data Types) |                                                             |
 ** Functions & Methods
 | Name                                        | Summary                                                          |
 |---------------------------------------------+------------------------------------------------------------------|
