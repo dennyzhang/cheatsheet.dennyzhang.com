@@ -31,6 +31,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Intercepts ICMP packets               | =tcpdump -i any -n -v 'icmp'=        |
 | Saving captured packages to file      | =tcpdump -w myfile.cap=              |
 | Reading package data from local file  | =tcpdump -r myfile.cap=              |
+| Monitor udp packets instead of tcp    | =tcpdump 'udp'=                      |
 
 ** Tcpdump advanced
 | Name                            | Comment                                                                         |
@@ -135,20 +136,20 @@ tcpdump -X
 *** TCP flags                                                      :noexport:
  http://en.wikipedia.org/wiki/Transmission_Control_Protocol\\
 #+begin_example
-     * Flags (9 bits) (aka Control bits) – contains 9 1-bit flags
-         * NS (1 bit) – ECN-nonce concealment protection (added to header by RFC 3540).
-         * CWR (1 bit) – Congestion Window Reduced (CWR) flag is set by the sending host to indicate that it received a TCP segment with the ECE flag set and had responded in congestion control mechanism (added to header by RFC 3168).
-         * ECE (1 bit) – ECN-Echo indicates
+     * Flags (9 bits) (aka Control bits) - contains 9 1-bit flags
+         * NS (1 bit) - ECN-nonce concealment protection (added to header by RFC 3540).
+         * CWR (1 bit) - Congestion Window Reduced (CWR) flag is set by the sending host to indicate that it received a TCP segment with the ECE flag set and had responded in congestion control mechanism (added to header by RFC 3168).
+         * ECE (1 bit) - ECN-Echo indicates
 
              * If the SYN flag is set (1), that the TCP peer is ECN capable.
              * If the SYN flag is clear (0), that a packet with Congestion Experienced flag in IP header set is received during normal transmission (added to header by RFC 3168).
 
-         * URG (1 bit) – indicates that the Urgent pointer field is significant
-         * ACK (1 bit) – indicates that the Acknowledgment field is significant. All packets after the initial SYN packet sent by the client should have this flag set.
-         * PSH (1 bit) – Push function. Asks to push the buffered data to the receiving application.
-         * RST (1 bit) – Reset the connection
-         * SYN (1 bit) – Synchronize sequence numbers. Only the first packet sent from each end should have this flag set. Some other flags change meaning based on this flag, and some are only valid for when it is set, and others when it is clear.
-         * FIN (1 bit) – No more data from sender
+         * URG (1 bit) - indicates that the Urgent pointer field is significant
+         * ACK (1 bit) - indicates that the Acknowledgment field is significant. All packets after the initial SYN packet sent by the client should have this flag set.
+         * PSH (1 bit) - Push function. Asks to push the buffered data to the receiving application.
+         * RST (1 bit) - Reset the connection
+         * SYN (1 bit) - Synchronize sequence numbers. Only the first packet sent from each end should have this flag set. Some other flags change meaning based on this flag, and some are only valid for when it is set, and others when it is clear.
+         * FIN (1 bit) - No more data from sender
 #+end_example
 *** TCP connection state                                           :noexport:
  http://en.wikipedia.org/wiki/Transmission_Control_Protocol\\

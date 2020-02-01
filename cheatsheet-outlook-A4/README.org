@@ -28,6 +28,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Outlook out of office message                        | =Tool -> Out of Office=                           |
 | Outlook out of office message templates              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-outlook-A4/doc.md][Github Link]]                                       |
 | Define inbox rules for outlook emails                | Create/goto folder, check *Rules* from sub-menu   |
+| [[https://apple.stackexchange.com/questions/244959/outlook-apply-rule-to-past-messages][Outlook apply rule to past messages]]                  |                                                   |
 
 ** Gmail
 | Name                               | Summary                              |

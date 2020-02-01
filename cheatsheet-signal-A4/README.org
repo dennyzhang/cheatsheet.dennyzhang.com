@@ -25,6 +25,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Name                               | Command                                                                |
 |------------------------------------+------------------------------------------------------------------------|
 | =kill -l=                          | List all signals                                                       |
+| Critical signals                   | The signals SIGKILL and SIGSTOP cannot be caught, blocked, or ignored. |
 | =SIGINT=                           | Users wish to interrupt the process                                    |
 | =SIGHUP=                           | [[https://stackoverflow.com/questions/19052354/sighup-for-reloading-configuration][Reload or restart a process]]. =kill -HUP $pid=                          |
 | =SIGHUP=                           | Terminal warns dependent processes of logout                           |

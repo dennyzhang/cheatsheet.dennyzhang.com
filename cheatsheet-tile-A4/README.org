@@ -529,3 +529,15 @@ configuring product...
 could not execute "configure-product": yaml: line 2: mapping values are not allowed in this context
 #+END_EXAMPLE
 * HALF ops yaml file add |                                         :noexport:
+* Talk with opsmanager via REST API                                :noexport:
+#+BEGIN_EXAMPLE
+Reverse engineering for opsmanager HTTP requests
+basic_dummy=$(echo -n 'opsman:' | base64)
+curl -H "Authorization: Basic $basic_dummy" -d "grant_type=password&password=Admin%2123&username=admin" https://30.0.0.5/uaa/oauth/token -k
+# testcase1
+ACCESS_TOKEN=$(curl -H "Authorization: Basic $basic_dummy" -d "grant_type=password&password=Admin%2123&username=admin" https://30.0.0.5/uaa/oauth/token -k | jq -r .access_token)
+curl -k -H "Authorization: Bearer $ACCESS_TOKEN" https://30.0.0.5/api/v0/deployed/director/credentials/bosh_commandline_credentials
+# test case2
+ACCESS_TOKEN=$(curl -H "Authorization: Basic $basic_dummy" -d "grant_type=password&password=Admin%2123&username=admin" https://30.0.0.5/uaa/oauth/token -k | jq -r .access_token)
+curl -k -H "Authorization: Bearer $ACCESS_TOKEN" https://30.0.0.5/api/v0/staged/products
+#+END_EXAMPLE

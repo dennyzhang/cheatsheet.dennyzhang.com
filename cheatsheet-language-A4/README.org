@@ -38,13 +38,14 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Concurrent Linked Queue                     | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/ConcurrentLinkedQueue.java][Github: jdk7u-jdk/.../concurrent/ConcurrentLinkedQueue.java]] |
 | Priority Blocking Queue                     | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/PriorityBlockingQueue.java][Github: jdk7u-jdk/.../concurrent/PriorityBlockingQueue.java]] |
 | Deque                                       | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/Deque.java][Github: jdk7u-jdk/.../Deque.java]]                            |
-| bitset                                      |                                                             |
+| Bitset                                      |                                                             |
 | Garbage Collection                          |                                                             |
 | Concurrent Hash Map                         |                                                             |
 | Sorted Map, Treemap                         |                                                             |
 | Semophore                                   | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/Semaphore.java][Github: jdk7u-jdk/.../concurrent/Semaphore.java]]             |
 | Golang channels                             |                                                             |
 |---------------------------------------------+-------------------------------------------------------------|
+| Binary index tree                           |                                                             |
 | API Rate Limiter                            |                                                             |
 | Skiplist                                    |                                                             |
 | Bloom filter                                |                                                             |
@@ -55,6 +56,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | How string contains() method is implemented |                                                                  |
 | How sqrt method is implemented              | sqrt(x) = 2**k * sqrt(y) [[https://github.com/golang/go/blob/master/src/math/sqrt.go][Github: ../sqrt.go]], [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/native/java/lang/fdlibm/src/e_sqrt.c][Github: ../e_sqrt.c]] |
 | How Thread.sleep() is implemented           |                                                                  |
+| How python enumerate() is implemented?      |                                                                  |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

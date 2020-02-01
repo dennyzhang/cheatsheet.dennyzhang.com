@@ -40,16 +40,16 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Curl post send json | =curl <URL> -H "content-type: application/json" -d "{ \"woof\": \"bark\"}"= |
 
 ** Curl Advanced
-| Name                         | Command                                                                                     |
-|------------------------------+---------------------------------------------------------------------------------------------|
-| Get my public ip             | =curl -L -s http://ipecho.net/plain=, =curl -L -s http://whatismijnip.nl=                   |
-| Curl with credential         | =curl -u $username:$password http://repo.dennyzhang.com/README.txt=                         |
-| Curl upload                  | =curl -v -F key1=value1 -F upload=@localfilename <URL>=                                     |
-| Install curl in alpine linux | =apk add --update curl=                                                                     |
-| Curl with http2              | =curl -k -v --http2 https://www.google.com/=                                                |
-| Curl ftp upload              | =curl -T cryptopp552.zip -u test:test ftp://10.32.99.187/=                                  |
-| Curl ftp download            | =curl -u test:test ftp://10.32.99.187/cryptopp552.zip -o cryptopp552.zip=                   |
-| Curl upload with credential  | =curl -v -u admin:admin123 --upload-file package1.zip http://mysever:8081/dir/package1.zip= |
+| Name                         |
+|------------------------------|
+| Get my public ip             |
+| Curl with credential         |
+| Curl upload                  |
+| Install curl in alpine linux |
+| Curl with http2              |
+| Curl ftp upload              |
+| Curl ftp download            |
+| Curl upload with credential  |
 ** Curl Script
 | Name                                   | Command                 |
 |----------------------------------------+-------------------------|

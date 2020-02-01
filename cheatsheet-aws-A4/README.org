@@ -1,4 +1,4 @@
-* CheatSheet: Amazon AWS Products                                :Cloud:
+* CheatSheet: Amazon AWS                                              :Cloud:
 :PROPERTIES:
 :type:     aws, cloud
 :export_file_name: cheatsheet-aws-A4.pdf
@@ -20,7 +20,28 @@
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-aws-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-gcp-A4][GCP CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-virtualization-A4][CheatSheet: Cloud Virtualization]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-File me [[https://github.com/dennyzhang/cheatsheet-python-A4/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet-python-A4][this repo]].
+File me [[https://github.com/dennyzhang/cheatsheet-aws-A4/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet-aws-A4][this repo]].
+** AWS CLI Basic
+| Name                                   | Summary                               |
+|----------------------------------------+---------------------------------------|
+| List all used resources in all regions | [[https://github.com/dennyzhang/cheatsheet-aws-A4/blob/master/INSTRUCT.md#list-all-resources][Github: List all resources]]            |
+| Install aws cli                        | =pip install awscli=, =aws help=      |
+| Load aws cli profile                   | =aws configure=                       |
+| List regions                           | =aws ec2 describe-regions=            |
+| List instances                         | =aws ec2 describe-instances=          |
+| AWS CLI config files                   | =~/.aws/credentials=, =~/.aws/config= |
+| Reference                              | [[https://github.com/awslabs/aws-shell][Github: awslabs/aws-shell]]             |
+** AWS EC2
+| Name                  | Summary                                                                    |
+|-----------------------+----------------------------------------------------------------------------|
+| List images by amazon | =aws ec2 describe-images=, =aws ec2 describe-images --owners self amazon=  |
+| [[http://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html][Run a new instance]]    | =aws ec2 run-instances --image-id ami-c3b8d6aa --count 1 --key-name mykey= |
+** AWS DNS
+| Name                            | Summary                                                                    |
+|---------------------------------+----------------------------------------------------------------------------|
+| List hosted zones               | =aws route53 list-hosted-zones=                                            |
+| List hosted zone by name        | =aws route53 list-hosted-zones-by-name --dns-name my.com=                  |
+| List DNS records by hosted zone | =aws route53 list-resource-record-sets --hosted-zone-id "/hostedzone/XXX"= |
 ** AWS ECS
 | Name                         | Summary     |
 |------------------------------+-------------|
@@ -106,25 +127,6 @@ File me [[https://github.com/dennyzhang/cheatsheet-python-A4/issues][Issues]] or
 | Subnet                       | A segment of a VPC's IP address range where you can place groups of isolated resources          |
 | VPC Peering                  | A networking connection between two VPCs enable traffic by private IP                           |
 | ClassicLink                  | Allow you to link an EC2-Classic instance to a VPC in your account, within the same region      |
-** AWS CLI Basic
-| Name                 | Summary                               |
-|----------------------+---------------------------------------|
-| Install aws cli      | =pip install awscli=, =aws help=      |
-| Load aws cli profile | =aws configure=                       |
-| List regions         | =aws ec2 describe-regions=            |
-| List instances       | =aws ec2 describe-instances=          |
-| AWS CLI config files | =~/.aws/credentials=, =~/.aws/config= |
-** AWS EC2
-| Name                  | Summary                                                                    |
-|-----------------------+----------------------------------------------------------------------------|
-| List images by amazon | =aws ec2 describe-images=, =aws ec2 describe-images --owners self amazon=  |
-| [[http://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html][Run a new instance]]    | =aws ec2 run-instances --image-id ami-c3b8d6aa --count 1 --key-name mykey= |
-** AWS DNS
-| Name                            | Summary                                                                    |
-|---------------------------------+----------------------------------------------------------------------------|
-| List hosted zones               | =aws route53 list-hosted-zones=                                            |
-| List hosted zone by name        | =aws route53 list-hosted-zones-by-name --dns-name my.com=                  |
-| List DNS records by hosted zone | =aws route53 list-resource-record-sets --hosted-zone-id "/hostedzone/XXX"= |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -323,17 +325,17 @@ Why use Federation:
 The AWS cloud infrastructure has been architected to be one of the most flexible and secure cloud computing environments available today. It provides an extremely scalable, highly reliable platform that enables customers to deploy applications and data quickly and securely.
 Not only are your applications and data protected by highly secure facilities and infrastructure, but they're also protected by extensive network and security monitoring systems. These systems provide basic but important security measures such as distributed denial of service (DDoS) protection and password brute-force detection on AWS Accounts. Additional security measures include:
 
-Secure access – Customer access points, also called API endpoints, allow secure HTTP access (HTTPS) so that you can establish secure communication sessions with your AWS services using SSL.
-Built-in firewalls – You can control how accessible your instances are by configuring built-in firewall rules – from totally public to completely private, or somewhere in between. And when your instances reside within a Virtual Private Cloud (VPC) subnet, you can control egress as well as ingress.
-Unique users – The AWS Identity and Access Management (IAM) tool allows you to control the level of access your own users have to your AWS infrastructure services. With AWS IAM, each user can have unique security credentials, eliminating the need for shared passwords or keys and allowing the security best practices of role separation and least privilege.
-Multi-factor authentication (MFA) – AWS provides built-in support for multi-factor authentication (MFA) for use with AWS Accounts as well as individual IAM user accounts.
-Private Subnets – The AWS Virtual Private Cloud (VPC) service allows you to add another layer of network security to your instances by creating private subnets and even adding an IPsec VPN tunnel between your home network and your AWS VPC.
-Encrypted data storage – Customers can have the data and objects they store in Amazon S3, Glacier, Redshift, and Oracle RDS encrypted automatically using Advanced Encryption Standard (AES) 256, a secure symmetric-key encryption standard using 256-bit encryption keys.
-Dedicated connection option – The AWS Direct Connect service allows you to establish a dedicated network connection from your premise to AWS. Using industry standard 802.1q VLANs, this dedicated connection can be partitioned into multiple logical connections to enable you to access both public and private IP environments within your AWS cloud.
-Security logs – AWS CloudTrail provides logs of all user activity within your AWS account. You can see what actions were performed on each of your AWS resources and by whom.
-Isolated GovCloud – For customers who require additional measures in order to comply with US ITAR regulations, AWS provides an entirely separate region called AWS GovCloud (US) that provides an environment where customers can run ITAR-compliant applications, and provides special endpoints that utilize only FIPS 140-2 encryption.
-CloudHSM – For customers who must use Hardware Security Module (HSM) appliances for cryptographic key storage, AWS CloudHSM provides a highly secure and convenient way to store and manage keys.
-Trusted Advisor – Provided automatically when you sign up for premium support, the Trusted Advisor service is a convenient way for you to see where you could use a little more security. It monitors AWS resources and alerts you to security configuration gaps such as overly permissive access to certain EC2 instance ports and S3 storage buckets, minimal use of role segregation using IAM, and weak password policies.
+Secure access - Customer access points, also called API endpoints, allow secure HTTP access (HTTPS) so that you can establish secure communication sessions with your AWS services using SSL.
+Built-in firewalls - You can control how accessible your instances are by configuring built-in firewall rules - from totally public to completely private, or somewhere in between. And when your instances reside within a Virtual Private Cloud (VPC) subnet, you can control egress as well as ingress.
+Unique users - The AWS Identity and Access Management (IAM) tool allows you to control the level of access your own users have to your AWS infrastructure services. With AWS IAM, each user can have unique security credentials, eliminating the need for shared passwords or keys and allowing the security best practices of role separation and least privilege.
+Multi-factor authentication (MFA) - AWS provides built-in support for multi-factor authentication (MFA) for use with AWS Accounts as well as individual IAM user accounts.
+Private Subnets - The AWS Virtual Private Cloud (VPC) service allows you to add another layer of network security to your instances by creating private subnets and even adding an IPsec VPN tunnel between your home network and your AWS VPC.
+Encrypted data storage - Customers can have the data and objects they store in Amazon S3, Glacier, Redshift, and Oracle RDS encrypted automatically using Advanced Encryption Standard (AES) 256, a secure symmetric-key encryption standard using 256-bit encryption keys.
+Dedicated connection option - The AWS Direct Connect service allows you to establish a dedicated network connection from your premise to AWS. Using industry standard 802.1q VLANs, this dedicated connection can be partitioned into multiple logical connections to enable you to access both public and private IP environments within your AWS cloud.
+Security logs - AWS CloudTrail provides logs of all user activity within your AWS account. You can see what actions were performed on each of your AWS resources and by whom.
+Isolated GovCloud - For customers who require additional measures in order to comply with US ITAR regulations, AWS provides an entirely separate region called AWS GovCloud (US) that provides an environment where customers can run ITAR-compliant applications, and provides special endpoints that utilize only FIPS 140-2 encryption.
+CloudHSM - For customers who must use Hardware Security Module (HSM) appliances for cryptographic key storage, AWS CloudHSM provides a highly secure and convenient way to store and manage keys.
+Trusted Advisor - Provided automatically when you sign up for premium support, the Trusted Advisor service is a convenient way for you to see where you could use a little more security. It monitors AWS resources and alerts you to security configuration gaps such as overly permissive access to certain EC2 instance ports and S3 storage buckets, minimal use of role segregation using IAM, and weak password policies.
 
 http://aws.amazon.com/security/
 ** #  --8<-------------------------- separator ------------------------>8--
@@ -423,15 +425,15 @@ Like 30 seconds, 30 minutes or 2 hours, etc?
 http://docs.aws.amazon.com/lambda/latest/dg/use-cases.html
 The use cases for AWS Lambda can be grouped into the following categories:
 
-Using AWS Lambda with AWS services as event sources – Event sources publish events that cause the Lambda function to be invoked. These can be AWS services such as Amazon S3. For more information and tutorials, see the following topics:
+Using AWS Lambda with AWS services as event sources - Event sources publish events that cause the Lambda function to be invoked. These can be AWS services such as Amazon S3. For more information and tutorials, see the following topics:
 Using AWS Lambda with Amazon S3
 Using AWS Lambda with Kinesis
 Using AWS Lambda with Amazon DynamoDB
 Using AWS Lambda with AWS CloudTrail
 Using AWS Lambda with Amazon SNS from Different Accounts
-On-demand Lambda function invocation over HTTPS (Amazon API Gateway) – In addition to invoking Lambda functions using event sources, you can also invoke your Lambda function over HTTPS. You can do this by defining a custom REST API and endpoint using API Gateway. For more information and a tutorial, see Using AWS Lambda with Amazon API Gateway (On-Demand Over HTTPS).
-On-demand Lambda function invocation (build your own event sources using custom apps) – User applications such as client, mobile, or web applications can publish events and invoke Lambda functions using the AWS SDKs or AWS Mobile SDKs, such as the AWS Mobile SDK for Android. For more information and a tutorial, see Getting Started and Using AWS Lambda as Mobile Application Backend (Custom Event Source: Android)
-Scheduled events – You can also set up AWS Lambda to invoke your code on a regular, scheduled basis using the AWS Lambda console. You can specify a fixed rate (number of hours, days, or weeks) or you can specify a cron expression. For more information and a tutorial, see Using AWS Lambda with Scheduled Events.
+On-demand Lambda function invocation over HTTPS (Amazon API Gateway) - In addition to invoking Lambda functions using event sources, you can also invoke your Lambda function over HTTPS. You can do this by defining a custom REST API and endpoint using API Gateway. For more information and a tutorial, see Using AWS Lambda with Amazon API Gateway (On-Demand Over HTTPS).
+On-demand Lambda function invocation (build your own event sources using custom apps) - User applications such as client, mobile, or web applications can publish events and invoke Lambda functions using the AWS SDKs or AWS Mobile SDKs, such as the AWS Mobile SDK for Android. For more information and a tutorial, see Getting Started and Using AWS Lambda as Mobile Application Backend (Custom Event Source: Android)
+Scheduled events - You can also set up AWS Lambda to invoke your code on a regular, scheduled basis using the AWS Lambda console. You can specify a fixed rate (number of hours, days, or weeks) or you can specify a cron expression. For more information and a tutorial, see Using AWS Lambda with Scheduled Events.
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** DONE Understand Context Object in the function signature
    CLOSED: [2017-10-12 Thu 14:02]
@@ -2847,17 +2849,17 @@ https://aws.amazon.com/blogs/devops/using-the-new-cloudformation-parameter-types
 #+BEGIN_EXAMPLE
 CloudFormation currently supports the following parameter types:
 
-String – A literal string
-Number – An integer or float
-List<Number> – An array of integers or floats
-CommaDelimitedList – An array of literal strings that are separated by commas
-AWS::EC2::KeyPair::KeyName – An Amazon EC2 key pair name
-AWS::EC2::SecurityGroup::Id – A security group ID
-AWS::EC2::Subnet::Id – A subnet ID
-AWS::EC2::VPC::Id – A VPC ID
-List<AWS::EC2::VPC::Id> – An array of VPC IDs
-List<AWS::EC2::SecurityGroup::Id> – An array of security group IDs
-List<AWS::EC2::Subnet::Id> – An array of subnet IDs
+String - A literal string
+Number - An integer or float
+List<Number> - An array of integers or floats
+CommaDelimitedList - An array of literal strings that are separated by commas
+AWS::EC2::KeyPair::KeyName - An Amazon EC2 key pair name
+AWS::EC2::SecurityGroup::Id - A security group ID
+AWS::EC2::Subnet::Id - A subnet ID
+AWS::EC2::VPC::Id - A VPC ID
+List<AWS::EC2::VPC::Id> - An array of VPC IDs
+List<AWS::EC2::SecurityGroup::Id> - An array of security group IDs
+List<AWS::EC2::Subnet::Id> - An array of subnet IDs
 #+END_EXAMPLE
 ** DONE cloudformation use map to give users limited choice list
   CLOSED: [2017-11-13 Mon 17:48]
@@ -3627,10 +3629,10 @@ Amazon S3 also offers notifications for reduced redundancy storage object loss: 
 ** S3 Common Use Scenarios
 https://docs.aws.amazon.com/AmazonS3/latest/gsg/S3-gsg-CommonUseScenarios.html
 The AWS Solutions web page lists many of the ways you can use Amazon S3. The following list summarizes some of those ways.
-- Backup and Storage – Provide data backup and storage services for others.
-- Application Hosting – Provide services that deploy, install, and manage web applications.
-- Media Hosting – Build a redundant, scalable, and highly available infrastructure that hosts video, photo, or music uploads and downloads.
-- Software Delivery – Host your software applications that customers can download.
+- Backup and Storage - Provide data backup and storage services for others.
+- Application Hosting - Provide services that deploy, install, and manage web applications.
+- Media Hosting - Build a redundant, scalable, and highly available infrastructure that hosts video, photo, or music uploads and downloads.
+- Software Delivery - Host your software applications that customers can download.
 ** #  --8<-------------------------- separator ------------------------>8--
 ** basic use
 #+BEGIN_EXAMPLE
@@ -3866,7 +3868,7 @@ The root account should use ACL with the bucket to allow everyone to upload the 
 
 D
 
-Each AWS S3 bucket and object has an ACL (Access Control List) associated with it. An ACL is a list of grants identifying the grantee and the permission granted. The user can use ACLs to grant basic read/write permissions to other AWS accounts. ACLs use an Amazon S3–specific XML schema. The user cannot grant permissions to other users in his account. ACLs are suitable for specific scenarios. For example, if a bucket owner allows other AWS accounts to upload objects, permissions to these objects can only be managed using the object ACL by the AWS account that owns the object.
+Each AWS S3 bucket and object has an ACL (Access Control List) associated with it. An ACL is a list of grants identifying the grantee and the permission granted. The user can use ACLs to grant basic read/write permissions to other AWS accounts. ACLs use an Amazon S3-specific XML schema. The user cannot grant permissions to other users in his account. ACLs are suitable for specific scenarios. For example, if a bucket owner allows other AWS accounts to upload objects, permissions to these objects can only be managed using the object ACL by the AWS account that owns the object.
 http://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html
 ** TODO S3 bucket policy to manage ACL at data level, instead of whole bucket
 Amazon S3 allows you to set per-file permissions to grant read and/or write access. However you have decided that you want an entire bucket with 100 files already in it to be accessible to the public. You don't want to go through 100 files individually and set permissions. What would be the best way to do this?
@@ -4836,10 +4838,10 @@ Limitation
 DynamoDB Capacity Units:
 | Capacity Units | How to Calculate                                                                     |
 |----------------+--------------------------------------------------------------------------------------|
-| Reads          | Number of item reads per second × 4 KB item size                                     |
+| Reads          | Number of item reads per second x 4 KB item size                                     |
 |                | (If you use eventually consistent reads, you'll get twice as many reads per second.) |
 |----------------+--------------------------------------------------------------------------------------|
-| Writes         | Number of item writes per second × 1 KB item size                                    |
+| Writes         | Number of item writes per second x 1 KB item size                                    |
 
 - Amazon DynamoDB stores 3 geographically distributed replicas of each table for high availability and data durability.
 
@@ -4901,7 +4903,7 @@ needs while ensuring consistent, low-latency performance.
 - You cannot group multiple items in a single read operation, even if the items together are 4 KB or smaller.
   For example, if your items are 3 KB and you want to read 80 items
   per second from your table, then you need to provision 80 (reads per
-  second) × 1 (3 KB / 4 KB = 0.75, rounded up to the next whole
+  second) x 1 (3 KB / 4 KB = 0.75, rounded up to the next whole
   number) = 80 read capacity units for strong consistency. For
   eventual consistency, you need to provision only 40 read capacity
   units.
@@ -4913,7 +4915,7 @@ needs while ensuring consistent, low-latency performance.
   With these operations, DynamoDB uses the cumulative size of the
   processed items to calculate provisioned throughput. For example, if
   a Query operation retrieves 100 items that are 1 KB each, the read
-  capacity calculation is not (100 × 4 KB) = 100 read capacity units,
+  capacity calculation is not (100 x 4 KB) = 100 read capacity units,
   as if those items were retrieved individually using GetItem or
   BatchGetItem. Instead, the total would be only 25 read capacity
   units ((100 * 1024 bytes) = 100 KB, which is then divided by 4
@@ -4923,7 +4925,7 @@ needs while ensuring consistent, low-latency performance.
   CLOSED: [2015-04-22 Wed 16:59]
 http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html
 
-Hash and Range Primary Key – The primary key is made of two
+Hash and Range Primary Key - The primary key is made of two
 attributes. The first attribute is the hash attribute and the second
 attribute is the range attribute.
 
@@ -5902,7 +5904,7 @@ Auto Scaling handles non-integer numbers returned by PercentChangeInCapacity as 
   example, a return value of .67 is rounded to 1.
 - If the value between 0 and -1, Auto Scaling rounds it to -1. For
   example, a return value of -.58 is rounded to -1.
-- If the value is less than –1, Auto Scaling rounds it to the higher
+- If the value is less than -1, Auto Scaling rounds it to the higher
   value. For example, a return value of -6.67 is rounded to -6.
 
 A user has configured AutoScaling with policy based scaling. The user has 53 instances running right now. The policy states that the count should decrease  by 10%. How many instances will be running after the scaling activity is complete?
@@ -7331,9 +7333,6 @@ blog: http/https
 * Try AWS machine learning                                         :noexport:
 * TODO [#A] read AWS re-invent: https://aws.amazon.com/new/reinvent/ :noexport:
 * TODO Learn AWS ES best practice: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains-dedicatedmasternodes.html :noexport:
-* TODO [#A] AWS DDoS                                               :noexport:
-* TODO Try AWS Fargate                                             :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO local notes                                                 :noexport:
 ** TODO AWS: https://aws.amazon.com/quickstart/architecture/vpc/    :noexport:
 ** TODO AWS tool: http://www.conceptdraw.com/solution-park/computer-networks-aws :noexport:
@@ -7413,7 +7412,6 @@ https://gist.github.com/tobiasmcnulty/f1465b124e34a9dd6872a2f23e314a83
 Digital certificates can only be issued to people who are entitled to them.
 
 https://community.letsencrypt.org/t/using-lets-encrypt-with-aws-elb/34632/9
-
 ** TODO AWS cloudformation: avoid rollback
 ** TODO How to test cloudformation locally without incuring AWS Bills?
 ** TODO couchbase enable email sending
@@ -7470,7 +7468,6 @@ Starting rebalance, KeepNodes = ['ns_1@138.197.215.93','ns_1@138.197.220.13',
 https://pypi.org/project/prometheus-couchbase-exporter/
 
 https://github.com/Zumata/couchbase_exporter
-
 ** TODO [#A] Deep dive into couchbase and elasticsearch system design
 https://developer.couchbase.com/documentation/server/current/introduction/intro.html
 https://developer.couchbase.com/documentation/server/4.5/connectors/elasticsearch-2.1/doc-design-elastic.html
@@ -7484,5 +7481,10 @@ https://stackoverflow.com/questions/14916899/download-rds-snapshot
 * DONE How do I delete a Route 53 hosted zone created by service discovery? :noexport:
   CLOSED: [2020-01-12 Sun 15:00]
 https://aws.amazon.com/premiumsupport/knowledge-center/route-53-service-discovery-delete-zone/
+* DONE allow users to check bill: IAM policy and enable federated user :noexport:
+  CLOSED: [2020-01-22 Wed 14:49]
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO allow users to check bill                                   :noexport:
+* TODO AWS Fargate                                                 :noexport:
+* TODO What does it means that one AWS security group can allow traffic from another traffic group? :noexport:
+* TODO [#A] AWS DDoS                                               :noexport:
+* TODO Setup https://aws.dennyzhang.com                            :noexport:
