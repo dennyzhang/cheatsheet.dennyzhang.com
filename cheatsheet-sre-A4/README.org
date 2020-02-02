@@ -26,58 +26,74 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |------------+----------------------------------------------------------------------------------------|
 | Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4][CheatSheet: Common Code Problems & Follow-ups]] |
 | Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-sre-A4][CheatSheet: SRE/DevOps/Sysadmin]]           |
-| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                                     |
-| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][Shell CheatSheet]]                                                                       |
+| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][Shell CheatSheet]]                   |
 ** Good Mindsets
-| Num | Name                            | Summary                      |
-|-----+---------------------------------+------------------------------|
-|   1 | First thing: =Stop The Bleed=   |                              |
-|   2 | [[http://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle/][Pets VS Cattles]]                 |                              |
-|   3 | Fix a process VS Fix a problem  |                              |
-|   4 | Evaluate business impact first  |                              |
-|   5 | Prevention VS Treatment         |                              |
-|   6 | [[https://landing.google.com/sre/sre-book/chapters/postmortem-culture/][Postmortem Culture]]              |                              |
-|   7 | Understand workflow & use cases | Crucial for trouble shooting |
-|   8 | Automation VS Convention        |                              |
+| Num | Name                            | Summary                                  |
+|-----+---------------------------------+------------------------------------------|
+|   1 | First thing: =Stop The Bleed=   |                                          |
+|   2 | [[http://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle/][Pets VS Cattles]]                 |                                          |
+|   3 | Fix a process VS Fix a problem  |                                          |
+|   4 | Evaluate Business Impact First  |                                          |
+|   5 | Prevention VS Treatment         |                                          |
+|   6 | [[https://landing.google.com/sre/sre-book/chapters/postmortem-culture/][Postmortem Culture]]              |                                          |
+|   7 | Understand Workflow & Use Cases | Crucial for trouble shooting             |
+|   8 | Automation VS Convention        |                                          |
+|   9 | [[https://en.wikipedia.org/wiki/Principle_of_least_privilege][Principle Of Least Privilege]]    |                                          |
+|  10 | Design Tools VS Use Tools       | Operational knowledge is not good enough |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Linux Basic Questions
-| Num | Name                                              | Summary                                    |
-|-----+---------------------------------------------------+--------------------------------------------|
-|   1 | What is /proc directory?                          |                                            |
-|   2 | Which signals can be catch?                       |                                            |
-|   3 | What happens, when running "ls -l *"              |                                            |
-|   4 | What happens, when pressing "Ctrl + c"            |                                            |
-|   5 | What happens, when opening https://www.google.com |                                            |
-|   6 | How to solve ssh "Connection refused" errors?     |                                            |
-|   7 | Explain the output of =top= command               |                                            |
-|   8 | Explain the output of =sar= command               |                                            |
-|   9 | How to daemonize a process?                       |                                            |
-|  10 | [[https://askubuntu.com/questions/35722/what-is-kernel-panic][What are common scenarios of linux kernel panics?]] |                                            |
-|  11 | What is coredump?                                 |                                            |
-|  12 | Program startup process in userspace              | [[https://0xax.gitbooks.io/linux-insides/Misc/linux-misc-4.html][Link: Program startup process in userspace]] |
-|  13 | Explain init.d workflow                           |                                            |
-|  14 | Explain Linux Boot Process                        |                                            |
-|  15 | What's your favorite shell and why?               | [[https://sunlightmedia.org/bash-vs-zsh/][Link: Bash vs Zsh]]                          |
+| Num | Name                                                    | Summary                                    |
+|-----+---------------------------------------------------------+--------------------------------------------|
+|   1 | What is /proc directory?                                |                                            |
+|   2 | Which signals can be catch?                             |                                            |
+|   3 | What happens, when running "ls -l *"                    |                                            |
+|   4 | What happens, when pressing "Ctrl + c"                  |                                            |
+|   5 | What happens, when opening https://www.google.com       |                                            |
+|   6 | How to solve ssh "Connection refused" errors?           |                                            |
+|   7 | Explain the output of =top= command                     |                                            |
+|   8 | Explain the output of =sar= command                     |                                            |
+|   9 | How to daemonize a process?                             |                                            |
+|  10 | [[https://askubuntu.com/questions/35722/what-is-kernel-panic][What are common scenarios of linux kernel panics?]]       |                                            |
+|  11 | What is coredump?                                       |                                            |
+|  12 | Program startup process in userspace                    | [[https://0xax.gitbooks.io/linux-insides/Misc/linux-misc-4.html][Link: Program startup process in userspace]] |
+|  13 | Explain init.d workflow                                 |                                            |
+|  14 | Explain Linux Boot Process                              |                                            |
+|  15 | What's your favorite shell and why?                     | [[https://sunlightmedia.org/bash-vs-zsh/][Link: Bash vs Zsh]]                          |
+|  16 | Figure out who has logged to server now and previously? |                                            |
+|  17 | How to choose RAID levels for different scenarios?      |                                            |
+|  18 | Forget root password. How to reset it?                  |                                            |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Linux Advanced Questions
-| Num | Name                                                                 | Summary                                                                   |
-|-----+----------------------------------------------------------------------+---------------------------------------------------------------------------|
-|   1 | Whether it's possible to sniff HTTPS traffic? And why?               |                                                                           |
-|   2 | [[https://unix.stackexchange.com/questions/62697/why-is-i-o-uninterruptible][Why is I/O uninterruptible?]]                                          |                                                                           |
-|   3 | Compare to Linux process, what things containers can't support?      |                                                                           |
-|   4 | How does the Linux kernel handle a system call                       | [[https://0xax.gitbooks.io/linux-insides/SysCall/linux-syscall-2.html][Link: System calls in the Linux kernel]]                                    |
-|   5 | [[https://www.tecmint.com/systemd-replaces-init-in-linux/][How do you feel about systemd?]]                                       | Init processes start serially, consequently delayed and long booting time |
-|   6 | How to quickly crash an linux machine?                               |                                                                           |
-|   7 | How reliable =history= command is? And how to alleviate the problem? |                                                                           |
-|   8 | How to setup http proxy with SLA for different traffic?              |                                                                           |
+| Num | Name                                                                               | Summary                                                                   |
+|-----+------------------------------------------------------------------------------------+---------------------------------------------------------------------------|
+|   1 | Whether it's possible to sniff HTTPS traffic? And why?                             |                                                                           |
+|   2 | [[https://unix.stackexchange.com/questions/62697/why-is-i-o-uninterruptible][Why is I/O uninterruptible?]]                                                        |                                                                           |
+|   3 | Compare to Linux process, what things containers can't support?                    |                                                                           |
+|   4 | How does the Linux kernel handle a system call                                     | [[https://0xax.gitbooks.io/linux-insides/SysCall/linux-syscall-2.html][Link: System calls in the Linux kernel]]                                    |
+|   5 | [[https://www.tecmint.com/systemd-replaces-init-in-linux/][How do you feel about systemd?]]                                                     | Init processes start serially, consequently delayed and long booting time |
+|   6 | How to quickly crash an linux machine?                                             |                                                                           |
+|   7 | How to deprovision a user completely?                                              |                                                                           |
+|   8 | How reliable =history= command is? And how to alleviate the problem?               |                                                                           |
+|   9 | With =bg=, process goes to background. But in another terminal, =jobs= won't show? |                                                                           |
+|  10 | How to setup http proxy with SLA for different traffic?                            |                                                                           |
+|  11 | What's your wishlist for linux?                                                    |                                                                           |
+|  12 | What's your ideal monitoring system in your imagination?                           |                                                                           |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Top 10 Networking Questions
-| Num | Name                                  | Summary                  |
-|-----+---------------------------------------+--------------------------|
-|   1 | Difference between switch and router? | L2, L3                   |
-|   2 | Which port ICMP is using?             | Neither TCP or UDP. [[https://learningnetwork.cisco.com/thread/120555][Link]] |
+| Num | Name                                                               | Summary                  |
+|-----+--------------------------------------------------------------------+--------------------------|
+|   1 | Difference between switch and router?                              | L2, L3                   |
+|   2 | What is a DNS amplification attack?                                |                          |
+|   3 | Difference between L2 and L3 switch?                               |                          |
+|   4 | What is TCP SYN scan? How it's conducted?                          |                          |
+|   5 | Which port ICMP is using?                                          | Neither TCP or UDP. [[https://learningnetwork.cisco.com/thread/120555][Link]] |
+|   6 | Proxy server vs Loadbalancer. Proxy server vs Reverse proxy server |                          |
+|   7 | Brief introduction about 802.1x                                    |                          |
+|   8 | List =all methods= which can stop one ip ssh to the server         |                          |
+|   9 | Explain how iptable routing rules works                            |                          |
 #+TBLFM: $1=@-1$1+1;N
+
 ** SRE/System Engineering
 | Num | Name      | Summary                                                                         |
 |-----+-----------+---------------------------------------------------------------------------------|
@@ -87,6 +103,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+TBLFM: $1=@-1$1+1;N
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+https://syedali.net/engineer-interview-questions/
 
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
@@ -180,8 +198,22 @@ https://0xax.gitbooks.io/linux-insides/SyncPrim/
 * TODO What happens, when opening https://www.google.com           :noexport:
 * TODO What happens, when pressing "Ctrl + c"                      :noexport:
 * TODO How to setup http proxy with SLA for different traffic?     :noexport:
+* TODO Difference between L2 and L3 switch?                        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO What is /proc directory?                                    :noexport:
 * TODO Compare to Linux process, what things containers can't support? :noexport:
 * TODO Explain Linux Boot Process                                  :noexport:
 * TODO How does the Linux kernel handle a system call              :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Brief introduction about 802.1x                             :noexport:
+* TODO [#A] What is a DNS amplification attack?                    :noexport:
+Why is DNS amplification a valid attack as opposed to ... say HTTP amplifcation attack? I.e. What is so special about DNS that allow this attack to be carried out?
+* TODO What is TCP SYN scan? How it's conducted?                   :noexport:
+* TODO What's your wishlist for linux?                             :noexport:
+* TODO Explain how iptable routing rules works                     :noexport:
+* TODO Why kube-proxy change from iptables to ipvs                 :noexport:
+https://www.projectcalico.org/comparing-kube-proxy-modes-iptables-or-ipvs/
+* TODO ip access control                                           :noexport:
+I have a dynamic IP. I want to prevent people from accessing my server (assume over all ports and things). Except me. I want to access the server. Tell me how that works if it works at all. How does your answer change if I say that my LAN IP is sonehow set to static? How does it change when I say that I somehow have a public IP?
+* TODO What is tty in ssh?                                         :noexport:
+* TODO How to choose RAID levels for different scenarios?          :noexport:

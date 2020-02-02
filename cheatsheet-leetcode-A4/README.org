@@ -60,42 +60,38 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+TBLFM: $1=@-1$1+1;N
 [[image-blog:CheatSheet: Leetcode Common Templates & Common Code Problems][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-leetcode-A4/datastructre.png]]
 ** Top 30 Graph Problems
-| Num | Problem                                                                 | Summary                                                 |
-|-----+-------------------------------------------------------------------------+---------------------------------------------------------|
-|   1 | Graph Connectivity: Count islands in a 2D matrix                        | [[https://code.dennyzhang.com/number-of-islands][LeetCode: Number of Islands]], [[https://code.dennyzhang.com/island-perimeter][LeetCode: Island Perimeter]] |
-|   2 | Get the size of the largest island                                      | [[https://code.dennyzhang.com/max-area-of-island][LeetCode: Max Area of Island]]                            |
-|   3 | Find shortest distance for two nodes in an undirected graph             |                                                         |
-|   4 | Cycle detection in a directed graph                                     | [[https://code.dennyzhang.com/redundant-connection-ii][LeetCode: Redundant Connection II]]                       |
-|   5 | Detect all cycles in a directed graph                                   | [[https://code.dennyzhang.com/find-eventual-safe-states][LeetCode: Find Eventual Safe States]]                     |
-|   6 | Whether a graph is a tree                                               | [[https://code.dennyzhang.com/graph-valid-tree][LeetCode: Graph Valid Tree]]                              |
-|   7 | [[https://en.wikipedia.org/wiki/Minimum_spanning_tree][Minimum Spanning Tree(MST)]] of a weighted graph - [[https://en.wikipedia.org/wiki/Kruskal%27s_algorithm][Kruskal's algorithm]]    | [[https://code.dennyzhang.com/connecting-cities-with-minimum-cost][LeetCode: Connecting Cities With Minimum Cost]]           |
-|   8 | Find shortest paths in a weighted graph - [[https://en.wikipedia.org/wiki/Floyd-Warshall_algorithm][Floyd-Warshall algorithm]]      |                                                         |
-|   9 | Shortest path for two nodes in a weighted graph -  [[https://en.wikipedia.org/wiki/Dijkstra's_algorithm][Dijkstra's algorithm]] | [[https://code.dennyzhang.com/connecting-cities-with-minimum-cost][LeetCode: Connecting Cities With Minimum Cost]]           |
-|  10 | Update a specific region                                                | [[https://code.dennyzhang.com/flood-fill][LeetCode: Flood Fill]]                                    |
-|  11 | Update regions for a given rule                                         | [[https://code.dennyzhang.com/surrounded-regions][LeetCode: Surrounded Regions]]                            |
-|  12 | Number of Distinct Islands                                              | [[https://code.dennyzhang.com/number-of-distinct-islands][LeetCode: Number of Distinct Islands]]                    |
-|  13 | Mark levels                                                             | [[https://code.dennyzhang.com/01-matrix][LeetCode: 01 Matrix]]                                     |
-|  14 | Diameter of a tree in graph theory                                      | [[https://code.dennyzhang.com/tree-diameter][LeetCode: Tree Diameter]]                                 |
-|  15 | Duplicate edges                                                         | [[https://code.dennyzhang.com/reconstruct-itinerary][LeetCode: Reconstruct Itinerary]]                         |
-|  16 | Find a certain node in a graph                                          | [[https://code.dennyzhang.com/find-the-celebrity][LeetCode: Find the Celebrity]]                            |
-|  17 | Coloring graph                                                          | [[https://code.dennyzhang.com/minesweeper][LeetCode: Minesweeper]]                                   |
-|  18 | Find a certain path from source to destination in a graph               | [[https://code.dennyzhang.com/path-with-maximum-minimum-value][LeetCode: Path With Maximum Minimum Value]]               |
-|  19 | Find the minimum steps from point1 to point2                            | [[https://code.dennyzhang.com/word-ladder][LeetCode: Word Ladder]], [[https://code.dennyzhang.com/sliding-puzzle][LeetCode: Sliding Puzzle]]         |
-|  20 | Find all minimum paths from point1 to point2                            | [[https://code.dennyzhang.com/word-ladder-ii][LeetCode: Word Ladder II]]                                |
-|  21 | All Paths from Source Lead to Destination                               | [[https://code.dennyzhang.com/all-paths-from-source-lead-to-destination][LeetCode: All Paths from Source Lead to Destination]]     |
-|  22 | Node connectivity problem for a sparse 2D matrix                        | [[https://code.dennyzhang.com/escape-a-large-maze][LeetCode: Escape a Large Maze]]                           |
-|  23 | Bricks Falling When Hit                                                 | [[https://code.dennyzhang.com/bricks-falling-when-hit][LeetCode: Bricks Falling When Hit]]                       |
-|  24 | Bridges in a connected graph - [[https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm][Tarjan's algorithm]]                       | [[https://code.dennyzhang.com/critical-connections-in-a-network][LeetCode: Critical Connections in a Network]]             |
-|  25 | Valid & Invalid moves                                                   | [[https://code.dennyzhang.com/alphabet-board-path][LeetCode: Alphabet Board Path]]                           |
-|  26 | Move in different directions: 4 directions, 8 directions                | [[https://code.dennyzhang.com/queens-that-can-attack-the-king][LeetCode: Queens That Can Attack the King]]               |
-|  27 | String Transforms Into Another String                                   | [[https://code.dennyzhang.com/string-transforms-into-another-string][LeetCode: String Transforms Into Another String]]         |
+| Num | Problem                                                     | Summary                                                       |
+|-----+-------------------------------------------------------------+---------------------------------------------------------------|
+|   1 | Graph Connectivity: Count islands in a 2D matrix            | [[https://code.dennyzhang.com/number-of-islands][LeetCode: Number of Islands]], [[https://code.dennyzhang.com/island-perimeter][LeetCode: Island Perimeter]]       |
+|   2 | Get the size of the largest island                          | [[https://code.dennyzhang.com/max-area-of-island][LeetCode: Max Area of Island]]                                  |
+|   3 | Cycle detection in a directed graph                         | [[https://code.dennyzhang.com/redundant-connection-ii][LeetCode: Redundant Connection II]]                             |
+|   4 | Detect all cycles in a directed graph                       | [[https://code.dennyzhang.com/find-eventual-safe-states][LeetCode: Find Eventual Safe States]]                           |
+|   5 | Whether a graph is a tree                                   | [[https://code.dennyzhang.com/graph-valid-tree][LeetCode: Graph Valid Tree]]                                    |
+|-----+-------------------------------------------------------------+---------------------------------------------------------------|
+|   6 | Update a specific region                                    | [[https://code.dennyzhang.com/flood-fill][LeetCode: Flood Fill]]                                          |
+|   7 | Update regions for a given rule                             | [[https://code.dennyzhang.com/surrounded-regions][LeetCode: Surrounded Regions]]                                  |
+|   8 | Number of Distinct Islands                                  | [[https://code.dennyzhang.com/number-of-distinct-islands][LeetCode: Number of Distinct Islands]]                          |
+|   9 | Mark levels                                                 | [[https://code.dennyzhang.com/01-matrix][LeetCode: 01 Matrix]]                                           |
+|  10 | Diameter of a tree in graph theory                          | [[https://code.dennyzhang.com/tree-diameter][LeetCode: Tree Diameter]]                                       |
+|  11 | Duplicate edges                                             | [[https://code.dennyzhang.com/reconstruct-itinerary][LeetCode: Reconstruct Itinerary]]                               |
+|  12 | Find a certain node in a graph                              | [[https://code.dennyzhang.com/find-the-celebrity][LeetCode: Find the Celebrity]]                                  |
+|  13 | Coloring graph                                              | [[https://code.dennyzhang.com/minesweeper][LeetCode: Minesweeper]]                                         |
+|  14 | Find a certain path from source to destination in a graph   | [[https://code.dennyzhang.com/path-with-maximum-minimum-value][LeetCode: Path With Maximum Minimum Value]]                     |
+|  15 | Find the minimum steps from point1 to point2                | [[https://code.dennyzhang.com/word-ladder][LeetCode: Word Ladder]], [[https://code.dennyzhang.com/sliding-puzzle][LeetCode: Sliding Puzzle]]               |
+|  16 | Find all minimum paths from point1 to point2                | [[https://code.dennyzhang.com/word-ladder-ii][LeetCode: Word Ladder II]]                                      |
+|  17 | All Paths from Source Lead to Destination                   | [[https://code.dennyzhang.com/all-paths-from-source-lead-to-destination][LeetCode: All Paths from Source Lead to Destination]]           |
+|  18 | Node connectivity problem for a sparse 2D matrix            | [[https://code.dennyzhang.com/escape-a-large-maze][LeetCode: Escape a Large Maze]]                                 |
+|  19 | Bricks Falling When Hit                                     | [[https://code.dennyzhang.com/bricks-falling-when-hit][LeetCode: Bricks Falling When Hit]]                             |
+|  20 | Bridges in a connected graph - [[https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm][Tarjan's algorithm]]           | [[https://code.dennyzhang.com/critical-connections-in-a-network][LeetCode: Critical Connections in a Network]]                   |
+|  21 | Valid & Invalid moves                                       | [[https://code.dennyzhang.com/alphabet-board-path][LeetCode: Alphabet Board Path]]                                 |
+|  22 | Move in different directions: 4 directions, 8 directions    | [[https://code.dennyzhang.com/queens-that-can-attack-the-king][LeetCode: Queens That Can Attack the King]]                     |
+|  23 | String Transforms Into Another String                       | [[https://code.dennyzhang.com/string-transforms-into-another-string][LeetCode: String Transforms Into Another String]]               |
+|  24 | Candidates are (i, j, r), instead of (i, j)                 | [[https://code.dennyzhang.com/shortest-path-in-a-grid-with-obstacles-elimination][LeetCode: Shortest Path in a Grid with Obstacles Elimination]]  |
+|  25 | Clone Graph                                                 | [[https://code.dennyzhang.com/clone-graph][Leetcode: Clone Graph]]                                         |
+|  26 | Array problem with hidden graph                             | [[https://code.dennyzhang.com/number-of-squareful-arrays][LeetCode: Number of Squareful Arrays]]                          |
+|  27 | Find shortest paths in a weighted graph                     | [[https://code.dennyzhang.com/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance][LeetCode: Find the City With the Smallest Number of Neighbors]] |
+|  28 | Find shortest distance for two nodes in an undirected graph |                                                               |
 #+TBLFM: $1=@-1$1+1;N
-
-#+BEGIN_HTML
-<a href="https://code.dennyzhang.com"><b><font color=blue>https://code.dennyzhang.com</font></b></a>
-#+END_HTML
-
-[[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][https://cdn.dennyzhang.com/images/brain/denny_leetcode.png]]
 ** Top 20 Binarysearch Problems
 | Num | Problem                                     | Summary                                                                |
 |-----+---------------------------------------------+------------------------------------------------------------------------|
