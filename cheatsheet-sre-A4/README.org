@@ -42,42 +42,43 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  10 | Design Tools VS Use Tools       | Operational knowledge is not good enough |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Linux Basic Questions
-| Num | Name                                                    | Summary                                    |
-|-----+---------------------------------------------------------+--------------------------------------------|
-|   1 | What is /proc directory?                                |                                            |
-|   2 | Which signals can be catch?                             |                                            |
-|   3 | What happens, when running "ls -l *"                    |                                            |
-|   4 | What happens, when pressing "Ctrl + c"                  |                                            |
-|   5 | What happens, when opening https://www.google.com       |                                            |
-|   6 | How to solve ssh "Connection refused" errors?           |                                            |
-|   7 | Explain the output of =top= command                     |                                            |
-|   8 | Explain the output of =sar= command                     |                                            |
-|   9 | How to daemonize a process?                             |                                            |
-|  10 | [[https://askubuntu.com/questions/35722/what-is-kernel-panic][What are common scenarios of linux kernel panics?]]       |                                            |
-|  11 | What is coredump?                                       |                                            |
-|  12 | Program startup process in userspace                    | [[https://0xax.gitbooks.io/linux-insides/Misc/linux-misc-4.html][Link: Program startup process in userspace]] |
-|  13 | Explain init.d workflow                                 |                                            |
-|  14 | Explain Linux Boot Process                              |                                            |
-|  15 | What's your favorite shell and why?                     | [[https://sunlightmedia.org/bash-vs-zsh/][Link: Bash vs Zsh]]                          |
-|  16 | Figure out who has logged to server now and previously? |                                            |
-|  17 | How to choose RAID levels for different scenarios?      |                                            |
-|  18 | Forget root password. How to reset it?                  |                                            |
+| Num | Name                                                        | Summary                                    |
+|-----+-------------------------------------------------------------+--------------------------------------------|
+|   1 | What is /proc directory?                                    |                                            |
+|   2 | Which signals can be catch?                                 |                                            |
+|   3 | What happens, when running "ls -l *"                        |                                            |
+|   4 | What happens, when pressing "Ctrl + c"                      |                                            |
+|   5 | What happens, when opening https://www.google.com           |                                            |
+|   6 | How to solve ssh "Connection refused" errors?               |                                            |
+|   7 | How does sudo work? Given =sudo=, why people may need =su=? |                                            |
+|   8 | Explain the output of =top= command                         |                                            |
+|   9 | Explain the output of =sar= command                         |                                            |
+|  10 | How to daemonize a process?                                 |                                            |
+|  11 | [[https://askubuntu.com/questions/35722/what-is-kernel-panic][What are common scenarios of linux kernel panics?]]           |                                            |
+|  12 | What is coredump?                                           |                                            |
+|  13 | Program startup process in userspace                        | [[https://0xax.gitbooks.io/linux-insides/Misc/linux-misc-4.html][Link: Program startup process in userspace]] |
+|  14 | Explain init.d workflow                                     |                                            |
+|  15 | Explain Linux Boot Process                                  |                                            |
+|  16 | What's your favorite shell and why?                         | [[https://sunlightmedia.org/bash-vs-zsh/][Link: Bash vs Zsh]]                          |
+|  17 | Figure out who has logged to server now and previously?     |                                            |
+|  18 | How to choose RAID levels for different scenarios?          |                                            |
+|  19 | Forget root password. How to reset it?                      |                                            |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Linux Advanced Questions
-| Num | Name                                                                               | Summary                                                                   |
-|-----+------------------------------------------------------------------------------------+---------------------------------------------------------------------------|
-|   1 | Whether it's possible to sniff HTTPS traffic? And why?                             |                                                                           |
-|   2 | [[https://unix.stackexchange.com/questions/62697/why-is-i-o-uninterruptible][Why is I/O uninterruptible?]]                                                        |                                                                           |
-|   3 | Compare to Linux process, what things containers can't support?                    |                                                                           |
-|   4 | How does the Linux kernel handle a system call                                     | [[https://0xax.gitbooks.io/linux-insides/SysCall/linux-syscall-2.html][Link: System calls in the Linux kernel]]                                    |
-|   5 | [[https://www.tecmint.com/systemd-replaces-init-in-linux/][How do you feel about systemd?]]                                                     | Init processes start serially, consequently delayed and long booting time |
-|   6 | How to quickly crash an linux machine?                                             |                                                                           |
-|   7 | How to deprovision a user completely?                                              |                                                                           |
-|   8 | How reliable =history= command is? And how to alleviate the problem?               |                                                                           |
-|   9 | With =bg=, process goes to background. But in another terminal, =jobs= won't show? |                                                                           |
-|  10 | How to setup http proxy with SLA for different traffic?                            |                                                                           |
-|  11 | What's your wishlist for linux?                                                    |                                                                           |
-|  12 | What's your ideal monitoring system in your imagination?                           |                                                                           |
+| Num | Name                                                                 | Summary                                          |
+|-----+----------------------------------------------------------------------+--------------------------------------------------|
+|   1 | Whether it's possible to sniff HTTPS traffic? And why?               |                                                  |
+|   2 | [[https://unix.stackexchange.com/questions/62697/why-is-i-o-uninterruptible][Why is I/O uninterruptible?]]                                          |                                                  |
+|   3 | Compare to Linux process, what things containers can't support?      |                                                  |
+|   4 | How does the Linux kernel handle a system call                       | [[https://0xax.gitbooks.io/linux-insides/SysCall/linux-syscall-2.html][Link: System calls in the Linux kernel]]           |
+|   5 | [[https://www.tecmint.com/systemd-replaces-init-in-linux/][How do you feel about systemd?]]                                       | Init processes start serially, long booting time |
+|   6 | How to quickly crash an linux machine?                               |                                                  |
+|   7 | How to deprovision a user completely?                                |                                                  |
+|   8 | How reliable =history= command is? And how to alleviate the problem? |                                                  |
+|   9 | With =bg= in one terminal, =jobs= doesn't show in another terminal   |                                                  |
+|  10 | How to setup http proxy with SLA for different traffic?              |                                                  |
+|  11 | What's your wishlist for linux?                                      |                                                  |
+|  12 | What's your ideal monitoring system in your imagination?             |                                                  |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Top 10 Networking Questions
@@ -216,4 +217,6 @@ https://www.projectcalico.org/comparing-kube-proxy-modes-iptables-or-ipvs/
 * TODO ip access control                                           :noexport:
 I have a dynamic IP. I want to prevent people from accessing my server (assume over all ports and things). Except me. I want to access the server. Tell me how that works if it works at all. How does your answer change if I say that my LAN IP is sonehow set to static? How does it change when I say that I somehow have a public IP?
 * TODO What is tty in ssh?                                         :noexport:
-* TODO How to choose RAID levels for different scenarios?          :noexport:
+* TODO [#A] How to choose RAID levels for different scenarios?     :noexport:
+* TODO Forget root password. How to reset it?                      :noexport:
+* TODO how does sudo work?                                         :noexport:

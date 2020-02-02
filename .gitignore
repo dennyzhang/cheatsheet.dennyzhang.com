@@ -5,3 +5,5 @@ testbed-pks-nsxt.rb
 cheatsheet-wcp-A4
 local_notes.org
 *-A4.log
+*.out
+*.aux
