@@ -59,7 +59,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  13 | Explain init.d workflow                                        |                                            |
 |  14 | Explain Linux Boot Process                                     |                                            |
 |  15 | What's your favorite shell and why?                            | [[https://sunlightmedia.org/bash-vs-zsh/][Link: Bash vs Zsh]]                          |
-|  16 | [[https://linoxide.com/linux-how-to/difference-between-utmp-wtmp-files-in-linux/][Figure out who has logged to server now and previously?]]        | w, last, lastb; /var/run/*tmp              |
+|  16 | [[https://linoxide.com/linux-how-to/difference-between-utmp-wtmp-files-in-linux/][Figure out who has logged to server now and previously?]]        | w, last, lastb; lastlog; /var/run/*tmp     |
 |  17 | How to choose RAID levels for different scenarios?             |                                            |
 |  18 | Forget root password. How to reset it?                         |                                            |
 |  19 | What is init program?                                          |                                            |
@@ -76,7 +76,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   6 | [[https://www.tecmint.com/systemd-replaces-init-in-linux/][How do you feel about systemd?]]                                       | Init processes start serially, long booting time |
 |   7 | How to quickly crash an linux machine?                               |                                                  |
 |   8 | How to deprovision a user completely?                                |                                                  |
-|   9 | How reliable =history= command is? And how to alleviate the problem? |                                                  |
+|   9 | [[https://www.thegeekstuff.com/2008/08/15-examples-to-master-linux-command-line-history/][How reliable =history= command is? And how to alleviate the problem?]] | =~/.bash_history=, =$HISTTIMEFORMAT= env         |
 |  10 | Explain the workflow of "docker stop $container_id"                  |                                                  |
 |  11 | With =bg= in one terminal, =jobs= doesn't show in another terminal   |                                                  |
 |  12 | How to setup http proxy with SLA for different traffic?              |                                                  |
@@ -226,3 +226,4 @@ I have a dynamic IP. I want to prevent people from accessing my server (assume o
 * TODO What is localhost and why would ping localhost fail?        :noexport:
 * TODO [#A] What is init program?                                  :noexport:
 * TODO How linux signal trap works?                                :noexport:
+* TODO Network serving model: select, poll vs epoll                :noexport:
