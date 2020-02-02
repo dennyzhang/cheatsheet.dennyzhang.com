@@ -96,7 +96,7 @@ License: Code is licenhouse under [[https://www.dennyzhang.com/wp-content/mit_li
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
 #+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-garden-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-garden-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-garden-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-garden-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-garden-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)

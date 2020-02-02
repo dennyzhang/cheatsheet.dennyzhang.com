@@ -99,8 +99,8 @@ function refresh_link {
         sed -i "" "s#^- PDF Link: [^,]*,#- PDF Link: [[${pdf_link}][${dirname}.pdf]],#g" "$f"
 
         # echo "Update latex blog url for $f"
-        sed -i "" "s#LATEX_HEADER: \\\lfoot{\\\href{https://github.com/dennyzhang.*#LATEX_HEADER: \\\lfoot{\\\href{$github_link}{GitHub: $github_link}}#g" "$f"
-        sed -i "" "s#LATEX_HEADER: \\\lhead{\\\href{https://cheatsheet.dennyzhang.com.*#LATEX_HEADER: \\\lhead{\\\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/${dirname}}}#g" "$f"
+        sed -i "" "s#\+LATEX_HEADER: \\\lfoot{\\\href{https://github.com/dennyzhang.*#\+LATEX_HEADER: \\\lfoot{\\\href{$github_link}{GitHub: $github_link}}#g" "$f"
+        sed -i "" "s#\+LATEX_HEADER: \\\lhead{\\\href{https://cheatsheet.dennyzhang.com.*#\+LATEX_HEADER: \\\lhead{\\\href{https://cheatsheet.dennyzhang.com/${dirname}}{Blog URL: https://cheatsheet.dennyzhang.com/${dirname}}}#g" "$f"
 
     done
     git status

@@ -22,29 +22,31 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Basic
-| Name                               | Command                                                                |
-|------------------------------------+------------------------------------------------------------------------|
-| =kill -l=                          | List all signals                                                       |
-| Critical signals                   | The signals SIGKILL and SIGSTOP cannot be caught, blocked, or ignored. |
-| =SIGINT=                           | Users wish to interrupt the process                                    |
-| =SIGHUP=                           | [[https://stackoverflow.com/questions/19052354/sighup-for-reloading-configuration][Reload or restart a process]]. =kill -HUP $pid=                          |
-| =SIGHUP=                           | Terminal warns dependent processes of logout                           |
-| =SIGCHILD=                         | When a child process terminates, instruct OS to cleanup the resource   |
-| =SIGSTOP=                          | Suspend a process                                                      |
-| =SIGKILL=, =SIGTERM=               | Send kill signal to a given process. =kill -term $pid=, =kill -9 $pid= |
-| =SIGUSR1=, =SIGUSR2=               | User defined signals                                                   |
-| =SIGSTOP= vs =SIGTSTP=             | SIGSTOP can't be ignored by the targetted process, but SIGTSTP can     |
-| [[https://stackoverflow.com/questions/45993444/in-detail-what-happens-when-you-press-ctrl-c-in-a-terminal][What happens, when pressing Ctrl-C]] | Kernal translates the ASCII character(=^C=) to =SIGINT= signal         |
-| Reference                          | [[https://en.wikipedia.org/wiki/Signal_(IPC)#POSIX_signals][wikipedia: Signal (IPC)]]                                                |
+| Name                                  | Command                                                                |
+|---------------------------------------+------------------------------------------------------------------------|
+| Signal for interprocess communication | A Kernel notify a process that some condition has occurred.            |
+| =kill -l=                             | List all signals                                                       |
+| Critical signals                      | The signals SIGKILL and SIGSTOP cannot be caught, blocked, or ignored. |
+| =SIGKILL=, =SIGTERM=                  | Send kill signal to a given process. =kill -term $pid=, =kill -9 $pid= |
+| =SIGHUP=                              | [[https://stackoverflow.com/questions/19052354/sighup-for-reloading-configuration][Reload or restart a process]]. =kill -HUP $pid=                          |
+| =SIGHUP=                              | Terminal warns dependent processes of logout                           |
+| =SIGINT=                              | Users wish to interrupt the process                                    |
+| =SIGCHILD=                            | When a child process terminates, instruct OS to cleanup the resource   |
+| =SIGSTOP=                             | Suspend a process                                                      |
+| =SIGUSR1=, =SIGUSR2=                  | User defined signals                                                   |
+| =SIGSTOP= vs =SIGTSTP=                | SIGSTOP can't be ignored by the targetted process, but SIGTSTP can     |
+| [[https://stackoverflow.com/questions/45993444/in-detail-what-happens-when-you-press-ctrl-c-in-a-terminal][What happens, when pressing Ctrl-C]]    | Kernal translates the ASCII character(=^C=) to =SIGINT= signal         |
+| Reference                             | [[https://en.wikipedia.org/wiki/Signal_(IPC)#POSIX_signals][wikipedia: Signal (IPC)]]                                                |
 
 ** Background & Daemons
-| Name                                                       | Command                                                              |
-|------------------------------------------------------------+----------------------------------------------------------------------|
-| [[https://www.thegeekstuff.com/2010/05/unix-background-job/][Suspend process: bring it to background]]                    | =kill -STOP $pid=, =Ctrl-z=                                          |
-| Bring a background process to foreground                   | =fg $JOB_ID=                                                         |
-| List all background jobs                                   | =jobs=, =jobs -l=                                                    |
-| [[https://en.wikipedia.org/wiki/Nohup][Put a running process to background, and ignore HUP signal]] | =nohup $command &=, =nohup $command>foo.out 2>foo.err < /dev/null &= |
-| Tools to bring process to background and detach signals    | =nohup=, =tmux=, =screen=                                            |
+| Name                                                       | Command                                          |
+|------------------------------------------------------------+--------------------------------------------------|
+| [[https://www.thegeekstuff.com/2010/05/unix-background-job/][Suspend process: bring it to background]]                    | =kill -STOP $pid=, =Ctrl-z=                      |
+| Bring a background process to foreground                   | =fg $JOB_ID=                                     |
+| List all background jobs                                   | =jobs=, =jobs -l=                                |
+| [[https://en.wikipedia.org/wiki/Nohup][Put a running process to background, and ignore HUP signal]] | =nohup $command &=                               |
+| nohup with redirection                                     | =nohup $command>foo.out 2>foo.err < /dev/null &= |
+| Tools to bring process to background and detach signals    | =nohup=, =tmux=, =screen=                        |
 
 ** More Resources
 License: Code is licensignal under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -63,7 +65,7 @@ License: Code is licensignal under [[https://www.dennyzhang.com/wp-content/mit_l
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
 #+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-signal-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-signal-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-signal-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-signal-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-signal-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)
@@ -84,3 +86,13 @@ jobs
 * TODO SIGBUS                                                      :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO What happens if press Ctrl+C                                :noexport:
+* HALF ACL model of signal: Why send signal fails                  :noexport:
+#+BEGIN_EXAMPLE
+kubo@jumper:~$ ps -ef |grep 1439
+root      1439     1  0 Jan15 ?        00:08:29 /usr/bin/containerd
+root      2990  1439  0 10:53 ?        00:00:00 containerd-shim -namespace moby -workdir /var/lib/containerd/io.containerd.runtime.v1.linux/moby/70335119bfd5a557a652ef7400a5e0f5bcbd122d2d8dbcc26dbcfc545fd0cebf -address /run/containerd/containerd.sock -containerd-binary /usr/bin/containerd -runtime-root /var/run/docker/runtime-runc
+kubo      3770 25068  0 10:55 pts/4    00:00:00 grep --color=auto 1439
+kubo@jumper:~$ kill -HUP 3009
+-bash: kill: (3009) - Operation not permitted
+kubo@jumper:~$ sudo kill -HUP 3009
+#+END_EXAMPLE

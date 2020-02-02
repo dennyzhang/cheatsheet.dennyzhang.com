@@ -29,13 +29,19 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Install ping               | =apt-get update= && =apt-get install -y iputils-ping= |
 | Install ssh/scp            | =apt-get install openssh-client=                      |
 ** Basic
-| Name                                    | Command                                                                            |
-|-----------------------------------------+------------------------------------------------------------------------------------|
-| [[https://www.brightbox.com/blog/2016/01/06/ruby-2-3-ubuntu-packages/][Install package for a given version]]     | =apt-get install ruby2.3 ruby2.3-dev=                                              |
-| Start a ubuntu test container           | =docker run --rm -t -i --privileged --name test --entrypoint=/bin/sh ubuntu:14.04= |
-| Start a ubuntu kubernetes pod           | =kubectl run --rm -i -t --image=ubuntu:14.04 test -- sh=                           |
-| Parse log for install/remove operations | =grep 'install ' /var/log/dpkg.log=, =grep 'remove ' /var/log/dpkg.log=            |
-| dpkg/aptitude/apt/apt-get               |                                                                                    |
+| Name                                    | Command                                                                 |
+|-----------------------------------------+-------------------------------------------------------------------------|
+| [[https://www.brightbox.com/blog/2016/01/06/ruby-2-3-ubuntu-packages/][Install package for a given version]]     | =apt-get install ruby2.3 ruby2.3-dev=                                   |
+| Install/remove package                  | =apt-get install curl=, =which curl=, =apt-get remove curl=             |
+| Reinstall package                       | =apt-get install --reinstall procp=                                     |
+| [[https://unix.stackexchange.com/questions/191977/how-can-i-find-the-package-that-contains-a-program-in-debian][Search package by file name]]             | Install =apt-file= package, then =apt-file search --regexp '/XXX$'=     |
+| Start a ubuntu test container           | =docker run --rm -t -i --name test --entrypoint=/bin/sh ubuntu:14.04=   |
+| Start a ubuntu kubernetes pod           | =kubectl run --rm -i -t --image=ubuntu:14.04 test -- sh=                |
+| Parse log for install/remove operations | =grep 'install ' /var/log/dpkg.log=, =grep 'remove ' /var/log/dpkg.log= |
+| Download without install                | =apt-get download curl=, =ls -lth curl*.deb=                            |
+| Update package list                     | =apt-get update=                                                        |
+| dpkg/aptitude/apt/apt-get               |                                                                         |
+
 ** dpkg
 | Name                                                   | Command            |
 |--------------------------------------------------------+--------------------|
@@ -52,12 +58,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Install/remove package        | =apt install curl=, =which curl=, =apt remove curl= |
 | Search package                | =apt search curl=                                   |
 
-** apt-get
-| Name                     | Command                                                     |
-|--------------------------+-------------------------------------------------------------|
-| Install/remove package   | =apt-get install curl=, =which curl=, =apt-get remove curl= |
-| Download without install | =apt-get download curl=, =ls -lth curl*.deb=                |
-| Update package list      | =apt-get update=                                            |
 
 ** apt-cache
 | Name                              | Command                   |
@@ -89,7 +89,7 @@ https://github.com/trimstray/apt-essentials
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
 #+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-apt-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-apt-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-apt-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-apt-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-apt-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)

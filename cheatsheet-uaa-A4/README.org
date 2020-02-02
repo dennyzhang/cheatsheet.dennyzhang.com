@@ -256,7 +256,7 @@ https://github.com/cloudfoundry/uaa
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
 #+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-uaa-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-uaa-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-uaa-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)
