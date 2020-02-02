@@ -412,7 +412,8 @@ https://zhuanlan.zhihu.com/p/32033320
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO 1031 Tax Exchange                                           :noexport:
 * Two kitchen drawers are not stable                               :noexport:
-* 橙子树挡着roof和neighbor了                                       :noexport:
+* DONE 橙子树挡着roof和neighbor了                                  :noexport:
+  CLOSED: [2020-02-01 Sat 10:48]
 * 家里有灯泡坏了                                                   :noexport:
 * 地基里面有曾经出现过小动物的痕迹（老鼠/ 松鼠）                   :noexport:
 * 有GFCI插座坏了                                                   :noexport:
@@ -513,7 +514,6 @@ https://www.amazon.com/Ring/dp/B01JTL2PYE/ref=sr_1_39?keywords=ring+alarm&qid=15
 * TODO Split this cheatsheet: buy a house & maintain ahouse        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO 父母活动                                                    :noexport:
-
 - 看电影
 - 逛farmers market 
 - 逛museum

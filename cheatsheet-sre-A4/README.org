@@ -1,0 +1,187 @@
+* CheatSheet: SRE/DevOps/Sysadmin                                 :Interview:
+:PROPERTIES:
+:type:     interview
+:export_file_name: cheatsheet-sre-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-sre-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/cheatsheet-sre-A4.pdf][cheatsheet-sre-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-sre-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-paper-A4][CheatSheet: Well-Known Papers For IT Industry]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** Reference
+| Name       | Summary                                                                                |
+|------------+----------------------------------------------------------------------------------------|
+| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4][CheatSheet: Common Code Problems & Follow-ups]] |
+| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-sre-A4][CheatSheet: SRE/DevOps/Sysadmin]]           |
+| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]]                                     |
+| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][Shell CheatSheet]]                                                                       |
+** Good Mindsets
+| Num | Name                            | Summary                      |
+|-----+---------------------------------+------------------------------|
+|   1 | First thing: =Stop The Bleed=   |                              |
+|   2 | [[http://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle/][Pets VS Cattles]]                 |                              |
+|   3 | Fix a process VS Fix a problem  |                              |
+|   4 | Evaluate business impact first  |                              |
+|   5 | Prevention VS Treatment         |                              |
+|   6 | [[https://landing.google.com/sre/sre-book/chapters/postmortem-culture/][Postmortem Culture]]              |                              |
+|   7 | Understand workflow & use cases | Crucial for trouble shooting |
+|   8 | Automation VS Convention        |                              |
+#+TBLFM: $1=@-1$1+1;N
+** Top 20 Linux Basic Questions
+| Num | Name                                              | Summary                                    |
+|-----+---------------------------------------------------+--------------------------------------------|
+|   1 | What is /proc directory?                          |                                            |
+|   2 | Which signals can be catch?                       |                                            |
+|   3 | What happens, when running "ls -l *"              |                                            |
+|   4 | What happens, when pressing "Ctrl + c"            |                                            |
+|   5 | What happens, when opening https://www.google.com |                                            |
+|   6 | How to solve ssh "Connection refused" errors?     |                                            |
+|   7 | Explain the output of =top= command               |                                            |
+|   8 | Explain the output of =sar= command               |                                            |
+|   9 | How to daemonize a process?                       |                                            |
+|  10 | [[https://askubuntu.com/questions/35722/what-is-kernel-panic][What are common scenarios of linux kernel panics?]] |                                            |
+|  11 | What is coredump?                                 |                                            |
+|  12 | Program startup process in userspace              | [[https://0xax.gitbooks.io/linux-insides/Misc/linux-misc-4.html][Link: Program startup process in userspace]] |
+|  13 | Explain init.d workflow                           |                                            |
+|  14 | Explain Linux Boot Process                        |                                            |
+|  15 | What's your favorite shell and why?               | [[https://sunlightmedia.org/bash-vs-zsh/][Link: Bash vs Zsh]]                          |
+#+TBLFM: $1=@-1$1+1;N
+** Top 20 Linux Advanced Questions
+| Num | Name                                                                 | Summary                                                                   |
+|-----+----------------------------------------------------------------------+---------------------------------------------------------------------------|
+|   1 | Whether it's possible to sniff HTTPS traffic? And why?               |                                                                           |
+|   2 | [[https://unix.stackexchange.com/questions/62697/why-is-i-o-uninterruptible][Why is I/O uninterruptible?]]                                          |                                                                           |
+|   3 | Compare to Linux process, what things containers can't support?      |                                                                           |
+|   4 | How does the Linux kernel handle a system call                       | [[https://0xax.gitbooks.io/linux-insides/SysCall/linux-syscall-2.html][Link: System calls in the Linux kernel]]                                    |
+|   5 | [[https://www.tecmint.com/systemd-replaces-init-in-linux/][How do you feel about systemd?]]                                       | Init processes start serially, consequently delayed and long booting time |
+|   6 | How to quickly crash an linux machine?                               |                                                                           |
+|   7 | How reliable =history= command is? And how to alleviate the problem? |                                                                           |
+|   8 | How to setup http proxy with SLA for different traffic?              |                                                                           |
+#+TBLFM: $1=@-1$1+1;N
+
+** Top 10 Networking Questions
+| Num | Name                                  | Summary                  |
+|-----+---------------------------------------+--------------------------|
+|   1 | Difference between switch and router? | L2, L3                   |
+|   2 | Which port ICMP is using?             | Neither TCP or UDP. [[https://learningnetwork.cisco.com/thread/120555][Link]] |
+#+TBLFM: $1=@-1$1+1;N
+** SRE/System Engineering
+| Num | Name      | Summary                                                                         |
+|-----+-----------+---------------------------------------------------------------------------------|
+|   1 | Reference | [[https://github.com/chassing/linux-sysadmin-interview-questions][Github: chassing/linux-sysadmin-interview-questions]], [[https://github.com/0xAX/linux-insides][Github: 0xAX/linux-insides]] |
+|   2 | Reference | [[https://shivamkhandelwal.in/production-engineering-internship-interview-process-facebook/][Link: Facebook Production Engineering Internship Interview]]                      |
+|   3 | Reference | [[https://syedali.net/engineer-interview-questions/][Link: SRE INTERVIEW QUESTIONS]]                                                   |
+#+TBLFM: $1=@-1$1+1;N
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-sre-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-sre-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-sre-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* TODO zsh: as a shell interpret, how difference zsh vs bash?      :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE ICMP has no ports and is neither TCP nor UDP.               :noexport:
+  CLOSED: [2020-02-01 Sat 00:34]
+https://learningnetwork.cisco.com/thread/120555
+
+What exactly is the firewall rule? ICMP has no ports and is neither TCP nor UDP. ICMP is IP protocol 1 (see RFC792), TCP is IP protocol 6 (described in RFC793) and UDP is IP protocol 17(see RFC768). UDP and TCP have ports, ICMP has no ports, but types and codes. I would say: don't filter ICMP until you know exactly what you are doing. Do you remember the issues when DSL was introduced and some servers were not reachable anymore via DSL connection but were reachable via the proxy-server of the ISP? The reason for that effect was wrong ICMP filtering on the "server site" firewall: thoses firewalls have filtered out ICMP "fragmentation needed" packets, and the servers were configured to do PMTUD (which is best common pratice since many years). PMTUD (Path MTU Discovery) relies on receiving ICMP "fragmentation needed" packets, if the MTU for the complete way between source and destination has a lower MTU than the MTU between source and next hop. The server sends his data with "don't fragment bit" set and reduces the MTU for sent packets to that specific destination, if it receives "fragmentation needed" ICMP packets from some device "on the way". If there is a device on the way, that throws away that ICMP "fragmentation needed" packets, the server resends the dropped packets, that are too large to reach the destination without fragmentation, again and again with the same high MTU, and they will be dropped again and again ...
+
+If you really want to filter ICMP. do never filter ICMP unreachables. I would prefer to never filter ICMP at all (but you may ratelimit ICMP). ICMP filtering will (in my opinion) not lead to much more security, but it will make it much harder to find misconfigurations and reasons for network issues. In my opinion the disadvantages of filtering ICMP are much more than the advantages doing so ...
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO software/systems engineers                                  :noexport:
+https://shivamkhandelwal.in/production-engineering-internship-interview-process-facebook/
+
+Production Engineers at Facebook are hybrid software/systems engineers who ensure that Facebook's services run smoothly and have the capacity for future growth.
+
+You might be confused and thinking of it as a regular Site Reliability Engineer (SRE) role, but it's much more than it. 
+
+
+- Production Engineers
+- SRE
+- Software engineers
+- Systems engineers
+
+code, fundamentals of networks, UNIX, deployment and preferably other infrastructure services 
+     like load balancing, caching, CDNs etc. 
+
+If you read RFCs like you eat food, that is a plus. 😋
+* TODO [#A] Read RFCs                                              :noexport:
+If you read RFCs like you eat food, that is a plus. 😋
+* TODO Difference between soft/hard links?                         :noexport:
+* TODO Which system calls can list all files in current directory? :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Sticky Bit? Which files have that set?                      :noexport:
+* TODO How a URL resolve?                                          :noexport:
+* TODO You are not able to serve files present in /var/www/htmlvia httpdprocess. :noexport:
+https://shivamkhandelwal.in/production-engineering-internship-interview-process-facebook/
+
+This round is the best thing about the whole process. You are typically not expected to write any code in this round. BUT are given an open-ended problem to solve. You need to talk aloud your strategy, debugging ideas, solutions and so on.
+
+One random example will be: You are not able to serve files present in /var/www/htmlvia httpdprocess. What mistakes can you think of? How will you solve them?
+
+You can think starting from file permissions, checking httpd config, iptables rules, and so on. There is no right answer but surely better answers when different candidates are compared.
+* TODO write fairly sophisticated code involving pipes, threading, etc. :noexport:
+https://shivamkhandelwal.in/production-engineering-internship-interview-process-facebook/
+* TODO What xargs is?                                              :noexport:
+* TODO Time related system calls in the Linux kernel               :noexport:
+https://0xax.gitbooks.io/linux-insides/Timers/linux-timers-7.html
+* TODO [#A] Synchronization primitives in the Linux kernel.        :noexport:
+https://0xax.gitbooks.io/linux-insides/SyncPrim/
+** TODO Spinlock                                                   :noexport:
+ https://en.wikipedia.org/wiki/Spinlock
+* TODO setup a linux quiz                                          :noexport:
+* TODO Describe ways of process inter-communication                :noexport:
+* TODO Important RFCs
+| Num | Name                                                     | Summary |
+|-----+----------------------------------------------------------+---------|
+|   1 | [[https://www.rfc-editor.org/rfc/rfc1912.txt][RFC 1912]]-Common DNS operational and configuration errors |         |
+#+TBLFM: $1=@-1$1+1;N
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO What happens, when opening https://www.google.com           :noexport:
+* TODO What happens, when pressing "Ctrl + c"                      :noexport:
+* TODO How to setup http proxy with SLA for different traffic?     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO What is /proc directory?                                    :noexport:
+* TODO Compare to Linux process, what things containers can't support? :noexport:
+* TODO Explain Linux Boot Process                                  :noexport:
+* TODO How does the Linux kernel handle a system call              :noexport:
