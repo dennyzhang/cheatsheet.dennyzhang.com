@@ -145,6 +145,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  73 | [[https://code.dennyzhang.com/followup-roundtrippass][#roundtrippass]]                  | [[https://code.dennyzhang.com/followup-roundtrippass][Array Round Trip Pass Problems & Follow-up]]              |
 |  74 | [[https://code.dennyzhang.com/followup-regioninmatrix][#regioninmatrix]]                 | [[https://code.dennyzhang.com/followup-regioninmatrix][Region In Matrix Problems & Follow-up]]                   |
 |  75 | [[https://code.dennyzhang.com/followup-kadane][#kadane]]                         | [[https://code.dennyzhang.com/followup-kadane][Kadane Algorithm Problems & Follow-up]]                   |
+|  76 | [[https://code.dennyzhang.com/followup-bipartite][#bipartite]]                      | [[https://code.dennyzhang.com/followup-bipartite][Bipartite Graph Problems & Follow-up]]                    |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML

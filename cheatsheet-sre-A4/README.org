@@ -41,62 +41,66 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   9 | [[https://en.wikipedia.org/wiki/Principle_of_least_privilege][Principle Of Least Privilege]]    |                                          |
 |  10 | Design Tools VS Use Tools       | Operational knowledge is not good enough |
 #+TBLFM: $1=@-1$1+1;N
-** Top 20 Linux Workflow
-| Num | Name                                         | Summary                                   |
-|-----+----------------------------------------------+-------------------------------------------|
-|   1 | Explain init.d workflow                      |                                           |
-|   2 | Explain Linux Boot Process                   |                                           |
-|   3 | Explain OS process scheduling                |                                           |
-|   4 | Explain how to build a linux release         |                                           |
-|   5 | Explain How Linux find a file or a directory | inode, symbol link, hard link, block, etc |
+** Top 10 Linux Workflow
+| Num | Name                                                      | Summary                                         |
+|-----+-----------------------------------------------------------+-------------------------------------------------|
+|   1 | What happens, when opening https://www.google.com         | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-opening-httpswwwgooglecom][Github Link]]                                     |
+|   2 | What happens, when "ls -l *"                              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-ls--l-][Github Link]]. shell, expansion, fork             |
+|   3 | What happens, when "Ctrl + c" in a terminal               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-ctrl--c-in-a-terminal][Github Link]]. i/o interrupt, SIGINT, sig handler |
+|   4 | What happens, when "touch a.txt"                          | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-touch-atxt][Github Link]]                                     |
+|   5 | What happens, when you press power on button in a server? | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-you-press-power-on-button-in-a-server][Github Link]]. bios, mbr, grub, init, runlevel    |
+|   6 | What happens, when "cat /etc/hosts"                       | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-cat-etchosts][Github Link]]                                     |
+|   7 | Explain init.d workflow                                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-initd-workflow][Github Link]]                                     |
+|   8 | Explain how to build a linux release                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-to-build-a-linux-release][Github Link]]                                     |
+|   9 | Explain how kernel schedules process                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-kernel-schedules-process][Github Link]]                                     |
+|  10 | Explain how kernel read data from disk                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-kernel-read-data-from-disk][Github Link]]                                     |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Top 20 Linux Basic Questions
 | Num | Name                                                           | Summary                                    |
 |-----+----------------------------------------------------------------+--------------------------------------------|
-|   1 | What is /proc directory?                                       |                                            |
-|   2 | What happens, when opening https://www.google.com              |                                            |
-|   3 | What happens, when running "ls -l *"                           |                                            |
-|   4 | What happens, when pressing "Ctrl + c"                         |                                            |
+|   1 | Explain the output of =top= command                            |                                            |
+|   2 | Explain the output of =sar= command                            |                                            |
+|   3 | What is /proc directory?                                       |                                            |
+|   4 | Forget root password. How to reset it?                         |                                            |
 |   5 | How to solve ssh "Connection refused" errors?                  |                                            |
-|   6 | How does sudo work? Given =sudo=, why people may need =su=?    |                                            |
-|   7 | Explain the output of =top= command                            |                                            |
-|   8 | Explain the output of =sar= command                            |                                            |
-|   9 | How to daemonize a process?                                    |                                            |
-|  10 | [[https://askubuntu.com/questions/35722/what-is-kernel-panic][What are common scenarios of linux kernel panics?]]              |                                            |
-|  11 | What are coredump and kdump?                                   |                                            |
-|  12 | Program startup process in userspace                           | [[https://0xax.gitbooks.io/linux-insides/Misc/linux-misc-4.html][Link: Program startup process in userspace]] |
-|  13 | What's your favorite shell and why?                            | [[https://sunlightmedia.org/bash-vs-zsh/][Link: Bash vs Zsh]]                          |
-|  14 | [[https://linoxide.com/linux-how-to/difference-between-utmp-wtmp-files-in-linux/][Figure out who has logged to server now and previously?]]        | w, last, lastb; lastlog; /var/run/*tmp     |
-|  15 | How to choose RAID levels for different scenarios?             |                                            |
-|  16 | Forget root password. How to reset it?                         |                                            |
-|  17 | What is init program?                                          |                                            |
-|  18 | How linux signal trap works? And what signals can't be ignored |                                            |
-|  19 | How to close stdin/stdout/stderr of one command                | =some_command </dev/null >/dev/null 2>&1=  |
+|   6 | How to daemonize a process?                                    |                                            |
+|   7 | [[https://askubuntu.com/questions/35722/what-is-kernel-panic][What are common scenarios of linux kernel panics?]]              |                                            |
+|   8 | What are coredump and kdump?                                   |                                            |
+|   9 | Program startup process in userspace                           | [[https://0xax.gitbooks.io/linux-insides/Misc/linux-misc-4.html][Link: Program startup process in userspace]] |
+|  10 | What's your favorite shell and why?                            | [[https://sunlightmedia.org/bash-vs-zsh/][Link: Bash vs Zsh]]                          |
+|  11 | [[https://linoxide.com/linux-how-to/difference-between-utmp-wtmp-files-in-linux/][Figure out who has logged to server now and previously?]]        | w, last, lastb; lastlog; /var/run/*tmp     |
+|  12 | How to choose RAID levels for different scenarios?             |                                            |
+|  13 | What is init program?                                          |                                            |
+|  14 | How does sudo work? Given =sudo=, why people may need =su=?    |                                            |
+|  15 | How linux signal trap works? And what signals can't be ignored |                                            |
+|  16 | How to close stdin/stdout/stderr of one command                | =some_command </dev/null >/dev/null 2>&1=  |
+|  17 | [[https://jvns.ca/blog/2016/01/23/sendfile-a-new-to-me-system-call/][Linux sendfile with zero-copy]]                                  |                                            |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Linux Advanced Questions
-| Num | Name                                                                 | Summary                                                        |
-|-----+----------------------------------------------------------------------+----------------------------------------------------------------|
-|   1 | Whether it's possible to sniff HTTPS traffic? And why?               |                                                                |
-|   2 | Figure out what critical commands ssh users have issued?             |                                                                |
-|   3 | [[https://unix.stackexchange.com/questions/62697/why-is-i-o-uninterruptible][Why is I/O uninterruptible?]]                                          |                                                                |
-|     | Explain shell features                                               | shell pipes, filename wildcards, env var expansion, alias, etc |
-|   4 | What is the difference between UNIX and Linux                        |                                                                |
-|   5 | What is Virtual Memory?                                              |                                                                |
-|   6 | What is localhost and why would ping localhost fail?                 |                                                                |
-|   7 | How does the Linux kernel handle a system call                       | [[https://0xax.gitbooks.io/linux-insides/SysCall/linux-syscall-2.html][Link: System calls in the Linux kernel]]                         |
-|   8 | [[https://www.tecmint.com/systemd-replaces-init-in-linux/][How do you feel about systemd?]]                                       | Init processes start serially, long booting time               |
-|   9 | ssh port forwarding VS ssh reverse port forwarding                   |                                                                |
-|  10 | How to quickly crash an linux machine?                               |                                                                |
-|  11 | How to deprovision a user completely?                                |                                                                |
-|  12 | [[https://www.thegeekstuff.com/2008/08/15-examples-to-master-linux-command-line-history/][How reliable =history= command is? And how to alleviate the problem?]] | =~/.bash_history=, =$HISTTIMEFORMAT= env                       |
-|  13 | how to generate a zombie process                                     |                                                                |
-|  14 | With =bg= in one terminal, =jobs= doesn't show in another terminal   |                                                                |
-|  15 | How to setup http proxy with SLA for different traffic?              |                                                                |
-|  16 | What's your wishlist for linux?                                      |                                                                |
-|  17 | What's your ideal monitoring system in your imagination?             |                                                                |
+| Num | Name                                                                 | Summary                                                             |
+|-----+----------------------------------------------------------------------+---------------------------------------------------------------------|
+|   1 | Explain Linux security model                                         | nothing-or-all model, capability, extended attributes, selinux, etc |
+|   2 | Whether it's possible to sniff HTTPS traffic? And why?               |                                                                     |
+|   3 | Figure out what critical commands ssh users have issued?             |                                                                     |
+|   4 | [[https://unix.stackexchange.com/questions/62697/why-is-i-o-uninterruptible][Why is I/O uninterruptible?]]                                          |                                                                     |
+|   5 | Explain shell features                                               | shell pipes, filename wildcards, env var expansion, alias, etc      |
+|   6 | What is the difference between UNIX and Linux                        |                                                                     |
+|   7 | What is Virtual Memory?                                              |                                                                     |
+|   8 | What is localhost and why would ping localhost fail?                 |                                                                     |
+|   9 | How does the Linux kernel handle a system call                       | [[https://0xax.gitbooks.io/linux-insides/SysCall/linux-syscall-2.html][Link: System calls in the Linux kernel]]                              |
+|  10 | Difference between ext3 and ext4                                     |                                                                     |
+|  11 | [[https://www.tecmint.com/systemd-replaces-init-in-linux/][How do you feel about systemd?]]                                       | Init processes start serially, long booting time                    |
+|  12 | ssh port forwarding VS ssh reverse port forwarding                   |                                                                     |
+|  13 | How to quickly crash an linux machine?                               |                                                                     |
+|  14 | How to deprovision a user completely?                                |                                                                     |
+|  15 | [[https://www.thegeekstuff.com/2008/08/15-examples-to-master-linux-command-line-history/][How reliable =history= command is? And how to alleviate the problem?]] | =~/.bash_history=, =$HISTTIMEFORMAT= env                            |
+|  16 | how to generate a zombie process                                     |                                                                     |
+|  17 | With =bg= in one terminal, =jobs= doesn't show in another terminal   |                                                                     |
+|  18 | How to setup http proxy with SLA for different traffic?              |                                                                     |
+|  19 | What's your wishlist for linux?                                      |                                                                     |
+|  20 | What's your ideal monitoring system in your imagination?             |                                                                     |
 #+TBLFM: $1=@-1$1+1;N
-
 
 ** Top 20 SRE Questions
 | Num | Name                                                                | Summary                                   |

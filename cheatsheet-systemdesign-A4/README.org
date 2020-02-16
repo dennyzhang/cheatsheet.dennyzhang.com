@@ -81,13 +81,14 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   4 | Makes interviewers feeling you're stubborn                |                                    |
 #+TBLFM: $1=@-1$1+1;N
 ** Algorithms Questions In System Design
-| Num | Name                                                             | Summary                           |
-|-----+------------------------------------------------------------------+-----------------------------------|
-|   1 | Give three 1TB disks, how to store 2TB data with redundancy      | Store as A, B and A XOR B         |
-|   2 | How to support feature of "diff big1.bin big2.bin"               | [[https://code.dennyzhang.com/followup-lcs][#lcs - Longest Common Subsequence]] |
-|   3 | How to support "rsync big1.bin ssh:/big2.bin" in a doggy network | delta-transfer algorithm          |
-|   4 | How to release 1GB binary to 10000 servers                       |                                   |
-|   5 | Avoid double payment in a distributed payment system             | [[https://medium.com/airbnb-engineering/avoiding-double-payments-in-a-distributed-payments-system-2981f6b070bb][link]]                              |
+| Num | Name                                                             | Summary                                                         |
+|-----+------------------------------------------------------------------+-----------------------------------------------------------------|
+|   1 | How to release 1GB binary to 10,000 servers                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-core-logic.org#how-to-release-1gb-binary-to-10000-servers][Github: link]]                                                    |
+|   2 | Design a system checking the health of 10,000 nodes              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-core-logic.org#design-a-system-checking-the-health-of-10000-nodes][Github: link]]                                                    |
+|   3 | Give three 1TB disks, how to store 2TB data with redundancy      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-core-logic.org#store-2tb-data-in-three-1tb-disks-with-redundancy][Github: link]]                                                    |
+|   4 | How to support feature of "diff big1.bin big2.bin"               | [[https://code.dennyzhang.com/followup-lcs][#lcs - Longest Common Subsequence]]                               |
+|   5 | How to support "rsync big1.bin ssh:/big2.bin" in a doggy network | delta-transfer algorithm                                        |
+|   6 | Avoid double payment in a distributed payment system             | [[https://medium.com/airbnb-engineering/avoiding-double-payments-in-a-distributed-payments-system-2981f6b070bb][Link: Avoiding Double Payments in a Distributed Payments System]] |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Design Problems For Technical Modules
 | Num | Name                                                       | Summary   |
@@ -150,6 +151,9 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  26 | Design Google Adsense fraud detection      |
 |  27 | Design slack                               |
 #+TBLFM: $1=@-1$1+1;N
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
 ** Top 30 Concepts For Feature/System Design
 | Num | Name                                    | Summary                                                             |
 |-----+-----------------------------------------+---------------------------------------------------------------------|
@@ -168,30 +172,28 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  12 | B+ Tree                                 |                                                                     |
 |-----+-----------------------------------------+---------------------------------------------------------------------|
 |  13 | [[https://architect.dennyzhang.com/explain-http][Networking: HTTP]]                        |                                                                     |
-|  14 | [[https://architect.dennyzhang.com/explain-poll-push][Pull vs Push model]]                      |                                                                     |
-|  15 | Garbage Collection                      |                                                                     |
-|  16 | [[https://architect.dennyzhang.com/explain-memory-management][Memory Management]]                       |                                                                     |
-|  17 | [[https://architect.dennyzhang.com/explain-heartbeat][Heartbeats]]                              |                                                                     |
-|  18 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]], throttling               |
-|  19 | Filesystem                              |                                                                     |
-|  20 | API: gRPC vs REST                       |                                                                     |
-|  21 | [[https://architect.dennyzhang.com/explain-loadbalancer][Load balancer]]                           |                                                                     |
-|  22 | Scale up vs Scale out                   | Vertical scaling and Horizontal scaling                             |
-|  23 | API Design                              |                                                                     |
-|  24 | [[https://architect.dennyzhang.com/explain-session][Session management]]                      |                                                                     |
-|  25 | Networking: TCP vs UDP                  |                                                                     |
-|  26 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency          |
-|  27 | Availability patterns                   | Fail-over vs Replication                                            |
-|  28 | CDN - Content Delivery Network          | Edge caching                                                        |
-|  29 | [[https://architect.dennyzhang.com/explain-monitoring][Monitoring]]                              |                                                                     |
-|  30 | Security                                |                                                                     |
-|  31 | [[https://architect.dennyzhang.com/explain-dns][Networking: DNS]]                         |                                                                     |
-|  32 | Linux signals                           |                                                                     |
+|  14 | [[https://architect.dennyzhang.com/explain-tcp-udp][Networking: TCP/UDP]]                     |                                                                     |
+|  15 | [[https://architect.dennyzhang.com/explain-poll-push][Pull vs Push model]]                      |                                                                     |
+|  16 | Garbage Collection                      |                                                                     |
+|  17 | [[https://architect.dennyzhang.com/explain-memory-management][Memory Management]]                       |                                                                     |
+|  18 | [[https://architect.dennyzhang.com/explain-heartbeat][Heartbeats]]                              |                                                                     |
+|  19 | Self Protection                         | API Rate limit, [[https://en.wikipedia.org/wiki/Circuit_breaker][Circuit breaker]], [[https://en.wikipedia.org/wiki/Bulkhead_(partition)][bulkhead]], throttling               |
+|  20 | Filesystem                              |                                                                     |
+|  21 | API: gRPC vs REST                       |                                                                     |
+|  22 | [[https://architect.dennyzhang.com/explain-loadbalancer][Load balancer]]                           |                                                                     |
+|  23 | Scale up vs Scale out                   | Vertical scaling and Horizontal scaling                             |
+|  24 | API Design                              |                                                                     |
+|  25 | [[https://architect.dennyzhang.com/explain-session][Session management]]                      |                                                                     |
+|  26 | Networking: TCP vs UDP                  |                                                                     |
+|  27 | Consistency patterns                    | Weak consistency, Eventual consistency, Strong consistency          |
+|  28 | Availability patterns                   | Fail-over vs Replication                                            |
+|  29 | CDN - Content Delivery Network          | Edge caching                                                        |
+|  30 | [[https://architect.dennyzhang.com/explain-monitoring][Monitoring]]                              |                                                                     |
+|  31 | Security                                |                                                                     |
+|  32 | [[https://architect.dennyzhang.com/explain-dns][Networking: DNS]]                         |                                                                     |
+|  33 | Linux signals                           |                                                                     |
 #+TBLFM: $1=@-1$1+1;N
 
-#+BEGIN_HTML
-<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
-#+END_HTML
 ** Top 15 Advanced Data Structure & Algorithms
 | Num | Name                                        | Summary                                                                     |
 |-----+---------------------------------------------+-----------------------------------------------------------------------------|
@@ -439,3 +441,63 @@ https://www.1point3acres.com/bbs/thread-562110-1-1.html
 * TODO links of system design                                      :noexport:
 https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=559285&highlight=design
 一篇文章解决所有system design面试|一亩三分地系统设计版
+* HALF 问几个onsite遇到的系统设计问题                              :noexport:
+https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=441198&highlight=%CF%B5%CD%B3%C9%E8%BC%C6
+
+#+BEGIN_EXAMPLE
+
+最近几轮onsite被问到了很多系统设计问题,有一些真的不知道怎么答,因为我缺少devops和实际scale system的经验,以下都是实际遇到的问题:
+
+1. 假设现在要scale system,是先加更多的api instance还是db instance,为什么？
+2. 同上,假设现在只有一个db一个api instance,request load非常大, 是db先挂还是api先挂,为什么？
+3. 假设request是10000 qps,需要多少load balancer
+4. 假设现在db非常慢,frontend收到503 request timeout,不考虑backend,frontend要怎么办？需不需要向user display error？
+
+5. 假设现在要scale db,是先加cache还是先给db做partitio（read write slaves） ? 为什么？
+6. 第三方payment system 和api server 是如何互相验证对方的？
+
+
+请问对于这些问题,你们有什么好的study material推荐吗？
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+第二题我也试着写点东西..
+
+首先考虑支撑api的底层机制是比较老的同步one thread per connection（例如apache服务器）还是现在常用的异步event-based + thread pool（例如nginx,nodejs,python tornado,gRPC等等）.
+1. 如果是前者,那参考The C10K problem:http://www.kegel.com/c10k.html,大量线程的overhead会导致OS kernel/api进程性能严重下降,所以是api先挂.
+2. 如果是后者,那么考虑到磁盘/SSD操作多数情况下bottleneck会是db -- 但是"挂"的应该还是api进程.因为db同时就允许那么多connection,一般是api进程自己安排队列,所以api进程的queue越来越长,每个request响应时间越来越慢.
+
+然后考虑request的返回值是少量数据（常见情况）还是大量数据（例如视频流）,如果是后者,那么首先挂的可能不是api进程或db,而是网络层（例如带宽不够+路由器处理不过来队列满丢包->大量TCP重发->linux kernel传输层buffer满->api线程通通block,等等）.
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+
+1. 假设现在要scale system,是先加更多的api instance还是db instance,为什么？
+- That really depends on where the bottleneck is. Can't say until you do analysis. But in general you should scale api instance because it's much easier. Api instance is usually stateless so you can scale up freely. Also throw in a cache layer and you will gain instant performance gain. Scaling DB is usually the last option.
+
+2. 同上,假设现在只有一个db一个api instance,request load非常大, 是db先挂还是api先挂,为什么？
+- Also depends. But if all the load requires heavy data I/O (not computation), db先挂.
+
+3. 假设request是10000 qps,需要多少load balancer
+- single server should be able to handle 10k qps already. So I guess 2-4 should be enough.
+
+4. 假设现在db非常慢,frontend收到503 request timeout,不考虑backend,frontend要怎么办？需不需要向user display error？
+- That's a UX question. But I think time out should be displayed to user (in a professional wording of course). What are other options? You can't have user keep waiting b/c it's already very slow. Or, display something like "We have received your request. Please click here to check status. etc."
+
+5. 假设现在要scale db,是先加cache还是先给db做partitio（read write slaves） ? 为什么？
+- cache first but your api needs to add cache validation logic. DB partition has consistency problems and should be the last resort. For reporting which doesn't mind data delay, master-slave is ok.
+
+6. 第三方payment system 和api server 是如何互相验证对方的？
+- a few options. By certificate, use api key, or private connection.
+
+Just my own view. Again, sorry I can't type Chinese on this computer.
+#+END_EXAMPLE
+* TODO HA of global DNS?                                           :noexport:
+* TODO spinlock                                                    :noexport:
+https://en.wikipedia.org/wiki/Spinlock
+https://stackoverflow.com/questions/1957398/what-exactly-are-spin-locks
+
+A spinlock is a lock which causes a thread trying to acquire it to simply wait in a loop ("spin") while repeatedly checking if the lock is available
+
+Because they avoid overhead from operating system process rescheduling or context switching, spinlocks are efficient if threads are likely to be blocked for only short periods. 
+* TODO process context switch                                      :noexport:

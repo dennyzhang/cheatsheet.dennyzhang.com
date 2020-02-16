@@ -1,0 +1,47 @@
+* System Design: Core Logic                                       :Interview:
+:PROPERTIES:
+:type:     interview
+:export_file_name: cheatsheet-corelogic-A4.pdf
+:END:
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-corelogic-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+** Design a system checking the health of 10,000 nodes
+
+Design a system that checks the health of 10,000 nodes. Each of 10,000 modes have an API exposed that you have to call and check the health. This API takes 1-5 seconds to respond. There is UI which tells which nodes are healthy OR not healthy. Your system should provide API for this UI. This UI refreshes every 10 mins. So, every 10 mins your system should be able to update data about those 10,000 nodes.
+*** Requirements With Clarifications
+1. Users can always view the health of all nodes immediately.
+2. Users are fine with not real-time data (10 minutes delay).
+3. When some nodes are down, system should still functional. And be able to detect the failure.
+*** Scale
+1. QPS sent to dashboard system: **16.67 per second**.
+   10K records send within 5 minute. 10000/(10\*60)=16.67
+
+2. How big the record would be? **1 byte per record**.
+   Let's say each record is 100 byte for unhealthy state including verbose error message. For healthy state, it's 1 byte. After checking the service SLA, let's assume the ratio of unhealthy/total is 0.01%. So the record size is 1.0099 (0.0001*100+0.9999*1).
+
+3. How many hot data are stored? **43.2 GB**.
+   Assume data retention is acceptable: Data older than 1 months can be discarded or moved to secondary storage.
+   43,208,640 bytes(43.2 GB) = 1(byte)\*16.67(QPS)\*(30\*24\*60\*60)(1 month)
+*** High Level Design
+1. Data collection: push, pull or pull + push gateway
+2. Related technologies: Nagios, Zabbix; Prometheus
+*** Detail Design
+** How to release 1GB binary to 10,000 servers
+*** Requirements With Clarifications
+*** Scale
+*** High Level Design
+*** Detail Design
+** Store 2TB data in three 1TB disks with redundancy
+
+Say 2TB data is A and B. For three disks, we store data as A, B and A XOR B.
+
+If any of three disks is down, we can still retrieve the original data: A and B.
