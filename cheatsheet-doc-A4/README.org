@@ -80,12 +80,15 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Name                                                                                     | Comment |
 |------------------------------------------------------------------------------------------+---------|
 | Hey XXX - I'm not quite sure who to ask about this, so I thought I might start with you. |         |
+
 ** Misc
-| Name                      | Comment |
-|---------------------------+---------|
-| home-grown approaches     |         |
-| Sorry for off-topic       |         |
-| Fix intermittent failures |         |
+| Name                                                                                         | Comment |
+|----------------------------------------------------------------------------------------------+---------|
+| home-grown approaches                                                                        |         |
+| Sorry for off-topic                                                                          |         |
+| Fix intermittent failures                                                                    |         |
+| Go the extra mile                                                                            |         |
+| Not feeling well this morning; woke up with cold symptoms. I’ll be working remotely as I can |         |
 
 ** More Resources
 License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

@@ -541,3 +541,31 @@ curl -k -H "Authorization: Bearer $ACCESS_TOKEN" https://30.0.0.5/api/v0/deploye
 ACCESS_TOKEN=$(curl -H "Authorization: Basic $basic_dummy" -d "grant_type=password&password=Admin%2123&username=admin" https://30.0.0.5/uaa/oauth/token -k | jq -r .access_token)
 curl -k -H "Authorization: Bearer $ACCESS_TOKEN" https://30.0.0.5/api/v0/staged/products
 #+END_EXAMPLE
+* Talk with bosh director                                          :noexport:
+- UAA
+```
+cp /home/kubo/.ssh/id_rsa.common /tmp/id_rsa.common
+chmod 400 /tmp/id_rsa.common
+
+ssh -i /tmp/id_rsa.common ubuntu@30.0.0.5
+basic_dummy=$(echo -n 'ops_manager:E86nP-mxI3o0vApKqEPQnZzv8IK77-9t' | base64) # ops manager
+curl -H "Authorization: Basic $basic_dummy" -v -s -k https://88.0.0.11:8443/oauth/token?grant_type=client_credentials | jq .
+```
+
+- Bosh director without authentication
+
+curl  -v -s -k https://88.0.0.11:25555/info | jq .
+
+- Bosh director with authentication
+
+curl  -v -s -k https://88.0.0.11:25555/info | jq .
+
+token
+* DONE talk with bosh director with HTTP API                       :noexport:
+  CLOSED: [2020-02-11 Tue 15:43]
+#+BEGIN_EXAMPLE
+ssh -i /tmp/id_rsa.common -D 18080 -f -C -q -N ubuntu@30.0.0.5
+lsof -i tcp:18080
+
+curl -k -v -s -x socks5h://0:18080 https://88.0.0.11:25555/info
+#+END_EXAMPLE

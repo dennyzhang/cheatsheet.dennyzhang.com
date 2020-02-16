@@ -54,10 +54,15 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  28 | [[https://code.dennyzhang.com/review-topologicalsort][#topologicalsort]]    | [[https://code.dennyzhang.com/review-topologicalsort][Review: Topological Sort Problems]]                 |
 |  29 | [[https://code.dennyzhang.com/review-random][#random]]             | [[https://code.dennyzhang.com/review-random][Review: Random Problems]]                           |
 |  30 | [[https://code.dennyzhang.com/review-concurrency][#concurrency]]        | [[https://code.dennyzhang.com/review-concurrency][Review: Concurrency Problems]]                      |
+|  31 | [[https://code.dennyzhang.com/review-mergesort][#mergesort]]          | [[https://code.dennyzhang.com/review-mergesort][Review: Mergesort Problems]]                        |
+|  32 | [[https://code.dennyzhang.com/review-bitmanipulation][#bitmanipulation]]    | [[https://code.dennyzhang.com/review-bitmanipulation][Review: Bit manipulation problems]]                 |
+|  33 | [[https://code.dennyzhang.com/review-manydetails][#manydetails]]        | [[https://code.dennyzhang.com/review-manydetails][Review: Problems With Many Details]]                |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
-<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+<div style="overflow: hidden;">
+<div style="float: left; padding: 5px"><a href="https://leetcode.com/dennyzhang"><img style="width:189px;height:329px;" src="https://cdn.dennyzhang.com/images/brain/denny_leetcode.png" alt="leetcode" /></a></div>
+</div>
 #+END_HTML
 ** 70 Typical Code Problems & Follow-ups
 | Num | Category/Tag                    | Example                                                 |
@@ -85,10 +90,10 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  20 | [[https://code.dennyzhang.com/followup-lcs][#lcs]]                            | [[https://code.dennyzhang.com/followup-lcs][Longest common subsequence & Follow-up]]                  |
 |  21 | [[https://code.dennyzhang.com/followup-coin][#coin]]                           | [[https://code.dennyzhang.com/followup-coin][Coin Problems & Follow-Up]]                               |
 |  22 | [[https://code.dennyzhang.com/followup-frogjump][#frogjump]]                       | [[https://code.dennyzhang.com/followup-frogjump][Frog Jump Game & Follow-up]]                              |
-|  23 | [[https://code.dennyzhang.com/followup-houserobber][#houserobber]]                    | [[https://code.dennyzhang.com/followup-houserobber][House Robber & Follow-up]]                                |
-|  24 | [[https://code.dennyzhang.com/followup-paintfence][#paintfence]]                     | [[https://code.dennyzhang.com/followup-paintfence][Paint Fence & Follow-up]]                                 |
+|  23 | [[https://code.dennyzhang.com/followup-houserobber][#houserobber]]                    | [[https://code.dennyzhang.com/followup-houserobber][House Robber Problems & Follow-up]]                       |
 |-----+---------------------------------+---------------------------------------------------------|
-|  25 | [[https://code.dennyzhang.com/followup-rectangle][#rectangle]]                      | [[https://code.dennyzhang.com/followup-rectangle][https://code.dennyzhang.com/followup-rectangle]]          |
+|  24 | [[https://code.dennyzhang.com/followup-rectangle][#rectangle]]                      | [[https://code.dennyzhang.com/followup-rectangle][Rectangle Problems & Follow-up]]                          |
+|  25 | [[https://code.dennyzhang.com/followup-triangle][#triangle]]                       | [[https://code.dennyzhang.com/followup-triangle][Triangle Problems & Follow-up]]                           |
 |  26 | [[https://code.dennyzhang.com/followup-geometry][#geometry]]                       | [[https://code.dennyzhang.com/followup-geometry][Geometry Problems & Follow-up]]                           |
 |  27 | [[https://code.dennyzhang.com/followup-reachpoint][#reachpoint]]                     | [[https://code.dennyzhang.com/followup-reachpoint][Reach point Problems & Follow-Up]]                        |
 |  28 | [[https://code.dennyzhang.com/followup-getmedian][#getmedian]]                      | [[https://code.dennyzhang.com/followup-getmedian][Get Median Problems & Follow-Up]]                         |
@@ -137,7 +142,15 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  70 | [[https://code.dennyzhang.com/followup-cyclicswap][#cyclicswap]]                     | [[https://code.dennyzhang.com/followup-cyclicswap][Cyclic Swapping Problems & Follow-Up]]                    |
 |  71 | [[https://code.dennyzhang.com/followup-dijkstra][#dijkstra]]                       | [[https://code.dennyzhang.com/followup-dijkstra][Dijkstra Algorithm Problems & Follow-up]]                 |
 |  72 | [[https://code.dennyzhang.com/followup-floyd][#floyd]]                          | [[https://code.dennyzhang.com/followup-floyd][Floyd Warshall Algorithm Problems & Follow-up]]           |
+|  73 | [[https://code.dennyzhang.com/followup-roundtrippass][#roundtrippass]]                  | [[https://code.dennyzhang.com/followup-roundtrippass][Array Round Trip Pass Problems & Follow-up]]              |
+|  74 | [[https://code.dennyzhang.com/followup-regioninmatrix][#regioninmatrix]]                 | [[https://code.dennyzhang.com/followup-regioninmatrix][Region In Matrix Problems & Follow-up]]                   |
+|  75 | [[https://code.dennyzhang.com/followup-kadane][#kadane]]                         | [[https://code.dennyzhang.com/followup-kadane][Kadane Algorithm Problems & Follow-up]]                   |
 #+TBLFM: $1=@-1$1+1;N
+
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

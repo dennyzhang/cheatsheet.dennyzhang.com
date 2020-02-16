@@ -22,11 +22,12 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** jq - parse json
-| Name                    | Command                                                      |
-|-------------------------+--------------------------------------------------------------|
-| jq remove double-quotes | [[https://stackoverflow.com/questions/44656515/how-to-remove-double-quotes-in-jq-output-for-parsing-json-files-in-bash][Use the -r option to emit raw strings.]] =jq -r ...=           |
-| yq                      | yq is a lightweight and portable command-line YAML processor |
-| [[http://mikefarah.github.io/yq/][Install yq]]              |                                                              |
+| Name                                     | Command                                                      |
+|------------------------------------------+--------------------------------------------------------------|
+| jq remove double-quotes                  | [[https://stackoverflow.com/questions/44656515/how-to-remove-double-quotes-in-jq-output-for-parsing-json-files-in-bash][Use the -r option to emit raw strings.]] =jq -r ...=           |
+| yq                                       | yq is a lightweight and portable command-line YAML processor |
+| [[https://stackoverflow.com/questions/48964305/write-output-to-a-file-after-piped-to-jq][Write output to a file after piped to jq]] | some pipe -> jq . > /tmp/test.txt                            |
+| [[http://mikefarah.github.io/yq/][Install yq]]                               |                                                              |
 
 #+BEGIN_SRC sh
 curl $es_ip:9200/$index_name/_stats?pretty | jq '._all.primaries'

@@ -21,7 +21,7 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4][Golang CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-** Languages & Tools
+** Languages - Source Code
 | Name                 | Summary                          |
 |----------------------+----------------------------------|
 | Java JDK Source Code | [[https://github.com/openjdk-mirror/jdk7u-jdk/tree/master/src/share/classes/java/util][Github: jdk7u-jdk]]                |
@@ -30,6 +30,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Redis Source Code    | [[https://github.com/antirez/redis/tree/unstable/src][Github: redis]]                    |
 | Git Source Code      | [[https://github.com/git/git][Github: git]]                      |
 | Reference            | [[http://tutorials.jenkov.com/java-util-concurrent/index.html][Link: Java Concurrency Utilities]] |
+** Community Design Proposals
+| Name                        | Summary                                  |
+|-----------------------------+------------------------------------------|
+| Python Design Proposals     | [[https://www.python.org/dev/peps/][Link: Python PEP Index]]                   |
+| Kubernetes Design Proposals | [[https://github.com/kubernetes/enhancements/tree/master/keps][Github: Kubernetes Enhancement Proposals]] |
 ** Data Structures
 | Name                                        | Summary                                                     |
 |---------------------------------------------+-------------------------------------------------------------|
@@ -51,12 +56,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Bloom filter                                |                                                             |
 | CRDTs (Conflict-Free Replicated Data Types) |                                                             |
 ** Functions & Methods
-| Name                                        | Summary                                                          |
-|---------------------------------------------+------------------------------------------------------------------|
-| How string contains() method is implemented |                                                                  |
-| How sqrt method is implemented              | sqrt(x) = 2**k * sqrt(y) [[https://github.com/golang/go/blob/master/src/math/sqrt.go][Github: ../sqrt.go]], [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/native/java/lang/fdlibm/src/e_sqrt.c][Github: ../e_sqrt.c]] |
-| How Thread.sleep() is implemented           |                                                                  |
-| How python enumerate() is implemented?      |                                                                  |
+| Name                                        | Summary                                                                      |
+|---------------------------------------------+------------------------------------------------------------------------------|
+| How string contains() method is implemented |                                                                              |
+| How sqrt method is implemented              | sqrt(x) = 2**k * sqrt(y) [[https://github.com/golang/go/blob/master/src/math/sqrt.go][Github: ../sqrt.go]], [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/native/java/lang/fdlibm/src/e_sqrt.c][Github: ../e_sqrt.c]]             |
+| How Thread.sleep() is implemented           |                                                                              |
+| How python enumerate() is implemented?      |                                                                              |
+| How python implements collections.dequeue   | Doubly-linked list: [[https://github.com/python/cpython/blob/762f93ff2efd6b7ef0177cad57939c0ab2002eac/Modules/_collectionsmodule.c#L33-L35][Github: python/cpython/.../Modules/_collections=module.c]] |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

@@ -27,20 +27,23 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Num | Name                                                                            |
 |-----+---------------------------------------------------------------------------------|
 |   1 | Tell me about yourself?                                                         |
-|   2 | How do you handle missing a deadline or project delay?                          |
-|   3 | Why you want to join us?                                                        |
-|   4 | Tell me about your biggest mistake                                              |
-|   5 | Tell me about your biggest achivement & decision with huge impact               |
-|   6 | Tell me one time where you disagree with your colleagues                        |
-|   7 | Tell me about the most interesting project you have been working on             |
-|   8 | Tell me a time you messed up/ took at risk / failed / feel frustrated?          |
-|   9 | What would you change about your project if you did it all over again?          |
-|  10 | How do you resolve conflicts?                                                   |
-|  11 | What if people take your credits?                                               |
-|  12 | Tell us about a time you were given feedback that made you change your strategy |
-|  13 | Tell me about a project that went beyond your scope of work.                    |
-|  14 | What if you will do, if you think your manager is not fair.                     |
-|  15 | Do you have some question for me or this position?                              |
+|   2 | Do you have some question for me or this position?                              |
+|-----+---------------------------------------------------------------------------------|
+|   3 | Tell me about your biggest achievement & decision with huge impact              |
+|   4 | Describe your favorite manager/ team worker.                                    |
+|-----+---------------------------------------------------------------------------------|
+|   5 | How do you handle missing a deadline or project delay?                          |
+|   6 | Why you want to join us?                                                        |
+|   7 | Tell me about your biggest mistake                                              |
+|   8 | Tell me one time where you disagree with your colleagues                        |
+|   9 | Tell me about the most interesting project you have been working on             |
+|  10 | Tell me a time you messed up/ took at risk / failed / feel frustrated?          |
+|  11 | What would you change about your project if you did it all over again?          |
+|  12 | How do you resolve conflicts?                                                   |
+|  13 | Tell us about a time you were given feedback that made you change your strategy |
+|  14 | Tell me about a project that went beyond your scope of work.                    |
+|  15 | What if you will do, if you think your manager is not fair.                     |
+|  16 | What if people take your credits?                                               |
 #+TBLFM: $1=@-1$1+1;N
 ** Principles Of Behavior Questions
 | Num | Name                                          |

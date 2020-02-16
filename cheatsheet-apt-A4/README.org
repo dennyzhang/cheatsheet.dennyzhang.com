@@ -258,7 +258,7 @@ root@387d504951ef:~#  aptitude -y install squid3
 -bash: aptitude: command not found
 #+END_EXAMPLE
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Ubuntu install sshpass
+* TODO Ubuntu install sshpass                                      :noexport:
 https://www.tecmint.com/sshpass-non-interactive-ssh-login-shell-script-ssh-password/
-* HALF Ubuntu install make:  apt-get install build-essential
+* HALF Ubuntu install make:  apt-get install build-essential       :noexport:
 https://askubuntu.com/questions/161104/how-do-i-install-make

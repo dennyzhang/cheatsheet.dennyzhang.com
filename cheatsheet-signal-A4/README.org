@@ -33,6 +33,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | =SIGINT=                              | Users wish to interrupt the process                                    |
 | =SIGCHILD=                            | When a child process terminates, instruct OS to cleanup the resource   |
 | =SIGSTOP=                             | Suspend a process                                                      |
+| =SIGALRM=                             |                                                                        |
 | =SIGUSR1=, =SIGUSR2=                  | User defined signals                                                   |
 | =SIGSTOP= vs =SIGTSTP=                | SIGSTOP can't be ignored by the targetted process, but SIGTSTP can     |
 | [[https://stackoverflow.com/questions/45993444/in-detail-what-happens-when-you-press-ctrl-c-in-a-terminal][What happens, when pressing Ctrl-C]]    | Kernal translates the ASCII character(=^C=) to =SIGINT= signal         |
