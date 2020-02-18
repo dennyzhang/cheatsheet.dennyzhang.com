@@ -28,7 +28,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Cross-team communication |                      |
 | Design doc               |                      |
 | Tasks                    | chore, spikes, epics |
-
 ** Encourage team members to contribute
 | Name                                | Comment |
 |-------------------------------------+---------|
@@ -80,6 +79,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Name                                                                                     | Comment |
 |------------------------------------------------------------------------------------------+---------|
 | Hey XXX - I'm not quite sure who to ask about this, so I thought I might start with you. |         |
+| Nice to virtually meet you!                                                              |         |
 
 ** Misc
 | Name                                                                                         | Comment |
@@ -472,3 +472,17 @@ Thanks,
 #+END_EXAMPLE
 * Business Essentials                                              :noexport:
 https://www.investopedia.com/business-essentials-4689832
+* TODO company culture                                             :noexport:
+You are curious about how our different backgrounds affect us at work, rather than pretending they don’t affect us
+
+You recognize we all have biases, and work to grow past them
+
+ambitious common goals
+
+Of course, to be great, most of us have to put in considerable effort, but hard work and long hours is not how we measure or talk about a person’s contribution.
+
+In many organizations, there is an unhealthy emphasis on process and not much freedom.
+
+The lesson is you don’t need policies for everything. Most people understand the benefits of wearing clothes at work.
+
+We avoid over-correcting. Just because a few people abuse freedom doesn’t mean that our employees are not worthy of great trust.

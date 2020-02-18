@@ -63,6 +63,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | How Thread.sleep() is implemented           |                                                                              |
 | How python enumerate() is implemented?      |                                                                              |
 | How python implements collections.dequeue   | Doubly-linked list: [[https://github.com/python/cpython/blob/762f93ff2efd6b7ef0177cad57939c0ab2002eac/Modules/_collectionsmodule.c#L33-L35][Github: python/cpython/.../Modules/_collections=module.c]] |
+| Java final vs finally vs finalized          |                                                                              |
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

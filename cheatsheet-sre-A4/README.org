@@ -36,46 +36,57 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   4 | Evaluate Business Impact First  |                                          |
 |   5 | Prevention VS Treatment         |                                          |
 |   6 | [[https://landing.google.com/sre/sre-book/chapters/postmortem-culture/][Postmortem Culture]]              |                                          |
-|   7 | Understand Workflow & Use Cases | Crucial for trouble shooting             |
+|   7 | Understand Workflow & Use Cases | Super important for trouble shooting     |
 |   8 | Automation VS Convention        |                                          |
 |   9 | [[https://en.wikipedia.org/wiki/Principle_of_least_privilege][Principle Of Least Privilege]]    |                                          |
 |  10 | Design Tools VS Use Tools       | Operational knowledge is not good enough |
 #+TBLFM: $1=@-1$1+1;N
-** Top 10 Linux Workflow
-| Num | Name                                                      | Summary                                         |
-|-----+-----------------------------------------------------------+-------------------------------------------------|
-|   1 | What happens, when opening https://www.google.com         | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-opening-httpswwwgooglecom][Github Link]]                                     |
-|   2 | What happens, when "ls -l *"                              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-ls--l-][Github Link]]. shell, expansion, fork             |
-|   3 | What happens, when "Ctrl + c" in a terminal               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-ctrl--c-in-a-terminal][Github Link]]. i/o interrupt, SIGINT, sig handler |
-|   4 | What happens, when "touch a.txt"                          | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-touch-atxt][Github Link]]                                     |
-|   5 | What happens, when you press power on button in a server? | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-you-press-power-on-button-in-a-server][Github Link]]. bios, mbr, grub, init, runlevel    |
-|   6 | What happens, when "cat /etc/hosts"                       | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-cat-etchosts][Github Link]]                                     |
-|   7 | Explain init.d workflow                                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-initd-workflow][Github Link]]                                     |
-|   8 | Explain how to build a linux release                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-to-build-a-linux-release][Github Link]]                                     |
-|   9 | Explain how kernel schedules process                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-kernel-schedules-process][Github Link]]                                     |
-|  10 | Explain how kernel read data from disk                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-kernel-read-data-from-disk][Github Link]]                                     |
-#+TBLFM: $1=@-1$1+1;N
-
-** Top 20 Linux Basic Questions
+** Top 25 Linux Basic Questions
 | Num | Name                                                           | Summary                                    |
 |-----+----------------------------------------------------------------+--------------------------------------------|
-|   1 | Explain the output of =top= command                            |                                            |
-|   2 | Explain the output of =sar= command                            |                                            |
-|   3 | What is /proc directory?                                       |                                            |
-|   4 | Forget root password. How to reset it?                         |                                            |
-|   5 | How to solve ssh "Connection refused" errors?                  |                                            |
-|   6 | How to daemonize a process?                                    |                                            |
-|   7 | [[https://askubuntu.com/questions/35722/what-is-kernel-panic][What are common scenarios of linux kernel panics?]]              |                                            |
-|   8 | What are coredump and kdump?                                   |                                            |
-|   9 | Program startup process in userspace                           | [[https://0xax.gitbooks.io/linux-insides/Misc/linux-misc-4.html][Link: Program startup process in userspace]] |
-|  10 | What's your favorite shell and why?                            | [[https://sunlightmedia.org/bash-vs-zsh/][Link: Bash vs Zsh]]                          |
-|  11 | [[https://linoxide.com/linux-how-to/difference-between-utmp-wtmp-files-in-linux/][Figure out who has logged to server now and previously?]]        | w, last, lastb; lastlog; /var/run/*tmp     |
-|  12 | How to choose RAID levels for different scenarios?             |                                            |
-|  13 | What is init program?                                          |                                            |
-|  14 | How does sudo work? Given =sudo=, why people may need =su=?    |                                            |
-|  15 | How linux signal trap works? And what signals can't be ignored |                                            |
-|  16 | How to close stdin/stdout/stderr of one command                | =some_command </dev/null >/dev/null 2>&1=  |
-|  17 | [[https://jvns.ca/blog/2016/01/23/sendfile-a-new-to-me-system-call/][Linux sendfile with zero-copy]]                                  |                                            |
+|   1 | Thead VS Process                                               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#process-vs-thread][Github Link]]                                |
+|   2 | Explain virtual memory                                         | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-virtual-memory][Github Link]]                                |
+|   3 | Explain paging and paging fault                                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-paging-and-paging-fault][Github Link]]                                |
+|   4 | Explain the output of =vmstat= command                         | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-the-output-of-vmstat-command][Github Link]]                                |
+|   5 | Explain inode                                                  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-inode][Github Link]]                                |
+|   6 | epoll VS poll VS select                                        | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#epoll-vs-poll-vs-select][Github Link]]                                |
+|   7 | Explain how OS schedules processes                             | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-how-os-schedules-processes][Github Link]]                                |
+|   8 | Explain spinlock                                               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-spinlock][Github Link]]                                |
+|   9 | Explain the general file system hierarchy of a Linux system    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-the-general-file-system-hierarchy-of-a-linux-system][Github Link]]                                |
+|  10 | Explain What RAID is? And how to choose RAID level?            |                                            |
+|-----+----------------------------------------------------------------+--------------------------------------------|
+|  11 | Explain the output of =top= command                            |                                            |
+|  12 | Explain the output of =sar= command                            |                                            |
+|  13 | What is /proc directory?                                       |                                            |
+|  14 | Forget root password. How to reset it?                         |                                            |
+|  15 | How to solve ssh "Connection refused" errors?                  |                                            |
+|  16 | How to daemonize a process?                                    |                                            |
+|  17 | [[https://askubuntu.com/questions/35722/what-is-kernel-panic][What are common scenarios of linux kernel panics?]]              |                                            |
+|  18 | What are coredump and kdump?                                   |                                            |
+|  19 | Program startup process in userspace                           | [[https://0xax.gitbooks.io/linux-insides/Misc/linux-misc-4.html][Link: Program startup process in userspace]] |
+|  20 | What's your favorite shell and why?                            | [[https://sunlightmedia.org/bash-vs-zsh/][Link: Bash vs Zsh]]                          |
+|  21 | [[https://linoxide.com/linux-how-to/difference-between-utmp-wtmp-files-in-linux/][Figure out who has logged to server now and previously?]]        | w, last, lastb; lastlog; /var/run/*tmp     |
+|  22 | What is init program?                                          |                                            |
+|  23 | How does sudo work? Given =sudo=, why people may need =su=?    |                                            |
+|  24 | How linux signal trap works? And what signals can't be ignored |                                            |
+|  25 | How to close stdin/stdout/stderr of one command                | =some_command </dev/null >/dev/null 2>&1=  |
+#+TBLFM: $1=@-1$1+1;N
+** Top 15 Linux Workflow
+| Num | Name                                                      | Summary                                               |
+|-----+-----------------------------------------------------------+-------------------------------------------------------|
+|   1 | What happens, when opening https://www.google.com         | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-opening-httpswwwgooglecom][Github Link]]                                           |
+|   2 | What happens, when "ls -l *"                              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-ls--l-][Github Link]]. shell, expansion, fork                   |
+|   3 | What happens, when "Ctrl + c" in a terminal               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-ctrl--c-in-a-terminal][Github Link]]. i/o interrupt, SIGINT, sig handler       |
+|   4 | What happens, when "touch a.txt"                          | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-touch-atxt][Github Link]]                                           |
+|   5 | What happens, when you press power on button in a server? | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-you-press-power-on-button-in-a-server][Github Link]]. bios, mbr, grub, init, runlevel          |
+|   6 | What happens, when "cat /etc/hosts"                       | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-cat-etchosts][Github Link]]                                           |
+|   7 | Explain init.d workflow                                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-initd-workflow][Github Link]]                                           |
+|   8 | Explain how to build a linux release                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-to-build-a-linux-release][Github Link]]                                           |
+|   9 | Explain how kernel schedules process                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-kernel-schedules-process][Github Link]]                                           |
+|  10 | Explain how kernel read data from disk                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-kernel-read-data-from-disk][Github Link]]                                           |
+|  11 | Explain how I/O interrupt works                           | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org##explain-how-io-interrupt-works][Github Link]]. Top half, bottom half, interrupt handler |
+|  12 | Explain how system call works                             | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-system-call-works][Github Link]]                                           |
+|  13 | [[https://jvns.ca/blog/2016/01/23/sendfile-a-new-to-me-system-call/][Linux sendfile with zero-copy]]                             |                                                       |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Linux Advanced Questions
 | Num | Name                                                                 | Summary                                                             |
@@ -218,13 +229,9 @@ https://shivamkhandelwal.in/production-engineering-internship-interview-process-
 * TODO What xargs is?                                              :noexport:
 * TODO Time related system calls in the Linux kernel               :noexport:
 https://0xax.gitbooks.io/linux-insides/Timers/linux-timers-7.html
-* TODO [#A] Synchronization primitives in the Linux kernel.        :noexport:
-https://0xax.gitbooks.io/linux-insides/SyncPrim/
-** TODO Spinlock                                                   :noexport:
- https://en.wikipedia.org/wiki/Spinlock
 * TODO setup a linux quiz                                          :noexport:
 * TODO Describe ways of process inter-communication                :noexport:
-* TODO Important RFCs
+* TODO Important RFCs                                              :noexport:
 | Num | Name                                                     | Summary |
 |-----+----------------------------------------------------------+---------|
 |   1 | [[https://www.rfc-editor.org/rfc/rfc1912.txt][RFC 1912]]-Common DNS operational and configuration errors |         |
@@ -241,8 +248,6 @@ https://0xax.gitbooks.io/linux-insides/SyncPrim/
 * TODO How does the Linux kernel handle a system call              :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Brief introduction about 802.1x                             :noexport:
-* TODO [#A] What is a DNS amplification attack?                    :noexport:
-Why is DNS amplification a valid attack as opposed to ... say HTTP amplifcation attack? I.e. What is so special about DNS that allow this attack to be carried out?
 * TODO What is TCP SYN scan? How it's conducted?                   :noexport:
 * TODO What's your wishlist for linux?                             :noexport:
 * TODO Explain how iptable routing rules works                     :noexport:
@@ -254,33 +259,25 @@ I have a dynamic IP. I want to prevent people from accessing my server (assume o
 * TODO Forget root password. How to reset it?                      :noexport:
 * TODO how does sudo work?                                         :noexport:
 * TODO What is localhost and why would ping localhost fail?        :noexport:
-* TODO [#A] What is init program?                                  :noexport:
 * TODO How linux signal trap works?                                :noexport:
-* TODO Network serving model: select, poll vs epoll                :noexport:
 * TODO sniff https traffic                                         :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] Describe the general file system hierarchy of a Linux system. :noexport:
 * TODO Does free memory exist on Linux?                            :noexport:
 * HALF How to search for the string "my konfu is the best" in files of a directory recursively? :noexport:
-* TODO I get "command not found" when I run ifconfig -a. What can be wrong?
+* TODO I get "command not found" when I run ifconfig -a. What can be wrong? :noexport:
 * HALF What commands do you know that can be used to check DNS records? :noexport:
 * TODO How to add a new system user without login permissions?     :noexport:
 * TODO How do you set the mail address of the root/a user?         :noexport:
 * TODO What does CTRL-d do?                                        :noexport:
 * TODO What is the difference between UNIX and Linux.              :noexport:
 * TODO What is the difference between Telnet and SSH?              :noexport:
-* TODO [#A] Walk me through the steps in booting into single user mode to troubleshoot a problem. :noexport:
 * TODO linux tool: tee, cut, tac, sar, netstat                     :noexport:
 * TODO linux tool: less vs more                                    :noexport:
-* TODO [#A] What does & disown after a command do?                 :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO What is a packet filter and how does it work?               :noexport:
-* TODO [#A] What is Virtual Memory?                                :noexport:
-* TODO What is swap and what is it used for?                       :noexport:
 * TODO What is an A record, an NS record, a PTR record, a CNAME record, an MX record? :noexport:
 * TODO Are there any other RRs and what are they used for?         :noexport:
 * TODO What is the difference between hardlinks and symlinks? What happens when you remove the source to a symlink/hardlink? :noexport:
-* TODO [#A] What is an inode and what fields are stored in an inode? :noexport:
 * TODO How to force/trigger a file system check on next reboot?    :noexport:
 * TODO What is SNMP and what is it used for?                       :noexport:
 * TODO What is a runlevel and how to get the current runlevel?     :noexport:
@@ -293,7 +290,6 @@ I have a dynamic IP. I want to prevent people from accessing my server (assume o
 * TODO [#A] Describe the mknod command and when you'd use it.      :noexport:
 * TODO Describe a scenario when you get a "filesystem is full" error, but 'df' shows there is free space. :noexport:
 * TODO Describe a scenario when deleting a file, but 'df' not showing the space being freed. :noexport:
-* TODO [#A] Describe how 'ps' works                                :noexport:
 * TODO Explain briefly each one of the process states.             :noexport:
 * TODO how to generate a zombie process                            :noexport:
 * TODO Describe briefly the steps you need to take in order to create and install a valid certificate for the site https://foo.example.com. :noexport:
@@ -331,144 +327,18 @@ https://major.io/2009/06/15/two-great-signals-sigstop-and-sigcont/
 * TODO [#A] What is the sticky bit?                                :noexport:
 * TODO [#A] What does the immutable bit do to a file?              :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] Describe briefly how HTTPS works                       :noexport:
+* TODO How to start a process to keep holding one fd in linux
+
 * TODO HTTP proxy and reverse http proxy                           :noexport:
 * TODO Describe the general file system hierachy of a linux system :noexport:
-* TODO [#A] process table                                          :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO what happen when you power on linux system, system call,paging之类的 :noexport:
-* TODO [#A] 问了什么是virtual memory                               :noexport:
-* TODO [#A] explain the output of vmstat                           :noexport:
-** What is *st* in cpu section?
-st: time stolen from this vm by the hypervisor
-** doc
-#+BEGIN_EXAMPLE
-[ec2-user@ip-172-31-17-39 ~]$ vmstat
-procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0      0  89348  37988 302376    0    0     8    25   25   64  4  1 95  0  0
-#+END_EXAMPLE
-
-man vmstat
-#+BEGIN_EXAMPLE
-FIELD DESCRIPTION FOR VM MODE
-   Procs
-       r: The number of runnable processes (running or waiting for run time).
-       b: The number of processes in uninterruptible sleep.
-
-   Memory
-       swpd: the amount of virtual memory used.
-       free: the amount of idle memory.
-       buff: the amount of memory used as buffers.
-       cache: the amount of memory used as cache.
-       inact: the amount of inactive memory.  (-a option)
-       active: the amount of active memory.  (-a option)
-
-   Swap
-       si: Amount of memory swapped in from disk (/s).
-       so: Amount of memory swapped to disk (/s).
-
-   IO
-       bi: Blocks received from a block device (blocks/s).
-       bo: Blocks sent to a block device (blocks/s).
-
-   System
-       in: The number of interrupts per second, including the clock.
-       cs: The number of context switches per second.
-
-   CPU
-       These are percentages of total CPU time.
-       us: Time spent running non-kernel code.  (user time, including nice time)
-       sy: Time spent running kernel code.  (system time)
-       id: Time spent idle.  Prior to Linux 2.5.41, this includes IO-wait time.
-       wa: Time spent waiting for IO.  Prior to Linux 2.5.41, included in idle.
-       st: Time stolen from a virtual machine.  Prior to Linux 2.6.11, unknown.
-
-FIELD DESCRIPTION FOR DISK MODE
-   Reads
-       total: Total reads completed successfully
-       merged: grouped reads (resulting in one I/O)
-       sectors: Sectors read successfully
-       ms: milliseconds spent reading
-   Writes
-       total: Total writes completed successfully
-       merged: grouped writes (resulting in one I/O)
-       sectors: Sectors written successfully
-       merged: grouped writes (resulting in one I/O)
-       sectors: Sectors written successfully
-       ms: milliseconds spent writing
-
-   IO
-       cur: I/O in progress
-       s: seconds spent for I/O
-
-FIELD DESCRIPTION FOR DISK PARTITION MODE
-       reads: Total number of reads issued to this partition
-       read sectors: Total read sectors for partition
-       writes : Total number of writes issued to this partition
-       requested writes: Total number of write requests made for partition
-
-FIELD DESCRIPTION FOR SLAB MODE
-       cache: Cache name
-       num: Number of currently active objects
-       total: Total number of available objects
-       size: Size of each object
-       pages: Number of pages with at least one active object
-#+END_EXAMPLE
-* TODO [#A] How to choose RAID levels for different scenarios?     :noexport:
-| Name    | Summary                          |
-|---------+----------------------------------|
-| Raid 0  | disk striping                    |
-| Raid 1  | disk mirroring                   |
-| Raid 2  |                                  |
-| Raid 3  |                                  |
-| Raid 4  |                                  |
-| Raid 5  |                                  |
-| Raid 6  |                                  |
-| Raid 10 | combination of RAID 1 and RAID 0 |
 * HALF zombie process VS orphan proces                             :noexport:
 - zombie: process has died, but entry in process table hasn't been cleaned up
 - orphan: parent has died, child still running. Orphans are adopted by init process
 ** Why kill signal doesn't work for zombie process?
 https://en.wikipedia.org/wiki/Zombie_process
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] Understand Kernel                                      :noexport:
-* HALF [#A] memory: virtual memory vs physical memory vs swap memory :noexport:
-Virtual memory is an abstraction of the main memory. I
-
-Virtual memory/swap is used when the RAM is filled. It's stored on hard drive.
-
-http://www.differencebetween.info/difference-between-virtual-memory-and-swap-memory
-** HALF virtual memory vs swap space
-https://stackoverflow.com/questions/4970421/whats-the-difference-between-virtual-memory-and-swap-space
-
-- Simply put, virtual memory is a combination of RAM and disk space that running processes can use.
-- Swap space is the portion of virtual memory that is on the hard disk, used when RAM is full.
-** TODO Virtual memory uses a process called paging.
-** HALF 32bit CPU is limited to 4gb virtual memory                 :noexport:
-https://stackoverflow.com/questions/4970421/whats-the-difference-between-virtual-memory-and-swap-space
-** DONE Linux has two forms of swap space: swap partition and swap file
-* TODO process vs thread  :noexport:
-   CLOSED: [2020-02-12 Wed 14:26]
- Process: stack, heap, text and data
- Thread: own stack; shared heap, text and data
-* TODO [#A] Process table                                          :noexport:
-** Process context switch
-- Store process context to process table
-- Load the process context of new scheduld process
-- Pass the control to kernel
 * TODO How to daemonize a process                                  :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO What happens, when opening https://www.google.com           :noexport:
-* HALF What happens, when pressing power on in a linux box         :noexport:
-- BIOS (Basic Input/Output System execute MBR)
-  Network boot, boot from CD
-- MBR (Master Boot Record executes GRUB)
-  Choose linux kernel
-- GRUB (Grand unified bootloader executes kernel)
-- Kernel (Kernel executes /sbin/init)
-- Init (Init executes runlevel programs)
-- Runlevel (Runlevel programs are executed from /etc/rc.d/rc*.d/)
 * HALF What happens, when running "ls -l *"                        :noexport:
 - Shell get user input from device
 - Check for expansion and alias
@@ -479,13 +349,6 @@ https://stackoverflow.com/questions/4970421/whats-the-difference-between-virtual
   execve(): run command of ls
 - Upon completion, the child process will terminate and control will be returned to the parent process.
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] fork() vs execve()                                     :noexport:
-* TODO bootloader                                                  :noexport:
-* TODO [#A] init1                                                  :noexport:
-- All linux processes are created by init1 process
-* TODO [#A] How linux read data from disk                          :noexport:
-- Paging
-- cpu iowait
 * TODO Describe the relationship between Kernel and Shell          :noexport:
 * TODO TCP vs Socket                                               :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -507,3 +370,42 @@ https://walkerlala.github.io/archive/what-if-write-to-the-same-file.html
 - FD table per process
 - FD table system-wise
 - Inode table system-wise
+
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO what happen when you power on linux system, system call,paging之类的 :noexport:
+* TODO Network serving model: select, poll vs epoll                :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO What's memory barrier                                       :noexport:
+memory barrier: synchronize memory access between multiple threads.
+* TODO [#A] What is a DNS amplification attack?                    :noexport:
+Why is DNS amplification a valid attack as opposed to ... say HTTP amplifcation attack? I.e. What is so special about DNS that allow this attack to be carried out?
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] What is init program?                                  :noexport:
+* TODO [#A] Synchronization primitives in the Linux kernel.        :noexport:
+https://0xax.gitbooks.io/linux-insides/SyncPrim/
+
+* TODO [#A] Understand Kernel                                      :noexport:
+* TODO [#A] fork() vs execve()                                     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Walk me through the steps in booting into single user mode to troubleshoot a problem. :noexport:
+* TODO Why deleting files will release inode?                      :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Describe briefly how HTTPS works                       :noexport:
+* TODO [#A] How to choose RAID levels for different scenarios?     :noexport:
+| Name    | Summary                          |
+|---------+----------------------------------|
+| Raid 0  | disk striping                    |
+| Raid 1  | disk mirroring                   |
+| Raid 2  |                                  |
+| Raid 3  |                                  |
+| Raid 4  |                                  |
+| Raid 5  |                                  |
+| Raid 6  |                                  |
+| Raid 10 | combination of RAID 1 and RAID 0 |
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO If I have no swap memory, would page fault still be triggered :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Explain how kernel read data from disk                 :noexport:
+* TODO [#A] init1                                                  :noexport:
+- All linux processes are created by init1 process
+* TODO memory: buffer vs cached                                    :noexport:

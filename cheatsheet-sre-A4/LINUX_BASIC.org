@@ -1,0 +1,198 @@
+* SRE: Linux Basic Concepts                                       :Interview:
+:PROPERTIES:
+:type:     interview
+:export_file_name: cheatsheet-linuxbasic-A4.pdf
+:END:
+#+TAGS: noexport(n)
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-linuxbasic-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+** DONE Process VS Thread
+   CLOSED: [2020-02-19 Wed 09:54]
+- Process can have multiple thread
+- Threads inside one process have a common virtual memory space
+#+BEGIN_EXAMPLE
+Process: stack, heap, text and data
+Thread: own stack; shared heap, text and data
+#+END_EXAMPLE
+- Process the OS schedule unit
+- Thread is more lightweight than process
+
+[[https://leetcode.com/discuss/interview-question/operating-system/124543/thread-vs-process][Link: thread vs process]]
+** DONE Explain inode
+   CLOSED: [2020-02-19 Wed 23:10]
+Inode and Inode number
+
+Note: there is no entry for file name in the Inode. We can have various file names which point to same Inode, say hard links.
+
+[[https://www.thegeekstuff.com/2012/01/linux-inodes/][Understand UNIX / Linux Inodes Basics with Examples]]
+
+Q: What's inside inode?
+
+A: An Inode is a data structure that stores the following information about a file :
+
+- Size of file
+- Device ID
+- User ID of the file
+- Group ID of the file
+- The file mode information and access privileges for owner, group and others
+- File protection flags
+- The timestamps for file creation, modification etc
+- link counter to determine the number of hard links
+- Pointers to the blocks storing file's contents
+
+#+BEGIN_EXAMPLE
+[ec2-user@dennyzhang ~]$ stat /etc/hosts
+  File: ‘/etc/hosts’
+  Size: 126       	Blocks: 8          IO Block: 4096   regular file
+Device: ca01h/51713d	Inode: 262187      Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2020-01-10 00:10:19.474123510 +0000
+Modify: 2020-01-10 00:10:19.464123517 +0000
+Change: 2020-01-10 00:10:19.464123517 +0000
+ Birth: -
+#+END_EXAMPLE
+
+A file system can run out of space in two ways:
+- No space for adding new data is left
+- All the Inodes are consumed. (Run "df -i" to confirm. And this issue has a very small chance to happens, when tons of small sized files.)
+
+Q: What about link attribute of inode for a folder?
+
+A: Each files or sub-folders under this folder will increase the link. When removing the folder, the link count would be checked.
+
+Q: How to release inode, when "df -i" complains out of inode?
+
+A: TODO
+** DONE Explain virtual memory
+   CLOSED: [2020-02-19 Wed 23:23]
+Virtual memory is an abstraction of the main memory.
+
+Simply put, virtual memory is a combination of RAM and disk space that running processes can use.
+
+Swap space is the portion of virtual memory that is on the hard disk, used when RAM is full.
+
+Virtual memory uses a process called paging.
+
+About swap memory:
+- How to check swap space: "free -ml" or "cat /proc/swaps"
+- Linux has two forms of swap space: swap partition and swap file
+[[http://www.differencebetween.info/difference-between-virtual-memory-and-swap-memory][Link: Difference between Virtual Memory and Swap Memory]]
+** DONE Explain paging and paging fault
+   CLOSED: [2020-02-20 Thu 10:34]
+- Paging: no need to allocate contiguous memory, to avoid external fragmentation
+- MMU(memory management unit): a hardware device to map from virtual memory address to phsyical address.
+- Page fault: access memory which is not stored in RAM. So locate the data in virtual memory, then transfer it from storage device to RAM.
+
+[[image-blog:SRE: Linux Basic Concepts][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-sre-A4/page-fault.png]]
+
+[[https://en.wikipedia.org/wiki/Page_fault][Wikipedia: Page fault]]
+** TODO Explain how OS schedules processes
+- Process Scheduling: determine which process is in the ready state, and should be moved to the running state
+
+[[image-blog:SRE: Linux Basic Concepts][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-sre-A4/process-scheduling.png]]
+
+Process context switch:
+- Store process context to process table
+- Load the process context of new scheduld process
+- Pass the control to kernel
+
+** TODO Explain the output of vmstat command
+st: time stolen from this vm by the hypervisor
+
+#+BEGIN_EXAMPLE
+[ec2-user@ip-172-31-17-39 ~]$ vmstat
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0  89348  37988 302376    0    0     8    25   25   64  4  1 95  0  0
+#+END_EXAMPLE
+
+man vmstat
+#+BEGIN_EXAMPLE
+FIELD DESCRIPTION FOR VM MODE
+   Procs
+       r: The number of runnable processes (running or waiting for run time).
+       b: The number of processes in uninterruptible sleep.
+
+   Memory
+       swpd: the amount of virtual memory used.
+       free: the amount of idle memory.
+       buff: the amount of memory used as buffers.
+       cache: the amount of memory used as cache.
+       inact: the amount of inactive memory.  (-a option)
+       active: the amount of active memory.  (-a option)
+
+   Swap
+       si: Amount of memory swapped in from disk (/s).
+       so: Amount of memory swapped to disk (/s).
+
+   IO
+       bi: Blocks received from a block device (blocks/s).
+       bo: Blocks sent to a block device (blocks/s).
+
+   System
+       in: The number of interrupts per second, including the clock.
+       cs: The number of context switches per second.
+
+   CPU
+       These are percentages of total CPU time.
+       us: Time spent running non-kernel code.  (user time, including nice time)
+       sy: Time spent running kernel code.  (system time)
+       id: Time spent idle.  Prior to Linux 2.5.41, this includes IO-wait time.
+       wa: Time spent waiting for IO.  Prior to Linux 2.5.41, included in idle.
+       st: Time stolen from a virtual machine.  Prior to Linux 2.6.11, unknown.
+
+FIELD DESCRIPTION FOR DISK MODE
+   Reads
+       total: Total reads completed successfully
+       merged: grouped reads (resulting in one I/O)
+       sectors: Sectors read successfully
+       ms: milliseconds spent reading
+   Writes
+       total: Total writes completed successfully
+       merged: grouped writes (resulting in one I/O)
+       sectors: Sectors written successfully
+       merged: grouped writes (resulting in one I/O)
+       sectors: Sectors written successfully
+       ms: milliseconds spent writing
+
+   IO
+       cur: I/O in progress
+       s: seconds spent for I/O
+
+FIELD DESCRIPTION FOR DISK PARTITION MODE
+       reads: Total number of reads issued to this partition
+       read sectors: Total read sectors for partition
+       writes : Total number of writes issued to this partition
+       requested writes: Total number of write requests made for partition
+
+FIELD DESCRIPTION FOR SLAB MODE
+       cache: Cache name
+       num: Number of currently active objects
+       total: Total number of available objects
+       size: Size of each object
+       pages: Number of pages with at least one active object
+#+END_EXAMPLE
+** TODO epoll VS poll VS select
+Use case: detect new I/O events from many FDs
+
+[[https://leetcode.com/discuss/interview-question/operating-system/129663/What-is-the-difference-between-poll-epoll-and-select][Link: What is the difference between poll, epoll and select?]]
+** TODO Explain spinlock
+https://en.wikipedia.org/wiki/Spinlock
+
+Use case: Busy waiting is a good idea when you know the wait is not too long. Spinlock can help your process keep busy waiting.
+** HALF Explain What RAID is? And how to choose RAID level?
+** TODO Explain the general file system hierarchy of a Linux system
+[[image-blog:SRE: Linux Basic Concepts][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-sre-A4/layeredfilesystem.jpg]]
+
+[[https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/12_FileSystemImplementation.html][Link: File-System Implementation]]

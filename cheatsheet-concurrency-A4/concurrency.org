@@ -1,0 +1,135 @@
+* System Design: Concurrency                                      :Interview:
+:PROPERTIES:
+:type:     interview
+:export_file_name: cheatsheet-concurrency-A4.pdf
+:END:
+#+TAGS: noexport(n)
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-concurrency-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+* Review: Concurrency Problems                         :noexport:BLOG:Review:
+#+STARTUP: showeverything
+#+OPTIONS: toc:nil \n:t ^:nil creator:nil d:nil
+:PROPERTIES:
+:type: concurrency, review
+:END:
+---------------------------------------------------------------------
+Concurrency Problems
+---------------------------------------------------------------------
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/code.dennyzhang.com/tree/master/review/review-concurrency"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+#+END_HTML
+
+- [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]
+- [[https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4][CheatSheet: Common Code Problems & Follow-ups]]
+
+*Concepts*
+| Name                          | Comment                                                   |
+|-------------------------------+-----------------------------------------------------------|
+| Synchronization primitives    | mutex, semaphore                                          |
+| [[https://en.wikipedia.org/wiki/Semaphore_(programming)][Semaphores]]                    | It solves the problem of lost wakeup calls                |
+| Interaction and communication | Shared memory communication/Message passing communication |
+| Actor model                   |                                                           |
+| Asynchronous I/O              |                                                           |
+| Reference                     | [[https://en.wikipedia.org/wiki/Concurrent_computing][Wikipedia: Concurrent computing]]                           |
+| Inter-process communication   | Pipe; Signal; Shared memory; MQ; socket; RPC              |
+
+*Question*
+| Name               | Comment |
+|--------------------+---------|
+| Mutex vs Semaphore |         |
+
+*Scenarios*
+| Name                                | Comment                                                                |
+|-------------------------------------+------------------------------------------------------------------------|
+| Map/Reduce: scheduler + workers     | [[https://code.dennyzhang.com/web-crawler-multithreaded][LeetCode: Web Crawler Multithreaded]]                                    |
+| Claim ownerhip of a single resource | [[https://code.dennyzhang.com/traffic-light-controlled-intersection][LeetCode: Traffic Light Controlled Intersection]]                        |
+| [[https://en.wikipedia.org/wiki/Dining_philosophers_problem][Dining Philosophers problem]]         | Avoid deadlock and starvation [[https://code.dennyzhang.com/the-dining-philosophers][LeetCode: The Dining Philosophers]]        |
+| [[https://en.wikipedia.org/wiki/ABA_problem][ABA problem]]                         |                                                                        |
+| [[https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem][Producer-consumer problem]]           | a.k.a the bounded-buffer problem                                       |
+| [[https://en.wikipedia.org/wiki/Cigarette_smokers_problem][Cigarette smokers problem]]           | Assume a cigarette requires 3 ingredients: tobacco, paper, and matches |
+| [[https://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem][Readers-writers problem]]             | Read/write access the same shared resource at one time                 |
+| [[https://en.wikipedia.org/wiki/Sleeping_barber_problem][Sleeping barber problem]]             | Keep a barber working when there are customers, resting when none      |
+| Semaphores to maintain the order    | [[https://code.dennyzhang.com/building-h2o][LeetCode: Building H2O]]                                                 |
+
+Semaphore
+
+#+BEGIN_EXAMPLE
+The Semaphore is used for blocking thread level access to some part of
+the physical or logical resource. A semaphore contains a set of
+permits; whenever a thread tries to enter the critical section, it
+needs to check the semaphore if a permit is available or not.
+
+If a permit is not available (via tryAcquire()), the thread is not
+allowed to jump into the critical section; however, if the permit is
+available the access is granted, and the permit counter decreases.
+
+Once the executing thread releases the critical section, again the
+permit counter increases (done by release() method).
+
+We can specify a timeout for acquiring access by using the
+tryAcquire(long timeout, TimeUnit unit) method.
+
+We can also check the number of available permits or the number of
+threads waiting to acquire the semaphore.
+
+We can implement a Mutex like data-structure using Semaphore. 
+#+END_EXAMPLE
+Following code snippet can be used to use implement a semaphore:
+
+#+BEGIN_EXAMPLE
+static Semaphore semaphore = new Semaphore(10);
+ 
+public void execute() throws InterruptedException {
+ 
+    LOG.info("Available permit : " + semaphore.availablePermits());
+    LOG.info("Number of threads waiting to acquire: " + 
+      semaphore.getQueueLength());
+ 
+    if (semaphore.tryAcquire()) {
+        try {
+            // ...
+        }
+        finally {
+            semaphore.release();
+        }
+    }
+}
+#+END_EXAMPLE
+
+See all concurrency problems: [[https://code.dennyzhang.com/tag/concurrency/][#concurrency]].
+[display-posts tag="concurrency" posts_per_page="100" orderby="title"]
+
+#+BEGIN_HTML
+<div style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+#+END_HTML
+
+See more [[https://code.dennyzhang.com/?s=blog+posts][blog posts]].
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Can a single process run in multiple cores?                 :noexport:
+https://stackoverflow.com/questions/38733670/can-a-single-process-run-in-multiple-cores
+https://softwareengineering.stackexchange.com/questions/349972/how-does-a-single-thread-run-on-multiple-cores
+
+https://softwareengineering.stackexchange.com/questions/181157/how-to-program-thread-allocation-on-multicore-processors
+
+- If there is only one core, then the operating system schedules the most eligible thread to run on that core for a time slice.
+- A single process can run multiple threads on different cores.
+- a cache coherence protocol would be required for sharing the state across threads
+* TODO OS process scheduling for multiple cpu cores                :noexport:
+https://softwareengineering.stackexchange.com/questions/349972/how-does-a-single-thread-run-on-multiple-cores
+
+schedule from process or thread?

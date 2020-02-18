@@ -27,8 +27,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | =R= Ready or running                                            | =TASK_RUNNING(R)=         |
 | =D= Uninterruptible sleep (usually IO)                          | =TASK_UNINTERRUPTIBLE(D)= |
 | =S= Interruptible sleep (waiting for an event to complete)      | =TASK_INTERRUPTIBLE(S)=   |
-| =Z= defunct/zombie, terminated but not cleaned up by its parent | =TASK_ZOMBIE(Z)=          |
 | =T= Execution stopped                                           | =TASK_STOPPED(T)=         |
+| =Z= defunct/zombie, terminated but not cleaned up by its parent | =TASK_ZOMBIE(Z)=          |
 | Processes contribute to CPU load                                | =R=, =D=                  |
 ** Find process
 | Name                         | Comment                                          |

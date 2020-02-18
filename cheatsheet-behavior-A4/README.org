@@ -23,6 +23,15 @@
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 
 - *Behavioral Interview* is about you and your history, your resume, and your motivation. 
+
+** Well-Known Cultures
+| Num | Name                                  |
+|-----+---------------------------------------|
+|   1 | [[https://www.amazon.jobs/en/principles][Link: Amazon 14 Leadership Principles]] |
+|   2 | [[https://jobs.netflix.com/culture][Link: Netflix Culture]]                 |
+|   3 | [[https://www.facebook.com/pg/facebookcareers/photos/?tab=album&album_id=1655178611435493][Link: Facebook's 5 Core Values]]        |
+|   4 | [[https://blogs.vmware.com/cfo/epic2-vmware-values/][Link: VMware EPIC2 values]]             |
+#+TBLFM: $1=@-1$1+1;N
 ** Top 15 Behavior Questions
 | Num | Name                                                                            |
 |-----+---------------------------------------------------------------------------------|
@@ -61,14 +70,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+TBLFM: $1=@-1$1+1;N
 
 [[image-blog:Star Principle][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-behavior-A4/mystar.png]]
-
-** Well-Known Cultures
-| Num | Name                                  |
-|-----+---------------------------------------|
-|   1 | [[https://www.facebook.com/pg/facebookcareers/photos/?tab=album&album_id=1655178611435493][Link: Facebook's 5 Core Values]]        |
-|   2 | [[https://www.amazon.jobs/en/principles][Link: Amazon 14 Leadership Principles]] |
-|   3 | [[https://blogs.vmware.com/cfo/epic2-vmware-values/][Link: VMware EPIC2 values]]             |
-#+TBLFM: $1=@-1$1+1;N
 
 ** Categories of Behavior Questions
 | Num | Name                              | Summary                                      |
@@ -146,12 +147,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 </iframe>
 #+END_HTML
 ** Communication/Team work           
-| Num | Example                                                     |
-|-----+-------------------------------------------------------------|
-|   1 | What if you will do, if you think your manager is not fair. |
-|   2 | Describe your favorite manager/ team worker.                |
-|   3 | What if you don't get along with your tech lead?            |
-|   4 | How do you like to give and receive feedback?               |
+| Num | Example                                                               |
+|-----+-----------------------------------------------------------------------|
+|   1 | What are the most constructive feedback you have received previously? |
+|   2 | What if you will do, if you think your manager is not fair.           |
+|   3 | Describe your favorite manager/ team worker.                          |
+|   4 | What if you don't get along with your tech lead?                      |
+|   5 | How do you like to give and receive feedback?                         |
 #+TBLFM: $1=@-1$1+1;N
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>

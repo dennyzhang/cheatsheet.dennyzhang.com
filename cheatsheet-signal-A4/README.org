@@ -97,3 +97,4 @@ kubo@jumper:~$ kill -HUP 3009
 -bash: kill: (3009) - Operation not permitted
 kubo@jumper:~$ sudo kill -HUP 3009
 #+END_EXAMPLE
+* TODO [#A] What does & disown after a command do?                 :noexport:

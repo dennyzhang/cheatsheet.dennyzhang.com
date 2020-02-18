@@ -1972,3 +1972,8 @@ map -hosts                                 0Bi    0Bi    0Bi   100%       0     
 map auto_home                              0Bi    0Bi    0Bi   100%       0          0  100%   /home
 /Library/Input Methods/SogouWBInput.app  465Gi  299Gi  165Gi    65% 2097121 4292870158    0%   /private/var/folders/ty/5x436r4s61516hsm5h60wks40000gq/T/AppTranslocation/4394A17C-BD7B-43F5-97B3-3534DC4E84B8
 #+END_EXAMPLE
+* TODO system self check                                           :noexport:
+Python version: python 3
+* TODO mac swap cap and control key from command line              :noexport:
+https://apple.stackexchange.com/questions/4813/changing-modifier-keys-from-the-command-line
+

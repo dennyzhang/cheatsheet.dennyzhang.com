@@ -9,13 +9,14 @@
 ## Description :
 ## --
 ## Created : <2017-12-04>
-## Updated: Time-stamp: <2018-09-26 13:43:57>
+## Updated: Time-stamp: <2020-02-19 15:55:20>
 ##-------------------------------------------------------------------
 set -e
 
 function brew_install {
     echo "Brew install packages"
     brew cask install iterm2
+    brew install wget
     brew install gpg aspell w3m shadowsocks-libev wget imagemagick msmtp
     brew install telnet shellcheck go getmail tmux
     brew install python3 getmail
@@ -102,11 +103,11 @@ function config_git {
 config_git
 create_crontab
 ssh_config
-setup_email
+# setup_email
 
-download_files
 brew_install
 brew_install_devkit
+download_files
 fix_gpg
 
 ## File: setup_mac.sh ends
