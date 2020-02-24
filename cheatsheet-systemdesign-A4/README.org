@@ -34,6 +34,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4][CheatSheet: Common Code Problems & Follow-ups]]               |
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-sre-A4][CheatSheet: SRE/DevOps/Sysadmin]]                         |
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-language-A4][Programming Language Implemenetations CheatSheet]] |
+| Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-concurrency-A4][CheatSheet: Concurrency & Parallel Programming]]                                                       |
 |----------------------+------------------------------------------------------------------------------------------------------|
 | Coding               | [[https://code.dennyzhang.com/review-oodesign][Code problems for #oodesign]]                                                                          |
 | Company Tech Blog    | [[https://www.facebook.com/pg/Engineering/notes/][Website: Facebook Engineering]], [[https://developers.googleblog.com][Website: Google Developers]]                                            |
@@ -46,7 +47,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |-----+-----------------------------------+---------------------------------------------------------------------------------|
 |   1 | K/V DB store                      | Design K/V DB; [[https://architect.dennyzhang.com/design-redis][Design memcache/redis]]                                            |
 |   2 | [[https://architect.dennyzhang.com/design-sync][Data synchronization]]              | Design dropbox client sync                                                      |
-|   3 | Resource/Task scheduling          | Design web crawler; [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task scheduling]]; Design a distributed message queue |
+|   3 | Resource/Task scheduling          | Design web crawler; [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task queue]]; Design a distributed message queue |
 |   4 | Design a distributed component    | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed hit counter]], Design a distributed UUID generator           |
 |   5 | Design a SNS system               | [[https://architect.dennyzhang.com/design-news-feed][Design Twitter News Feed]]                                                        |
 |   6 | Design API Gateway                | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                                      |
@@ -63,14 +64,15 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |-----+------------------------------------------------------------------+-----------------------------------------------------------------|
 |   1 | Top K Frequent Elements in Recent X mins                         | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#top-k-frequent-elements-in-recent-x-mins][Github: link]]                                                    |
 |   2 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                       |                                                                 |
-|   3 | [[https://architect.dennyzhang.com/design-leaderboard][Design: Leaderboard Ranking]]                             |                                                                 |
-|   4 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task scheduling]]                                          |                                                                 |
+|   3 | [[https://architect.dennyzhang.com/design-leaderboard][Design: Leaderboard Ranking]]                                      |                                                                 |
+|   4 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task queue]]                                               |                                                                 |
 |-----+------------------------------------------------------------------+-----------------------------------------------------------------|
-|   5 | Design online/offline status system                              |                                                                 |
-|   6 | How to deployment 1GB binary to 10,000 servers                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#how-to-deploy-1gb-binary-to-10000-servers][Github: link]]                                                    |
-|   7 | Merge big datasets across different servers                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#store-2tb-data-in-three-1tb-disks-with-redundancy][Github: link]]                                                    |
-|   8 | Design a monitoring system to check 10,000 nodes                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-a-system-checking-the-health-of-10000-nodes][Github: link]]                                                    |
-|   9 | Web crawler                                                      |                                                                 |
+|   5 | Web crawler                                                      |                                                                 |
+|-----+------------------------------------------------------------------+-----------------------------------------------------------------|
+|   6 | Design online/offline status system                              |                                                                 |
+|   7 | How to deployment 1GB binary to 10,000 servers                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#how-to-deploy-1gb-binary-to-10000-servers][Github: link]]                                                    |
+|   8 | Merge big datasets across different servers                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#store-2tb-data-in-three-1tb-disks-with-redundancy][Github: link]]                                                    |
+|   9 | Design a monitoring system to check 10,000 nodes                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-a-system-checking-the-health-of-10000-nodes][Github: link]]                                                    |
 |  10 | Unique url hits                                                  |                                                                 |
 |  11 | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed counter]]                                     |                                                                 |
 |  12 | Design a distributed message queue                               |                                                                 |
@@ -84,14 +86,9 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  20 | How to support feature of "diff big1.bin big2.bin"               | [[https://code.dennyzhang.com/followup-lcs][#lcs - Longest Common Subsequence]]                               |
 |  21 | How to support "rsync big1.bin ssh:/big2.bin" in a doggy network | delta-transfer algorithm. Weak Hashing + Strong Hashing         |
 |  22 | Avoid double payment in a distributed payment system             | [[https://medium.com/airbnb-engineering/avoiding-double-payments-in-a-distributed-payments-system-2981f6b070bb][Link: Avoiding Double Payments in a Distributed Payments System]] |
-|  23 | Design a distributed transactions                                |                                                                 |
 #+TBLFM: $1=@-1$1+1;N
-** Top 10 Concurrency Problems
-| Num | Name                                |                                     |
-|-----+-------------------------------------+-------------------------------------|
-|   1 | [[https://architect.dennyzhang.com/design-concurrent-hashmap][Design a thread-safe Hashmap]]        |                                     |
-|   2 | Design a thread-safe blocking queue |                                     |
-|   3 | Implement a reader-writer locker    | [[https://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem][Wikiepedia: Readers-writers problem]] |
+** Concurrency Problems
+- [[https://cheatsheet.dennyzhang.com/cheatsheet-concurrency-A4][CheatSheet: Concurrency & Parallel Programming]]
 #+TBLFM: $1=@-1$1+1;N
 ** Top 30 Product Design
 | Num | Name                                                       |   |
@@ -133,15 +130,16 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
 ** Process Of System Design
-| Num | Name                                            | Summary                                                              |
-|-----+-------------------------------------------------+----------------------------------------------------------------------|
-|   1 | Outline use cases: List major and focus on some | Show good sense. The questions you asked define your level           |
-|   2 | Estimate scale: *Data* + *Traffic*              | Back-of-the-envelope estimation                                      |
-|   3 | Defining data model                             | It helps to clarify how data will flow among different components    |
-|   4 | Abstract design                                 | Sketch main components, explain workflow, avoid too deep for details |
-|   5 | Detailed design + discussion with interviewers  | Explain trade-off of your proposal + on-demand deep dive             |
-|   6 | Identify and resolve Bottlenecks                | *Key challenges* + *Trade-Offs*. Usuaully no optimal solution(s)     |
-|   7 | [[https://docs.microsoft.com/en-us/azure/architecture/guide/pillars][Scale your design]]                               | Availability, Resiliency, Scalability, Security, Serviceability, etc |
+| Num | Name                                            | Summary                                                                |
+|-----+-------------------------------------------------+------------------------------------------------------------------------|
+|   1 | Outline use cases: List major and focus on some | Show good sense. The questions you asked define your level             |
+|   2 | Estimate scale: *Data* + *Traffic*              | Back-of-the-envelope estimation                                        |
+|   3 | Defining data model                             | It helps to clarify how data will flow among different components      |
+|   4 | Abstract design                                 | Sketch main components, explain workflow, avoid too deep for details   |
+|   5 | Detailed design + discussion with interviewers  | Explain trade-off of your proposal + on-demand deep dive               |
+|   6 | Identify and resolve Bottlenecks                | *Key challenges* + *Trade-Offs*. Usuaully no optimal solution(s)       |
+|   7 | [[https://docs.microsoft.com/en-us/azure/architecture/guide/pillars][Scale your design]]                               | Availability, Resiliency, Scalability, Security, Serviceability, etc   |
+|   8 | Show your relevant experience and learning      | Industry best practice; You experience of scaling/trade-off/resiliency |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
@@ -195,7 +193,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  32 | [[https://architect.dennyzhang.com/explain-dns][Networking: DNS]]                         |                                                                     |
 |  33 | [[https://cheatsheet.dennyzhang.com/cheatsheet-signal-A4][Linux signals]]                           |                                                                     |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Top 15 Advanced Data Structure & Algorithms
 | Num | Name                                        | Summary                                                                     |
 |-----+---------------------------------------------+-----------------------------------------------------------------------------|
@@ -212,6 +209,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   9 | [[https://architect.dennyzhang.com/explain-vector-clocks][Vector Clocks/Version Vectors]]               |                                                                             |
 |  10 | [[https://architect.dennyzhang.com/design-explain-paxos][Paxos and raft protocol]]                     |                                                                             |
 |  11 | [[https://en.wikipedia.org/wiki/Merkle_tree][Merkle Tree]]                                 |                                                                             |
+|  12 | Ring buffer                                 |                                                                             |
+|  13 | [[https://research.neustar.biz/2013/09/16/sketch-of-the-day-frugal-streaming/][Frugal Streaming]]                            |                                                                             |
 #+TBLFM: $1=@-1$1+1;N
 
 [[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-systemdesign-A4/dynamo-summary.png]]
@@ -435,7 +434,6 @@ http://systemdesigns.blogspot.com/2015/12/design-uber.html
 |   5 | Security                           |
 |   6 | SDDC - Software defined datacenter |
 #+TBLFM: $1=@-1$1+1;N
-
 * Classic Design Problems - Big Data                               :noexport:
 | Num | Name                                                          | Summary      |
 |-----+---------------------------------------------------------------+--------------|
@@ -445,7 +443,6 @@ http://systemdesigns.blogspot.com/2015/12/design-uber.html
 |   4 | Membership query - whether an element exists in a data stream | [[https://en.wikipedia.org/wiki/Bloom_filter][bloom filter]] |
 |   5 | Get median from an endless data stream                        |              |
 #+TBLFM: $1=@-1$1+1;N
-
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Design Recommend System                                     :noexport:
 * TODO Take turns to ask questions                                 :noexport:
@@ -519,7 +516,7 @@ https://stackoverflow.com/questions/1957398/what-exactly-are-spin-locks
 
 A spinlock is a lock which causes a thread trying to acquire it to simply wait in a loop ("spin") while repeatedly checking if the lock is available
 
-Because they avoid overhead from operating system process rescheduling or context switching, spinlocks are efficient if threads are likely to be blocked for only short periods. 
+Because they avoid overhead from operating system process rescheduling or context switching, spinlocks are efficient if threads are likely to be blocked for only short periods.
 * TODO process context switch                                      :noexport:
 * TODO uber nearby driver                                          :noexport:
 Uber, 怎样 用geohash 找 nearby drivers given a location? driver 一直在移动, 怎样确保, 不会找到1个小时之前的 位置？  用 (geohash, timestamp) 作为partition key ?

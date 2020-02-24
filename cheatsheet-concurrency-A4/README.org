@@ -22,21 +22,24 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Top 10 Concurrency Problems
-| Num | Name                                |                                     |
-|-----+-------------------------------------+-------------------------------------|
-|   1 | [[https://architect.dennyzhang.com/design-concurrent-hashmap][Design a thread-safe Hashmap]]        |                                     |
-|   2 | Design a thread-safe blocking queue |                                     |
-|   3 | Implement a reader-writer locker    | [[https://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem][Wikiepedia: Readers-writers problem]] |
-|   4 | Implement a lock-free message queue |                                     |
+| Num | Name                                                      |                                     |
+|-----+-----------------------------------------------------------+-------------------------------------|
+|   1 | Implement a reader-writer locker                          | [[https://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem][Wikiepedia: Readers-writers problem]] |
+|   2 | Implement a lock-free queue with multiple readers/writers | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#implement-a-lock-free-queue-with-multiple-readerswriters][Github: link]]                        |
+|   3 | [[https://architect.dennyzhang.com/design-concurrent-hashmap][Design a thread-safe Hashmap]]                              |                                     |
+|   4 | Design a thread-safe blocking queue                       |                                     |
+|   5 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task scheduling]]                                   |                                     |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 10 Concurrency Coding Problems
-| Num | Problem                   | Summary                             |
-|-----+---------------------------+-------------------------------------|
-|   1 | Building H2O              | [[https://code.dennyzhang.com/building-h2o][Leetcode: Building H2O]]              |
-|   2 | Web Crawler Multithreaded | [[https://code.dennyzhang.com/web-crawler-multithreaded][LeetCode: Web Crawler Multithreaded]] |
-|   3 | The Dining Philosophers   | [[https://code.dennyzhang.com/the-dining-philosophers][Leetcode: The Dining Philosophers]]   |
+| Num | Problem                       | Summary                                 |
+|-----+-------------------------------+-----------------------------------------|
+|   1 | Building H2O                  | [[https://code.dennyzhang.com/building-h2o][Leetcode: Building H2O]]                  |
+|   2 | Web Crawler Multithreaded     | [[https://code.dennyzhang.com/web-crawler-multithreaded][LeetCode: Web Crawler Multithreaded]]     |
+|   3 | Print Zero Even Odd           | [[https://code.dennyzhang.com/print-zero-even-odd][Leetcode: Print Zero Even Odd]]           |
+|   4 | Fizz Buzz Multithreaded       | [[https://code.dennyzhang.com/fizz-buzz-multithreaded][Leetcode: Fizz Buzz Multithreaded]]       |
+|   5 | Design Bounded Blocking Queue | [[https://code.dennyzhang.com/design-bounded-blocking-queue][Leetcode: Design Bounded Blocking Queue]] |
+|   6 | The Dining Philosophers       | [[https://code.dennyzhang.com/the-dining-philosophers][Leetcode: The Dining Philosophers]]       |
 #+TBLFM: $1=@-1$1+1;N
-
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

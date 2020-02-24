@@ -17,6 +17,22 @@
 <br/><br/>
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
+
+** Implement a lock-free queue with multiple readers/writers
+Requirememnts:
+- All readers would read the same records
+- All writers can add new records into the queue without data loss
+
+Intuitives:
+- When read, no lock would be required
+- When write, only the space allocation would need locking. Find some atomic operation for this step.
+*** useful link
+
+https://blog.codingnow.com/2012/06/dev_note_21.html
+云风的 BLOG: 开发笔记(21) : 无锁消息队列
+
+http://zguide.zeromq.org/page:all
+ØMQ - The Guide - ØMQ - The Guide
 * Review: Concurrency Problems                         :noexport:BLOG:Review:
 #+STARTUP: showeverything
 #+OPTIONS: toc:nil \n:t ^:nil creator:nil d:nil
