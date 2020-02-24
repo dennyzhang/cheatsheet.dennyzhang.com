@@ -3,6 +3,7 @@
 :type:     interview
 :export_file_name: cheatsheet-linuxbasic-A4.pdf
 :END:
+#+STARTUP: content
 #+TAGS: noexport(n)
 #+EXPORT_EXCLUDE_TAGS: exclude noexport
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
