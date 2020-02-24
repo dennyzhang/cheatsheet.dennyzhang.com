@@ -2516,3 +2516,5 @@ Mounting a file containing a filesystem via such a loop mount makes the files wi
 * TODO Q: duplex, singleplex, halfplex                             :noexport:
 https://lifescience.roche.com/global_en/blog/lab-life/real-time-pcr/compare-and-contrast-multiplex-vs-singleplex-pcr.html
 https://www.thebalance.com/is-a-halfplex-a-duplex-1798248
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO How to debug a network interface has dropped a packet?      :noexport:

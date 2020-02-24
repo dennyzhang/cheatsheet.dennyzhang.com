@@ -103,3 +103,50 @@ Follow-up: Build API rate limiter for a large scale service
 - Lock-free with trade-off of accuracy
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** Delayed task queue
+*** Requirements With Clarifications
+*** Scale
+*** High Level Design
+*** Detail Design
+*** Follow-up
+** Spam Filter: design a system to block malicious IPs
+*** Requirements With Clarifications
+- The granularity of blocking: whether to support blocking by subnet
+
+[[https://github.com/pushinginertia/ip-blacklist/blob/master/ip_blacklist.conf][Github: ip-blacklist/ip_blacklist.conf]]
+
+- Whether need TTL for the IP blocking?
+- How big scale the traffic would be? The tolerance of the latency?
+*** Scale
+*** High Level Design
+In-memory hashmap
+
+K/V TTL: redis
+*** Detail Design
+*** Follow-up
+Follow-up: how to support this feature for system with 20K+ QPS?
+#+BEGIN_EXAMPLE
+- Put IP blacklist to Redis
+- Redis clustering
+#+END_EXAMPLE
+Industry Reference
+- [[https://httpd.apache.org/docs/2.4/howto/access.html][Link: Apache Access Control]]
+** How to implement redis clustering
+*** Requirements With Clarifications
+*** Scale
+*** High Level Design
+Sharding + Active-passive replication
+
+[[https://www.credera.com/blog/technology-insights/open-source-technology-insights/an-introduction-to-redis-cluster/][Link: An Introduction to Redis Cluster]]
+*** Detail Design
+*** Follow-up
+Industry Reference
+
+[[http://highscalability.com/blog/2014/9/8/how-twitter-uses-redis-to-scale-105tb-ram-39mm-qps-10000-ins.html][Link: How Twitter Uses Redis To Scale - 105TB RAM, 39MM QPS, 10,000+ Instances]]
+
+[[https://www.youtube.com/watch?v=rP9EKvWt0zo][YouTube: Scaling Redis at Twitter]]
+** Design twitter timeline feature
+*** Requirements With Clarifications
+*** Scale
+*** High Level Design
+*** Detail Design
+*** Follow-up

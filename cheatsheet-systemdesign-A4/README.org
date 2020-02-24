@@ -66,26 +66,29 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   2 | [[https://architect.dennyzhang.com/design-api-limiter/][Design An API Rate Limiter]]                                       |                                                                 |
 |   3 | [[https://architect.dennyzhang.com/design-leaderboard][Design: Leaderboard Ranking]]                                      |                                                                 |
 |   4 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task queue]]                                               |                                                                 |
+|   5 | Spam Filter: design a system to block malicious IPs              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#spam-filter-design-a-system-to-block-malicious-ips][Github: link]]                                                    |
 |-----+------------------------------------------------------------------+-----------------------------------------------------------------|
-|   5 | Web crawler                                                      |                                                                 |
+|   6 | Web crawler                                                      |                                                                 |
+|   7 | How to implement redis clustering                                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#how-to-implement-redis-clustering][Github: link]]                                                    |
+|   8 | Design twitter timeline feature                                  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-twitter-timeline-feature][Github: link]]                                                    |
 |-----+------------------------------------------------------------------+-----------------------------------------------------------------|
-|   6 | Design online/offline status system                              |                                                                 |
-|   7 | How to deployment 1GB binary to 10,000 servers                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#how-to-deploy-1gb-binary-to-10000-servers][Github: link]]                                                    |
-|   8 | Merge big datasets across different servers                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#store-2tb-data-in-three-1tb-disks-with-redundancy][Github: link]]                                                    |
-|   9 | Design a monitoring system to check 10,000 nodes                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-a-system-checking-the-health-of-10000-nodes][Github: link]]                                                    |
-|  10 | Unique url hits                                                  |                                                                 |
-|  11 | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed counter]]                                     |                                                                 |
-|  12 | Design a distributed message queue                               |                                                                 |
-|  13 | Design a distributed cache service                               |                                                                 |
-|  14 | Design a distributed Hashmap                                     |                                                                 |
-|  15 | Design a distributed UUID generator                              |                                                                 |
-|  16 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]                                    |                                                                 |
-|  17 | Design a distributed transaction                                 |                                                                 |
-|  18 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]                                |                                                                 |
-|  19 | Give three 1TB disks, how to store 2TB data with redundancy      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#store-2tb-data-in-three-1tb-disks-with-redundancy][Github: link]]. XOR bit manipulation                              |
-|  20 | How to support feature of "diff big1.bin big2.bin"               | [[https://code.dennyzhang.com/followup-lcs][#lcs - Longest Common Subsequence]]                               |
-|  21 | How to support "rsync big1.bin ssh:/big2.bin" in a doggy network | delta-transfer algorithm. Weak Hashing + Strong Hashing         |
-|  22 | Avoid double payment in a distributed payment system             | [[https://medium.com/airbnb-engineering/avoiding-double-payments-in-a-distributed-payments-system-2981f6b070bb][Link: Avoiding Double Payments in a Distributed Payments System]] |
+|   9 | Design online/offline status system                              |                                                                 |
+|  10 | How to deployment 1GB binary to 10,000 servers                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#how-to-deploy-1gb-binary-to-10000-servers][Github: link]]                                                    |
+|  11 | Merge big datasets across different servers                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#store-2tb-data-in-three-1tb-disks-with-redundancy][Github: link]]                                                    |
+|  12 | Design a monitoring system to check 10,000 nodes                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-a-system-checking-the-health-of-10000-nodes][Github: link]]                                                    |
+|  13 | Unique url hits                                                  |                                                                 |
+|  14 | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed counter]]                                     |                                                                 |
+|  15 | Design a distributed message queue                               |                                                                 |
+|  16 | Design a distributed cache service                               |                                                                 |
+|  17 | Design a distributed Hashmap                                     |                                                                 |
+|  18 | Design a distributed UUID generator                              |                                                                 |
+|  19 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]                                    |                                                                 |
+|  20 | Design a distributed transaction                                 |                                                                 |
+|  21 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]                                |                                                                 |
+|  22 | Give three 1TB disks, how to store 2TB data with redundancy      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#store-2tb-data-in-three-1tb-disks-with-redundancy][Github: link]]. XOR bit manipulation                              |
+|  23 | How to support feature of "diff big1.bin big2.bin"               | [[https://code.dennyzhang.com/followup-lcs][#lcs - Longest Common Subsequence]]                               |
+|  24 | How to support "rsync big1.bin ssh:/big2.bin" in a doggy network | delta-transfer algorithm. Weak Hashing + Strong Hashing         |
+|  25 | Avoid double payment in a distributed payment system             | [[https://medium.com/airbnb-engineering/avoiding-double-payments-in-a-distributed-payments-system-2981f6b070bb][Link: Avoiding Double Payments in a Distributed Payments System]] |
 #+TBLFM: $1=@-1$1+1;N
 ** Concurrency Problems
 - [[https://cheatsheet.dennyzhang.com/cheatsheet-concurrency-A4][CheatSheet: Concurrency & Parallel Programming]]

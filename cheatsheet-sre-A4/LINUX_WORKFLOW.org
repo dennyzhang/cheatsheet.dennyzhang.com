@@ -81,3 +81,5 @@ Types of System Calls:
 [[image-blog:SRE: Linux Basic Concepts][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-sre-A4/system-call.png]]
 
 [[https://www.geeksforgeeks.org/introduction-of-system-call/][Link: Introduction of System Call]]
+** Explain how systemtap works
+[[https://www.thegeekdiary.com/how-to-find-which-process-is-killing-mysqld-with-sigkill-or-sigterm-on-linux/][Link: How to find Which Process Is Killing mysqld With SIGKILL or SIGTERM on Linux]]

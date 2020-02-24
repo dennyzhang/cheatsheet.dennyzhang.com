@@ -17,7 +17,25 @@
 <br/><br/>
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
+** How to implement a mutex
+- Mutex is just an integer in memory. It has two fundamental operations: lock and unlock
+- Under Linux, there is a system call futex which provides mutex like semantics.
+#+BEGIN_SRC cpp
+int compare_set(int* to_compare, int compare, int set);
 
+int mutex_val;
+do {
+  int result = compare_set(&mutex_val, 0, 1)
+  if (!result) { // get the lock
+      // XXX
+      // release the lock
+      mutex_val = 0
+  } else {
+     // keep waiting: spin lock
+  }
+}
+#+END_SRC
+[[https://mortoray.com/2019/02/20/how-does-a-mutex-work-what-does-it-cost/][Link: How does a mutex work?]]
 ** Implement a lock-free queue with multiple readers/writers
 Requirememnts:
 - All readers would read the same records
@@ -33,6 +51,7 @@ https://blog.codingnow.com/2012/06/dev_note_21.html
 
 http://zguide.zeromq.org/page:all
 ØMQ - The Guide - ØMQ - The Guide
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * Review: Concurrency Problems                         :noexport:BLOG:Review:
 #+STARTUP: showeverything
 #+OPTIONS: toc:nil \n:t ^:nil creator:nil d:nil
@@ -48,35 +67,6 @@ Concurrency Problems
 
 - [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]]
 - [[https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4][CheatSheet: Common Code Problems & Follow-ups]]
-
-*Concepts*
-| Name                          | Comment                                                   |
-|-------------------------------+-----------------------------------------------------------|
-| Synchronization primitives    | mutex, semaphore                                          |
-| [[https://en.wikipedia.org/wiki/Semaphore_(programming)][Semaphores]]                    | It solves the problem of lost wakeup calls                |
-| Interaction and communication | Shared memory communication/Message passing communication |
-| Actor model                   |                                                           |
-| Asynchronous I/O              |                                                           |
-| Reference                     | [[https://en.wikipedia.org/wiki/Concurrent_computing][Wikipedia: Concurrent computing]]                           |
-| Inter-process communication   | Pipe; Signal; Shared memory; MQ; socket; RPC              |
-
-*Question*
-| Name               | Comment |
-|--------------------+---------|
-| Mutex vs Semaphore |         |
-
-*Scenarios*
-| Name                                | Comment                                                                |
-|-------------------------------------+------------------------------------------------------------------------|
-| Map/Reduce: scheduler + workers     | [[https://code.dennyzhang.com/web-crawler-multithreaded][LeetCode: Web Crawler Multithreaded]]                                    |
-| Claim ownerhip of a single resource | [[https://code.dennyzhang.com/traffic-light-controlled-intersection][LeetCode: Traffic Light Controlled Intersection]]                        |
-| [[https://en.wikipedia.org/wiki/Dining_philosophers_problem][Dining Philosophers problem]]         | Avoid deadlock and starvation [[https://code.dennyzhang.com/the-dining-philosophers][LeetCode: The Dining Philosophers]]        |
-| [[https://en.wikipedia.org/wiki/ABA_problem][ABA problem]]                         |                                                                        |
-| [[https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem][Producer-consumer problem]]           | a.k.a the bounded-buffer problem                                       |
-| [[https://en.wikipedia.org/wiki/Cigarette_smokers_problem][Cigarette smokers problem]]           | Assume a cigarette requires 3 ingredients: tobacco, paper, and matches |
-| [[https://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem][Readers-writers problem]]             | Read/write access the same shared resource at one time                 |
-| [[https://en.wikipedia.org/wiki/Sleeping_barber_problem][Sleeping barber problem]]             | Keep a barber working when there are customers, resting when none      |
-| Semaphores to maintain the order    | [[https://code.dennyzhang.com/building-h2o][LeetCode: Building H2O]]                                                 |
 
 Semaphore
 
@@ -135,7 +125,6 @@ See all concurrency problems: [[https://code.dennyzhang.com/tag/concurrency/][#c
 #+END_HTML
 
 See more [[https://code.dennyzhang.com/?s=blog+posts][blog posts]].
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Can a single process run in multiple cores?                 :noexport:
 https://stackoverflow.com/questions/38733670/can-a-single-process-run-in-multiple-cores
 https://softwareengineering.stackexchange.com/questions/349972/how-does-a-single-thread-run-on-multiple-cores
