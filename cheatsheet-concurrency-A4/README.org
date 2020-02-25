@@ -22,53 +22,81 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Concurrency Concepts
-| Num | Name                        | Summary                                      |
-|-----+-----------------------------+----------------------------------------------|
-|   1 | [[https://en.wikipedia.org/wiki/Semaphore_(programming)][Semaphores]]                  | It solves the problem of lost wakeup calls   |
-|   2 | Mutex vs Semaphore          |                                              |
-|   3 | Per-CPU locking             |                                              |
-|   4 | Memory barrier              |                                              |
-|   5 | Synchronization primitives  | mutex, semaphore                             |
-|   6 | Inter-process communication | Pipe; Signal; Shared memory; MQ; socket; RPC |
-|   7 | Tomic operations            | Test-and-set; GET_ADD; Redis INCR; CPU CAS;  |
-|   8 | Asynchronous I/O            |                                              |
-|   9 | Actor model                 |                                              |
+| Num | Name                        | Summary                                                                           |
+|-----+-----------------------------+-----------------------------------------------------------------------------------|
+|   1 | Inter-process communication | Pipe; Signal; Shared memory; MQ; socket; RPC                                      |
+|   2 | Synchronization primitives  | mutex, semaphore                                                                  |
+|   3 | Atomic operations           | Test-and-set; =GET_ADD=; Redis INCR; CPU CAS;                                     |
+|   4 | Spinlocks                   | Locks which spin on mutex. Continuously poll until condition gets met             |
+|   5 | Sleeping locks              | Put threads to wait queue.                                                        |
+|-----+-----------------------------+-----------------------------------------------------------------------------------|
+|   6 | Critical section            | The code between the lock and unlock calls to the mutex                           |
+|   7 | Mutex                       | MUTual EXclusion                                                                  |
+|   8 | [[https://en.wikipedia.org/wiki/Semaphore_(programming)][Semaphores]]                  | It solves the problem of lost wakeup calls. Semaphores: binary and counting       |
+|   9 | Conditional variables       | A queue of threads, associated with a monitor                                     |
+|  10 | [[https://en.wikipedia.org/wiki/Futex][futex]]                       | A fast userspace mutex                                                            |
+|  11 | Starvation(Lived Lock)      | When a thread waits for an indefinite period of time to get the required resource |
+|-----+-----------------------------+-----------------------------------------------------------------------------------|
+|  12 | Recursive Mutexes           |                                                                                   |
+|  13 | Reader/Writer Mutexes       |                                                                                   |
+|-----+-----------------------------+-----------------------------------------------------------------------------------|
+|  14 | Memory barrier              |                                                                                   |
+|  15 | Callbacks                   |                                                                                   |
+|  16 | Per-CPU locking             |                                                                                   |
+|  17 | Dead lock                   |                                                                                   |
+|  18 | Asynchronous I/O            |                                                                                   |
+|-----+-----------------------------+-----------------------------------------------------------------------------------|
+|  19 | [[https://randu.org/tutorials/threads/][Thread Design Patterns]]      | Thread pool, Peer and Pipeline                                                    |
+|  20 | Actor model vs CSP model    |                                                                                   |
 #+TBLFM: $1=@-1$1+1;N
-** Top 10 Concurrency Problems
-| Num | Name                                                      |                                     |
-|-----+-----------------------------------------------------------+-------------------------------------|
-|   1 | IPC: use shared memory without kernel copy                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/code-example/shared-memory][Github: code-example/shared-memory]]  |
-|   2 | How to implement a mutex                                  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-mutex][Github: link]]                        |
-|   3 | [[https://architect.dennyzhang.com/design-concurrent-hashmap][Design a thread-safe Hashmap]]                              |                                     |
-|-----+-----------------------------------------------------------+-------------------------------------|
-|   4 | Implement a reader-writer locker                          | [[https://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem][Wikiepedia: Readers-writers problem]] |
-|   5 | Design a thread-safe blocking queue                       |                                     |
-|   6 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task scheduling]]                                   |                                     |
-|   7 | Implement a lock-free queue with multiple readers/writers | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#implement-a-lock-free-queue-with-multiple-readerswriters][Github: link]]                        |
+** Well-known Concurrent Problems
+| Num | Name                        |                                                                        |
+|-----+-----------------------------+------------------------------------------------------------------------|
+|   1 | [[https://en.wikipedia.org/wiki/ABA_problem][ABA problem]]: loss updates   |                                                                        |
+|   2 | [[https://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem][Readers-writers problem]]     | Read/write access the same shared resource at one time                 |
+|   3 | [[https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem][Producer-consumer problem]]   | a.k.a the bounded-buffer problem                                       |
+|   4 | [[https://en.wikipedia.org/wiki/Dining_philosophers_problem][Dining philosophers problem]] | [[https://code.dennyzhang.com/the-dining-philosophers][Leetcode: The Dining Philosophers]]                                      |
+|   5 | [[https://en.wikipedia.org/wiki/Cigarette_smokers_problem][Cigarette smokers problem]]   | Assume a cigarette requires 3 ingredients: tobacco, paper, and matches |
+|   6 | [[https://en.wikipedia.org/wiki/Sleeping_barber_problem][Sleeping barber problem]]     | Keep a barber working when there are customers, resting when none      |
+|   7 | [[https://en.wikipedia.org/wiki/Guarded_suspension][Guarded suspension]]          |                                                                        |
+#+TBLFM: $1=@-1$1+1;N
+** Top 10 Concurrency Design Problems
+| Num | Name                                                      |                                    |
+|-----+-----------------------------------------------------------+------------------------------------|
+|   1 | How to implement a spinlock                               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-spinlock][Github: link]]                       |
+|   2 | How to implement a mutex                                  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-mutex][Github: link]]                       |
+|   3 | How to implement a condition variable                     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-condition-variable][Github: link]]                       |
+|   4 | How to implement a reader-writer locker                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-reader-writer-locker][Github: link]]                       |
+|   5 | How to implement a bounded blocking queue                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-bounded-blocking-queue][Github: link]]                       |
+|-----+-----------------------------------------------------------+------------------------------------|
+|   6 | IPC: use shared memory without kernel copy                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/code-example/shared-memory][Github: code-example/shared-memory]] |
+|   7 | Support in-memory kv store transactions                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#support-in-memory-kv-store-transactions][Github: link]]                       |
+|-----+-----------------------------------------------------------+------------------------------------|
+|   8 | [[https://architect.dennyzhang.com/design-concurrent-hashmap][Design a thread-safe Hashmap]]                              |                                    |
+|   9 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task scheduling]]                                   |                                    |
+|  10 | Implement a lock-free queue with multiple readers/writers | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#implement-a-lock-free-queue-with-multiple-readerswriters][Github: link]]                       |
+|  11 | Implement a api rate limiter with token bucket algorithm  |                                    |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 10 Concurrency Coding Problems
-| Num | Problem                             | Summary                                                                |
-|-----+-------------------------------------+------------------------------------------------------------------------|
-|   1 | Semaphores to maintain the order    | [[https://code.dennyzhang.com/building-h2o][Leetcode: Building H2O]]                                                 |
-|   2 | Web Crawler Multithreaded           | [[https://code.dennyzhang.com/web-crawler-multithreaded][LeetCode: Web Crawler Multithreaded]]                                    |
-|   3 | Print Zero Even Odd                 | [[https://code.dennyzhang.com/print-zero-even-odd][Leetcode: Print Zero Even Odd]]                                          |
-|   4 | Map/Reduce: scheduler + workers     | [[https://code.dennyzhang.com/fizz-buzz-multithreaded][Leetcode: Fizz Buzz Multithreaded]]                                      |
-|   5 | Design Bounded Blocking Queue       | [[https://code.dennyzhang.com/design-bounded-blocking-queue][Leetcode: Design Bounded Blocking Queue]]                                |
-|   6 | Avoid deadlock and starvation       | [[https://code.dennyzhang.com/the-dining-philosophers][Leetcode: The Dining Philosophers]]                                      |
-|   7 | Claim ownerhip of a single resource | [[https://code.dennyzhang.com/traffic-light-controlled-intersection][LeetCode: Traffic Light Controlled Intersection]]                        |
-|-----+-------------------------------------+------------------------------------------------------------------------|
-|   8 | [[https://en.wikipedia.org/wiki/ABA_problem][ABA problem]]: loss updates           |                                                                        |
-|   9 | [[https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem][Producer-consumer problem]]           | a.k.a the bounded-buffer problem                                       |
-|  10 | [[https://en.wikipedia.org/wiki/Cigarette_smokers_problem][Cigarette smokers problem]]           | Assume a cigarette requires 3 ingredients: tobacco, paper, and matches |
-|  11 | [[https://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem][Readers-writers problem]]             | Read/write access the same shared resource at one time                 |
-|  12 | [[https://en.wikipedia.org/wiki/Sleeping_barber_problem][Sleeping barber problem]]             | Keep a barber working when there are customers, resting when none      |
+| Num | Problem                             | Summary                                         |
+|-----+-------------------------------------+-------------------------------------------------|
+|   1 | Semaphores to maintain the order    | [[https://code.dennyzhang.com/building-h2o][Leetcode: Building H2O]]                          |
+|   2 | Web Crawler Multithreaded           | [[https://code.dennyzhang.com/web-crawler-multithreaded][LeetCode: Web Crawler Multithreaded]]             |
+|   3 | Print Zero Even Odd                 | [[https://code.dennyzhang.com/print-zero-even-odd][Leetcode: Print Zero Even Odd]]                   |
+|   4 | Map/Reduce: scheduler + workers     | [[https://code.dennyzhang.com/fizz-buzz-multithreaded][Leetcode: Fizz Buzz Multithreaded]]               |
+|   5 | Design Bounded Blocking Queue       | [[https://code.dennyzhang.com/design-bounded-blocking-queue][Leetcode: Design Bounded Blocking Queue]]         |
+|   6 | Avoid deadlock and starvation       | [[https://code.dennyzhang.com/the-dining-philosophers][Leetcode: The Dining Philosophers]]               |
+|   7 | Claim ownerhip of a single resource | [[https://code.dennyzhang.com/traffic-light-controlled-intersection][LeetCode: Traffic Light Controlled Intersection]] |
 #+TBLFM: $1=@-1$1+1;N
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
+https://www.linkedin.com/pulse/locks-mutex-semaphore-deadlock-starvation-mohammad-fares/
+
+- [[https://github.com/angrave/SystemProgramming/wiki][Github: angrave/SystemProgramming]]
 - [[https://en.wikipedia.org/wiki/Concurrent_computing][Wikipedia: Concurrent computing]]
 - [[https://randu.org/tutorials/threads/][Link: Multithreaded Programming (POSIX pthreads Tutorial)]]
-
+- [[http://highscalability.com/blog/2013/5/13/the-secret-to-10-million-concurrent-connections-the-kernel-i.html][Link: The Secret To 10 Million Concurrent Connections -The Kernel Is The Problem, Not The Solution]]
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
@@ -101,4 +129,8 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+LINK_HOME:
 * TODO writer/reader model vs producer/consumer model              :noexport:
 * TODO When reacquiring locks, consider using generation counts to detect state change. :noexport:
-
+* TODO Go 语言并发编程`同步原语与锁 | Go 语言设计与实现           :noexport:
+https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-sync-primitives/
+  Go 语言并发编程`同步原语与锁 | Go 语言设计与实现
+* TODO Use all golang concurrent programming model                 :noexport:
+https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-sync-primitives/

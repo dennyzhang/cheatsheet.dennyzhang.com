@@ -5,7 +5,7 @@ https://www.tutorialspoint.com/ipc-through-shared-memory
 - shmget: Create/retrieve a shared memory segment
 - shmat: Attach process to a shared memory segment
 - shmdt: Detach the process from a shared memory segment
-- shmctl: Control operations on the shared memory segment. Say destroy it.
+- shmctl: Control operations on the shared memory segment. e.g, destroy it.
 
 ```
 g++ ./reader.cpp  -o ./reader

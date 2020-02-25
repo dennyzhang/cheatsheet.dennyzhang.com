@@ -36,6 +36,122 @@ do {
 }
 #+END_SRC
 [[https://mortoray.com/2019/02/20/how-does-a-mutex-work-what-does-it-cost/][Link: How does a mutex work?]]
+** How to implement a spinlock
+A spinlock is a lock which causes a thread trying to acquire it to simply wait in a loop ("spin") while repeatedly checking if the lock is available
+
+Because they avoid overhead from operating system process rescheduling or context switching, spinlocks are efficient if threads are likely to be blocked for only short periods.
+
+[[https://en.wikipedia.org/wiki/Spinlock][Wikipedia: Spinlock]]
+
+#+BEGIN_SRC go
+// spin lock
+func Lock(spinLock AtomicInt) {
+	for (true) {
+		expected := 0
+		store := 1
+		if (spinLock.cas(expected, store)) {
+			break
+		}
+		// emit: help CPU understand it's inside a spin lock loop
+		// emit_pause_instruction()
+	}
+}
+
+func unLock(spinLock AtomicInt) {
+        // add memory barrier
+	spinLock.v = 0
+}
+#+END_SRC
+*** useful link                                                    :noexport:
+    http://danglingpointers.com/post/spinlock-implementation/
+    Spin Lock Implementation - Dangling Pointers
+
+https://www.1point3acres.com/bbs/thread-593740-1-1.html
+Oralce 本部 店面|一亩三分地美国面经版
+** How to implement a condition variable
+** How to implement a reader-writer locker
+- [[https://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem][Wikiepedia: Readers-writers problem]]
+
+*** Solution1: 2 mutex + 1 counter
+#+BEGIN_SRC c
+// https://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock
+
+// This implementation is read-preferring.
+Mutex rmutex, wmutex; // reader and writer mutexes
+int readCnt = 0; // how many readers
+
+void read() {
+    rmutex.lock(); // critical section for readers
+    readCnt += 1
+    If readCnt == 1 {
+	wmutex.lock(); // no writer is writing
+    }
+    rmutex.unlock(); // open for other reader
+
+    // read data
+    rmutex.lock(); // critical section for readers
+    readCnt -= 1
+    If readCnt == 0 {
+	wmutex.unlock(); // open for write, since all read has finished.
+    }
+    rmutex.unlock(); // open for other reader
+}
+
+void write() {
+    wmutex.lock(); // close for write
+    // write data
+    wmutex.unlock(); // open for write  
+}
+#+END_SRC
+*** Solution2: 1 condition variable + 1 mutex
+#+BEGIN_SRC c
+// https://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock#Using_a_condition_variable_and_a_mutex
+// Read/Writer Lock: 1 condition variable + 1 mutex
+
+// This implementation is writer-preferring.
+
+Mutex lock;
+Cond cond; // condition variables for readers
+int activeReaderCnt; // how many readers are reading
+int waitWriterCnt; // how may writers are waiting
+bool writerHoldLock; // whether one writer is holding the lock
+
+void read() {
+    lock.lock();
+    If waitWriterCnt > 0 ||  writerHoldLock {
+      // If any writers want to write, wait
+      cond.wait();
+    }
+    activeReaderCnt += 1
+    lock.unlock();
+
+    lock.lock();
+    // read data
+    activeReaderCnt -= 1
+    If activeReaderCnt == 0 {
+        cond.notify(); // open for write
+    }
+    lock.unlock();
+}
+
+void write() {
+   lock.lock();
+   If activeReaderCnt > 0 || writerHoldLock {
+        cond.wait(); // wait for writing
+   }
+   waitWriterCnt -= 1
+   writerHoldLock = True
+   lock.unlock();
+
+   // write data
+
+   lock.lock();
+   writerHoldLock = False
+   cond.notify();
+   lock.unlock();
+}
+#+END_SRC
+** How to implement a bounded blocking queue
 ** Implement a lock-free queue with multiple readers/writers
 Requirememnts:
 - All readers would read the same records
@@ -44,13 +160,15 @@ Requirememnts:
 Intuitives:
 - When read, no lock would be required
 - When write, only the space allocation would need locking. Find some atomic operation for this step.
-*** useful link
-
+*** useful link                                                    :noexport:
 https://blog.codingnow.com/2012/06/dev_note_21.html
 云风的 BLOG: 开发笔记(21) : 无锁消息队列
 
 http://zguide.zeromq.org/page:all
 ØMQ - The Guide - ØMQ - The Guide
+** Support in-memory kv store transactions
+*** useful link                                                    :noexport:
+https://www.1point3acres.com/bbs/thread-595852-1-1.html
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * Review: Concurrency Problems                         :noexport:BLOG:Review:
 #+STARTUP: showeverything

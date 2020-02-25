@@ -27,36 +27,42 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Java JDK Source Code | [[https://github.com/openjdk-mirror/jdk7u-jdk/tree/master/src/share/classes/java/util][Github: jdk7u-jdk]]                |
 | Golang Source Code   | [[https://github.com/golang/go/tree/master/src/runtime][Github: go]]                       |
 | Python Source Code   | [[https://github.com/python/cpython][Github: cpython]]                  |
-| Redis Source Code    | [[https://github.com/antirez/redis/tree/unstable/src][Github: redis]]                    |
-| MySQL                |                                  |
-| Postgres             |                                  |
 | Git Source Code      | [[https://github.com/git/git][Github: git]]                      |
 | Reference            | [[http://tutorials.jenkov.com/java-util-concurrent/index.html][Link: Java Concurrency Utilities]] |
+** Middleware & DB
+| Name              | Summary       |
+|-------------------+---------------|
+| Redis Source Code | [[https://github.com/antirez/redis/tree/unstable/src][Github: redis]] |
+| MySQL             |               |
+| Postgres          |               |
+| Kafaka            |               |
+| Spark             |               |
 ** Community Design Proposals
 | Name                        | Summary                                  |
 |-----------------------------+------------------------------------------|
 | Python Design Proposals     | [[https://www.python.org/dev/peps/][Link: Python PEP Index]]                   |
 | Kubernetes Design Proposals | [[https://github.com/kubernetes/enhancements/tree/master/keps][Github: Kubernetes Enhancement Proposals]] |
 ** Data Structures
-| Name                                        | Summary                                                     |
-|---------------------------------------------+-------------------------------------------------------------|
-| Blocking Queue                              |                                                             |
-| Delayed Queue                               |                                                             |
-| Concurrent Linked Queue                     | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/ConcurrentLinkedQueue.java][Github: jdk7u-jdk/.../concurrent/ConcurrentLinkedQueue.java]] |
-| Priority Blocking Queue                     | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/PriorityBlockingQueue.java][Github: jdk7u-jdk/.../concurrent/PriorityBlockingQueue.java]] |
-| Deque                                       | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/Deque.java][Github: jdk7u-jdk/.../Deque.java]]                            |
-| Bitset                                      |                                                             |
-| Garbage Collection                          |                                                             |
-| Concurrent Hash Map                         |                                                             |
-| Sorted Map, Treemap                         |                                                             |
-| Semophore                                   | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/Semaphore.java][Github: jdk7u-jdk/.../concurrent/Semaphore.java]]             |
-| Golang channels                             |                                                             |
-|---------------------------------------------+-------------------------------------------------------------|
-| Binary index tree                           |                                                             |
-| API Rate Limiter                            |                                                             |
-| Skiplist                                    |                                                             |
-| Bloom filter                                |                                                             |
-| CRDTs (Conflict-Free Replicated Data Types) |                                                             |
+| Name                                        | Summary                                                               |
+|---------------------------------------------+-----------------------------------------------------------------------|
+| Blocking Queue                              |                                                                       |
+| Delayed Queue                               |                                                                       |
+| Concurrent Linked Queue                     | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/ConcurrentLinkedQueue.java][Github: jdk7u-jdk/.../concurrent/ConcurrentLinkedQueue.java]]           |
+| Priority Blocking Queue                     | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/PriorityBlockingQueue.java][Github: jdk7u-jdk/.../concurrent/PriorityBlockingQueue.java]]           |
+| Deque                                       | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/Deque.java][Github: jdk7u-jdk/.../Deque.java]]                                      |
+| Bitset                                      |                                                                       |
+| Garbage Collection                          |                                                                       |
+| Concurrent Hash Map                         |                                                                       |
+| Sorted Map, Treemap                         |                                                                       |
+| Semophore                                   | [[https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/Semaphore.java][Github: jdk7u-jdk/.../concurrent/Semaphore.java]]                       |
+|---------------------------------------------+-----------------------------------------------------------------------|
+| How Golang channel feature is implement?    | [[https://www.youtube.com/watch?v=KBZlN0izeiY][YouTube: GopherCon 2017: Understanding Channels]], [[https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-channel/][Link: Golang Channel]] |
+|---------------------------------------------+-----------------------------------------------------------------------|
+| Binary index tree                           |                                                                       |
+| API Rate Limiter                            |                                                                       |
+| Skiplist                                    |                                                                       |
+| Bloom filter                                |                                                                       |
+| CRDTs (Conflict-Free Replicated Data Types) |                                                                       |
 ** Functions & Methods
 | Name                                        | Summary                                                                      |
 |---------------------------------------------+------------------------------------------------------------------------------|

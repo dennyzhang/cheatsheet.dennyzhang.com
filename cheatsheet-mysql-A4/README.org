@@ -34,7 +34,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | [[https://stackoverflow.com/questions/15930514/mysql-auto-increment-temporary-column-in-select-statement][Select clause add an incremental id]]                   | select (@cnt1 := @cnt1 + 1) as id [[https://code.dennyzhang.com/students-report-by-geography][LeetCode: Students Report By Geography]]                |
 | [[https://www.w3schools.com/sql/func_mysql_date_sub.asp][MySQL DATE_SUB]]                                        | =DATE_SUB(record_date, INTERVAL 6 DAY)=                                                 |
 | Get accumulated sum for each group                    | [[https://code.dennyzhang.com/last-person-to-fit-in-the-elevator][LeetCode: Last Person to Fit in the Elevator]]                                            |
-| nth element in each group                             | [[https://code.dennyzhang.com/nth-highest-salary][LeetCode: Nth Highest Salary]]                                                            |
+| nth element in each group                             | [[https://code.dennyzhang.com/nth-highest-salary][LeetCode: Nth Highest Salary]], [[https://code.dennyzhang.com/get-the-second-most-recent-activity][LeetCode: Get the Second Most Recent Activity]]             |
 | topn entris for each group                            | [[https://code.dennyzhang.com/department-top-three-salaries][LeetCode: Department Top Three Salaries]]                                                 |
 | =union= vs =union all=                                | [[https://code.dennyzhang.com/friend-requests-ii-who-has-the-most-friends][LeetCode: Friend Requests II: Who Has the Most Friends]]                                  |
 | Convert float to int                                  | =cast(amount as SIGNED)=                                                                |
@@ -257,8 +257,6 @@ group by t.Request_at
 https://dev.mysql.com/doc/refman/5.7/en/select.html
 
 https://www.petefreitag.com/item/451.cfm
-** DONE mysql function concat string
-   CLOSED: [2017-10-19 Thu 14:41]
 ** DONE mysql function convert int to string: CAST(id as VARCHAR(50))
   CLOSED: [2017-10-19 Thu 14:41]
 https://stackoverflow.com/questions/15368753/cast-int-to-varchar
@@ -301,21 +299,4 @@ mysql> SELECT CONCAT(102.33);
 +----------------+
 1 row in set (0.00 sec)
 #+END_EXAMPLE
-** DONE mysql function define variable
-  CLOSED: [2017-10-19 Thu 14:41]
-# https://leetcode.com/problems/nth-highest-salary/description/
-
-CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
-BEGIN
-  DECLARE M INT;
-  DECLARE column_name varchar(100);
-  set M=N-1;
-  set column_name = CONCAT('getNthHighestSalary', N, ')');
-  RETURN (
-     select DISTINCT Salary as column_name
-     from Employee
-     order by Salary desc
-     LIMIT M, 1
-   );
-END
 * TODO [#A] mysql get the first entry for each group               :noexport:

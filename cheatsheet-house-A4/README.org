@@ -513,7 +513,8 @@ https://www.amazon.com/Ring/dp/B01JTL2PYE/ref=sr_1_39?keywords=ring+alarm&qid=15
 * TODO water service: setup online payment                         :noexport:
 * TODO Split this cheatsheet: buy a house & maintain ahouse        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO 父母活动                                                    :noexport:
+* DONE 父母活动                                                    :noexport:
+  CLOSED: [2020-03-01 Sun 12:55]
 - 看电影
 - 逛farmers market 
 - 逛museum
@@ -530,7 +531,6 @@ https://www.youtube.com/watch?v=2IQZIehbzcs
 * TODO Ring: Buy Doorbell, wooden door                             :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO bathroom toilet noise                                       :noexport:
-* TODO [#A] 后院没有自动喷水                                       :noexport:
 * TODO One bulb in the family room doens't work                    :noexport:
 * TODO 前后院桔树防虫                                              :noexport:
 * TODO homedepot：买土给果树                                       :noexport:
@@ -539,3 +539,6 @@ https://www.youtube.com/watch?v=2IQZIehbzcs
 * TODO 次卧厕所淋浴漏水                                            :noexport:
 * TODO 次卧厕所地板积水                                            :noexport:
 * TODO 炉子开不了                                                  :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] 后院没有自动喷水                                       :noexport:
+* TODO 前院的桔树死了，找市政府换一棵更合适的树                    :noexport:

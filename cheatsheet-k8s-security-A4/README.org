@@ -56,6 +56,11 @@ File me [[https://github.com/DennyZhang/cheatsheet-tile-A4/issues][Issues]] or s
 | phishing                    | A common type of social engineering that fools you to respond to a malicious email            |
 | Data classifications levels | Restricted, Private/Protected, Confidential, Public                                           |
 | PII                         | Personally identifiable information                                                           |
+** Service Self-Protection
+| Name       | Summary                                                                                                   |
+|------------+-----------------------------------------------------------------------------------------------------------|
+| Throttling |                                                                                                           |
+| [[https://blog.bitsrc.io/understanding-throttling-and-debouncing-973131c1ba07][Debouncing]] | A debounced function will ignore all calls to it until the calls have stopped for a specified time period |
 ** Security - PodSecurityPolicy
 - A PodSecurityPolicy is a cluster-level resource that controls security sensitive aspects of the pod specification.
 | Yaml                                    | Summary                                                         |

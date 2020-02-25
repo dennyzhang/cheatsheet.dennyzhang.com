@@ -25,6 +25,7 @@ Show top K frequent elements in the last 5 minutes, last 1 hour, last 1 day.
 Similar Questions:
 - Top URL hits
 
+*** Typical Use Scenarios
 *** Requirements With Clarifications
 *** Scale
 *** High Level Design
@@ -42,6 +43,7 @@ https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=461654&extra=&page
 For realtime accurate ranking:
 
 For realtime in-accurate ranking:
+*** Typical Use Scenarios
 *** Requirements With Clarifications
 *** Scale
 *** High Level Design
@@ -52,6 +54,7 @@ Follow-up: Support realtime ranking
 ** Design a system checking the health of 10,000 nodes
 
 Design a system that checks the health of 10,000 nodes. Each of 10,000 modes have an API exposed that you have to call and check the health. This API takes 1-5 seconds to respond. There is UI which tells which nodes are healthy OR not healthy. Your system should provide API for this UI. This UI refreshes every 10 mins. So, every 10 mins your system should be able to update data about those 10,000 nodes.
+*** Typical Use Scenarios
 *** Requirements With Clarifications
 1. Users can always view the health of all nodes immediately.
 2. Users are fine with not real-time data (10 minutes delay).
@@ -71,6 +74,7 @@ Design a system that checks the health of 10,000 nodes. Each of 10,000 modes hav
 2. Related technologies: Nagios, Zabbix; Prometheus
 *** Detail Design
 ** How to deploy 1GB binary to 10,000 servers
+*** Typical Use Scenarios
 *** Requirements With Clarifications
 *** Scale
 *** High Level Design
@@ -81,12 +85,14 @@ Say 2TB data is A and B. For three disks, we store data as A, B and A XOR B.
 If any of three disks is down, we can still retrieve the original data: A and B.
 ** Merge big datasets in different servers
 Many servers with 1 millions's records per server. How to sort it
+*** Typical Use Scenarios
 *** Requirements With Clarifications
 *** Scale
 *** High Level Design
 *** Detail Design
 *** Follow-up
 ** API Rate Limiter
+*** Typical Use Scenarios
 *** Requirements With Clarifications
 *** Scale
 *** High Level Design
@@ -101,14 +107,18 @@ Follow-up: Build API rate limiter for a large scale service
 - Sticky session in Loadbalancer
 - Redis
 - Lock-free with trade-off of accuracy
+
+- [[https://medium.com/@saisandeepmopuri/system-design-rate-limiter-and-data-modelling-9304b0d18250][Medium: System Design — Rate limiter and Data modelling]]
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** Delayed task queue
+*** Typical Use Scenarios
 *** Requirements With Clarifications
 *** Scale
 *** High Level Design
 *** Detail Design
 *** Follow-up
 ** Spam Filter: design a system to block malicious IPs
+*** Typical Use Scenarios
 *** Requirements With Clarifications
 - The granularity of blocking: whether to support blocking by subnet
 
@@ -131,6 +141,7 @@ Follow-up: how to support this feature for system with 20K+ QPS?
 Industry Reference
 - [[https://httpd.apache.org/docs/2.4/howto/access.html][Link: Apache Access Control]]
 ** How to implement redis clustering
+*** Typical Use Scenarios
 *** Requirements With Clarifications
 *** Scale
 *** High Level Design
@@ -145,8 +156,66 @@ Industry Reference
 
 [[https://www.youtube.com/watch?v=rP9EKvWt0zo][YouTube: Scaling Redis at Twitter]]
 ** Design twitter timeline feature
+*** Typical Use Scenarios
 *** Requirements With Clarifications
 *** Scale
 *** High Level Design
 *** Detail Design
 *** Follow-up
+** Design a scalable notification service
+*** Typical Use Scenarios
+*** Requirements With Clarifications
+*** Scale
+*** High Level Design
+*** Detail Design
+*** Follow-up
+** Real-time Deduping At Scale
+*** Typical Use Scenarios
+- Due to unreliable networks, clients may retry events until they receive a 200 OK message
+- For MQ with at-least-once delivery, duplicate messages will be received
+*** Requirements With Clarifications
+- Dedeuplicatoin for how big of the time window?
+- What's the expected accuracy?
+*** Scale
+*** High Level Design
+How to identify duplicate events:
+
+- K/V DB with uniq key + TTL
+- If low accuracy is accepted, use bloom filters. (Need to keep rebuilding the bloom filter)
+*** Detail Design
+*** Follow-up
+- [[https://amplitude.engineering/dedupe-events-at-scale-f9e416e46ca9][Medium: Deduplication at Scale]]
+- [[http://eng.tapjoy.com/blog-list/real-time-deduping-at-scale][Link: REAL-TIME DEDUPING AT SCALE]]
+- [[https://engineering.mixpanel.com/2019/07/18/petabyte-scale-data-deduplication/][Link: Petabyte Scale Data Deduplication]]
+** How to upload large videos at scale
+*** Typical Use Scenarios
+*** Requirements With Clarifications
+- Do we need to upload multiple resolution versions of video, or single version is fine?
+- What is the expectation of upload latency?
+*** Scale
+*** High Level Design
+Speed up uploading:
+
+- Divide one binary video into multiple small segments
+
+How to repair video, when it's inconsistent?
+*** Detail Design
+*** Follow-up
+- [[https://instagram-engineering.com/video-upload-latency-improvements-at-instagram-bcf4b4c5520a][Medium: Video Upload Latency Improvements at Instagram]]
+** Find duplicates files across 1000 servers with 10 million files
+*** Typical Use Scenarios
+*** Requirements With Clarifications
+*** Scale
+*** High Level Design
+*** Detail Design
+*** Follow-up
+- [[https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=303107&highlight=sre][易贝 SRE 面经]]
+** Web crawler for 1 billion URL from 1 seed URL
+*** Typical Use Scenarios
+*** Requirements With Clarifications
+*** Scale
+*** High Level Design
+*** Detail Design
+*** Follow-up
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** How to lookup country name via a coordination of latitude, longitude?

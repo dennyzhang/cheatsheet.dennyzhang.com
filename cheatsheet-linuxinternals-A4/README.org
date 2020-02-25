@@ -1,11 +1,11 @@
-* CheatSheet: SRE/DevOps/Sysadmin                                 :Interview:
+* CheatSheet: Linux Internals                                     :Interview:
 :PROPERTIES:
 :type:     interview
-:export_file_name: cheatsheet-sre-A4.pdf
+:export_file_name: cheatsheet-linuxinternals-A4.pdf
 :END:
 
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-sre-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-linuxinternals-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
@@ -16,8 +16,8 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/cheatsheet-sre-A4.pdf][cheatsheet-sre-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
-- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-sre-A4
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/cheatsheet-linuxinternals-A4.pdf][cheatsheet-linuxinternals-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-linuxinternals-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-paper-A4][CheatSheet: Well-Known Papers For IT Industry]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
@@ -25,7 +25,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Name       | Summary                                                                                 |
 |------------+-----------------------------------------------------------------------------------------|
 | Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4][CheatSheet: Common Code Problems & Follow-ups]]  |
-| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-sre-A4][CheatSheet: SRE/DevOps/Sysadmin]]            |
+| Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-linuxinternals-A4][CheatSheet: SRE/DevOps/Sysadmin]]            |
 | Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][Shell CheatSheet]]                    |
 | Github     | [[https://github.com/chassing/linux-sysadmin-interview-questions][Github: chassing/linux-sysadmin-interview-questions]], [[https://github.com/0xAX/linux-insides][Github: 0xAX/linux-insides]]         |
 | Link       | [[https://syedali.net/engineer-interview-questions/][Link: SRE INTERVIEW QUESTIONS]], [[http://www.brendangregg.com/index.html][Link: Brendan D. Gregg]]                                   |
@@ -34,16 +34,16 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Top 25 Linux Basic Questions
 | Num | Name                                                        | Summary                                    |
 |-----+-------------------------------------------------------------+--------------------------------------------|
-|   1 | Thead VS Process                                            | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#process-vs-thread][Github Link]]                                |
-|   2 | Explain virtual memory                                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-virtual-memory][Github Link]]                                |
-|   3 | Explain paging and paging fault                             | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-paging-and-paging-fault][Github Link]]                                |
-|   4 | Explain inode                                               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-inode][Github Link]]                                |
-|   5 | epoll VS poll VS select                                     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#epoll-vs-poll-vs-select][Github Link]]                                |
-|   6 | Explain how OS schedules processes                          | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-how-os-schedules-processes][Github Link]]                                |
-|   7 | Explain spinlock                                            | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-spinlock][Github Link]]                                |
-|   8 | Explain the general file system hierarchy of a Linux system | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-the-general-file-system-hierarchy-of-a-linux-system][Github Link]]                                |
-|   9 | Explain linux signal                                        | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-signal][Github Link]]                                |
-|  10 | Explain RAID                                                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_BASIC.org#explain-raid][Github Link]]                                |
+|   1 | Thead VS Process                                            | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#process-vs-thread][Github Link]]                                |
+|   2 | Explain virtual memory                                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-virtual-memory][Github Link]]                                |
+|   3 | Explain paging and paging fault                             | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-paging-and-paging-fault][Github Link]]                                |
+|   4 | Explain inode                                               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-inode][Github Link]]                                |
+|   5 | epoll VS poll VS select                                     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#epoll-vs-poll-vs-select][Github Link]]                                |
+|   6 | Explain how OS schedules processes                          | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-how-os-schedules-processes][Github Link]]                                |
+|   7 | Explain spinlock                                            | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-spinlock][Github Link]]                                |
+|   8 | Explain linux virtual filesystem                            | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-the-general-file-system-hierarchy-of-a-linux-system][Github Link]]                                |
+|   9 | Explain linux signal                                        | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-signal][Github Link]]                                |
+|  10 | Explain RAID                                                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-raid][Github Link]]                                |
 |  11 | Explain linux fork                                          |                                            |
 |-----+-------------------------------------------------------------+--------------------------------------------|
 |  12 | What is /proc directory?                                    |                                            |
@@ -62,10 +62,10 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Explain Top Linux Tooling
 | Num | Name                                    | Summary     |
 |-----+-----------------------------------------+-------------|
-|   1 | Explain the output of =vmstat= command  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_TOOL.org#explain-the-output-of-vmstat-command][Github Link]] |
-|   2 | Explain the output of =netstat= command | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_TOOL.org#explain-the-output-of-netstat-command][Github Link]] |
-|   3 | Explain the output of =free= command    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_TOOL.org#explain-the-output-of-free-command][Github Link]] |
-|   4 | Explain the output of =top= command     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_TOOL.org#explain-the-output-of-top-command][Github Link]] |
+|   1 | Explain the output of =vmstat= command  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-vmstat-command][Github Link]] |
+|   2 | Explain the output of =netstat= command | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-netstat-command][Github Link]] |
+|   3 | Explain the output of =free= command    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-free-command][Github Link]] |
+|   4 | Explain the output of =top= command     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-top-command][Github Link]] |
 |   5 | Explain the output of =fre= command     |             |
 |   6 | Explain the output of =sar= command     |             |
 #+TBLFM: $1=@-1$1+1;N
@@ -73,20 +73,20 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Top 15 Linux Workflow
 | Num | Name                                                      | Summary                                               |
 |-----+-----------------------------------------------------------+-------------------------------------------------------|
-|   1 | What happens, when opening https://www.google.com         | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-opening-httpswwwgooglecom][Github Link]]                                           |
-|   2 | What happens, when "ls -l *"                              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-ls--l-][Github Link]]. shell, expansion, fork                   |
-|   3 | What happens, when "Ctrl + c" in a terminal               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-ctrl--c-in-a-terminal][Github Link]]. i/o interrupt, SIGINT, sig handler       |
-|   4 | What happens, when "touch a.txt"                          | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-touch-atxt][Github Link]]                                           |
-|   5 | What happens, when you press power on button in a server? | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-you-press-power-on-button-in-a-server][Github Link]]. bios, mbr, grub, init, runlevel          |
-|   6 | What happens, when "cat /etc/hosts"                       | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#what-happens-when-cat-etchosts][Github Link]]                                           |
-|   7 | Explain how system call works                             | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-system-call-works][Github Link]]                                           |
-|   8 | Explain hostname to ip address mapping workflow           | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-hostname-to-ip-address-mapping-workflow][Github Link]]                                           |
-|   9 | Explain init.d workflow                                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-initd-workflow][Github Link]]                                           |
-|  10 | Explain how to build a linux release                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-to-build-a-linux-release][Github Link]]                                           |
-|  11 | Explain how kernel schedules process                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-kernel-schedules-process][Github Link]]                                           |
-|  12 | Explain how kernel read data from disk                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-kernel-read-data-from-disk][Github Link]]                                           |
-|  13 | Explain how systemtap works                               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org#explain-how-systemtap-works][Github Link]]                                           |
-|  14 | Explain how I/O interrupt works                           | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-sre-A4/LINUX_WORKFLOW.org##explain-how-io-interrupt-works][Github Link]]. Top half, bottom half, interrupt handler |
+|   1 | What happens, when opening https://www.google.com         | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#what-happens-when-opening-httpswwwgooglecom][Github Link]]                                           |
+|   2 | What happens, when "ls -l *"                              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#what-happens-when-ls--l-][Github Link]]. shell, expansion, fork                   |
+|   3 | What happens, when "Ctrl + c" in a terminal               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#what-happens-when-ctrl--c-in-a-terminal][Github Link]]. i/o interrupt, SIGINT, sig handler       |
+|   4 | What happens, when "touch a.txt"                          | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#what-happens-when-touch-atxt][Github Link]]                                           |
+|   5 | What happens, when you press power on button in a server? | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#what-happens-when-you-press-power-on-button-in-a-server][Github Link]]. bios, mbr, grub, init, runlevel          |
+|   6 | What happens, when "cat /etc/hosts"                       | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#what-happens-when-cat-etchosts][Github Link]]                                           |
+|   7 | Explain how system call works                             | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#explain-how-system-call-works][Github Link]]                                           |
+|   8 | Explain hostname to ip address mapping workflow           | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#explain-hostname-to-ip-address-mapping-workflow][Github Link]]                                           |
+|   9 | Explain init.d workflow                                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#explain-initd-workflow][Github Link]]                                           |
+|  10 | Explain how to build a linux release                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#explain-how-to-build-a-linux-release][Github Link]]                                           |
+|  11 | Explain how kernel schedules process                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#explain-how-kernel-schedules-process][Github Link]]                                           |
+|  12 | Explain how kernel read data from disk                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#explain-how-kernel-read-data-from-disk][Github Link]]                                           |
+|  13 | Explain how systemtap works                               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org#explain-how-systemtap-works][Github Link]]                                           |
+|  14 | Explain how I/O interrupt works                           | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org##explain-how-io-interrupt-works][Github Link]]. Top half, bottom half, interrupt handler |
 |  15 | Speed up I/O                                              | [[https://jvns.ca/blog/2016/01/23/sendfile-a-new-to-me-system-call/][Linux sendfile with zero-copy]], mmap: map file to ram  |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 20 Linux Advanced Questions
@@ -113,7 +113,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  19 | What's your wishlist for linux?                                      |                                                                     |
 |  20 | What's your ideal monitoring system in your imagination?             |                                                                     |
 #+TBLFM: $1=@-1$1+1;N
-
 ** Top 10 SRE Questions
 | Num | Name                                                                            | Summary                        |
 |-----+---------------------------------------------------------------------------------+--------------------------------|
@@ -126,33 +125,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   7 | [Migration] How you migrate legacy on-prem app to cloud-native in public cloud? |                                |
 |   8 | Incident Response and Management                                                |                                |
 |   9 | [Auto Scaling]                                                                  | [[https://medium.com/pinterest-engineering/auto-scaling-pinterest-df1d2beb4d64][Link: Auto scaling Pinterest]]   |
-#+TBLFM: $1=@-1$1+1;N
-** Top 20 Container Questions
-| Num | Name                                                            | Summary |
-|-----+-----------------------------------------------------------------+---------|
-|   1 | Compare to Linux process, what things containers can't support? |         |
-|   2 | How to sniff container's traffic?                               |         |
-|   3 | Explain the workflow of "docker stop $container_id"             |         |
-#+TBLFM: $1=@-1$1+1;N
-
-** Top 10 Networking Questions
-| Num | Name                                                               | Summary                  |
-|-----+--------------------------------------------------------------------+--------------------------|
-|   1 | Difference between switch and router?                              | L2, L3                   |
-|   2 | What is a DNS amplification attack?                                |                          |
-|   3 | Difference between L2 and L3 switch?                               |                          |
-|   4 | What is TCP SYN scan? How it's conducted?                          |                          |
-|   5 | Which port ICMP is using?                                          | Neither TCP or UDP. [[https://learningnetwork.cisco.com/thread/120555][Link]] |
-|   6 | Proxy server vs Loadbalancer. Proxy server vs Reverse proxy server |                          |
-|   7 | Brief introduction about 802.1x                                    |                          |
-|   8 | List =all methods= which can stop one ip ssh to the server         |                          |
-|   9 | Explain how iptable routing rules works                            |                          |
-#+TBLFM: $1=@-1$1+1;N
-** Top 10 Security Questions
-| Num | Name                      | Summary |
-|-----+---------------------------+---------|
-|   1 | How HTTPS works           |         |
-|   2 | Explain X509 certificates |         |
 #+TBLFM: $1=@-1$1+1;N
 ** Good Mindsets
 | Num | Name                            | Summary                                  |
@@ -167,6 +139,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   8 | Automation VS Convention        |                                          |
 |   9 | [[https://en.wikipedia.org/wiki/Principle_of_least_privilege][Principle Of Least Privilege]]    |                                          |
 |  10 | Design Tools VS Use Tools       | Operational knowledge is not good enough |
+#+TBLFM: $1=@-1$1+1;N
+** Top 20 Container Questions
+| Num | Name                                                            | Summary |
+|-----+-----------------------------------------------------------------+---------|
+|   1 | Compare to Linux process, what things containers can't support? |         |
+|   2 | How to sniff container's traffic?                               |         |
+|   3 | Explain the workflow of "docker stop $container_id"             |         |
 #+TBLFM: $1=@-1$1+1;N
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -192,8 +171,8 @@ https://syedali.net/engineer-interview-questions/
 #+LATEX_HEADER: \fancyhf{}
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
-#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-sre-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-sre-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-sre-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-sre-A4}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-linuxinternals-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-linuxinternals-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-linuxinternals-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-linuxinternals-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)

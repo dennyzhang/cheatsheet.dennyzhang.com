@@ -1,0 +1,45 @@
+* TOP Behavior Questions                                          :Interview:
+:PROPERTIES:
+:type:     interview
+:export_file_name: cheatsheet-linuxbasic-A4.pdf
+:END:
+#+STARTUP: content
+#+TAGS: noexport(n)
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-behavior-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+** [Intro] Tell me about yourself?
+- Narrow down
+
+I'd love to tell you about myself.
+
+What part of my background or areas do you think it's the most important for this job?
+
+I'd like to share more about those areas.
+
+So you can make a good decision about whether I would be a good fit for the team or company.
+** [Closing] Do you have some question for me or this position?
+- Name one of biggest achievement the team has made. And Looking forward to next year, what would be the main goal?
+- What is a typical day for you?
+- What is the key to be successful in your position?
+** [Goal] Why you want to change your job?
+** [Challenge] Tell me the most challenging project which you have done?
+** [Experience] Tell me a project which you have failed
+** [Conflict] How do you resolve conflicts with your manager/teammates?
+** [Failure] How do you handle missing a deadline or project delay?
+** [Goal] Why XX company? Why this position?
+** [Failure] Tell me a time you messed up/ took at risk / failed / feel frustrated?
+** [Ambiguity] Tell me a time you had to make a decision without data.
+** [Experience] What areas are your technical strength?
+** [Experience] Tell me a time you step outside of your job scope and solved a problem
+** [Experience] Tell me about a time you received negative feedback from your manager

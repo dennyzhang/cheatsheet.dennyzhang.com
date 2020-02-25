@@ -8,7 +8,7 @@
 #+EXPORT_EXCLUDE_TAGS: exclude noexport
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-linuxworkflow-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-linuxinternals-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
@@ -29,7 +29,7 @@
 
 ** What happens, when you press power on button in a server?
 
-[[image-blog:Linux Workflow][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-sre-A4/boot-seq.png]]
+[[image-blog:Linux Workflow][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-linuxinternals-A4/boot-seq.png]]
 
 - MBR: master boot record, also known as first sector of the hard disk
 - Initial RAM disk: The initramfs filesystem image contains programs and binary files that perform all actions needed to mount the proper root filesystem
@@ -70,6 +70,13 @@ Therefore, interrupt handler is divided into top half and bottom half.
 [[https://en.wikipedia.org/wiki/Interrupt][Wikipedia: Interrupt]]
 
 ** Explain how system call works
+- System call is a middle layer between hardware and user-space processes
+- Use-space application use POSIX API to invoke system call.
+- System call is triggered as a soft interrupt with system call handler
+- Each system call has a system call number.
+- Linux provides a set of macros for wrapping access to system calls: _syscalln(). 
+- For macros of _syscalln(), n is between 0 and 6. It shows the number of parameters passed into this syscall.
+
 Types of System Calls:
 
 - Process control: end, abort, create, terminate, allocate and free memory.
@@ -78,7 +85,7 @@ Types of System Calls:
 - Information maintenance
 - Communication
 
-[[image-blog:SRE: Linux Basic Concepts][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-sre-A4/system-call.png]]
+[[image-blog:SRE: Linux Basic Concepts][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-linuxinternals-A4/system-call.png]]
 
 [[https://www.geeksforgeeks.org/introduction-of-system-call/][Link: Introduction of System Call]]
 ** Explain how systemtap works

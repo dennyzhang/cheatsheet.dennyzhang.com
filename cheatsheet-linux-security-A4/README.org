@@ -59,6 +59,12 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Chown
 | Name                         | Comment           |
 |------------------------------+-------------------|
+** More Linux Security Enhancement
+| Name                | Comment |
+|---------------------+---------|
+| Extended attributes |         |
+| Linux capabilities |         |
+| Selinux             |         |
 ** Products
 | Name       | Comment                                                                                                 |
 |------------+---------------------------------------------------------------------------------------------------------|

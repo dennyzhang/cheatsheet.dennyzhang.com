@@ -1,14 +1,14 @@
 * SRE: Linux Basic Concepts                                       :Interview:
 :PROPERTIES:
 :type:     interview
-:export_file_name: cheatsheet-linuxbasic-A4.pdf
+:export_file_name: cheatsheet-linuxinternals-A4.pdf
 :END:
 #+STARTUP: content
 #+TAGS: noexport(n)
 #+EXPORT_EXCLUDE_TAGS: exclude noexport
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-linuxbasic-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-linuxinternals-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
 <div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
@@ -95,7 +95,7 @@ About swap memory:
 - MMU(memory management unit): a hardware device to map from virtual memory address to phsyical address.
 - Page fault: access memory which is not stored in RAM. So locate the data in virtual memory, then transfer it from storage device to RAM.
 
-[[image-blog:SRE: Linux Basic Concepts][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-sre-A4/page-fault.png]]
+[[image-blog:SRE: Linux Basic Concepts][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-linuxinternals-A4/page-fault.png]]
 
 [[https://en.wikipedia.org/wiki/Page_fault][Wikipedia: Page fault]]
 
@@ -106,7 +106,7 @@ Use case: detect new I/O events from many FDs
 ** TODO Explain how OS schedules processes
 - Process Scheduling: determine which process is in the ready state, and should be moved to the running state
 
-[[image-blog:SRE: Linux Basic Concepts][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-sre-A4/process-scheduling.png]]
+[[image-blog:SRE: Linux Basic Concepts][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-linuxinternals-A4/process-scheduling.png]]
 
 Process context switch:
 - Store process context to process table
@@ -120,7 +120,7 @@ Use case: Busy waiting is a good idea when you know the wait is not too long. Sp
 *** What RAID is?
 *** How to choose RAID level?
 ** TODO Explain the general file system hierarchy of a Linux system
-[[image-blog:SRE: Linux Basic Concepts][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-sre-A4/layeredfilesystem.jpg]]
+[[image-blog:SRE: Linux Basic Concepts][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-linuxinternals-A4/layeredfilesystem.jpg]]
 
 [[https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/12_FileSystemImplementation.html][Link: File-System Implementation]]
 ** TODO Explain signal

@@ -1,0 +1,619 @@
+* SRE: Linux Toolings                                             :Interview:
+:PROPERTIES:
+:type:     interview
+:export_file_name: cheatsheet-linuxbasic-A4.pdf
+:END:
+#+STARTUP: content
+#+TAGS: noexport(n)
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-linuxbasic-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+** DONE Explain the output of free command
+   CLOSED: [2020-02-27 Thu 23:51]
+#+BEGIN_EXAMPLE
+[ec2-user@ip-172-31-29-101 ~]$ free -ml
+              total        used        free      shared  buff/cache   available
+Mem:            983         557          85         113         340         169
+Low:            983         898          85
+High:             0           0           0
+Swap:             0           0           0
+#+END_EXAMPLE
+*** What is shared(shared Memory) in the free output?
+- Shared: Memory taken by the tmpfs file systems.
+
+- tmpfs: a mounted file system, with data stored in RAM.
+*** In the output of free command, why free is different from *available*?
+*** In the output of free command, what is Low and High?
+- On a 32-bit Linux based operating system, the CPU can address a maximum of 4GB of memory. (2^32 = 4GB)
+- On 32-bits, kernel itself (including its active modules) can only make use of low memory.
+- On a 64-bit computer there will be no values shown for high memory.
+- High memory is the part of physical memory in a computer which is not directly mapped by the page tables of its operating system kernel.
+*** man free
+#+BEGIN_EXAMPLE
+[ec2-user@ip-172-31-29-101 ~]$ man free
+FREE(1)                                                                                         User Commands                                                                                         FREE(1)
+
+NAME
+       free - Display amount of free and used memory in the system
+
+SYNOPSIS
+       free [options]
+
+DESCRIPTION
+       free  displays  the  total amount of free and used physical and swap memory in the system, as well as the buffers and caches used by the kernel. The information is gathered by parsing /proc/meminfo.
+       The displayed columns are:
+
+       total  Total installed memory (MemTotal and SwapTotal in /proc/meminfo)
+
+       used   Used memory (calculated as total - free - buffers - cache)
+
+       free   Unused memory (MemFree and SwapFree in /proc/meminfo)
+
+       shared Memory used (mostly) by tmpfs (Shmem in /proc/meminfo, available on kernels 2.6.32, displayed as zero if not available)
+
+       buffers
+              Memory used by kernel buffers (Buffers in /proc/meminfo)
+
+       cache  Memory used by the page cache and slabs (Cached and SReclaimable in /proc/meminfo)
+
+       buff/cache
+              Sum of buffers and cache
+
+       available
+              Estimation of how much memory is available for starting new applications, without swapping. Unlike the data provided by the cache or free fields, this field takes into account page cache  and
+              also  that  not  all reclaimable memory slabs will be reclaimed due to items being in use (MemAvailable in /proc/meminfo, available on kernels 3.14, emulated on kernels 2.6.27+, otherwise the
+              same as free)
+
+OPTIONS
+       -b, --bytes
+              Display the amount of memory in bytes.
+
+       -k, --kilo
+              Display the amount of memory in kilobytes.  This is the default.
+
+       -m, --mega
+              Display the amount of memory in megabytes.
+
+       -g, --giga
+              Display the amount of memory in gigabytes.
+
+       --tera Display the amount of memory in terabytes.
+
+       --peta Display the amount of memory in petabytes.
+
+       -h, --human
+              Show all output fields automatically scaled to shortest three digit unit and display the units of print out.  Following units are used.
+
+                B = bytes
+                K = kilos
+                M = megas
+                G = gigas
+                T = teras
+                P = petas
+
+              If unit is missing, and you have exabyte of RAM or swap, the number is in terabytes and columns might not be aligned with header.
+
+       -w, --wide
+              Switch to the wide mode. The wide mode produces lines longer than 80 characters. In this mode buffers and cache are reported in two separate columns.
+
+       -c, --count count
+              Display the result count times.  Requires the -s option.
+
+       -l, --lohi
+              Show detailed low and high memory statistics.
+
+       -s, --seconds seconds
+              Continuously display the result delay seconds apart.  You may actually specify any floating point number for delay, usleep(3) is used for microsecond resolution delay times.
+
+       --si   Use power of 1000 not 1024.
+
+       -t, --total
+              Display a line showing the column totals.
+
+       --help Print help.
+
+       -V, --version
+              Display version information.
+
+FILES
+       /proc/meminfo
+              memory information
+
+SEE ALSO
+       ps(1), slabtop(1), top(1), vmstat(8).
+
+AUTHORS
+       Written by Brian Edmonds.
+
+REPORTING BUGS
+       Please send bug reports to ⟨procps@freelists.org⟩
+
+procps-ng                                                                                         July 2014                                                                                           FREE(1)
+#+END_EXAMPLE
+** HALF Explain the output of vmstat command
+st: time stolen from this vm by the hypervisor
+
+#+BEGIN_EXAMPLE
+[ec2-user@ip-172-31-17-39 ~]$ vmstat
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0  89348  37988 302376    0    0     8    25   25   64  4  1 95  0  0
+#+END_EXAMPLE
+
+man vmstat
+#+BEGIN_EXAMPLE
+FIELD DESCRIPTION FOR VM MODE
+   Procs
+       r: The number of runnable processes (running or waiting for run time).
+       b: The number of processes in uninterruptible sleep.
+
+   Memory
+       swpd: the amount of virtual memory used.
+       free: the amount of idle memory.
+       buff: the amount of memory used as buffers.
+       cache: the amount of memory used as cache.
+       inact: the amount of inactive memory.  (-a option)
+       active: the amount of active memory.  (-a option)
+
+   Swap
+       si: Amount of memory swapped in from disk (/s).
+       so: Amount of memory swapped to disk (/s).
+
+   IO
+       bi: Blocks received from a block device (blocks/s).
+       bo: Blocks sent to a block device (blocks/s).
+
+   System
+       in: The number of interrupts per second, including the clock.
+       cs: The number of context switches per second.
+
+   CPU
+       These are percentages of total CPU time.
+       us: Time spent running non-kernel code.  (user time, including nice time)
+       sy: Time spent running kernel code.  (system time)
+       id: Time spent idle.  Prior to Linux 2.5.41, this includes IO-wait time.
+       wa: Time spent waiting for IO.  Prior to Linux 2.5.41, included in idle.
+       st: Time stolen from a virtual machine.  Prior to Linux 2.6.11, unknown.
+
+FIELD DESCRIPTION FOR DISK MODE
+   Reads
+       total: Total reads completed successfully
+       merged: grouped reads (resulting in one I/O)
+       sectors: Sectors read successfully
+       ms: milliseconds spent reading
+   Writes
+       total: Total writes completed successfully
+       merged: grouped writes (resulting in one I/O)
+       sectors: Sectors written successfully
+       merged: grouped writes (resulting in one I/O)
+       sectors: Sectors written successfully
+       ms: milliseconds spent writing
+
+   IO
+       cur: I/O in progress
+       s: seconds spent for I/O
+
+FIELD DESCRIPTION FOR DISK PARTITION MODE
+       reads: Total number of reads issued to this partition
+       read sectors: Total read sectors for partition
+       writes : Total number of writes issued to this partition
+       requested writes: Total number of write requests made for partition
+
+FIELD DESCRIPTION FOR SLAB MODE
+       cache: Cache name
+       num: Number of currently active objects
+       total: Total number of available objects
+       size: Size of each object
+       pages: Number of pages with at least one active object
+#+END_EXAMPLE
+** HALF Explain the output of netstat command
+| Socket Type    | Summary                                                          |
+|----------------+------------------------------------------------------------------|
+| SOCK_DGRAM     | The socket is used in Datagram (connectionless) mode. Mostly UDP |
+| SOCK_STREAM    | This is a stream (connection) socket. Mostly TCP                 |
+|----------------+------------------------------------------------------------------|
+| SOCK_RAW       | The socket is used as a raw socket.                              |
+| SOCK_RDM       | This one serves reliably-delivered messages.                     |
+| SOCK_SEQPACKET | This is a sequential packet socket.                              |
+| SOCK_PACKET    | Raw interface access socket.                                     |
+| UNKNOWN        | Reversed for future usage.                                       |
+
+#+BEGIN_EXAMPLE
+[ec2-user@ip-172-31-29-101 ~]$ netstat
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 ip-172-31-29-101.us:ssh i9eo-ovh.xyz:65515      SYN_RECV
+tcp        0      0 ip-172-17-0-1.us-:38396 ip-172-17-0-2.us:us-cli TIME_WAIT
+tcp        0      0 ip-172-31-29-101.:51606 52.95.16.42:https       ESTABLISHED
+tcp        0    236 ip-172-31-29-101.us:ssh 207.141.66.97:4874      ESTABLISHED
+tcp        0      0 ip-172-17-0-1.us-:33352 ip-172-17-0-8.us:us-srv TIME_WAIT
+tcp        0      0 ip-172-31-29-101.:57728 52.95.16.40:https       ESTABLISHED
+tcp        0      0 ip-172-31-29-101.us:ssh 4.15.78.35:50942        ESTABLISHED
+tcp6       0      0 ip-172-17-0-1.us:us-cli ip-172-17-0-7.us-:44420 TIME_WAIT
+tcp6       0      0 localhost6:45930        localhost6:51678        TIME_WAIT
+tcp6       0      0 localhost6:45924        localhost6:51678        TIME_WAIT
+tcp6       0      0 ip-172-17-0-1.us-e:8084 ip-172-17-0-7.us-:50230 TIME_WAIT
+tcp6       0      0 localhost6:45954        localhost6:51678        TIME_WAIT
+tcp6       0      0 ip-172-17-0-1.us:us-srv ip-172-17-0-7.us-:56618 TIME_WAIT
+tcp6       0      0 ip-172-17-0-1.us:us-cli ip-172-17-0-7.us-:44436 TIME_WAIT
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ]         DGRAM                    11852    /var/run/chrony/chronyd.sock
+unix  2      [ ]         DGRAM                    10085    /run/systemd/shutdownd
+unix  3      [ ]         DGRAM                    7826     /run/systemd/notify
+unix  2      [ ]         DGRAM                    7828     /run/systemd/cgroups-agent
+unix  6      [ ]         DGRAM                    7839     /run/systemd/journal/socket
+unix  15     [ ]         DGRAM                    7841     /dev/log
+unix  3      [ ]         STREAM     CONNECTED     16292
+unix  3      [ ]         STREAM     CONNECTED     15020    /run/containerd/containerd.sock
+unix  3      [ ]         STREAM     CONNECTED     16381    @/containerd-shim/moby/f32de3c289f2ed4e13b3cd559a30cbc677e88635cfc8d5c721b647f29683a4b4/shim.sock@
+unix  3      [ ]         STREAM     CONNECTED     13743
+unix  3      [ ]         STREAM     CONNECTED     15019    /run/containerd/containerd.sock
+unix  3      [ ]         STREAM     CONNECTED     16556    /var/run/docker.sock
+unix  3      [ ]         STREAM     CONNECTED     16541    /var/run/docker.sock
+unix  2      [ ]         DGRAM                    12588
+unix  3      [ ]         STREAM     CONNECTED     23315
+unix  3      [ ]         DGRAM                    10921
+unix  3      [ ]         STREAM     CONNECTED     11767
+unix  3      [ ]         STREAM     CONNECTED     16550    /var/run/docker.sock
+unix  3      [ ]         STREAM     CONNECTED     11490    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     16531
+unix  3      [ ]         STREAM     CONNECTED     16547    /var/run/docker.sock
+unix  3      [ ]         STREAM     CONNECTED     13744
+unix  2      [ ]         DGRAM                    6913418
+unix  3      [ ]         STREAM     CONNECTED     16534
+unix  3      [ ]         STREAM     CONNECTED     13747
+#+END_EXAMPLE
+
+*** man netstat
+#+BEGIN_EXAMPLE
+[ec2-user@ip-172-31-29-101 ~]$ man netstat
+NETSTAT(8)                                                     Linux System Administrator's Manual                                                    NETSTAT(8)
+
+
+
+NAME
+       netstat - Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
+
+
+SYNOPSIS
+       netstat [address_family_options] [--tcp|-t] [--udp|-u] [--udplite|-U] [--sctp|-S] [--raw|-w] [--listening|-l] [--all|-a] [--numeric|-n] [--numeric-hosts]
+       [--numeric-ports] [--numeric-users] [--symbolic|-N] [--extend|-e[--extend|-e]] [--timers|-o] [--program|-p] [--verbose|-v] [--continuous|-c]  [--wide|-W]
+       [delay]
+
+       netstat    {--route|-r}   [address_family_options]   [--extend|-e[--extend|-e]]   [--verbose|-v]   [--numeric|-n]   [--numeric-hosts]   [--numeric-ports]
+       [--numeric-users] [--continuous|-c] [delay]
+
+       netstat {--interfaces|-I|-i} [--all|-a] [--extend|-e] [--verbose|-v] [--program|-p] [--numeric|-n] [--numeric-hosts] [--numeric-ports]  [--numeric-users]
+       [--continuous|-c] [delay]
+
+       netstat {--groups|-g} [--numeric|-n] [--numeric-hosts] [--numeric-ports] [--numeric-users] [--continuous|-c] [delay]
+
+       netstat {--masquerade|-M} [--extend|-e] [--numeric|-n] [--numeric-hosts] [--numeric-ports] [--numeric-users] [--continuous|-c] [delay]
+
+       netstat {--statistics|-s} [--tcp|-t] [--udp|-u] [--udplite|-U] [--sctp|-S] [--raw|-w] [delay]
+
+       netstat {--version|-V}
+
+       netstat {--help|-h}
+
+       address_family_options:
+
+       [-4|--inet]  [-6|--inet6]  [--protocol={inet,inet6,unix,ipx,ax25,netrom,ddp,  ... } ] [--unix|-x] [--inet|--ip|--tcpip] [--ax25] [--x25] [--rose] [--ash]
+       [--ipx] [--netrom] [--ddp|--appletalk] [--econet|--ec]
+
+
+NOTES
+       This program is obsolete.  Replacement for netstat is ss.  Replacement for netstat -r is ip route.  Replacement for netstat -i is ip -s  link.   Replace‐
+       ment for netstat -g is ip maddr.
+
+
+DESCRIPTION
+       Netstat prints information about the Linux networking subsystem.  The type of information printed is controlled by the first argument, as follows:
+
+   (none)
+       By  default, netstat displays a list of open sockets.  If you don't specify any address families, then the active sockets of all configured address fami‐
+       lies will be printed.
+
+   --route , -r
+       Display the kernel routing tables. See the description in route(8) for details.  netstat -r and route -e produce the same output.
+
+   --groups , -g
+       Display multicast group membership information for IPv4 and IPv6.
+
+   --interfaces=iface , -I=iface , -i
+       Display a table of all network interfaces, or the specified iface.
+
+   --masquerade , -M
+       Display a list of masqueraded connections.
+
+   --statistics , -s
+       Display summary statistics for each protocol.
+
+OPTIONS
+   --verbose , -v
+       Tell the user what is going on by being verbose. Especially print some useful information about unconfigured address families.
+
+   --wide , -W
+       Do not truncate IP addresses by using output as wide as needed. This is optional for now to not break existing scripts.
+
+   --numeric , -n
+       Show numerical addresses instead of trying to determine symbolic host, port or user names.
+
+   --numeric-hosts
+       shows numerical host addresses but does not affect the resolution of port or user names.
+
+   --numeric-ports
+       shows numerical port numbers but does not affect the resolution of host or user names.
+
+   --numeric-users
+       shows numerical user IDs but does not affect the resolution of host or port names.
+
+
+   --protocol=family , -A
+       Specifies the address families (perhaps better described as low level protocols) for which connections are to be shown.  family is a  comma  (',')  sepa‐
+       rated  list  of  address  family  keywords  like inet, inet6, unix, ipx, ax25, netrom, econet, and ddp.  This has the same effect as using the --inet|-4,
+       --inet6|-6, --unix|-x, --ipx, --ax25, --netrom, and --ddp options.
+
+       The address family inet (Iv4) includes raw, udp, udplite and tcp protocol sockets.
+
+   -c, --continuous
+       This will cause netstat to print the selected information every second continuously.
+
+   -e, --extend
+       Display additional information.  Use this option twice for maximum detail.
+
+   -o, --timers
+       Include information related to networking timers.
+
+   -p, --program
+       Show the PID and name of the program to which each socket belongs.
+
+   -l, --listening
+       Show only listening sockets.  (These are omitted by default.)
+
+   -a, --all
+       Show both listening and non-listening (for TCP this means established connections) sockets.  With the --interfaces option, show interfaces that  are  not
+       up
+
+   -F
+       Print routing information from the FIB.  (This is the default.)
+
+   -C
+       Print routing information from the route cache.
+
+   delay
+       Netstat will cycle printing through statistics every delay seconds.
+
+OUTPUT
+   Active Internet connections (TCP, UDP, UDPLite, raw)
+   Proto
+       The protocol (tcp, udp, udpl, raw) used by the socket.
+
+   Recv-Q
+       Established: The count of bytes not copied by the user program connected to this socket.  Listening: Since Kernel 2.6.18 this column contains the current
+       syn backlog.
+
+   Send-Q
+       Established: The count of bytes not acknowledged by the remote host.  Listening: Since Kernel 2.6.18 this column contains the maximum  size  of  the  syn
+       backlog.
+
+   Local Address
+       Address  and  port number of the local end of the socket.  Unless the --numeric (-n) option is specified, the socket address is resolved to its canonical
+       host name (FQDN), and the port number is translated into the corresponding service name.
+
+   Foreign Address
+       Address and port number of the remote end of the socket.  Analogous to "Local Address."
+
+   State
+       The state of the socket. Since there are no states in raw mode and usually no states used in UDP and UDPLite, this column may  be  left  blank.  Normally
+       this can be one of several values:
+
+       ESTABLISHED
+              The socket has an established connection.
+
+       SYN_SENT
+              The socket is actively attempting to establish a connection.
+
+       SYN_RECV
+              A connection request has been received from the network.
+
+       FIN_WAIT1
+              The socket is closed, and the connection is shutting down.
+
+       FIN_WAIT2
+              Connection is closed, and the socket is waiting for a shutdown from the remote end.
+
+       TIME_WAIT
+              The socket is waiting after close to handle packets still in the network.
+
+       CLOSE  The socket is not being used.
+
+       CLOSE_WAIT
+              The remote end has shut down, waiting for the socket to close.
+
+       LAST_ACK
+              The remote end has shut down, and the socket is closed. Waiting for acknowledgement.
+
+       LISTEN The  socket  is  listening for incoming connections.  Such sockets are not included in the output unless you specify the --listening (-l) or --all
+              (-a) option.
+
+       CLOSING
+              Both sockets are shut down but we still don't have all our data sent.
+
+       UNKNOWN
+              The state of the socket is unknown.
+
+   User
+       The username or the user id (UID) of the owner of the socket.
+
+   PID/Program name
+       Slash-separated pair of the process id (PID) and process name of the process that owns the socket.  --program causes this column  to  be  included.   You
+       will also need superuser privileges to see this information on sockets you don't own.  This identification information is not yet available for IPX sock‐
+       ets.
+
+   Timer
+       (this needs to be written)
+
+   Active UNIX domain Sockets
+   Proto
+       The protocol (usually unix) used by the socket.
+
+   RefCnt
+       The reference count (i.e. attached processes via this socket).
+
+   Flags
+       The flags displayed is SO_ACCEPTON (displayed as ACC), SO_WAITDATA (W) or SO_NOSPACE (N).  SO_ACCECPTON is used on unconnected sockets  if  their  corre‐
+       sponding processes are waiting for a connect request. The other flags are not of normal interest.
+
+   Type
+       There are several types of socket access:
+
+       SOCK_DGRAM
+              The socket is used in Datagram (connectionless) mode.
+
+       SOCK_STREAM
+              This is a stream (connection) socket.
+
+       SOCK_RAW
+              The socket is used as a raw socket.
+
+       SOCK_RDM
+              This one serves reliably-delivered messages.
+
+       SOCK_SEQPACKET
+              This is a sequential packet socket.
+
+       SOCK_PACKET
+              Raw interface access socket.
+
+       UNKNOWN
+              Who ever knows what the future will bring us - just fill in here :-)
+
+   State
+       This field will contain one of the following Keywords:
+
+       FREE   The socket is not allocated
+
+       LISTENING
+              The  socket is listening for a connection request.  Such sockets are only included in the output if you specify the --listening (-l) or --all (-a)
+              option.
+
+       CONNECTING
+              The socket is about to establish a connection.
+
+       CONNECTED
+              The socket is connected.
+
+       DISCONNECTING
+              The socket is disconnecting.
+
+       (empty)
+              The socket is not connected to another one.
+
+       UNKNOWN
+              This state should never happen.
+
+   PID/Program name
+       Process ID (PID) and process name of the process that has the socket open.  More info available in Active Internet connections section written above.
+
+   Path
+       This is the path name as which the corresponding processes attached to the socket.
+
+   Active IPX sockets
+       (this needs to be done by somebody who knows it)
+
+   Active NET/ROM sockets
+       (this needs to be done by somebody who knows it)
+
+   Active AX.25 sockets
+       (this needs to be done by somebody who knows it)
+
+FILES
+       /etc/services -- The services translation file
+
+       /proc -- Mount point for the proc filesystem, which gives access to kernel status information via the following files.
+
+       /proc/net/dev -- device information
+
+       /proc/net/raw -- raw socket information
+
+       /proc/net/tcp -- TCP socket information
+
+       /proc/net/udp -- UDP socket information
+
+       /proc/net/udplite -- UDPLite socket information
+
+       /proc/net/igmp -- IGMP multicast information
+
+       /proc/net/unix -- Unix domain socket information
+
+       /proc/net/ipx -- IPX socket information
+
+       /proc/net/ax25 -- AX25 socket information
+
+       /proc/net/appletalk -- DDP (appletalk) socket information
+
+       /proc/net/nr -- NET/ROM socket information
+
+       /proc/net/route -- IP routing information
+
+       /proc/net/ax25_route -- AX25 routing information
+
+       /proc/net/ipx_route -- IPX routing information
+
+       /proc/net/nr_nodes -- NET/ROM nodelist
+
+       /proc/net/nr_neigh -- NET/ROM neighbours
+
+       /proc/net/ip_masquerade -- masqueraded connections
+
+       /proc/net/snmp -- statistics
+
+SEE ALSO
+       route(8), ifconfig(8), iptables(8), proc(5) ss(8) ip(8)
+
+BUGS
+       Occasionally strange information may appear if a socket changes as it is viewed. This is unlikely to occur.
+
+AUTHORS
+       The netstat user interface was written by Fred Baumgarten <dc6iq@insu1.etec.uni-karlsruhe.de>, the man page basically by Matt Welsh <mdw@tc.cornell.edu>.
+       It  was  updated  by  Alan  Cox  <Alan.Cox@linux.org>,  updated  again  by Tuan Hoang <tqhoang@bigfoot.com>. The man page and the command included in the
+       net-tools package is totally rewritten by Bernd Eckenfels <ecki@linux.de>.  UDPLite options were added by Brian Micek <bmicek@gmail.com>
+
+
+
+net-tools                                                                  2012-09-15                                                                 NETSTAT(8)
+#+END_EXAMPLE
+** TODO Explain the output of top command
+#+BEGIN_EXAMPLE
+top - 07:17:24 up 6 days, 23:30,  1 user,  load average: 0.01, 0.04, 0.02
+Tasks: 159 total,   1 running, 132 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.7 us,  0.7 sy,  0.0 ni, 98.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :  1006964 total,    84664 free,   573368 used,   348932 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.   171928 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+ 3523 root      20   0  824540  28696   2380 S  1.3  2.8 112:32.30 containerd
+ 3907 root      20   0  871936  56360   5412 S  0.7  5.6  40:22.98 dockerd
+ 4508 root      20   0  137136  19316   8836 S  0.3  1.9  19:44.64 agent
+    1 root      20   0  125644   4260   2680 S  0.0  0.4   2:34.28 systemd
+    2 root      20   0       0      0      0 S  0.0  0.0   0:00.00 kthreadd
+    4 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 kworker/0:0H
+    5 root      20   0       0      0      0 I  0.0  0.0   0:04.02 kworker/u30:0
+    6 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 mm_percpu_wq
+    7 root      20   0       0      0      0 S  0.0  0.0   1:15.18 ksoftirqd/0
+    8 root      20   0       0      0      0 I  0.0  0.0   0:46.06 rcu_sched
+    9 root      20   0       0      0      0 I  0.0  0.0   0:00.00 rcu_bh
+   10 root      rt   0       0      0      0 S  0.0  0.0   0:00.00 migration/0
+#+END_EXAMPLE

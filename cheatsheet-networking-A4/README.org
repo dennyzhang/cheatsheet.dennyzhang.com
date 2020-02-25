@@ -1,4 +1,4 @@
-* CheatSheet: Linux Networking                                        :Linux:
+* CheatSheet: Linux Networking                                        :Interview:
 :PROPERTIES:
 :type:     linux, networking
 :export_file_name: cheatsheet-networking-A4.pdf
@@ -16,11 +16,24 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-networking-A4/cheatsheet-networking-A4.pdf][cheatsheet-networking-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/linux/][linux]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-networking-A4/cheatsheet-networking-A4.pdf][cheatsheet-networking-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-networking-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-file-A4][CheatSheet: Linux File]], [[https://cheatsheet.dennyzhang.com/cheatsheet-process-A4][CheatSheet: Linux Process]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** Top 10 Networking Questions
+| Num | Name                                                               | Summary                  |
+|-----+--------------------------------------------------------------------+--------------------------|
+|   1 | Difference between switch and router?                              | L2, L3                   |
+|   2 | What is a DNS amplification attack?                                |                          |
+|   3 | Difference between L2 and L3 switch?                               |                          |
+|   4 | What is TCP SYN scan? How it's conducted?                          |                          |
+|   5 | Which port ICMP is using?                                          | Neither TCP or UDP. [[https://learningnetwork.cisco.com/thread/120555][Link]] |
+|   6 | Proxy server vs Loadbalancer. Proxy server vs Reverse proxy server |                          |
+|   7 | Brief introduction about 802.1x                                    |                          |
+|   8 | List =all methods= which can stop one ip ssh to the server         |                          |
+|   9 | Explain how iptable routing rules works                            |                          |
+#+TBLFM: $1=@-1$1+1;N
 ** Linux Networking
 | Name                          | Comment                                                                         |
 |-------------------------------+---------------------------------------------------------------------------------|
@@ -33,6 +46,8 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** HTTP
 | Name                                  | Command                                                     |
 |---------------------------------------+-------------------------------------------------------------|
+| How HTTPS works                       |                                                             |
+| Explain X509 certificates             |                                                             |
 | See HTTP request statistics           | =httpstat https://www.google.com= (=brew install httpstat=) |
 | Monitor HTTP URLs                     | [[http://uptimerobot.com][SaaS: uptimerobot.com]]                                       |
 | Examine web page performance          | [[https://www.pingdom.com/][SaaS: pingdom.com]]                                           |
