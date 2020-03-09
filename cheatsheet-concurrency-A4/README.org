@@ -37,17 +37,23 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  10 | [[https://en.wikipedia.org/wiki/Futex][futex]]                       | A fast userspace mutex                                                            |
 |  11 | Starvation(Lived Lock)      | When a thread waits for an indefinite period of time to get the required resource |
 |-----+-----------------------------+-----------------------------------------------------------------------------------|
-|  12 | Recursive Mutexes           |                                                                                   |
+|  12 | Recursive Mutexes           | Re-entrant lock                                                                   |
 |  13 | Reader/Writer Mutexes       |                                                                                   |
+|  14 | Dead lock                   |                                                                                   |
 |-----+-----------------------------+-----------------------------------------------------------------------------------|
-|  14 | Memory barrier              |                                                                                   |
-|  15 | Callbacks                   |                                                                                   |
-|  16 | Per-CPU locking             |                                                                                   |
-|  17 | Dead lock                   |                                                                                   |
+|  15 | Memory barrier              |                                                                                   |
+|  16 | Callbacks                   |                                                                                   |
+|  17 | Per-CPU locking             |                                                                                   |
 |  18 | Asynchronous I/O            |                                                                                   |
 |-----+-----------------------------+-----------------------------------------------------------------------------------|
 |  19 | [[https://randu.org/tutorials/threads/][Thread Design Patterns]]      | Thread pool, Peer and Pipeline                                                    |
 |  20 | Actor model vs CSP model    |                                                                                   |
+#+TBLFM: $1=@-1$1+1;N
+** Concurrent Implementation In Common Languages
+| Num | Name                          |                                        |
+|-----+-------------------------------+----------------------------------------|
+|   1 | Java concurrent source code   | [[https://github.com/openjdk-mirror/jdk7u-jdk/tree/master/src/share/classes/java/util/concurrent][Github: jdk7u-jdk/src/.../concurrent]]   |
+|   2 | Golang concurrent source code | [[https://github.com/golang/go/tree/master/src/sync][Github: golang/go/tree/master/src/sync]] |
 #+TBLFM: $1=@-1$1+1;N
 ** Well-known Concurrent Problems
 | Num | Name                        |                                                                        |
@@ -61,21 +67,22 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   7 | [[https://en.wikipedia.org/wiki/Guarded_suspension][Guarded suspension]]          |                                                                        |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 10 Concurrency Design Problems
-| Num | Name                                                      |                                    |
-|-----+-----------------------------------------------------------+------------------------------------|
-|   1 | How to implement a spinlock                               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-spinlock][Github: link]]                       |
-|   2 | How to implement a mutex                                  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-mutex][Github: link]]                       |
-|   3 | How to implement a condition variable                     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-condition-variable][Github: link]]                       |
-|   4 | How to implement a reader-writer locker                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-reader-writer-locker][Github: link]]                       |
-|   5 | How to implement a bounded blocking queue                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-bounded-blocking-queue][Github: link]]                       |
-|-----+-----------------------------------------------------------+------------------------------------|
-|   6 | IPC: use shared memory without kernel copy                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/code-example/shared-memory][Github: code-example/shared-memory]] |
-|   7 | Support in-memory kv store transactions                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#support-in-memory-kv-store-transactions][Github: link]]                       |
-|-----+-----------------------------------------------------------+------------------------------------|
-|   8 | [[https://architect.dennyzhang.com/design-concurrent-hashmap][Design a thread-safe Hashmap]]                              |                                    |
-|   9 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task scheduling]]                                   |                                    |
-|  10 | Implement a lock-free queue with multiple readers/writers | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#implement-a-lock-free-queue-with-multiple-readerswriters][Github: link]]                       |
-|  11 | Implement a api rate limiter with token bucket algorithm  |                                    |
+| Num | Name                                                      |                                             |
+|-----+-----------------------------------------------------------+---------------------------------------------|
+|   1 | How to implement a spinlock                               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-spinlock][Github: link]]                                |
+|   2 | How to implement a mutex                                  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-mutex][Github: link]]                                |
+|   3 | How to implement a condition variable                     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-condition-variable][Github: link]]                                |
+|   4 | How to implement a reader-writer locker                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-reader-writer-locker][Github: link]]                                |
+|   5 | How to implement a bounded blocking queue                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#how-to-implement-a-bounded-blocking-queue][Github: link]]                                |
+|-----+-----------------------------------------------------------+---------------------------------------------|
+|   6 | Create two threads cooridnated by mutex in C              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/code-example/threads/thread_mutex.c][Github: code-example/threads/thread_mutex.c]] |
+|   7 | IPC: use shared memory without kernel copy                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/code-example/shared-memory][Github: code-example/shared-memory]]          |
+|   8 | Support in-memory kv store transactions                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#support-in-memory-kv-store-transactions][Github: link]]                                |
+|-----+-----------------------------------------------------------+---------------------------------------------|
+|   9 | [[https://architect.dennyzhang.com/design-concurrent-hashmap][Design a thread-safe Hashmap]]                              |                                             |
+|  10 | [[https://architect.dennyzhang.com/explain-delayedqueue][Delayed task scheduling]]                                   |                                             |
+|  11 | Implement a lock-free queue with multiple readers/writers | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-concurrency-A4/concurrency.org#implement-a-lock-free-queue-with-multiple-readerswriters][Github: link]]                                |
+|  12 | Implement a api rate limiter with token bucket algorithm  |                                             |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 10 Concurrency Coding Problems
 | Num | Problem                             | Summary                                         |
@@ -87,6 +94,17 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   5 | Design Bounded Blocking Queue       | [[https://code.dennyzhang.com/design-bounded-blocking-queue][Leetcode: Design Bounded Blocking Queue]]         |
 |   6 | Avoid deadlock and starvation       | [[https://code.dennyzhang.com/the-dining-philosophers][Leetcode: The Dining Philosophers]]               |
 |   7 | Claim ownerhip of a single resource | [[https://code.dennyzhang.com/traffic-light-controlled-intersection][LeetCode: Traffic Light Controlled Intersection]] |
+#+TBLFM: $1=@-1$1+1;N
+** POSIX thread C library
+| Num | Summary                       | Function                                      |
+|-----+-------------------------------+-----------------------------------------------|
+|   1 | Create a thread               | =pthread_create(&handler, &attr, func, arg);= |
+|   2 | Exit a thread                 | =pthread_exit(exit_status);=                  |
+|   3 | Cancel a thread               | =pthread_cancel(handle);=                     |
+|   4 | Parent wait threads to finish | =pthread_join(handle, &exit_status);=         |
+|   5 | Parent detach a thread        | =pthread_detach(handle);=                     |
+|   6 | mutex lock                    | =pthread_mutex_lock(&mylock);=                |
+|   7 | mutex unlock                  | =pthread_mutex_unlock(&mylock);=              |
 #+TBLFM: $1=@-1$1+1;N
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].

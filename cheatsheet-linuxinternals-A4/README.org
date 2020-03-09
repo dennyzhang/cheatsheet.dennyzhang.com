@@ -412,3 +412,7 @@ Why is DNS amplification a valid attack as opposed to ... say HTTP amplifcation 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO linux tool: tee, cut, tac, sar                              :noexport:
 * TODO linux tool: less vs more                                    :noexport:
+* TODO eBPF                                                        :noexport:
+https://docs.google.com/presentation/d/1AcB4x7JCWET0ysDr0gsX-EIdQSTyBtmi6OAW7bE0jm0/edit#slide=id.g70356bf6e4_0_1269
+* linux blogs                                                      :noexport:
+http://www.brendangregg.com/blog/index.html

@@ -42,7 +42,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Company Tech Blog    | [[https://medium.com/netflix-techblog][Medium: Netflix Blog]], [[https://medium.com/airbnb-engineering][Medium: Airbnb Engineering & Data Science]]                                      |
 | Company Tech Blog    | [[https://instagram-engineering.com/][Medium: Instagram Engineering]], [[https://medium.com/mixpaneleng][Medium: Mixpanel]]                                                      |
 | Company Tech Blog    | [[https://engineering.shopify.com/][Shopify Engineering]], [[https://github.blog/category/engineering/][Github Engineering]]                                                              |
-| Company Tech Blog    | [[https://doordash.engineering/category/backend/][Doordash Engineering]]                                                                                 |
+| Company Tech Blog    | [[https://doordash.engineering/category/backend/][Doordash Engineering]], [[https://eng.uber.com/][Uber Engineering]]                                                               |
 | Reference            | [[https://www.facebook.com/careers/life/preparing-for-your-software-engineering-interview-at-facebook/][Link: Facebook Engineering Interview]], [[https://www.hiredintech.com/classrooms/system-design/lesson/55][Link: The System Design Process]]                                |
 ** Design Problems Per Category
 | Num | Name                                   | Summary                                                                    |
@@ -72,32 +72,32 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   6 | Find duplicates files across 1000 servers with 10 million files  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#find-duplicates-files-across-1000-servers-with-10-million-files][Github: link]]                                                    |
 |   7 | Design a monitoring system to check 10,000 nodes                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-a-system-checking-the-health-of-10000-nodes][Github: link]]                                                    |
 |-----+------------------------------------------------------------------+-----------------------------------------------------------------|
-|   8 | Design a scalable notification service                           | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-a-scalable-notification-service][Github: link]]                                                    |
+|   8 | Design a scalable and reliable notification service              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-a-scalable-notification-service][Github: link]]                                                    |
 |   9 | Web crawler for 1 billion URL from 1 seed URL                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-a-scalable-notification-service][Github: link]]                                                    |
-|  10 | How to implement redis clustering                                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#how-to-implement-redis-clustering][Github: link]]                                                    |
-|  11 | Design twitter timeline feature                                  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-twitter-timeline-feature][Github: link]]                                                    |
-|  12 | How to upload large videos at scale                              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-twitter-timeline-feature][Github: link]]                                                    |
-|  13 | Real-time Deduping At Scale                                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#real-time-deduping-at-scale][Github: link]]                                                    |
-|  14 | How quoram based DB works when nodes join or leave               |                                                                 |
+|  10 | Design twitter timeline feature                                  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-twitter-timeline-feature][Github: link]]                                                    |
+|  11 | How to upload large videos at scale                              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#design-twitter-timeline-feature][Github: link]]                                                    |
+|  12 | Real-time Deduping At Scale                                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#real-time-deduping-at-scale][Github: link]]                                                    |
+|  13 | How quoram based DB works when nodes join or leave               |                                                                 |
 |-----+------------------------------------------------------------------+-----------------------------------------------------------------|
-|  15 | Design online/offline status system                              |                                                                 |
-|  16 | How to deployment 1GB binary to 10,000 servers                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#how-to-deploy-1gb-binary-to-10000-servers][Github: link]]                                                    |
-|  17 | How to distribute TB data from a server to 10,000 nodes          |                                                                 |
-|  18 | Merge big datasets across different servers                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#store-2tb-data-in-three-1tb-disks-with-redundancy][Github: link]]                                                    |
-|  19 | Unique url hits                                                  |                                                                 |
-|  20 | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed counter]]                                     |                                                                 |
-|  21 | Design a distributed message queue                               |                                                                 |
-|  22 | Design a distributed cache service                               |                                                                 |
-|  23 | Design a distributed Hashmap                                     |                                                                 |
-|  24 | Design a distributed UUID generator                              |                                                                 |
-|  25 | Design a git service                                             |                                                                 |
-|  26 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]                                    |                                                                 |
-|  27 | Design a distributed transaction                                 |                                                                 |
-|  28 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]                                |                                                                 |
-|  29 | Give three 1TB disks, how to store 2TB data with redundancy      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#store-2tb-data-in-three-1tb-disks-with-redundancy][Github: link]]. XOR bit manipulation                              |
-|  30 | How to support feature of "diff big1.bin big2.bin"               | [[https://code.dennyzhang.com/followup-lcs][#lcs - Longest Common Subsequence]]                               |
-|  31 | How to support "rsync big1.bin ssh:/big2.bin" in a doggy network | delta-transfer algorithm. Weak Hashing + Strong Hashing         |
-|  32 | Avoid double payment in a distributed payment system             | [[https://medium.com/airbnb-engineering/avoiding-double-payments-in-a-distributed-payments-system-2981f6b070bb][Link: Avoiding Double Payments in a Distributed Payments System]] |
+|  14 | How to implement redis clustering                                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#how-to-implement-redis-clustering][Github: link]]                                                    |
+|  15 | How to deployment 1GB binary to 10,000 servers                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#how-to-deploy-1gb-binary-to-10000-servers][Github: link]]                                                    |
+|  16 | How to distribute TB data from a server to 10,000 nodes          |                                                                 |
+|  17 | Merge big datasets across different servers                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#store-2tb-data-in-three-1tb-disks-with-redundancy][Github: link]]                                                    |
+|  18 | Unique url hits                                                  |                                                                 |
+|  19 | [[https://architect.dennyzhang.com/design-distributed-counter][Design a distributed counter]]                                     |                                                                 |
+|  20 | Design a distributed message queue                               |                                                                 |
+|  21 | Design a distributed cache service                               |                                                                 |
+|  22 | Design a distributed Hashmap                                     |                                                                 |
+|  23 | Design a distributed UUID generator                              |                                                                 |
+|  24 | Design a git service                                             |                                                                 |
+|  25 | [[https://architect.dennyzhang.com/design-parkinglot/][Design: A Parking Lot Service]]                                    |                                                                 |
+|  26 | Design a distributed transaction                                 |                                                                 |
+|  27 | [[https://architect.dennyzhang.com/design-url-redirect/][Design: A URL Redirecting Feature]]                                |                                                                 |
+|-----+------------------------------------------------------------------+-----------------------------------------------------------------|
+|  28 | Give three 1TB disks, how to store 2TB data with redundancy      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-component.org#store-2tb-data-in-three-1tb-disks-with-redundancy][Github: link]]. XOR bit manipulation                              |
+|  29 | How to support feature of "diff big1.bin big2.bin"               | [[https://code.dennyzhang.com/followup-lcs][#lcs - Longest Common Subsequence]]                               |
+|  30 | How to support "rsync big1.bin ssh:/big2.bin" in a doggy network | delta-transfer algorithm. Weak Hashing + Strong Hashing         |
+|  31 | Avoid double payment in a distributed payment system             | [[https://medium.com/airbnb-engineering/avoiding-double-payments-in-a-distributed-payments-system-2981f6b070bb][Link: Avoiding Double Payments in a Distributed Payments System]] |
 #+TBLFM: $1=@-1$1+1;N
 ** Concurrency Problems
 - [[https://cheatsheet.dennyzhang.com/cheatsheet-concurrency-A4][CheatSheet: Concurrency & Parallel Programming]]
@@ -213,28 +213,40 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   3 | [[https://odino.org/my-favorite-data-structure-hyperloglog/][hyerloglog]] for count-distinct problem       | Estimation: the count of unique values with relatively high accuracy(98%)   |
 |   4 | [[https://code.dennyzhang.com/tag/reservoirsampling][Reservoir Sampling]]                          |                                                                             |
 |   5 | [[https://en.wikipedia.org/wiki/Merkle_tree][Merkle Tree]]                                 |                                                                             |
-|   6 | [[https://research.neustar.biz/2013/09/16/sketch-of-the-day-frugal-streaming/][Frugal Streaming]]                            |                                                                             |
-|   7 | [[https://architect.dennyzhang.com/explain-gossip][Gossip]]                                      | Propagate cluster status                                                    |
-|   8 | [[https://architect.dennyzhang.com/explain-vector-clocks][Vector Clocks/Version Vectors]]               |                                                                             |
-|   9 | [[https://en.wikipedia.org/wiki/Lossy_Count_Algorithm][Lossy Counting]]                              |                                                                             |
-|  10 | [[https://en.wikipedia.org/wiki/Skip_list][Skip list]]                                   |                                                                             |
-|  11 | [[https://architect.dennyzhang.com/explain-crdts][CRDTs (Conflict-Free Replicated Data Types)]] |                                                                             |
-|  12 | choice-of-2                                 |                                                                             |
+|   6 | LPM(Longest Prefix Match)                   |                                                                             |
+|   7 | [[https://research.neustar.biz/2013/09/16/sketch-of-the-day-frugal-streaming/][Frugal Streaming]]                            |                                                                             |
+|   8 | [[https://architect.dennyzhang.com/explain-gossip][Gossip]]                                      | Propagate cluster status                                                    |
+|   9 | [[https://architect.dennyzhang.com/explain-vector-clocks][Vector Clocks/Version Vectors]]               |                                                                             |
+|  10 | [[https://en.wikipedia.org/wiki/Lossy_Count_Algorithm][Lossy Counting]]                              |                                                                             |
+|  11 | [[https://en.wikipedia.org/wiki/Skip_list][Skip list]]                                   |                                                                             |
+|  12 | [[https://architect.dennyzhang.com/explain-crdts][CRDTs (Conflict-Free Replicated Data Types)]] |                                                                             |
+|  13 | choice-of-2 in load balancer                |                                                                             |
+|  14 | Range-based query                           |                                                                             |
 |-----+---------------------------------------------+-----------------------------------------------------------------------------|
-|  13 | [[https://architect.dennyzhang.com/explain-sstable][SSTable (Sorted Strings Table)]]              |                                                                             |
-|  14 | MemTable                                    |                                                                             |
-|  15 | [[https://architect.dennyzhang.com/explain-lsm][LSM (Log Structured Merge Trees)]]            |                                                                             |
+|  15 | [[https://architect.dennyzhang.com/explain-sstable][SSTable (Sorted Strings Table)]]              |                                                                             |
+|  16 | MemTable                                    |                                                                             |
+|  17 | [[https://architect.dennyzhang.com/explain-lsm][LSM (Log Structured Merge Trees)]]            |                                                                             |
 |-----+---------------------------------------------+-----------------------------------------------------------------------------|
-|  16 | [[https://en.wikipedia.org/wiki/Two-phase_commit_protocol][Two-phase commit]]/[[https://en.wikipedia.org/wiki/Three-phase_commit_protocol][Three-phase commit]]         | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-algorithm.org#2pc3pc-commit][Github: link]]                                                                |
-|  17 | [[https://architect.dennyzhang.com/design-explain-paxos][Paxos and raft protocol]]                     |                                                                             |
-|  18 | Ring buffer                                 |                                                                             |
-|  19 | [[https://en.wikipedia.org/wiki/Cuckoo_hashing][cuckoo hashing]]                              | Resolve hash collisions with worst-case constant lookup time                |
-|  20 | snappy/lzss                                 | Fast data compression and decompression                                     |
-|  21 | [[https://s2geometry.io/][S2 Geometry]]                                 | Build geographic database in a better way                                   |
-|  22 | [[https://www.youtube.com/watch?v=UaMzra18TD8][geohash]]                                     |                                                                             |
+|  18 | [[https://en.wikipedia.org/wiki/Two-phase_commit_protocol][Two-phase commit]]/[[https://en.wikipedia.org/wiki/Three-phase_commit_protocol][Three-phase commit]]         | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-systemdesign-A4/design-algorithm.org#2pc3pc-commit][Github: link]]                                                                |
+|  19 | [[https://architect.dennyzhang.com/design-explain-paxos][Paxos and raft protocol]]                     |                                                                             |
+|  20 | Ring buffer                                 |                                                                             |
+|  21 | [[https://en.wikipedia.org/wiki/Cuckoo_hashing][cuckoo hashing]]                              | Resolve hash collisions with worst-case constant lookup time                |
+|  22 | snappy/lzss                                 | Fast data compression and decompression                                     |
+|  23 | [[https://s2geometry.io/][S2 Geometry]]                                 | Build geographic database in a better way                                   |
+|  24 | [[https://www.youtube.com/watch?v=UaMzra18TD8][geohash]]                                     |                                                                             |
+|  25 | [[https://en.wikipedia.org/wiki/Quadtree][Quadtree]]                                    |                                                                             |
+|  26 | DHT - distributed hash table                |                                                                             |
 #+TBLFM: $1=@-1$1+1;N
 
 [[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-systemdesign-A4/dynamo-summary.png]]
+** Top 10 Trade-Offs
+| Num | Name                   | Summary                                          |
+|-----+------------------------+--------------------------------------------------|
+|   1 | Decide data store      |                                                  |
+|   2 | Clustering vs Sharding |                                                  |
+|   3 | When to shard?         |                                                  |
+|   4 | What to be cached?     | What data can be cached to speed up the requests |
+#+TBLFM: $1=@-1$1+1;N
 ** Explain workflow: What happens when XXX?
 | Num | Name                                  | Summary                                                                       |
 |-----+---------------------------------------+-------------------------------------------------------------------------------|
@@ -321,9 +333,13 @@ https://github.com/checkcheckzz/system-design-interview
 
 https://github.com/binhnguyennus/awesome-scalability
 
+https://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html
+
 https://docs.microsoft.com/en-us/azure/architecture/patterns/
 
 https://github.com/sdmg15/Best-websites-a-programmer-should-visit
+
+https://www.infoq.com/presentations/Pinterest/
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
@@ -436,9 +452,7 @@ https://www.1point3acres.com/bbs/thread-169418-1-1.html
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO design k/v db store                                         :noexport:
 * TODO 某建筑有五十层高,打算装俩电梯,设计该电梯系统                :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO How to implement a singleton                                :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO design uber                                                 :noexport:
 http://systemdesigns.blogspot.com/2015/12/design-uber.html
 * TODO design google doc                                           :noexport:
@@ -446,7 +460,7 @@ http://systemdesigns.blogspot.com/2015/12/design-uber.html
 * TODO How to design API gateway                                   :noexport:
 * TODO design amazon book recommend system                         :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO design 多线程题 例如web crawler, max photo                 :noexport:
+* TODO design 多线程题 例如web crawler, max photo                  :noexport:
 * TODO How would you design a car radio system interface           :noexport:
 * TODO caching mechanism: lru, lfu                                 :noexport:
 * Typical Tech Areas                                               :noexport:
@@ -478,8 +492,6 @@ https://www.1point3acres.com/bbs/thread-562110-1-1.html
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO email spam filter design                                    :noexport:
 * TODO class vs interface                                          :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO how dropbox client sync data                                :noexport:
 * TODO links of system design                                      :noexport:
 https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=559285&highlight=design
 一篇文章解决所有system design面试|一亩三分地系统设计版
@@ -575,3 +587,6 @@ https://www.1point3acres.com/bbs/thread-594802-1-1.html
 https://www.1point3acres.com/bbs/thread-594802-1-1.html
 * TODO Big trie can't fit in RAM                                   :noexport:
 https://www.1point3acres.com/bbs/thread-596045-1-1.html
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Industry best practice for supporting large scale requests with different priorities? :noexport:
+* TODO How to implement individual web crawlers in concurrent programming? :noexport:

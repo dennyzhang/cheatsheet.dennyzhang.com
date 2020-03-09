@@ -274,7 +274,6 @@ unix  2      [ ]         DGRAM                    6913418
 unix  3      [ ]         STREAM     CONNECTED     16534
 unix  3      [ ]         STREAM     CONNECTED     13747
 #+END_EXAMPLE
-
 *** man netstat
 #+BEGIN_EXAMPLE
 [ec2-user@ip-172-31-29-101 ~]$ man netstat
