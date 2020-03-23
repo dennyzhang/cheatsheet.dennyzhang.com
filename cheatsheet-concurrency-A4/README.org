@@ -48,6 +48,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |-----+-----------------------------+-----------------------------------------------------------------------------------|
 |  19 | [[https://randu.org/tutorials/threads/][Thread Design Patterns]]      | Thread pool, Peer and Pipeline                                                    |
 |  20 | Actor model vs CSP model    |                                                                                   |
+|  21 | Reference                   | [[http://tutorials.jenkov.com/java-concurrency/index.html][Link: Java Concurrency and Multithreading Tutorial]]                                |
 #+TBLFM: $1=@-1$1+1;N
 ** Concurrent Implementation In Common Languages
 | Num | Name                          |                                        |

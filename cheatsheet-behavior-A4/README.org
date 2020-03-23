@@ -18,7 +18,7 @@
 
 - PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/cheatsheet-behavior-A4.pdf][cheatsheet-behavior-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 
@@ -30,35 +30,63 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Reference | [[https://www.youtube.com/watch?v=Y-mNcEctZQY&list=PLxjGQaV8rAh31XjOpXApfzfs2L8S5gKfp][YouTube: Andrew LaCivita - Job Interview Tips]]                |
 | Reference | [[https://www.youtube.com/watch?v=B-xdfQv3I1k&list=PLLucmoeZjtMQK8T111wCvqnfOd0qGFqzL][YouTube: Dan Croitor - Leadership Series]]                     |
 | Reference | [[https://www.youtube.com/watch?v=PJKYqLP6MRE&t=3s][YouTube: Intro to Behavioural Interviews]]                     |
+| Reference | [[https://www.youtube.com/watch?v=2Cr3-et4xkI][YouTube: Prepare for Your Google Interview: Leadership]]       |
+| Reference | [[https://www.thebalancecareers.com/what-is-the-star-interview-response-technique-2061629][Use STAR principle for interview questions]]                   |
 | Culture   | [[https://www.amazon.jobs/en/principles][Link: Amazon 14 Leadership Principles]], [[https://jobs.netflix.com/culture][Link: Netflix Culture]] |
 | Culture   | [[https://www.facebook.com/pg/facebookcareers/photos/?tab=album&album_id=1655178611435493][Link: Facebook's 5 Core Values]]                               |
+
+Amazon:
+[[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-behavior-A4/amazon.jpg]]
+
+Facebook:
+[[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-behavior-A4/facebook.jpg]]
+
+Google:
+[[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-behavior-A4/google.jpg]]
+
+Common core values:
+[[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-behavior-A4/tech-feature.jpg]]
 
 ** Top 15 Behavior Questions
 | Num | Name                                                                                   | Link        |
 |-----+----------------------------------------------------------------------------------------+-------------|
-|   1 | [Intro] Tell me about yourself?                                                        | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#tell-me-about-yourself][Github Link]] |
+|   1 | [Background] Tell me about yourself?                                                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#tell-me-about-yourself][Github Link]] |
 |   2 | [Goal] Why you want to change your job?                                                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#goal-what-are-you-looking-for-in-your-next-job][Github Link]] |
-|   3 | [Challenge] Tell me the most challenging project which you done?                       | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#challenge-tell-me-the-most-challenging-project-which-you-have-done][Github Link]] |
-|   4 | [Conflict] How do you resolve conflicts with your manager/teammates?                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#conflict-how-do-you-resolve-conflicts-with-your-managerteammates][Github Link]] |
-|   5 | [Closing] Do you have some question for me or this position?                           | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#closing-do-you-have-some-question-for-me-or-this-position][Github Link]] |
-|   6 | [Experience] Tell me a project which you have failed                                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#experience-tell-me-a-project-which-you-have-failed][Github Link]] |
+|   3 | [Background] Why our company?                                                          | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#goal-why-xx-company-why-this-position][Github Link]] |
+|   4 | [Background] Your understanding about this role?                                       |             |
+|   5 | [Background] Why you would be a good fit for this role?                                |             |
 |-----+----------------------------------------------------------------------------------------+-------------|
-|   7 | [Failure] How do you handle missing a deadline or project delay?                       | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#failure-how-do-you-handle-missing-a-deadline-or-project-delay][Github Link]] |
-|   8 | [Goal] Why XX company? Why this position?                                              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#goal-why-xx-company-why-this-position][Github Link]] |
-|   9 | [Failure] Tell me a time you messed up/ took at risk / failed / feel frustrated?       | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#failure-tell-me-a-time-you-messed-up-took-at-risk--failed--feel-frustrated][Github Link]] |
-|  10 | [Ambiguity] Tell me a time you had to make a decision without data.                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#ambiguity-tell-me-a-time-you-had-to-make-a-decision-without-data][Github Link]] |
-|  11 | [Experience] What areas are your technical strength?                                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#experience-what-areas-are-your-technical-strength][Github Link]] |
+|   6 | [Challenge] Tell me the most challenging project which you done?                       | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#challenge-tell-me-the-most-challenging-project-which-you-have-done][Github Link]] |
+|   7 | [Conflict] How do you resolve conflicts with your manager/teammates?                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#conflict-how-do-you-resolve-conflicts-with-your-managerteammates][Github Link]] |
+|   8 | [Closing] Do you have some question for me or this position?                           | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#closing-do-you-have-some-question-for-me-or-this-position][Github Link]] |
+|   9 | [Experience] Tell me a project which you have failed                                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#experience-tell-me-a-project-which-you-have-failed][Github Link]] |
+|  10 | [Experience] If you have another chance, how you will do better?                       |             |
 |-----+----------------------------------------------------------------------------------------+-------------|
-|  12 | [Experience] Tell me a time you step outside of your job scope and solved a problem    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#experience-tell-me-a-time-you-step-outside-of-your-job-scope-and-solved-a-problem][Github Link]] |
-|  13 | [Experience] Tell me about a time you received negative feedback from your manager     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#experience-tell-me-about-a-time-you-received-negative-feedback-from-your-manager][Github Link]] |
+|  11 | [Failure] How do you handle missing a deadline or project delay?                       | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#failure-how-do-you-handle-missing-a-deadline-or-project-delay][Github Link]] |
+|  12 | [Failure] Tell me a time you messed up/ took at risk / failed / feel frustrated?       | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#failure-tell-me-a-time-you-messed-up-took-at-risk--failed--feel-frustrated][Github Link]] |
+|  13 | [Ambiguity] Tell me a time you had to make a decision without data.                    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#ambiguity-tell-me-a-time-you-had-to-make-a-decision-without-data][Github Link]] |
+|  14 | [Experience] What areas are your technical strength?                                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#experience-what-areas-are-your-technical-strength][Github Link]] |
 |-----+----------------------------------------------------------------------------------------+-------------|
-|  14 | Describe your favorite manager/ team worker.                                           |             |
-|  15 | Tell me a time that you have to earn trust/gain buy-in from another group              |             |
-|  16 | Tell us about a time you were given feedback that made you change your strategy        |             |
-|  17 | Tell me about a time you decided to take on a project instead of being assigned to you |             |
-|  18 | Tell me about a project that went beyond your scope of work.                           |             |
-|  19 | What if you will do, if you think your manager is not fair.                            |             |
-|  20 | What if people take your credits?                                                      |             |
+|  15 | [Experience] Tell me a time you step outside of your job scope and solved a problem    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#experience-tell-me-a-time-you-step-outside-of-your-job-scope-and-solved-a-problem][Github Link]] |
+|  16 | [Experience] Tell me about a time you received negative feedback from your manager     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-behavior-A4/BEHAVIOR_QUESTIONS.org#experience-tell-me-about-a-time-you-received-negative-feedback-from-your-manager][Github Link]] |
+|-----+----------------------------------------------------------------------------------------+-------------|
+|  17 | Describe your favorite manager/ team worker.                                           |             |
+|  18 | Tell me a time that you have to earn trust/gain buy-in from another group              |             |
+|  19 | Tell us about a time you were given feedback that made you change your strategy        |             |
+|  20 | Tell me about a time you decided to take on a project instead of being assigned to you |             |
+|  21 | Tell me about a project that went beyond your scope of work.                           |             |
+|  22 | What if you will do, if you think your manager is not fair.                            |             |
+|  23 | What if people take your credits?                                                      |             |
+#+TBLFM: $1=@-1$1+1;N
+** Principles Of Behavior Questions
+| Num | Name                                | Link |
+|-----+-------------------------------------+------|
+|   1 | STAR principle                      |      |
+|   2 | Communication and Leadership style  |      |
+|   3 | Navigating complexity and ambiguity |      |
+|   4 | Working with teams                  |      |
+|   5 | Vision                              |      |
+|   6 | Delivering results                  |      |
 #+TBLFM: $1=@-1$1+1;N
 ** Category Of Behavior Questions
 | Num | Example                                                  |
@@ -163,7 +191,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   5 | Tell me about the best leader or manager you ever had                                     |
 #+TBLFM: $1=@-1$1+1;N                                                                     
 
-[[image-blog:Amazon 14 Leadership][https://cheatsheet.dennyzhang.com/wp-content/uploads/2019/10/amazon-14-leadership.png]]
 ** Value Customers                                                 :noexport:
 | Num | Example                                                                                  |
 |-----+------------------------------------------------------------------------------------------|
@@ -566,3 +593,5 @@ https://www.1point3acres.com/bbs/thread-601777-1-1.html
 
 https://www.1point3acres.com/bbs/thread-574605-1-1.html
 狗家BQ类问题考点|一亩三分地求职（非面经）版
+* TODO Examining Goals In Beavhior Interviews                      :noexport:
+- Help a team to succeed, even if you're not their leaders

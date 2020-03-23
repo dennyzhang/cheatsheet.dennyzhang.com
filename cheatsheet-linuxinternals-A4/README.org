@@ -47,7 +47,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  11 | Explain linux fork                                          |                                            |
 |-----+-------------------------------------------------------------+--------------------------------------------|
 |  12 | What is /proc directory?                                    |                                            |
-|  13 | Forget root password. How to reset it?                      |                                            |
+|  13 | Forget root password. How to reset it?                      | Reset from GRUB or liveCD                  |
 |  14 | How to solve ssh "Connection refused" errors?               |                                            |
 |  15 | How to daemonize a process?                                 |                                            |
 |  16 | [[https://askubuntu.com/questions/35722/what-is-kernel-panic][What are common scenarios of linux kernel panics?]]           |                                            |
@@ -60,14 +60,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  23 | How to close stdin/stdout/stderr of one command             | =some_command </dev/null >/dev/null 2>&1=  |
 #+TBLFM: $1=@-1$1+1;N
 ** Explain Top Linux Tooling
-| Num | Name                                    | Summary     |
-|-----+-----------------------------------------+-------------|
-|   1 | Explain the output of =vmstat= command  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-vmstat-command][Github Link]] |
-|   2 | Explain the output of =netstat= command | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-netstat-command][Github Link]] |
-|   3 | Explain the output of =free= command    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-free-command][Github Link]] |
-|   4 | Explain the output of =top= command     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-top-command][Github Link]] |
-|   5 | Explain the output of =fre= command     |             |
-|   6 | Explain the output of =sar= command     |             |
+| Num | Name                                    | Summary                                 |
+|-----+-----------------------------------------+-----------------------------------------|
+|   1 | Explain the output of =vmstat= command  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-vmstat-command][Github Link]]                             |
+|   2 | Explain the output of =netstat= command | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-netstat-command][Github Link]]                             |
+|   3 | Explain the output of =free= command    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-free-command][Github Link]]                             |
+|   4 | Explain the output of =top= command     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-top-command][Github Link]]                             |
+|   5 | [[https://github.com/sysstat/sysstat][Explain the output of =sar= command]]     | system staticstics with sysstat cronjob |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Top 15 Linux Workflow

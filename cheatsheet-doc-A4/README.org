@@ -492,7 +492,7 @@ The lesson is you don’t need policies for everything. Most people understand t
 
 We avoid over-correcting. Just because a few people abuse freedom doesn’t mean that our employees are not worthy of great trust.
 * daily standup                                                    :noexport:
-Bug triage and bug fixing. 
+Bug triage and bug fixing.
 
 Review PRs
 
@@ -502,3 +502,5 @@ Upstream CAPA meeting, 1:1
 
 ** Details
 - more work for getting ready for capi v0.3.0
+* Appraisal                                                        :noexport:
+No place is best place to work unless you connect with your boss and team members.

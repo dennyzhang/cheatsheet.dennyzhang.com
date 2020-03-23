@@ -59,47 +59,51 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+TBLFM: $1=@-1$1+1;N
 [[image-blog:CheatSheet: Leetcode Common Templates & Common Code Problems][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-leetcode-A4/datastructre.png]]
 ** Typical Followup
-| Num | Name                                        | Summary                                   |
-|-----+---------------------------------------------+-------------------------------------------|
-|   1 | From 1-D array to 2-D matrix                |                                           |
-|   2 | Instead of O(n) space, use O(1) space       | [[https://code.dennyzhang.com/find-mode-in-binary-search-tree][LeetCode: Find Mode in Binary Search Tree]] |
-|   3 | How to do it with multi-threading           | [[https://code.dennyzhang.com/web-crawler-multithreaded][LeetCode: Web Crawler Multithreaded]]       |
-|   4 | Data range has some characteristic          | [[https://code.dennyzhang.com/find-median-from-data-stream][LeetCode: Find Median from Data Stream]]    |
-|   5 | Solve with iterator without pre-loading     | [[https://code.dennyzhang.com/flatten-2d-vector][Leetcode: Flatten 2D Vector]]               |
-|   6 | Instead of a given list, it's a data stream |                                           |
+| Num | Name                                                 | Summary                                   |
+|-----+------------------------------------------------------+-------------------------------------------|
+|   1 | From 1-D array to 2-D matrix                         |                                           |
+|   2 | Instead of O(n) space, use O(1) space                | [[https://code.dennyzhang.com/find-mode-in-binary-search-tree][LeetCode: Find Mode in Binary Search Tree]] |
+|   3 | How to do it with multi-threading                    | [[https://code.dennyzhang.com/web-crawler-multithreaded][LeetCode: Web Crawler Multithreaded]]       |
+|   4 | Data values have different ranges                    | [[https://code.dennyzhang.com/find-median-from-data-stream][LeetCode: Find Median from Data Stream]]    |
+|   5 | Solve with iterator without pre-loading              | [[https://code.dennyzhang.com/flatten-2d-vector][Leetcode: Flatten 2D Vector]]               |
+|   6 | Instead of a fixed list, it's an ongoing data stream |                                           |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 30 Graph Problems
-| Num | Problem                                                     | Summary                                                       |
-|-----+-------------------------------------------------------------+---------------------------------------------------------------|
-|   1 | Graph Connectivity: Count islands in a 2D matrix            | [[https://code.dennyzhang.com/number-of-islands][LeetCode: Number of Islands]], [[https://code.dennyzhang.com/island-perimeter][LeetCode: Island Perimeter]]       |
-|   2 | Get the size of the largest island                          | [[https://code.dennyzhang.com/max-area-of-island][LeetCode: Max Area of Island]]                                  |
-|   3 | Cycle detection in a directed graph                         | [[https://code.dennyzhang.com/redundant-connection-ii][LeetCode: Redundant Connection II]]                             |
-|   4 | Detect all cycles in a directed graph                       | [[https://code.dennyzhang.com/find-eventual-safe-states][LeetCode: Find Eventual Safe States]]                           |
-|   5 | Whether a graph is a tree                                   | [[https://code.dennyzhang.com/graph-valid-tree][LeetCode: Graph Valid Tree]]                                    |
-|-----+-------------------------------------------------------------+---------------------------------------------------------------|
-|   6 | Update a specific region                                    | [[https://code.dennyzhang.com/flood-fill][LeetCode: Flood Fill]]                                          |
-|   7 | Update regions for a given rule                             | [[https://code.dennyzhang.com/surrounded-regions][LeetCode: Surrounded Regions]]                                  |
-|   8 | Number of Distinct Islands                                  | [[https://code.dennyzhang.com/number-of-distinct-islands][LeetCode: Number of Distinct Islands]]                          |
-|   9 | Mark levels                                                 | [[https://code.dennyzhang.com/01-matrix][LeetCode: 01 Matrix]]                                           |
-|  10 | Diameter of a tree in graph theory                          | [[https://code.dennyzhang.com/tree-diameter][LeetCode: Tree Diameter]]                                       |
-|  11 | Duplicate edges                                             | [[https://code.dennyzhang.com/reconstruct-itinerary][LeetCode: Reconstruct Itinerary]]                               |
-|  12 | Find a certain node in a graph                              | [[https://code.dennyzhang.com/find-the-celebrity][LeetCode: Find the Celebrity]]                                  |
-|  13 | Coloring graph                                              | [[https://code.dennyzhang.com/minesweeper][LeetCode: Minesweeper]]                                         |
-|  14 | Find a certain path from source to destination in a graph   | [[https://code.dennyzhang.com/path-with-maximum-minimum-value][LeetCode: Path With Maximum Minimum Value]]                     |
-|  15 | Find the minimum steps from point1 to point2                | [[https://code.dennyzhang.com/word-ladder][LeetCode: Word Ladder]], [[https://code.dennyzhang.com/sliding-puzzle][LeetCode: Sliding Puzzle]]               |
-|  16 | Find all minimum paths from point1 to point2                | [[https://code.dennyzhang.com/word-ladder-ii][LeetCode: Word Ladder II]]                                      |
-|  17 | All Paths from Source Lead to Destination                   | [[https://code.dennyzhang.com/all-paths-from-source-lead-to-destination][LeetCode: All Paths from Source Lead to Destination]]           |
-|  18 | Node connectivity problem for a sparse 2D matrix            | [[https://code.dennyzhang.com/escape-a-large-maze][LeetCode: Escape a Large Maze]]                                 |
-|  19 | Bricks Falling When Hit                                     | [[https://code.dennyzhang.com/bricks-falling-when-hit][LeetCode: Bricks Falling When Hit]]                             |
-|  20 | Bridges in a connected graph - [[https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm][Tarjan's algorithm]]           | [[https://code.dennyzhang.com/critical-connections-in-a-network][LeetCode: Critical Connections in a Network]]                   |
-|  21 | Valid & Invalid moves                                       | [[https://code.dennyzhang.com/alphabet-board-path][LeetCode: Alphabet Board Path]]                                 |
-|  22 | Move in different directions: 4 directions, 8 directions    | [[https://code.dennyzhang.com/queens-that-can-attack-the-king][LeetCode: Queens That Can Attack the King]]                     |
-|  23 | String Transforms Into Another String                       | [[https://code.dennyzhang.com/string-transforms-into-another-string][LeetCode: String Transforms Into Another String]]               |
-|  24 | Candidates are (i, j, r), instead of (i, j)                 | [[https://code.dennyzhang.com/shortest-path-in-a-grid-with-obstacles-elimination][LeetCode: Shortest Path in a Grid with Obstacles Elimination]]  |
-|  25 | Clone Graph                                                 | [[https://code.dennyzhang.com/clone-graph][Leetcode: Clone Graph]]                                         |
-|  26 | Array problem with hidden graph                             | [[https://code.dennyzhang.com/number-of-squareful-arrays][LeetCode: Number of Squareful Arrays]]                          |
-|  27 | Find shortest paths in a weighted graph                     | [[https://code.dennyzhang.com/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance][LeetCode: Find the City With the Smallest Number of Neighbors]] |
-|  28 | Find shortest distance for two nodes in an undirected graph |                                                               |
+| Num | Problem                                                   | Summary                                                       |
+|-----+-----------------------------------------------------------+---------------------------------------------------------------|
+|   1 | Graph Connectivity: Count islands in a 2D matrix          | [[https://code.dennyzhang.com/number-of-islands][LeetCode: Number of Islands]], [[https://code.dennyzhang.com/island-perimeter][LeetCode: Island Perimeter]]       |
+|   2 | Get the size of the largest island                        | [[https://code.dennyzhang.com/max-area-of-island][LeetCode: Max Area of Island]]                                  |
+|   3 | Cycle detection in a directed graph                       | [[https://code.dennyzhang.com/redundant-connection-ii][LeetCode: Redundant Connection II]]                             |
+|   4 | Detect all cycles in a directed graph                     | [[https://code.dennyzhang.com/find-eventual-safe-states][LeetCode: Find Eventual Safe States]]                           |
+|   5 | Whether a graph is a tree                                 | [[https://code.dennyzhang.com/graph-valid-tree][LeetCode: Graph Valid Tree]]                                    |
+|-----+-----------------------------------------------------------+---------------------------------------------------------------|
+|   6 | Update a specific region                                  | [[https://code.dennyzhang.com/flood-fill][LeetCode: Flood Fill]]                                          |
+|   7 | Update regions for a given rule                           | [[https://code.dennyzhang.com/surrounded-regions][LeetCode: Surrounded Regions]]                                  |
+|   8 | Number of Distinct Islands                                | [[https://code.dennyzhang.com/number-of-distinct-islands][LeetCode: Number of Distinct Islands]]                          |
+|   9 | Mark levels                                               | [[https://code.dennyzhang.com/01-matrix][LeetCode: 01 Matrix]]                                           |
+|  10 | Diameter of a tree in graph theory                        | [[https://code.dennyzhang.com/tree-diameter][LeetCode: Tree Diameter]]                                       |
+|  11 | Duplicate edges                                           | [[https://code.dennyzhang.com/reconstruct-itinerary][LeetCode: Reconstruct Itinerary]]                               |
+|  12 | Find a certain node in a graph                            | [[https://code.dennyzhang.com/find-the-celebrity][LeetCode: Find the Celebrity]]                                  |
+|-----+-----------------------------------------------------------+---------------------------------------------------------------|
+|  13 | Graph with next steps by a trie                           | [[https://code.dennyzhang.com/word-search-ii][Leetcode: Word Search II]]                                      |
+|-----+-----------------------------------------------------------+---------------------------------------------------------------|
+|  14 | Coloring graph                                            | [[https://code.dennyzhang.com/minesweeper][LeetCode: Minesweeper]]                                         |
+|  15 | Find a certain path from source to destination in a graph | [[https://code.dennyzhang.com/path-with-maximum-minimum-value][LeetCode: Path With Maximum Minimum Value]]                     |
+|  16 | Find the minimum steps from point1 to point2              | [[https://code.dennyzhang.com/word-ladder][LeetCode: Word Ladder]], [[https://code.dennyzhang.com/sliding-puzzle][LeetCode: Sliding Puzzle]]               |
+|  17 | Find all minimum paths from point1 to point2              | [[https://code.dennyzhang.com/word-ladder-ii][LeetCode: Word Ladder II]]                                      |
+|  18 | All Paths from Source Lead to Destination                 | [[https://code.dennyzhang.com/all-paths-from-source-lead-to-destination][LeetCode: All Paths from Source Lead to Destination]]           |
+|  19 | Node connectivity problem for a sparse 2D matrix          | [[https://code.dennyzhang.com/escape-a-large-maze][LeetCode: Escape a Large Maze]]                                 |
+|  20 | Bricks Falling When Hit                                   | [[https://code.dennyzhang.com/bricks-falling-when-hit][LeetCode: Bricks Falling When Hit]]                             |
+|  21 | Bridges in a connected graph - [[https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm][Tarjan's algorithm]]         | [[https://code.dennyzhang.com/critical-connections-in-a-network][LeetCode: Critical Connections in a Network]]                   |
+|  22 | Valid & Invalid moves                                     | [[https://code.dennyzhang.com/alphabet-board-path][LeetCode: Alphabet Board Path]]                                 |
+|  23 | Move in different directions: 4 directions, 8 directions  | [[https://code.dennyzhang.com/queens-that-can-attack-the-king][LeetCode: Queens That Can Attack the King]]                     |
+|  24 | String Transforms Into Another String                     | [[https://code.dennyzhang.com/string-transforms-into-another-string][LeetCode: String Transforms Into Another String]]               |
+|  25 | Candidates are (i, j, r), instead of (i, j)               | [[https://code.dennyzhang.com/shortest-path-in-a-grid-with-obstacles-elimination][LeetCode: Shortest Path in a Grid with Obstacles Elimination]]  |
+|  26 | Clone Graph                                               | [[https://code.dennyzhang.com/clone-graph][Leetcode: Clone Graph]]                                         |
+|  27 | Array problem with hidden graph                           | [[https://code.dennyzhang.com/number-of-squareful-arrays][LeetCode: Number of Squareful Arrays]]                          |
+|  28 | Find shortest paths in a weighted graph                   | [[https://code.dennyzhang.com/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance][LeetCode: Find the City With the Smallest Number of Neighbors]] |
+|  29 | Graph trasversal from boarders                            | [[https://code.dennyzhang.com/surrounded-regions][Leetcode: Surrounded Regions]]                                  |
+|  30 | Is Graph Bipartite                                        | [[https://code.dennyzhang.com/is-graph-bipartite][LeetCode: Is Graph Bipartite]]                                  |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
@@ -414,19 +418,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  32 | One pass instead of two pass                                          |                                                                         |
 |  33 | Avoid unnecessary precheck                                            |                                                                         |
 #+TBLFM: $1=@-1$1+1;N
-** Whiteboard Tips
-| Name                                                    | Summary                                                               |
-|---------------------------------------------------------+-----------------------------------------------------------------------|
-| Focus on your key motivations or thinkings              | Pivot quickly from interviewers' feedback                             |
-| Brute force algorithm add values                        | Intuitive algorithms are  usually the starting points of optimal ones |
-| Work through specific test case clearly                 | Reduce bugs, and help to obtain interviewers' feedback early          |
-| Naming variables could be tricky                        | Settle down a set of variables per your preference                    |
-| You don't have to crack all problems/optimal algorithms |                                                                       |
-** More Data Structure
-| Name           | Summary |
-|----------------+---------|
-| Tree map       |         |
-| [[https://www.geeksforgeeks.org/inverted-index/][Inverted Index]] |         |
 ** Resource For Code Problems
 | Name                 | Summary                                                                                          |
 |----------------------+--------------------------------------------------------------------------------------------------|
@@ -598,3 +589,17 @@ general
 |  41 |                                                      |                                   | [[https://code.dennyzhang.com/remove-duplicates-from-sorted-array-ii][LeetCode: Remove Duplicates from Sorted Array II]]                             |
 |  42 |                                                      |                                   | [[https://en.wikipedia.org/wiki/Travelling_salesman_problem][Travelling salesman problem]]                                                  |
 |  31 | Swiping line algorithm                                                |                                                                         |
+* Whiteboard Tips                                                  :noexport:
+| Name                                                    | Summary                                                               |
+|---------------------------------------------------------+-----------------------------------------------------------------------|
+| Focus on your key motivations or thinkings              | Pivot quickly from interviewers' feedback                             |
+| Brute force algorithm add values                        | Intuitive algorithms are  usually the starting points of optimal ones |
+| Work through specific test case clearly                 | Reduce bugs, and help to obtain interviewers' feedback early          |
+| Naming variables could be tricky                        | Settle down a set of variables per your preference                    |
+| You don't have to crack all problems/optimal algorithms |                                                                       |
+
+* More Data Structure                                              :noexport:
+| Name           | Summary |
+|----------------+---------|
+| Tree map       |         |
+| [[https://www.geeksforgeeks.org/inverted-index/][Inverted Index]] |         |
