@@ -25,15 +25,12 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 - *Behavioral Interview* is about you and your history, your resume, and your motivation. 
 
 ** Reference
-| Num       | Name                                                         |
-|-----------+--------------------------------------------------------------|
-| Reference | [[https://www.youtube.com/watch?v=Y-mNcEctZQY&list=PLxjGQaV8rAh31XjOpXApfzfs2L8S5gKfp][YouTube: Andrew LaCivita - Job Interview Tips]]                |
-| Reference | [[https://www.youtube.com/watch?v=B-xdfQv3I1k&list=PLLucmoeZjtMQK8T111wCvqnfOd0qGFqzL][YouTube: Dan Croitor - Leadership Series]]                     |
-| Reference | [[https://www.youtube.com/watch?v=PJKYqLP6MRE&t=3s][YouTube: Intro to Behavioural Interviews]]                     |
-| Reference | [[https://www.youtube.com/watch?v=2Cr3-et4xkI][YouTube: Prepare for Your Google Interview: Leadership]]       |
-| Reference | [[https://www.thebalancecareers.com/what-is-the-star-interview-response-technique-2061629][Use STAR principle for interview questions]]                   |
-| Culture   | [[https://www.amazon.jobs/en/principles][Link: Amazon 14 Leadership Principles]], [[https://jobs.netflix.com/culture][Link: Netflix Culture]] |
-| Culture   | [[https://www.facebook.com/pg/facebookcareers/photos/?tab=album&album_id=1655178611435493][Link: Facebook's 5 Core Values]]                               |
+| Num       | Name                                                                                             |
+|-----------+--------------------------------------------------------------------------------------------------|
+| Reference | [[https://www.thebalancecareers.com/what-is-the-star-interview-response-technique-2061629][Use STAR principle for interview questions]]                                                       |
+| Reference | [[https://www.youtube.com/watch?v=Y-mNcEctZQY&list=PLxjGQaV8rAh31XjOpXApfzfs2L8S5gKfp][YouTube: Andrew LaCivita - Job Interview Tips]],  [[https://www.youtube.com/watch?v=B-xdfQv3I1k&list=PLLucmoeZjtMQK8T111wCvqnfOd0qGFqzL][YouTube: Dan Croitor - Leadership Series]]         |
+| Reference | [[https://www.youtube.com/watch?v=PJKYqLP6MRE&t=3s][YouTube: Intro to Behavioural Interviews]], [[https://www.youtube.com/watch?v=2Cr3-et4xkI][YouTube: Prepare for Your Google Interview: Leadership]] |
+| Culture   | [[https://www.amazon.jobs/en/principles][Link: Amazon 14 Leadership Principles]], [[https://jobs.netflix.com/culture][Link: Netflix Culture]], [[https://www.facebook.com/pg/facebookcareers/photos/?tab=album&album_id=1655178611435493][Link: Facebook's 5 Core Values]]     |
 
 Amazon:
 [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-behavior-A4/amazon.jpg]]

@@ -18,17 +18,11 @@
 <br/><br/>
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
-
 ** What happens, when opening https://www.google.com
-
 ** What happens, when "ls -l *"
-
 ** What happens, when "Ctrl + c" in a terminal
-
 ** What happens, when "touch a.txt"
-
 ** What happens, when you press power on button in a server?
-
 [[image-blog:Linux Workflow][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-linuxinternals-A4/boot-seq.png]]
 
 - MBR: master boot record, also known as first sector of the hard disk
@@ -37,30 +31,25 @@
 BIOS provides three primary functions:
 
 - Power on self test (POST), so it knows where to load the boot program.
-- Load and transfer control to boot program .
+- Load and transfer control to boot program.
 - Provide drivers for all devices.
 
 [[https://leetcode.com/discuss/interview-question/operating-system/124638/what-happens-in-the-background-from-the-time-you-press-the-Power-button-until-the-Linux-login-prompt-appears][Link: what happens in the background from the time you press the Power button until the Linux login prompt appears?]]
 
 [[https://leetcode.com/discuss/interview-question/operating-system/124629/Difference-between-BIOS-and-Kernel][Link: Difference between BIOS and Kernel]]
 ** What happens, when "cat /etc/hosts"
-
 ** Explain init.d workflow
-
 ** Explain how to build a linux release
-
 ** Explain how kernel schedules process
-
 ** Explain how kernel read data from disk
 - Paging
 - cpu iowait
-
 ** Explain how I/O interrupt works
 Basically an interrupt is a signal to notify kernel(processor) that something needs to be handled as soon as possible.
 
 Interrupt handlers run asynchronously, and must respond to time-critical inputs quickly.
 
-Therefore, interrupt handler is divided into top half and bottom half. 
+Therefore, interrupt handler is divided into top half and bottom half.
 
 1. Top half does the minimum work to ack.
 - Bottom half is the task in the workqueue. It does all the heavy lifting work.
@@ -68,13 +57,12 @@ Therefore, interrupt handler is divided into top half and bottom half.
 [[https://leetcode.com/discuss/interview-question/operating-system/124632/What-is-difference-between-top-half-and-bottom-half][Link: What is difference between top half and bottom half?]]
 
 [[https://en.wikipedia.org/wiki/Interrupt][Wikipedia: Interrupt]]
-
 ** Explain how system call works
 - System call is a middle layer between hardware and user-space processes
 - Use-space application use POSIX API to invoke system call.
 - System call is triggered as a soft interrupt with system call handler
 - Each system call has a system call number.
-- Linux provides a set of macros for wrapping access to system calls: _syscalln(). 
+- Linux provides a set of macros for wrapping access to system calls: _syscalln().
 - For macros of _syscalln(), n is between 0 and 6. It shows the number of parameters passed into this syscall.
 
 Types of System Calls:
@@ -93,4 +81,3 @@ SystemTap is a tracing and probing tool that allows users to study and monitor t
 
 [[https://www.thegeekdiary.com/how-to-find-which-process-is-killing-mysqld-with-sigkill-or-sigterm-on-linux/][Link: How to find Which Process Is Killing mysqld With SIGKILL or SIGTERM on Linux]]
 ** Explain hostname to ip address mapping workflow
-

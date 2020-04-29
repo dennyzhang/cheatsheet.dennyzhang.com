@@ -1977,3 +1977,4 @@ Python version: python 3
 * TODO mac swap cap and control key from command line              :noexport:
 https://apple.stackexchange.com/questions/4813/changing-modifier-keys-from-the-command-line
 
+* TODO stop itune keeps poping up                                  :noexport:

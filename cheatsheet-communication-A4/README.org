@@ -553,3 +553,6 @@ sufficient way to validate API or stack functionality in a low-cost,
 time-efficient manner.
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO 陈述句 without emotions                                     :noexport:
+* DONE too much details: may confuse people, because they are taking things as order word by word :noexport:
+  CLOSED: [2020-03-31 Tue 09:22]
+--convert

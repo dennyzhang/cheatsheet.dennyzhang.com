@@ -1,6 +1,6 @@
-* CheatSheet: SQL & MySql                                             :Languages:
+* CheatSheet: SQL & MySql                                             :Interview:
 :PROPERTIES:
-:type:     language
+:type:     interview
 :export_file_name: cheatsheet-mysql-A4.pdf
 :END:
 
@@ -16,9 +16,9 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-mysql-A4/cheatsheet-mysql-A4.pdf][cheatsheet-mysql-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/languages/][languages]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-mysql-A4/cheatsheet-mysql-A4.pdf][cheatsheet-mysql-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-mysql-A4
-- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][CheatSheet: shell]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://cheatsheet.dennyzhang.com/category/interview/][interview]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** SQL Problems

@@ -404,6 +404,18 @@ https://www.todayshomeowner.com/
  https://portfolio.geico.com/dashboard/home
 ** CANCELED 一键把所有的灯关了                                     :noexport:
    CLOSED: [2019-06-16 Sun 08:31]
+* DONE                                                             :noexport:
+** DONE toilet door is too loud                                    :noexport:
+   CLOSED: [2020-04-20 Mon 08:56]
+ https://www.amazon.com/Prime-Line-4540-Wall-Stop-Stainless/dp/B000NCWUVC/ref=pd_sim_0_4/144-9710788-0674101?_encoding=UTF8&pd_rd_i=B000NCWUVC&pd_rd_r=c715a328-58cb-11e9-ae93-bfc8ab14b226&pd_rd_w=nHaXz&pd_rd_wg=GVg1p&pf_rd_p=90485860-83e9-4fd9-b838-b28a9b7fda30&pf_rd_r=H88CN48PDGT12SQ251XZ&psc=1&refRID=H88CN48PDGT12SQ251XZ
+** DONE 橙子树挡着roof和neighbor了                                 :noexport:
+   CLOSED: [2020-02-01 Sat 10:48]
+* CANCELED                                                         :noexport:
+** CANCELED 厕所的水压不够                                         :noexport:
+   CLOSED: [2020-04-20 Mon 08:54]
+** CANCELED 买一个更宽的地毯放在主卧                               :noexport:
+   CLOSED: [2020-04-20 Mon 08:54]
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Learn skills: increase my credit history: lease contract, utility :noexport:
 * TODO Learn skills: How to check Termites                         :noexport:
 * TODO Learn skills: Preventative maintenance is a key element to saving money   :noexport:
@@ -412,8 +424,6 @@ https://zhuanlan.zhihu.com/p/32033320
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO 1031 Tax Exchange                                           :noexport:
 * Two kitchen drawers are not stable                               :noexport:
-* DONE 橙子树挡着roof和neighbor了                                  :noexport:
-  CLOSED: [2020-02-01 Sat 10:48]
 * 家里有灯泡坏了                                                   :noexport:
 * 地基里面有曾经出现过小动物的痕迹（老鼠/ 松鼠）                   :noexport:
 * 有GFCI插座坏了                                                   :noexport:
@@ -421,14 +431,13 @@ https://zhuanlan.zhihu.com/p/32033320
 * Hallway bath 的sink 水压比较低                                   :noexport:
 * 空调用了13年                                                     :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* HALF Check monthly utility setup is good: xfinity, pge and water :noexport:
-* TODO Merge 401K                                                  :noexport:
 * TODO change address: 家庭医生 儿科医生 牙科医生等                :noexport:
 http://vegas168.blogspot.com/2016/05/checklist.html
 * TODO 地基有一条裂缝 不过看上去是正常的size                       :noexport:
 * TODO 洗衣机内桶要定期清洗                                        :noexport:
 * TODO 洗碗机内桶要定期清洗                                        :noexport:
 * TODO Learn skills to declutter your home                         :noexport:
+* HALF Check monthly utility setup is good: xfinity, pge and water :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#C] hang pictures to rocky wall                            :noexport:
 * TODO [#C] kitchen tile is broken: 地板砖                         :noexport:
@@ -442,8 +451,6 @@ https://www.youtube.com/watch?v=euLQongteF4
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#B] Sign up Kaiser account and doctor                      :noexport:
 * TODO [#B] Update geico home address: increase $164               :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] 淋浴的龙头                                             :noexport:
 * TODO [#A] setup waste service                                    :noexport:
 * HALF [#A] contact PG&E to turn on gas service                    :noexport:
 https://www.pge.com/en/mybusiness/account/sst/fumigation.page
@@ -456,10 +463,8 @@ rent
 
 Chinese credit card
 * TODO sync up contact into my cellphone                           :noexport:
-* TODO 洗碗机洗不干净                                              :noexport:
 * TODO [#A] study website                                          :noexport:
 https://www.homeadvisor.com/
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Learn skills for operating a lawnmover                      :noexport:
 * TODO [#A] Unclog a Kitchen Sink                                  :noexport:
 plumbing
@@ -474,8 +479,6 @@ https://www.youtube.com/watch?v=4OjrL09CXrQ
 https://www.youtube.com/watch?v=QcBdjH4Fdik
 https://www.youtube.com/watch?v=yq6FYfqKO0g
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] bath room is leaking: Seal Around A Tub Or Shower      :noexport:
-https://www.youtube.com/watch?v=F7Y6XQ9MoHE
 * TODO Door Slam                                                   :noexport:
 https://www.amazon.com/Latchy-Catchy-Never-Again-Goldie/dp/B01N8SYYG2/ref=sr_1_24?keywords=squeaky+door&qid=1554606593&s=hi&sr=1-24
 * HALF [#B] fix holes in wooden door                               :noexport:
@@ -488,11 +491,10 @@ plumber.前段时间水管堵塞,找了handyman都没有用,只能找plumber公�
 http://chengyun-travel.blogspot.com/2013/02/pg.html
 https://www.pge.com/en_US/residential/rate-plans/how-rates-work/find-my-best-rate-plan.page
 * TODO Learn: http://chengyun-travel.blogspot.com/                 :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Change pg&e energy tier?                                    :noexport:
-* TODO toilet door is too loud                                     :noexport:
-https://www.amazon.com/Prime-Line-4540-Wall-Stop-Stainless/dp/B000NCWUVC/ref=pd_sim_0_4/144-9710788-0674101?_encoding=UTF8&pd_rd_i=B000NCWUVC&pd_rd_r=c715a328-58cb-11e9-ae93-bfc8ab14b226&pd_rd_w=nHaXz&pd_rd_wg=GVg1p&pf_rd_p=90485860-83e9-4fd9-b838-b28a9b7fda30&pf_rd_r=H88CN48PDGT12SQ251XZ&psc=1&refRID=H88CN48PDGT12SQ251XZ
-* TODO 厕所的水压不够                                              :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] bath room is leaking: Seal Around A Tub Or Shower      :noexport:
+https://www.youtube.com/watch?v=F7Y6XQ9MoHE
 * TODO [#A] bath room: Vertical Shower Door Seal                   :noexport:
 silicone seal
 
@@ -504,6 +506,7 @@ https://www.youtube.com/watch?v=PTADQAyDztI
 https://www.youtube.com/watch?v=ECdXEAAIBFI
 https://www.youtube.com/watch?v=x56o59oTgx0
 https://www.youtube.com/watch?v=lyWC4DFAF1w
+* TODO [#A] 烧水壶蒸汽                                             :noexport:
 * TODO Alexa works with Ring                                       :noexport:
 https://www.amazon.com/Ring/dp/B01JTL2PYE/ref=sr_1_39?keywords=ring+alarm&qid=1560698689&s=gateway&sr=8-39
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
@@ -513,23 +516,9 @@ https://www.amazon.com/Ring/dp/B01JTL2PYE/ref=sr_1_39?keywords=ring+alarm&qid=15
 * TODO water service: setup online payment                         :noexport:
 * TODO Split this cheatsheet: buy a house & maintain ahouse        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* DONE 父母活动                                                    :noexport:
-  CLOSED: [2020-03-01 Sun 12:55]
-- 看电影
-- 逛farmers market 
-- 逛museum
-- 逛half moon bay
-- 逛各downtown
-- 农庄
-- trade jose
-- burlingame
-- 教会连wifi
-查看地理位置，防止丢失
-中英翻译软件，列有常见用语
 * TODO spray home defense                                          :noexport:
 https://www.youtube.com/watch?v=2IQZIehbzcs
 * TODO Ring: Buy Doorbell, wooden door                             :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO bathroom toilet noise                                       :noexport:
 * TODO One bulb in the family room doens't work                    :noexport:
 * TODO 前后院桔树防虫                                              :noexport:
@@ -538,7 +527,25 @@ https://www.youtube.com/watch?v=2IQZIehbzcs
 * TODO 修手机屏幕                                                  :noexport:
 * TODO 次卧厕所淋浴漏水                                            :noexport:
 * TODO 次卧厕所地板积水                                            :noexport:
-* TODO 炉子开不了                                                  :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] 后院没有自动喷水                                       :noexport:
 * TODO 前院的桔树死了，找市政府换一棵更合适的树                    :noexport:
+* TODO Return xfinity kit                                          :noexport:
+* TODO clean laundry filter                                        :noexport:
+* TODO 洗碗机洗不干净                                              :noexport:
+* TODO Detect Garage door                                          :noexport:
+* TODO 主卧室的百叶窗有问题                                        :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO diving room有个LED射灯不好                                  :noexport:
+https://www.youtube.com/watch?v=aiSrdZZ1vkM
+* TODO 烟雾报警器没有在工作                                        :noexport:
+* TODO [#B] 修外面的铁门                                           :noexport:
+https://www.youtube.com/watch?v=dl5K5wjvjDk
+* TODO [#A] 炉子开不了                                             :noexport:
+* TODO [#A] 后院没有自动喷水                                       :noexport:
+* TODO [#A] Merge 401K                                             :noexport:
+* TODO [#A] 次卧有煤气味                                           :noexport:
+* TODO [#A] 买土给两棵桔树                                         :noexport:
+* TODO [#A] 买除草的铲子，除草剂，泥巴，草籽                       :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] 主卧淋浴的龙头: 更换浴室莲蓬头                         :noexport:
+https://www.youtube.com/watch?v=U0kKGT2Kljs

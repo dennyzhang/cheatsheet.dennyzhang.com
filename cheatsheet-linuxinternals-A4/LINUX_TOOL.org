@@ -616,3 +616,12 @@ KiB Swap:        0 total,        0 free,        0 used.   171928 avail Mem
     9 root      20   0       0      0      0 I  0.0  0.0   0:00.00 rcu_bh
    10 root      rt   0       0      0      0 S  0.0  0.0   0:00.00 migration/0
 #+END_EXAMPLE
+
+- us: time running in user mode
+- sy: time running in system mode
+- ni: time running niced user process
+- id: time spent in the kernel idle handler
+- wa: time waiting for I/O completion
+- hi: time spent for hardware interrupts
+- si: time spent for software interrupts
+- st: time stolen from this vm by the hypervisor

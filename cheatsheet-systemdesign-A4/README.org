@@ -26,9 +26,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |----------------------+------------------------------------------------------------------------------------------------------|
 | YouTube              | [[https://www.youtube.com/watch?v=ZgdS0EUmn70][YouTube: Intro to Architecture and Systems Design Interviews]], [[https://www.youtube.com/channel/UC9vLsnF6QPYuH51njmIooCQ][YouTube: System Design Interview]]       |
 | YouTube              | [[https://www.youtube.com/channel/UC-vYrOAmtrx9sBzJAf3x_xw/featured][YouTube Channel: Success in Tech]], [[https://www.youtube.com/watch?v=-W9F__D3oY4&feature=youtu.be][YouTube: Scalability Harvard Web Development]]                       |
+| YouTube              | [[https://www.youtube.com/watch?v=Gg318hR5JY0&list=PLllx_3tLoo4c_aR8RKOOnizL5LiUH02YF&index=8][YouTube: Prepare for Your Google Interview: Systems Design]]                                           |
 |----------------------+------------------------------------------------------------------------------------------------------|
 | Papers               | [[https://cheatsheet.dennyzhang.com/cheatsheet-paper-A4][CheatSheet: Well-Known Papers For IT Industry]], [[https://github.com/papers-we-love/papers-we-love][Github: papers-we-love]]                                |
-| Github               | [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: system-design-primer]], [[https://github.com/puncsky/system-design-and-architecture][Github: puncsky/system-design-and-architecture]]                         |
+| Github               | [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: donnemartin/system-design-primer]], [[https://github.com/checkcheckzz/system-design-interview][Github: checkcheckzz/system-design-interview]]               |
+| Github               | [[https://github.com/puncsky/system-design-and-architecture][Github: puncsky/system-design-and-architecture]]                                                       |
 | Website              | [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]], [[http://blog.gainlo.co/index.php/category/system-design-interview-questions/][Website: blog.gainlo.co]]                                        |
 | Website              | [[https://interviewing.io][Website: interviewing.io]], [[https://www.interviewbit.com/courses/system-design/][Website: interviewbit.com]]                                                  |
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4][CheatSheet: Common Code Problems & Follow-ups]]               |
@@ -321,19 +323,13 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
-https://medium.com/hackernoon/top-10-system-design-interview-questions-for-software-engineers-8561290f0444
-
-https://draveness.me/
-
-https://github.com/binhnguyennus/awesome-scalability
-
-https://github.com/donnemartin/system-design-primer
-
-https://github.com/checkcheckzz/system-design-interview
-
 https://github.com/binhnguyennus/awesome-scalability
 
 https://highscalability.com/blog/2013/4/15/scaling-pinterest-from-0-to-10s-of-billions-of-page-views-a.html
+
+https://medium.com/hackernoon/top-10-system-design-interview-questions-for-software-engineers-8561290f0444
+
+https://draveness.me/
 
 https://docs.microsoft.com/en-us/azure/architecture/patterns/
 
@@ -590,3 +586,5 @@ https://www.1point3acres.com/bbs/thread-596045-1-1.html
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Industry best practice for supporting large scale requests with different priorities? :noexport:
 * TODO How to implement individual web crawlers in concurrent programming? :noexport:
+* TODO design: How to design GFW                                   :noexport:
+* TODO design: Voting system                                       :noexport:

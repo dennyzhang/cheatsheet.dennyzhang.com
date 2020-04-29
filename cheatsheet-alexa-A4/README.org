@@ -1,4 +1,4 @@
-* CheatSheet: Amazon Alexa/Echo                                       :Life:
+x* CheatSheet: Amazon Alexa/Echo                                       :Life:
 :PROPERTIES:
 :type:     tool
 :export_file_name: cheatsheet-alexa-A4.pdf
@@ -73,3 +73,120 @@ License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_l
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
+* notes                                                            :noexport:
+#+BEGIN_EXAMPLE
+
+Things to Try
+Get to Know Alexa
+ Ask Alexa...
+
+"How are you?"
+"Why are you called Alexa?"
+"Do you prefer cats or dogs?"
+ Ask about Alexa's favorites 
+
+"What's your favorite color?"
+"Who is your favorite actor?"
+"What's your favorite sci-fi movie?"
+Useful Phrases
+ Ask Alexa...
+
+"Turn up the volume"
+"What time is it?"
+"What's up?"
+"What can I say?"
+Questions & Answers
+"Alexa, why is the sky blue?"
+
+Ask about science, math, and geography
+
+ Ask Alexa...
+
+"What are Newton's three laws of motion?"
+"What is 100 divided by 16?"
+"Who is the Prime Minister of Denmark?"
+Translations 
+ Ask Alexa...
+
+"How do you say 'I love you' in French?"
+"How do you say 'good morning' in Japanese?"
+"How do you say 'thank you' in Italian?"
+Jokes
+"Alexa, tell me a joke"
+
+Knock, knock. Alexa knows lots of jokes
+
+Fun with Alexa
+"Alexa, sing a song"
+
+Alexa has many ways to keep you entertained
+
+ Ask Alexa...
+
+"Sing a country song"
+"Tell me a limerick"
+"Beatbox for me"
+"Flip a coin"
+"Tell me a story"
+Weather
+"Alexa, what's the weather?"
+
+Ask about local, national, and international weather
+
+ Ask Alexa...
+
+"Will it rain tomorrow?"
+"How's the weather in Seattle this weekend?"
+"What's the temperature in Austin?"
+Flash Briefing
+"Alexa, play my flash briefing"
+
+Listen to news and content from popular broadcasters
+
+To-do Lists
+"Alexa, add 'feed pets' to my to-do list"
+
+Shopping Lists
+"Alexa, add milk to my shopping list"
+
+Reminders
+"Alexa, set a reminder"
+
+Alexa can help remind you about things
+
+Timers
+"Alexa, set an egg timer for 3 minutes"
+
+Set timers and also give your timers names
+
+Alarms
+"Alexa, set an alarm for 6:00am"
+
+Alexa can wake you up and also let you snooze
+
+ Ask Alexa...
+
+"Wake me up in the morning"
+"Set a weekday alarm at 7:00am"
+"What alarms are set?"
+"Snooze..." (enjoy 9 more minutes of Zzz...)
+Listen to Music
+"Alexa, play music"
+
+Hands-free voice control for all your favorite music
+
+  Control the music
+
+"Turn up the volume"
+"Rewind 15 seconds"
+"Repeat this song"
+"Stop the music"
+  Play by decade
+
+"Play music from the 90s"
+"Play music from the 60s"
+  Play by genre
+
+"Play country music"
+"Play rock music"
+#+END_EXAMPLE

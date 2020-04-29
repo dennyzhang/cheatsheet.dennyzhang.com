@@ -93,7 +93,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Sorry for off-topic                                                                          |         |
 | Fix intermittent failures                                                                    |         |
 | Go the extra mile                                                                            |         |
-| Not feeling well this morning; woke up with cold symptoms. I’ll be working remotely as I can |         |
+| Not feeling well this morning; woke up with cold symptoms. I'll be working remotely as I can |         |
 
 ** More Resources
 License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
@@ -478,19 +478,19 @@ Thanks,
 * Business Essentials                                              :noexport:
 https://www.investopedia.com/business-essentials-4689832
 * TODO company culture                                             :noexport:
-You are curious about how our different backgrounds affect us at work, rather than pretending they don’t affect us
+You are curious about how our different backgrounds affect us at work, rather than pretending they don't affect us
 
 You recognize we all have biases, and work to grow past them
 
 ambitious common goals
 
-Of course, to be great, most of us have to put in considerable effort, but hard work and long hours is not how we measure or talk about a person’s contribution.
+Of course, to be great, most of us have to put in considerable effort, but hard work and long hours is not how we measure or talk about a person's contribution.
 
 In many organizations, there is an unhealthy emphasis on process and not much freedom.
 
-The lesson is you don’t need policies for everything. Most people understand the benefits of wearing clothes at work.
+The lesson is you don't need policies for everything. Most people understand the benefits of wearing clothes at work.
 
-We avoid over-correcting. Just because a few people abuse freedom doesn’t mean that our employees are not worthy of great trust.
+We avoid over-correcting. Just because a few people abuse freedom doesn't mean that our employees are not worthy of great trust.
 * daily standup                                                    :noexport:
 Bug triage and bug fixing.
 
@@ -504,3 +504,70 @@ Upstream CAPA meeting, 1:1
 - more work for getting ready for capi v0.3.0
 * Appraisal                                                        :noexport:
 No place is best place to work unless you connect with your boss and team members.
+* TODO Description for PE/SRE                                      :noexport:
+Resilient production services and data pipelines
+
+Identify common patterns in challenges with operating services in production
+* TODO Reject an offer                                             :noexport:
+First of all, I sincerely appreciate your consideration for the software engineering position with Amazon. I regret to inform you that I must withdraw my application for this job. Another company has offered me an opportunity which I can't turn down. So I have already signed the offer today.
+
+Thank you for the time you spent reviewing my qualifications and interviewing with me.
+* TODO misc                                                        :noexport:
+At global scale
+Consistent check of health status
+Create a concrete road map
+Quantify the impact of your deliverables
+Our first solution may not be the best one
+
+I wish you all the best in your future endeavors!
+Non-negotiable requirement
+
+Stop typing and have a conversation
+* TODO Facebook SDLC tooling
+phabricator - code review
+Thrift - RPC
+* TODO Critical comment                                            :noexport:
+Social networks make people feel better but doesn't solve problems.
+* TODO Facebook OLTP: still using hadoop? Or Spark?                :noexport:
+Hadoop, hive, hbase
+* TODO Facebook infra testing: how to simulate the traffic         :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO faceook communication
+- status update: share what you're doing, feeling or thinking
+- Facebook Chat: real time communication with friends currently on the facebook website
+- Wall: write a public message to a friend on their wall
+- Facebook message: send a private message to a friend or someone you would like to be friends with
+- Like: Give your friends the thumbs up
+- Comments: write comments on pictures, friend's status updates or wall posts
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO laid-off email                                              :noexport:
+#+BEGIN_EXAMPLE
+Due to the economic impact of COVID-19 (coronavirus), XXX is implementing measures to ensure the financial stability of the company. The current pandemic situation has impacted our business significantly, and as a result, we find that we must make some difficult personnel decisions.  
+
+In an effort to reduce costs, we are restructuring our business, and that will result in the elimination of a number of positions in our company.  
+
+Your position has been selected, and unfortunately this means you will be laid off. Today will be your last actual workday with XXX. You will be compensated through April 1, 2020. Your medical, dental and vision (YY - if you signed up for them) insurance will be active until April 30, 2020. Further information about your benefits, unused paid time off and last paycheck will be emailed to you by your HR Team.
+.
+In the coming hour, your direct manager will be reaching out to meet with you and to answer your questions along with discussing available separation benefits, including the services of our HR team, to provide counseling and assistance in finding another job.  
+
+We'll inform you via your personal email about how to retrieve any personal items at the office. You are also kindly asked to return any company property that you may have in your possession. Please email XXX with your personal email address so a shipping label can be emailed to you.
+
+Finally, we just want to thank you for all your hard work and dedication. You have made XXX a better place, and we will miss working with you. Thank you for all you have done for us.
+#+END_EXAMPLE
+* TODO infra words                                                 :noexport:
+Opaque architectures
+spot vs preemptable resources
+endemic problems vc pandemic problems
+
+
+closed and proprietary systems
+
+Isolate adhoc queries from jobs with strict deadlines
+* TODO cloud industry                                              :noexport:
+Availability, scalability, latency, and efficiency of our cloud service
+Experience in a high-volume or critical production service environment.
+* TODO team lead                                                   :noexport:
+Lead by example, care for the team
+Establish credibility with the quality of the team's technical execution
+Ability to deliver results and work cross-functionally
+leading cross-functional initiatives
