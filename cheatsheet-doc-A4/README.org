@@ -571,3 +571,5 @@ Lead by example, care for the team
 Establish credibility with the quality of the team's technical execution
 Ability to deliver results and work cross-functionally
 leading cross-functional initiatives
+* TODO Critical conversation                                       :noexport:
+A lay off is a chance to trim the fat.

@@ -30,7 +30,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |----------------------+------------------------------------------------------------------------------------------------------|
 | Papers               | [[https://cheatsheet.dennyzhang.com/cheatsheet-paper-A4][CheatSheet: Well-Known Papers For IT Industry]], [[https://github.com/papers-we-love/papers-we-love][Github: papers-we-love]]                                |
 | Github               | [[https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design][Github: donnemartin/system-design-primer]], [[https://github.com/checkcheckzz/system-design-interview][Github: checkcheckzz/system-design-interview]]               |
-| Github               | [[https://github.com/puncsky/system-design-and-architecture][Github: puncsky/system-design-and-architecture]]                                                       |
+| Github               | [[https://github.com/puncsky/system-design-and-architecture][Github: puncsky/system-design-and-architecture]], [[https://github.com/yangshun/tech-interview-handbook/tree/master/experimental/design][Github: yangshun/tech-interview-handbook]]             |
 | Website              | [[https://www.hiredintech.com/app#system-design][Website: hiredintech - System Design]], [[http://blog.gainlo.co/index.php/category/system-design-interview-questions/][Website: blog.gainlo.co]]                                        |
 | Website              | [[https://interviewing.io][Website: interviewing.io]], [[https://www.interviewbit.com/courses/system-design/][Website: interviewbit.com]]                                                  |
 | Cheatsheet           | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4][CheatSheet: Common Code Problems & Follow-ups]]               |
@@ -241,27 +241,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+TBLFM: $1=@-1$1+1;N
 
 [[image-blog:CheatSheet: Feature Design For Job Interview][https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/cheatsheet-systemdesign-A4/dynamo-summary.png]]
-** Top 10 Trade-Offs
-| Num | Name                   | Summary                                          |
-|-----+------------------------+--------------------------------------------------|
-|   1 | Decide data store      |                                                  |
-|   2 | Clustering vs Sharding |                                                  |
-|   3 | When to shard?         |                                                  |
-|   4 | What to be cached?     | What data can be cached to speed up the requests |
-#+TBLFM: $1=@-1$1+1;N
-** Explain workflow: What happens when XXX?
-| Num | Name                                  | Summary                                                                       |
-|-----+---------------------------------------+-------------------------------------------------------------------------------|
-|   1 | When happens when I search in google? |                                                                               |
-|   2 | How loadbalancer works                |                                                                               |
-|   3 | Explain three phase commit model      |                                                                               |
-|   4 | Explain HTTP return code              | [[https://evertpot.com/http/][Link: Series of posts on HTTP status codes]] e.g, 401 vs 405, 500 vs 503 vs 504 |
-|   5 | Explain Mysql DB replication model    |                                                                               |
-|   6 | Explain gossip protocol               |                                                                               |
-|   7 | [[https://architect.dennyzhang.com/explain-cap][Explain CAP]]                           |                                                                               |
-|   8 | Explain Hadoop file system            |                                                                               |
-|   9 | [Linux] Explain OS booting process    |                                                                               |
-#+TBLFM: $1=@-1$1+1;N
 ** Explain tools: how XXX supports XXX?
 | Num | Name                                  | Summary |
 |-----+---------------------------------------+---------|
@@ -588,3 +567,27 @@ https://www.1point3acres.com/bbs/thread-596045-1-1.html
 * TODO How to implement individual web crawlers in concurrent programming? :noexport:
 * TODO design: How to design GFW                                   :noexport:
 * TODO design: Voting system                                       :noexport:
+* TODO links                                                       :noexport:
+  https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=537998&extra=page%3D2%26filter%3Ddigest%26digest%3D1%26sortid%3D192%26digest%3D1%26sortid%3D192
+  经验分享:从面试全挂到面试全过|一亩三分地求职（非面经）版
+* Top 10 Trade-Offs                                                :noexport:
+| Num | Name                   | Summary                                          |
+|-----+------------------------+--------------------------------------------------|
+|   1 | Decide data store      |                                                  |
+|   2 | Clustering vs Sharding |                                                  |
+|   3 | When to shard?         |                                                  |
+|   4 | What to be cached?     | What data can be cached to speed up the requests |
+#+TBLFM: $1=@-1$1+1;N
+* Explain workflow: What happens when XXX?                         :noexport:
+| Num | Name                                  | Summary                                                                       |
+|-----+---------------------------------------+-------------------------------------------------------------------------------|
+|   1 | When happens when I search in google? |                                                                               |
+|   2 | How loadbalancer works                |                                                                               |
+|   3 | Explain three phase commit model      |                                                                               |
+|   4 | Explain HTTP return code              | [[https://evertpot.com/http/][Link: Series of posts on HTTP status codes]] e.g, 401 vs 405, 500 vs 503 vs 504 |
+|   5 | Explain Mysql DB replication model    |                                                                               |
+|   6 | Explain gossip protocol               |                                                                               |
+|   7 | [[https://architect.dennyzhang.com/explain-cap][Explain CAP]]                           |                                                                               |
+|   8 | Explain Hadoop file system            |                                                                               |
+|   9 | [Linux] Explain OS booting process    |                                                                               |
+#+TBLFM: $1=@-1$1+1;N

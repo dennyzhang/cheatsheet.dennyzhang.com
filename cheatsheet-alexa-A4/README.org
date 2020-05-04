@@ -1,4 +1,4 @@
-x* CheatSheet: Amazon Alexa/Echo                                       :Life:
+* CheatSheet: Amazon Alexa/Echo                                        :Life:
 :PROPERTIES:
 :type:     tool
 :export_file_name: cheatsheet-alexa-A4.pdf
@@ -40,6 +40,10 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Sas music                 | =Alexa, play a sasa music=          |
 | Play next song            | =Alexa, next=                       |
 | Reference                 | [[https://www.cnet.com/how-to/alexa-tips-for-music-lovers/][Link: 9 Alexa tips for music lovers]] |
+** Alexa Automation
+| Name                      | Command                                              |
+|---------------------------+------------------------------------------------------|
+| Control Philips Hue bulbs | [[https://www.youtube.com/watch?v=YDgbICos9Jg][YouTube: How to setup Philips Hue with Amazon Alexa?]] |
 ** More Resources
 License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
