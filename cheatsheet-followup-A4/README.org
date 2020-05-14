@@ -57,6 +57,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  31 | [[https://code.dennyzhang.com/review-bitmanipulation][#bitmanipulation]]    | [[https://code.dennyzhang.com/review-bitmanipulation][Review: Bit manipulation problems]]                 |
 |  32 | [[https://code.dennyzhang.com/review-manydetails][#manydetails]]        | [[https://code.dennyzhang.com/review-manydetails][Review: Problems With Many Details]]                |
 |  33 | [[https://code.dennyzhang.com/review-sql][#sql]]                | [[https://code.dennyzhang.com/review-sql][Review: SQL Problems]]                              |
+|  34 | [[https://code.dennyzhang.com/tag/oodesign/][#oodesign]]           | [[https://code.dennyzhang.com/review-oodesign][Review: Object-Oriented Design Problems]]           |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
@@ -127,27 +128,28 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  55 | [[https://code.dennyzhang.com/followup-mountainarray][#mountainarray]]              | [[https://code.dennyzhang.com/followup-mountainarray][Mountain Array Problems & Follow-Up]]                     |
 |  56 | [[https://code.dennyzhang.com/followup-intervaldp][#intervaldp]]                 | [[https://code.dennyzhang.com/followup-intervaldp][Dynamic Programming On Interval Problems & Follow-up]]    |
 |  57 | [[https://code.dennyzhang.com/followup-treedp][#treedp]]                     | [[https://code.dennyzhang.com/followup-treedp][Dynamic Programming On Binary Tree Problems & Follow-up]] |
-|  58 | [[https://code.dennyzhang.com/followup-possibilities][#possibilities]]              | [[https://code.dennyzhang.com/followup-possibilities][Possibilities Problems & Follow-up]]                      |
-|  59 | [[https://code.dennyzhang.com/followup-uglynumber][#uglynumber]]                 | [[https://code.dennyzhang.com/followup-uglynumber][Ugly Number Problems & Follow-up]]                        |
-|  60 | [[https://code.dennyzhang.com/followup-prime][#prime]]                      | [[https://code.dennyzhang.com/followup-prime][Prime Problems & Follow-up]]                              |
-|  61 | [[https://code.dennyzhang.com/followup-geometry][#geometry]]                   | [[https://code.dennyzhang.com/followup-geometry][Geometry Problems & Follow-up]]                           |
-|  62 | [[https://code.dennyzhang.com/followup-palindrome][#palindrome]]                 | [[https://code.dennyzhang.com/followup-palindrome][Palindrome Problems & Follow-Up]]                         |
-|  63 | [[https://code.dennyzhang.com/followup-encoding][#encoding]]                   | [[https://code.dennyzhang.com/followup-encoding][Encoding Problems & Follow-up]]                           |
-|  64 | [[https://code.dennyzhang.com/followup-circulararray][#circulararray]]              | [[https://code.dennyzhang.com/followup-circulararray][Circular Array Problems & Follow-up]]                     |
-|  65 | [[https://code.dennyzhang.com/followup-heightoftree][#heightoftree]]               | [[https://code.dennyzhang.com/followup-heightoftree][Height Of Tree Problems & Follow-up]]                     |
-|  66 | [[https://code.dennyzhang.com/followup-circleingraph][#circleingraph]]              | [[https://code.dennyzhang.com/followup-circleingraph][Circle In Graph Problems & Follow-Up]]                    |
-|  67 | [[https://code.dennyzhang.com/followup-floydcycle][#floydcycle]]                 | [[https://code.dennyzhang.com/followup-floydcycle][Floyd Cycle Problems & Follow-up]]                        |
-|  68 | [[https://code.dennyzhang.com/followup-screenfit][#screenfit]]                  | [[https://code.dennyzhang.com/followup-screenfit][Screen Fit Problems & Follow-up]]                         |
-|  69 | [[https://code.dennyzhang.com/followup-abbreviation][#abbreviation]]               | [[https://code.dennyzhang.com/followup-abbreviation][Abbreviation Problems & Follow-Up]]                       |
-|  70 | [[https://code.dennyzhang.com/followup-anagram][#anagram]]                    | [[https://code.dennyzhang.com/followup-anagram][Anagram Problems & Follow-up]]                            |
-|  71 | [[https://code.dennyzhang.com/followup-linesweep][#linesweep]]                  | [[https://code.dennyzhang.com/followup-linesweep][Line Sweep Problems & Follow-up]]                         |
-|  72 | [[https://code.dennyzhang.com/followup-cyclicswap][#cyclicswap]]                 | [[https://code.dennyzhang.com/followup-cyclicswap][Cyclic Swapping Problems & Follow-Up]]                    |
-|  73 | [[https://code.dennyzhang.com/followup-dijkstra][#dijkstra]]                   | [[https://code.dennyzhang.com/followup-dijkstra][Dijkstra Algorithm Problems & Follow-up]]                 |
-|  74 | [[https://code.dennyzhang.com/followup-floyd][#floyd]]                      | [[https://code.dennyzhang.com/followup-floyd][Floyd Warshall Algorithm Problems & Follow-up]]           |
-|  75 | [[https://code.dennyzhang.com/followup-roundtrippass][#roundtrippass]]              | [[https://code.dennyzhang.com/followup-roundtrippass][Array Round Trip Pass Problems & Follow-up]]              |
-|  76 | [[https://code.dennyzhang.com/followup-regioninmatrix][#regioninmatrix]]             | [[https://code.dennyzhang.com/followup-regioninmatrix][Region In Matrix Problems & Follow-up]]                   |
-|  77 | [[https://code.dennyzhang.com/followup-kadane][#kadane]]                     | [[https://code.dennyzhang.com/followup-kadane][Kadane Algorithm Problems & Follow-up]]                   |
-|  78 | [[https://code.dennyzhang.com/followup-bipartite][#bipartite]]                  | [[https://code.dennyzhang.com/followup-bipartite][Bipartite Graph Problems & Follow-up]]                    |
+|  58 | [[https://code.dennyzhang.com/followup-bitmaskdp][#bitmaskdp]]                  | [[https://code.dennyzhang.com/followup-bitmaskdp][Dynamic Programming On Bitmask Problems & Follow-up]]     |
+|  59 | [[https://code.dennyzhang.com/followup-possibilities][#possibilities]]              | [[https://code.dennyzhang.com/followup-possibilities][Possibilities Problems & Follow-up]]                      |
+|  60 | [[https://code.dennyzhang.com/followup-uglynumber][#uglynumber]]                 | [[https://code.dennyzhang.com/followup-uglynumber][Ugly Number Problems & Follow-up]]                        |
+|  61 | [[https://code.dennyzhang.com/followup-prime][#prime]]                      | [[https://code.dennyzhang.com/followup-prime][Prime Problems & Follow-up]]                              |
+|  62 | [[https://code.dennyzhang.com/followup-geometry][#geometry]]                   | [[https://code.dennyzhang.com/followup-geometry][Geometry Problems & Follow-up]]                           |
+|  63 | [[https://code.dennyzhang.com/followup-palindrome][#palindrome]]                 | [[https://code.dennyzhang.com/followup-palindrome][Palindrome Problems & Follow-Up]]                         |
+|  64 | [[https://code.dennyzhang.com/followup-encoding][#encoding]]                   | [[https://code.dennyzhang.com/followup-encoding][Encoding Problems & Follow-up]]                           |
+|  65 | [[https://code.dennyzhang.com/followup-circulararray][#circulararray]]              | [[https://code.dennyzhang.com/followup-circulararray][Circular Array Problems & Follow-up]]                     |
+|  66 | [[https://code.dennyzhang.com/followup-heightoftree][#heightoftree]]               | [[https://code.dennyzhang.com/followup-heightoftree][Height Of Tree Problems & Follow-up]]                     |
+|  67 | [[https://code.dennyzhang.com/followup-circleingraph][#circleingraph]]              | [[https://code.dennyzhang.com/followup-circleingraph][Circle In Graph Problems & Follow-Up]]                    |
+|  68 | [[https://code.dennyzhang.com/followup-floydcycle][#floydcycle]]                 | [[https://code.dennyzhang.com/followup-floydcycle][Floyd Cycle Problems & Follow-up]]                        |
+|  69 | [[https://code.dennyzhang.com/followup-screenfit][#screenfit]]                  | [[https://code.dennyzhang.com/followup-screenfit][Screen Fit Problems & Follow-up]]                         |
+|  70 | [[https://code.dennyzhang.com/followup-abbreviation][#abbreviation]]               | [[https://code.dennyzhang.com/followup-abbreviation][Abbreviation Problems & Follow-Up]]                       |
+|  71 | [[https://code.dennyzhang.com/followup-anagram][#anagram]]                    | [[https://code.dennyzhang.com/followup-anagram][Anagram Problems & Follow-up]]                            |
+|  72 | [[https://code.dennyzhang.com/followup-linesweep][#linesweep]]                  | [[https://code.dennyzhang.com/followup-linesweep][Line Sweep Problems & Follow-up]]                         |
+|  73 | [[https://code.dennyzhang.com/followup-cyclicswap][#cyclicswap]]                 | [[https://code.dennyzhang.com/followup-cyclicswap][Cyclic Swapping Problems & Follow-Up]]                    |
+|  74 | [[https://code.dennyzhang.com/followup-dijkstra][#dijkstra]]                   | [[https://code.dennyzhang.com/followup-dijkstra][Dijkstra Algorithm Problems & Follow-up]]                 |
+|  75 | [[https://code.dennyzhang.com/followup-floyd][#floyd]]                      | [[https://code.dennyzhang.com/followup-floyd][Floyd Warshall Algorithm Problems & Follow-up]]           |
+|  76 | [[https://code.dennyzhang.com/followup-roundtrippass][#roundtrippass]]              | [[https://code.dennyzhang.com/followup-roundtrippass][Array Round Trip Pass Problems & Follow-up]]              |
+|  77 | [[https://code.dennyzhang.com/followup-regioninmatrix][#regioninmatrix]]             | [[https://code.dennyzhang.com/followup-regioninmatrix][Region In Matrix Problems & Follow-up]]                   |
+|  78 | [[https://code.dennyzhang.com/followup-kadane][#kadane]]                     | [[https://code.dennyzhang.com/followup-kadane][Kadane Algorithm Problems & Follow-up]]                   |
+|  79 | [[https://code.dennyzhang.com/followup-bipartite][#bipartite]]                  | [[https://code.dennyzhang.com/followup-bipartite][Bipartite Graph Problems & Follow-up]]                    |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML

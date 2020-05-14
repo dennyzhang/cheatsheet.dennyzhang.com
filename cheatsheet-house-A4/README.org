@@ -215,7 +215,6 @@ https://www.todayshomeowner.com/
 | Property Tax                      |                        | https://payments.sccgov.org/propertytax | Tax due 4/10 and 12/10 each year             |                                                                   |
 | Moving                            |                        | 兄弟搬家                                | (510) 648-6546                               | 最好当天最早时间,否则 容易迟到,通常他们报价 包含小费,预约时先确定 |
 | HOA                               | N/A                    |                                         |                                              |                                                                   |
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * DONE local notes                                                 :noexport:
 ** DONE Hang pictures to the wall                                  :noexport:
    CLOSED: [2019-03-25 Mon 09:07]
@@ -409,6 +408,31 @@ https://www.youtube.com/watch?v=U0kKGT2Kljs
   CLOSED: [2020-05-01 Fri 22:29]
 ** DONE [#A] 买除草的铲子，泥巴，草籽                               :noexport:
   CLOSED: [2020-05-01 Fri 22:29]
+** DONE [#B] 修外面的铁门                                          :noexport:
+   CLOSED: [2020-05-11 Mon 08:52]
+ https://www.youtube.com/watch?v=dl5K5wjvjDk
+** DONE Check monthly utility setup is good: xfinity, pge and water :noexport:
+   CLOSED: [2020-05-11 Mon 08:52]
+** DONE [#C] setup auto payment for the garbage service            :noexport:
+   CLOSED: [2020-05-11 Mon 08:53]
+** DONE [#A] setup waste service                                   :noexport:
+   CLOSED: [2020-05-11 Mon 08:53]
+** DONE [#A] contact PG&E to turn on gas service                   :noexport:
+   CLOSED: [2020-05-11 Mon 08:53]
+ https://www.pge.com/en/mybusiness/account/sst/fumigation.page
+ http://terms.naer.edu.tw/detail/1678626/?index=2
+** DONE [#B] fix holes in wooden door                              :noexport:
+   CLOSED: [2020-05-11 Mon 08:54]
+** DONE Stop Squeaky Door Hinges                                   :noexport:
+   CLOSED: [2020-05-11 Mon 08:55]
+ https://www.wikihow.life/Stop-Squeaky-Door-Hinges
+ https://www.amazon.com/Latchy-Catchy-Never-Again-Goldie/dp/B01N8SYYG2/ref=sr_1_24?keywords=squeaky+door&qid=1554606593&s=hi&sr=1-24
+** DONE water service: setup online payment                        :noexport:
+   CLOSED: [2020-05-11 Mon 08:55]
+** DONE Split this cheatsheet: buy a house & maintain ahouse       :noexport:
+   CLOSED: [2020-05-11 Mon 08:55]
+** DONE Ring: Buy Doorbell, wooden door                            :noexport:
+   CLOSED: [2020-05-11 Mon 08:55]
 * CANCELED                                                         :noexport:
 ** CANCELED 一键把所有的灯关了                                     :noexport:
    CLOSED: [2019-06-16 Sun 08:31]
@@ -429,11 +453,41 @@ https://www.youtube.com/watch?v=U0kKGT2Kljs
 
 ** CANCELED 洗碗机洗不干净                                         :noexport:
    CLOSED: [2020-04-30 Thu 23:24]
-* CANCELED change address: 家庭医生 儿科医生 牙科医生等            :noexport:
-  CLOSED: [2020-05-01 Fri 22:30]
-http://vegas168.blogspot.com/2016/05/checklist.html
-* CANCELED [#B] Update geico home address: increase $164           :noexport:
-  CLOSED: [2020-05-01 Fri 22:31]
+** CANCELED change address: 家庭医生 儿科医生 牙科医生等           :noexport:
+   CLOSED: [2020-05-01 Fri 22:30]
+ http://vegas168.blogspot.com/2016/05/checklist.html
+** CANCELED [#B] Update geico home address: increase $164          :noexport:
+   CLOSED: [2020-05-01 Fri 22:31]
+** CANCELED Hallway bath 的sink 水压比较低                         :noexport:
+   CLOSED: [2020-05-11 Mon 08:52]
+** CANCELED [#B] Sign up Kaiser account and doctor                 :noexport:
+   CLOSED: [2020-05-11 Mon 08:53]
+** CANCELED [#A] apply two additional credit card to increase the credit score :noexport:
+   CLOSED: [2020-05-11 Mon 08:53]
+** CANCELED [#A] bath room is leaking: Seal Around A Tub Or Shower :noexport:
+   CLOSED: [2020-05-11 Mon 08:55]
+ https://www.youtube.com/watch?v=F7Y6XQ9MoHE
+** CANCELED [#A] 水管堵塞是否要买home warranty                     :noexport:
+   CLOSED: [2020-05-11 Mon 08:54]
+ https://zhuanlan.zhihu.com/p/32033320
+ plumber.前段时间水管堵塞,找了handyman都没有用,只能找plumber公司,幸好有warranty,所以大部分都保险报销了,要不估计要大出血.handyman和我说看你的严重程度了,如果就是一般的堵塞,估计400,500刀.要是major pipe有问题,找市政厅来,几千刀也是少的.
+** CANCELED Change pg&e energy tier?                               :noexport:
+   CLOSED: [2020-05-11 Mon 08:54]
+** CANCELED [#A] bath room: Vertical Shower Door Seal              :noexport:
+   CLOSED: [2020-05-11 Mon 08:54]
+ silicone seal
+
+ https://www.amazon.com/Zengest-Strip-Bottom-Shower-Transparent/dp/B07MPNYBBJ/ref=sr_1_2_sspa?keywords=Vertical%2BShower%2BDoor%2BSeal&qid=1554620898&s=gateway&sr=8-2-spons&th=1
+
+ https://www.amazon.com/s?k=Vertical+Shower+Door+Seal&ref=nb_sb_noss
+
+ https://www.youtube.com/watch?v=PTADQAyDztI
+ https://www.youtube.com/watch?v=ECdXEAAIBFI
+ https://www.youtube.com/watch?v=x56o59oTgx0
+ https://www.youtube.com/watch?v=lyWC4DFAF1w
+** CANCELED 处理logitech的mouse and keyboard
+   CLOSED: [2020-05-09 Sat 07:45]
+
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Learn skills: increase my credit history: lease contract, utility :noexport:
 * TODO Learn skills: How to check Termites                         :noexport:
@@ -447,13 +501,9 @@ https://zhuanlan.zhihu.com/p/32033320
 * 地基里面有曾经出现过小动物的痕迹（老鼠/ 松鼠）                   :noexport:
 * 有GFCI插座坏了                                                   :noexport:
 * 厕所下面有曾经漏水的痕迹                                         :noexport:
-* Hallway bath 的sink 水压比较低                                   :noexport:
 * 空调用了13年                                                     :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO 地基有一条裂缝 不过看上去是正常的size                       :noexport:
-* TODO Learn skills to declutter your home                         :noexport:
-* HALF Check monthly utility setup is good: xfinity, pge and water :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#C] hang pictures to rocky wall                            :noexport:
 * TODO [#C] kitchen tile is broken: 地板砖                         :noexport:
 * HALF [#C] Fix a Crack in Concrete                                :noexport:
@@ -462,23 +512,7 @@ https://www.youtube.com/watch?v=-ykTRshSlwU
 https://www.youtube.com/watch?v=y1rOtvvxRzY
 https://www.youtube.com/watch?v=WMESCf09vW4
 https://www.youtube.com/watch?v=euLQongteF4
-* TODO [#C] setup auto payment for the garbage service             :noexport:
-* TODO [#B] Sign up Kaiser account and doctor                      :noexport:
-* TODO [#A] setup waste service                                    :noexport:
-* HALF [#A] contact PG&E to turn on gas service                    :noexport:
-https://www.pge.com/en/mybusiness/account/sst/fumigation.page
-http://terms.naer.edu.tw/detail/1678626/?index=2
-* TODO [#A] apply two additional credit card to increase the credit score :noexport:
-* TODO [#A] change the heater filter                               :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO 15 days won't impact your credit                            :noexport:
-rent
-
-Chinese credit card
 * TODO sync up contact into my cellphone                           :noexport:
-* TODO [#A] study website                                          :noexport:
-https://www.homeadvisor.com/
-* TODO Learn skills for operating a lawnmover                      :noexport:
 * TODO [#A] Unclog a Kitchen Sink                                  :noexport:
 plumbing
 
@@ -491,45 +525,15 @@ garbage disposal
 https://www.youtube.com/watch?v=4OjrL09CXrQ
 https://www.youtube.com/watch?v=QcBdjH4Fdik
 https://www.youtube.com/watch?v=yq6FYfqKO0g
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Door Slam                                                   :noexport:
-https://www.amazon.com/Latchy-Catchy-Never-Again-Goldie/dp/B01N8SYYG2/ref=sr_1_24?keywords=squeaky+door&qid=1554606593&s=hi&sr=1-24
-* HALF [#B] fix holes in wooden door                               :noexport:
-* TODO Stop Squeaky Door Hinges                                    :noexport:
-https://www.wikihow.life/Stop-Squeaky-Door-Hinges
-* TODO [#A] 水管堵塞是否要买home warranty                          :noexport:
-https://zhuanlan.zhihu.com/p/32033320
-plumber.前段时间水管堵塞,找了handyman都没有用,只能找plumber公司,幸好有warranty,所以大部分都保险报销了,要不估计要大出血.handyman和我说看你的严重程度了,如果就是一般的堵塞,估计400,500刀.要是major pipe有问题,找市政厅来,几千刀也是少的.
 * TODO 如果夏天很少開冷氣,或是家裡根本沒有冷氣的話,那麼改成E-6-smart或是E-9絕對是划算的 :noexport:
 http://chengyun-travel.blogspot.com/2013/02/pg.html
 https://www.pge.com/en_US/residential/rate-plans/how-rates-work/find-my-best-rate-plan.page
-* TODO Learn: http://chengyun-travel.blogspot.com/                 :noexport:
-* TODO Change pg&e energy tier?                                    :noexport:
-* TODO [#A] bath room is leaking: Seal Around A Tub Or Shower      :noexport:
-https://www.youtube.com/watch?v=F7Y6XQ9MoHE
-* TODO [#A] bath room: Vertical Shower Door Seal                   :noexport:
-silicone seal
-
-https://www.amazon.com/Zengest-Strip-Bottom-Shower-Transparent/dp/B07MPNYBBJ/ref=sr_1_2_sspa?keywords=Vertical%2BShower%2BDoor%2BSeal&qid=1554620898&s=gateway&sr=8-2-spons&th=1
-
-https://www.amazon.com/s?k=Vertical+Shower+Door+Seal&ref=nb_sb_noss
-
-https://www.youtube.com/watch?v=PTADQAyDztI
-https://www.youtube.com/watch?v=ECdXEAAIBFI
-https://www.youtube.com/watch?v=x56o59oTgx0
-https://www.youtube.com/watch?v=lyWC4DFAF1w
 * TODO [#A] 烧水壶蒸汽                                             :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#B] Join local community                                   :noexport:
-* TODO [#A] Alexa works with Ring                                  :noexport:
-https://www.amazon.com/Ring/dp/B01JTL2PYE/ref=sr_1_39?keywords=ring+alarm&qid=1560698689&s=gateway&sr=8-39
 * [#A] 厨房炉子的右上方burner不work了                              :noexport:
-* TODO water service: setup online payment                         :noexport:
-* TODO Split this cheatsheet: buy a house & maintain ahouse        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO spray home defense                                          :noexport:
 https://www.youtube.com/watch?v=2IQZIehbzcs
-* TODO Ring: Buy Doorbell, wooden door                             :noexport:
 * TODO bathroom toilet noise                                       :noexport:
 * TODO One bulb in the family room doens't work                    :noexport:
 * TODO bestbuy: ring camera                                        :noexport:
@@ -616,11 +620,53 @@ https://www.youtube.com/watch?v=7x362qb0IRk
 https://www.youtube.com/watch?v=WxxOtXTiDUY
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * HALF 买做前后院用的手套                                          :noexport:
-* TODO [#B] 修外面的铁门                                           :noexport:
-https://www.youtube.com/watch?v=dl5K5wjvjDk
+* HALF peach tree leaf curl                                        :noexport:
+* HALF 买月季的药: Black Spot on Roses                             :noexport:
+https://www.youtube.com/watch?v=G1K2LYuOnGA
+https://www.youtube.com/watch?v=MsxiC-fe_bU
+
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO 主卧fan                                                     :noexport:
 * TODO 百叶窗                                                      :noexport:
 * TODO 卧室的灯                                                    :noexport:
 * TODO 洗衣机内桶要定期清洗                                        :noexport:
 * TODO 洗碗机内桶要定期清洗                                        :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO lemon tree yellow                                           :noexport:
+* TODO LG Front Load Washer - door seal                            :noexport:
+https://www.manualslib.com/manual/270172/Lg-Wm8000hva.html?page=24#manual
+https://www.manualslib.com/manual/270172/Lg-Wm8000hva.html?page=29#manual
+https://www.manualslib.com/manual/270172/Lg-Wm8000hva.html?page=11#manual
+
+* TODO garage door detector                                        :noexport:
+* TODO Change the fruit tree in the paveway of front yard          :noexport:
+* TODO bugs in trash can during the summer time                    :noexport:
+* TODO 找家庭医生                                                  :noexport:
+* HALF deal with fruit flies                                       :noexport:
+https://www.youtube.com/watch?v=WwM0TA5N61U
+https://www.youtube.com/watch?v=wBcd4_OgG7I
+- clean
+- bait
+* TODO citrus leaf curl                                            :noexport:
+https://www.youtube.com/watch?v=zDD7NYS6kE4
+
+https://www.youtube.com/watch?v=Rl96SLtqvHc
+
+https://www.youtube.com/watch?v=DoTL6iRWghg
+
+https://www.youtube.com/watch?v=5bGG3ok6HpA
+
+- fruit
+- prune infected leaves
+- feed it
+
+Causes of citrus curling
+- Pests attack
+- Water stress
+- Fungal Disease
+- Bacterial Blast
+- Potassium Deficiencies
+* todo citrus yellow leaf                                          :noexport:
+* TODO [#A] Enable the front-yard sprinkler                        :noexport:
+* TODO Why does it say No AC when it's plugged in?                 :noexport:
+https://www.amazon.com/ask/questions/Tx1CQ8FLYIGQPWV

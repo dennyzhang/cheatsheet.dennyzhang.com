@@ -24,6 +24,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** SQL Problems
 | Name                                                  | Problem                                                                                 |
 |-------------------------------------------------------+-----------------------------------------------------------------------------------------|
+| Reference                                             | [[https://code.dennyzhang.com/review-sql][Leetcode SQL problems]]                                                                   |
 | Use having with group-by                              | =group by class having count(distinct student)>4= [[https://code.dennyzhang.com/classes-more-than-5-students][Leecode: Classes More Than 5 Students]] |
 | Update records with case clause                       | =set sex = case when sex = 'm' then 'f' else 'm' end= [[https://code.dennyzhang.com/swap-salary][LeetCode: Swap Salary]]             |
 | Sum with case                                         | =sum(case when state = 'approved' then 1 else 0 end)= [[https://code.dennyzhang.com/monthly-transactions-i][LeetCode: Monthly Transactions I]]  |
@@ -48,7 +49,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | =sum(if(isnull(= vs =ifnull(sum(=                     | [[https://code.dennyzhang.com/team-scores-in-football-tournament][LeetCode: Team Scores in Football Tournament]]                                            |
 | Three tables' inner join                              | [[https://code.dennyzhang.com/students-and-examinations][LeetCode: Students and Examinations]]                                                     |
 | Find Continuous Ranges                                | [[https://code.dennyzhang.com/find-the-start-and-end-number-of-continuous-ranges][Find the Start and End Number of Continuous Ranges]]                                      |
-| Reference                                             | [[https://code.dennyzhang.com/review-sql][Leetcode SQL problems]]                                                                   |
 ** SQL Statement
 | Name                               | Command                                                         |
 |------------------------------------+-----------------------------------------------------------------|

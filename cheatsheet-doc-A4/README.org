@@ -540,6 +540,20 @@ Hadoop, hive, hbase
 - Like: Give your friends the thumbs up
 - Comments: write comments on pictures, friend's status updates or wall posts
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Resignation email                                           :noexport:
+Dear Mr./Ms. Lastname,
+
+I write to inform you that I am resigning from my position here as Associate Editor. My last day will be August 7.
+
+Thank you so much for all of the opportunities this company has provided me. I have learned so much these past three years, and will never forget the kindness of all of my colleagues.
+
+Let me know if there is anything I can do to make this transition easier. You can always contact me at firstname.lastname@email.com or 555-555-5555.
+
+Thank you again for your years of support and encouragement.
+
+Respectfully yours,
+
+Your Name
 * TODO laid-off email                                              :noexport:
 #+BEGIN_EXAMPLE
 Due to the economic impact of COVID-19 (coronavirus), XXX is implementing measures to ensure the financial stability of the company. The current pandemic situation has impacted our business significantly, and as a result, we find that we must make some difficult personnel decisions.  
@@ -573,3 +587,6 @@ Ability to deliver results and work cross-functionally
 leading cross-functional initiatives
 * TODO Critical conversation                                       :noexport:
 A lay off is a chance to trim the fat.
+* TODO cultures                                                    :noexport:
+Values are shown by who gets rewarded or let go.
+Management approval, or managers make technical decisions for the team

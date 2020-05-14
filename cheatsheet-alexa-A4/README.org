@@ -194,3 +194,15 @@ Hands-free voice control for all your favorite music
 "Play country music"
 "Play rock music"
 #+END_EXAMPLE
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Make sure alexa in pairing mode                             :noexport:
+How to put alexa echo in pairing mode
+https://www.amazon.com/gp/help/customer/display.html?nodeId=GG8S76D3BYTGC424.
+https://www.cnet.com/how-to/how-to-pair-amazon-echo-dot-with-bluetooth-speaker/
+* DONE pair my mac with alexa echo as a speaker: restart alexa     :noexport:
+  CLOSED: [2020-05-10 Sun 22:00]
+https://www.youtube.com/watch?v=a7cZl2Wb4qI
+
+* DONE [#A] Alexa works with Ring                                  :noexport:
+  CLOSED: [2020-05-11 Mon 08:55]
+https://www.amazon.com/Ring/dp/B01JTL2PYE/ref=sr_1_39?keywords=ring+alarm&qid=1560698689&s=gateway&sr=8-39

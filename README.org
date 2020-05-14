@@ -598,3 +598,5 @@ https://github.com/dennyzhang/docs
 * TODO Merge A4 cheatsheets together                               :noexport:
 https://github.com/dennyzhang?tab=repositories
 * TODO Has China blocked my webites?                               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] cheatsheet icon in github link back to specific blog post url :noexport:
