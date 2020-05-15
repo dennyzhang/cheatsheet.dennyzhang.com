@@ -670,3 +670,5 @@ Causes of citrus curling
 * TODO [#A] Enable the front-yard sprinkler                        :noexport:
 * TODO Why does it say No AC when it's plugged in?                 :noexport:
 https://www.amazon.com/ask/questions/Tx1CQ8FLYIGQPWV
+* TODO lg washing machine wm8000hva manual                         :noexport:
+https://www.lg.com/us/support/products/documents/WM8000%20Manual.pdf

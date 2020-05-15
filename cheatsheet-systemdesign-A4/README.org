@@ -591,3 +591,4 @@ https://www.1point3acres.com/bbs/thread-596045-1-1.html
 |   8 | Explain Hadoop file system            |                                                                               |
 |   9 | [Linux] Explain OS booting process    |                                                                               |
 #+TBLFM: $1=@-1$1+1;N
+* TODO FB: Design a load balancer to transfer processes            :noexport:
