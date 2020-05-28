@@ -9,27 +9,28 @@
 ## Description :
 ## --
 ## Created : <2017-12-04>
-## Updated: Time-stamp: <2020-02-19 15:55:20>
+## Updated: Time-stamp: <2020-05-26 11:48:22>
 ##-------------------------------------------------------------------
 set -e
 
 function brew_install {
     echo "Brew install packages"
-    brew cask install iterm2
-    brew install wget
+    chmod u+w /usr/local/bin /usr/local/lib /usr/local/sbin
+    brew install wget jq ansible direnv
     brew install gpg aspell w3m shadowsocks-libev wget imagemagick msmtp
     brew install telnet shellcheck go getmail tmux
     brew install python3 getmail
     brew install pt
-    brew install jq ansible direnv
     brew install reattach-to-user-namespace
-    brew install chruby mysql
+    brew install chruby
     brew cask install ngrok
+    # TODO: change this
+    # brew cask install iterm2
 }
 
 function brew_install_devkit {
     echo "Brew install devkit"
-    brew install kubernetes-helm
+    brew install mysql
 }
 
 function python_setup {
@@ -50,12 +51,14 @@ function download_files {
 function fix_gpg {
     # https://github.com/Homebrew/homebrew-core/issues/14737
     brew install pinentry-mac
+    [ -d ~/.gnupg ] || mkdir -p ~/.gnupg
     echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
     killall gpg-agent
 }
 
 function setup_email {
     echo "Setup email configurations"
+    [ -d ~/.getmail ] || mkdir -p ~/.getmail
     cp ~/Dropbox/private_data/emacs_stuff/backup_small/fetch_mail/.msmtprc ~/.msmtprc
     chmod 400 ~/.msmtprc
 }
@@ -74,6 +77,7 @@ function ssh_config {
     if [ ! ~/.ssh/config ]; then
        ln ~/Dropbox/private_data/emacs_stuff/backup_small/ssh_key/config ~/.ssh/config
     fi
+    # TODO: change this
     chmod 600 ~/Dropbox/private_data/emacs_stuff/backup_small/ssh_key/aws/denny-ssh-key1
     chmod 600 ~/Dropbox/private_data/emacs_stuff/backup_small/ssh_key/id_rsa.txt
     for f in $(find ~/Dropbox/private_data/emacs_stuff/backup_small/ssh_key -name "*_id_rsa"); do

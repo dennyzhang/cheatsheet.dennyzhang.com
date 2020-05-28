@@ -35,6 +35,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |------------------------------------+--------------------------------------|
 | Filter gmail into different labels | [[https://www.yesware.com/blog/how-to-create-folders-in-gmail/][Link: How to Create Folders in Gmail]] |
 
+** Zoom
+| Name                           | Summary |
+|--------------------------------+---------|
+| Zoom change virtual background |         |
+
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -72,3 +77,5 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 * TODO zoom save the video                                         :noexport:
 * TODO zoom background                                             :noexport:
 * HALF login to zoom. Then only share the screen                   :noexport:
+* TODO outlook: how to transfer the owner of a serie meeting       :noexport:
+https://superuser.com/questions/727471/how-do-i-transfer-meeting-ownership-in-outlook-2010

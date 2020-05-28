@@ -22,15 +22,15 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Languages - Source Code
-| Name                  | Summary                          |
-|-----------------------+----------------------------------|
-| Java JDK Source Code  | [[https://github.com/openjdk-mirror/jdk7u-jdk/tree/master/src/share/classes/java/util][Github: jdk7u-jdk]]                |
-| Golang Source Code    | [[https://github.com/golang/go/tree/master/src/runtime][Github: go]]                       |
-| Python Source Code    | [[https://github.com/python/cpython][Github: cpython]]                  |
-| Git Source Code       | [[https://github.com/git/git][Github: git]]                      |
-| Cassandra Source Code | [[https://github.com/apache/cassandra][Github: apache/cassandra]]         |
-| Zookeeper Source Code | [[https://github.com/apache/zookeeper][Github: apache/zookeeper]]         |
-| Reference             | [[http://tutorials.jenkov.com/java-util-concurrent/index.html][Link: Java Concurrency Utilities]] |
+| Name                  | Summary                                                       |
+|-----------------------+---------------------------------------------------------------|
+| Java JDK Source Code  | [[https://github.com/openjdk-mirror/jdk7u-jdk/tree/master/src/share/classes/java/util][Github: jdk7u-jdk]]                                             |
+| Golang Source Code    | [[https://github.com/golang/go/tree/master/src/runtime][Github: go]]                                                    |
+| Python Source Code    | [[https://github.com/python/cpython][Github: cpython]], [[http://pgbovine.net/cpython-internals.htm][Link: CPython internals: A ten-hour codewalk]] |
+| Git Source Code       | [[https://github.com/git/git][Github: git]]                                                   |
+| Cassandra Source Code | [[https://github.com/apache/cassandra][Github: apache/cassandra]]                                      |
+| Zookeeper Source Code | [[https://github.com/apache/zookeeper][Github: apache/zookeeper]]                                      |
+| Reference             | [[http://tutorials.jenkov.com/java-util-concurrent/index.html][Link: Java Concurrency Utilities]]                              |
 ** Middleware & DB
 | Name              | Summary                    |
 |-------------------+----------------------------|

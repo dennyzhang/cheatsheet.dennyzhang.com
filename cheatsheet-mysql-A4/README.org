@@ -42,13 +42,15 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | If no match show null                                 | [[https://code.dennyzhang.com/second-highest-salary][LeetCode: Second Highest Salary]]                                                         |
 | Get maximum of multiple columns                       | [[https://code.dennyzhang.com/triangle-judgement][LeetCode: Triangle Judgement]]                                                            |
 | Tree hierachy in SQL                                  | [[https://code.dennyzhang.com/all-people-report-to-the-given-manager][LeetCode: All People Report to the Given Manager]]                                        |
-| Impressive sql problems                               | [[https://code.dennyzhang.com/find-median-given-frequency-of-numbers][Leecode: Find Median Given Frequency of Numbers]], [[https://code.dennyzhang.com/consecutive-available-seats][LeetCode: Consecutive Available Seats]]  |
-| Impressive sql problems                               | [[https://code.dennyzhang.com/rank-scores][LeetCode: Rank Scores]], [[https://code.dennyzhang.com/exchange-seats][LeetCode: Exchange Seats]], [[https://code.dennyzhang.com/students-report-by-geography][LeetCode: Students Report By Geography]] |
+| Mysql distinct in having clause                       | [[https://code.dennyzhang.com/active-users][LeetCode: Active Users]]                                                                  |
 | mysql doesn't support full outer join                 | [[https://code.dennyzhang.com/monthly-transactions-ii][LeetCode: Monthly Transactions II]]                                                       |
 | When left join+groupby, group by which tables' field? | [[https://code.dennyzhang.com/team-scores-in-football-tournament][LeetCode: Team Scores in Football Tournament]]                                            |
 | =sum(if(isnull(= vs =ifnull(sum(=                     | [[https://code.dennyzhang.com/team-scores-in-football-tournament][LeetCode: Team Scores in Football Tournament]]                                            |
 | Three tables' inner join                              | [[https://code.dennyzhang.com/students-and-examinations][LeetCode: Students and Examinations]]                                                     |
 | Find Continuous Ranges                                | [[https://code.dennyzhang.com/find-the-start-and-end-number-of-continuous-ranges][Find the Start and End Number of Continuous Ranges]]                                      |
+|-------------------------------------------------------+-----------------------------------------------------------------------------------------|
+| Impressive sql problems                               | [[https://code.dennyzhang.com/find-median-given-frequency-of-numbers][Leecode: Find Median Given Frequency of Numbers]], [[https://code.dennyzhang.com/consecutive-available-seats][LeetCode: Consecutive Available Seats]]  |
+| Impressive sql problems                               | [[https://code.dennyzhang.com/rank-scores][LeetCode: Rank Scores]], [[https://code.dennyzhang.com/exchange-seats][LeetCode: Exchange Seats]], [[https://code.dennyzhang.com/students-report-by-geography][LeetCode: Students Report By Geography]] |
 ** SQL Statement
 | Name                               | Command                                                         |
 |------------------------------------+-----------------------------------------------------------------|

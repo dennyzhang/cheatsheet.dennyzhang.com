@@ -17,7 +17,6 @@ function update_codecommit(){
     done
 }
 
-
 function update_bitbucket(){
     local code_dir=${1?}
     repo_list="intuit-market-design intuit-budget-advising"

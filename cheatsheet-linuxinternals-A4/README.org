@@ -27,38 +27,33 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-leetcode-A4][CheatSheet: Leetcode For Code Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-followup-A4][CheatSheet: Common Code Problems & Follow-ups]]  |
 | Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-systemdesign-A4][CheatSheet: System Design For Job Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-linuxinternals-A4][CheatSheet: SRE/DevOps/Sysadmin]]            |
 | Cheatsheet | [[https://cheatsheet.dennyzhang.com/cheatsheet-behavior-A4][CheatSheet: Behavior Questions For Coder Interview]], [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][Shell CheatSheet]]                    |
-| YouTube    | [[https://www.youtube.com/results?search_query=linux+trouble+shooting+interview+questions][YouTube: linux trouble shooting interview questions]]                                     |
-| Github     | [[https://github.com/chassing/linux-sysadmin-interview-questions][Github: chassing/linux-sysadmin-interview-questions]], [[https://github.com/0xAX/linux-insides][Github: 0xAX/linux-insides]]         |
 | Link       | [[https://syedali.net/engineer-interview-questions/][Link: SRE INTERVIEW QUESTIONS]], [[http://www.brendangregg.com/index.html][Link: Brendan D. Gregg]]                                   |
 | Link       | [[https://shivamkhandelwal.in/production-engineering-internship-interview-process-facebook/][Link: Facebook Production Engineering Internship Interview]]                              |
 | Link       | [[https://landing.google.com/sre/books/][Link: Google Site Reliability Engineering]], [[https://ai.googleblog.com/2012/07/site-reliability-engineers-solving-most.html][SRE: "solving the most interesting problems"]] |
-** Top 25 Linux Basic Questions
-| Num | Name                                                        | Summary                                    |
-|-----+-------------------------------------------------------------+--------------------------------------------|
-|   1 | Thead VS Process                                            | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#process-vs-thread][Github Link]]                                |
-|   2 | Explain virtual memory                                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-virtual-memory][Github Link]]                                |
-|   3 | Explain paging and paging fault                             | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-paging-and-paging-fault][Github Link]]                                |
-|   4 | Explain inode                                               | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-inode][Github Link]]                                |
-|   5 | epoll VS poll VS select                                     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#epoll-vs-poll-vs-select][Github Link]]                                |
-|   6 | Explain how OS schedules processes                          | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-how-os-schedules-processes][Github Link]]                                |
-|   7 | Explain spinlock                                            | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-spinlock][Github Link]]                                |
-|   8 | Explain linux virtual filesystem                            | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-the-general-file-system-hierarchy-of-a-linux-system][Github Link]]                                |
-|   9 | Explain linux signal                                        | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-signal][Github Link]]                                |
-|  10 | Explain RAID                                                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-raid][Github Link]]                                |
-|  11 | Explain linux fork                                          |                                            |
-|-----+-------------------------------------------------------------+--------------------------------------------|
-|  12 | What is /proc directory?                                    |                                            |
-|  13 | Forget root password. How to reset it?                      | Reset from GRUB or liveCD                  |
-|  14 | How to solve ssh "Connection refused" errors?               |                                            |
-|  15 | How to daemonize a process?                                 |                                            |
-|  16 | [[https://askubuntu.com/questions/35722/what-is-kernel-panic][What are common scenarios of linux kernel panics?]]           |                                            |
-|  17 | What are coredump and kdump?                                |                                            |
-|  18 | Program startup process in userspace                        | [[https://0xax.gitbooks.io/linux-insides/Misc/linux-misc-4.html][Link: Program startup process in userspace]] |
-|  19 | What's your favorite shell and why?                         | [[https://sunlightmedia.org/bash-vs-zsh/][Link: Bash vs Zsh]]                          |
-|  20 | [[https://linoxide.com/linux-how-to/difference-between-utmp-wtmp-files-in-linux/][Figure out who has logged to server now and previously?]]     | w, last, lastb; lastlog; /var/run/*tmp     |
-|  21 | What is init program?                                       |                                            |
-|  22 | How does sudo work? Given =sudo=, why people may need =su=? |                                            |
-|  23 | How to close stdin/stdout/stderr of one command             | =some_command </dev/null >/dev/null 2>&1=  |
+| Github     | [[https://github.com/chassing/linux-sysadmin-interview-questions][Github: chassing/linux-sysadmin-interview-questions]], [[https://github.com/0xAX/linux-insides][Github: 0xAX/linux-insides]]         |
+** Top 15 Linux Basic Questions
+| Num | Name                                              | Summary                                    |
+|-----+---------------------------------------------------+--------------------------------------------|
+|   1 | Thead VS Process                                  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#process-vs-thread][Github Link]]                                |
+|   2 | Explain virtual memory                            | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-virtual-memory][Github Link]]                                |
+|   3 | Explain paging and paging fault                   | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-paging-and-paging-fault][Github Link]]                                |
+|   4 | Explain inode                                     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-inode][Github Link]]                                |
+|   5 | Explain how OS schedules processes                | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-how-os-schedules-processes][Github Link]]                                |
+|   6 | Explain linux virtual filesystem                  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-the-general-file-system-hierarchy-of-a-linux-system][Github Link]]                                |
+|-----+---------------------------------------------------+--------------------------------------------|
+|   7 | epoll VS poll VS select                           | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#epoll-vs-poll-vs-select][Github Link]]                                |
+|   8 | Explain spinlock                                  | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-spinlock][Github Link]]                                |
+|   9 | Explain linux signal                              | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-signal][Github Link]]                                |
+|  10 | Explain RAID                                      | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_BASIC.org#explain-raid][Github Link]]                                |
+|  11 | Explain linux fork                                |                                            |
+|-----+---------------------------------------------------+--------------------------------------------|
+|  12 | What is /proc directory?                          |                                            |
+|  13 | How to solve ssh "Connection refused" errors?     |                                            |
+|  14 | How to daemonize a process?                       |                                            |
+|  15 | [[https://askubuntu.com/questions/35722/what-is-kernel-panic][What are common scenarios of linux kernel panics?]] |                                            |
+|  16 | What are coredump and kdump?                      |                                            |
+|  17 | Program startup process in userspace              | [[https://0xax.gitbooks.io/linux-insides/Misc/linux-misc-4.html][Link: Program startup process in userspace]] |
+|  18 | What is init program?                             |                                            |
 #+TBLFM: $1=@-1$1+1;N
 ** Explain Top Linux Tooling
 | Num | Name                                    | Summary                                 |
@@ -68,6 +63,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |   3 | Explain the output of =free= command    | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-free-command][Github Link]]                             |
 |   4 | Explain the output of =top= command     | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_TOOL.org#explain-the-output-of-top-command][Github Link]]                             |
 |   5 | [[https://github.com/sysstat/sysstat][Explain the output of =sar= command]]     | system staticstics with sysstat cronjob |
+|   6 | Explain the output of =df= command      |                                         |
 #+TBLFM: $1=@-1$1+1;N
 
 ** Top 15 Linux Workflow
@@ -89,64 +85,15 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  14 | Explain how I/O interrupt works                           | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-linuxinternals-A4/LINUX_WORKFLOW.org##explain-how-io-interrupt-works][Github Link]]. Top half, bottom half, interrupt handler |
 |  15 | Speed up I/O                                              | [[https://jvns.ca/blog/2016/01/23/sendfile-a-new-to-me-system-call/][Linux sendfile with zero-copy]], mmap: map file to ram  |
 #+TBLFM: $1=@-1$1+1;N
-** Top 20 Linux Advanced Questions
-| Num | Name                                                                 | Summary                                                             |
-|-----+----------------------------------------------------------------------+---------------------------------------------------------------------|
-|   1 | Explain Linux security model                                         | nothing-or-all model, capability, extended attributes, selinux, etc |
-|   2 | Whether it's possible to sniff HTTPS traffic? And why?               |                                                                     |
-|   3 | Figure out what critical commands ssh users have issued?             |                                                                     |
-|   4 | [[https://unix.stackexchange.com/questions/62697/why-is-i-o-uninterruptible][Why is I/O uninterruptible?]]                                          |                                                                     |
-|   5 | Explain shell features                                               | shell pipes, filename wildcards, env var expansion, alias, etc      |
-|   6 | What is the difference between UNIX and Linux                        |                                                                     |
-|   7 | High memory vs Low memory                                            | [[https://en.wikipedia.org/wiki/High_memory][Wikipedia: High memory]]                                              |
-|   8 | What is localhost and why would ping localhost fail?                 |                                                                     |
-|   9 | How does the Linux kernel handle a system call                       | [[https://0xax.gitbooks.io/linux-insides/SysCall/linux-syscall-2.html][Link: System calls in the Linux kernel]]                              |
-|  10 | Difference between ext3 and ext4                                     |                                                                     |
-|  11 | [[https://www.tecmint.com/systemd-replaces-init-in-linux/][How do you feel about systemd?]]                                       | Init processes start serially, long booting time                    |
-|  12 | ssh port forwarding VS ssh reverse port forwarding                   |                                                                     |
-|  13 | How to quickly crash an linux machine?                               |                                                                     |
-|  14 | How to deprovision a user completely?                                |                                                                     |
-|  15 | [[https://www.thegeekstuff.com/2008/08/15-examples-to-master-linux-command-line-history/][How reliable =history= command is? And how to alleviate the problem?]] | =~/.bash_history=, =$HISTTIMEFORMAT= env                            |
-|  16 | how to generate a zombie process                                     |                                                                     |
-|  17 | With =bg= in one terminal, =jobs= doesn't show in another terminal   |                                                                     |
-|  18 | How to setup http proxy with SLA for different traffic?              |                                                                     |
-|  19 | What's your wishlist for linux?                                      |                                                                     |
-|  20 | What's your ideal monitoring system in your imagination?             |                                                                     |
+** Linux Trouble Shooting
+| Num | Name                                                        | Summary                                   |
+|-----+-------------------------------------------------------------+-------------------------------------------|
+|   1 | [[https://linoxide.com/linux-how-to/difference-between-utmp-wtmp-files-in-linux/][Figure out who has logged to server now and previously?]]     | w, last, lastb; lastlog; /var/run/*tmp    |
+|   2 | Forget root password. How to reset it?                      | Reset from GRUB or liveCD                 |
+|   3 | How does sudo work? Given =sudo=, why people may need =su=? |                                           |
+|   4 | How to close stdin/stdout/stderr of one command             | =some_command </dev/null >/dev/null 2>&1= |
 #+TBLFM: $1=@-1$1+1;N
-** Top 10 SRE Questions
-| Num | Name                                                                            | Summary                        |
-|-----+---------------------------------------------------------------------------------+--------------------------------|
-|   1 | [Logging]                                                                       |                                |
-|   2 | [Monitoring]                                                                    |                                |
-|   3 | [Migration] Regional failure                                                    |                                |
-|   4 | [Deployment] How to do a online rolling upgrade for a given system?             | Single node, or multiple node? |
-|   5 | [HA] DB                                                                         |                                |
-|   6 | [Automation]                                                                    |                                |
-|   7 | [Migration] How you migrate legacy on-prem app to cloud-native in public cloud? |                                |
-|   8 | Incident Response and Management                                                |                                |
-|   9 | [Auto Scaling]                                                                  | [[https://medium.com/pinterest-engineering/auto-scaling-pinterest-df1d2beb4d64][Link: Auto scaling Pinterest]]   |
-#+TBLFM: $1=@-1$1+1;N
-** Good Mindsets
-| Num | Name                            | Summary                                  |
-|-----+---------------------------------+------------------------------------------|
-|   1 | First thing: =Stop The Bleed=   |                                          |
-|   2 | [[http://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle/][Pets VS Cattles]]                 |                                          |
-|   3 | Fix a process VS Fix a problem  |                                          |
-|   4 | Evaluate Business Impact First  |                                          |
-|   5 | Prevention VS Treatment         |                                          |
-|   6 | [[https://landing.google.com/sre/sre-book/chapters/postmortem-culture/][Postmortem Culture]]              |                                          |
-|   7 | Understand Workflow & Use Cases | Super important for trouble shooting     |
-|   8 | Automation VS Convention        |                                          |
-|   9 | [[https://en.wikipedia.org/wiki/Principle_of_least_privilege][Principle Of Least Privilege]]    |                                          |
-|  10 | Design Tools VS Use Tools       | Operational knowledge is not good enough |
-#+TBLFM: $1=@-1$1+1;N
-** Top 20 Container Questions
-| Num | Name                                                            | Summary |
-|-----+-----------------------------------------------------------------+---------|
-|   1 | Compare to Linux process, what things containers can't support? |         |
-|   2 | How to sniff container's traffic?                               |         |
-|   3 | Explain the workflow of "docker stop $container_id"             |         |
-#+TBLFM: $1=@-1$1+1;N
+
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -416,3 +363,63 @@ Why is DNS amplification a valid attack as opposed to ... say HTTP amplifcation 
 https://docs.google.com/presentation/d/1AcB4x7JCWET0ysDr0gsX-EIdQSTyBtmi6OAW7bE0jm0/edit#slide=id.g70356bf6e4_0_1269
 * linux blogs                                                      :noexport:
 http://www.brendangregg.com/blog/index.html
+* local notes                                                      :noexport:
+** Top 20 Linux Advanced Questions
+| Num | Name                                                                 | Summary                                                             |
+|-----+----------------------------------------------------------------------+---------------------------------------------------------------------|
+|   1 | Explain Linux security model                                         | nothing-or-all model, capability, extended attributes, selinux, etc |
+|   2 | Whether it's possible to sniff HTTPS traffic? And why?               |                                                                     |
+|   3 | Figure out what critical commands ssh users have issued?             |                                                                     |
+|   4 | [[https://unix.stackexchange.com/questions/62697/why-is-i-o-uninterruptible][Why is I/O uninterruptible?]]                                          |                                                                     |
+|   5 | Explain shell features                                               | shell pipes, filename wildcards, env var expansion, alias, etc      |
+|   6 | What is the difference between UNIX and Linux                        |                                                                     |
+|   7 | High memory vs Low memory                                            | [[https://en.wikipedia.org/wiki/High_memory][Wikipedia: High memory]]                                              |
+|   8 | What is localhost and why would ping localhost fail?                 |                                                                     |
+|   9 | How does the Linux kernel handle a system call                       | [[https://0xax.gitbooks.io/linux-insides/SysCall/linux-syscall-2.html][Link: System calls in the Linux kernel]]                              |
+|  10 | Difference between ext3 and ext4                                     |                                                                     |
+|  11 | [[https://www.tecmint.com/systemd-replaces-init-in-linux/][How do you feel about systemd?]]                                       | Init processes start serially, long booting time                    |
+|  12 | ssh port forwarding VS ssh reverse port forwarding                   |                                                                     |
+|  13 | How to quickly crash an linux machine?                               |                                                                     |
+|  14 | How to deprovision a user completely?                                |                                                                     |
+|  15 | [[https://www.thegeekstuff.com/2008/08/15-examples-to-master-linux-command-line-history/][How reliable =history= command is? And how to alleviate the problem?]] | =~/.bash_history=, =$HISTTIMEFORMAT= env                            |
+|  16 | how to generate a zombie process                                     |                                                                     |
+|  17 | With =bg= in one terminal, =jobs= doesn't show in another terminal   |                                                                     |
+|  18 | How to setup http proxy with SLA for different traffic?              |                                                                     |
+|  19 | What's your wishlist for linux?                                      |                                                                     |
+|  20 | What's your ideal monitoring system in your imagination?             |                                                                     |
+|  21 | What's your favorite shell and why?                                  | [[https://sunlightmedia.org/bash-vs-zsh/][Link: Bash vs Zsh]]                                                   |
+#+TBLFM: $1=@-1$1+1;N
+** Top 10 SRE Questions
+| Num | Name                                                                            | Summary                        |
+|-----+---------------------------------------------------------------------------------+--------------------------------|
+|   1 | [Logging]                                                                       |                                |
+|   2 | [Monitoring]                                                                    |                                |
+|   3 | [Migration] Regional failure                                                    |                                |
+|   4 | [Deployment] How to do a online rolling upgrade for a given system?             | Single node, or multiple node? |
+|   5 | [HA] DB                                                                         |                                |
+|   6 | [Automation]                                                                    |                                |
+|   7 | [Migration] How you migrate legacy on-prem app to cloud-native in public cloud? |                                |
+|   8 | Incident Response and Management                                                |                                |
+|   9 | [Auto Scaling]                                                                  | [[https://medium.com/pinterest-engineering/auto-scaling-pinterest-df1d2beb4d64][Link: Auto scaling Pinterest]]   |
+#+TBLFM: $1=@-1$1+1;N
+** Good Mindsets
+| Num | Name                            | Summary                                  |
+|-----+---------------------------------+------------------------------------------|
+|   1 | First thing: =Stop The Bleed=   |                                          |
+|   2 | [[http://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle/][Pets VS Cattles]]                 |                                          |
+|   3 | Fix a process VS Fix a problem  |                                          |
+|   4 | Evaluate Business Impact First  |                                          |
+|   5 | Prevention VS Treatment         |                                          |
+|   6 | [[https://landing.google.com/sre/sre-book/chapters/postmortem-culture/][Postmortem Culture]]              |                                          |
+|   7 | Understand Workflow & Use Cases | Super important for trouble shooting     |
+|   8 | Automation VS Convention        |                                          |
+|   9 | [[https://en.wikipedia.org/wiki/Principle_of_least_privilege][Principle Of Least Privilege]]    |                                          |
+|  10 | Design Tools VS Use Tools       | Operational knowledge is not good enough |
+#+TBLFM: $1=@-1$1+1;N
+** Top 20 Container Questions
+| Num | Name                                                            | Summary |
+|-----+-----------------------------------------------------------------+---------|
+|   1 | Compare to Linux process, what things containers can't support? |         |
+|   2 | How to sniff container's traffic?                               |         |
+|   3 | Explain the workflow of "docker stop $container_id"             |         |
+#+TBLFM: $1=@-1$1+1;N

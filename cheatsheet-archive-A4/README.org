@@ -49,6 +49,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Pack with exclude                        | =tar --exclude "*.git*" -cvf file.tar <dir_to_compress>= |
 | Remove a single file from tarball        | =tar --delete -f file.tar file1.txt=                     |
 | Add file to tarball. -r indicates append | =tar -rf file.tar file1.txt=                             |
+| [[https://www.canr.msu.edu/news/encrypted-zip-mac][Create archive with password protection]]  | =zip -er my.zip some_folder=                             |
 ** More Resources
 http://www.simplehelp.net/2008/12/15/how-to-create-and-extract-zip-tar-targz-and-tarbz2-files-in-linux
 

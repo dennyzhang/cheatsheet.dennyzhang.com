@@ -230,3 +230,4 @@ sc.api_call(
 )
 
 * TODO slack: configure it to be offline for non-business hours    :noexport:
+* TODO slack create a reminder for every Saturday of each month    :noexport:

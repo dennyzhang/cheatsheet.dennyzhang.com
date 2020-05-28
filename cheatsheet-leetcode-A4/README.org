@@ -174,19 +174,28 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
-** Top 15 BinaryTree Problems
-| Num | Problem                                        | Summary                                                               |
-|-----+------------------------------------------------+-----------------------------------------------------------------------|
-|   1 | Binary Tree Level Order Traversal              | [[https://code.dennyzhang.com/binary-tree-right-side-view][LeetCode: Binary Tree Right Side View]]                                 |
-|   2 | Get binary tree height, width                  | [[https://code.dennyzhang.com/balanced-binary-tree][LeetCode: Balanced Binary Tree]]                                        |
-|   3 | LCA - Lowest Common Ancestor of a binary Tree  | [[https://code.dennyzhang.com/lowest-common-ancestor-of-a-binary-tree][LeetCode: Lowest Common Ancestor of a Binary Tree]]                     |
-|   4 | Validate Binary Search Tree                    | [[https://code.dennyzhang.com/validate-binary-search-tree][LeetCode: Validate Binary Search Tree]]                                 |
-|   5 | Construct binary tree                          | [[https://code.dennyzhang.com/construct-binary-tree-from-preorder-and-postorder-traversal][LeetCode: Construct Binary Tree from Preorder and Postorder Traversal]] |
-|   6 | Distribute Coins in Binary Tree                | [[https://code.dennyzhang.com/distribute-coins-in-binary-tree][LeetCode: Distribute Coins in Binary Tree]]                             |
-|   7 | Binary Tree Vertical Order Traversal           | [[https://code.dennyzhang.com/binary-tree-vertical-order-traversal][LeetCode: Binary Tree Vertical Order Traversal]]                        |
-|   8 | Verify Preorder Sequence in Binary Search Tree | [[https://code.dennyzhang.com/verify-preorder-sequence-in-binary-search-tree][LeetCode: Verify Preorder Sequence in Binary Search Tree]]              |
-|   9 | Recursive + Greedy                             | [[https://code.dennyzhang.com/binary-tree-coloring-game][LeetCode: Binary Tree Coloring Game]]                                   |
-|  10 | Binary tree + greedy                           | [[https://code.dennyzhang.com/binary-tree-cameras][LeetCode: Binary Tree Cameras]]                                         |
+** Top 20 BinaryTree Problems
+| Num | Problem                                              | Summary                                                               |
+|-----+------------------------------------------------------+-----------------------------------------------------------------------|
+|   1 | Binary Tree Level Order Traversal                    | [[https://code.dennyzhang.com/binary-tree-right-side-view][LeetCode: Binary Tree Right Side View]]                                 |
+|   2 | Tree Traversal: Binary Tree Vertical Order Traversal | [[https://code.dennyzhang.com/binary-tree-vertical-order-traversal][LeetCode: Binary Tree Vertical Order Traversal]]                        |
+|   3 | Tree Traversal: Find Leaves of Binary Tree           | [[https://code.dennyzhang.com/find-leaves-of-binary-tree][Leetcode: Find Leaves of Binary Tree]]                                  |
+|   4 | Get binary tree height, width                        | [[https://code.dennyzhang.com/balanced-binary-tree][LeetCode: Balanced Binary Tree]]                                        |
+|   5 | LCA - Lowest Common Ancestor of a binary Tree        | [[https://code.dennyzhang.com/lowest-common-ancestor-of-a-binary-tree][LeetCode: Lowest Common Ancestor of a Binary Tree]]                     |
+|   6 | Validate Binary Search Tree                          | [[https://code.dennyzhang.com/validate-binary-search-tree][LeetCode: Validate Binary Search Tree]]                                 |
+|   7 | Construct binary tree                                | [[https://code.dennyzhang.com/construct-binary-tree-from-preorder-and-postorder-traversal][LeetCode: Construct Binary Tree from Preorder and Postorder Traversal]] |
+|   8 | Distribute Coins in Binary Tree                      | [[https://code.dennyzhang.com/distribute-coins-in-binary-tree][LeetCode: Distribute Coins in Binary Tree]]                             |
+|   9 | Binary Tree Vertical Order Traversal                 | [[https://code.dennyzhang.com/binary-tree-vertical-order-traversal][LeetCode: Binary Tree Vertical Order Traversal]]                        |
+|  10 | Verify Preorder Sequence in Binary Search Tree       | [[https://code.dennyzhang.com/verify-preorder-sequence-in-binary-search-tree][LeetCode: Verify Preorder Sequence in Binary Search Tree]]              |
+|  11 | Recursive + Greedy                                   | [[https://code.dennyzhang.com/binary-tree-coloring-game][LeetCode: Binary Tree Coloring Game]]                                   |
+|  12 | Binary tree + greedy                                 | [[https://code.dennyzhang.com/binary-tree-cameras][LeetCode: Binary Tree Cameras]]                                         |
+|  13 | Revert binary tree between left and right            |                                                                       |
+|  14 | binary tree serialization and deserialization        |                                                                       |
+|  15 | Morris tree trasversal                               |                                                                       |
+|  16 | Find the next node of binary search tree             |                                                                       |
+|  17 | Count Complete Tree Nodes                            | [[https://code.dennyzhang.com/count-complete-tree-nodes/][LeetCode: Count Complete Tree Nodes]]                                   |
+|  18 | Binary Tree Upside Down                              | [[https://code.dennyzhang.com/binary-tree-upside-down][Leetcode: Binary Tree Upside Down]]                                     |
+|  19 | Closest Binary Search Tree Value II                  | [[https://code.dennyzhang.com/closest-binary-search-tree-value-ii][Leetcode: Closest Binary Search Tree Value II]]                         |
 #+TBLFM: $1=@-1$1+1;N
 ** Top 10 String Problems
 | Num | Problem                                   | Summary                                           |

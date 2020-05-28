@@ -24,17 +24,17 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 ** Review Problems By Category
 | Num | Name                | Summary                                           |
 |-----+---------------------+---------------------------------------------------|
-|   1 | [[https://code.dennyzhang.com/tag/binarytree][#binarytree]]         | [[https://code.dennyzhang.com/review-binarytree][Review: Binary Tree Problems]]                      |
+|   1 | [[https://code.dennyzhang.com/review-binarytree][#binarytree]]         | [[https://code.dennyzhang.com/review-binarytree][Review: Binary Tree Problems]]                      |
 |   2 | [[https://code.dennyzhang.com/review-linkedlist][#linkedlist]]         | [[https://code.dennyzhang.com/review-linkedlist][Review: Linked List Problems]]                      |
 |   3 | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]       | [[https://code.dennyzhang.com/review-binarysearch][Review: Binary Search Problems]]                    |
-|   4 | [[https://code.dennyzhang.com/tag/dynamicprogramming][#dynamicprogramming]] | [[https://code.dennyzhang.com/review-dynamicprogramming][Review: Dynamic Programming Problems]]              |
+|   4 | [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]] | [[https://code.dennyzhang.com/review-dynamicprogramming][Review: Dynamic Programming Problems]]              |
 |   5 | [[https://code.dennyzhang.com/review-twopointer][#twopointer]]         | [[https://code.dennyzhang.com/review-twopointer][Review: TwoPointers Problems]]                      |
 |   6 | [[https://code.dennyzhang.com/review-trie][#trie]]               | [[https://code.dennyzhang.com/review-trie][Review: Trie Tree Problems]]                        |
 |   7 | [[https://code.dennyzhang.com/review-string][#string]]             | [[https://code.dennyzhang.com/review-string][Review: String Problems]]                           |
 |   8 | [[https://code.dennyzhang.com/review-stack][#stack]]              | [[https://code.dennyzhang.com/review-stack][Review: Stack Problems]]                            |
 |   9 | [[https://code.dennyzhang.com/review-bfs][#bfs]]                | [[https://code.dennyzhang.com/review-bfs][Review: BFS Problems]]                              |
 |  10 | [[https://code.dennyzhang.com/review-dfs][#dfs]]                | [[https://code.dennyzhang.com/review-dfs][Review: DFS Problems]]                              |
-|  11 | [[https://code.dennyzhang.com/tag/array][#array]]              | [[https://code.dennyzhang.com/review-array][Review: Array/SubArray Problems]]                   |
+|  11 | [[https://code.dennyzhang.com/review-array][#array]]              | [[https://code.dennyzhang.com/review-array][Review: Array/SubArray Problems]]                   |
 |  12 | [[https://code.dennyzhang.com/review-hashmap][#hashmap]]            | [[https://code.dennyzhang.com/review-hashmap][Review: Hashmap Problems]]                          |
 |  13 | [[https://code.dennyzhang.com/review-minimax][#minimax]]            | [[https://code.dennyzhang.com/review-minimax][Review: Minimax Problems]]                          |
 |  14 | [[https://code.dennyzhang.com/review-monotone][#monotone]]           | [[https://code.dennyzhang.com/review-monotone][Review: Monotone Stack Or Monotone Queue Problems]] |
@@ -57,7 +57,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  31 | [[https://code.dennyzhang.com/review-bitmanipulation][#bitmanipulation]]    | [[https://code.dennyzhang.com/review-bitmanipulation][Review: Bit manipulation problems]]                 |
 |  32 | [[https://code.dennyzhang.com/review-manydetails][#manydetails]]        | [[https://code.dennyzhang.com/review-manydetails][Review: Problems With Many Details]]                |
 |  33 | [[https://code.dennyzhang.com/review-sql][#sql]]                | [[https://code.dennyzhang.com/review-sql][Review: SQL Problems]]                              |
-|  34 | [[https://code.dennyzhang.com/tag/oodesign/][#oodesign]]           | [[https://code.dennyzhang.com/review-oodesign][Review: Object-Oriented Design Problems]]           |
+|  34 | [[https://code.dennyzhang.com/review-oodesign/][#oodesign]]           | [[https://code.dennyzhang.com/review-oodesign][Review: Object-Oriented Design Problems]]           |
 #+TBLFM: $1=@-1$1+1;N
 
 #+BEGIN_HTML
@@ -69,12 +69,12 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Num | Category/Tag                | Example                                                 |
 |-----+-----------------------------+---------------------------------------------------------|
 |   1 | [[https://code.dennyzhang.com/followup-atmostkdistinct][#atmostkdistinct]], [[https://code.dennyzhang.com/review-string][#string]]   | [[https://code.dennyzhang.com/followup-atmostkdistinct][Substring with at most k distinct characters]]            |
-|   2 | [[https://code.dennyzhang.com/followup-twosum][#twosum]], [[https://code.dennyzhang.com/tag/array][#array]]             | [[https://code.dennyzhang.com/followup-twosum][TwoSum Problems & Follow-Up]]                             |
-|   3 | [[https://code.dennyzhang.com/followup-maxsubarraysum][#maxsubarraysum]], [[https://code.dennyzhang.com/tag/array][#array]]     | [[https://code.dennyzhang.com/followup-maxsubarraysum][Maximum subarray problem]]                                |
+|   2 | [[https://code.dennyzhang.com/followup-twosum][#twosum]], [[https://code.dennyzhang.com/review-array][#array]]             | [[https://code.dennyzhang.com/followup-twosum][TwoSum Problems & Follow-Up]]                             |
+|   3 | [[https://code.dennyzhang.com/followup-maxsubarraysum][#maxsubarraysum]], [[https://code.dennyzhang.com/review-array][#array]]     | [[https://code.dennyzhang.com/followup-maxsubarraysum][Maximum subarray problem]]                                |
 |   4 | [[https://code.dennyzhang.com/followup-nextpermutation][#nextpermutation]], [[https://code.dennyzhang.com/review-string][#string]]   | [[https://code.dennyzhang.com/followup-nextpermutation][Get the next permutation of an array]]                    |
 |   5 | [[https://code.dennyzhang.com/followup-editdistance][#editdistance]], [[https://code.dennyzhang.com/review-string][#string]]      | [[https://code.dennyzhang.com/followup-editdistance][Word Distance & Follow-up]]                               |
 |   6 | [[https://code.dennyzhang.com/followup-baseconversion][#baseconversion]]             | [[https://code.dennyzhang.com/followup-baseconversion][Base Conversion Problems & Follow-Up]]                    |
-|   7 | [[https://code.dennyzhang.com/followup-presum][#presum]], [[https://code.dennyzhang.com/tag/array][#array]]             | [[https://code.dennyzhang.com/followup-presum][Caculate sum of a range quickly]]                         |
+|   7 | [[https://code.dennyzhang.com/followup-presum][#presum]], [[https://code.dennyzhang.com/review-array][#array]]             | [[https://code.dennyzhang.com/followup-presum][Caculate sum of a range quickly]]                         |
 |   8 | [[https://code.dennyzhang.com/followup-fibonacci][#fibonacci]]                  | [[https://code.dennyzhang.com/followup-fibonacci][Fibonacci Problems & Follow-Up]]                          |
 |   9 | [[https://code.dennyzhang.com/followup-mergelist][#mergelist]]                  | [[https://code.dennyzhang.com/followup-mergelist][Merge K Sorted List Problems & Follow-up]]                |
 |  10 | [[https://code.dennyzhang.com/followup-sortedmatrix][#sortedmatrix]]               | [[https://code.dennyzhang.com/followup-sortedmatrix][Sorted 2D Matrix Problems & Follow-up]]                   |
@@ -103,7 +103,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |  30 | [[https://code.dennyzhang.com/followup-kmp][#kmp]]                        | [[https://code.dennyzhang.com/followup-kmp][KMP Problems & Follow-up]]                                |
 |  31 | [[https://code.dennyzhang.com/followup-wiggle][#wiggle]]                     | [[https://code.dennyzhang.com/followup-wiggle][Wiggle Array Problems & Follow-up]]                       |
 |  32 | [[https://code.dennyzhang.com/followup-groupelements][#groupelements]]              | [[https://code.dennyzhang.com/followup-groupelements][Seperate a list into several groups]]                     |
-|  33 | [[https://code.dennyzhang.com/followup-treetraversal][#treetraversal]], [[https://code.dennyzhang.com/tag/binarytree][#binarytree]] | [[https://code.dennyzhang.com/followup-treetraversal][Tree Traversal & Follow-up]]                              |
+|  33 | [[https://code.dennyzhang.com/followup-treetraversal][#treetraversal]], [[https://code.dennyzhang.com/review-binarytree][#binarytree]] | [[https://code.dennyzhang.com/followup-treetraversal][Tree Traversal & Follow-up]]                              |
 |  34 | [[https://code.dennyzhang.com/followup-calculator][#calculator]]                 | [[https://code.dennyzhang.com/followup-calculator][Calculator & Follow-up]]                                  |
 |  35 | [[https://code.dennyzhang.com/followup-meetingconflict][#meetingconflict]]            | [[https://code.dennyzhang.com/followup-meetingconflict][Meeting Conflict Problems & Follow-up]]                   |
 |  36 | [[https://code.dennyzhang.com/followup-meetingpoint][#meetingpoint]]               | [[https://code.dennyzhang.com/followup-meetingconflict][Meeting Point Problems & Follow-up]]                      |
