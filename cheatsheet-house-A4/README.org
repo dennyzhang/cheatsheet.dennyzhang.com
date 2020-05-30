@@ -665,11 +665,13 @@ The technology at the state of the art MRF enables workers to efficiently sort y
 https://www.youtube.com/watch?v=TuXvZM--HRc
 https://www.homedepot.com/p/Pypthon-Drain-Cleaning-Tool-MACPYP001/206405608
 
-* TODO [#A] Check HSA monthly administration fees
+* DONE reset hot boiling water machine: two hard press             :noexport:
+  CLOSED: [2020-05-31 Sun 16:55]
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Check HSA monthly administration fees                  :noexport:
 HEALTH SAVINGS ACCOUNT (HSA)
 If you have deferrals to the HSA, you may still submit claims to your account after employment ends. Additionally, your account is portable and can be transferred to another financial institution if you choose. You will be subject to monthly administration fees on your HSA account. Please contact HealthEquity at 1-866-296-2857 for any questions. Please expect a letter from HealthEquity regarding your account approximately 2 weeks after your termination date.
 
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] 烧水壶蒸汽                                             :noexport:
 * TODO garage door detector                                        :noexport:
 * TODO [#A] 找家庭医生                                             :noexport:
@@ -693,4 +695,11 @@ https://www.amazon.com/ask/questions/Tx1CQ8FLYIGQPWV
 | Refrigerator water | [[https://amzn.to/2YDbDk6][Amazon: 4396710 Refrigerator Water]]                            |
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#B] Build vertical plantson the wall                       :noexport:
-* TODO reset hot water machine                                     :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE replace sprinker spray head                                 :noexport:
+  CLOSED: [2020-05-31 Sun 23:02]
+* TODO Buy a fan                                                   :noexport:
+* TODO Buy a Printer                                               :noexport:
+https://www.bestbuy.com/site/hp-envy-photo-7155-wireless-all-in-one-instant-ink-ready-printer-black/5962000.p?skuId=5962000
+
+HP 64 black ink cartridge

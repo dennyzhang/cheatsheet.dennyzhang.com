@@ -38,6 +38,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Share files across intranet   | =System Preferences -> Sharing -> File Sharing=, then =\\192.168.XX.XXX= |
 | Lock the screen               | =Ctrl + Shift + Power=                                                   |
 | Swap Cap and Command key      | [[https://support.apple.com/kb/PH25240?locale=en_US][Link: support.apple.com]]                                                  |
+** Fresh Mac Setup 
+| Name                                | Comment                     |
+|-------------------------------------+-----------------------------|
+| Install packages and configurations | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-mac-A4/code/setup_mac.sh][code/setup_mac.sh]]           |
+| Verify installation                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-mac-A4/code/verify_installation.sh][code/verify_installation.sh]] |
 ** Home Brew Basic
 | Name                                    | Comment                                                  |
 |-----------------------------------------+----------------------------------------------------------|
@@ -1850,6 +1855,15 @@ https://mackuba.eu/2008/06/30/ls-on-mac-and-extended-file-attributes/
 http://unix.stackexchange.com/questions/10/what-does-the-mean-in-ls-l
 http://ubuntuforums.org/showthread.php?t=1149891
 http://superuser.com/questions/463074/is-debian-squeezes-tar-still-lacking-a-tar-with-xattr-support
+* DONE mac change default file open application                    :noexport:
+  CLOSED: [2020-05-13 Wed 11:45]
+https://www.imore.com/how-set-mac-app-default-when-opening-file
+* DONE cleanup ~/Dropbox/.dropbox.cache                            :noexport:
+  CLOSED: [2020-05-20 Wed 23:30]
+* DONE FB Mac can't connect to my airpod: Press and hold the setup button on the back of the case until the status light flashes white.
+  CLOSED: [2020-05-29 Fri 15:12]
+https://support.apple.com/en-us/HT208718
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO cleanup the disk                                            :noexport:
 /cores/core/*
 * TODO chromiue avoid change tgz to tar                            :noexport:
@@ -1885,8 +1899,6 @@ map auto_home                              0Bi    0Bi    0Bi   100%       0     
 * TODO system self check                                           :noexport:
 Python version: python 3
 * TODO stop itune keeps poping up                                  :noexport:
-* DONE cleanup ~/Dropbox/.dropbox.cache                            :noexport:
-  CLOSED: [2020-05-20 Wed 23:30]
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * HALF [#A] Blog: setup mac workstation                  :IMPORTANT:noexport:
 ** DONE Install dropbox, emacs, iterm
@@ -1895,7 +1907,6 @@ Python version: python 3
    CLOSED: [2017-12-03 Sun 23:06]
 ** DONE Show Bluetooth in menu bar
    CLOSED: [2020-05-26 Tue 09:28]
-
 ** DONE Connect to wireless mouse & keyboard
    CLOSED: [2020-05-26 Tue 10:22]
 ** DONE Login to gmail
@@ -1906,7 +1917,6 @@ Python version: python 3
    CLOSED: [2020-05-26 Tue 10:47]
  https://9to5mac.com/2016/03/17/how-to-remap-windows-keyboard-buttons-match-mac-layout/
  https://apple.stackexchange.com/questions/4813/changing-modifier-keys-from-the-command-line
-
 ** DONE Enable dropbox sync
    CLOSED: [2017-12-01 Fri 13:08]
 ** DONE [#A] mac use control+space for switching input methods
@@ -1978,11 +1988,6 @@ https://www.howtogeek.com/howto/32810/how-to-lock-your-mac-os-x-display-when-you
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** HALF mac setup: install docker
 ** HALF mac install gpg: brew install gnupg
-** HALF chrome install plugin: fox proxy
-** HALF Install mutliple chrome releases
-https://www.google.com/chrome/browser/canary.html
-
-https://www.chromium.org/getting-involved/download-chromium
 ** backup mysql of my websites: git push to repo
 ** HALF github: start a git repo: setup mac                        :noexport:
 *** make the code re-entrant
@@ -1993,13 +1998,11 @@ https://gist.github.com/kevin-smets/b91a34cea662d0c523968472a81788f7
 ~/.ssh/config
 ~/.ssh/id_rsa
 ~/.ssh/id_rsa.pub
-
 ** DONE mac setup: sudo easy_install pip
    CLOSED: [2017-12-02 Sat 18:38]
 ** CANCELED sogou input
    CLOSED: [2020-05-26 Tue 11:41]
 https://pinyin.sogou.com/mac/
-
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** DONE wechat on mac
    CLOSED: [2020-05-27 Wed 19:22]
@@ -2012,18 +2015,8 @@ https://docs.docker.com/docker-for-mac/install/
 https://pinyin.sogou.com/mac/wubi.php
 ** DONE mac login to calendar
    CLOSED: [2020-05-27 Wed 19:18]
-** DONE emacs can't open Downloads -> change chrome
-   CLOSED: [2020-05-27 Wed 18:31]
-
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** TODO emacs search words
-** TODO Chrome mute facebook worspace notification
-chat -> Popups on Workspace
-
-** TODO [#A] mac set default web browser as chrome
-https://support.apple.com/en-us/HT201607
-Google Chrome cannot determine or set the default browser
-
 ** TODO [#A] ./setup_mac.sh
 ** TODO ./update_git_code.sh
 * setup my iphone                                                  :noexport:
@@ -2032,3 +2025,17 @@ Google Chrome cannot determine or set the default browser
 ** install iterm2
 ** enable oh-my-zsh
 https://ohmyz.sh/#install
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE Stop: Update Apple ID Settings                              :noexport:
+  CLOSED: [2020-06-01 Mon 08:03]
+* DONE Monosnap is a great free tool to capture screenshots and videos. :noexport:
+  CLOSED: [2020-06-01 Mon 12:05]
+* TODO setup desktop notification in mac                           :noexport:
+brew install terminal-notifier
+
+ echo "alias fin='echo DONE'" >> ~/.bash_profile
+* DONE Why does my Mac Disconnect my Airpods? -> Bluetooth -> Debug -> Reset the Bluetooth module
+  CLOSED: [2020-06-05 Fri 20:19]
+https://discussions.apple.com/thread/7931378
+* TODO install pdflatex                                            :noexport:
+https://www.latex-project.org/get/

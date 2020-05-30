@@ -9,7 +9,7 @@
 ## Description :
 ## --
 ## Created : <2017-12-04>
-## Updated: Time-stamp: <2020-05-26 11:48:22>
+## Updated: Time-stamp: <2020-06-02 09:14:10>
 ##-------------------------------------------------------------------
 set -e
 
@@ -30,7 +30,7 @@ function brew_install {
 
 function brew_install_devkit {
     echo "Brew install devkit"
-    brew install mysql
+    brew install mysql mosh
 }
 
 function python_setup {
@@ -65,6 +65,7 @@ function setup_email {
 
 function create_crontab {
     echo "Define crontab"
+    [ -d ~/mydata ] || mkdir -p ~/mydata
     if [ ! -d /var/log/cron ]; then
         sudo mkdir -p chmod 755 /var/log/cron/ && sudo chmod 755 /var/log/cron/
     fi
