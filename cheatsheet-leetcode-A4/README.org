@@ -617,3 +617,6 @@ general
 |----------------+---------|
 | Tree map       |         |
 | [[https://www.geeksforgeeks.org/inverted-index/][Inverted Index]] |         |
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO setup quiz website to boostrap the traffic                  :noexport:
+10 questions at most

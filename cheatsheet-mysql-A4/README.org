@@ -302,3 +302,4 @@ mysql> SELECT CONCAT(102.33);
 1 row in set (0.00 sec)
 #+END_EXAMPLE
 * TODO [#A] mysql get the first entry for each group               :noexport:
+* TODO 1000<=21300<=10000 vs 21300>=1000 and 21300<=10000          :noexport:

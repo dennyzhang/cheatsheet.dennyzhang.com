@@ -2039,3 +2039,5 @@ brew install terminal-notifier
 https://discussions.apple.com/thread/7931378
 * TODO install pdflatex                                            :noexport:
 https://www.latex-project.org/get/
+
+export PATH=$PATH:/usr/local/texlive/2020/bin/x86_64-darwin/

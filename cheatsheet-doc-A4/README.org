@@ -603,3 +603,9 @@ We don't tolerate any form of intimidation or retaliation for reporting workplac
 * misc                                                             :noexport:
 - articulate risks
 - It's two sides of the coin
+- [[https://brianhsublog.blogspot.com/2018/10/impostor-syndrome.html#:~:text=%E3%80%8C%E5%86%92%E5%90%8D%E9%A0%82%E6%9B%BF%E7%97%87%E5%80%99%E7%BE%A4%EF%BC%88%E8%8B%B1%E8%AA%9E%EF%BC%9A,%EF%BC%88%E8%8B%B1%E8%AA%9E%EF%BC%9Afraud%20syndrome%EF%BC%89%E3%80%82][Impostor syndrome]]
+- Be more charismatic and woo the audience
+- Reframe problem statements or compe up with novel solutions
+- Develop technical skills by facilitating senior engineering discussions
+- Other people's change may break your code transitively
+- Chronic versus Sporadic Failures

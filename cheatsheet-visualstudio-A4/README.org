@@ -21,22 +21,29 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-git-A4][Git CheatSheet]]
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Visual Studio Shortcut On Mac
-| Name                        | Command       |
-|-----------------------------+---------------|
-| Enter command mode          | =Cmd+Shift+P= |
-| Find file by searching name | =Cmd+p=       |
-| Open file by filepath       |               |
+| Name                            | Command                 |
+|---------------------------------+-------------------------|
+| Enter command mode              | =Cmd+Shift+P=           |
+| Find file by searching name     | =Cmd+P=                 |
+| Find file by searching name     | =Ctrl+Shift+F=          |
+| Go to specific line of one file | =C-g, then line number= |
 ** Visual Studio Summary
-| Name                          | Command                         |
-|-------------------------------+---------------------------------|
-| shortcut to get specify line  | =C-g, then line number=         |
-| Diagnose visual studio issues | =>doctor:Fix My VS Code=        |
-| Format code block             | =>Format Document=              |
-| Search by text or name        | =>Omni-search: Open Omi-search= |
-| Show uncommitted changes      | =>Show Uncommitted Changes=     |
-| Interactive Smartlog          |                                 |
+| Name                                     | Command                             |
+|------------------------------------------+-------------------------------------|
+| Show uncommitted changes                 | =>Show Uncommitted Changes=         |
+| Diagnose visual studio issues            | =>doctor:Fix My VS Code=            |
+| Search by text or name                   | =>Omni-search: Open Omi-search=     |
+| Format code block                        | =>Format Document=                  |
+| Open a local file by filepath            | =Ctrl+O=                            |
+| Interactive Smartlog                     |                                     |
+| From file on the right panel to explorer | =Right click -> Reveal in Side Bar= |
+| Save the context of editing              | =File menu -> Save Workspace As=    |
+** Reference
+| Name      | Command                                           |
+|-----------+---------------------------------------------------|
+| Reference | [[http://visualstudioshortcuts.com/2017/][Link: Visual Studio 2017 keyboard shortcuts]]       |
+| Reference | [[https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2019][Link: Default keyboard shortcuts in Visual Studio]] |
 ** More Resources
-https://docs.microsoft.com/en-us/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio?view=vs-2019
 
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
@@ -73,4 +80,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+LINK_UP:
 #+LINK_HOME:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO visual studio: jump to a given path                         :noexport:
+* TODO visual studio: change the diff                              :noexport:
+* DONE visual studio: jump to a given path                         :noexport:
+  CLOSED: [2020-06-07 Sun 15:42]
+* TODO visual studio project
