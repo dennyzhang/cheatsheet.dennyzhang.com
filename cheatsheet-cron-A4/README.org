@@ -416,3 +416,4 @@ Mar 24 20:52:37 carol-repo crontab[21913]: (root) LIST (root)
 
 ** TODO When crontab job has failed, get slack notification
 * TODO cron cheatsheet: https://jimmysong.io/cheatsheets/cron      :noexport:
+* TODO [#A] install crontab by command line                        :noexport:

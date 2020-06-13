@@ -523,9 +523,6 @@ I wish you all the best in your future endeavors!
 Non-negotiable requirement
 
 Stop typing and have a conversation
-* TODO Facebook SDLC tooling
-phabricator - code review
-Thrift - RPC
 * TODO Critical comment                                            :noexport:
 Social networks make people feel better but doesn't solve problems.
 * TODO Facebook OLTP: still using hadoop? Or Spark?                :noexport:
@@ -568,15 +565,6 @@ We'll inform you via your personal email about how to retrieve any personal item
 
 Finally, we just want to thank you for all your hard work and dedication. You have made XXX a better place, and we will miss working with you. Thank you for all you have done for us.
 #+END_EXAMPLE
-* TODO infra words                                                 :noexport:
-Opaque architectures
-spot vs preemptable resources
-endemic problems vc pandemic problems
-
-
-closed and proprietary systems
-
-Isolate adhoc queries from jobs with strict deadlines
 * TODO cloud industry                                              :noexport:
 Availability, scalability, latency, and efficiency of our cloud service
 Experience in a high-volume or critical production service environment.
@@ -595,7 +583,6 @@ Every day begins with a desires to make things better.
 The challenges you face are bigger than any one of us.
 Nothing is some one else's problems
 
-
 We don't tolerate any form of intimidation or retaliation for reporting workplace threats and violence
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Meeting English                                             :noexport:
@@ -609,3 +596,23 @@ We don't tolerate any form of intimidation or retaliation for reporting workplac
 - Develop technical skills by facilitating senior engineering discussions
 - Other people's change may break your code transitively
 - Chronic versus Sporadic Failures
+* TODO planning words                                              :noexport:
+unanticipated problems might push this into Q4
+* TODO infra words                                                 :noexport:
+Opaque architectures
+spot vs preemptable resources
+endemic problems vc pandemic problems
+
+closed and proprietary systems
+
+Isolate adhoc queries from jobs with strict deadlines
+
+
+Infra-as-code help solve 2 top-level problems: alleviate operational complexity, and improve resource utilization
+* TODO Career words                                                :noexport:
+Give more than you take. 
+Promotions are lagging not leading, with clear scope and business need at the next level defined.
+
+For people like your level should be able to figure stuff by your own
+
+Push the boundary

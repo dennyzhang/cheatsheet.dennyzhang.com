@@ -22,16 +22,18 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Chef Summary
-| Name               | Command                              |
-|--------------------+--------------------------------------|
-| Log folder         | =/var/chef/outputs/=                 |
-| Chef log a message | =puts '################## My Test.'= |
+| Name               | Command                                                   |
+|--------------------+-----------------------------------------------------------|
+| Cookbook folder    | =/var/chef/cache/cookbooks=, =/etc/chef/local-mode-cache= |
+| Log folder         | =/var/chef/outputs/=                                      |
+| Chef log a message | puts "################## My Test var: #{var}."            |
 ** Chef Resources
-| Name                       | Command                                       |
-|----------------------------+-----------------------------------------------|
-| Chef install package       | [[https://docs.chef.io/resources/package/#syntax][Link: chef package resource]]                   |
-| Chef conditional update    |                                               |
-| Chef create file/directory | [[https://docs.chef.io/resources/file/][Link: file resource]], [[https://docs.chef.io/resources/directory/][Link: directory resource]] |
+| Name                             | Command                                       |
+|----------------------------------+-----------------------------------------------|
+| Create a file with given content | [[https://docs.chef.io/resources/file/][Link: file resource]]                           |
+| Chef install package             | [[https://docs.chef.io/resources/package/#syntax][Link: chef package resource]]                   |
+| Chef conditional update          |                                               |
+| Chef create file/directory       | [[https://docs.chef.io/resources/file/][Link: file resource]], [[https://docs.chef.io/resources/directory/][Link: directory resource]] |
 ** More Resources
 License: Code is licenapt under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 https://docs.chef.io/resource/
@@ -68,3 +70,6 @@ https://docs.chef.io/resource/
 #+LINK_HOME: 
 * TODO chef get centos version                                     :noexport:
 * TODO chef update: chef -i                                        :noexport:
+* TODO chefctl -i with custom json                                 :noexport:
+* chef copy files                                                  :noexport:
+* chef-shell                                                       :noexport:

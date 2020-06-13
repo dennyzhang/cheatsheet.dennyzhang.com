@@ -2037,7 +2037,25 @@ brew install terminal-notifier
 * DONE Why does my Mac Disconnect my Airpods? -> Bluetooth -> Debug -> Reset the Bluetooth module
   CLOSED: [2020-06-05 Fri 20:19]
 https://discussions.apple.com/thread/7931378
-* TODO install pdflatex                                            :noexport:
+* DONE install pdflatex                                            :noexport:
+  CLOSED: [2020-06-07 Sun 23:35]
 https://www.latex-project.org/get/
 
 export PATH=$PATH:/usr/local/texlive/2020/bin/x86_64-darwin/
+* TODO [#A] mac ssh ControlMaster                                  :noexport:
+https://ldpreload.com/blog/ssh-control
+
+14
+
++50
+You have ControlPersist enabled. My educated guess is that the following happens:
+
+You have connection to example.com
+Logout, but because ControlPersist is enabled, session is kept open for future connections.
+Something goes wrong with your network connection, and thus, persistent connection breaks.
+When you run ssh somedude@example.com again, it tries to reuse connection from step 2, and opens a new connection after timeout.
+https://superuser.com/questions/371599/mac-os-x-lion-terminal-ssh-connection-sharing-error
+* DONE Mac F2 key for for emacs usage                              :noexport:
+  CLOSED: [2020-06-13 Sat 00:00]
+https://support.apple.com/en-us/HT204436
+Keyboards -> Use F1, F2, etc, keys as standard function keys on external keyboards

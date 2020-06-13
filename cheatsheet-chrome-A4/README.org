@@ -21,11 +21,11 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-shell-A4][Shell CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-browser-A4][CheatSheet: Web Browser]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
-** Chrome Summary
-| Name                               | Comment           |
-|------------------------------------+-------------------|
-| Chrome scroll to top/bottom in Mac | =Command-up/down= |
-
+** Chrome Shortcut In Mac
+| Name                               | Comment              |
+|------------------------------------+----------------------|
+| Chrome scroll to top/bottom in Mac | =Command-up/down=    |
+| Chrome go to prev/next in history  | =Command-left/right= |
 ** More Resources
 https://www.cnet.com/how-to/21-chrome-shortcuts-you-need-to-know/
 
@@ -70,21 +70,13 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 https://www.google.com/chrome/browser/canary.html
 
 https://www.chromium.org/getting-involved/download-chromium
-
 ** DONE emacs can't open Downloads -> change chrome
    CLOSED: [2020-05-27 Wed 18:31]
-
-
-** TODO Chrome mute facebook worspace notification
-chat -> Popups on Workspace
-
-
-** TODO [#A] mac set default web browser as chrome
+* DONE [#A] mac set default web browser as chrome
+  CLOSED: [2020-06-08 Mon 10:34]
 https://support.apple.com/en-us/HT201607
 Google Chrome cannot determine or set the default browser
-
-
-** TODO Chrome configure the default page                          :noexport:
- Appearance -> Show home button
-
-** Chrome move to the top                                          :noexport:
+* TODO Chrome configure the default page                           :noexport:
+Appearance -> Show home button
+* TODO Chrome: When open a new tab, open the wiki page by default  :noexport:
+* TODO Chrome: scroll to the top quickly                           :noexport:

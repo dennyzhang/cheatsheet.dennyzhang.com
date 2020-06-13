@@ -657,8 +657,11 @@ https://youtu.be/w6Auv5QPFKw?t=23
 https://youtu.be/tjjvNCQ-5yM?t=156
 ** TODO embded lights
 https://youtu.be/2Q7hkaJOGqc?t=106
+** 立一个高钢棍 for battle ropes
 ** todo Embeded outlets
 https://youtu.be/CNQ2-ZNCR4M?t=77
+** when build adu, make sure backyard sprinkler can still work
+
 * TODO [#A] 厨房炉子的右上方burner不work了                         :noexport:
 * TODO [#A] Get the Title of our toyota corolla                    :noexport:
 * TODO [#A] 次卧有煤气味                                           :noexport:
@@ -706,3 +709,11 @@ https://www.amazon.com/ask/questions/Tx1CQ8FLYIGQPWV
 * TODO [#A] 买个盆装柠檬                                           :noexport:
 * TODO [#A] Return xfinity kit                                     :noexport:
 * TODO [#A] Detect Garage door                                     :noexport:
+* CANCELED Switch to google fi plan: $20                           :noexport:
+  CLOSED: [2020-06-09 Tue 08:29]
+https://fi.google.com/about/plans/
+https://www.androidauthority.com/google-project-fi-plans-855797/
+* TODO [#A] 眼睛的保护                                             :noexport:
+* TODO [#A] 了解商业医疗保险                                       :noexport:
+* TODO light in the master bedroom without taking too much space   :noexport:
+* TODO re-org the table in master bedroom without taking too much space :noexport:
