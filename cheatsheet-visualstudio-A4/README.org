@@ -38,6 +38,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Interactive Smartlog                     |                                     |
 | From file on the right panel to explorer | =Right click -> Reveal in Side Bar= |
 | Save the context of editing              | =File menu -> Save Workspace As=    |
+| Visual studio toggle Terminal window     | =Menu -> Window -> Terminal=        |
 ** Reference
 | Name      | Command                                           |
 |-----------+---------------------------------------------------|

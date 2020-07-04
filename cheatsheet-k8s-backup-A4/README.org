@@ -216,3 +216,8 @@ func (a *backupPVAction) Execute(item runtime.Unstructured, backup *v1.Backup) (
 func (ib *defaultItemBackupper) backupItem(logger logrus.FieldLogger, obj runtime.Unstructured, groupResource schema.GroupResource) error {
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Blog: heptio backup                                         :noexport:
+* HALF velero backup                                               :noexport:
+velero backup create e2e-backup-denny --exclude-resources storageclasses.storage.k8s.io --selector workload=blog --storage-location default
+velero backup describe e2e-backup-denny
+* HALF check velero configuration                                  :noexport:
+velero get backup-location -o json

@@ -16,7 +16,7 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-health-A4/cheatsheet-health-A4.pdf][cheatsheet-health-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/linux/][linux]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-health-A4/cheatsheet-health-A4.pdf][cheatsheet-health-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/life/][life]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-health-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][Cheatsheet: Driver License]], [[https://cheatsheet.dennyzhang.com/cheatsheet-travel][Cheatsheet Travel]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 

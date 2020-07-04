@@ -7488,3 +7488,6 @@ https://aws.amazon.com/premiumsupport/knowledge-center/route-53-service-discover
 * TODO What does it means that one AWS security group can allow traffic from another traffic group? :noexport:
 * TODO [#A] AWS DDoS                                               :noexport:
 * TODO Setup https://aws.dennyzhang.com                            :noexport:
+* DONE git push ~/.../..._blog                                     :noexport:
+  CLOSED: [2020-06-21 Sun 15:57]
+AWS -> My Acount -> My security credentials -> AWS CodeCommit credentials

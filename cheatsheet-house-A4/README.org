@@ -445,78 +445,97 @@ https://www.youtube.com/watch?v=U0kKGT2Kljs
  sink
 
  garbage disposal
-* CANCELED local notes                                             :noexport:
-** CANCELED 一键把所有的灯关了                                     :noexport:
-   CLOSED: [2019-06-16 Sun 08:31]
-** CANCELED 厕所的水压不够                                         :noexport:
-   CLOSED: [2020-04-20 Mon 08:54]
-** CANCELED 买一个更宽的地毯放在主卧                               :noexport:
-   CLOSED: [2020-04-20 Mon 08:54]
-** CANCELED [#A] Start a website for american house maintainance   :noexport:
-   CLOSED: [2019-06-16 Sun 08:29]
-** CANCELED Basketball Hoop for garage door                        :noexport:
-   CLOSED: [2019-06-16 Sun 08:29]
- https://www.youtube.com/watch?v=q0j7aA_c0CI
- https://www.youtube.com/watch?v=kKZY72AY9M0
-** CANCELED get a electric lawn mover from criaglist               :noexport:
-   CLOSED: [2019-04-03 Wed 13:56]
- freemont: $215
- https://sfbay.craigslist.org/eby/grd/d/newark-brand-new-electric-lawn-mower/6843218175.html
-** CANCELED 洗碗机洗不干净                                         :noexport:
-   CLOSED: [2020-04-30 Thu 23:24]
-** CANCELED change address: 家庭医生 儿科医生 牙科医生等           :noexport:
-   CLOSED: [2020-05-01 Fri 22:30]
- http://vegas168.blogspot.com/2016/05/checklist.html
-** CANCELED [#B] Update geico home address: increase $164          :noexport:
-   CLOSED: [2020-05-01 Fri 22:31]
-** CANCELED Hallway bath 的sink 水压比较低                         :noexport:
-   CLOSED: [2020-05-11 Mon 08:52]
-** CANCELED [#B] Sign up Kaiser account and doctor                 :noexport:
-   CLOSED: [2020-05-11 Mon 08:53]
-** CANCELED [#A] apply two additional credit card to increase the credit score :noexport:
-   CLOSED: [2020-05-11 Mon 08:53]
-** CANCELED [#A] bath room is leaking: Seal Around A Tub Or Shower :noexport:
-   CLOSED: [2020-05-11 Mon 08:55]
- https://www.youtube.com/watch?v=F7Y6XQ9MoHE
-** CANCELED [#A] 水管堵塞是否要买home warranty                     :noexport:
-   CLOSED: [2020-05-11 Mon 08:54]
- https://zhuanlan.zhihu.com/p/32033320
- plumber.前段时间水管堵塞,找了handyman都没有用,只能找plumber公司,幸好有warranty,所以大部分都保险报销了,要不估计要大出血.handyman和我说看你的严重程度了,如果就是一般的堵塞,估计400,500刀.要是major pipe有问题,找市政厅来,几千刀也是少的.
-** CANCELED Change pg&e energy tier?                               :noexport:
-   CLOSED: [2020-05-11 Mon 08:54]
-** CANCELED [#A] bath room: Vertical Shower Door Seal              :noexport:
-   CLOSED: [2020-05-11 Mon 08:54]
- silicone seal
+** DONE 桔子树叶子发黄: 多浇水                                     :noexport:
+  CLOSED: [2020-06-28 Sun 12:33]
+** CANCELED local notes                                            :noexport:
+*** CANCELED 一键把所有的灯关了                                    :noexport:
+    CLOSED: [2019-06-16 Sun 08:31]
+*** CANCELED 厕所的水压不够                                        :noexport:
+    CLOSED: [2020-04-20 Mon 08:54]
+*** CANCELED 买一个更宽的地毯放在主卧                              :noexport:
+    CLOSED: [2020-04-20 Mon 08:54]
+*** CANCELED [#A] Start a website for american house maintainance  :noexport:
+    CLOSED: [2019-06-16 Sun 08:29]
+*** CANCELED Basketball Hoop for garage door                       :noexport:
+    CLOSED: [2019-06-16 Sun 08:29]
+  https://www.youtube.com/watch?v=q0j7aA_c0CI
+  https://www.youtube.com/watch?v=kKZY72AY9M0
+*** CANCELED get a electric lawn mover from criaglist              :noexport:
+    CLOSED: [2019-04-03 Wed 13:56]
+  freemont: $215
+  https://sfbay.craigslist.org/eby/grd/d/newark-brand-new-electric-lawn-mower/6843218175.html
+*** CANCELED 洗碗机洗不干净                                        :noexport:
+    CLOSED: [2020-04-30 Thu 23:24]
+*** CANCELED change address: 家庭医生 儿科医生 牙科医生等          :noexport:
+    CLOSED: [2020-05-01 Fri 22:30]
+  http://vegas168.blogspot.com/2016/05/checklist.html
+*** CANCELED [#B] Update geico home address: increase $164         :noexport:
+    CLOSED: [2020-05-01 Fri 22:31]
+*** CANCELED Hallway bath 的sink 水压比较低                        :noexport:
+    CLOSED: [2020-05-11 Mon 08:52]
+*** CANCELED [#B] Sign up Kaiser account and doctor                :noexport:
+    CLOSED: [2020-05-11 Mon 08:53]
+*** CANCELED [#A] apply two additional credit card to increase the credit score :noexport:
+    CLOSED: [2020-05-11 Mon 08:53]
+*** CANCELED [#A] bath room is leaking: Seal Around A Tub Or Shower :noexport:
+    CLOSED: [2020-05-11 Mon 08:55]
+  https://www.youtube.com/watch?v=F7Y6XQ9MoHE
+*** CANCELED [#A] 水管堵塞是否要买home warranty                    :noexport:
+    CLOSED: [2020-05-11 Mon 08:54]
+  https://zhuanlan.zhihu.com/p/32033320
+  plumber.前段时间水管堵塞,找了handyman都没有用,只能找plumber公司,幸好有warranty,所以大部分都保险报销了,要不估计要大出血.handyman和我说看你的严重程度了,如果就是一般的堵塞,估计400,500刀.要是major pipe有问题,找市政厅来,几千刀也是少的.
+*** CANCELED Change pg&e energy tier?                              :noexport:
+    CLOSED: [2020-05-11 Mon 08:54]
+*** CANCELED [#A] bath room: Vertical Shower Door Seal             :noexport:
+    CLOSED: [2020-05-11 Mon 08:54]
+  silicone seal
 
- https://www.amazon.com/Zengest-Strip-Bottom-Shower-Transparent/dp/B07MPNYBBJ/ref=sr_1_2_sspa?keywords=Vertical%2BShower%2BDoor%2BSeal&qid=1554620898&s=gateway&sr=8-2-spons&th=1
+  https://www.amazon.com/Zengest-Strip-Bottom-Shower-Transparent/dp/B07MPNYBBJ/ref=sr_1_2_sspa?keywords=Vertical%2BShower%2BDoor%2BSeal&qid=1554620898&s=gateway&sr=8-2-spons&th=1
 
- https://www.amazon.com/s?k=Vertical+Shower+Door+Seal&ref=nb_sb_noss
+  https://www.amazon.com/s?k=Vertical+Shower+Door+Seal&ref=nb_sb_noss
 
- https://www.youtube.com/watch?v=PTADQAyDztI
- https://www.youtube.com/watch?v=ECdXEAAIBFI
- https://www.youtube.com/watch?v=x56o59oTgx0
- https://www.youtube.com/watch?v=lyWC4DFAF1w
-** CANCELED 处理logitech的mouse and keyboard                       :noexport:
-   CLOSED: [2020-05-09 Sat 07:45]
-** CANCELED [#A] 后院没有自动喷水                                  :noexport:
-   CLOSED: [2020-06-07 Sun 20:22]
-** CANCELED lg washing machine wm8000hva manual                    :noexport:
-   CLOSED: [2020-06-07 Sun 20:25]
- https://www.lg.com/us/support/products/documents/WM8000%20Manual.pdf
-** CANCELED [#A] clean laundry filter                              :noexport:
-   CLOSED: [2020-06-07 Sun 20:26]
- https://www.youtube.com/watch?v=7x362qb0IRk
- https://www.youtube.com/watch?v=WxxOtXTiDUY
-** CANCELED 1031 Tax Exchange                                      :noexport:
-   CLOSED: [2020-06-07 Sun 20:27]
-** CANCELED bathroom toilet noise                                  :noexport:
-   CLOSED: [2020-06-07 Sun 20:26]
-
-** CANCELED LG Front Load Washer - door seal                       :noexport:
-   CLOSED: [2020-06-07 Sun 20:28]
- https://www.manualslib.com/manual/270172/Lg-Wm8000hva.html?page=24#manual
- https://www.manualslib.com/manual/270172/Lg-Wm8000hva.html?page=29#manual
- https://www.manualslib.com/manual/270172/Lg-Wm8000hva.html?page=11#manual
+  https://www.youtube.com/watch?v=PTADQAyDztI
+  https://www.youtube.com/watch?v=ECdXEAAIBFI
+  https://www.youtube.com/watch?v=x56o59oTgx0
+  https://www.youtube.com/watch?v=lyWC4DFAF1w
+*** CANCELED 处理logitech的mouse and keyboard                      :noexport:
+    CLOSED: [2020-05-09 Sat 07:45]
+*** CANCELED [#A] 后院没有自动喷水                                 :noexport:
+    CLOSED: [2020-06-07 Sun 20:22]
+*** CANCELED lg washing machine wm8000hva manual                   :noexport:
+    CLOSED: [2020-06-07 Sun 20:25]
+  https://www.lg.com/us/support/products/documents/WM8000%20Manual.pdf
+*** CANCELED [#A] clean laundry filter                             :noexport:
+    CLOSED: [2020-06-07 Sun 20:26]
+  https://www.youtube.com/watch?v=7x362qb0IRk
+  https://www.youtube.com/watch?v=WxxOtXTiDUY
+*** CANCELED 1031 Tax Exchange                                     :noexport:
+    CLOSED: [2020-06-07 Sun 20:27]
+*** CANCELED bathroom toilet noise                                 :noexport:
+    CLOSED: [2020-06-07 Sun 20:26]
+*** CANCELED LG Front Load Washer - door seal                      :noexport:
+    CLOSED: [2020-06-07 Sun 20:28]
+  https://www.manualslib.com/manual/270172/Lg-Wm8000hva.html?page=24#manual
+  https://www.manualslib.com/manual/270172/Lg-Wm8000hva.html?page=29#manual
+  https://www.manualslib.com/manual/270172/Lg-Wm8000hva.html?page=11#manual
+** CANCELED 买棵果树, 种在前院: 桔子树可以救活了                   :noexport:
+   CLOSED: [2020-06-28 Sun 12:33]
+** CANCELED Switch to google fi plan: $20                          :noexport:
+   CLOSED: [2020-06-09 Tue 08:29]
+ https://fi.google.com/about/plans/
+ https://www.androidauthority.com/google-project-fi-plans-855797/
+** DONE 买个盆装柠檬                                               :noexport:
+   CLOSED: [2020-06-28 Sun 12:35]
+** CANCELED 前院的桔树死了,找市政府换一棵更合适的树                :noexport:
+   CLOSED: [2020-06-28 Sun 12:35]
+** DONE bugs in trash can during the summer time: keep it dry. Seal the bags:noexport:
+   CLOSED: [2020-06-28 Sun 12:37]
+** CANCELED deal with fruit flies                                  :noexport:
+   CLOSED: [2020-06-28 Sun 12:37]
+ https://www.youtube.com/watch?v=WwM0TA5N61U
+ https://www.youtube.com/watch?v=wBcd4_OgG7I
+ - clean
+ - bait
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Learn skills: increase my credit history: lease contract, utility :noexport:
 * TODO Learn skills: How to check Termites                         :noexport:
@@ -566,13 +585,6 @@ https://www.youtube.com/watch?v=aiSrdZZ1vkM
 * TODO 洗碗机内桶要定期清洗                                        :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO Change the fruit tree in the paveway of front yard          :noexport:
-* TODO bugs in trash can during the summer time                    :noexport:
-* HALF deal with fruit flies                                       :noexport:
-https://www.youtube.com/watch?v=WwM0TA5N61U
-https://www.youtube.com/watch?v=wBcd4_OgG7I
-- clean
-- bait
-* TODO 次卧室厕所自己会冲水                                        :noexport:
 * TODO Can I Recycle Plastic Bags in the Curbside Recycling Bin?   :noexport:
 https://www.plasticsmakeitpossible.com/plastics-recycling/how-to-recycle/at-home/can-i-recycle-plastic-bags-in-the-recycling-bin/
 
@@ -588,24 +600,13 @@ https://www.greenteam.com/san-jose/recycling-education
 The technology at the state of the art MRF enables workers to efficiently sort your mixed recyclable materials. A system of conveyor belts, screens, electromagnets and blasts of air separate paper from plastics, glass and other materials. Sorted bales and bins of materials are then taken to processing facilities before being sold to make new products.
 #+END_EXAMPLE
 * TODO garage door detector                                        :noexport:
-* Lighting & Electric                                              :noexport:
+* TODO Lighting & Electric                                         :noexport:
 | Name                                      | Summary |
 |-------------------------------------------+---------|
 | =Lamp doesn't work=                       |         |
 | =GFCI= ([[https://www.osha.gov/SLTC/etools/construction/electrical_incidents/gfci.html][Ground Fault Circuit Interrupter]]) |         |
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#B] 公共沐浴铁杠生锈了                                     :noexport:
-* TODO [#B] 主卧买类似次卧那样比较舒服的被子                       :noexport:
-* TODO [#B] Join local community                                   :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#B] Build vertical plantson the wall                       :noexport:
-* TODO [#B] 后院 楔形阶梯花架                                      :noexport:
-* TODO [#B] 移动garden bed                                         :noexport:
-* TODO [#B] 买更多绿植                                             :noexport:
-- 宝贵竹
-- 仙人掌-万重山
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] build an ADU                                           :noexport:
+* TODO [#B] build an ADU                                           :noexport:
 https://www.youtube.com/watch?v=uuiy-wkvrno
 https://www.youtube.com/watch?v=QdhRkb56K-Q
 https://www.youtube.com/watch?v=OrelDEa-b60
@@ -661,59 +662,41 @@ https://youtu.be/2Q7hkaJOGqc?t=106
 ** todo Embeded outlets
 https://youtu.be/CNQ2-ZNCR4M?t=77
 ** when build adu, make sure backyard sprinkler can still work
-
-* TODO [#A] 厨房炉子的右上方burner不work了                         :noexport:
-* TODO [#A] Get the Title of our toyota corolla                    :noexport:
-* TODO [#A] 次卧有煤气味                                           :noexport:
-* TODO [#A] lemon tree yellow                                      :noexport:
-** TODO citrus leaf curl                                           :noexport:
- https://www.youtube.com/watch?v=zDD7NYS6kE4
-
- https://www.youtube.com/watch?v=Rl96SLtqvHc
-
- https://www.youtube.com/watch?v=DoTL6iRWghg
-
- https://www.youtube.com/watch?v=5bGG3ok6HpA
-
- - fruit
- - prune infected leaves
- - feed it
-
- Causes of citrus curling
- - Pests attack
- - Water stress
- - Fungal Disease
- - Bacterial Blast
- - Potassium Deficiencies
-** TODO citrus yellow leaf                                         :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** 把客厅的窗户改成门
+** [#A] ADU是挡后院的光
+** ADU在水泥板上挖洞, 用来种果树
+** ADU是否要单独装自己的water metering, 否则阶梯收费可能会不划算
+* TODO [#B] 公共沐浴铁杠生锈了                                     :noexport:
+* TODO [#B] 主卧买类似次卧那样比较舒服的被子                       :noexport:
+* TODO [#B] Join local community                                   :noexport:
+* TODO [#B] Build vertical plantson the wall                       :noexport:
+* TODO [#B] 后院 楔形阶梯花架                                      :noexport:
+* TODO [#B] 移动garden bed                                         :noexport:
 * TODO [#A] 修手机屏幕                                             :noexport:
 * TODO [#A] Buy a fan                                              :noexport:
 * TODO [#A] Check HSA monthly administration fees                  :noexport:
 HEALTH SAVINGS ACCOUNT (HSA)
 If you have deferrals to the HSA, you may still submit claims to your account after employment ends. Additionally, your account is portable and can be transferred to another financial institution if you choose. You will be subject to monthly administration fees on your HSA account. Please contact HealthEquity at 1-866-296-2857 for any questions. Please expect a letter from HealthEquity regarding your account approximately 2 weeks after your termination date.
-* TODO [#A] 烧水壶蒸汽                                             :noexport:
 * TODO [#A] 找家庭医生                                             :noexport:
-* TODO [#A] Enable the front-yard sprinkler                        :noexport:
 * TODO [#A] Why does it say No AC when it's plugged in?            :noexport:
 https://www.amazon.com/ask/questions/Tx1CQ8FLYIGQPWV
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] 买棵果树, 种在前院                                     :noexport:
 * TODO [#A] Recurring Shopping List                                :noexport:
 | Name               | Summary                                                       |
 |--------------------+---------------------------------------------------------------|
 | Disinfecting wipes | [[https://amzn.to/2FB3rrR][Amazon: Clorox Disinfecting Wipes, Bleach Free Cleaning Wipes]] |
 | Refrigerator water | [[https://amzn.to/2YDbDk6][Amazon: 4396710 Refrigerator Water]]                            |
 * TODO [#A] 后院: 爬藤月季-红色龙沙宝石                            :noexport:
-* TODO [#A] 前院的桔树死了,找市政府换一棵更合适的树                :noexport:
-* TODO [#A] 买个盆装柠檬                                           :noexport:
 * TODO [#A] Return xfinity kit                                     :noexport:
-* TODO [#A] Detect Garage door                                     :noexport:
-* CANCELED Switch to google fi plan: $20                           :noexport:
-  CLOSED: [2020-06-09 Tue 08:29]
-https://fi.google.com/about/plans/
-https://www.androidauthority.com/google-project-fi-plans-855797/
-* TODO [#A] 眼睛的保护                                             :noexport:
 * TODO [#A] 了解商业医疗保险                                       :noexport:
 * TODO light in the master bedroom without taking too much space   :noexport:
 * TODO re-org the table in master bedroom without taking too much space :noexport:
+* TODO [#A] 眼睛的保护                                             :noexport:
+* TODO 整理饮水机和洗衣机                                          :noexport:
+* TODO [#A] 回国弄自己的手机号码                                   :noexport:
+* TODO [#A] master bedroom: toilet doesn't flush smoothly          :noexport:
+* TODO [#A] Get the Title of our toyota corolla                    :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO 前院把guan木丛除掉，种树                                    :noexport:
+枣子树， 苹果， 柿子树， 菠萝番石榴
+* TODO [#A] Enable the front-yard sprinkler                        :noexport:
+* TODO 树下种花                                                    :noexport:

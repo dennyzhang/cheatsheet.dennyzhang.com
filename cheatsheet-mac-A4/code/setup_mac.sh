@@ -9,7 +9,7 @@
 ## Description :
 ## --
 ## Created : <2017-12-04>
-## Updated: Time-stamp: <2020-06-02 09:14:10>
+## Updated: Time-stamp: <2020-07-03 08:07:24>
 ##-------------------------------------------------------------------
 set -e
 
@@ -31,6 +31,11 @@ function brew_install {
 function brew_install_devkit {
     echo "Brew install devkit"
     brew install mysql mosh
+}
+
+function brew_install_personal {
+    echo "Brew install personal preferred packages"
+    brew install ledger
 }
 
 function python_setup {
@@ -65,7 +70,6 @@ function setup_email {
 
 function create_crontab {
     echo "Define crontab"
-    [ -d ~/mydata ] || mkdir -p ~/mydata
     if [ ! -d /var/log/cron ]; then
         sudo mkdir -p chmod 755 /var/log/cron/ && sudo chmod 755 /var/log/cron/
     fi
@@ -105,6 +109,8 @@ function config_git {
     git config --global alias.st status
 }
 
+SKIP_PERSONAL=${SKIP_PERSONAL-"no"}
+
 config_git
 create_crontab
 ssh_config
@@ -112,6 +118,9 @@ ssh_config
 
 brew_install
 brew_install_devkit
+if [ "$SKIP_PERSONAL" = "no" ]; then
+    brew_install_personal
+fi
 download_files
 fix_gpg
 

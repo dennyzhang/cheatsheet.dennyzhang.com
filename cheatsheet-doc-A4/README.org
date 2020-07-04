@@ -33,12 +33,10 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |-------------------------------------+---------|
 | Feel free to fix the docs           |         |
 | Mind filing a ticket to track this? |         |
-
 ** Meeting English
 | Name                  | Comment                                                                            |
 |-----------------------+------------------------------------------------------------------------------------|
 | Initial conversations | I'm happy to schedule a Zoom meeting, if the context here is not completely clear. |
-
 ** Meeting English
 | Name                                   | Comment                                                        |
 |----------------------------------------+----------------------------------------------------------------|
@@ -51,41 +49,39 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Feel free to interrupt me anytime      |                                                                |
 | I have a question, if everyone is OK   |                                                                |
 | When meeitng is overdue                | =I just add a timecheck=                                       |
-
 ** Review Pull Requests
 | Name                        | Comment                                                        |
 |-----------------------------+----------------------------------------------------------------|
 | Ask people to review PR     | Can I get reviews for https...                                 |
+| Ask people to review PR     | Can I get a stamp for https...                                 |
 | Ask people to review PR     | Can we have eyes on https...                                   |
 | Ask people to review PR     | https://... is passing CI. And I'd appreciate a review. cc XXX |
-| DRY (Don't repeat yourself) |                                                                |
-| nit                         |                                                                |
+|-----------------------------+----------------------------------------------------------------|
+| Suggestions of small things | nit: XXX                                                       |
+| Comments as newcomers       | noob: XXX                                                      |
+| Don't repeat yourself       | DRY: XXX                                                       |
+|-----------------------------+----------------------------------------------------------------|
 | Echo the comment from @XXX  |                                                                |
-
 ** Appraise
 | Name                                       | Comment |
 |--------------------------------------------+---------|
 | We learned a lot collaboratively as a team |         |
-
 ** Report Tickets
 | Name                              | Comment                                            |
 |-----------------------------------+----------------------------------------------------|
 | Not sure about ticket duplication | =Let me know if this is a separate issue=          |
 |                                   | =Thanks for the historical context=                |
 | Not sure valid ticket             | =Before I open a bug, I wanted to ask the channel= |
-
 ** Leave a conversation
 | Name                                                                    | Comment |
 |-------------------------------------------------------------------------+---------|
 | I'm gonna step away from this. I think it's clear what's wrong here     |         |
 | I'm stepping away from this for now. Still not sure what happened here. |         |
-
 ** Start a conversation
 | Name                                                                                     | Comment |
 |------------------------------------------------------------------------------------------+---------|
 | Hey XXX - I'm not quite sure who to ask about this, so I thought I might start with you. |         |
 | Nice to virtually meet you!                                                              |         |
-
 ** Misc
 | Name                                                                                         | Comment |
 |----------------------------------------------------------------------------------------------+---------|
@@ -94,7 +90,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Fix intermittent failures                                                                    |         |
 | Go the extra mile                                                                            |         |
 | Not feeling well this morning; woke up with cold symptoms. I'll be working remotely as I can |         |
-
 ** More Resources
 License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -105,8 +100,8 @@ License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_l
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
+#+DESCRIPTION:
+#+KEYWORDS:
 #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
 #+LaTeX_CLASS_OPTIONS: [8pt]
 #+LATEX_HEADER: \usepackage[english]{babel}
@@ -126,8 +121,8 @@ License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_l
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+EXPORT_EXCLUDE_TAGS: exclude noexport
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
+#+LINK_UP:
+#+LINK_HOME:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO [#A] Lessons learned in enterperise as an old IT engineer   :noexport:
 ** For the tasks, before doing, think whether it's the right battle
@@ -161,7 +156,6 @@ step of transcribing the report into a bug, produces lower-quality
 reports that aren't visible to other members of the team, and tends to
 concentrate the problem-solving load on a handful of team members that
 the reporters happen to know, rather than the person currently on duty
-
 * TODO Blameless postmortem                                        :noexport:
 https://www.joyent.com/blog/post-mortem-debugging-and-promises
 http://www.alexa.com/siteinfo/codeascraft.com
@@ -499,7 +493,6 @@ Review PRs
 help with XXX
 
 Upstream CAPA meeting, 1:1
-
 ** Details
 - more work for getting ready for capi v0.3.0
 * Appraisal                                                        :noexport:
@@ -553,13 +546,13 @@ Respectfully yours,
 Your Name
 * TODO laid-off email                                              :noexport:
 #+BEGIN_EXAMPLE
-Due to the economic impact of COVID-19 (coronavirus), XXX is implementing measures to ensure the financial stability of the company. The current pandemic situation has impacted our business significantly, and as a result, we find that we must make some difficult personnel decisions.  
+Due to the economic impact of COVID-19 (coronavirus), XXX is implementing measures to ensure the financial stability of the company. The current pandemic situation has impacted our business significantly, and as a result, we find that we must make some difficult personnel decisions.
 
-In an effort to reduce costs, we are restructuring our business, and that will result in the elimination of a number of positions in our company.  
+In an effort to reduce costs, we are restructuring our business, and that will result in the elimination of a number of positions in our company.
 
 Your position has been selected, and unfortunately this means you will be laid off. Today will be your last actual workday with XXX. You will be compensated through April 1, 2020. Your medical, dental and vision (YY - if you signed up for them) insurance will be active until April 30, 2020. Further information about your benefits, unused paid time off and last paycheck will be emailed to you by your HR Team.
 .
-In the coming hour, your direct manager will be reaching out to meet with you and to answer your questions along with discussing available separation benefits, including the services of our HR team, to provide counseling and assistance in finding another job.  
+In the coming hour, your direct manager will be reaching out to meet with you and to answer your questions along with discussing available separation benefits, including the services of our HR team, to provide counseling and assistance in finding another job.
 
 We'll inform you via your personal email about how to retrieve any personal items at the office. You are also kindly asked to return any company property that you may have in your possession. Please email XXX with your personal email address so a shipping label can be emailed to you.
 
@@ -605,14 +598,33 @@ endemic problems vc pandemic problems
 
 closed and proprietary systems
 
+unplanned operational work
+
 Isolate adhoc queries from jobs with strict deadlines
 
-
 Infra-as-code help solve 2 top-level problems: alleviate operational complexity, and improve resource utilization
+
+- Production reliablity
+- Infra efficiency
+- Dev efficiency
 * TODO Career words                                                :noexport:
-Give more than you take. 
+Give more than you take.
 Promotions are lagging not leading, with clear scope and business need at the next level defined.
 
 For people like your level should be able to figure stuff by your own
 
 Push the boundary
+
+Be transparent, give people choices
+
+Being proactive, don't wait
+
+Have a learning mindset
+
+Set the tone and the state. Build trust. Be authentic.
+
+shift focus to relationships
+* TODO life words                                                  :noexport:
+Sometimes, it can feel like you have an inner dragon heating up
+
+Can it wait? Seperate emergency from impatience

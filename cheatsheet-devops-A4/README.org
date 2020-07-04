@@ -142,4 +142,13 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+LINK_UP:
 #+LINK_HOME:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] To speed up tests, how to run shell commands in a managed and parallel way? :noexport:
+* TODO local notes                                                 :noexport:
+** TODO [#A] To speed up tests, how to run shell commands in a managed and parallel way? :noexport:
+** TODO [#A] Lesson learned: make sure you have plan B, in case original plan not only fails, but also make damages
+** TODO [#A] Lesson learned: After remove old tenant, we should verify new env: in case wrong deletion
+** TODO [#A] Lesson learned: We should not remove backup immediately after restore: remove after data cleanup in prod env
+** TODO Lesson learned: DB in different envs choose different password, in case we perform actions in wrong servers
+** TODO [#A] DevOps lesson learned: ask yourself, what if current actions mess up? :IMPORTANT:
+** TODO DevOps lesson learned: need to get developers' verification, after each critical action
+** TODO [#A] DevOps lesson learned: avoid change /etc/hosts, which may run commands in a wrong server
+** TODO [#A] DevOps lesson learned: When change removing multiple tenants, delete one, then wait and verify, before delete more

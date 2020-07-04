@@ -26,6 +26,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |------------------------------------+----------------------|
 | Chrome scroll to top/bottom in Mac | =Command-up/down=    |
 | Chrome go to prev/next in history  | =Command-left/right= |
+** Chrome Tips
+| Name                                      | Comment                                                                      |
+|-------------------------------------------+------------------------------------------------------------------------------|
+| Delete bad chrome suggestions             | highlight them, then =Fn+Shift+Delete=                                       |
+| Move multiple tab pages into a new window | =Ctrl+click= the pages, =Command+right click=, then =Move tab to new window= |
 ** More Resources
 https://www.cnet.com/how-to/21-chrome-shortcuts-you-need-to-know/
 

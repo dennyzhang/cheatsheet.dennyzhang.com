@@ -1,0 +1,101 @@
+* CheatSheet: Managing Bias                                            :Communication:
+:PROPERTIES:
+:type:     life
+:export_file_name: cheatsheet-bias-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-bias-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-bias-A4/cheatsheet-bias-A4.pdf][cheatsheet-bias-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/communication/][Communication]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-bias-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-driver-license-A4][Cheatsheet: Driver License]], [[https://cheatsheet.dennyzhang.com/cheatsheet-travel][Cheatsheet Travel]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
+** Basic
+| Name                         | Comment                                                |
+|------------------------------+--------------------------------------------------------|
+| Unconcious Bias              |                                                        |
+| Performance Bias             |                                                        |
+| Performance Attribution Bias |                                                        |
+| Women leadership Bias        |                                                        |
+| Maternal Bias                | People tend to believe mothers can't be good employees |
+| Affinity Bias                | Preference for people with the same qualities with you |
+** Principle
+| Name                                          | Comment                                                |
+|-----------------------------------------------+--------------------------------------------------------|
+| Fight against your personal self-perception   |                                                        |
+| Be inclusive                                  |                                                        |
+| Be open to different ways                     |                                                        |
+| Confirm, before making assumptions for others | e.g he/she can't do it, or won't be willing to take it |
+| Notice Bias and point it out                  | Then people can re-think and counteract it             |
+** Reduce Bias On Meetings
+| Name                                       | Comment                                                     |
+|--------------------------------------------+-------------------------------------------------------------|
+| Send out agenda before meeting             | All different people can be prepared. Send ideas beforehand |
+| Make sure everyone has the chance to speak | Use pause and,  avoid cut off people's talking              |
+| Rotate the logistic housework              | e.g, note-taking, follow-ups                                |
+** More Resources
+License: Code is licenbias under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+
+https://github.com/trimstray/bias-essentials
+
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-bias-A4}{GitHub: https://github.com/dennyzhang/cheatsheet.dennyzhang.com/tree/master/cheatsheet-bias-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-bias-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-bias-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
+* TODO Tips: Make sure rotate housework of note-taking             :noexport:
+* TODO Study: competence/likeability                               :noexport:
+- The more successful a man is, the more he is liked. But it's the opposite for women.
+- When men do favors at work, people are grateful, and no penalty if they refuse. But it's not the case for women.
+* Affinity Bias                                                    :noexport:
+- If everyone on the team is the same, there won't be any complimentary skills or diversity, which the best teams have
+- Interrupt the interrupterrs
+- Surface bias so we can counteract it
+- Set clear, deffinable objectives and stick to them when making decisions about people
+- Push abck on the likeability penalty
+- Mange parental leave
+- Run teams for full participation and credit
+- Increase your awareness of your own biases so you can interrupt them before they influence your decision making
+* Become ware of your first impressions
+Name it:
+Take a mental note of the words that describe your first impression the next time your meet some
+
+Notice it
+
+Point it out

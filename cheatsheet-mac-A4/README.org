@@ -43,6 +43,11 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |-------------------------------------+-----------------------------|
 | Install packages and configurations | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-mac-A4/code/setup_mac.sh][code/setup_mac.sh]]           |
 | Verify installation                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-mac-A4/code/verify_installation.sh][code/verify_installation.sh]] |
+** Mac Recommended Applications
+| Name     | Comment                                              |
+|----------+------------------------------------------------------|
+| [[https://monosnap.com/][Monosnap]] | A useful free tool to capture screenshots and videos |
+
 ** Home Brew Basic
 | Name                                    | Comment                                                  |
 |-----------------------------------------+----------------------------------------------------------|
@@ -2028,8 +2033,6 @@ https://ohmyz.sh/#install
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * DONE Stop: Update Apple ID Settings                              :noexport:
   CLOSED: [2020-06-01 Mon 08:03]
-* DONE Monosnap is a great free tool to capture screenshots and videos. :noexport:
-  CLOSED: [2020-06-01 Mon 12:05]
 * TODO setup desktop notification in mac                           :noexport:
 brew install terminal-notifier
 
@@ -2059,3 +2062,5 @@ https://superuser.com/questions/371599/mac-os-x-lion-terminal-ssh-connection-sha
   CLOSED: [2020-06-13 Sat 00:00]
 https://support.apple.com/en-us/HT204436
 Keyboards -> Use F1, F2, etc, keys as standard function keys on external keyboards
+* TODO Change your Apple ID country or region                      :noexport:
+https://support.apple.com/en-us/HT201389
