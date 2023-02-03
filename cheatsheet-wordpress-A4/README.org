@@ -737,13 +737,13 @@ https://miteshshah.github.io/devops/nagios/how-to-setup-nagios-monitoring-system
 http://www.wpbeginner.com/plugins/5-best-related-posts-plugins-for-wordpress/
 *** CANCELED Replicate blogs to oscgc blog, then send out group email
    CLOSED: [2016-10-05 Wed 22:48]
-http://www.oscgc.com/wp-login.php
+http://www.test.com/wp-login.php
 dennyzhang/lrpDennyChangeMe1
 
 New Blog posts for this week:
 
 Easy and Reliable Sandbox Setup Matters
-http://www.oscgc.com/2016/08/07/easy-and-reliable-sandbox-setup-matters/
+http://www.test.com/2016/08/07/easy-and-reliable-sandbox-setup-matters/
 *** CANCELED host CSS of wordpress plugin in current site: CDN won't work then, it slows down the page loading
     CLOSED: [2016-10-12 Wed 23:24]
 *** CANCELED add blogroll: not useful any more

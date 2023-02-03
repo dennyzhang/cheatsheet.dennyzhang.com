@@ -28,17 +28,18 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Find file by searching name     | =Ctrl+Shift+F=          |
 | Go to specific line of one file | =C-g, then line number= |
 ** Visual Studio Summary
-| Name                                     | Command                             |
-|------------------------------------------+-------------------------------------|
-| Show uncommitted changes                 | =>Show Uncommitted Changes=         |
-| Diagnose visual studio issues            | =>doctor:Fix My VS Code=            |
-| Search by text or name                   | =>Omni-search: Open Omi-search=     |
-| Format code block                        | =>Format Document=                  |
-| Open a local file by filepath            | =Ctrl+O=                            |
-| Interactive Smartlog                     |                                     |
-| From file on the right panel to explorer | =Right click -> Reveal in Side Bar= |
-| Save the context of editing              | =File menu -> Save Workspace As=    |
-| Visual studio toggle Terminal window     | =Menu -> Window -> Terminal=        |
+| Name                                          | Command                                                        |
+|-----------------------------------------------+----------------------------------------------------------------|
+| Show uncommitted changes                      | =>Show Uncommitted Changes=                                    |
+| Diagnose visual studio issues                 | =>doctor:Fix My VS Code=                                       |
+| Search by text or name                        | =>Omni-search: Open Omi-search=                                |
+| Format code block                             | =>Format Document=                                             |
+| Open a local file by filepath                 | =Ctrl+O=                                                       |
+| Interactive Smartlog                          |                                                                |
+| From file on the right panel to explorer      | =Right click -> Reveal in Side Bar=                            |
+| Save the context of editing                   | =File menu -> Save Workspace As=                               |
+| Visual studio toggle Terminal window          | =Menu -> Window -> Terminal=                                   |
+| [[https://stackoverflow.com/questions/39881395/visual-studio-code-scroll-back-buffer][Scroll back buffer without truncate old lines]] | =Preference->Settings=, =terminal.integrated.scrollback: 1000= |
 ** Reference
 | Name      | Command                                           |
 |-----------+---------------------------------------------------|

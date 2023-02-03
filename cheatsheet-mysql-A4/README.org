@@ -303,3 +303,67 @@ mysql> SELECT CONCAT(102.33);
 #+END_EXAMPLE
 * TODO [#A] mysql get the first entry for each group               :noexport:
 * TODO 1000<=21300<=10000 vs 21300>=1000 and 21300<=10000          :noexport:
+* DONE mysql show table schema: describe $table_name; SHOW CREATE TABLE tbl_name; :noexport:
+  CLOSED: [2020-09-14 Mon 17:12]
+https://dev.mysql.com/doc/refman/8.0/en/getting-information.html
+https://dev.mysql.com/doc/refman/8.0/en/show-create-table.html
+describe $table_name;
+
+SELECT *
+FROM information_schema.tables 
+WHERE table_name = 'serving_group';
+* DONE mysql get table index by select clause                      :noexport:
+  CLOSED: [2020-09-14 Mon 17:17]
+https://tableplus.com/blog/2018/08/mysql-how-to-list-all-indexes-from-table-or-schema.html
+SHOW INDEX FROM db_name.table_name;
+
+SELECT
+    DISTINCT TABLE_NAME,
+    INDEX_NAME
+FROM
+    INFORMATION_SCHEMA.STATISTICS
+WHERE
+    TABLE_SCHEMA = `schema_name`;
+* DONE mysql inner join 3 tables                                   :noexport:
+  CLOSED: [2021-01-08 Fri 08:52]
+https://stackoverflow.com/questions/16013364/inner-join-with-3-tables-in-mysql
+#+BEGIN_SRC sql
+SELECT
+  student.firstname,
+  student.lastname,
+  exam.name,
+  exam.date,
+  grade.grade
+FROM grade
+  INNER JOIN student
+    ON student.studentId = grade.fk_studentId
+  INNER JOIN exam
+    ON exam.examId = grade.fk_examId
+ORDER BY exam.date
+#+END_SRC
+* DONE mysql rename table                                          :noexport:
+  CLOSED: [2021-05-03 Mon 13:03]
+https://dev.mysql.com/doc/refman/8.0/en/rename-table.html
+
+
+#+BEGIN_EXAMPLE
+(scriptrw:sys.xdb@xdb.metadata_reloadable)> CREATE TABLE persons_test (
+    PersonID int primary key
+);
+Query OK, 0 rows affected (0.06 sec)
+
+(scriptrw:sys.xdb@xdb.metadata_reloadable)> select * from persons_test;
+Empty set (0.05 sec)
+
+(scriptrw:sys.xdb@xdb.metadata_reloadable)> rename table persons_test to persons_delete;
+Query OK, 0 rows affected (0.06 sec)
+
+(scriptrw:sys.xdb@xdb.metadata_reloadable)> select * from persons_delete;
+Empty set (0.05 sec)
+
+(scriptrw:sys.xdb@xdb.metadata_reloadable)> drop table persons_delete;
+Query OK, 0 rows affected (0.10 sec)
+
+(scriptrw:sys.xdb@xdb.metadata_reloadable)> select * from persons_delete;
+ERROR 1146 (42S02): Table 'metadata_reloadable.persons_delete' doesn't exist
+#+END_EXAMPLE

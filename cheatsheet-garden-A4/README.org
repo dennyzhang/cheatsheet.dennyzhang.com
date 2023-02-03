@@ -26,6 +26,73 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 |-----------+----------------------------------------------------|
 | Reference | [[https://www.youtube.com/channel/UCfJl4Yf0MrI2RIkqnoHe8rA][YouTube: California Gardening]], [[https://www.youtube.com/channel/UCVGVbOl6F5rGF4wSYS6Y5yQ][YouTube: MIgardener]] |
 | Reference | [[https://www.youtube.com/channel/UC-PaPywUKo7dSn800KRYqDg][YouTube: DIY Home and Garden]]                       |
+** Plants & Flowers
+| Name                                       | Summary |
+|--------------------------------------------+---------|
+| [[https://en.wikipedia.org/wiki/Pelargonium][Geraniums]]                                  |         |
+| [[https://en.wikipedia.org/wiki/Aloe][Aloe]]                                       |         |
+| [[https://en.wikipedia.org/wiki/Mentha][Mint]]                                       |         |
+| [[https://en.wikipedia.org/wiki/Hydrangea][Hydrangea]] - Early Rosa                     |         |
+| Elephant bush                              |         |
+| Blue snowflake                             |         |
+| Climbing rose - Eden rose                  |         |
+| Rose tree - Love song                      |         |
+| Rose brush - R Crocus Rose by David Austin |         |
+|--------------------------------------------+---------|
+| Pepper                                     |         |
+| Tomato                                     |         |
+| celery                                     |         |
+| Neanthebella palm                          |         |
+| bonsai - ficus retusa                      |         |
+| African Daisy - Osteospermum ecklonis      |         |
+| Dahlia - City lights Lavender Pink Dahlia  |         |
+| Gerbera: Garvinea Sweet Fiesta             |         |
+| Paperplant                                 |         |
+|--------------------------------------------+---------|
+| Delphinium delphina rose white bee         |         |
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B086C31JPN&asins=B086C31JPN&linkId=10e84b0fa8d9d1581171f3360d649289&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
+** Succulents
+| Name                                 | Summary |
+|--------------------------------------+---------|
+| Corpuscularia Lehmannii Ice plant    |         |
+| Fuzzy Cotyledon Bear Paws Variegated |         |
+** Herb
+| Name                                | Summary |
+|-------------------------------------+---------|
+| Lavender: lavandula stoechas        |         |
+| Lavender: Hidcote                   |         |
+| Lavender: Javelin Forte Deep Purple |         |
+| Barbeque Rosemary                   |         |
+| Tuscan blue rosemary                |         |
+** Rose
+| Name                   | Summary |
+|------------------------+---------|
+| Red Eden Climbing Rose |         |
+| Double Knock Out Rose  |         |
+| Violet's Pride         |         |
+| Golden Celebration     |         |
+|  Stiletto              |         |
+** Tree
+| Name                         | Summary |
+|------------------------------+---------|
+| [[https://www.youtube.com/watch?v=8YZtcvNQylI][Loquat tree - Big Jim]]        |         |
+| Apple tree                   |         |
+| Limone tree                  |         |
+| Organge tree                 |         |
+| [[https://www.youtube.com/watch?v=aimiaZZqrQM][Citrus tree]]                  |         |
+| Plum tree                    |         |
+| White peach tree             |         |
+| Catawba Crape Myrtle         |         |
+| Peppermint lace crape myrtle |         |
+| Bougainvillea: Barbara Karst |         |
+| [[https://www.youtube.com/watch?v=MHFvC5Rm5Pw][Grow Pineapple in pod]]        |         |
+#+BEGIN_HTML
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B08392VCQS&asins=B08392VCQS&linkId=c74ddbcb86b37e39c155e93defdbb554&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+#+END_HTML
 ** Common Sense
 | Name                         | Summary                                       |
 |------------------------------+-----------------------------------------------|
@@ -48,32 +115,6 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B00P2ZJ6DU&asins=B00P2ZJ6DU&linkId=7f2fd46565e002a688502989e5841f04&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
 #+END_HTML
-** Prune
-| Name                      | Summary                    |
-|---------------------------+----------------------------|
-| Common pruning Activities | Trimming, Topping, Shaping |
-** Lawn
-| Name                   | Summary                                                               |
-|------------------------+-----------------------------------------------------------------------|
-| Common Lawn Activities | Mowing, Edging, Weeding, Fertilizing, Aeration, Renovation, Haul away |
-| Lawn related           | seed, sod, stumps, rataining wall, bender board                       |
-| Sprinkler system       |                                                                       |
-** Dwarf Fruit Trees
-| Name                   | Ripen         | When to plan | Sunshine requirement | Summary |
-|------------------------+---------------+--------------+----------------------+---------|
-| [[https://www.youtube.com/watch?v=aimiaZZqrQM][Citrus tree]]            |               |              |                      |         |
-| [[https://www.youtube.com/watch?v=j_h_OwYLJgo][dwarf tangelo minneola]] |               |              |                      |         |
-| [[https://www.youtube.com/watch?v=y89vNwbb_Nk][Kadota fig tree]]        |               |              |                      |         |
-| [[https://www.youtube.com/watch?v=8YZtcvNQylI][Loquat - Big Jim]]       | March - April |              |                      |         |
-| Asian Pear             |               |              |                      |         |
-| [[https://www.youtube.com/watch?v=MHFvC5Rm5Pw][Grow Pineapple in pod]]  |               |              |                      |         |
-** Vegetables
-| Name        | Summary                               |
-|-------------+---------------------------------------|
-| Grow celery | Celery doesn't like too much sunshine |
-| Grow garlic |                                       |
-| Grow pepper |                                       |
-| Grow tomato |                                       |
 ** More Resources
 License: Code is licenhouse under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
@@ -107,60 +148,65 @@ License: Code is licenhouse under [[https://www.dennyzhang.com/wp-content/mit_li
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:
 #+LINK_HOME:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Grow Garlic                                                 :noexport:
-https://www.youtube.com/watch?v=9wyj1A5ZD-s
-https://www.youtube.com/watch?v=D06y-i4Pvf4
-https://www.youtube.com/watch?v=rlsnAwoltBM
-https://www.youtube.com/watch?v=mL4OHN1-M3k
-* TODO Grow celery from root                                       :noexport:
-https://www.youtube.com/watch?v=H-CfJVidG7o
-https://www.youtube.com/watch?v=UkY5y63fSV8
+* DONE local notes                                                 :noexport:
+  CLOSED: [2020-07-19 Sun 15:53]
+** CANCELED 比较阴的后院,种什么果树比较好                          :noexport:
+   CLOSED: [2020-07-19 Sun 15:53]
+ https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1315019818_2.w0/%5B%E5%90%88%E9%9B%86%5D+%E6%AF%94%E8%BE%83%E9%98%B4%E7%9A%84%E5%90%8E%E9%99%A2%EF%BC%8C%E7%A7%8D%E4%BB%80%E4%B9%88%E6%9E%9C%E6%A0%91%E6%AF%94%E8%BE%83%E5%A5%BD
+** CANCELED 香椿                                                   :noexport:
+   CLOSED: [2020-07-19 Sun 15:52]
+** CANCELED 桂花枝                                                 :noexport:
+   CLOSED: [2020-07-19 Sun 15:52]
+** CANCELED 移树                                                   :noexport:
+   CLOSED: [2020-07-19 Sun 15:52]
+ https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280046022W0/M.1319616119_2.A0/%E4%BA%BA%E6%8C%AA%E6%B4%BB%EF%BC%8C%E6%A0%91%E6%8C%AA%E6%AD%BB+%3F
 
-celery: don't like too much sunshine
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] Grow citrus tree                                       :noexport:
-https://www.youtube.com/watch?v=aimiaZZqrQM
-https://www.youtube.com/watch?v=9PO-EnDjEfs
+ 移种时间:
+ 若是常绿树, 最好在春秋天气凉快, 湿度高时移种, 傍晚为佳. 而落叶树则在冬眠时移
+ 种.  当然了, 高手就不在此限了.
 
-https://homeguides.sfgate.com/long-baby-citrus-tree-produce-fruit-92698.html
-How Long Does a Baby Citrus Tree Take to Produce Fruit?
+ 移种步骤:
+ 1. 移种之前三天左右浇透要移的树. 移种时以土壤微干, 根球土壤不易松裂为准.
+ 2. 先把新地点的洞挖好, 并混好compost, 加一点Superthrive混均匀. 不放肥料.
+ 3. 决定好要移种的树的根球大小. 越大越好, 以人力能handle根球及树干的重量为准.
+ 4. 根据所留根球的比例, 把树枝及树叶剪掉1/3 到2/3.
+ 5. 使用"锐利"的圆锹在树干周围切下. 如遇粗根则用利剪剪断. 尽量不要摇动树干
+ 或拉扯树根.
+ 6. 所有树根剪断後, 挖起果树. 如需长距离移运, 用布包紧根球并保湿.
+ 7. 到新地点後, 加土或减土, 确定种植深度正确. 把断裂树根剪掉, 种下,填土,
+ 并做一小圈蓄水池.
+ 8. 浇水浇透, 并盖上厚mulch. 钉木棒固定主干. 常绿树的话, 前几个礼拜也可加上
+ 遮阳棚遮荫.
+ 1. 注意浇水及土壤湿度的控制.
+** CANCELED Kadota fig: 盆栽黄无花果                               :noexport:
+   CLOSED: [2020-07-19 Sun 15:53]
+ https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280055542j0/M.1426970346_2.d0/%5B%E5%90%88%E9%9B%86%5D+%E3%80%90%E5%B0%8F%E6%9E%9C%E6%A0%91%E3%80%91+%E6%88%91%E7%9A%84%E6%97%A0%E8%8A%B1%E6%9E%9C%E6%A0%91%2C+%E5%92%8C%E4%BD%A0%E7%9A%84
 
-Young citrus trees begin producing fruit within five years of being grafted or budded.
+ Higo de Kadota
 
-https://www.almanac.com/plant/lemons-oranges
+ Don't need a pollinator
 
-https://www.wikihow.com/Grow-Citrus-Fruits
-* TODO Grow Gingre                                                 :noexport:
-* TODO Grow Pineapples                                             :noexport:
-* TODO Grow Avocado from Seed                                      :noexport:
-https://www.youtube.com/watch?v=4GcF-A0zVzg
-https://www.youtube.com/watch?v=W_Vx86SCX4w
-https://www.youtube.com/watch?v=q38tw-ZQPFk
-https://www.youtube.com/watch?v=CTR1oZimeAM
-https://www.youtube.com/watch?v=VAiQ5BPMF5g
-* TODO [#A] Grow Lettuce                                           :noexport:
-https://www.youtube.com/watch?v=PTsSVQYezeM
-https://www.youtube.com/watch?v=1ywUM7Zx_MA
+ Keep moist first year, 2 x per week after
+** CANCELED buy fruit trees                                        :noexport:
+   CLOSED: [2020-07-19 Sun 15:54]
+ http://ediblelandscaping.com/products/trees/PersimmonAsian/
+ https://www.treesofantiquity.com/index.php?main_page=index&cPath=51
+** DONE 播种Gerangum                                                :noexport:
+  CLOSED: [2020-08-08 Sat 19:23]
+** DONE lanvender                                                   :noexport:
+  CLOSED: [2020-08-08 Sat 19:23]
+** DONE perlite(珍珠岩) vs Vemriculite(蛭石)
+  CLOSED: [2020-08-07 Fri 09:12]
+https://www.youtube.com/watch?v=uANb_Ym_NS0
 
-Lettuce don't like too much heat
-* TODO Grow a Mango Tree from Seed                                 :noexport:
-https://www.youtube.com/watch?v=OoqzxjgovUg
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO websites: mitbbs 拈花惹草: https://www.mitbbs.com/bbsdoc/gardening.html :noexport:
-* TODO websites: https://www.gardengatemagazine.com/               :noexport:
-* TODO websites: https://www.burpee.com/                           :noexport:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO Kadota fig: 盆栽黄无花果                                    :noexport:
-https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280055542j0/M.1426970346_2.d0/%5B%E5%90%88%E9%9B%86%5D+%E3%80%90%E5%B0%8F%E6%9E%9C%E6%A0%91%E3%80%91+%E6%88%91%E7%9A%84%E6%97%A0%E8%8A%B1%E6%9E%9C%E6%A0%91%2C+%E5%92%8C%E4%BD%A0%E7%9A%84
+https://www.youtube.com/watch?v=SKWtSxTsaas
 
-Higo de Kadota
-
-Don't need a pollinator
-
-Keep moist first year, 2 x per week after
-
-* TODO asian pear                                                  :noexport:
+perlite: allow water to drain quickly
+vermiculite: retain moisture
+** DONE 摘李子树的坏叶                                              :noexport:
+  CLOSED: [2020-08-08 Sat 19:23]
+** CANCELED asian pear                                              :noexport:
+  CLOSED: [2020-08-08 Sat 22:40]
 Nijisseiki, Apple Pear
 
 juicy, sweet, mild flavored fruit is crisp like apple. Early to mid-st in Central CA.
@@ -168,44 +214,403 @@ juicy, sweet, mild flavored fruit is crisp like apple. Early to mid-st in Centra
 Easy to grow, heavy bearing small tree. 300-400 hours. Self-fruitful or pollenized by Shinseiki, Bartlett, or other
 
 Heavy-bearing tree is relatively small (15-20 ft). Fro easy care and harvest, it may be kept under 10 ft by summer pruning
-* TODO Big Jim Loquat                                              :noexport:
+** DONE 买菜或树苗的网站                                            :noexport:
+  CLOSED: [2020-08-08 Sat 22:39]
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13305303912T0/M.1340393195_2.w0/%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%E4%B9%B0%E8%8F%9C%E7%B1%BD%E3%80%81%E8%8B%97%E6%9C%A8%E7%9A%84%E7%BD%91%E7%AB%99%2A%2A%2A%2A%2A%2A%2A%2A
+https://www.logees.com/
+website: https://www.grpg.org
+** CANCELED Burgundy Plum                                           :noexport:
+  CLOSED: [2020-08-08 Sat 22:39]
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280055542j0/M.1426969489_2.d0/%5B%E5%90%88%E9%9B%86%5D+%E3%80%90%E5%B0%8F%E6%9E%9C%E6%A0%91%E3%80%91+%E9%AB%98%E4%BA%A7%E7%9A%84%E6%9D%8E%E5%AD%90
+** CANCELED 柿子 - Ichi Ki Kei Jiro                                 :noexport:
+  CLOSED: [2020-08-08 Sat 22:36]
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1458692521_2.90/%5B%E5%90%88%E9%9B%86%EF%BC%BD%E9%BA%BB%E7%83%A6%E7%9C%8B%E7%9C%8B6B%E5%8C%BA%E4%BB%8A%E5%B9%B4%E7%9A%84%E6%9E%9C%E6%A0%91%E9%80%89%E6%8B%A9
+** CANCELED running bamboo                                          :noexport:
+  CLOSED: [2020-08-08 Sat 22:39]
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1427315716_2.H0/%5B%E5%90%88%E9%9B%86%5D+%E6%B1%82%E6%8E%A8%E8%8D%90%E6%A1%83%E6%A0%91%E5%92%8C%E7%AB%B9%E5%AD%90
 
-plant in full sun. The average size of this tree is approximately 15' with a spread of 10'.
+竹子需要多浇水,你先把灌溉系统弄好了.
 
-www.davewilson.com
-* TODO jujube                                                      :noexport:
-* TODO 台湾芭乐                                                    :noexport:
+话说加州大旱,我家竹子两年没有疯长新芽了.
+浇水只能维持着而已,眼看竹子越来越老,越来越稀疏.
+** CANCELED 白油桃                                                  :noexport:
+  CLOSED: [2020-08-08 Sat 22:39]
+https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1427315716_2.H0/%5B%E5%90%88%E9%9B%86%5D+%E6%B1%82%E6%8E%A8%E8%8D%90%E6%A1%83%E6%A0%91%E5%92%8C%E7%AB%B9%E5%AD%90
+
+跟白桃/蟠桃一个味,还还不用削皮,盐水泡泡冲洗后就吃.皮也有种特别的美味.
+
+https://www.starkbros.com/products/fruit-trees/peach-trees/champion-white-peach
+** CANCELED jujubi                                                  :noexport:
+  CLOSED: [2020-08-08 Sat 22:40]
+钻石枣
+** CANCELED Grow citrus tree                                       :noexport:
+   CLOSED: [2020-08-08 Sat 22:51]
+ https://www.youtube.com/watch?v=aimiaZZqrQM
+ https://www.youtube.com/watch?v=9PO-EnDjEfs
+
+ https://homeguides.sfgate.com/long-baby-citrus-tree-produce-fruit-92698.html
+ How Long Does a Baby Citrus Tree Take to Produce Fruit?
+
+ Young citrus trees begin producing fruit within five years of being grafted or budded.
+
+ https://www.almanac.com/plant/lemons-oranges
+
+ https://www.wikihow.com/Grow-Citrus-Fruits
+** CANCELED Grow Garlic                                            :noexport:
+   CLOSED: [2020-08-08 Sat 22:51]
+ https://www.youtube.com/watch?v=9wyj1A5ZD-s
+ https://www.youtube.com/watch?v=D06y-i4Pvf4
+ https://www.youtube.com/watch?v=rlsnAwoltBM
+ https://www.youtube.com/watch?v=mL4OHN1-M3k
+** CANCELED Grow celery from root                                  :noexport:
+   CLOSED: [2020-08-08 Sat 22:51]
+ https://www.youtube.com/watch?v=H-CfJVidG7o
+ https://www.youtube.com/watch?v=UkY5y63fSV8
+
+ celery: don't like too much sunshine
+** CANCELED Grow Avocado from Seed                                 :noexport:
+   CLOSED: [2020-08-08 Sat 22:51]
+ https://www.youtube.com/watch?v=4GcF-A0zVzg
+ https://www.youtube.com/watch?v=W_Vx86SCX4w
+ https://www.youtube.com/watch?v=q38tw-ZQPFk
+ https://www.youtube.com/watch?v=CTR1oZimeAM
+ https://www.youtube.com/watch?v=VAiQ5BPMF5g
+** CANCELED Grow Lettuce                                           :noexport:
+   CLOSED: [2020-08-08 Sat 22:51]
+ https://www.youtube.com/watch?v=PTsSVQYezeM
+ https://www.youtube.com/watch?v=1ywUM7Zx_MA
+
+ Lettuce don't like too much heat
+** CANCELED Grow a Mango Tree from Seed                            :noexport:
+   CLOSED: [2020-08-08 Sat 22:52]
+ https://www.youtube.com/watch?v=OoqzxjgovUg
+** DONE remove stripped screws 拿出老化的螺丝                      :noexport:
+   CLOSED: [2020-08-08 Sat 22:52]
+ https://www.youtube.com/watch?v=EqNcBkLvptg
+** DONE 地栽薰衣草                                                 :noexport:
+   CLOSED: [2020-08-10 Mon 22:16]
+** DONE 扦插薰衣草                                                 :noexport:
+   CLOSED: [2020-08-10 Mon 22:16]
+** DONE 给种子浇水                                                 :noexport:
+   CLOSED: [2020-08-10 Mon 22:16]
+** DONE 扦插绣球,月季                                             :noexport:
+   CLOSED: [2020-08-10 Mon 22:17]
+** DONE 扦插多肉                                                   :noexport:
+   CLOSED: [2020-08-12 Wed 20:58]
+** DONE 迷迭香地栽                                                 :noexport:
+   CLOSED: [2020-08-17 Mon 21:54]
+** DONE 前院拔草, 放mulch                                          :noexport:
+   CLOSED: [2020-08-17 Mon 21:54]
+** DONE 给后院龙沙宝石挖坑                                         :noexport:
+   CLOSED: [2020-08-17 Mon 21:54]
+** DONE 给爬藤加土                                                 :noexport:
+   CLOSED: [2020-08-17 Mon 21:54]
+** DONE list the name of all plants                                :noexport:
+   CLOSED: [2020-08-19 Wed 22:25]
+** CANCELED 马缨丹 Lantana camara - poisonous                      :noexport:
+   CLOSED: [2020-08-19 Wed 22:01]
+** DONE 给植物修脚脚                                               :noexport:
+   CLOSED: [2020-08-21 Fri 21:15]
+** DONE 前院除草                                                   :noexport:
+   CLOSED: [2020-08-21 Fri 21:15]
+** DONE 接上滴溉: 给后院月季, 另一棵                               :noexport:
+   CLOSED: [2020-08-22 Sat 18:24]
+** DONE 接上滴溉: 前院guava, Garvinea Sweet Fiesta                 :noexport:
+   CLOSED: [2020-08-22 Sat 18:24]
+** DONE 给盆栽换盆,分栽                                           :noexport:
+   CLOSED: [2020-08-23 Sun 16:18]
+** DONE 给植物挖坑: lanvender, avole, rosemary                     :noexport:
+   CLOSED: [2020-08-23 Sun 19:32]
+** DONE avole分株                                                  :noexport:
+   CLOSED: [2020-08-23 Sun 19:32]
+** DONE 接管: 君子兰, 盆栽                                         :noexport:
+   CLOSED: [2020-08-23 Sun 19:32]
+** DONE 播种菜籽                                                   :noexport:
+   CLOSED: [2020-08-23 Sun 19:32]
+** DONE [#A] 种韭菜 chives                                         :noexport:
+   CLOSED: [2020-08-23 Sun 19:33]
+ https://www.youtube.com/watch?v=XcSAV25CAY4
+** CANCELED vegeatable: https://www.mitbbs.com/bbsdoc3/entertainment.faq/gardening/D1304566212230/5 :noexport:
+   CLOSED: [2020-08-23 Sun 21:04]
+** DONE leveling前院: 后院拿一桶土到前院
+   CLOSED: [2020-08-24 Mon 20:12]
+** DONE 前院除草                                                   :noexport:
+   CLOSED: [2020-08-25 Tue 20:46]
+** DONE ant bait: borax                                            :noexport:
+   CLOSED: [2020-08-26 Wed 10:41]
+** DONE [#A] buy irrigation timer                                  :noexport:
+   CLOSED: [2020-08-28 Fri 18:04]
+** DONE 后院挖坑                                                   :noexport:
+   CLOSED: [2020-08-28 Fri 20:55]
+** DONE 接管: 爬藤, 菠萝                                           :noexport:
+   CLOSED: [2020-08-28 Fri 20:55]
+** DONE 后院铲枝                                                   :noexport:
+   CLOSED: [2020-08-29 Sat 16:00]
+** DONE 龙沙宝石 - 压枝                                            :noexport:
+   CLOSED: [2020-08-29 Sat 16:00]
+** DONE plant aloe in the ground                                   :noexport:
+   CLOSED: [2020-08-29 Sat 21:55]
+** DONE 换桌子                                                     :noexport:
+   CLOSED: [2020-08-30 Sun 10:52]
+** DONE 扦插鼠尾草                                                 :noexport:
+   CLOSED: [2020-08-31 Mon 19:59]
+** DONE 香菜换盆                                                   :noexport:
+   CLOSED: [2020-08-31 Mon 19:59]
+** DONE 后院除树根                                                 :noexport:
+   CLOSED: [2020-08-31 Mon 19:59]
+** DONE 桔树施肥                                                   :noexport:
+   CLOSED: [2020-08-31 Mon 19:59]
+** DONE 缓释肥 - Slow release fertilizer                           :noexport:
+   CLOSED: [2020-09-01 Tue 21:59]
+** DONE 育种盒 - Seed Trays                                        :noexport:
+   CLOSED: [2020-09-01 Tue 21:59]
+** DONE 给桃树打药                                                 :noexport:
+   CLOSED: [2020-09-02 Wed 21:12]
+** DONE 种红薯叶                                                   :noexport:
+   CLOSED: [2020-09-02 Wed 21:12]
+** DONE 移盆栽到更阳光的地方去                                     :noexport:
+   CLOSED: [2020-09-08 Tue 21:10]
+** DONE 种红薯叶                                                   :noexport:
+   CLOSED: [2020-09-08 Tue 21:10]
+** DONE 填土                                                       :noexport:
+   CLOSED: [2020-09-08 Tue 21:10]
+** DONE 盆栽用陶盆                                                 :noexport:
+   CLOSED: [2020-09-08 Tue 21:11]
+** CANCELED 多肉定型                                               :noexport:
+   CLOSED: [2020-09-08 Tue 21:11]
+** CANCELED 给月季施肥                                             :noexport:
+   CLOSED: [2020-09-08 Tue 21:13]
+** CANCELED 地栽多肉弄围栏                                         :noexport:
+   CLOSED: [2020-09-08 Tue 21:13]
+** CANCELED 飘香藤                                                 :noexport:
+   CLOSED: [2020-09-08 Tue 21:21]
+** DONE 了解常见的氮磷钾肥, 缓释肥,复合肥                          :noexport:
+   CLOSED: [2020-09-08 Tue 21:25]
+** CANCELED Aglaia odorata - 树兰                                  :noexport:
+   CLOSED: [2020-09-08 Tue 21:25]
+ https://baike.baidu.com/item/%E7%B1%B3%E4%BB%94%E5%85%B0/1081862?fromtitle=%E6%A0%91%E5%85%B0&fromid=10396078
+** DONE [#A] 日常磷钾: 鸡蛋壳, banana peel, 咖啡渣                 :noexport:
+   CLOSED: [2020-09-08 Tue 21:25]
+** DONE [#A] search 磷酸二氢钾 - Monopotassium phosphate           :noexport:
+   CLOSED: [2020-09-08 Tue 21:25]
+** DONE deadhead flowers and dead leaves                           :noexport:
+   CLOSED: [2020-09-09 Wed 19:39]
+** DONE 播种                                                       :noexport:
+   CLOSED: [2020-09-09 Wed 19:39]
+** DONE 扦插月季                                                   :noexport:
+   CLOSED: [2020-09-09 Wed 19:38]
+** DONE 植物修脚脚
+   CLOSED: [2020-09-10 Thu 11:04]
+** DONE 前后院龙沙宝石定型                                         :noexport:
+   CLOSED: [2020-09-10 Thu 19:57]
+** DONE 鸡蛋壳放前院                                               :noexport:
+   CLOSED: [2020-09-10 Thu 19:57]
+** DONE 把后院花换成陶盆                                           :noexport:
+   CLOSED: [2020-09-10 Thu 19:57]
+** DONE 给前后院的alove挖坑                                        :noexport:
+   CLOSED: [2020-09-10 Thu 19:57]
+** DONE grow ivy(hedera helix) from cutting                        :noexport:
+   CLOSED: [2020-09-11 Fri 18:51]
+ https://www.youtube.com/watch?v=00REf_l7zxo
+** DONE 地栽前院的alove                                            :noexport:
+   CLOSED: [2020-09-11 Fri 19:56]
+** DONE 水培蓝雪花                                                 :noexport:
+   CLOSED: [2020-09-11 Fri 19:55]
+** DONE 扦插Rosemary                                               :noexport:
+   CLOSED: [2020-09-13 Sun 21:57]
+** DONE 地栽后院三个植株                                           :noexport:
+   CLOSED: [2020-09-13 Sun 21:57]
+** DONE 买能定住滴管的小铁丝                                       :noexport:
+   CLOSED: [2020-09-14 Mon 08:54]
+** DONE 买栀子花                                                   :noexport:
+   CLOSED: [2020-09-14 Mon 08:57]
+ https://zh.wikipedia.org/wiki/%E6%A0%80%E5%AD%90%E8%8A%B1
+ https://baike.baidu.com/item/%E6%A0%80%E5%AD%90%E8%8A%B1/77102
+ https://www.pchouse.com.cn/baike/shenghuo/602/
+
+ 花期较长从5-6月连续开花至8月,果熟期10月
+** CANCELED 果树盆栽需要什么盆                                     :noexport:
+   CLOSED: [2020-09-14 Mon 08:58]
+** DONE 红色植物水培, 来帮助后院                                   :noexport:
+   CLOSED: [2020-09-14 Mon 12:05]
+** DONE 给红色bush加多一个dripping head                            :noexport:
+   CLOSED: [2020-09-14 Mon 18:13]
+ f3__url_website_events__ad_metrics__p110_v3_udf_in_mapper
+** DONE 土培小绿苗                                                 :noexport:
+   CLOSED: [2020-09-14 Mon 18:13]
+** DONE 把后院的野草挖出来种                                       :noexport:
+   CLOSED: [2020-09-14 Mon 20:24]
+** DONE [#A] 给前院所有地栽植物接管: geranium, aloe, lanvender(refine) :noexport:
+   CLOSED: [2020-09-15 Tue 23:12]
+ f3__url_website_events__ad_metrics__p110_v3_udf_in_mapper
+ Orchid Clear Plastic Pot
+** DONE 给前院平土                                                 :noexport:
+   CLOSED: [2020-09-15 Tue 23:12]
+** DONE 栀子花, 杜鹃花                                             :noexport:
+   CLOSED: [2020-09-17 Thu 22:36]
+** DONE [#A] 把所有的植物尽量地栽                                  :noexport:
+   CLOSED: [2020-09-19 Sat 22:29]
+** DONE 后院raise bed翻土                                          :noexport:
+   CLOSED: [2020-09-19 Sat 22:29]
+** DONE dripping system: 前院把线都固定住, 并优化管道              :noexport:
+   CLOSED: [2020-09-19 Sat 22:29]
+** DONE 把葡萄籽种起来                                             :noexport:
+   CLOSED: [2020-09-20 Sun 19:55]
+** DONE 把室内植物冲一下灰                                         :noexport:
+   CLOSED: [2020-09-20 Sun 19:55]
+** DONE 给带的植物礼品换盆                                         :noexport:
+   CLOSED: [2020-09-20 Sun 20:02]
+** DONE 三角梅换盆                                                 :noexport:
+   CLOSED: [2020-09-20 Sun 20:02]
+** CANCELED 盆栽上铺蛭石                                           :noexport:
+   CLOSED: [2020-09-20 Sun 21:23]
+** CANCELED [#B] 如何给盆栽青菜自动浇水
+   CLOSED: [2020-09-21 Mon 09:03]
+** DONE 防止rosemary木制化                                         :noexport:
+   CLOSED: [2020-09-21 Mon 09:12]
+** DONE 将三盆换两盆, 并种上herb                                   :noexport:
+   CLOSED: [2020-09-21 Mon 19:30]
+** DONE 把后院倒的多肉挖出来                                       :noexport:
+   CLOSED: [2020-09-21 Mon 19:30]
+** DONE [#A] irrigation的两个出口换成三个出口                      :noexport:
+   CLOSED: [2020-09-22 Tue 11:13]
+** DONE 种上桅子花                                                 :noexport:
+   CLOSED: [2020-09-22 Tue 20:04]
+** DONE 给李子树打药                                               :noexport:
+   CLOSED: [2020-09-22 Tue 20:04]
+** DONE 后院侧边水龙头弄一下出口,免得洒出的水到处都是              :noexport:
+   CLOSED: [2020-09-22 Tue 20:04]
+** DONE 小兔子容器内种上多肉                                       :noexport:
+   CLOSED: [2020-09-23 Wed 11:02]
+** DONE 给lanvender挖三个坑                                        :noexport:
+   CLOSED: [2020-09-24 Thu 13:07]
+** DONE 前院scented geranium再接一个dripping head                  :noexport:
+   CLOSED: [2020-09-24 Thu 19:37]
+** DONE 给前后院月季处理白粉病                                     :noexport:
+   CLOSED: [2020-09-25 Fri 09:13]
+** DONE 把后院龙沙宝石挡阴的枝条剪掉                               :noexport:
+   CLOSED: [2020-09-25 Fri 18:00]
+** DONE 两个蒜苗没有接管                                           :noexport:
+   CLOSED: [2020-09-26 Sat 13:18]
+** DONE 前院月季滴管固定                                           :noexport:
+   CLOSED: [2020-09-26 Sat 13:18]
+** DONE 把鸡蛋壳打碎,放前院施肥                                   :noexport:
+   CLOSED: [2020-09-26 Sat 14:17]
+** DONE 把红花地栽到两棵桔树中间                                   :noexport:
+   CLOSED: [2020-09-26 Sat 14:17]
+** DONE 把育好的苗种到盆里                                         :noexport:
+   CLOSED: [2020-09-26 Sat 14:17]
+** DONE 把水培蔬菜地栽或盆栽                                       :noexport:
+   CLOSED: [2020-09-27 Sun 12:56]
+** DONE 前院weed喷药                                               :noexport:
+   CLOSED: [2020-09-27 Sun 12:56]
+** DONE 前后院挖坑,准备地栽                                       :noexport:
+   CLOSED: [2020-09-29 Tue 21:58]
+** DONE [#B] 杜鹃花                                                :noexport:
+   CLOSED: [2020-10-02 Fri 09:22]
+** DONE [#B] 木槿                                                  :noexport:
+   CLOSED: [2020-10-02 Fri 09:22]
+** DONE [#A] 飘香藤                                                :noexport:
+   CLOSED: [2020-10-02 Fri 09:22]
+** DONE [#A] 把后院的日光灯管拿下来                                :noexport:
+   CLOSED: [2020-10-07 Wed 10:48]
+** DONE [#B] 网购: 育苗盒                                          :noexport:
+   CLOSED: [2020-10-14 Wed 21:42]
+** CANCELED 盆栽dwart fruit free                                   :noexport:
+   CLOSED: [2020-10-14 Wed 21:46]
+** DONE 把rosemary接管变得更长一些                                 :noexport:
+   CLOSED: [2020-10-17 Sat 12:24]
+** DONE 给大号盆栽上面铺上蛭石                                     :noexport:
+   CLOSED: [2020-10-17 Sat 20:41]
+** DONE 给weed喷vinega                                             :noexport:
+   CLOSED: [2020-10-19 Mon 22:11]
+** DONE 给植物施肥                                                 :noexport:
+   CLOSED: [2020-10-19 Mon 22:11]
+** DONE 把鸡蛋壳放到各种小树下                                     :noexport:
+   CLOSED: [2020-10-19 Mon 22:11]
+** DONE 前后院接管:三处                                           :noexport:
+   CLOSED: [2020-10-19 Mon 22:11]
+** DONE vegetable地栽                                              :noexport:
+   CLOSED: [2020-10-19 Mon 22:11]
+** DONE 扦插Gardenia                                               :noexport:
+   CLOSED: [2020-10-19 Mon 22:11]
+** CANCELED 确定是否养荷花                                         :noexport:
+   CLOSED: [2020-10-19 Mon 22:13]
+** DONE [#A] Make local garden friends and exchange cutting        :noexport:
+   CLOSED: [2020-10-19 Mon 22:15]
+** CANCELED 买向四个方向喷水的设备                                 :noexport:
+   CLOSED: [2020-10-19 Mon 22:15]
+** DONE 后院墙面 for climbing fragrant flowers: garden bed + vertical treris :noexport:
+   CLOSED: [2020-10-19 Mon 22:16]
+** DONE [#B] 缓释肥 Osmocote                                       :noexport:
+   CLOSED: [2020-10-19 Mon 22:53]
+** DONE [#A] Facebook marketplace                                  :noexport:
+   CLOSED: [2020-10-20 Tue 09:06]
+** DONE 把backyard solar light按上                                 :noexport:
+   CLOSED: [2020-10-22 Thu 09:13]
+** DONE sunflower那块平整地面                                      :noexport:
+   CLOSED: [2020-10-23 Fri 09:43]
+** DONE 扦插basil                                                  :noexport:
+   CLOSED: [2020-10-24 Sat 23:13]
+** DONE 后院插栓坏了                                               :noexport:
+   CLOSED: [2020-10-24 Sat 23:13]
+** DONE re-org盆栽到种植盒里                                       :noexport:
+   CLOSED: [2020-10-24 Sat 23:13]
+** DONE 种植盆种空心菜                                             :noexport:
+   CLOSED: [2020-10-24 Sat 23:13]
+** DONE 给月季挖坑                                                 :noexport:
+   CLOSED: [2020-10-25 Sun 20:23]
+** DONE 给前院plants接管                                           :noexport:
+   CLOSED: [2020-10-28 Wed 21:42]
+** DONE 给后院月季接管                                             :noexport:
+   CLOSED: [2020-10-28 Wed 21:42]
+** DONE 把banana peel放到各种小树下                                :noexport:
+   CLOSED: [2020-11-02 Mon 10:42]
+** DONE 把irrigation pipe固定                                      :noexport:
+   CLOSED: [2020-11-02 Mon 10:42]
+** DONE 把三色jing放前院                                           :noexport:
+   CLOSED: [2020-11-02 Mon 10:42]
+** DONE 调整solar lights                                           :noexport:
+   CLOSED: [2020-11-02 Mon 22:03]
+** DONE 除葱黄叶, 红叶植物的花                                     :noexport:
+   CLOSED: [2020-11-16 Mon 09:42]
+* [#A] Principle & Common Sense                                    :noexport:
+** DONE 建脚脚                                                     :noexport:
+   CLOSED: [2020-10-19 Mon 22:14]
+** DONE 观察植物的叶片: 健康清雨表
+   CLOSED: [2020-10-19 Mon 22:14]
+** DONE [#A] principle: 降低garden维护成本: 每周只处理一次         :noexport:
+   CLOSED: [2020-10-19 Mon 22:13]
+** misc
+ 种果树两大要诀:  1. 慎选品种, 2. 控制树高
+
+ 果园冬天最重要的两件事情就是剪枝和施农家肥
+
+ 每年1月下旬到2月上旬是湾区果树剪枝的最佳季节.
+
+ 可加2-3寸的mulch保湿
+
+ 第一年对树来讲最关键的是"保命".来日方长 -- "有树不愁长".
+ 但是为什么种深了就不好呢？ 估计是树没法"呼吸"了.树的根部也要氧气的,所以不能老泡水里面.
+
+ Plant 'em high, they'll never die. Plant 'em low, they'll never grow
+
+ 盆子不一定要大,比树根球大一圈就行吧.我买的树苗说明书上说盆太大了树根反而容易生病.
+
+ 一个基本原理是:不追求开花结果的菜在阳光不足的情况下都能长,能有收获,但是绝大多数蔬菜都是在阳光下长得更好. （间言之,喜光耐荫）.
+
+ 种子发芽的必需条件是水,空气和温度(在种子里储存的养分足够发芽用),所以湿纸巾催芽的时候不能泡在水里(没有空气),也不能让纸巾干,不同的种子发芽的最适宜温度不同,可以降温或增温促进发芽.
+
+ 新农,最想知道什么季节下什么种子？并希望老农提醒我们:哪些是比较难伺候的,新农绕道.
+
+ 我最最关心的就是务农时间的问题.什么时候育苗,什么时候移栽,什么时候施肥,什么时候管理...
+
+ 怎么样育苗？什么时间适合于什么苗？这个跟时区相关,跟不同的苗也细细相关
+
+ 新农有问题:如何让土地肥沃？
+
+ 话说农民种地都要起陇.有的菜种在陇上,有的种在陇沟.还有的菜就平铺在地里一大片.问题是什么样的菜种陇上 ,什么种陇沟,什么适合一大片? 还有就是种陇上的浇水是浇在陇沟里还是直接浇在植物上?
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO [#A] common sense                                           :noexport:
-种果树两大要诀:  1. 慎选品种, 2. 控制树高
-
-果园冬天最重要的两件事情就是剪枝和施农家肥
-
-每年1月下旬到2月上旬是湾区果树剪枝的最佳季节.
-
-可加2-3寸的mulch保湿
-
-第一年对树来讲最关键的是"保命".来日方长 -- "有树不愁长".
-但是为什么种深了就不好呢？ 估计是树没法"呼吸"了.树的根部也要氧气的,所以不能老泡水里面.
-
-Plant 'em high, they'll never die. Plant 'em low, they'll never grow
-
-盆子不一定要大,比树根球大一圈就行吧.我买的树苗说明书上说盆太大了树根反而容易生病.
-
-一个基本原理是:不追求开花结果的菜在阳光不足的情况下都能长,能有收获,但是绝大多数蔬菜都是在阳光下长得更好. （间言之,喜光耐荫）.
-
-种子发芽的必需条件是水,空气和温度(在种子里储存的养分足够发芽用),所以湿纸巾催芽的时候不能泡在水里(没有空气),也不能让纸巾干,不同的种子发芽的最适宜温度不同,可以降温或增温促进发芽.
-
-新农,最想知道什么季节下什么种子？并希望老农提醒我们:哪些是比较难伺候的,新农绕道.
-
-我最最关心的就是务农时间的问题.什么时候育苗,什么时候移栽,什么时候施肥,什么时候管理...
-
-怎么样育苗？什么时间适合于什么苗？这个跟时区相关,跟不同的苗也细细相关
-
-新农有问题:如何让土地肥沃？
-
-话说农民种地都要起陇.有的菜种在陇上,有的种在陇沟.还有的菜就平铺在地里一大片.问题是什么样的菜种陇上 ,什么种陇沟,什么适合一大片? 还有就是种陇上的浇水是浇在陇沟里还是直接浇在植物上?
-* TODO vegeatable: https://www.mitbbs.com/bbsdoc3/entertainment.faq/gardening/D1304566212230/5 :noexport:
 * TODO idiotoms                                                    :noexport:
 raised bed
 compost根本不是土,就是垃圾堆的:(不能种菜)
@@ -215,63 +620,109 @@ transplant:从苗移植
 
 drip irrigation system
 grub worm
-* TODO 买菜或树苗的网站                                            :noexport:
-https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13305303912T0/M.1340393195_2.w0/%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%2A%E4%B9%B0%E8%8F%9C%E7%B1%BD%E3%80%81%E8%8B%97%E6%9C%A8%E7%9A%84%E7%BD%91%E7%AB%99%2A%2A%2A%2A%2A%2A%2A%2A
-https://www.logees.com/
-* TODO 土地肥料: https://www.mitbbs.com/bbsdoc3/entertainment.faq/gardening/D1320956508210/5 :noexport:
 * TODO [#A] 果树综合: https://www.mitbbs.com/bbsdoc3/entertainment.faq/gardening/D13045662422S0/5 :noexport:
-* TODO Burgundy Plum                                               :noexport:
-https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280055542j0/M.1426969489_2.d0/%5B%E5%90%88%E9%9B%86%5D+%E3%80%90%E5%B0%8F%E6%9E%9C%E6%A0%91%E3%80%91+%E9%AB%98%E4%BA%A7%E7%9A%84%E6%9D%8E%E5%AD%90
-* TODO 如何打理盆栽水果 fruit                                      :noexport:
-李子是挺能结的,而且松鼠不爱吃！
-* TODO buy fruit trees                                             :noexport:
-http://ediblelandscaping.com/products/trees/PersimmonAsian/
-https://www.treesofantiquity.com/index.php?main_page=index&cPath=51
-* TODO 柿子 - Ichi Ki Kei Jiro                                     :noexport:
-https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1458692521_2.90/%5B%E5%90%88%E9%9B%86%EF%BC%BD%E9%BA%BB%E7%83%A6%E7%9C%8B%E7%9C%8B6B%E5%8C%BA%E4%BB%8A%E5%B9%B4%E7%9A%84%E6%9E%9C%E6%A0%91%E9%80%89%E6%8B%A9
-* TODO running bamboo                                              :noexport:
-https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1427315716_2.H0/%5B%E5%90%88%E9%9B%86%5D+%E6%B1%82%E6%8E%A8%E8%8D%90%E6%A1%83%E6%A0%91%E5%92%8C%E7%AB%B9%E5%AD%90
-
-竹子需要多浇水,你先把灌溉系统弄好了.
-
-话说加州大旱,我家竹子两年没有疯长新芽了.
-浇水只能维持着而已,眼看竹子越来越老,越来越稀疏.
-* TODO 白油桃                                                      :noexport:
-https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1427315716_2.H0/%5B%E5%90%88%E9%9B%86%5D+%E6%B1%82%E6%8E%A8%E8%8D%90%E6%A1%83%E6%A0%91%E5%92%8C%E7%AB%B9%E5%AD%90
-
-跟白桃/蟠桃一个味,还还不用削皮,盐水泡泡冲洗后就吃.皮也有种特别的美味.
-
-https://www.starkbros.com/products/fruit-trees/peach-trees/champion-white-peach
-* TODO jujubi                                                      :noexport:
-钻石枣
-* TODO 比较阴的后院,种什么果树比较好                              :noexport:
-https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280048232p0/M.1315019818_2.w0/%5B%E5%90%88%E9%9B%86%5D+%E6%AF%94%E8%BE%83%E9%98%B4%E7%9A%84%E5%90%8E%E9%99%A2%EF%BC%8C%E7%A7%8D%E4%BB%80%E4%B9%88%E6%9E%9C%E6%A0%91%E6%AF%94%E8%BE%83%E5%A5%BD
-* TODO website: https://www.grpg.org/                              :noexport:
+* TODO 土地肥料: https://www.mitbbs.com/bbsdoc3/entertainment.faq/gardening/D1320956508210/5 :noexport:
+* TODO California USA Lilac                                        :noexport:
+* TODO endless summer hygendra                                     :noexport:
+* TODO 月季: 红蜘蛛                                        :noexport:
+* TODO [#A] 月季: 白粉病                                           :noexport:
+* TODO [#A] 修前院的水龙头                                         :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO 香椿                                                        :noexport:
-* TODO 桂花枝                                                      :noexport:
-* TODO 移树                                                        :noexport:
-https://www.mitbbs.com/bbsann2/entertainment.faq/gardening/D13045662422S0/D1320958327210/D14280046022W0/M.1319616119_2.A0/%E4%BA%BA%E6%8C%AA%E6%B4%BB%EF%BC%8C%E6%A0%91%E6%8C%AA%E6%AD%BB+%3F
-
-移种时间:
-若是常绿树, 最好在春秋天气凉快, 湿度高时移种, 傍晚为佳. 而落叶树则在冬眠时移
-种.  当然了, 高手就不在此限了.
-
-移种步骤:
-1. 移种之前三天左右浇透要移的树. 移种时以土壤微干, 根球土壤不易松裂为准.
-2. 先把新地点的洞挖好, 并混好compost, 加一点Superthrive混均匀. 不放肥料.
-3. 决定好要移种的树的根球大小. 越大越好, 以人力能handle根球及树干的重量为准.
-4. 根据所留根球的比例, 把树枝及树叶剪掉1/3 到2/3.
-5. 使用"锐利"的圆锹在树干周围切下. 如遇粗根则用利剪剪断. 尽量不要摇动树干
-或拉扯树根.
-6. 所有树根剪断後, 挖起果树. 如需长距离移运, 用布包紧根球并保湿.
-7. 到新地点後, 加土或减土, 确定种植深度正确. 把断裂树根剪掉, 种下,填土, 
-并做一小圈蓄水池.
-8. 浇水浇透, 并盖上厚mulch. 钉木棒固定主干. 常绿树的话, 前几个礼拜也可加上
-遮阳棚遮荫.
-1. 注意浇水及土壤湿度的控制.
-* TODO 前院种树                                                    :noexport:
-* TODO remove stripped screws 拿出老化的螺丝                       :noexport:
-https://www.youtube.com/watch?v=EqNcBkLvptg
-https://www.youtube.com/watch?v=EqNcBkLvptg
+* TODO 香雪球, 铁海棠, 长寿花, 瑞香, 珊瑚棒                        :noexport:
+* TODO [#A] 虎頭茉莉, 海棠花, 蟹爪兰                               :noexport:
+* TODO [#A] 丁香花 lilacs                                          :noexport:
+* TODO 风信子                                                      :noexport:
+* TODO 虎皮兰                                                      :noexport:
+* TODO 把前院的那棵月季挖出来盆栽                                  :noexport:
+* TODO 破掉夹竹桃种其他的                                          :noexport:
+* TODO 石斛兰                                                      :noexport:
+https://www.youtube.com/watch?v=AODcwKr-BFU&list=PLPJ-gTnV45s4tbaxKNIxqHkZ0YY-yrcdh&index=6
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] YouTube: 如何通过观察发现植物是否需要浇水              :noexport:
+* TODO [#A] YouTube: 如何很好地利用:月季的残花                     :noexport:
+* TODO [#A] YouTube: 如何很好地利用: Rosemary                      :noexport:
+* TODO [#A] YouTube: 防治小松鼠给植物根部打洞                      :noexport:
+* TODO [#A] YouTube: 草莓的罩子                                    :noexport:
+* TODO YouTube: snapdragon的种植条件                               :noexport:
+* TODO [#A] YouTube: 蚯蚓for盆栽                                   :noexport:
+* TODO [#A] YouTube: 研究herb的常见功能                            :noexport:
+* TODO [#B] YouTube: 月季黑杆                                      :noexport:
+https://www.youtube.com/watch?v=eag5PCt39aE
+* TODO [#A] YouTube: 长期使用Lanvender和Rosemary的办法             :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO YouTube: 如何很好地利用: aloe                               :noexport:
+* TODO YouTube: 如何很好地利用: 桔子皮                             :noexport:
+* TODO YouTube: 铁线莲 - Clematis                                  :noexport:
+* TODO YouTube: 野姜花                                             :noexport:
+* TODO YouTube: 植物过冬                                           :noexport:
+* TODO YouTube: 扦插日本八角                                       :noexport:
+* TODO YouTube: hanging plants with low maintainance               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Get worms for pot containers                                :noexport:
+* TODO Learn where the plant actually thrive case by case          :noexport:
+* TODO [#B] geranium on the window                                 :noexport:
+* TODO 懒人花盆 for hanging basket                                 :noexport:
+* TODO [#A] build self watering container with clay pots           :noexport:
+* TODO 扦插日本八角                                                :noexport:
+* TODO [#A] 定做立式花架: 专门为草莓立网                           :noexport:
+* TODO [#A] bucket dripping irrigation                             :noexport:
+* TODO [#A] lime柠檬树病了                                         :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF [#A] [violet] rose - Violet's Pride™ Rose                   :noexport:
+https://www.heirloomroses.com/
+
+https://www.naturehills.com/violets-pride-rose
+https://www.highcountryroses.com/shop/modern-roses/floribundas-small-landscape-shrubs/violet-s-pride/
+* TODO [red] Coretta Scott King Rose                               :noexport:
+https://www.heirloomroses.com/coretta-scott-king.html
+https://www.naturehills.com/coretta-scott-king-rose
+* TODO [pink] Queen of Sweden - david austin                       :noexport:
+https://www.davidaustinroses.com/products/queen-of-sweden
+https://www.heirloomroses.com/queen-of-sweden-r.html
+* TODO [yellow] charlotte rose - david austin                      :noexport:
+https://www.davidaustinroses.com/products/charlotte
+* TODO david austin                                                :noexport:
+** tree rose
+https://www.davidaustinroses.com/products/olivia-rose-austin-tree-rose
+OLIVIA ROSE AUSTIN
+
+https://www.davidaustinroses.com/products/molineux-tree-rose
+MOLINEUX
+
+https://www.davidaustinroses.com/products/scepter-d-isle-tree-rose
+SCEPTER'D ISLE
+** shrub
+QUEEN OF SWEDEN
+https://www.davidaustinroses.com/products/queen-of-sweden
+
+VANESSA BELL
+https://www.davidaustinroses.com/products/vanessa-bell
+
+THE LADY GARDENER
+https://www.davidaustinroses.com/products/the-lady-gardener
+
+WINDERMERE
+https://www.davidaustinroses.com/products/windermere
+
+HERITAGE
+https://www.davidaustinroses.com/products/heritage
+
+BOSCOBEL
+https://www.davidaustinroses.com/products/boscobel
+
+GERTRUDE JEKYLL
+https://www.davidaustinroses.com/products/gertrude-jekyll
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO 育多肉的种子                                                :noexport:
+* TODO 后院: bench                                                 :noexport:
+* TODO 前院: rosebed                                               :noexport:
+* TODO 高压盒子: 月季                                              :noexport:
+* TODO 前院irrigation漏水比较快                                    :noexport:
+* TODO check why mint leaf get eaten                               :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO 给苹果树定型                                                :noexport:
+* TODO 除树根                                                      :noexport:
+* TODO 种萝卜菜                                                    :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] 换前后院的过道门                                       :noexport:
+* TODO [#A] make borax for ant baits                               :noexport:

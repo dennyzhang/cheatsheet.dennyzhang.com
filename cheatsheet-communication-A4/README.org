@@ -556,3 +556,65 @@ time-efficient manner.
 * DONE too much details: may confuse people, because they are taking things as order word by word :noexport:
   CLOSED: [2020-03-31 Tue 09:22]
 --convert
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO effective communication is key to executive presence        :noexport:
+* TODO how to make requests effectively                            :noexport:
+1. invest in favors first 
+2. explain the context
+3. acknolwedge it's a favor 
+4. point out where interests align
+5. Express genunine gratitude
+** make requests vs give an order
+* TODO How to manage expectations                                  :noexport:
+expectations: unstated, unrealistic
+
+- Rank your current projects
+- Make time estimates
+- compare your estimations with your boss
+- confirm project deadlines
+* TODO Get the guidenace you need with a loosy boss                :noexport:
+Discuss your communications
+Plan regular check-ins
+Develop an emergency plan
+Create a job reference guide
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] Ask you boss the right questions                       :noexport:
+What can I be doing that's most helpful to you right now?
+
+How should I prioritize that?
+
+Do you see anything I'm missing? (Be responsive and inclusive)
+* TODO Know when to listen and when to ask                         :noexport:
+** when to listen
+You don't know the context
+You don't have a strong opinion
+** when to ask
+You have experience to offer
+You have resources to share
+You have a strong opinion
+You have a great question
+* TODO different cultures: EU, Asian, US                           :noexport:
+* TODO how to handle an interruption                               :noexport:
+Why am I being interrupted?
+
+Who is intterupting me?
+
+** Address interrupt
+discuss one on one
+distrupt office culture
+appoint "interruption monitor"
+brainstorm before meeting
+Assign meeting facilitator to make sure all people get heard
+* TODO How to respond to critical feedback                         :noexport:
+
+- Don't respond immediately
+
+Thank you for the feedback, I'd love to respond to this, but to do it justice, I want to think about it for a while.
+** Prepare for feedback
+- Map out the worst-case scenario
+- Draft possible responses
+* TODO adapt and listen to people could be confusing and effectiveless :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO play to your strength                                       :noexport:
+Create talking points for you.
+Meet 1-1 before bigger meetings

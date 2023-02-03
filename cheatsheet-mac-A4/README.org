@@ -44,9 +44,10 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Install packages and configurations | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-mac-A4/code/setup_mac.sh][code/setup_mac.sh]]           |
 | Verify installation                 | [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/blob/master/cheatsheet-mac-A4/code/verify_installation.sh][code/verify_installation.sh]] |
 ** Mac Recommended Applications
-| Name     | Comment                                              |
-|----------+------------------------------------------------------|
-| [[https://monosnap.com/][Monosnap]] | A useful free tool to capture screenshots and videos |
+| Name                | Comment                                              |
+|---------------------+------------------------------------------------------|
+| [[https://monosnap.com/][Monosnap]]            | A useful free tool to capture screenshots and videos |
+| Draw design diagram | draw.io, www.gliffy.com                              |
 
 ** Home Brew Basic
 | Name                                    | Comment                                                  |
@@ -2058,9 +2059,182 @@ Logout, but because ControlPersist is enabled, session is kept open for future c
 Something goes wrong with your network connection, and thus, persistent connection breaks.
 When you run ssh somedude@example.com again, it tries to reuse connection from step 2, and opens a new connection after timeout.
 https://superuser.com/questions/371599/mac-os-x-lion-terminal-ssh-connection-sharing-error
+* DONE mac customize screenshot folder                             :noexport:
+  CLOSED: [2020-07-04 Sat 22:36]
+defaults write com.apple.screencapture location ~/Dropbox/Screenshots
 * DONE Mac F2 key for for emacs usage                              :noexport:
   CLOSED: [2020-06-13 Sat 00:00]
 https://support.apple.com/en-us/HT204436
 Keyboards -> Use F1, F2, etc, keys as standard function keys on external keyboards
 * TODO Change your Apple ID country or region                      :noexport:
 https://support.apple.com/en-us/HT201389
+* TODO draw diagram online                                         :noexport:
+https://www.gliffy.com/
+* cygwin                                        :noexport:COMPUTER:IMPORTANT:
+:SNIP:
+ :CATEGORY: Cygwin
+:END:
+** TODO cygwin/x input chinese                                    :IMPORTANT:
+*** basic use
+#+BEGIN_EXAMPLE
+ X程序还可以使用XLOCALE
+#+END_EXAMPLE
+*** useful link
+ http://sourceware.org/ml/cygwin-xfree/2008-12/msg00078.html\\
+ xterm-237-2 still has no UTF-8 support
+ http://garydo.javaeye.com/blog/214793\\
+ 配置cygwin/x以及自动设置DISPLAY
+ http://en.wikibooks.org/wiki/Cygwin\\
+ Cygwin
+ http://www.maclife.net/wiki/index.php?title=Cygwin\\
+ Cygwin
+ http://hi.chinaunix.net/?20795077/viewspace-41000\\
+ 安装配置Cygwin
+ http://www.linuxforum.net/forum/showthreaded.php?Cat=&Board=chinese&Number=527541&page=&view=&sb=&o=\\
+ X-Win32的中文显示问题
+ http://garydo.javaeye.com/blog/214793\\
+ 配置cygwin/x以及自动设置DISPLAY
+ http://www.linuxforum.net/forum/showthreaded.php?Board=chinese&Number=531396\\
+ Cygwin/X也发现类似的中文显示问题(见附图)
+ http://blog.chinaunix.net/u2/66321/showart_708280.html\\
+ cygwin中 中文输入与输出的解决
+ http://easwy.com/blog/archives/use-rxvt-in-cygwin/\\
+ 使用rxvt做为cygwin终端
+** TODO cygwin下使用SSHD
+cygwin下使用SSHD
+a.需要安装了cygrunsrc,openssh
+b.运行ssh-host-config -y
+一路回车,直到出现CYGWIN=时,输入tty ntsec,再回车,
+(或者,增加一系统环境变量CUGWIN=nesec tty)
+c.已经安装好SSHD服务到你的Windows服务中,可以直接在服务中启动,关闭。
+(cygrunsrc -S sshd或者net start sshd)
+*** useful link
+http://hi.baidu.com/smst/blog/item/f12b56e72c9fca2cb838207c.html\\
+cygwin使用心得
+** TODO manage xterm
+*** TODO xterm 的配置
+http://forum.ubuntu.org.cn/viewtopic.php?f=122&t=143221&start=0\\
+重新认识xterm及我的配置详解
+http://edgy.blog.sohu.com/37690179.html\\
+xterm 的配置
+*** TODO 如何设置让Xterm在FVWM中能显示中文
+http://www.linuxfans.org/bbs/thread-120473-1-1.html\\
+如何设置让Xterm在FVWM中能显示中文
+*** TODO 如何全局设置xterm的背景为黑色
+ xterm -bg black
+http://www.lslnet.com/linux/dosc1/07/linux-143725.htm\\
+如何全局设置xterm的背景为黑色
+*** useful link
+http://howto.wikia.com/wiki/Howto_configure_xterm\\
+Howto configure xterm
+http://forum.ubuntu.org.cn/viewtopic.php?p=886592\\
+重新认识xterm及我的配置详解
+** ;; ------------------------------- separator -------------------------------
+** TODO scroll cygwin console with keyboard
+** TODO support x11
+ Install category of x11
+ start ..cygwin\usr\X11R6\bin\startxwin.bat
+ try x11 terminal: xclock
+*** TODO startxwin.bat missing
+*** cygICE-6.dll not found
+$ sh startxwin.sh
+$ /usr/bin/xterm.exe: error while loading shared libraries: cygICE-6.dll: cannot
+ open shared object file: pkm.org
+**** useful link
+http://www.cygwin.com/ml/cygwin-xfree/2009-08/msg00050.html\\
+XWin problem with cygGL-1.dll using cygwin 1.7
+*** useful link
+ http://rcc.its.psu.edu/hpc/guides/cygwin/\\
+ Cygwin Installation How-To
+** TODO how to get mirror
+http://ftp.cse.yzu.edu.tw/pub/cygwin/\\
+** TODO useful package                                            :IMPORTANT:
+D:\backup\large\software\large_than_100M\cygwin\cygwin-1.7\cygwin-1.7-package
+*** X11
+*** ;; ------------------------------- separator -------------------------------
+*** python
+*** gmp: GNU multi-precision library(both binary and source)
+*** pcre: Perl regular expression library
+*** binutils: The GNU assembler, linker and binary utilities
+*** gcc-g++: C++ compiler
+*** make
+*** diff, patch
+*** which
+*** wget
+*** ispell
+** TODO 使用cygcheck工具
+** TODO 使用id工具
+** TODO cygwin中通过tab联想时非常慢
+** DONE 设置home
+ 如果要改变home目录则要编辑cygwin.bat,具体如下：
+ 在bash命令之前加入set HOME=<用户目录>,比用户目录设置在G:\home。
+ Notice注意:该home目录会与emacs的home目录冲突
+** DONE 整合cygwin命令到Windows中
+ CLOSED: [2009-11-22 Sun 13:00]
+ 假设cygwin安装在d:/develop/cygwin,则将d:/develop/cygwin/bin添加到系统变量PATH中(最好加在 windows前面,这样的话,有些相同的命令的话,是先执行cygwin的命令,而不是windows命令,比如find)
+** DONE 启动窗口的大小设置
+ Window Size: Width(100), Height(40)
+** DONE cygwin 显示中文
+ 创建一个文件~/.bash_profile,内容为
+#define alias
+alias ls='ls --color --show-control-chars $*'
+alias bankreg='ledger.exe -f myemacs/data/filebat.ledger -M reg $*'
+alias bankbal='ledger.exe -f myemacs/data/filebat.ledger -d \"T&l<4\" bal $*'
+export LC_ALL=zh_CN.GB23122
+export LC_CTYPE=zh_CN.GB2312
+export LANG=zh_CN.GB2312
+export XMODIFIERS="@im=Chinput"3
+stty cs8 -istrip
+stty pass8
+export LESSCHARSET=latin1a
+export PATH=$PATH:/usr/local/sbin
+#dictd -c /etc/dictd.conf
+cd /cygdrive/d/ntemacs23/bin
+./runemacs.exe
+ http://feidi.javaeye.com/blog/54461\\
+ 收集到cygwin使用资料
+*** cygwin input chinese
+(1) 请在.inputrc文件中添加：
+set meta-flag on
+set convert-meta off
+set output-meta on
+set input-meta on
+set completion-ignore-case on　
+(2) 请在.bashrc 或.bash-profile文件中添加：
+alias ls='ls --show-control-chars --color=auto'
+export LESSCHARSET=latin1
+现在就看看为什么要这么做,cygwin下不能输入中文的原因是中文字符的最高位都是1,所以被当作控制符处理了,meta-flag,convert-meta等选项的意思可以参考man bash。简单的说,设置meta-flag on允许从终端输入中文,否则的话终端会过滤掉每个字节的最高位;convert-meta off是设置不将中文字符转化为转义序列,因为中文是两个字节表示的,第一字节的最高位是1开头的,可以能同于某个转义字符;output-meta on就是允许向终端直接输出中文;input-meta on就是允许向终端直接输入中文;set completion-ignore-case on这个可以在 echo A的时候按了<TAB>后就能由readline给你补出来abc.txt;–show-control-chars也一样。
+** DONE 整合cygwin命令到Windows中
+ 假设cygwin安装在d:/develop/cygwin,则将d:/develop/cygwin/bin添加到系统变量PATH中(最好加在windows前面,这样的话,有些相同的命令的话,是先执行cygwin的命令,而不是windows命令,比如find)
+ 就可以直接在cmd.exe下面执行tar czvf xxx.tgz ./
+ 基本上所有的命令都可以用了,包括ls,more,less,find,grep等。
+** DONE cygwin清屏
+ 调用C-l即可
+ http://bbs.chinaunix.net/viewthread.php?tid=1061681\\
+ cygwin里沒有clear command, 自己做了個模擬的
+** DONE 设置打开cygwin之后,自动输入~/bin/ruemacs.exe命令          :IMPORTANT:
+*** 修改:d:/ntemacs23/.bash_profile
+alias ls='ls --color --show-control-chars'
+export LC_ALL=zh_CN.GB23122
+export LC_CTYPE=zh_CN.GB2312
+export LANG=zh_CN.GB2312
+export XMODIFIERS="@im=Chinput"3
+stty cs8 -istrip
+stty pass8
+export LESSCHARSET=latin1a
+cd /cygdrive/d/ntemacs23/bin
+./runemacs.exe
+** useful link
+ http://blog.sina.com.cn/s/blog_4dbe69550100e7an.html\\
+ cygwin使用心得
+ http://cygwin.com/\\
+ cygwin
+ http://x.cygwin.com/\\
+ X11 R7.5 for Cygwin 1.7
+ http://beginlinux.com/server_training/serv_admin_m/1068-cygwintool\\
+ Cygwin--A Tool for Learning and for Remote Admin
+ http://feidi.javaeye.com/blog/54461\\
+ 收集到的cygwin使用资料
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO [#A] mac reset: https://discussions.apple.com/docs/DOC-3604 :noexport:
+* TODO [#A] mac diagnose: https://support.apple.com/en-in/HT202731 :noexport:

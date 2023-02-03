@@ -49,7 +49,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Feel free to interrupt me anytime      |                                                                |
 | I have a question, if everyone is OK   |                                                                |
 | When meeitng is overdue                | =I just add a timecheck=                                       |
-** Review Pull Requests
+** Review Pull Requests/Diff
 | Name                        | Comment                                                        |
 |-----------------------------+----------------------------------------------------------------|
 | Ask people to review PR     | Can I get reviews for https...                                 |
@@ -624,7 +624,209 @@ Have a learning mindset
 Set the tone and the state. Build trust. Be authentic.
 
 shift focus to relationships
+
+Watch out: own too many things and spread too thin.
 * TODO life words                                                  :noexport:
 Sometimes, it can feel like you have an inner dragon heating up
 
 Can it wait? Seperate emergency from impatience
+* HALF as titled                                                   :noexport:
+* misc                                                             :noexport:
+high AA variance
+
+I have a question around XXX. I think it's a question around principle.
+
+My son took my chair again so I have to improvise
+* TODO express different opinion                                   :noexport:
+- Unless I'm missing something, it seems like an overkill.
+* TODO misc                                                        :noexport:
+- I don't think there's any _good_ way to validate it except yolo'ing and standing by with the fix.
+- Just throwing ideas
+- Escalate issues in a timely fashion.
+- be reasonable ready
+- I guess my question is why xxx
+- this work's complexity is just beyond a single person's capabilities
+- be able to clearly explain technical problems with data and analysis and provide detailed feedback and solutions.
+- XXX can run every possible test needed to surface breaking changes before the triggering diff lands.
+- If so, let's communicate in the SEV to make it transparent? Otherwise users will be confused..
+- I'm spectating
+- My online presence will be spotty
+- Let's drive this conversation towards a solution. 
+- Nothing related to this diff, just a side note.
+- There are lots of roadblocks, but no big nos.
+- Team is too busy with putting fires out
+- socialize the idea
+- I don't expect anything to break, but let me know if that happens
+- I think ..., if I'm not mistaken
+- we waive accuracy test as there's nothing we can do
+* TODO test plan                                                   :noexport:
+- Eyeballs, for now
+* TODO diff follow-up                                              :noexport:
+- Will add this to follow ups. 
+* TODO leave some room                                             :noexport:
+- But it's entirely possible that I've just been lucky
+* TODO streamlined workflow                                        :noexport:
+* TODO principle: Be factual and accurate. Don’t assume or exaggerate. :noexport:
+* TODO cost-aware culture of feature development                   :noexport:
+* TODO Defer a decision                                            :noexport:
+- I would so much rather XXX if possible
+- Will update in a subsequent diff
+- will update in a future diff
+* TODO explain                                                     :noexport:
+- Sorry on PTO, so slow in replying 
+* TODO evaluate change risks                                       :noexport:
+- No negative impact is expected.
+* TODO follow-up                                                   :noexport:
+- moved to a small group for detailed discussion
+* TODO overview judgement                                          :noexport:
+- This document serves as a northstar guiding our investments and trade-offs
+- It keeps up to date to the current academic and industrial landscape
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO there are couples of ideas                                  :noexport:
+* TODO what would be the end state                                 :noexport:
+* TODO Our contract with customers is not like that. Our contact with ... :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Provide an environment free from discrimination, harassment, bullying, and retaliation :noexport:
+* DONE Hold your team and colleagues to a high standard of behavior :noexport:
+  CLOSED: [2021-03-28 Sun 10:35]
+* DONE Engage in healthy debates over work projects                :noexport:
+  CLOSED: [2021-03-28 Sun 10:35]
+* DONE Get comfortable being uncomfortable:                        :noexport:
+  CLOSED: [2021-03-28 Sun 11:01]
+* HALF while you are here, can you fix this?                       :noexport:
+* HALF spread bad news                                             :noexport:
+Unfortunately, the situation is likely to get worse before it gets better
+* TODO big area                                                    :noexport:
+- scalability
+- reliability
+- efficiency
+  server efficiency
+  dev efficiency
+
+- privacy
+- revenu growth
+
+* TODO misc                                                        :noexport:
+I would be surprised if the 20x growth can be achieves with incremental improvements.
+
+Not right now. But it can be added in the future.
+
+Engineers are not fungible resources
+
+The details we can flush out
+
+I hear your question. Could you propose something for that?
+
+Don't think for promotion, but think for solving next level's problem
+** You need to be able to see problems at the next level
+** misc
+We’re adopting #xxx into Butterfly and Task Platform in Q2, but as of right now it’s “very hard to debug and unowned™” 😞
+While the convenience of using xxx from anywhere is broken for you atm, knowing that positive change is coming soon, do you have OK-ish workarounds until then?
+I have to step out for a bit now, will check back here later.
+
+Disclaimer is that we have had very little guidance on what should be done here, so help from anyone would be really useful
+
+- We should be good to roll forward imo, but will be good if XXX can confirm.
+- We have stretched our goal to support use cases beyond XXX scopes,
+- This is not intended to be a permanent fix! We should not manually patch the generated files.
+* move fast                                                        :noexport:
+** When you build something new, v1 is important. It's a breakthrough, from 0 to 1. However it may not necessarily be the hardest job. More challenges comes from v1 to v2, v3, ...
+- There is a temptation in our fast moving environment, that we quickly produce something that “just works”, because of “this urgent need”, and we write a bunch of “TODOs” and we never come back to them.
+* report questions                                                 :noexport:
+- Wondering could anyone help take a look? Thanks for the help!
+* TODO saying no to some ask                                       :noexport:
+- While I'd be okay with butchering XXX codebase to make it work, I don't think i'm the most appropriate person to do that.
+* TODO culture                                                     :noexport:
+- The magic is when bottoms-up meets tops-down (company needs).
+- Working at XXX, it's never someone else's problem. Engineers are empowered with lots of awesome systems, access to code, and smart people to work.
+* TODO ask for follow-up                                           :noexport:
+- Trying to close the loop here - the next steps aren't clear to me 
+* TODO What can I be doing that's most helpful to you right now?   :noexport:
+* Take bets                                                        :noexport:
+- P0: We must achieve it; P1: A 50/50 goal; we hope to make progress on many of these. 
+* TODO technical leadership                                        :noexport:
+- Do you have something to add?
+* TODO wording                                                     :noexport:
+- Reduce alert volume and have automated diagnostics to reduce operational overhead of dealing with alerts.
+- Not where I want it to be, mine is mostly done
+- Call it out in summary and provide a validating reference
+- If we don't have much clue now, I can accept to unblock you
+- Trust me on this pls?
+- Maximum self-serve is the goal and we need some iterations towards it.
+- I'm wondering which option is the more prudent one.
+- Can I be optional for this one meeting and join the next one onwards.
+- Elevating the signals to a higher place
+- Okay, I might have added a controversial paragraph. Open for discussions
+- It's a long uphill battle 
+- I don't think we've seen such issue before within this team. So expertise might be limited.
+- Can I be picky and ask if this can be typed?  Or at least use use an Enum that the frontend is familiar with?
+* Change "should I" to "I plan to". It will greatly speed up your career growth :noexport:
+* prioritize stability over freshness                              :noexport:
+* DONE ask junior people for help                                  :noexport:
+  CLOSED: [2022-06-14 Tue 17:28]
+Hey Folks, connecting with you guys for scoping XXX for XXX planning. We want to define the approx. scope of the work, potential KRs and the estimate. 
+
+owning it, before knowing it
+* TODO adhoc                                                       :noexport:
+I also felt like our infra could make it easier to build products.
+
+It took a lot of effort to do things "the right way". Legacy, priority, dependency, 
+
+I'll on PTO, and off the grid, from Jun 28 thru Jul 22 (both days inclusive). For any escalations that cannot wait until my return please reach out to XXX.
+
+Seperation of responsiblity
+
+- Morning folks, I’ve been asked to gather feedback for a retro on the xxx product. Are their any particular aspects that people want to highlight as strong or weak (and why)?
+* TODO mindset                                                     :noexport:
+Show up every day and do your best
+I don’t know about... Can you teach me about...
+
+impact framing
+
+I am wondering how i can contribute to the discussion, or i should skip it
+
+Any logging or counters about nodeapi timeout
+* TODO discussion                                                  :noexport:
+what's the reason why it can't be changed in the existing flow
+
+Communicating thoughtfully and respectfully
+
+Is this issue resolved ?
+
+Hi xxx, does this issue still need assistance or can be closed?
+
+folks, I will be skipping the weekly check-in today due to some conflicts. I will make an update offline
+
+Do we have a command to reproduce this locally with? 
+
+prerequisite
+
+What's the guidance for this?
+
+Shipping this won't effectively improve ads serving availability in steady state, but it would avoid us losing availability during large scale crashloop events.
+
+The intent is universe across the board
+* feedback                                                         :noexport:
+This is the only info in the doc about what's the problem. I think we should provide more details on why we do this fetching, what storage it is, and the time it takes to do the fetching, etc. Otherwise people without the context of the sev wouldn't know why this is a problem.
+
+I will be a bit sporadic today
+
+How are we planning to measure this?
+
+Did it get prioritized? What help do you need from us towards it? Let us know.
+
+prerequisite
+
+Here we are accounting 5M from config change related to service deployment, though likely 5M is under counting 
+
+i would say there are *diminishing returns* here.  After we hit 15 min mitigation, its more valuable to look into prevention.
+
+please note that this is more of an upper bound estimation
+* misc                                                             :noexport:
+make sure you pick projects that you are uniquely positioned to do extraordinarily well.
+
+holistically look at the reliability gaps and build up awareness of criticality of this work
+
+there has been quite a few technical debt and ownership ambiguity in the past in this area and I hope XX can bring clarity in this area
+
+

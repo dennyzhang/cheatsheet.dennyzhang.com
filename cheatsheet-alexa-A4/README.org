@@ -45,6 +45,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Name                      | Command                                              |
 |---------------------------+------------------------------------------------------|
 | Control Philips Hue bulbs | [[https://www.youtube.com/watch?v=YDgbICos9Jg][YouTube: How to setup Philips Hue with Amazon Alexa?]] |
+| Gosund Smart Plug         |                                                      |
 ** More Resources
 License: Code is licenhealth under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 

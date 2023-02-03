@@ -22,12 +22,13 @@
 
 File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com][this repo]].
 ** Cron job - create
-| Name                                 | Comment                                                   |
-|--------------------------------------+-----------------------------------------------------------|
-| Create cron job runs every 5 mins    | =*/5 * * * * /root/mycommand.sh=                          |
-| Runs every Friday at 9:10 AM         | =10 9 * * 5 /root/mycommand.sh=                           |
-| Runs every midnight                  | =0 0 * * * /root/mycommand.sh=                            |
-| Redirect output to log file          | =0 0 * * * /root/mycommand.sh >>/var/log/mycron.log 2>&1= |
+| Name                              | Comment                                                   |
+|-----------------------------------+-----------------------------------------------------------|
+| Create cron job runs every 5 mins | =*/5 * * * * /root/mycommand.sh=                          |
+| Runs every Friday at 9:10 AM      | =10 9 * * 5 /root/mycommand.sh=                           |
+| Runs every midnight               | =0 0 * * * /root/mycommand.sh=                            |
+| Redirect output to log file       | =0 0 * * * /root/mycommand.sh >>/var/log/mycron.log 2>&1= |
+| Install crontab by script         | [[https://unix.stackexchange.com/questions/117244/installing-crontab-using-bash-script][Put file to /etc/cron.d.]] Remember to set env              |
 ** Cron job - common
 | Name                                 | Comment                                   |
 |--------------------------------------+-------------------------------------------|
@@ -413,7 +414,5 @@ Mar 24 19:17:01 carol-repo CRON[7893]: (root) CMD (   cd / && run-parts --report
 Mar 24 20:17:01 carol-repo CRON[14498]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
 Mar 24 20:52:37 carol-repo crontab[21913]: (root) LIST (root)
 #+END_EXAMPLE
-
 ** TODO When crontab job has failed, get slack notification
 * TODO cron cheatsheet: https://jimmysong.io/cheatsheets/cron      :noexport:
-* TODO [#A] install crontab by command line                        :noexport:

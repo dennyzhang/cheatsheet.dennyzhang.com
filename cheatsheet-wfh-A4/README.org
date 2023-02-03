@@ -31,6 +31,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 | Identity repetitive/recurring problems |                                                              |
 | Identity your frequent distraction     | Sit quite for several minutes, and list all distractions     |
 | Upgrade equipment in your workspace    | Monitor, balance ball, adjstuable desk                       |
+| Write daily journal                    | Track what you learned and achieved everyday                 |
 #+BEGIN_HTML
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=dennyzhang-20&marketplace=amazon&region=US&placement=B07GVRKCWP&asins=B07GVRKCWP&linkId=5134d66f2470804e1da412fbe7cecb06&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
@@ -48,7 +49,7 @@ File me [[https://github.com/dennyzhang/cheatsheet.dennyzhang.com/issues][Issues
 
 #+END_HTML
 ** More Resources
-License: Code is licenwfh under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
@@ -80,3 +81,5 @@ License: Code is licenwfh under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
+* CANCELED 三角脚把把laptop架起来                                  :noexport:
+  CLOSED: [2020-07-18 Sat 13:14]

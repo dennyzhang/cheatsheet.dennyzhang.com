@@ -79,3 +79,15 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 * HALF login to zoom. Then only share the screen                   :noexport:
 * TODO outlook: how to transfer the owner of a serie meeting       :noexport:
 https://superuser.com/questions/727471/how-do-i-transfer-meeting-ownership-in-outlook-2010
+* DONE excel format string                                         :noexport:
+  CLOSED: [2020-07-02 Thu 09:04]
+* DONE e-sign                                                      :noexport:
+  CLOSED: [2020-09-01 Tue 21:27]
+* HALF generate a new column with regexp                           :noexport:
+ab__bd_dfa__p279_v3_ab -> 279
+ab__bef_dfafaf__p238_v3_ab -> 238
+
+=right(SUBSTITUTE(A9, "_v3_babc_afaf", ""), 3)
+
+=SUBSTITUTE(RIGHT(SUBSTITUTE(B3, "_v3_abcd", ""), 4), "p", "")
+* TODO excel create a chart to category a column values            :noexport:
